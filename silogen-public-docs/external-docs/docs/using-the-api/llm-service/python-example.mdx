@@ -65,6 +65,8 @@ Example: `pip install requests python-keycloak openai`
 
 **Example of using extra RAG parameters in the request**:
 
+If you are using the OpenAI python client, all Silogen specific fields need to be specified in the 'extra_body' field. These fields include: debug, collection, prompt_template, and source_template.
+
 ```python
 completion = client.chat.completions.create(
     model=model_id,
