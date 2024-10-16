@@ -31,7 +31,7 @@ jobs:
 
       - name: Build website
         run: |
-          npm run docusaurus-build-external && ls -al build-external
+          npm run docusaurus-build-external && rm build-external/.gitignore && ls -al build-external
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
