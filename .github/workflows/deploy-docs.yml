@@ -24,13 +24,13 @@ jobs:
         uses: pnpm/action-setup@v4
         with:
           version: 9
-      
+
       - name: Get pnpm store directory
         id: pnpm-cache
         shell: bash
         run: |
           echo "STORE_PATH=$(pnpm store path)" >> "${GITHUB_OUTPUT}"
-  
+
       - name: Cache dependencies
         uses: actions/cache@v4
         with:
@@ -38,7 +38,7 @@ jobs:
           key: ${{ runner.os }}-silogen-docs-${{ hashFiles('**/pnpm-lock.yaml') }}
           restore-keys: |
             ${{ runner.os }}-silogen-docs-
-  
+
       - name: Install dependencies
         run: |
           pnpm install
