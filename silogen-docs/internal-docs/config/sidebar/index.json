@@ -1,0 +1,20 @@
+{
+  "label": "Internal Docs Sidebar",
+  "items": [
+    {
+      "document": "docs/index.mdx",
+      "label": "Start here",
+      "_template": "doc"
+    },
+    {
+      "document": "docs/editing-docs.mdx",
+      "label": "How to Edit the Documentation",
+      "_template": "doc"
+    },
+    {
+      "document": "docs/authentication_and_authorization.mdx",
+      "label": "Authentication and Authorization",
+      "_template": "doc"
+    }
+  ]
+}

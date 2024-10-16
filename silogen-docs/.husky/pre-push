@@ -1,0 +1,24 @@
+#!/bin/sh
+# end this script as soon as any command fails
+set -e
+
+# Run only if there are changes in the docs/silogen-docs directory
+if git diff --name-only HEAD^ HEAD | grep --quiet "docs/silogen-docs"; then
+
+    # Change to docs/silogen-docs from any path
+    git_root=$(git rev-parse --show-toplevel)
+    cd "$git_root/docs/silogen-docs" || exit
+
+    echo "Running Prettier..."
+    npm run format
+
+    echo "Running ESLint..."
+    npm run lint
+
+    echo "Building the project"
+    npm run build
+
+    echo "Running tests"
+    npm run test
+
+fi
