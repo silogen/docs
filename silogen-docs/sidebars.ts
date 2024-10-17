@@ -14,7 +14,7 @@ export const getDocId = (doc: string): string => {
   return doc
     .replace(/\.mdx?$/, "")
     .split("/")
-    .slice(1)
+    .slice(2)
     .join("/");
 };
 
@@ -30,7 +30,9 @@ export const getItem = (item: any): ItemProps[] => {
       return [];
     }
 
-    itemProps = { ...itemProps, id: getDocId(item.document) };
+    const itemId = getDocId(item.document);
+    console.log("adding item with id", itemId);
+    itemProps = { ...itemProps, id: itemId };
 
     if (item.label) {
       itemProps.label = item.label;

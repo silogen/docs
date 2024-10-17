@@ -4,7 +4,7 @@ import React from "react";
 import { TextField } from "tinacms";
 import { ReferenceField } from "tinacms";
 import { MDXTemplates } from "../src/theme/template";
-// import { docusaurusDate, titleFromSlug } from "../util.js";
+import { titleFromSlug } from "../util";
 import title from "title";
 // import { PageCollection } from "./collections/page.js";
 import { CustomAuthProvider } from "./custom-auth-provider";
@@ -22,7 +22,7 @@ const WarningIcon = (props) => {
     <svg
       stroke="currentColor"
       fill="currentColor"
-      stroke-width="0"
+      strokeWidth="0"
       viewBox="0 0 24 24"
       height="1em"
       width="1em"
@@ -218,13 +218,16 @@ const DocLinkTemplate = {
   label: "Doc Link",
   ui: {
     itemProps: (item) => {
-      return {
+      const itemProps = {
         label: item?.label
           ? item?.label
           : item?.document
             ? titleFromSlug(item?.document)
             : item.name,
       };
+
+      // console.log("in doclink template itemProps: ", itemProps);
+      return itemProps;
     },
   },
   fields: [
@@ -308,18 +311,20 @@ const CategoryFields = [
       component: (props) => {
         const link = React.useMemo(() => {
           let fieldName = props.field.name;
+          // console.log("in category fields docLink component, fieldName: ", fieldName);
           fieldName =
             fieldName.substring(0, fieldName.lastIndexOf(".")) || fieldName;
 
+          // console.log("in category fields docLink component, fieldName: ", fieldName);
           return fieldName
             .split(".")
             .reduce((o, i) => o[i], props.tinaForm.values).link;
         }, [props.tinaForm.values]);
-
-        if (link !== "internal_doc" && link !== "external_doc") {
+        // console.log("in category fields docLink component, link: ", link);
+        if (link !== "doc") {
           return null;
         }
-
+        // console.log("## in category fields docLink component, props: ", props);
         return ReferenceField(props);
       },
     },
@@ -338,9 +343,11 @@ const CategoryTemplateProps = {
   label: "Category",
   ui: {
     itemProps: (item) => {
-      return {
+      const itemString = {
         label: item?.title ? item?.title : item.name,
       };
+      console.log("in category template itemProps: ", itemString);
+      return itemString;
     },
     defaultItem: {
       link: "none",
@@ -514,7 +521,7 @@ const NavbarItemFields = [
             .reduce((o, i) => o[i], props.tinaForm.values).link;
         }, [props.tinaForm.values]);
 
-        if (link !== "internal_doc" && link !== "external_doc") {
+        if (link !== "doc") {
           return null;
         }
 
@@ -760,7 +767,7 @@ const SettingsCollection = {
                       type: "reference",
                       label: "Page",
                       name: "to",
-                      collections: ["internal_doc", "external_doc", "page"],
+                      collections: ["internal_doc", "external_doc"],
                     },
                   ],
                 },

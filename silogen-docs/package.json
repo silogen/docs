@@ -8,7 +8,7 @@
     "build": "tinacms build --verbose --preview-base-branch main --preview-name docs_edits && npm run docusaurus-build-internal && npm run docusaurus-build-external && next build",
     "docusaurus": "docusaurus",
     "docusaurus-start-external": "docusaurus start --config ./docusaurus.config.external.ts",
-    "docusaurus-start-internal": "docusaurus start --config ./docusaurus.config.internal.ts",
+    "docusaurus-start-internal": "docusaurus start --config ./docusaurus.config.internal.ts --port 3001",
     "nextbuild": "next build",
     "tinacmsbuild": "tinacms build --verbose --skip-indexing",
     "docusaurus-build-external": "docusaurus build --config ./docusaurus.config.external.ts --out-dir ./build-external",

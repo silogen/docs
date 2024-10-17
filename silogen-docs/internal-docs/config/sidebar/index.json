@@ -2,19 +2,29 @@
   "label": "Internal Docs Sidebar",
   "items": [
     {
-      "document": "docs/index.mdx",
+      "document": "internal-docs/docs/index.mdx",
       "label": "Start here",
       "_template": "doc"
     },
     {
-      "document": "docs/editing-docs.mdx",
-      "label": "How to Edit the Documentation",
-      "_template": "doc"
-    },
-    {
-      "document": "docs/authentication_and_authorization.mdx",
-      "label": "Authentication and Authorization",
-      "_template": "doc"
+      "title": "Basics",
+      "link": "doc",
+      "docLink": "internal-docs/docs/basics/index.mdx",
+      "items": [
+        {
+          "document": "internal-docs/docs/basics/authentication_and_authorization.mdx",
+          "_template": "doc"
+        },
+        {
+          "document": "internal-docs/docs/basics/editing-docs.mdx",
+          "_template": "doc"
+        },
+        {
+          "document": "internal-docs/docs/basics/Code-repositories.mdx",
+          "_template": "doc"
+        }
+      ],
+      "_template": "category"
     }
   ]
 }
