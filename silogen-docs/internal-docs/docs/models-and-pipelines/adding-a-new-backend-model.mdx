@@ -1,0 +1,64 @@
+---
+title: Adding a new backend model
+description: How to add a new backend model to the SiloGen platform.
+---
+
+Note that each environment (dev, staging, and production) has its own catalog!
+
+1. Look at similar existing models for good configurations
+   `model_catalog search model` to show all models, `-v` to show all configuration parameters
+   `model_catalog list model` to show the latest version of each model
+   `model_catalog show model` to show parameters of one model
+1. Use `model_catalog import` to upload model files and make an entry into the catalog, either from Huggingface or from your local machine. If you need access to a gated model, use the [model-downloader tool](https://github.com/silogen/silogen-gitops/tree/main/k8s/apps/model-downloader) from our cluster. Instructions are in its Readme.
+
+   1. Read `model_catalog import huggingface --help` on how to fill each field
+   1. For the container tag, use silodev: `silodev container get-silogen-vllm-tags`. The first one in the list is newest, use that unless directed otherwise.
+   1. If setting up in production, set autoscale-retention to _inf_. This means that no scale-to-zero is used and the model is running 24/7 when deployed.
+   1. If you set autoscaling to inf, also include “no autoscale” in the name of the model so it’s as clear as possible which models don’t scale down.
+   1. For resource amounts:
+
+      1. You need a bit more GPU memory (VRAM) than the total size of your model files. Currently we use L4 GPUs, and one L4 GPU has 24 GB of VRAM.
+      1. You also need as much CPU memory for loading the model – the recommended sizes are documented in `model_catalog import huggingface --help`.
+      1. CPU amount mainly affects speed. I have used GPUs+2 or GPUs+3 (i.e., if using one GPU, use 3-4 CPUs), but there is room to experiment with here.
+      1. To optimize, check which nodes we are using. Each node has a set maximum amount of CPUs, GPUs, and RAM memory. Going over any one of these will bump the whole model to a more expensive node.
+
+1. Do `model_catalog manage model` to configure any parameters not configured during import.
+
+   1. Add the repo and commit of whichever model you created to the `author_notes`. If setting up a model with no scale-to-zero (i.e., the model is always up), add a note about that as well. Keep in mind that any notes will be accessible to external customers.
+   1. To add any flags to the server startup command (such as `--max-model-len=15000 --enforce-eager`, or a custom chat template), add them under server_flags like this:
+
+   ```yaml
+   server_flags:
+   max-model-len: 15000
+   enforce-eager: null
+   ```
+
+   <Admonition type="note" title="Note">
+     If you don’t have the autoscale retention period set to inf, your model
+     will scale to zero!
+   </Admonition>
+   ``` yaml execution_params: autoscale_retention_period: inf ``` Note that the
+   inference model’s config is also shown in the editor when managing a
+   pipeline, but should not be edited! Do `model_catalog manage model` for it
+   separately if needed.
+
+1. Create a pipeline for the model with `./core/tooling/create-default-pipeline` and edit the created pipeline with `model_catalog manage pipeline`. See [Creating a new pipeline](pipelines#creating-a-new-pipeline) above.
+
+1. Deploy your pipeline, and test that the pipeline and model work.
+
+   ```bash
+   silodev auth login
+   silodev models deploy --prefix '' "\<\<full pipeline name with organisation and version\>\>"
+   cd core/tooling/
+   python inference chat "\<\<model pipeline with version\>\>" "Prompt here" -c "your collection, if used"
+   ```
+
+   If the model supports chat completion, use either `/v1/chat/completions` API or the chat UI (or developer console) to prompt the model. If the model only supports non-chat completions, use `/v1/completions` from the API. 1. If the pipeline does not deploy, there can be multiple causes: 1. Resource limits are not set high enough. See 2e. 1. There are no available nodes in our cluster which fit the resource requirements. Either the requirements are too high, or we have run out of nodes. If you suspect the latter case, contact the platform team. 1. Advanced option to be sure that we are out of GPUs: check the cluster’s node pools from the Gcloud console. The autoscaling column will tell the max amount of nodes, and the Number of nodes column will tell the current usage. If the current number of nodes is already in the max for the type of node you are requesting, the model will not deploy. Confusingly, 2xL4 and 4xL4 nodes are also counted towards the total maximum of 1xL4 nodes, so if the total number of individual GPUs (counting 2xGPU, 4xGPU, and 1xGPU together) goes over the maximum amount allocated for 1xL4 nodes, we are out of GPUs. 1. The model’s engine will not start. In this case, the pod in Kubernetes will already have found a node, and the pod’s logs (either through kubectl/k9s or the Loki/Grafana logs) can be checked to see what is wrong. 1. The most common problem so far is that the max amount of tokens is higher than what will fit to the GPU’s VRAM. VLLM will tell you what the maximum is, but note that this will be affected by which node type you are using (e.g., 2xL4 will have higher max than 1xL4). For Mistral models on 1xL4 nodes, a value of 15000 for max-tokens has been good. 1. Note that any editing needs to be done to an undeployed pipeline. Undeploy, edit, redeploy. This goes also for the next part.
+
+1. Undeploy your pipeline
+1. ```bash
+   silodev auth login
+   silodev models undeploy --prefix '' "\<\<full pipeline name with organisation and version\>\>"
+   ```
+1. If the pipeline works as intended, edit it to mark it as `status: ready` (at the very bottom of the config). This will also mark the underlying inference model as `status: ready`. Any `status: ready` entries cannot be edited anymore – editing with `model_catalog manage` will result in a new version of that pipeline or model.
+1. Set the pipeline as stable if it has been evaluated or needs to be available without version information (usual for external customers): `model_catalog set-stable pipeline -h`. This will allow prompting the pipeline without version information in its name. In the future, stable: true should only be reserved for pipelines that have been evaluated

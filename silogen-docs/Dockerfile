@@ -21,6 +21,12 @@ ARG MONGODB_URI
 ARG NEXTAUTH_SECRET
 ARG GITHUB_BRANCH
 
+# The following are needed since the build process requires them in order to build the static site.
+# We need info about commits. See the docusaurus.config.internal.mts file.
+ARG GITHUB_OWNER
+ARG GITHUB_REPO
+ARG GITHUB_ACCESS_TOKEN
+
 WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .

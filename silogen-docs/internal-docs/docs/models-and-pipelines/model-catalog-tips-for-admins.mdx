@@ -1,0 +1,12 @@
+---
+title: Model Catalog Tips for Admins
+description: Tips for admins.
+---
+
+- Batch updating all pipelines’ llm_pipeline to the newest available image is easy to do with the script provided in core/tooling/update-all-pipelines. Reading it before using is advisable, especially if you end up selecting No on any of the questions or otherwise aborting the script midway. There is a dry-run portion in the script whose wording isn’t super clear, since it ends up looking like you would do some parts two times.
+
+- Because deploying a pipeline in dev or staging is fairly cheap, dev tends to have a lot of old and forgotten deployed pipelines that don’t see use. Some type of purge might be wanted at some point.
+
+- VLLM is updated often. When new and interesting VLLM versions are introduced ([Releases · vllm-project/vllm](https://github.com/vllm-project/vllm/releases)), silogen-vllm will need to be updated by modifying the list of compiled versions in the [image-vllm Github workflow](https://github.com/silogen/core/blob/773b86bcc7f09ac658ed4a95418526a5fc100afa/.github/workflows/image-vllm.yml#L14). Batch updating `silogen-vllm` images in inference models is available with `model_catalog batch-update model` (run `silodev container get-silogen-vllm-tags` to get available options for the tags), but new versions of inference models cannot be batch-updated to pipelines (at least not yet).
+
+- Each environment (dev, staging, and production) has its own catalog. The `mongodump` and `mongorestore` scripts in core/tooling can be used to clone everything in the catalog to another environment (after which any model files also need to be copied, but for pipelines the script is all you need) but there is no one-click way to move a single entry.

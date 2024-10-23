@@ -22,9 +22,69 @@
         {
           "document": "internal-docs/docs/basics/Code-repositories.mdx",
           "_template": "doc"
+        },
+        {
+          "document": "internal-docs/docs/basics/internal-network.mdx",
+          "_template": "doc"
         }
       ],
       "_template": "category"
+    },
+    {
+      "document": "internal-docs/docs/keycloak-configuration.mdx",
+      "_template": "doc"
+    },
+    {
+      "title": "Models and Pipelines",
+      "link": "doc",
+      "docLink": "internal-docs/docs/models-and-pipelines/index.mdx",
+      "items": [
+        {
+          "document": "internal-docs/docs/models-and-pipelines/model-configuration-and-deployment.mdx",
+          "_template": "doc"
+        },
+        {
+          "document": "internal-docs/docs/models-and-pipelines/pipelines.mdx",
+          "_template": "doc"
+        },
+        {
+          "document": "internal-docs/docs/models-and-pipelines/adding-a-new-backend-model.mdx",
+          "_template": "doc"
+        },
+        {
+          "document": "internal-docs/docs/models-and-pipelines/model-catalog-tips-for-admins.mdx",
+          "_template": "doc"
+        }
+      ],
+      "_template": "category"
+    },
+    {
+      "title": "Workflows",
+      "link": "doc",
+      "docLink": "internal-docs/docs/workflows/index.mdx",
+      "items": [
+        {
+          "document": "internal-docs/docs/workflows/flyte.mdx",
+          "_template": "doc"
+        },
+        {
+          "document": "internal-docs/docs/workflows/dagster.mdx",
+          "_template": "doc"
+        }
+      ],
+      "_template": "category"
+    },
+    {
+      "document": "internal-docs/docs/document-collection-service.mdx",
+      "_template": "doc"
+    },
+    {
+      "document": "internal-docs/docs/debugging-tips.mdx",
+      "_template": "doc"
+    },
+    {
+      "document": "internal-docs/docs/api-documentation.mdx",
+      "_template": "doc"
     }
   ]
 }

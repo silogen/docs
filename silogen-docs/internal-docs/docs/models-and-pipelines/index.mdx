@@ -1,0 +1,23 @@
+---
+title: Models and Pipelines
+description: How to configure and deploy models and pipelines in the SiloGen platform.
+---
+
+<Admonition type="info" title="GitHub">
+  Requires SiloGen github access.
+</Admonition>
+We use LLM systems that are made of an inference model (“backend model” with
+model serving engine) and an LLM pipeline (“frontend” that the customer
+interacts with). To add a completely new LLM system, add both a new backend
+model and a new pipeline. To only configure an LLM system for new customers, add
+a new pipeline to an existing backend model.
+
+## Inspecting models and pipelines
+
+Full list of options with `model_catalog --help`
+
+1. `model_catalog search` to show all models/pipelines, `-v` to show all configuration parameters
+   `model_catalog list` to show the latest version of each model/pipeline
+   `model_catalog show` to show parameters of one model/pipeline
+2. `model_catalog search pipeline --deployed` to show all deployed pipelines
+   1. Another way to do this is with `curl https://model-service.services.silogen.ai/v1/models`, or with the inference helper script in `core/tooling/ (inference models)`
