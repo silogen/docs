@@ -5,7 +5,7 @@ set -a
 source .env
 set +a
 
-docker -D build \
+docker -D build --progress=plain \
 --build-arg GITHUB_BRANCH="${GITHUB_BRANCH}" \
 --build-arg NEXTAUTH_SECRET="${NEXTAUTH_SECRET}" \
 --build-arg MONGODB_URI="${MONGODB_URI}" \

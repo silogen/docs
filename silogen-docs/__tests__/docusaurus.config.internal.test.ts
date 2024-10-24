@@ -44,43 +44,57 @@ vi.mock("path", async (importOriginal) => {
 
 describe("Author utilities", () => {
   describe("findRepoRoot", () => {
-    it("should return the repository root when found", async () => {
-      const mockPath = "/path/to/repo/.git";
-      vi.spyOn(path, "parse").mockReturnValue({ root: "/" } as path.ParsedPath);
+    it("should return the repository root when .git is found", async () => {
+      const mockPath = "/fredrik/projects/core/.git";
+      // vi.spyOn(path, "parse").mockReturnValue({ root: "/" } as path.ParsedPath);
       vi.spyOn(fs, "existsSync").mockImplementation((p) => p === mockPath);
 
-      expect(internalModule.findRepoRoot("/path/to/repo/some/file.ts")).toBe(
-        "/path/to/repo",
-      );
+      expect(
+        internalModule.findRepoRoot(
+          "/fredrik/projects/core/docs/silogen-docs/path/to/some/file.ts",
+        ),
+      ).toBe("/fredrik/projects/core");
     });
 
-    it("should return cwd when repository root is not found", async () => {
-      vi.spyOn(path, "parse").mockReturnValue({ root: "/" } as path.ParsedPath);
+    it("should return repo root when .git based root is not found", async () => {
+      // vi.spyOn(path, "parse").mockReturnValue({ root: "/" } as path.ParsedPath);
       vi.spyOn(fs, "existsSync").mockReturnValue(false);
-      vi.spyOn(process, "cwd").mockReturnValue(
-        "/mocked/current/working/directory",
-      );
+      vi.spyOn(process, "cwd").mockReturnValue("/app");
 
-      expect(internalModule.findRepoRoot("/path/to/file.ts")).toBe(
-        "/mocked/current/working/directory",
-      );
+      // should be two levels up since we're in a Docker build context and the repo root is two levels up
+      expect(internalModule.findRepoRoot("/app")).toBe("/app");
     });
   });
 
   describe("getRelativeFilePath", () => {
-    it("should return the relative file path when repo root is found", async () => {
-      const mockFindRepoRoot = vi.fn().mockReturnValue("/path/to/repo/some");
+    it("should return the relative file path when the real repo root is found", async () => {
+      const mockFindRepoRoot = vi
+        .fn()
+        .mockReturnValue("/users/fredrik/projects/core");
 
-      vi.spyOn(path, "dirname").mockReturnValue("/path/to/repo/some");
-      vi.spyOn(path, "parse").mockReturnValue({ root: "/" } as path.ParsedPath);
-      vi.spyOn(path, "relative").mockReturnValue("some/file.ts");
+      vi.spyOn(process, "cwd").mockReturnValue(
+        path.join(mockFindRepoRoot(), "docs/silogen-docs"),
+      );
 
       const result = internalModule.getRelativeFilePath(
-        "/path/to/repo/some/file.ts",
+        "/users/fredrik/projects/core/docs/silogen-docs/file.ts",
         mockFindRepoRoot,
       );
       expect(mockFindRepoRoot).toHaveBeenCalled();
-      expect(result).toBe("some/file.ts");
+      expect(result).toBe("docs/silogen-docs/file.ts");
+    });
+
+    it("should return the relative file path when repo root does not exist", async () => {
+      const mockFindRepoRoot = vi.fn().mockReturnValue("/app");
+
+      vi.spyOn(process, "cwd").mockReturnValue(mockFindRepoRoot());
+
+      const result = internalModule.getRelativeFilePath(
+        "/app/file.ts",
+        mockFindRepoRoot,
+      );
+      expect(mockFindRepoRoot).toHaveBeenCalled();
+      expect(result).toBe("docs/silogen-docs/file.ts");
     });
   });
 

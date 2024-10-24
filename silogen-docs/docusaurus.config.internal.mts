@@ -20,18 +20,14 @@ function clearFileMetadataCache(): void {
   );
 }
 
-// async function getAuthors(filePath: string, balja = "kalle") {
-//   // Do whatever you want here to create a list of authors for each file
-//   // you can read Git history if you want, or any other source
-//   return [
-//     { name: "Seb", picture: "https://github.com/slorber.png" },
-//     { name: "Joshua", picture: "https://github.com/Josh-Cena.png" },
-//   ];
-// }
+const REPO_ROOT_PREFIX = "docs/silogen-docs";
+// const LEVELS_TO_REPO_ROOT = REPO_ROOT_PREFIX.split('/').length;
 
 // Function to find the repository root
 function findRepoRoot(startPath: string): string {
   let currentPath = path.resolve(startPath);
+
+  // For local development, search for .git directory
   while (currentPath !== path.dirname(currentPath)) {
     if (fs.existsSync(path.join(currentPath, ".git"))) {
       return currentPath;
@@ -46,13 +42,16 @@ function getRelativeFilePath(
   filePath: string,
   findFunction = findRepoRoot,
 ): string | null {
-  const dir = path.dirname(filePath);
-  const repoRoot = findFunction(dir);
-  if (repoRoot) {
-    const relativePath = path.relative(repoRoot, filePath);
-    return relativePath;
+  const projectRoot = process.cwd();
+  const repoRoot = findFunction(projectRoot);
+
+  if (repoRoot === projectRoot) {
+    // We're in the Docker build context
+    return path.join(REPO_ROOT_PREFIX, path.relative(projectRoot, filePath));
+  } else {
+    // We're in local development
+    return path.relative(repoRoot, filePath);
   }
-  return null;
 }
 
 function getEnvironmentVariables(): {
@@ -162,6 +161,15 @@ async function getFileMetadata(
       authors,
       lastEdited: lastCommitDate,
     };
+
+    console.log(
+      "Metadata for original filepath ",
+      filePath,
+      " converted to relative ",
+      relativeFilePath,
+      ":",
+      metadata,
+    );
 
     fileMetadataCache[filePath] = metadata;
     return metadata;

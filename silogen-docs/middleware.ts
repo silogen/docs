@@ -15,9 +15,12 @@ export const authorize = (req: NextRequestWithAuth) => {
 
   const decoded = jsonwebtoken.decode(token.accessToken as string);
   if (typeof decoded !== "object" || decoded === null) {
-    throw new Error(
+    console.error(
       "Decoded token must be an object (is " + typeof decoded + ")",
     );
+    const redirectUrl = new URL("/api/auth/signin?csrf=true", req.url);
+    console.log(NextResponse.redirect(redirectUrl));
+    return NextResponse.redirect(redirectUrl);
   }
 
   const roles = decoded?.realm_access?.roles || [];
