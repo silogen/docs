@@ -183,7 +183,6 @@ const config: Config = {
   title: "SiloGen INTERNAL Docs",
   tagline: "Custom LLMs made easy.",
   favicon: "img/favicon.ico",
-  trailingSlash: false,
   // with these static dirs we don't get the CNAME file in the build
   staticDirectories: ["public"],
 

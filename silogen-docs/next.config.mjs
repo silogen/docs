@@ -8,6 +8,7 @@ const config = {
 
     return config;
   },
+  trailingSlash: true,
   async rewrites() {
     return [
       {
@@ -15,8 +16,8 @@ const config = {
         destination: "/index.html",
       },
       {
-        source: "/admin",
-        destination: "/admin/index.html",
+        source: "/:path*",
+        destination: "/:path*/index.html",
       },
     ];
   },
