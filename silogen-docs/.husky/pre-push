@@ -2,8 +2,8 @@
 # end this script as soon as any command fails
 set -e
 
-# Run only if there are changes in the docs/silogen-docs directory
-if git diff --name-only HEAD^ HEAD | grep --quiet "docs/silogen-docs"; then
+# Run only if there are changes in the docs/silogen-docs directory (committed or staged/unstaged)
+if { git diff --name-only HEAD^ HEAD; git status -uno --porcelain; } | grep --quiet "docs/silogen-docs"; then
 
     # Change to docs/silogen-docs from any path
     git_root=$(git rev-parse --show-toplevel)
