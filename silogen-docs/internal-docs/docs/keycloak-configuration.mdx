@@ -49,3 +49,7 @@ Roles are used to assign special capabilities to users or groups. If you assign 
 - **document_collection_admin** : It allows users to modify a collection by adding or removing documents. It is like a "write access" to a collection. It is automatically included if the user has role "customer_developer" which is needed for the user to access the developer console.
 - **save_context_urls** : It allows a user to upload documents to a personal collection. This is configured usually per group. If the group has this role, any user connecting with this account will have this feature turned on.
 - **feedback_mode_available**: Role to control access to the feedback collection feature in the chat UI
+
+### Configuring Access to Collections
+
+Access to document collections is based on group on Keycloak. Each user belongs to a group which has an organization attribute. Each collection has an organization attribute which corresponds to the organization which owns it. There is also an `access_control_list[]` field on the collection which corresponds to the other organizations which have access to it. When a collection is created (via API), the organization of the user creating it is used as the owning organization. You can manage the other organizations' access through the API; specify it in the `POST` request when creating it or edit it later in a `PUT` request.

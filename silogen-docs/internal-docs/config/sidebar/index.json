@@ -85,6 +85,10 @@
     {
       "document": "internal-docs/docs/api-documentation.mdx",
       "_template": "doc"
+    },
+    {
+      "document": "internal-docs/docs/faq.mdx",
+      "_template": "doc"
     }
   ]
 }
