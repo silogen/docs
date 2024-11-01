@@ -2,6 +2,15 @@
 # end this script as soon as any command fails
 set -e
 
+# Check if this is a tag-only push by examining the arguments passed to pre-push
+while read local_ref local_sha remote_ref remote_sha
+do
+    # Skip if pushing tags
+    if [[ $local_ref == refs/tags/* ]]; then
+        exit 0
+    fi
+done
+
 # Run only if there are changes in the docs/silogen-docs directory (committed or staged/unstaged)
 if { git diff --name-only HEAD^ HEAD; git status -uno --porcelain; } | grep --quiet "docs/silogen-docs"; then
 
