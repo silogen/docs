@@ -3,7 +3,7 @@
   "items": [
     {
       "document": "internal-docs/docs/index.mdx",
-      "label": "Start here",
+      "label": "Start Here",
       "_template": "doc"
     },
     {
@@ -84,6 +84,10 @@
     },
     {
       "document": "internal-docs/docs/api-documentation.mdx",
+      "_template": "doc"
+    },
+    {
+      "document": "internal-docs/docs/testing.mdx",
       "_template": "doc"
     },
     {

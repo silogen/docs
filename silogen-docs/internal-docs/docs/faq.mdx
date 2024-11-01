@@ -48,3 +48,41 @@ Here are the steps (with sample commits and API docs):
 - Create a collection with the new embedding server: https://document-collection.dev.silogen.ai/docs#/collections/create_collection_v1_collections_post
 
 [[slack thread](https://siloai-internal.slack.com/archives/C068NU8J8SE/p1724741469174149?thread_ts=1724740641.071109&cid=C068NU8J8SE)]
+
+### Is it possible to use the OpenAI chat completions Python library to include all the below parameters supported in our API?
+
+Yes `extra_body` parameter is your answer: any named parameter that is not an explicit named parameter in the `completions.create()` call can be added in a dict passed in through `extra_body` parameter. [[slack thread](https://siloai-internal.slack.com/archives/C061MM9E9A5/p1718028620650739)]
+
+#### Example
+
+```python
+completion = client.chat.completions.create(
+    model=MODEL_ID,
+    messages=history_openai_format,
+    temperature=TEMPERATURE,
+    stream=STREAM,
+    extra_headers=AUTHORIZATION_HEADER,
+    extra_body=(
+        {
+            "collection": {
+                "collectionId": RAG_COLLECTION_ID,
+                "certainty": RAG_CERTAINTY,
+                "top_k": RAG_TOP_K,
+            },
+            "debug": RAG_DEBUG,
+        }
+        if RAG_COLLECTION_ID
+        else None
+    ),
+)  # type: ignore
+```
+
+<Admonition type="note" title="note">
+  Also see the [Common Parameters and
+  Values](https://docs.silogen.ai/using-the-api/llm-service/common-parameters)
+  in the external documentation for more details.
+</Admonition>
+
+### How do I sign my commits?
+
+Check the README in the [platform repository](https://github.com/silogen/platform?tab=readme-ov-file#signing-commits). [[slack thread](https://siloai-internal.slack.com/archives/C068NU8J8SE/p1711627079291349)]
