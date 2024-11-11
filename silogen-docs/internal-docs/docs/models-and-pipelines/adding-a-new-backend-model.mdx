@@ -53,7 +53,9 @@ Note that each environment (dev, staging, and production) has its own catalog!
    python inference chat "\<\<model pipeline with version\>\>" "Prompt here" -c "your collection, if used"
    ```
 
-   If the model supports chat completion, use either `/v1/chat/completions` API or the chat UI (or developer console) to prompt the model. If the model only supports non-chat completions, use `/v1/completions` from the API. 1. If the pipeline does not deploy, there can be multiple causes:
+   If the model supports chat completion, use either `/v1/chat/completions` API or the chat UI (or developer console) to prompt the model. If the model only supports non-chat completions, use `/v1/completions` from the API.
+
+1. If the pipeline does not deploy, there can be multiple causes:
 
    1. Resource limits are not set high enough. See 2e.
    1. There are no available nodes in our cluster which fit the resource requirements. Either the requirements are too high, or we have run out of nodes. If you suspect the latter case, contact the platform team.
@@ -67,5 +69,10 @@ Note that each environment (dev, staging, and production) has its own catalog!
    silodev auth login
    silodev models undeploy --prefix '' "\<\<full pipeline name with organisation and version\>\>"
    ```
-1. If the pipeline works as intended, edit it to mark it as `status: ready` (at the very bottom of the config). This will also mark the underlying inference model as `status: ready`. Any `status: ready` entries cannot be edited anymore – editing with `model_catalog manage` will result in a new version of that pipeline or model.
+1. If the pipeline works as intended, edit it to mark it as `status: ready` (there might be 4 places that say `status: incomplete`. Edit all of them). This will also mark the underlying inference model as `status: ready`. Any `status: ready` entries cannot be edited anymore – editing with `model_catalog manage` will result in a new version of that pipeline or model.
 1. Set the pipeline as stable if it has been evaluated or needs to be available without version information (usual for external customers): `model_catalog set-stable pipeline -h`. This will allow prompting the pipeline without version information in its name. In the future, stable: true should only be reserved for pipelines that have been evaluated
+
+   <Admonition type="note" title="Note">
+     Propmpting without version is possible when the pipeline is stable but
+     deploying is not. For deploying you always need to specify the version.
+   </Admonition>
