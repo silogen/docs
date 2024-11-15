@@ -65,11 +65,12 @@ Note that each environment (dev, staging, and production) has its own catalog!
    1. Note that any editing needs to be done to an undeployed pipeline. Undeploy, edit, redeploy. This goes also for the next part.
 
 1. Undeploy your pipeline
-1. ```bash
+   ```bash
    silodev auth login
    silodev models undeploy --prefix '' "\<\<full pipeline name with organisation and version\>\>"
    ```
 1. If the pipeline works as intended, edit it to mark it as `status: ready` (there might be 4 places that say `status: incomplete`. Edit all of them). This will also mark the underlying inference model as `status: ready`. Any `status: ready` entries cannot be edited anymore – editing with `model_catalog manage` will result in a new version of that pipeline or model.
+
 1. Set the pipeline as stable if it has been evaluated or needs to be available without version information (usual for external customers): `model_catalog set-stable pipeline -h`. This will allow prompting the pipeline without version information in its name. In the future, stable: true should only be reserved for pipelines that have been evaluated
 
    <Admonition type="note" title="Note">
