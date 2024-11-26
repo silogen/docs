@@ -17,7 +17,7 @@ One of the first steps to take towards fine-tuning your model is to upload train
 The training data should represent a wide range of indicative conversations that you would like your model to respond to as part of inference.
 
 Once you have procured training data for your model, navigate to the [Datasets page](https://chat.services.silogen.ai/console/datasets) of the developer console to upload the dataset.
-We currently support uploading datasets in a JSONL format, where each row represents a separate chat conversation. The format of each row should correspond to what is defined in our [API](https://catalog.services.silogen.ai/redoc#tag/Datasets/operation/add_data_point) for each datapoint, of type ChatConversation.
+We currently support uploading datasets in a JSONL format, where each row represents a separate chat conversation. The format of each row should correspond to what is defined in our [specification](datasets.mdx#fine-tuning) for each datapoint.
 
 Subsequently, click the "Upload" button and drop your JSONL file in with a name and description
 
@@ -32,7 +32,7 @@ You can browse the list of accessible base-models by navigating back to the [Mod
 ## Creating a fine-tuned model
 
 Once you have selected a dataset and a base-model for finetuning, trigger the creation of your fine-tuned model by clicking the "Create New" button and selecting appropriate entries.
-You must provide your model a name and a description and can optionally specify any of 3 hyperparameters: Batch-size, Learning-rate multiplier and Number of epochs. If you are unsure of the values to use, leave the inputs empty, to auto select the default certified values.
+You must provide your model a name and can optionally specify a description and any of 3 hyperparameters: Batch-size, Learning-rate multiplier and Number of epochs. If you are unsure of the values to use, leave the inputs empty, to auto select the default certified values.
 
 ![Create fine-tuned model](/img/finetuning/trigger-finetuning.png)
 
@@ -49,7 +49,7 @@ Click the "Deploy button" corresponding the model you would like to deploy, and 
 
 Once deployed, you can navigate either to the [Chat page](https://chat.services.silogen.ai/console/chat) or the [Compare page](https://chat.services.silogen.ai/console/chat) to converse with the model or the [Evaluations page](https://chat.services.silogen.ai/console/evaluations) to evaluate the performance of your model against a pre-defined evaluation dataset.
 
-After your have verified that your model performs as per expectations, you can copy the name of the model in the Models page, by clicking the "Copy Icon" and use the copied model name for inferencing via the API.
+After your have verified that your model performs as per expectations, you can click the "View Code" menu item on the row on the Models page and use the code snippet for inferencing via the API.
 
 ## Undeploying a fine-tuned model
 

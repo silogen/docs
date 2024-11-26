@@ -96,6 +96,16 @@
           "document": "external-docs/docs/developer-console/evaluation.mdx",
           "label": "Evaluation",
           "_template": "doc"
+        },
+        {
+          "document": "external-docs/docs/developer-console/datasets.mdx",
+          "label": "Datasets",
+          "_template": "doc"
+        },
+        {
+          "document": "external-docs/docs/developer-console/pipelines.mdx",
+          "label": "Pipelines",
+          "_template": "doc"
         }
       ],
       "_template": "category"

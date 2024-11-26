@@ -4,3 +4,4 @@
 !img
 !/img/**
 !.nojekyll
+.DS_Store
