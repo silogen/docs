@@ -47,7 +47,6 @@ Roles are used to assign special capabilities to users or groups. If you assign 
 - **converse_without_rag** : Role to control access to seeing the possibility to "disable RAG" from the chat UI. When this role is active the user will see a checkbox, which when unchecked, will disable RAG, in effect making inferencing happen without any document collection.
 - **customer_developer** : Developer role for our Customers. Currently used to manage playground access. When this role is active for a user, they will be able to open the playground from a button visible in the regular chat UI.
 - **document_collection_admin** : It allows users to modify a collection by adding or removing documents. It is like a "write access" to a collection. It is automatically included if the user has role "customer_developer" which is needed for the user to access the developer console.
-- **save_context_urls** : It allows a user to upload documents to a personal collection. This is configured usually per group. If the group has this role, any user connecting with this account will have this feature turned on.
 - **feedback_mode_available**: Role to control access to the feedback collection feature in the chat UI
 - **docs_editor**: Role that gives access to the [visual documentation](https://internal-docs.services.silogen.ai/admin) editor. See [Editing Docs](basics/editing-docs.mdx) for more information.
 
