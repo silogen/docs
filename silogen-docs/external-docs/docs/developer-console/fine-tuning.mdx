@@ -58,3 +58,18 @@ Once you have deployed a version of a fine-tuned model, it might be the case tha
 This will make the model no longer accessible for inferencing.
 
 ![Undeploy fine-tuned model](/img/finetuning/undeploy-finetuned-model.png)
+
+## Adapter merging
+
+While adapters allow you deploy multiple fine-tuned models in a cost efficient way, it comes at a penalty of performance: A deployment of an adapter will always be less performant than a deployment of a single model.
+To enable usage of our fine-tuned models in a high performance use-case, we allow you to merge an adapter with the base model to create a new model with the merged weights. This new model can then be deployed independently of the base model.
+
+To merge an adapter back into the base model, click the context menu of the adapter you would like to merge and click the "Merge" button. Provide a new unique name for the merged model and click "Merge".
+
+Once the merge process is complete, the new model will be visible in the list of models.
+
+![Merge adapter](/img/finetuning/merge-adapter.png)
+
+![Merged adapter details](/img/finetuning/merge-adapter-modal.png)
+
+You can view the details of the merge process in the "Fine-tuning status" section of the page
