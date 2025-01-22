@@ -101,7 +101,6 @@ export function signInLogic(
   if (accountProvider === "keycloak" && profileEmail && profileEmailVerified) {
     logger.info("signIn account: " + profileEmail);
 
-    // customerSettings must exist and profile email must be verified.
     return profileEmailVerified;
   }
   return false;
