@@ -66,10 +66,6 @@
         {
           "document": "internal-docs/docs/workflows/flyte.mdx",
           "_template": "doc"
-        },
-        {
-          "document": "internal-docs/docs/workflows/dagster.mdx",
-          "_template": "doc"
         }
       ],
       "_template": "category"
