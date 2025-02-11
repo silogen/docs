@@ -1,4 +1,4 @@
-FROM node:18-alpine AS base
+FROM node:22-alpine AS base
 
 # Install dependencies only when needed
 FROM base AS deps
@@ -36,7 +36,7 @@ COPY .env.local.dummy .env.local
 # ENV NO_TELEMETRY 1
 
 RUN \
-  if [ -f pnpm-lock.yaml ]; then corepack enable pnpm && pnpm run build; \
+  if [ -f pnpm-lock.yaml ]; then npm install -g pnpm && pnpm run build; \
   else echo "Lockfile not found." && exit 1; \
   fi
 

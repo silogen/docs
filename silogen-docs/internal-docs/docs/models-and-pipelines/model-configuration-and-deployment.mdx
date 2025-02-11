@@ -9,7 +9,7 @@ The model catalog is a fairly new feature, and some tricks and attention are nee
 
 Because the model catalog CLI does not yet have a separate service and API in the cluster, it needs to be set up locally.
 
-Note that each environment (dev, staging, and production) has its own catalog!
+Note that each environment (dev, production) has its own catalog!
 
 ```bash
 git clone git@github.com:silogen/core.git
@@ -20,7 +20,7 @@ source core/tooling/catalog-connection.bash
 model_catalog --help
 ```
 
-If you do not have the proper access to use `silodev env activate` (errors regarding permissions when trying to run it), switch environments with `kubectl config use-context production (or dev, staging)`.
+If you do not have the proper access to use `silodev env activate` (errors regarding permissions when trying to run it), switch environments with `kubectl config use-context production (or dev)`.
 
 Currently you should make sure you have the same model_catalog code version on your local machine as what is running in the cluster environments! This is tricky to set up, you may need to look up the correct version from ArgoCD or elsewhere. If you know the right version, you can checkout that version of the code by running:
 
