@@ -3,7 +3,8 @@
 set -e
 
 # Check if this is a tag-only push by examining the arguments passed to pre-push
-while read local_ref local_sha remote_ref remote_sha
+# shellcheck disable=SC2034  # These variables are provided by Git but we only use local_ref
+while read -r local_ref local_sha remote_ref remote_sha
 do
     # Skip if pushing tags
     if [[ $local_ref == refs/tags/* ]]; then
