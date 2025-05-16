@@ -14,7 +14,8 @@ jobs:
       
       - name: Install dependencies
         run: |
-          apt install weasyprint
+          sudo apt-get update
+          sudo apt install weasyprint
       
       - name: Deploy docs
         uses: mhausenblas/mkdocs-deploy-gh-pages@master
