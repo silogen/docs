@@ -1,6 +1,7 @@
 ---
 tags:
   - introduction
+  - target audience
 ---
 
 # The target audience of SiloGen platform

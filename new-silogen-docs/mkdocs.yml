@@ -98,7 +98,7 @@ nav:
 
   - AI development:
     - Overview: ai-development/overview.md
-    - AI Catalogue: ai-development/ai-catalogue.md
+    - AI catalogue: ai-development/ai-catalogue.md
     - Fine-tuning: ai-development/fine-tuning.md
     - Inference: ai-development/inference.md
     # - Running AI workloads from GUI (Developer Center): ai-development/developer-center.md

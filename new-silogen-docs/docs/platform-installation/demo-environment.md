@@ -1,10 +1,18 @@
+---
+tags:
+  - platform
+  - installation
+  - demo environment
+  - kubernetes
+---
+
 # Installing a demo environment
 
 This guide covers the process for installing and configuring a Kubernetes cluster from metal to model in a streamlined manner.
 
 The demo environment runs on top of Kubernetes platform and includes some necessary Kubernetes platform components for monitoring, secrets management and certificate management.
 
-The installation process leverages helper tools called **ClusterBloom** and **Cluster Forge** that deploys and configures all necessary platform components, preparing a Kubernetes cluster for executing AI workloads.
+The installation process leverages helper tools called **Cluster Bloom** and **Cluster Forge** that deploy and configure all necessary platform components, preparing a Kubernetes cluster for executing AI workloads.
 
 ## Prerequisites
 
@@ -18,9 +26,9 @@ The installation process leverages helper tools called **ClusterBloom** and **Cl
 
 Please choose the appropriate install scenario based on your infrastructure preferences.
 
-### How to set up a Kubernetes cluster with ClusterBloom (no existing Kubernetes cluster)
+### How to set up a Kubernetes cluster with Cluster Bloom (no existing Kubernetes cluster)
 
-Use **ClusterBloom** to install and configure a kubernetes cluster. It installs the following features to prepare a (primarily AMD GPU) node to be part of a Kubernetes cluster:
+Use **Cluster Bloom** to install and configure a Kubernetes cluster. It installs the following features to prepare a (primarily AMD GPU) node to be part of a Kubernetes cluster:
 
 - Automated RKE2 Kubernetes cluster deployment
 - ROCm setup and configuration for AMD GPU nodes
@@ -30,7 +38,7 @@ Use **ClusterBloom** to install and configure a kubernetes cluster. It installs 
 - Cluster Forge integration
 
 ### Installation procedure
-Download the latest ClusterBloom release (adjust the URL to the release of your preference):
+Download the latest Cluster Bloom release (adjust the URL to the release of your preference):
 ```
 wget https://github.com/silogen/cluster-bloom/releases/latest/download/bloom
 ```
@@ -39,19 +47,19 @@ and run:
 sudo ./bloom
 ```
 
-The ClusterBloom interface will appear:
+The Cluster Bloom interface will appear:
 
-![ClusterBloom Interface](../media/bloom.png)
+![Cluster Bloom Interface](../media/bloom.png)
 
 For systems with unmounted physical disks, a selection prompt will appear:
 
-![ClusterBloom Disk Selection](../media/bloom-disk-selection.png)
+![Cluster Bloom Disk Selection](../media/bloom-disk-selection.png)
 
-After successful installation, ClusterBloom generates `additional_node_command.txt` that contains the command for installing additional nodes into the cluster.
+After successful installation, Cluster Bloom generates `additional_node_command.txt` that contains the command for installing additional nodes into the cluster.
 
 ### Install Kubernetes components into an existing Kubernetes cluster
 
-To enable running AI workloads on SiloGen platform on an existing Kubernetes cluster, download a Cluster Forge release package and run `deploy.sh`. This assumes there is a working Kubernetes cluster to deploy into, and the current KUBECONFIG context refers to that cluster.
+To enable running AI workloads on SiloGen platform on an existing Kubernetes cluster, download a Cluster Forge release package and run `deploy.sh`. This assumes there is a working Kubernetes cluster to deploy into, and the current Kubeconfig context refers to that cluster.
 
 For Cluster Forge `deploy` release:
 
@@ -65,9 +73,9 @@ sudo bash clusterforge/deploy.sh
 
 Verify successful installation by running TinyLlama workloads in
 [here](../ai-workloads/workloads/llm-inference-vllm/helm/README.md)
-You can confirm that services are running in the cluster using K9s, a terminal-based UI for Kubernetes clusters, which is installed by ClusterBloom. 
+You can confirm that services are running in the cluster using K9s, a terminal-based UI for Kubernetes clusters, which is installed by Cluster Bloom.
 
-# Appendix
+## Appendix
 
 - Cluster Forge: [https://github.com/silogen/cluster-forge](https://github.com/silogen/cluster-forge)
-- ClusterBloom: [https://github.com/silogen/cluster-bloom](https://github.com/silogen/cluster-bloom)
+- Cluster Bloom: [https://github.com/silogen/cluster-bloom](https://github.com/silogen/cluster-bloom)

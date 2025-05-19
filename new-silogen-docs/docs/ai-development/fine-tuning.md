@@ -1,6 +1,12 @@
+---
+tags:
+  - developer center
+  - fine-tuning
+---
+
 # Fine-tuning
 
-Fine-tuning a model allows you to customize it to your specific use-case with your data. We provide a certified list of base-models which you can finetune and we allow you to customize certain hyperparameters to get the best results.
+Fine-tuning a model allows you to customize it to your specific use case with your data. We provide a certified list of base models which you can fine-tune and we allow you to customize certain hyperparameters to get the best results.
 
 Fine-tuned models can be deployed and subsequently be used for evaluation and inferencing once weights for the model have been computed.
 
@@ -8,7 +14,7 @@ Fine-tuned models can be deployed and subsequently be used for evaluation and in
 
 ### Uploading training data
 
-One of the first steps to take towards fine-tuning your model is to upload training data to our platform. The training data should represent a wide range of indicative conversations that you would like your model to respond to as part of inference.
+One of the first steps to take towards fine-tuning your model is to upload training data to the platform. The training data should represent a wide range of indicative conversations that you would like your model to respond to as part of inference.
 
 Once you have procured training data for your model, navigate to the "Datasets" page of the developer console to upload the dataset. We currently support uploading datasets in a JSONL format, where each row represents a separate chat conversation.
 
@@ -20,7 +26,7 @@ Subsequently, click the "Upload" button and drop your JSONL file in with a name 
 
 You can trigger the creation of your fine-tuned model by clicking the "Fine-Tune Model" button and selecting appropriate entries.
 
-You must provide your model a name and can optionally specify a description and any of 3 hyperparameters: Batch-size, Learning-rate multiplier and Number of epochs. If you are unsure of the values to use, leave the inputs empty, to auto select the default certified values.
+You must provide your model a name and can optionally specify a description and any of the three hyperparameters: batch-size, learning-rate multiplier and number of epochs. If you are unsure of the values to use, leave the fields empty, to auto-select the default certified values.
 
 ![Create fine-tuned model](../media/finetuning/trigger-finetuning.png)
 

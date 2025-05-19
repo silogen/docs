@@ -1,3 +1,10 @@
+---
+tags:
+  - platform
+  - installation
+  - demo environment
+---
+
 # Platform installation and setup
 
 ## Overview

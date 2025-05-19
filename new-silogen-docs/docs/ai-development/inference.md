@@ -1,3 +1,10 @@
+---
+tags:
+  - developer center
+  - inference
+  - chat
+---
+
 # Model inference
 
 ## Developer Center Playground - Chat
@@ -21,12 +28,12 @@ Once you have a response from the model, you can inspect the messages that were 
 
 ![Debug Output](../media/inference/debug-output.png)
 
-## Tutorials & examples
+## Tutorials and examples
 
 This section contains examples and reference workloads for running model inference on SiloGen platform.
 
-[Model Inferencing using SGLang](../ai-workloads/workloads/llm-inference-sglang/helm/README.md)
+[Model inferencing using SGLang](../ai-workloads/workloads/llm-inference-sglang/helm/README.md)
 
-[Model Inferencing using vLLM](../ai-workloads/workloads/llm-inference-vllm/helm/README.md)
+[Model inferencing using vLLM](../ai-workloads/workloads/llm-inference-vllm/helm/README.md)
 
 [Using your own model and data](../ai-workloads/docs/tutorials/tutorial-01-deliver-resources-and-finetune.md#next-steps-how-to-use-your-own-model-and-data)
