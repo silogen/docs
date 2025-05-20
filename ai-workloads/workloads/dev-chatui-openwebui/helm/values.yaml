@@ -1,0 +1,62 @@
+metadata:
+  labels: {}
+
+image: "ghcr.io/open-webui/open-webui:main"
+imagePullPolicy: Always
+
+env_vars:
+  OPENAI_API_BASE_URLS: ""
+  ANONYMIZED_TELEMETRY: "false"
+  DO_NOT_TRACK: "true"
+  ENABLE_OLLAMA_API: "false"
+  ENABLE_OPENAI_API: "true"
+  ENABLE_SIGNUP: "false"
+  SCARF_NO_ANALYTICS: "true"
+  WEBUI_AUTH: "false"
+
+storage:
+  ephemeral:
+    quantity: 20Gi
+    storageClassName: mlstorage
+    accessModes:
+      - ReadWriteOnce
+  dshm:
+    sizeLimit: 32Gi
+
+deployment:
+  ports:
+    http: 8080
+
+# startupProbe - checks if the container has successfully started. It disables liveness and readiness probes until it succeeds, useful for slow-starting applications.
+# livenessProbe - checks if the container is still alive. If it fails, Kubernetes restarts the container to recover from failure.
+# readinessProbe - checks if the container is ready to serve traffic. If it fails, the container is removed from the service's endpoints but remains running.
+# ref: https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/
+# ref: https://github.com/open-webui/helm-charts/blob/main/charts/open-webui/values.yaml
+startupProbe:
+  httpGet:
+    path: /health
+    port: http
+  initialDelaySeconds: 30
+  periodSeconds: 5
+  failureThreshold: 20
+livenessProbe:
+  httpGet:
+    path: /health
+    port: http
+  failureThreshold: 1
+  periodSeconds: 10
+readinessProbe:
+  httpGet:
+    path: /health/db
+    port: http
+  failureThreshold: 1
+  periodSeconds: 10
+
+entrypoint: |
+  pip install kubernetes
+  export OPENAI_API_BASE_URLS=`python /workload/mount/get_openai_api_base_urls.py`
+  bash start.sh
+
+# kaiwo settings (if enabled, use kaiwo CRDs to have kaiwo operator manage the workload)
+kaiwo:
+  enabled: false

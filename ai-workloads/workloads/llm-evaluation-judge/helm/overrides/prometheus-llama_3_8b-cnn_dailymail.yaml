@@ -1,0 +1,16 @@
+# Values file for running bertscore evaluation for Llama-3.1-8B on the cnn-dailymail summarization dataset
+model_inference_container:
+  image: rocm/vllm-dev:20241205-tuned
+  model: llama-3.2-3B
+  model_path: meta-llama/Llama-3.2-3B-Instruct
+  # model: tinyllm
+  # model_path: arnir0/Tiny-LLM
+  # max_model_len: 1024
+judge_inference_container:
+  model: llama-3.2-3B
+  model_path: meta-llama/Llama-3.2-3B-Instruct
+  # model: tinyllm
+  # model_path: arnir0/Tiny-LLM
+  # max_model_len: 1024
+judge_evaluation_container:
+  image: ghcr.io/silogen/evaluation-workloads-metrics-debug:v0.1

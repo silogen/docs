@@ -1,0 +1,109 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "metadata": {
+      "type": "object",
+      "properties": {
+        "labels": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "image": {
+      "type": "string"
+    },
+    "imagePullPolicy": {
+      "type": "string"
+    },
+    "env_vars": {
+      "type": "object",
+      "additionalProperties": {
+        "type": ["string", "object"]
+      }
+    },
+    "storage": {
+      "type": "object",
+      "properties": {
+        "ephemeral": {
+          "type": "object",
+          "properties": {
+            "quantity": {
+              "type": "string"
+            },
+            "storageClassName": {
+              "type": "string"
+            },
+            "accessModes": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "dshm": {
+          "type": "object",
+          "properties": {
+            "sizeLimit": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "deployment": {
+      "type": "object",
+      "properties": {
+        "ports": {
+          "type": "object",
+          "properties": {
+            "http": {
+              "type": "integer",
+              "description": "HTTP port for the deployment"
+            }
+          },
+          "required": ["http"]
+        }
+      }
+    },
+    "entrypoint": {
+      "type": "string"
+    },
+    "kaiwo": {
+      "type": "object",
+      "properties": {
+        "enabled": {
+          "type": "boolean",
+          "description": "If true, use Kaiwo CRDs to have Kaiwo operator manage the workload"
+        }
+      }
+    },
+    "startupProbe": {
+      "type": ["object"],
+      "additionalProperties": true
+    },
+    "livenessProbe": {
+      "type": ["object"],
+      "additionalProperties": true
+    },
+    "readinessProbe": {
+      "type": ["object"],
+      "additionalProperties": true
+    }
+  },
+  "required": [
+    "image",
+    "imagePullPolicy",
+    "storage",
+    "deployment",
+    "kaiwo",
+    "startupProbe",
+    "livenessProbe",
+    "readinessProbe"
+  ],
+  "additionalProperties": false
+}

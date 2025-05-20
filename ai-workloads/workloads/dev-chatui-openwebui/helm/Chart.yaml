@@ -1,0 +1,4 @@
+apiVersion: v2
+name: dev-chatui-openwebui
+description: OpenWebUI for deployed LLM services
+version: 0.0.1

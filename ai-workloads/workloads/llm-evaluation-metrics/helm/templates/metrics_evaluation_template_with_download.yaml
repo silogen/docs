@@ -1,0 +1,158 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: "{{ .Values.general.job_name }}"
+spec:
+  ttlSecondsAfterFinished: 3600
+  backoffLimit: 0
+  template:
+    metadata:
+      labels:
+        app: "{{ .Values.general.job_name }}"
+    spec:
+      initContainers:
+        - name: inference-vllm
+          image: "{{ .Values.model_inference_container.image }}"
+          resources:
+            limits:
+              memory: "{{ .Values.model_inference_container.memory }}"
+              cpu: "{{ .Values.model_inference_container.cpu_count }}"
+              amd.com/gpu: "{{ .Values.model_inference_container.gpu_count }}"
+            requests:
+              memory: "{{ .Values.model_inference_container.memory }}"
+              cpu: "{{ .Values.model_inference_container.cpu_count }}"
+              amd.com/gpu: "{{ .Values.model_inference_container.gpu_count }}"
+          env:
+            - name: VLLM_USE_V1
+              value: "1"
+            - name: VLLM_NO_USAGE_STATS
+              value: "1"
+            - name: DO_NOT_TRACK
+              value: "1"
+            - name: HF_HOME
+              value: /local_models/HF_HOME
+            - name: HF_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: hf-token
+                  key: hf-token
+          command: ["sh", "-c"]
+          args: # Download huggingface model to /local_models and serve it using vllm
+            - |
+              echo "Downloading model from HuggingFace...";
+              mkdir -p /workload/local_models;
+              cd /workload/local_models;
+              huggingface-cli download {{ .Values.model_inference_container.model_path }} --local-dir /workload/local_models;
+              echo "Downloaded model. Starting VLLM server...";
+              python3 -m vllm.entrypoints.openai.api_server \
+                      --host="0.0.0.0" \
+                      --port=8080 \
+                      --model="/workload/local_models/" \
+                      --tensor-parallel-size="{{ .Values.model_inference_container.tensor_parallel_size }}" \
+                      --served-model-name="{{ .Values.model_inference_container.model }}" \
+                      --max-model-len={{ .Values.model_inference_container.max_model_len }};
+          volumeMounts:
+            - name: inference-model-volume
+              mountPath: /workload
+              readOnly: false
+          restartPolicy: Always
+          # securityContext: Note: this is not included as vllm can only be run as root!
+          startupProbe:
+            httpGet:
+              path: /health
+              port: 8080
+            initialDelaySeconds: 60
+            failureThreshold: 30
+            periodSeconds: 10
+      containers:
+        - name: evaluate-with-metric
+          image: "{{ .Values.evaluation_container.image }}"
+          imagePullPolicy: Always
+          resources:
+            limits:
+              memory: "{{ .Values.evaluation_container.memory }}"
+              cpu: "{{ .Values.evaluation_container.cpu_count }}"
+              amd.com/gpu: "{{ .Values.model_inference_container.gpu_count }}"
+            requests:
+              memory: "{{ .Values.evaluation_container.memory }}"
+              cpu: "{{ .Values.evaluation_container.cpu_count }}"
+              amd.com/gpu: "{{ .Values.model_inference_container.gpu_count }}"
+          command: ["sh", "-c"]
+          args:
+            - |
+              echo "Running evaluation:\nDownloading Dataset, Running inference, Evaluating inferences with bertscore...";
+              python3 run_inference_and_metrics_evaluation.py \
+                    --llm-base-url="http://localhost" \
+                    --evaluation-dataset="{{ .Values.evaluation_container.dataset_path }}" \
+                    --evaluation-dataset-version="{{ .Values.evaluation_container.dataset_version }}" \
+                    --dataset-split="{{ .Values.evaluation_container.dataset_split }}" \
+                    --prompt-template-path="{{ .Values.evaluation_container.prompt_template_path }}" \
+                    --output-dir-path="/home/evaluation/results" \
+                    --model-name="{{ .Values.model_inference_container.model }}" \
+                    --model-path="{{ .Values.model_inference_container.model_path }}" \
+                    --maximum-context-size={{ .Values.model_inference_container.max_model_len }} \
+                    --batch-size="{{ .Values.evaluation_container.batch_size}}" \
+                    --context-column-name="{{ .Values.evaluation_container.dataset_info.context_column_name}}" \
+                    --id-column-name="{{ .Values.evaluation_container.dataset_info.id_column_name}}" \
+                    --gold-standard-column-name="{{ .Values.evaluation_container.dataset_info.gold_standard_column_name}}" ;
+          env:
+            - name: TRANSFORMERS_CACHE
+              value: /HF_HOME
+            - name: HF_HOME
+              value: /HF_HOME
+            - name: HF_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: hf-token
+                  key: hf-token
+            - name: BUCKET_STORAGE_HOST
+              value: "{{ .Values.storage.bucket_storage_host }}"
+            - name: BUCKET_STORAGE_BUCKET
+              value: "{{ .Values.storage.bucket_storage_bucket }}"
+            - name: BUCKET_STORAGE_ACCESS_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: minio-credentials
+                  key: minio-access-key
+            - name: BUCKET_STORAGE_SECRET_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: minio-credentials
+                  key: minio-secret-key
+          volumeMounts:
+            - mountPath: /workload
+              name: evaluation-volume
+              readOnly: false
+            - mountPath: /workload/mount
+              name: configmap-mount
+          securityContext:
+            allowPrivilegeEscalation: false
+            runAsNonRoot: true
+            runAsUser: 1000
+            seccompProfile:
+              type: RuntimeDefault
+            capabilities:
+              drop: ["ALL"]
+      restartPolicy: Never
+      volumes:
+        - name: inference-model-volume
+          ephemeral:
+            volumeClaimTemplate:
+              spec:
+                accessModes: [ "ReadWriteOnce" ]
+                storageClassName: "{{ .Values.storage.ephemeral.storageClassName }}"
+                resources:
+                  requests:
+                    storage: "{{ .Values.storage.ephemeral.quantity }}"
+        - name: evaluation-volume
+          ephemeral:
+            volumeClaimTemplate:
+              spec:
+                accessModes: [ "ReadWriteOnce" ]
+                storageClassName: "{{ .Values.storage.ephemeral.storageClassName }}"
+                resources:
+                  requests:
+                    storage: "{{ .Values.storage.ephemeral.quantity }}"
+        - configMap:
+            name: configmap-mount
+          name: configmap-mount

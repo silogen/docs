@@ -1,0 +1,67 @@
+$schema: "http://json-schema.org/draft-07/schema#"
+type: object
+properties:
+  external_secret:
+    type: object
+    properties:
+      setup:
+        type: boolean
+      external_secret_name:
+        type: string
+      src:
+        type: object
+        properties:
+          secret_store_name:
+            type: string
+          remote_secret_name:
+            type: string
+          access_key_name:
+            type: string
+          secret_key_name:
+            type: string
+      dest:
+        type: object
+        properties:
+          k8s_secret_name:
+            type: string
+          access_key_name:
+            type: string
+          secret_key_name:
+            type: string
+  kueue:
+    type: object
+    properties:
+      setup:
+        type: boolean
+      local_queue_name:
+        type: string
+  role:
+    type: object
+    properties:
+      setup:
+        type: boolean
+      name:
+        type: string
+      bindingName:
+        type: string
+      rules:
+        type: array
+        items:
+          type: object
+          properties:
+            apiGroups:
+              type: array
+              items:
+                type: string
+            resources:
+              type: array
+              items:
+                type: string
+            verbs:
+              type: array
+              items:
+                type: string
+required:
+  - external_secret
+  - kueue
+  - role

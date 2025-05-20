@@ -1,0 +1,54 @@
+{{- define "job" -}}
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: {{ include "release.fullname" . }}
+  labels:
+    app: {{ include "release.fullname" . }}
+    {{- range $key, $value := .Values.metadata.labels }}
+    {{ $key }}: {{ $value | quote }}
+    {{- end }}
+spec:
+  ttlSecondsAfterFinished: 3600
+  backoffLimit: 0
+  template:
+    metadata:
+      labels:
+        app: {{ include "release.fullname" . }}
+    spec:
+      restartPolicy: Never
+      containers:
+        - args:
+            - |
+              {{- include "entrypoint" . | nindent 14 }}
+          command: ["sh", "-c"]
+          env:
+            {{- include "container.env" . | nindent 12 }}
+          image: {{ .Values.image | quote}}
+          imagePullPolicy: {{ default "Always" .Values.imagePullPolicy | quote }}
+          name: {{ .Chart.Name }}
+          ports:
+            - containerPort: {{ .Values.deployment.port }}
+          resources:
+            {{- include "container.resources" . | nindent 12 }}
+          volumeMounts:
+            {{- include "container.volumeMounts" . | nindent 12 }}
+      volumes:
+        {{- include "container.volumes" . | nindent 8 }}
+{{- end -}}
+
+{{- define "job_wrapped_with_kaiwojob" -}}
+apiVersion: kaiwo.silogen.ai/v1alpha1
+kind: KaiwoJob
+metadata:
+  name: {{ include "release.fullname" . }}
+spec:
+  job:
+    {{- include "job" . | nindent 4 }}
+{{- end -}}
+
+{{- if .Values.kaiwo.enabled -}}
+{{- include "job_wrapped_with_kaiwojob" . }}
+{{- else -}}
+{{- include "job" . }}
+{{- end -}}

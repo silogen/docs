@@ -1,0 +1,34 @@
+general:
+  job_name: evaluation-metrics
+model_inference_container:
+  image: rocm/vllm-dev:20241205-tuned
+  memory: 24Gi
+  gpu_count: 1
+  cpu_count: 2
+  model: llama-3.1-8B
+  model_path: meta-llama/Llama-3.1-8B-Instruct
+  tensor_parallel_size: 1
+  max_model_len: 2048
+evaluation_container:
+  image: ghcr.io/silogen/evaluation-workloads-metrics:v0.1
+  memory: 24Gi
+  gpu_count: 1
+  cpu_count: 2
+  metric: bertscore
+  dataset_path: abisee/cnn_dailymail
+  dataset_version: 3.0.0
+  dataset_split: test
+  prompt_template_path: /workload/mount/summarization_prompt_template.txt
+  batch_size: 50
+  dataset_info:
+    context_column_name: article
+    id_column_name: id
+    gold_standard_column_name: highlights
+storage:
+  ephemeral:
+    quantity: 100Gi
+    storageClassName: mlstorage
+    accessModes:
+      - ReadWriteOnce
+  bucket_storage_host: minio.minio-tenant-default.svc.cluster.local:80
+  bucket_storage_bucket: default-bucket

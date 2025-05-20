@@ -1,0 +1,123 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: {{ include "release.fullname" . }}
+  {{- if .Values.metadata.labels }}
+  labels:
+    {{- range $key, $value := .Values.metadata.labels }}
+    {{ $key }}: {{ $value | quote }}
+    {{- end }}
+  {{- end }}
+spec:
+  ttlSecondsAfterFinished: 3600
+  backoffLimit: 0
+  template:
+    spec:
+      restartPolicy: Never
+      volumes:
+        {{- include "container.volumes" . | nindent 8 }}
+      initContainers:
+        - name: download
+          image: "{{ .Values.logistics.image }}"
+          imagePullPolicy: Always
+          command: ["sh", "-euc"]
+          args:
+            - |
+              # Setup MinIO, Download resources:
+              mc alias set minio-host $${BUCKET_STORAGE_HOST} $${BUCKET_STORAGE_ACCESS_KEY} $${BUCKET_STORAGE_SECRET_KEY};
+              echo "Copying data to container...";
+              mc cp -r minio-host/{{ .Values.remote_data_dir_path | trimSuffix "/" }}/{{ .Values.remote_data_name_prefix }} /local_resources/data;
+              echo "Copying tokenizer to container...";
+              mc cp -r minio-host/{{ .Values.remote_tokenizer_path | trimSuffix "/" }}/ /local_resources/tokenizer;
+              echo "Copying model checkpoint to container...";
+              mc cp -r minio-host/{{ .Values.remote_base_model_path | trimSuffix "/" }}/ /local_resources/basemodel;
+          resources:
+            limits:
+              memory: "1Gi"
+              cpu: "1"
+            requests:
+              memory: "1Gi"
+              cpu: "1"
+          env:
+            {{- include "logistics.container.env" . | nindent 12 }}
+          volumeMounts:
+            - name: ephemeral-storage
+              mountPath: /local_resources
+
+        - name: upload
+          image: "{{ .Values.logistics.image }}"
+          imagePullPolicy: Always
+          restartPolicy: Always
+          command: ["sh", "-euc"]
+          args:
+            - |
+              bash /local_resources/mount/checkpoints_upload.sh {{ .Values.remote_checkpoints_path | trimSuffix "/" }}
+          resources:
+            limits:
+              memory: "1Gi"
+              cpu: "1"
+            requests:
+              memory: "1Gi"
+              cpu: "1"
+          env:
+            {{- include "logistics.container.env" . | nindent 12 }}
+          volumeMounts:
+            - name: ephemeral-storage
+              mountPath: /local_resources
+            - name: workload-mount
+              mountPath: /local_resources/mount
+
+      containers:
+        - name: training
+          image: "{{ .Values.main_workload_image }}"
+          imagePullPolicy: Always
+          command: ["sh", "-euc"]
+          args:
+            - |
+              # Print GPU Info:
+              rocm-smi;
+
+              git apply /local_resources/mount/Megatron-LM.patch;
+
+              # Run training:
+              {{- range $k, $v := .Values.pretraining_settings }}
+              {{ $k }}={{ $v }} \
+              {{- end }}
+              LOAD_CKPT_PATH=/local_resources/basemodel \
+              DATA_PATH=/local_resources/data/{{ .Values.remote_data_name_prefix }} \
+              TOKENIZER_MODEL=/local_resources/tokenizer \
+              SAVE_CKPT_PATH=/local_resources/checkpoints \
+              bash /local_resources/mount/{{ .Values.pretraining_script }} \
+              {{- range .Values.megatron_arguments }}
+              {{ . }} \
+              {{- end }}
+              ;
+
+              # Exchange signals with upload container to wrap up the run
+              touch /local_resources/done_training;
+              while [ ! -f /local_resources/done_uploading ]; do
+                sleep 15
+              done
+          resources:
+            {{- with .Values.resources }}
+            limits:
+              memory: "{{ .memory }}"
+              cpu: "{{ .cpu }}"
+              amd.com/gpu: "{{ .gpu }}"
+            requests:
+              memory: "{{ .memory }}"
+              cpu: "{{ .cpu }}"
+              amd.com/gpu: "{{ .gpu }}"
+            {{- end }}
+          env:
+            - name: PYTORCH_HIP_ALLOC_CONF # to avoid OOM errors caused by Pytorch memory fragmentation ref: https://pytorch.org/docs/stable/notes/cuda.html#cuda-memory-management
+              value: "expandable_segments:True"
+            - name: HIP_VISIBLE_DEVICES
+              value: "{{ int .Values.resources.gpu | until | join "," }}"
+          volumeMounts:
+            - name: dshm # Increase SHM size for the container by mounting /dev/shm, for Pytorch parallel processing
+              mountPath: /dev/shm
+            - name: ephemeral-storage
+              mountPath: /local_resources
+            - mountPath: /local_resources/mount
+              name: workload-mount

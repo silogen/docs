@@ -1,0 +1,124 @@
+{{- define "job" -}}
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: "{{ .Release.Name }}"
+spec:
+  ttlSecondsAfterFinished: 3600
+  backoffLimit: 0
+  template:
+    spec:
+      restartPolicy: Never
+      containers:
+        - name: ram-estimation
+          image: "{{ .Values.image }}"
+          imagePullPolicy: Always
+          env:
+            - name: HF_HOME
+              value: /workdir/HF_HOME
+            {{- if (and .Values.modelPath (hasPrefix "s3://" .Values.modelPath)) }}
+            - name: BUCKET_STORAGE_HOST
+              value: {{ .Values.bucketStorageHost }}
+            - name: BUCKET_STORAGE_ACCESS_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: {{ .Values.bucketCredentialsSecret.name }}
+                  key: {{ .Values.bucketCredentialsSecret.accessKeyKey }}
+            - name: BUCKET_STORAGE_SECRET_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: {{ .Values.bucketCredentialsSecret.name }}
+                  key: {{ .Values.bucketCredentialsSecret.secretKeyKey }}
+            {{- end }}
+            {{- if .Values.hfTokenSecret }}
+            - name: HF_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: {{ .Values.hfTokenSecret.name }}
+                  key: {{ .Values.hfTokenSecret.key }}
+            {{- end }}
+          command:
+            - bash
+            - -e
+            - -u
+            - -c
+          args:
+            - |
+              {{- $localConfig := .Values.modelPath }}
+              {{- if (and .Values.modelPath (hasPrefix "s3://" .Values.modelPath)) }}
+              {{- $model := trimPrefix "s3://" .Values.modelPath | trimSuffix "/" }}
+              {{- $minioConfig := printf "minio-host/%s/config.json" $model }}
+              {{- $localConfig = printf "/workdir/%s/config.json" $model }}
+              mc alias set minio-host ${BUCKET_STORAGE_HOST} ${BUCKET_STORAGE_ACCESS_KEY} ${BUCKET_STORAGE_SECRET_KEY}
+              echo 'Downloading the Config file to the local container'
+              mc cp {{ $minioConfig }} {{ $localConfig }}
+              {{- end }}
+              echo "============================================================================"
+              echo "======== ESTIMATING RAM AND VRAM REQUIREMENTS WITH DEEPSPEED STAGE {{ .Values.stage }} ======="
+              echo "============================================================================"
+              python - <<EOF
+              from accelerate import init_empty_weights
+              from transformers import AutoConfig, AutoModel
+              stage = int({{ .Values.stage }})
+              if stage not in (1, 2, 3):
+                  raise ValueError(f"Invalid deepspeed stage: {stage}")
+              from deepspeed.runtime.zero.stage3 import estimate_zero3_model_states_mem_needs_all_cold as estimate_three
+              from deepspeed.runtime.zero.stage_1_and_2 import estimate_zero2_model_states_mem_needs_all_cold as estimate_onetwo
+              {{- if .Values.modelPath }}
+              with init_empty_weights():
+                  config = AutoConfig.from_pretrained("{{ $localConfig }}", trust_remote_code={{ ternary "True" "False" .Values.trustRemoteCode }})
+                  model = AutoModel.from_config(config)
+                  # Note: Shared parameters get counted multiple times.
+                  #   Cannot be avoided with p.data_ptr() on the meta device
+                  #   However, this is fine since we're only estimating anyway.
+                  num_params = sum(p.numel() for p in model.parameters())
+                  # This following copies the approach of DeepSpeed:
+                  largest_layer_params = 0
+                  for m in model.modules():
+                      layer_params = sum(p.numel() for p in m.parameters(recurse=False))
+                      largest_layer_params = max(largest_layer_params, layer_params)
+              {{- else }}
+              num_params = {{ .Values.numParameters }}
+              largest_layer_params = {{ .Values.largestLayerParameters }}
+              if stage == 3 and largest_layer_params == -1:
+                  raise ValueError("Need to provide largestLayerParameters when stage==3!")
+              {{- end }}
+              if stage == 3:
+                  estimate_three(num_params, largest_layer_params = largest_layer_params, num_gpus_per_node={{ .Values.gpusPerNode }}, num_nodes={{ .Values.nodes }}, additional_buffer_factor={{ .Values.bufferFactor }})
+              else:
+                  estimate_onetwo(num_params, num_gpus_per_node={{ .Values.gpusPerNode }}, num_nodes={{ .Values.nodes }}, additional_buffer_factor={{ .Values.bufferFactor }})
+              EOF
+          resources:
+            limits:
+              memory: "1Gi"
+              cpu: 1
+            requests:
+              memory: "1Gi"
+              cpu: 1
+          securityContext:
+            allowPrivilegeEscalation: false
+            runAsNonRoot: true
+            runAsUser: 1000
+            seccompProfile:
+              type: RuntimeDefault
+            capabilities:
+              drop: ["ALL"]
+      securityContext:
+        fsGroup: 1000
+{{- end -}}
+
+{{- define "job_wrapped_with_kaiwojob" -}}
+apiVersion: kaiwo.silogen.ai/v1alpha1
+kind: KaiwoJob
+metadata:
+  name: "{{ .Release.Name }}"
+spec:
+  job:
+    {{- include "job" . | nindent 4 }}
+{{- end -}}
+
+{{- if .Values.kaiwo.enabled -}}
+{{- include "job_wrapped_with_kaiwojob" . }}
+{{- else -}}
+{{- include "job" . }}
+{{- end -}}

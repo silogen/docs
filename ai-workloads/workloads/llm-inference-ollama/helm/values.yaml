@@ -1,0 +1,59 @@
+metadata:
+  labels: {}
+
+image: "rocm/vllm-dev:20250205_aiter"
+imagePullPolicy: Always
+gpus: 1
+memory_per_gpu: 64
+cpu_per_gpu: 16
+
+env_vars:
+  MODEL: "gemma3:4b"
+  NCPU: "16"
+  OLLAMA_KEEP_ALIVE: "-1"
+  BUCKET_STORAGE_HOST: http://minio.minio-tenant-default.svc.cluster.local:80
+  BUCKET_STORAGE_ACCESS_KEY:
+    name: minio-credentials
+    key: minio-access-key
+  BUCKET_STORAGE_SECRET_KEY:
+    name: minio-credentials
+    key: minio-secret-key
+
+storage:
+  ephemeral:
+    quantity: 400Gi
+    storageClassName: mlstorage
+    accessModes:
+      - ReadWriteOnce
+  dshm:
+    sizeLimit: 256Gi
+
+deployment:
+  ports:
+    http: 8080
+
+# startupProbe - checks if the container has successfully started. It disables liveness and readiness probes until it succeeds, useful for slow-starting applications.
+# livenessProbe - checks if the container is still alive. If it fails, Kubernetes restarts the container to recover from failure.
+# readinessProbe - checks if the container is ready to serve traffic. If it fails, the container is removed from the service's endpoints but remains running.
+# ref: https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/
+startupProbe:
+  httpGet:
+    path: /v1/models
+    port: http
+  periodSeconds: 10
+  failureThreshold: 360 # 360 x 10s => allow for 60 minutes startup time
+livenessProbe:
+  httpGet:
+    path: /
+    port: http
+readinessProbe:
+  httpGet:
+    path: /
+    port: http
+
+entrypoint: |
+  bash /workload/mount/entrypoint.sh
+
+# kaiwo settings (if enabled, use kaiwo CRDs to have kaiwo operator manage the workload)
+kaiwo:
+  enabled: false

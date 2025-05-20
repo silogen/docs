@@ -1,0 +1,6 @@
+apiVersion: v2
+name: llm-megatron-ckpt-conversion
+description: A Helm chart for converting LLM checkpoints from HuggingFace format to Megatron-LM accepted format
+type: application
+version: 0.1.0
+appVersion: "1.0.0"

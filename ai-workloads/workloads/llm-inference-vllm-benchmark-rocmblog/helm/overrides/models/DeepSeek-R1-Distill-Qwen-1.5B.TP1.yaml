@@ -1,0 +1,7 @@
+# image/model
+model: "s3://default-bucket/models/deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B"
+gpus: 1
+vllm_engine_args:
+  gpu_memory_utilization: "0.9"
+  num-scheduler-steps: "10"
+  max-num-seqs: "1024"

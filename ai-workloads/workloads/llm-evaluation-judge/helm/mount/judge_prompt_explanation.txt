@@ -1,0 +1,12 @@
+[Instruction]
+Please act as an impartial judge and evaluate the quality of the summary provided by an AI assistant.
+Begin your evaluation by providing a short explanation. After providing your explanation, you must rate the response on a scale of 1 to 10 by strictly following this format: \"[[rating]]\", for example: \"Rating: [[5]]\".
+
+[Article]
+{context}
+
+[The Start of Assistant's Summary]
+{answer}
+[The End of Assistant's Summary]
+
+Provide your explanation and rating:

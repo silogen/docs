@@ -1,0 +1,23 @@
+# Use e.g. for Kueue labels,
+labels:
+  kueue.x-k8s.io/queue-name: kaiwo
+
+# Which model to download
+modelID: OdiaGenAI-LLM/qwen_1.5_odia_7b
+
+# Where the resources should be stored:
+bucketPath: default-bucket/models/OdiaGenAI-LLM/qwen_1.5_odia_7b
+bucketStorageHost: http://minio.minio-tenant-default.svc.cluster.local:80
+
+# Download & Upload configuration:
+downloadExcludeGlob: "original/*"  # Exclude things from the HuggingFace download with this
+allowOverwrite: false
+
+# Storage configuration:
+storageClass: mlstorage
+storageQuantity: "20Gi"
+
+# HF Token:
+hfTokenSecret:
+  name: hf-token
+  key: hf-token

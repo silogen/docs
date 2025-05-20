@@ -1,0 +1,30 @@
+### General chart values ###
+finetuningImage: ghcr.io/silogen/rocm-silogen-axolotl-worker:v0.3
+
+# kaiwo settings (if enabled, use kaiwo CRDs to have kaiwo operator manage the workload)
+kaiwo:
+  enabled: false
+
+# Use to add labels to the metadata of the resources created by this workload.
+labels: {}
+
+# Extra annotations such as an imagePullSecrets
+imagePullSecrets: []
+
+# Configure these to match the credentials in your cluster:
+bucketStorageHost: http://minio.minio-tenant-default.svc.cluster.local:80
+bucketCredentialsSecret:
+  name: minio-credentials
+  accessKeyKey: minio-access-key
+  secretKeyKey: minio-secret-key
+
+# Resources:
+checkpointsReservedSize: 512Gi
+storageClass: mlstorage # set this to use a specific storageClass for the storage.
+finetuningGpus: 1
+
+### Axolotl config file name ###
+configFile:  # name of config file to use, include the file in the mount/ directory
+
+### Model output path ###
+checkpointsRemote:  # Path where to sync checkpoints in bucket storage, format: bucketName/path/in/bucket)

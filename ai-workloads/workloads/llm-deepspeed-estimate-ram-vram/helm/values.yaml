@@ -1,0 +1,28 @@
+stage: 1 # Deepspeed stage (1, 2, or 3)
+gpusPerNode: 8
+nodes: 1
+bufferFactor: 1.5
+modelPath:  # s3://path/to/model or name of model on huggingface hub. This argument has priority over numParameters
+numParameters:  # if modelPath is not given, use this instead, and directly specify the number of parameters that the model has.
+largestLayerParameters: -1  # if modelPath is not given and stage==3, use this, and directly specify the number of parameters that the model has.
+
+#misc options
+trustRemoteCode: false
+
+kaiwo:
+  enabled: false
+
+image: ghcr.io/silogen/rocm-silogen-finetuning-worker:v0.4
+
+# Configure these to match the credentials in your cluster:
+bucketStorageHost: http://minio.minio-tenant-default.svc.cluster.local:80
+bucketCredentialsSecret:
+  name: minio-credentials
+  accessKeyKey: minio-access-key
+  secretKeyKey: minio-secret-key
+
+hfTokenSecret: {} # Optional secret reference that contains the Huggingface token
+# Example:
+# hfTokenSecret:
+#   name: hf-token
+#   key: hf-token

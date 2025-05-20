@@ -1,0 +1,24 @@
+# Use to add labels to the metadata of the resources created by this workload.
+labels:
+  kaiwo.silogen.ai/managed: "true"
+
+# Which model to download
+modelID: TinyLlama/TinyLlama-1.1B-Chat-v1.0
+
+# Where the resources should be stored:
+bucketPath: default-bucket/models/tiny-llama/tinyllama-1.1b-chat-v1.0
+bucketStorageHost: http://minio.minio-tenant-default.svc.cluster.local:80
+
+# Download & Upload configuration:
+downloadExcludeGlob: "original/*"  # Exclude things from the HuggingFace download with this
+allowOverwrite: false
+
+# Bucket credentials from a secret:
+bucketCredentialsSecret:
+  name: minio-credentials
+  accessKeyKey: minio-access-key
+  secretKeyKey: minio-secret-key
+
+# Storage configuration:
+storageClass: mlstorage
+storageQuantity: "10Gi"

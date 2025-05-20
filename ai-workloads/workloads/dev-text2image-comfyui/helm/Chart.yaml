@@ -1,0 +1,4 @@
+apiVersion: v2
+name: dev-text2image-comfyui
+description: ComfyUI
+version: 0.0.1

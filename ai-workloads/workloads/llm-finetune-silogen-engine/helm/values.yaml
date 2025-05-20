@@ -1,0 +1,86 @@
+### General chart values ###
+finetuningImage: ghcr.io/silogen/rocm-silogen-finetuning-worker:v0.4
+
+# kaiwo settings (if enabled, use kaiwo CRDs to have kaiwo operator manage the workload)
+kaiwo:
+  enabled: false
+
+# Use to add labels to the metadata of the resources created by this workload.
+labels: {}
+
+# Extra annotations such as an imagePullSecrets
+imagePullSecrets: []
+  # Example:
+  # imagePullSecrets:
+  #   - "regcred"
+
+# Configure these to match the credentials in your cluster:
+bucketStorageHost: http://minio.minio-tenant-default.svc.cluster.local:80
+bucketCredentialsSecret:
+  name: minio-credentials
+  accessKeyKey: minio-access-key
+  secretKeyKey: minio-secret-key
+
+# Resources:
+downloadsReservedSize: 64Gi
+checkpointsReservedSize: 512Gi
+storageClass: mlstorage # set this to use a specific storageClass for the storage.
+finetuningGpus: 1 # 1 or 8, values in between are not robust at the moment
+memoryPerGpu: 64
+cpusPerGpu: 8
+
+# Runtime configuration:
+distributedType: "auto-deepspeed-stage1"  # Alternatives: "auto-deepspeed-stage3", "auto-ddp", "auto-single-process", "custom-accelerate-config"
+customAccelerateConfig:  # Can contain an accelerate config in YAML format, used with distributed_type: "custom-accelerate-config".
+mergeAdapter: true
+
+### Model input and output, required args ###
+checkpointsRemote:  # Path where to sync checkpoints in bucket storage, format: bucketName/path/in/bucket)
+basemodel:  # Path to basemodel directory in the bucket storage
+
+# Reporting
+# Set runTensorboard to true to run tensorboard in the background in the same container.
+# Also remember to set report_to: tensorboard in the finetuning_config.training_args section.
+runTensorboard: false
+logsRemote: # Path where to sync logs in bucket storage (defaults to <checkpointsRemote>/logs if not set), format: bucktetName/path/in/bucket
+
+
+### Finetuning config section ###
+finetuning_config:
+  method: sft
+  data_conf:
+    training_data:
+      type: CONCATENATION # CONCATENATION | PRECOMPUTE_WEIGHTED_MIX
+      datasets: []
+    validation_data:
+      type: AUTO_SPLIT # AUTO_SPLIT | CONCATENATION | NONE
+      ratio: 0.1
+    chat_template_name: "keep-original"  # "keep-original" | "simplified-llama31" | "chat-ml"
+    missing_pad_token_strategy: "bos-repurpose"  # "bos-repurpose" | "unk-repurpose"
+  training_args: {}
+    # training_args is like Huggingface TrainingArguments, but certain inputs are not allowed:
+    # - Do not set output_dir, the checkpoints should be saved to the default location to be uploaded
+    # - Do not set per_device_train_batch_size nor gradient_accumulation, they are automatically set
+    #   based on the batchsize_conf (below)
+  overrides:
+    lr_multiplier: 1.0
+    lr_batch_size_scaling: "none"
+  batchsize_conf:
+    total_train_batch_size:  # By default, this gets set to the number of GPUs
+    max_per_device_train_batch_size: 1
+    per_device_eval_batch_size: # By default is the same as per_device_train_batch_size
+  peft_conf:
+    peft_type: NO_PEFT
+      # This can be any HF peft_type or NO_PEFT.
+      # If setting peft_type for any actual PEFT, also set:
+      # task_type: "CAUSAL_LM", or some other task type, but usually this.
+      # peft_kwargs:, the huggingface kwargs for the that PEFT model type
+  quant_conf:
+    quantization_type: no-quantization
+      # This can also be bitsandbytes
+      # If bitsandbytes, you can also set any keys from BitsAndBytesConfig here
+  run_conf:
+    model_args: {}  # These are HuggingFace model .from_pretrained() kwargs
+    resume_from_checkpoint: auto
+  sft_args:
+    max_seq_length: 2048

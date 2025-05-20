@@ -1,0 +1,2 @@
+Now rate the response on a scale of 1 to 10, based on your analysis.
+Strictly follow this format: 'Grade: [[<integer>]]'.

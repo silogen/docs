@@ -1,0 +1,4 @@
+apiVersion: v2
+name: llm-finetune-silogen-engine
+description: A Helm chart for fine-tuning the Silogen engine
+version: 0.0.1

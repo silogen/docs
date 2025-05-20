@@ -1,0 +1,14 @@
+# Values file for running bertscore evaluation for Llama-3.1-8B on the cnn-dailymail summarization dataset
+model_inference_container:
+  image: rocm/vllm-dev:20241205-tuned
+  model: Llama-3.2-3B-Instruct
+  model_path: meta-llama/Llama-3.2-3B-Instruct
+evaluation_container:
+  image: ghcr.io/silogen/evaluation-workloads-metrics:v0.1
+  dataset_path: abisee/cnn_dailymail
+  dataset_version: 3.0.0
+  dataset_split: test
+  prompt_template_path: /workload/mount/summarization_prompt_template.txt
+  dataset_info:
+    context_column_name: article
+    gold_standard_column_name: highlights

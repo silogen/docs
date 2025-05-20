@@ -1,0 +1,3 @@
+model,tensor-parallel-size,batch-size,input-len,output-len,dtype,num-iters-warmup,num-iters,distributed-executor-backend,gpu-memory-utilization,num-scheduler-steps,export HIP_FORCE_DEV_KERNARG,export NCCL_MIN_NCHANNELS,export VLLM_USE_TRITON_FLASH_ATTN
+Qwen/Qwen2.5-0.5B-Instruct,1,1,128,128,float16,2,5,mp,0.90,1,1,112,0
+unsloth/Llama-3.1-8B-Instruct,1,1,128,128,float16,2,5,mp,0.90,1,1,112,0

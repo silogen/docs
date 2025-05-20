@@ -1,0 +1,4 @@
+apiVersion: v2
+name: dev-workspace-vscode
+description: A Helm chart for deploying Visual Studio Code
+version: 0.0.1

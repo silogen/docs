@@ -1,0 +1,66 @@
+metadata:
+  labels: {}
+
+image: "michaelf34/infinity:0.0.70-amd-gfx942"
+imagePullPolicy: Always
+
+model: "intfloat/multilingual-e5-large-instruct"
+gpus: 1
+memory_per_gpu: 64 # Gi
+cpu_per_gpu: 4
+
+# infinity engine args (ref: https://github.com/michaelfeil/infinity)
+infinity_engine_args:
+  # model-id: "{{ .Values.model }}"  # taken care of by the template
+  engine: "torch"
+
+# env vars (ref: https://github.com/michaelfeil/infinity)
+env_vars:
+  INFINITY_ANONYMOUS_USAGE_STATS: "0"
+  BUCKET_STORAGE_HOST: http://minio.minio-tenant-default.svc.cluster.local:80
+  BUCKET_STORAGE_ACCESS_KEY:
+    name: minio-credentials
+    key: minio-access-key
+  BUCKET_STORAGE_SECRET_KEY:
+    name: minio-credentials
+    key: minio-secret-key
+  HF_HOME: /workload/.cache/huggingface
+  # HF_TOKEN:
+  #   key: hf-token
+  #   name: hf-token
+
+storage:
+  ephemeral:
+    quantity: 100Gi
+    storageClassName: mlstorage
+    accessModes:
+      - ReadWriteOnce
+  dshm:
+    sizeLimit: 32Gi
+
+deployment:
+  ports:
+    http: 7997
+
+# startupProbe - checks if the container has successfully started. It disables liveness and readiness probes until it succeeds, useful for slow-starting applications.
+# livenessProbe - checks if the container is still alive. If it fails, Kubernetes restarts the container to recover from failure.
+# readinessProbe - checks if the container is ready to serve traffic. If it fails, the container is removed from the service's endpoints but remains running.
+# ref: https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/
+startupProbe:
+  httpGet:
+    path: /health
+    port: http
+  periodSeconds: 10
+  failureThreshold: 360 # 360 x 10s => allow for 60 minutes startup time
+livenessProbe:
+  httpGet:
+    path: /health
+    port: http
+readinessProbe:
+  httpGet:
+    path: /health
+    port: http
+
+# kaiwo settings (if enabled, use kaiwo CRDs to have kaiwo operator manage the workload)
+kaiwo:
+  enabled: false

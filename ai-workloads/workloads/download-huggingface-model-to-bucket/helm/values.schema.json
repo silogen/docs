@@ -1,0 +1,95 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Values",
+  "type": "object",
+  "properties": {
+    "image": {
+      "type": "string",
+      "description": "Docker image to use"
+    },
+    "labels": {
+      "type": "object",
+      "description": "Labels to be added to the Kubernetes manifest",
+      "additionalProperties": true
+    },
+    "imagePullSecrets": {
+      "type": "array",
+      "description": "Image pull secrets",
+      "items": {
+        "type": "string"
+      }
+    },
+    "bucketStorageHost": {
+      "type": "string",
+      "description": "Bucket storage host URL"
+    },
+    "bucketSecret": {
+      "type": "object",
+      "description": "Bucket storage credential secret values, required to have the secret already setup in the cluster (e.g. via external secrets)",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "The name of the secret in the cluster that contains the bucket storage credentials",
+          "default": "minio-credentials"
+        },
+        "accessKeyKey": {
+          "type": "string",
+          "description": "The key in the secret that contains the access key",
+          "default": "minio-access-key"
+        },
+        "secretKeyKey": {
+          "type": "string",
+          "description": "The key in the secret that contains the bucket storage secret key",
+          "default": "minio-secret-key"
+        }
+      },
+      "required": ["name", "accessKeyKey", "secretKeyKey"]
+    },
+    "hfTokenSecret": {
+      "type": ["object", "null"],
+      "description": "Optional secret reference that contains a HuggingFace token",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "The name of the secret in the cluster that contains the HuggingFace token"
+        },
+        "key": {
+          "type": "string",
+          "description": "The key in the secret that contains the HuggingFace token"
+        }
+      }
+    },
+    "modelID": {
+      "type": "string",
+      "description": "Huggingface model id, which is in the format of organization/model-name"
+    },
+    "bucketPath": {
+      "type": "string",
+      "description": "Path in the bucket storage where this model should be stored"
+    },
+    "modelRevision": {
+      "type": ["string", "null"],
+      "description": "Optional string that specifies which revision of the model should be downloaded"
+    },
+    "downloadExcludeGlob": {
+      "type": "string",
+      "description": "Optional string that specifies which files in the huggingface model repository should be excluded from the download",
+      "default": "original/*"
+    },
+    "allowOverwrite": {
+      "type": "boolean",
+      "description": "Optionally set to true to allow overwriting existing files in the bucket",
+      "default": false
+    },
+    "storageQuantity": {
+      "type": "string",
+      "description": "How much space needs to be allocated",
+      "default": "64Gi"
+    },
+    "storageClass": {
+      "type": ["string", "null"],
+      "description": "Optionally set this to use a specific storageClass for the storage"
+    }
+  },
+  "required": ["image", "bucketStorageHost", "bucketCredentialsSecret", "modelID", "bucketPath"]
+}

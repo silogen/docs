@@ -1,0 +1,175 @@
+# Use e.g. for Kueue labels,
+labels:
+  kueue.x-k8s.io/queue-name: kaiwo
+
+# Data download and preprocess script:
+dataScript: |
+  import datasets
+  ### Argilla English:
+  def _argilla_message_formatter(example, idx):
+      # The generation_prompt field seems to have an additional layer of list, so we take the first element.
+      # Also note that this always includes an empty system prompt.
+      messages = example["generation_prompt"][0]
+      # There are both the "generations" and the "raw_generation_responses" fields. It seems that they contain the same content and
+      # there are never actually more than one generated response per prompt. We use "generations" here because maybe it's processed with some
+      # filter or something.
+      messages.append({"role": "assistant", "content": example["generations"][0]})
+      return {
+          "dataset": "argilla-10k-mistral-large-human-prompts",
+          "id": f"argilla-10k-mistral-large-human-prompts_{idx}",
+          "messages": messages,
+      }
+  hf_id="argilla/10k_prompts_ranked_mistral_large_responses"
+  dataset = datasets.load_dataset(hf_id, split="train")
+  dataset = dataset.filter(lambda kind: kind == "human", input_columns="kind")
+  dataset = dataset.map(_argilla_message_formatter, with_indices=True, remove_columns=dataset.column_names)
+  dataset.to_json("/downloads/datasets/argilla-mistral-large-human-prompts.jsonl") # Need to save any data files in this specific directory to be uploaded.
+  ### Odia Domain Context Train v1:
+  dataset = datasets.load_dataset("OdiaGenAI/odia_domain_context_train_v1", split="train")
+  def messages_formatter(example, idx):
+      if example["input"]:
+          usermsg = f"{example['input']}\n\n{example['instruction']}"
+      else:
+          usermsg = example['instruction']
+      messages = [
+          {
+              "role": "user",
+              "content": usermsg
+          },
+          {
+              "role": "assistant",
+              "content": example["output"]
+          }
+      ]
+      return {
+          "id": f"odia_domain_context_train_v1_{idx}",
+          "dataset": "odia_domain_context_train_v1_msgfmt",
+          "messages": messages
+      }
+  dataset = dataset.map(messages_formatter, with_indices=True, remove_columns=dataset.column_names)
+  dataset.to_json("/downloads/datasets/odia-domain-context-train-v1-msgfmt.jsonl")
+  ### Dolly 15k:
+  dataset = datasets.load_dataset("OdiaGenAI/dolly-odia-15k", split="train")
+  def dolly_formatter(example, idx):
+      if example["context"]:
+          usermsg = f"{example['context']}\n\n{example['instruction']}"
+      else:
+          usermsg = example['instruction']
+      messages = [
+          {
+              "role": "user",
+              "content": usermsg
+          },
+          {
+              "role": "assistant",
+              "content": example["response"]
+          }
+      ]
+      return {
+          "id": f"dolly_odia_15k_{idx}",
+          "dataset": "dolly_odia_15k_msgfmt",
+          "messages": messages
+      }
+  dataset = dataset.map(dolly_formatter, with_indices=True, remove_columns=dataset.column_names)
+  dataset.to_json("/downloads/datasets/dolly-odia-15k-msgfmt.jsonl")
+  ### GPT-Teacher 18k:
+  dataset = datasets.load_dataset("OdiaGenAI/gpt-teacher-instruct-odia-18k", split="train")
+  def gpt_teacher_formatter(example, idx):
+      if example["input"]:
+          usermsg = f"{example['instruction']}\n\n{example['input']}"
+      else:
+          usermsg = example['instruction']
+      messages = [
+          {
+              "role": "user",
+              "content": usermsg
+          },
+          {
+              "role": "assistant",
+              "content": example["response"]
+          }
+      ]
+      return {
+          "id": f"gpt_teacher_odia_18k_{idx}",
+          "dataset": "gpt_teacher_odia_18k_msgfmt",
+          "messages": messages
+      }
+  dataset = dataset.map(gpt_teacher_formatter, with_indices=True, remove_columns=dataset.column_names)
+  dataset.to_json("/downloads/datasets/gpt-teacher-odia-18k-msgfmt.jsonl")
+  ### OdiaGenAI/OdiEnCorp_translation_instructions_25k:
+  dataset = datasets.load_dataset("OdiaGenAI/OdiEnCorp_translation_instructions_25k", split="train")
+  def odiencorp_formatter(example, idx):
+      messages = [
+          {
+              "role": "user",
+              "content": example['instruction']
+          },
+          {
+              "role": "assistant",
+              "content": example["output"]
+          }
+      ]
+      return {
+          "id": f"odiencorp_odia_25k_{idx}",
+          "dataset": "odiencorp_odia_25k_msgfmt",
+          "messages": messages
+      }
+  dataset = dataset.map(odiencorp_formatter, with_indices=True, remove_columns=dataset.column_names)
+  dataset.to_json("/downloads/datasets/odiencorp-odia-25k-msgfmt.jsonl")
+  ### OdiaGenAI/Odia_Alpaca_instructions_52k
+  dataset = datasets.load_dataset("OdiaGenAI/Odia_Alpaca_instructions_52k", split="train")
+  def alpaca_formatter(example, idx):
+      if example["input"]:
+          usermsg = f"{example['instruction']}\n{example['input']}"
+      else:
+          usermsg = example['instruction']
+      messages = [
+          {
+              "role": "user",
+              "content": usermsg
+          },
+          {
+              "role": "assistant",
+              "content": example["output"]
+          }
+      ]
+      return {
+          "id": f"alpaca_odia_52k_{idx}",
+          "dataset": "alpaca_odia_52k_msgfmt",
+          "messages": messages
+      }
+  dataset = dataset.map(alpaca_formatter, with_indices=True, remove_columns=dataset.column_names)
+  dataset.to_json("/downloads/datasets/alpaca-odia-52k-msgfmt.jsonl")
+  ### OdiaGenAI/hardcode_odia_qa_105
+  dataset = datasets.load_dataset("OdiaGenAI/hardcode_odia_qa_105", split="train")
+  def hardcode_formatter(example, idx):
+      messages = [
+          {
+              "role": "user",
+              "content": example['instruction']
+          },
+          {
+              "role": "assistant",
+              "content": example["output"]
+          }
+      ]
+      return {
+          "id": f"hardcode_odia_qa_105_{idx}",
+          "dataset": "hardcode_odia_qa_105_msgfmt",
+          "messages": messages
+      }
+  dataset = dataset.map(hardcode_formatter, with_indices=True, remove_columns=dataset.column_names)
+  dataset.to_json("/downloads/datasets/hardcode-odia-qa-105-msgfmt.jsonl")
+
+# Where the resources should be stored:
+bucketDataDir: default-bucket/datasets/
+bucketStorageHost: http://minio.minio-tenant-default.svc.cluster.local:80
+
+# Storage configuration:
+storageClass: mlstorage
+storageQuantity: "512Mi"
+
+# HF Token:
+hfTokenSecret:
+  name: hf-token
+  key: hf-token

@@ -1,0 +1,32 @@
+image: "rocm/vllm-dev:llama4-20250405"
+
+model: "meta-llama/Llama-4-Scout-17B-16E-Instruct"
+gpus: 2
+memory_per_gpu: 64 # Gi
+cpu_per_gpu: 4
+
+# vllm engine args (ref: https://docs.vllm.ai/en/latest/serving/engine_args.html)
+# https://rocm.blogs.amd.com/artificial-intelligence/llama4-day-0-support/README.html
+vllm_engine_args:
+  max-num-seqs: "64"
+  max-num-batched-tokens: "320000"
+  max-model-len: "32000"
+
+# env vars (vllm ref: https://docs.vllm.ai/en/latest/serving/env_vars.html)
+# https://rocm.blogs.amd.com/artificial-intelligence/llama4-day-0-support/README.html
+env_vars:
+  VLLM_WORKER_MULTIPROC_METHOD: "spawn"
+  VLLM_USE_MODELSCOPE: "False"
+  VLLM_USE_TRITON_FLASH_ATTN: "0"
+  HF_TOKEN:
+    key: hf-token
+    name: hf-token
+
+storage:
+  ephemeral:
+    quantity: 256Gi  # observed peak usage: ~213Gi
+    storageClassName: mlstorage
+    accessModes:
+      - ReadWriteOnce
+  dshm:
+    sizeLimit: 64Gi

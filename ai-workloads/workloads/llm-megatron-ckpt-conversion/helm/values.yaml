@@ -1,0 +1,44 @@
+### General chart values ###
+mainWorkloadImage: rocm/megatron-lm:v25.4
+remoteSourceModelPath: default-bucket/models/meta-llama/Llama-3.1-8B
+remoteDestinationModelPath: default-bucket/megatron-models/meta-llama/Llama-3.1-8B/
+
+# Resources of main workload container
+resources:
+  gpu: 1 # 1 or 8, values in between are not robust at the moment
+  cpu: 8
+  memory: 100Gi
+
+storage:
+  ephemeral:
+    quantity: 100Gi
+    storageClassName: mlstorage
+    accessModes: [ ReadWriteOnce ]
+  dshm:
+    sizeLimit: 32Gi
+
+# Setting job labels
+metadata:
+  labels:
+    kaiwo.silogen.ai/managed: "true"
+
+# Logistics (IO) container setup
+logistics:
+  image: ghcr.io/silogen/logistics:v0.1r
+  # Remote storage settings. Configure these to match the credentials in your cluster:
+  envVars:
+    BUCKET_STORAGE_HOST: http://minio.minio-tenant-default.svc.cluster.local:80
+    BUCKET_STORAGE_ACCESS_KEY:
+      name: minio-credentials
+      key: minio-access-key
+    BUCKET_STORAGE_SECRET_KEY:
+      name: minio-credentials
+      key: minio-secret-key
+
+# Conversion settings
+conversionArgs:
+  modelName: "llama3-8B" # or llama3-70b
+  modelType: "GPT" # Model type: GPT, BERT, T5, OPT, BLOOM, etc.
+  loader: "llama_mistral" # Model loader: llama_mistral, megatron, etc.
+  saver: "mcore"
+  tensorParallel: 1 # 1 for 8B, 8 for 70B

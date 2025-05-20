@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "release.fullname" . }}
+data:
+{{- $files := .Files }}
+{{- range $path, $_ := .Files.Glob "mount/*" }}
+  {{ $key := $path | trimPrefix "mount/" }}
+  {{- $key }}: |
+{{ $files.Get $path | indent 4 }}
+{{- end }}

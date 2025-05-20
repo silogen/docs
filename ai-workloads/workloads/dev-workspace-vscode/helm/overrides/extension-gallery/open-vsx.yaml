@@ -1,0 +1,2 @@
+env_vars:
+  EXTENSIONS_GALLERY: '{"serviceUrl": "https://open-vsx.org/vscode/gallery", "itemUrl": "https://open-vsx.org/vscode/item"}'

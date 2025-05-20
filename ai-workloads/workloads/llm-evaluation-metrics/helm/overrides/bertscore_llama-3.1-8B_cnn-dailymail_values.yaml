@@ -1,0 +1,5 @@
+# Values file for running bertscore evaluation for Llama-3.1-8B on the cnn-dailymail summarization dataset
+model_inference_container:
+  image: rocm/vllm-dev:nightly_main_20250430
+evaluation_container:
+  image: ghcr.io/silogen/evaluation-workloads-metrics:v0.1

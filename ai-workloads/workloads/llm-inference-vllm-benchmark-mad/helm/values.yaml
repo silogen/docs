@@ -1,0 +1,39 @@
+metadata:
+  labels: {}
+
+image: "rocm/vllm:rocm6.3.1_mi300_ubuntu22.04_py3.12_vllm_0.6.6"
+imagePullPolicy: Always
+gpus: 1
+memory_per_gpu: 64
+cpu_per_gpu: 8
+
+env_vars:
+  USE_MAD: "false"
+  USE_SCENARIO: "true"
+  TESTOPT: latency
+
+  BUCKET_STORAGE_HOST: http://minio.minio-tenant-default.svc.cluster.local:80
+  BUCKET_STORAGE_ACCESS_KEY:
+    name: minio-credentials
+    key: minio-access-key
+  BUCKET_STORAGE_SECRET_KEY:
+    name: minio-credentials
+    key: minio-secret-key
+  BUCKET_MODEL_PATH: default-bucket/models
+  BUCKET_RESULT_PATH: default-bucket/benchmark-results
+
+storage:
+  ephemeral:
+    quantity: 100Gi
+    storageClassName: mlstorage
+    accessModes:
+      - ReadWriteOnce
+  dshm:
+    sizeLimit: 256Gi
+
+entrypoint: |
+  bash /workload/mount/entrypoint.sh
+
+# kaiwo settings (if enabled, use kaiwo CRDs to have kaiwo operator manage the workload)
+kaiwo:
+  enabled: false

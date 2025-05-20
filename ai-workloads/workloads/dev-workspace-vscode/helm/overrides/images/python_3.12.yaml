@@ -1,0 +1,2 @@
+image: python:3.12
+gpus: 0

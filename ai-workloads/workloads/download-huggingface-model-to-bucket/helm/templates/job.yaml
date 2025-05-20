@@ -1,0 +1,117 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: "{{ .Release.Name }}-job"
+  {{- if .Values.labels }}
+  labels:
+    {{- range $label, $value := .Values.labels }}
+    {{ $label }}: {{ $value | quote }}
+    {{- end }}
+  {{- end }}
+spec:
+  ttlSecondsAfterFinished: 3600
+  backoffLimit: 0
+  template:
+    spec:
+      restartPolicy: Never
+      {{- if .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- range .Values.imagePullSecrets }}
+        - name: {{ . }}
+        {{- end }}
+      {{- end }}
+      containers:
+      - name: hf-to-bucket
+        image: {{ .Values.image }}
+        imagePullPolicy: Always
+        workingDir: /app
+        command:
+        - sh
+        - -e
+        - -u
+        - -c
+        args:
+        - |
+          ###################################
+          echo 'Setting up local directories'
+          mkdir -p local_models
+          ###################################
+          echo 'Setting up minio'
+          mc alias set minio-host ${BUCKET_STORAGE_HOST} ${BUCKET_STORAGE_ACCESS_KEY} ${BUCKET_STORAGE_SECRET_KEY}
+          ###################################
+          echo 'Downloading the model to the local container'
+          huggingface-cli download {{ .Values.modelID }} \
+            --exclude '{{ .Values.downloadExcludeGlob }}' \
+            {{- if .Values.modelRevision }}
+            --revision {{ .Values.modelRevision }}
+            {{- end }}
+            --local-dir local_models/downloaded_model
+          ###################################
+          echo 'Uploading the model to the bucket, to {{ .Values.bucketPath | trimSuffix "/" }}'
+          mc mirror --exclude '.cache/huggingface/*' \
+            --exclude '.gitattributes' \
+            {{- if .Values.allowOverwrite }}
+            --overwrite \
+            {{- end }}
+            local_models/downloaded_model/ minio-host/{{ .Values.bucketPath | trimSuffix "/" }}
+        env:
+          {{- if .Values.hfTokenSecret }}
+          - name: HF_TOKEN
+            valueFrom:
+              secretKeyRef:
+                name: {{ .Values.hfTokenSecret.name }}
+                key: {{ .Values.hfTokenSecret.key }}
+          {{- end }}
+          - name: BUCKET_STORAGE_HOST
+            value: {{ .Values.bucketStorageHost }}
+          - name: BUCKET_STORAGE_ACCESS_KEY
+            valueFrom:
+              secretKeyRef:
+                name: {{ .Values.bucketCredentialsSecret.name }}
+                key: {{ .Values.bucketCredentialsSecret.accessKeyKey }}
+          - name: BUCKET_STORAGE_SECRET_KEY
+            valueFrom:
+              secretKeyRef:
+                name: {{ .Values.bucketCredentialsSecret.name }}
+                key: {{ .Values.bucketCredentialsSecret.secretKeyKey }}
+        resources:
+          requests:
+            memory: 1Gi
+            cpu: 1
+            {{- if not .Values.storageClass }}
+            ephemeral_storage: {{ .Values.storageQuantity }}
+            {{- end }}
+          limits:
+            memory: 1Gi
+            cpu: 1
+            {{- if not .Values.storageClass }}
+            ephemeral_storage: {{ .Values.storageQuantity }}
+            {{- end }}
+        {{- if .Values.storageClass }}
+        volumeMounts:
+          - mountPath: /app
+            name: {{ .Release.Name }}-volume
+        {{- end }}
+        securityContext:
+          allowPrivilegeEscalation: false
+          runAsNonRoot: true
+          runAsUser: 1000
+          runAsGroup: 1000
+          seccompProfile:
+            type: RuntimeDefault
+          capabilities:
+            drop: ["ALL"]
+      securityContext:
+        fsGroup: 1000
+      volumes:
+        {{- if .Values.storageClass }}
+        - name: {{ .Release.Name }}-volume
+          ephemeral:
+            volumeClaimTemplate:
+              spec:
+                accessModes: [ "ReadWriteOnce" ]
+                storageClassName: {{ .Values.storageClass }}
+                resources:
+                  requests:
+                    storage: "{{ .Values.storageQuantity }}"
+        {{- end }}

@@ -1,0 +1,40 @@
+metadata:
+  labels: {}
+
+image: ghcr.io/silogen/aiaio:v20250221
+imagePullPolicy: Always
+
+env_vars: {}
+
+storage:
+  ephemeral:
+    quantity: 1Gi
+    storageClassName: mlstorage
+    accessModes:
+      - ReadWriteOnce
+  dshm:
+    sizeLimit: 1Gi
+
+deployment:
+  ports:
+    http: 9000
+
+# startupProbe - checks if the container has successfully started. It disables liveness and readiness probes until it succeeds, useful for slow-starting applications.
+# livenessProbe - checks if the container is still alive. If it fails, Kubernetes restarts the container to recover from failure.
+# readinessProbe - checks if the container is ready to serve traffic. If it fails, the container is removed from the service's endpoints but remains running.
+# ref: https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/
+startupProbe: {}
+livenessProbe:
+  httpGet:
+    path: /
+    port: http
+readinessProbe:
+  httpGet:
+    path: /
+    port: http
+
+entrypoint: ""
+
+# kaiwo settings (if enabled, use kaiwo CRDs to have kaiwo operator manage the workload)
+kaiwo:
+  enabled: false

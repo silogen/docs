@@ -1,0 +1,3161 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation for SiloGen AMD Enterprise AI Platform">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>Reference Architecture document - Enterprise AI platform - SiloGen documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="black">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#reference-architecture-document-enterprise-ai-platform" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="SiloGen documentation" class="md-header__button md-logo" aria-label="SiloGen documentation" data-md-component="logo">
+      
+  <img src="../../media/logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SiloGen documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Reference Architecture document - Enterprise AI platform
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="black"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="black"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="black"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/silogen/docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../.." class="md-tabs__link">
+          
+  
+  
+    
+  
+  Introduction
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../platform-installation/installation/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Platform installation
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../ai-development/overview/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  AI development
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../airman/overview/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  AI resource management
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../references/overview/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  References
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="SiloGen documentation" class="md-nav__button md-logo" aria-label="SiloGen documentation" data-md-component="logo">
+      
+  <img src="../../media/logo.svg" alt="logo">
+
+    </a>
+    SiloGen documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/silogen/docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../.." class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Introduction
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_1" id="__nav_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            Introduction
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../platform-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Platform overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../target-audience/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Target audience
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_4" id="__nav_1_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    General topics
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_4">
+            <span class="md-nav__icon md-icon"></span>
+            General topics
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../login-to-silogen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Login to SiloGen
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../personal-preferences/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Personal preferences
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Platform installation
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Platform installation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../platform-installation/installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Installation overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../platform-installation/demo-environment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Demo environment installation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    AI development
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            AI development
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai-development/overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai-development/ai-catalogue/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    AI catalogue
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai-development/fine-tuning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Fine-tuning
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai-development/inference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Inference
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Tutorials
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            Tutorials
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai-development/tutorials/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai-workloads/docs/tutorials/tutorial-prereqs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Prerequisites for running the tutorials
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai-workloads/docs/tutorials/tutorial-01-deliver-resources-and-finetune/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Deliver resources and fine-tune
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai-workloads/docs/tutorials/tutorial-02-language-extension-finetune/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Language extension - Odia fine-tuning
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../ai-workloads/workloads/dev-chatui-openwebui/helm/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Reference AI workloads
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_6" id="__nav_3_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_6">
+            <span class="md-nav__icon md-icon"></span>
+            Reference AI workloads
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai-workloads/workloads/workloads-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai-workloads/workloads/dev-workspace-vscode/helm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    dev-openvscode-server
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai-workloads/workloads/dev-text2image-comfyui/helm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    dev-text2image-comfyui
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai-workloads/workloads/download-data-to-bucket/helm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    download-data-to-bucket
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai-workloads/workloads/download-huggingface-model-to-bucket/helm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    download-huggingface-model-to-bucket
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai-workloads/workloads/k8s-namespace-setup/helm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    k8s-namespace-setup
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6_8" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../ai-workloads/workloads/llm-finetune-silogen-engine/helm/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    llm-finetune-silogen-engine
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_6_8" id="__nav_3_6_8_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_6_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_6_8">
+            <span class="md-nav__icon md-icon"></span>
+            llm-finetune-silogen-engine
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai-workloads/workloads/llm-finetune-silogen-engine/helm/silogen_finetuning_config_readme/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Fine-tuning config
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai-workloads/workloads/llm-inference-llamacpp-mi300x/helm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    llm-inference-llamacpp-mi300x
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai-workloads/workloads/llm-inference-sglang/helm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    llm-inference-sglang
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai-workloads/workloads/llm-inference-vllm/helm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    llm-inference-vllm
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai-workloads/workloads/llm-inference-vllm-benchmark-mad/helm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    llm-inference-vllm-benchmark-mad
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    AI resource management
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            AI resource management
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../airman/overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Clusters
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            Clusters
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../airman/clusters/overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Clusters overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../airman/clusters/add-clusters-ui/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Add new cluster
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Quotas
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            Quotas
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../airman/quotas/overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Quotas overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../airman/quotas/set-quotas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Set quotas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    User management
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            User management
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../airman/users/overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Users overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../airman/users/manage-users/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Manage users
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../airman/users/manage-user-groups/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Manage user groups
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    References
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            References
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../references/overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../references/tags/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tags
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#executive-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Executive summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#requirements-for-accelerating-ai-utilization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Requirements for accelerating AI utilization
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#user-personas-on-the-enterprise-ai-platform-and-their-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      User personas on the enterprise AI platform and their requirements
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="User personas on the enterprise AI platform and their requirements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-ai-use-case-developer" class="md-nav__link">
+    <span class="md-ellipsis">
+      The AI use case developer
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#model-developers-ai-scientists" class="md-nav__link">
+    <span class="md-ellipsis">
+      Model developers &amp; AI scientists
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resource-administrators" class="md-nav__link">
+    <span class="md-ellipsis">
+      Resource administrators
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#business-stakeholders-and-infrastructure-owners" class="md-nav__link">
+    <span class="md-ellipsis">
+      Business stakeholders and infrastructure owners
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#platform-and-infrastructure-administrators" class="md-nav__link">
+    <span class="md-ellipsis">
+      Platform and infrastructure administrators
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#design-principles-and-main-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      Design principles and main components
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Design principles and main components">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#enterprise-ai-design-principles-key-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enterprise AI design principles &amp; key requirements
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#observability" class="md-nav__link">
+    <span class="md-ellipsis">
+      Observability
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#high-level-architectural-view" class="md-nav__link">
+    <span class="md-ellipsis">
+      High level architectural view
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#silogens-main-technical-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      SiloGen’s main technical components
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="SiloGen’s main technical components">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#silogen-control-plane" class="md-nav__link">
+    <span class="md-ellipsis">
+      Silogen control plane
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#silogen-compute-plane" class="md-nav__link">
+    <span class="md-ellipsis">
+      Silogen compute plane
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#silogens-ai-workloads" class="md-nav__link">
+    <span class="md-ellipsis">
+      SiloGen’s AI workloads
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cluster-forge" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cluster Forge
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#functional-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Functional layer
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Functional layer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tracking-observability-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tracking &amp; observability components
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ai-distributed-component" class="md-nav__link">
+    <span class="md-ellipsis">
+      AI distributed component
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#secret-management-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      Secret management components
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#api-gateway" class="md-nav__link">
+    <span class="md-ellipsis">
+      API gateway
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#image-registry" class="md-nav__link">
+    <span class="md-ellipsis">
+      Image registry
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#silogen-control-plane-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      SiloGen control plane components
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="SiloGen control plane components">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#silogen-developer-center" class="md-nav__link">
+    <span class="md-ellipsis">
+      SiloGen Developer Center
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ai-resource-manager-airman" class="md-nav__link">
+    <span class="md-ellipsis">
+      AI Resource Manager (Airman)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#production-inference-area" class="md-nav__link">
+    <span class="md-ellipsis">
+      Production inference area
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#detailed-architecture-view" class="md-nav__link">
+    <span class="md-ellipsis">
+      Detailed architecture view
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#from-functional-components-to-technology-choices" class="md-nav__link">
+    <span class="md-ellipsis">
+      From functional components to technology choices
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="From functional components to technology choices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#platform-capabilities-part-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Platform capabilities - Part 1
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#platform-capabilities-part-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Platform Capabilities - Part 2
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security-architecture-tables" class="md-nav__link">
+    <span class="md-ellipsis">
+      Security &amp; Architecture Tables
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Security &amp; Architecture Tables">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#multi-tenancy-isolation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multi-Tenancy &amp; Isolation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authentication-authorization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Authentication &amp; Authorization
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pod-to-pod-communication-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pod-to-Pod Communication Security
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#external-access-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      External Access Security
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#developer-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      Developer Security
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Security
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cluster-forge-technology-tables" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cluster-Forge Technology Tables
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Cluster-Forge Technology Tables">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#core-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      Core Components
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optional-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      Optional Components
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#components-installed-with-cluster-bloom" class="md-nav__link">
+    <span class="md-ellipsis">
+      Components installed with Cluster Bloom
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/silogen/docs/blob/main/ref-architecture/Enterprise-AI-Architecture.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="reference-architecture-document-enterprise-ai-platform">Reference Architecture document - Enterprise AI platform<a class="headerlink" href="#reference-architecture-document-enterprise-ai-platform" title="Permanent link">&para;</a></h1>
+<h2 id="executive-summary">Executive summary<a class="headerlink" href="#executive-summary" title="Permanent link">&para;</a></h2>
+<p>Enterprises striving to scale AI often encounter roadblocks that increase costs, slow innovation, and limit impact. The AMD SiloGen AI stack is purpose-built to overcome these challenges and unlock the full potential of AI across the enterprise.</p>
+<p><strong>Optimized GPU utilization &amp; lower operational costs</strong><br>
+SiloGen ensures high GPU efficiency through intelligent workload placement and dynamic resource sharing. This eliminates waste, reduces costs, and guarantees fair access to compute power—empowering teams to innovate without delay.</p>
+<p><strong>Unified AI infrastructure</strong><br>
+Our platform consolidates fragmented environments into a cohesive AI ecosystem. With standardized governance, tools, and processes, SiloGen simplifies operations and enables seamless collaboration across teams and business units.</p>
+<p><strong>Accelerated AI delivery</strong><br>
+SiloGen streamlines the setup of AI resources and automates dependency management. By enabling reuse of AI assets and prebuilt templates, teams can move faster from experimentation to production—shortening time-to-value.</p>
+<p><strong>AI-Native workload orchestration</strong><br>
+Unlike traditional schedulers, SiloGen is optimized for AI. It intelligently prioritizes jobs, dynamically allocates resources, and ensures consistent performance, maximizing the utilization of compute infrastructure.</p>
+<p>With SiloGen, enterprises reduce complexity, accelerate AI deployment, and maximize ROI—turning AI from a cost center into a strategic advantage.</p>
+<hr />
+<h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
+<p>The SiloGen Enterprise AI platform is designed to accelerate the development and integration of AI services into business operations. SiloGen AI platform enables Enterprises to become AI ready starting from “bare-metal” till offering state of the art technologies and reference solutions for the adoption of AI to business operations. Positioned between AI practitioners and the underlying hardware, the Enterprise AI platform provides interfaces and APIs, comprehensive tutorials, and reference solutions that accelerate AI adoption and bring efficiency in infrastructure management across multiple user groups and organizations. This abstraction eliminates the complexities associated with provisioning hardware, developing and maintaining software, and sharing compute resources, enabling users to focus on delivering AI solutions rather than managing infrastructure and re-inventing best practices.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>graph TD
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    subgraph AI_Solutions[ ]
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>        A1[AI Solution]
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>        A2[AI Solution]
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>        A3[AI Solution]
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>        A4[AI Solution]
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>        A5[AI Solution]
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>        A1 --&gt; R1
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>        A2 --&gt; R1
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>        A3 --&gt; R1
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>        A4 --&gt; R1
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>        A5 --&gt; R1
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>    end
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>    subgraph Teaching[Teaching material and playbooks]
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>    end
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>    R1[Ref AI Solutions and Standardized APIs]
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>    R1 --&gt; P1[SiloGen AI Platform]
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>    P1 --&gt; H1[Hardware Layer]
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>    Teaching --&gt; R1
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>    Teaching --&gt; P1
+<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>    Teaching --&gt; H1
+</code></pre></div>
+<h2 id="requirements-for-accelerating-ai-utilization">Requirements for accelerating AI utilization<a class="headerlink" href="#requirements-for-accelerating-ai-utilization" title="Permanent link">&para;</a></h2>
+<p>The enterprise AI platform is designed to support the full lifecycle of AI solutions, from the provisioning of the right HW and software stack to the development and continuous operations of AI applications. To identify key usage scenarios and requirements, interviews were conducted with AI practitioners from large-scale enterprises). These discussions highlighted that GenAI use cases pose the greatest challenges. Gen AI use cases are ranging from chatbot support and productivity-enhancing AI solutions to drug discovery workflows, video generation, and agentic systems and those use cases introduce a new set of requirements to the traditional AI / ML platforms. Across these use cases, at least four core user personas and their workflows emerge. Standardizing and automating these workflows create a need for shared components and reusable software assets across different AI applications. These components and their requirements form the foundation of our reference architecture.</p>
+<h2 id="user-personas-on-the-enterprise-ai-platform-and-their-requirements">User personas on the enterprise AI platform and their requirements<a class="headerlink" href="#user-personas-on-the-enterprise-ai-platform-and-their-requirements" title="Permanent link">&para;</a></h2>
+<h3 id="the-ai-use-case-developer">The AI use case developer<a class="headerlink" href="#the-ai-use-case-developer" title="Permanent link">&para;</a></h3>
+<p>This user group focuses on building AI products. To achieve this, they select the most suitable foundation model, evaluate its performance, validate its fit to their use cases, and enhance it using techniques like in-context learning or fine-tuning. For that reason, AI experts need the ability to onboard and use relevant datasets and models. For performing those operations AI use case developer need also to access scalable compute. Working with Large Language models requires a number of GPUs and the AI use case developers should be in position to access the needed GPU resources. Finally, AI use case developers are in need for monitoring and observability of their solution and of the resources they use. Developers must track system performance, assess and keep track of model predictions, and gather feedback to ensure the AI delivers the expected business value.</p>
+<p>The following diagram summarizes the workflow of a GenAI -AI  developer. </p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>flowchart LR
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    Start([START])
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    A[Base Model Selection]
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>    B[Experiment with&lt;br&gt;in-context learning]
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>    C[Evaluation]
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>    D{Good?}
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>    E[Fine Tuning&lt;br&gt;or other action]
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>    F[Analyse and Prepare Data&lt;br&gt;for Fine Tuning or other actions]
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>    G[Production Deployments /&lt;br&gt;Inference]
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>    H[Monitoring /&lt;br&gt;Collecting data]
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>    I[Prompt Engineering]
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>    J[RAG Solution &amp;&lt;br&gt;Knowledge Graphs]
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>    Start --&gt; A --&gt; B --&gt; C --&gt; D
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>    D -- YES --&gt; G --&gt; H --&gt; C
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>    D -- NO --&gt; F --&gt; E --&gt; C
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>    J --&gt; B
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>    I --&gt; J
+</code></pre></div>
+<p>The figure shows several steps that can be standardized for the GenAI use case developers. For example, the steps of fine-tuning, model evaluation, monitoring and deployment can be standardized and automated. Additionally, the workflows for data and model onboarding that are not visible in the figure can be standardized too. These standardized steps are packaged as software AI assets in our reference architecture and offered as a service to the AI use case developers through our AI Developer Center and through SiloGen’s public git repo.</p>
+<h3 id="model-developers-ai-scientists">Model developers &amp; AI scientists<a class="headerlink" href="#model-developers-ai-scientists" title="Permanent link">&para;</a></h3>
+<p>People belonging to these groups develop AI models from scratch, as well as tailor other AI models to their use cases. They follow traditional MLOps workflows and possess deep expertise in data science. Model developers work with massive datasets that require processes for labeling, formatting and quality assurance. Like AI use case developers, AI scientists and model developers need tools for data onboarding, experiment tracking, AI lineage, and model evaluation. They also require scalable compute resources to support their workloads. Additionally, since they often develop custom code for research and experimentation, they need access to software development tools and integrated development environments (IDEs) such as Visual Studio Code and Jupyter Notebooks coupled with requested amount of AI (GPU) compute resources. </p>
+<p>Model developers are generally more technically advanced than GenAI use case developers. While AI use case developers primarily work with low-code interfaces and tools, model developers require a more traditional software development stack to support their work. The traditional MLOps stack — including code editors, experiment tracking tools, and workflow schedulers — is crucial for supporting their workflows and our Enterprise AI platform offers the relevant tooling. </p>
+<h3 id="resource-administrators">Resource administrators<a class="headerlink" href="#resource-administrators" title="Permanent link">&para;</a></h3>
+<p>The primary goal of the resource administrators is to manage and optimize GPU resource utilization at enterprise, department and project levels. Optimizing GPU utilization is essential for enterprises since it unblocks AI researchers and AI use cases developers from having sufficient resources to perform their tasks. Furthermore, GPU optimization leads to reduced costs at Enterprise level. GPU optimization happens by grouping GPU and CPU compute resources efficiently, prioritizing workloads, and ensuring resource availability for critical projects and production level services.  </p>
+<p>Finally, compute resources can be allocated to specific node pools, allowing administrators to define usage policies across various organizational and hardware levels. To achieve these objectives, resource administrators require tools for job scheduling, monitoring, resource management, and hardware visualization. The following picture indicates how resources can be shared. The following figure describes the compute management of the Enterprise AI platform  </p>
+<p>In short, the compute resource can be organized in compute pools and projects belonging to departments will be able to allocate resources from one or more of the compute pools.   </p>
+<h3 id="business-stakeholders-and-infrastructure-owners">Business stakeholders and infrastructure owners<a class="headerlink" href="#business-stakeholders-and-infrastructure-owners" title="Permanent link">&para;</a></h3>
+<p>The main goal of this user group is to create a cost-effective way to meet the growing infrastructure demands of AI-focused teams. Infrastructure owners want to ensure that innovation in AI isn’t held back by a lack of available GPUs, especially when the need for compute power is high. At the same time, they want to avoid underutilized resources sitting idle during peak demand. </p>
+<p>In addition to optimizing GPU and other resource utilization, the group aims to reduce overall AI operational costs. They also want to prevent getting locked into specific cloud providers, software stacks, or hardware components, so the platform remains open and adaptable. Scalability is key—they want to make sure the solution can grow with different organizations and projects. And for everything to run smoothly and securely, they’re focused on putting the right security measures and automation in place to support efficient day-to-day operations.</p>
+<h3 id="platform-and-infrastructure-administrators">Platform and infrastructure administrators<a class="headerlink" href="#platform-and-infrastructure-administrators" title="Permanent link">&para;</a></h3>
+<p>For platform and resource administrators, the key objective is to also secure efficient use of GPUs and other resources while enabling a scalable, flexible platform that can support multiple projects, departments, and even entire organizations. It’s not just about providing access to hardware—it's about making sure that access is optimized, shared where possible, and aligned with the actual needs of AI workloads. Efficient resource utilization directly impacts cost, performance, and the ability to scale AI efforts without unnecessary overhead.</p>
+<p>To support this, administrators want to bring in repeatability and automation—whether it's for onboarding new users, managing AI workloads, or scaling infrastructure. Monitoring and observability are also critical, giving visibility into both platform health and the behavior of running workloads. There’s a strong focus on access management across teams and projects, ensuring the platform can handle diverse users without compromising control or security. At the same time, they aim to keep resources shareable, secure, and highly available, creating a reliable foundation that supports ongoing innovation without sacrificing operational efficiency.</p>
+<h2 id="design-principles-and-main-components">Design principles and main components<a class="headerlink" href="#design-principles-and-main-components" title="Permanent link">&para;</a></h2>
+<p>The above functional requirements and objectives of the key user personas have been organized into the following design principles, which are addressed by the proposed reference architecture.</p>
+<h3 id="enterprise-ai-design-principles-key-requirements">Enterprise AI design principles &amp; key requirements<a class="headerlink" href="#enterprise-ai-design-principles-key-requirements" title="Permanent link">&para;</a></h3>
+<p>Resource Optimization: SiloGen implements intelligent scheduling and workload management to maximize the utilization of underlying hardware (i.e. GPU), minimize idle time, and allocates efficiently based on resource management policies and smart algorithms.Generated value: Directly addresses the objective of optimizing resource allocation and reducing infrastructure costs. Enables running more AI workloads at the same time and accelerates innovation and time to market.</p>
+<p>Resource Elasticity: The platform must dynamically allocate and deallocate compute and storage, resources based on the real-time demands of individual tenant workloads, allowing tenants to scale resources up or down as needed. Generated value: It also contributes to cost-effectiveness (pay-for-use) and flexibility, allowing tenants to adapt to fluctuating needs without manual intervention.</p>
+<p>Collaboration &amp; Asset Reuse: This requirement facilitates the sharing of knowledge, best practices, reusable components among users of the platform to accelerate AI development.  Generated value: It is accelerating innovation across an Enterprise’s AI ecosystem by introducing automations and reusable assets leading to “fast time” to market for AI initiatives.</p>
+<p>Frictionless AI Developer Experience: This requirement focuses on the simplified access to GPU resources for interactive AI development. It highlights the need for a comprehensive, integrated set of tools and services covering the entire AI development lifecycle (data preparation, experimentation, model training, validation, deployment, monitoring) to bootstrap development and automate common tasks. Generated value: Reduces time-to-market for AI use cases by providing ready-to-use, efficient tools and workflows.</p>
+<p>Data Accessibility &amp; Management: The SiloGen Enterprise AI stack should provide secure and efficient mechanisms for tenants to integrate, manage, access, and process their data within their isolated environments, supporting diverse AI data needs. Generated value: Enables AI development by ensuring data, the fuel for AI, is readily and securely available within the platform workflow.</p>
+<p>Platform Portability: According to business and infrastructure stakeholders the SiloGen AI platform should be deployed, migrated, and operated across diverse infrastructure environments (e.g., different clouds, on-premises data centers, hybrid setups) with minimal friction. Generated value: Provides strategic flexibility for the platform operators and potentially tenants, avoiding infrastructure lock-in for the platform's deployment.</p>
+<p>Modular Design (Pluggability): Architect the platform using loosely coupled, well-defined components ("pluggable") with standardized interfaces, allowing individual parts (e.g., scheduler, storage backend, ML framework support) to be updated, replaced, or extended independently and in accordance to individual customers (tenants) needs Generated value: Facilitates easier upgrades, integration of new technologies, enhances maintainability, and reduces systemic dependencies. Key to adaptability. This principle is also key for the future-proofness of the platform since outdated can be easily redeployed.</p>
+<p>Technology Adaptability: Design interfaces, abstractions, and extension points that facilitate the integration of new AI frameworks, hardware accelerators (e.g., new GPU generations), data sources, and MLOps tools as they emerge in the rapidly evolving AI landscape. Generated value: Ensures the platform remains relevant, competitive, and capable of supporting cutting-edge AI development and deployment over its intended lifecycle.</p>
+<p>Open Standards &amp; Open Source Adoption: Prioritize the use of open industry standards (for APIs, data formats, protocols like OCI containers) and leverage established, well-supported open-source components for core functionalities wherever feasible and appropriate. Generated value: Directly supports the objective of avoiding vendor lock-in, promotes interoperability, enhances portability,and allows access to a wider innovation ecosystem.</p>
+<p>Security &amp; Data Sovereignty: Implement robust, multi-layered security controls to protect the platform infrastructure and tenant data, models, and IP from unauthorized access, breaches, and misuse. Ensure mechanisms uphold tenant data and AI sovereignty i.e. each tenant retains full control, ownership, and authority over their own data and the AI assets they create or use on the platform. Generated value: Builds trust and ensures the protection of sensitive assets, critical for enterprise adoption and collaboration. Adheres to the collaborative objective's requirement for preserving sovereignty.</p>
+<h3 id="observability">Observability<a class="headerlink" href="#observability" title="Permanent link">&para;</a></h3>
+<p>Implement comprehensive tracking and reporting of resource consumption per tenant, project, or workload. Generated value: Enables fair cost allocation/chargeback, capacity planning, identification of optimization opportunities, and provides transparency to tenants.</p>
+<h3 id="high-level-architectural-view">High level architectural view<a class="headerlink" href="#high-level-architectural-view" title="Permanent link">&para;</a></h3>
+<p>To support the design principles, SiloGen introduces four key layers: the AI Production Inference Layer, AI Developer Center Layer, AI Resource Manager Layer, and the Infrastructure Management Layer. Each layer has a specific role in the overall architecture, working together to streamline operations and enable efficient, scalable AI deployment.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>flowchart BT
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    subgraph L1[&quot;Hardware Layer&quot;]
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>        H1[GPUs]
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>        H2[CPUs]
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>        H3[Storage]
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>    end
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>    subgraph L2[&quot;Infrastructure Management&quot;]
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>        IM1[&quot;AMD Optimized Managed K8s\n(AI Cluster Control + AMD GPU Operator + Cluster Forge)&quot;]
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>    end
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>    subgraph L3[&quot;SiloGen AI Resource Manager&quot;]
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>        RM1[&quot;Smart Job Scheduling &amp; Workload Management&quot;]
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>    end
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>    subgraph L4[&quot;AI &amp; Data Science Developer Center&quot;]
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>        DC1[&quot;SiloGen Developer Center\n(Workload catalog, Developer Workspace, Deployment Platform)&quot;]
+<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a>    end
+<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a>
+<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a>    subgraph L5[&quot;Business Operation Area (AI apps)&quot;]
+<a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a>        BO1[&quot;Production Ready AI Inference&quot;]
+<a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a>    end
+<a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a>
+<a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a>    H1 --&gt; IM1
+<a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a>    H2 --&gt; IM1
+<a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a>    H3 --&gt; IM1
+<a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a>    IM1 --&gt; RM1
+<a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a>    RM1 --&gt; DC1
+<a id="__codelineno-2-29" name="__codelineno-2-29" href="#__codelineno-2-29"></a>    DC1 --&gt; BO1
+</code></pre></div>
+<h2 id="silogens-main-technical-components">SiloGen’s main technical components<a class="headerlink" href="#silogens-main-technical-components" title="Permanent link">&para;</a></h2>
+<p>From a technology perspective, four main components are introduced to implement the layers described above: the SiloGen Control Plane, the Compute Plane, the SiloGen AI Workloads, and Cloud-forge. In the following sections, we’ll take a closer look at each of these components—what they do and which functional modules they include.</p>
+<p>The Control and Compute Plane components in SiloGen can either run together in the same cluster or be deployed across separate compute clusters. The diagram below shows the setup where the control plane and the different compute clusters are deployed independently, each running in its own Kubernetes environment.</p>
+<p>In addition to the control and compute planes, the SiloGen Enterprise AI stack includes two key software components. The first is the AI Workloads—a curated set of pre-built, well-tested workloads designed for tasks like fine-tuning, model evaluation, and deployment. These workloads help AI researchers and developers move faster by providing ready-to-use building blocks, all optimized to run efficiently on AMD GPUs.</p>
+<p>The second major asset is Cloud Forge, a tool built to help enterprises easily deploy a scalable, production-ready AI platform using open-source technologies. Cloud Forge automates the deployment of the control and compute planes onto Kubernetes clusters, integrates the prepackaged SiloGen AI Workloads, and enables organizations running on AMD hardware to start training and deploying models within just a few hours—essentially offering a streamlined, "one-click" setup for enterprise-grade AI infrastructure.</p>
+<p>In the following paragraphs we describe further the four basic components.</p>
+<h3 id="silogen-control-plane">Silogen control plane<a class="headerlink" href="#silogen-control-plane" title="Permanent link">&para;</a></h3>
+<p>The purpose of control plane is a) to provide services and access control when onboarding tenants and users to the Enterprise AI platform, b) to expose the researchers to resources and technologies that they need for developing and operating AI workloads and c) to enable resource managers to set and oversee GPU and overall compute utilization policies across the different compute clusters.</p>
+<p>For facilitating the above three main components are introduced in the control plane:  </p>
+<ul>
+<li>
+<p>The AI Developer Center</p>
+</li>
+<li>
+<p>The AI Resource Manager</p>
+</li>
+<li>
+<p>The Access Control Component</p>
+</li>
+</ul>
+<h3 id="silogen-compute-plane">Silogen compute plane<a class="headerlink" href="#silogen-compute-plane" title="Permanent link">&para;</a></h3>
+<p>The SiloGen’s compute plane is where AI workloads are executed. This layer provides seamless access to hardware resources -particularly GPUs- following policies and smart scheduling algorithms for introducing GPU operational efficiency. For achieving this at the SiloGen’s compute plane enables a) deployment and monitoring of AI workloads b) onboarding of data and models c) smart scheduling of AI workloadsand finally d) secure isolation between projects, departments and organizations. The functional components introduced for the above purposes are the followings:</p>
+<ol>
+<li>Kubernetes based AI Workload Orchestration (K-AIWO) Component</li>
+<li>SiloGen’s AI Workload Dispatching</li>
+<li>SiloGen’s Monitoring &amp; Logging</li>
+<li>Inference Service Components</li>
+<li>Data and Model onboarding Components</li>
+<li>Distributed Engine Components</li>
+<li>API Gateway</li>
+<li>Secret Manager</li>
+</ol>
+<h3 id="silogens-ai-workloads">SiloGen’s AI workloads<a class="headerlink" href="#silogens-ai-workloads" title="Permanent link">&para;</a></h3>
+<p>This component standardizes and offers common AI workloads (e.g., fine-tuning, evaluation, deployment of LLMs) to AI researchers. Those AI workloads have been tested and executed on top of AMD GPUs and they have been open sourced (<a href="https://github.com/silogen/ai-workloads">https://github.com/silogen/ai-workloads</a>). SiloGen AI workloads provide building blocks for broader collaboration across the AI ecosystem and accelerate the development of AI use cases. The catalogue of pre developed AI workloads is continuously updated.</p>
+<h3 id="cluster-forge">Cluster Forge<a class="headerlink" href="#cluster-forge" title="Permanent link">&para;</a></h3>
+<p>Cluster Forge plays a key role in automating the deployment of the Enterprise AI software stack, using Infrastructure as Code (IaC) practices to streamline setup on AMD hardware. It gives enterprises the flexibility to choose specific software modules and tools based on their needs, resulting in a unified AI platform that’s ready to meet the compute performance and security requirements for scaling AI operations on AMD GPUs.</p>
+<p>Cluster Forge directly supports the platform’s core design principles of portability, modularity, and security. It allows the platform to be deployed across a variety of infrastructure environments, offers the flexibility to pick and mix different technology components, and enforces strong security standards and workload isolation. This makes it a central piece in building a secure, customizable, and scalable AI foundation.</p>
+<p>SiloGen Cluster Forge has been open sourced here <a href="https://github.com/silogen/cluster-forge">https://github.com/silogen/cluster-forge</a>.</p>
+<h2 id="functional-layer">Functional layer<a class="headerlink" href="#functional-layer" title="Permanent link">&para;</a></h2>
+<p>In this section we take a closer look at the control and compute plane and the internal functional components introduced.</p>
+<p>SiloGen Compute Plane Components</p>
+<p>Kaiwo (Kubernetes - AI Workload Orchestrator)</p>
+<p>Open sourced at: <a href="https://github.com/silogen/kaiwo">https://github.com/silogen/kaiwo</a>  Purpose: Optimizes GPU resource utilization for AI workloads by minimizing GPU idleness. Workload Scheduler increases resource efficiency through intelligent job queueing, fair sharing of resources, guaranteed quotas and opportunistic gang scheduling. It controls the deployment of AI workloads by implemented a Kubernetes operator that watches for the deployment of AI workloads. Functions:</p>
+<ul>
+<li>Decides where and when workloads will be executed based on compute policies.</li>
+<li>Supports multiple queues, fair GPU resource sharing, and topology-aware scheduling and other features.</li>
+</ul>
+<h3 id="tracking-observability-components">Tracking &amp; observability components<a class="headerlink" href="#tracking-observability-components" title="Permanent link">&para;</a></h3>
+<p>Enterprises need mechanisms and services to monitor the executed AI workloads and the underlying compute resources and clusters. SiloGen monitoring components provide GPU and CPU metrics at workload, project and cluster level. In addition, SiloGen’s observability components provide further information such as the number or users and workloads etc. Finally, SiloGen’s tracking components offer insights on AI performance logs (for example loss in epochs). SiloGen utilizes a collection of standard tools and practices for monitoring, tracking and visualizing workload operations, tools such as Loki, Graphana, MLFlow depending on the customer needs.</p>
+<p>Inference Components  SiloGen Enterprise AI stack provides the possibility of deploying a number of AI inference engines for different AI and LLM models. The deployed inference engines will be running following the resource utilization policies as defined at the control plane and SiloGen is in position to monitor different quality and usability metrics in regards to the deployed models and inference engines.</p>
+<h3 id="ai-distributed-component">AI distributed component<a class="headerlink" href="#ai-distributed-component" title="Permanent link">&para;</a></h3>
+<p>SiloGen Compute Plane includes the deployment of distributed frameworks allowing developers to train and deploy models faster and more efficiently. Those frameworks are integrated to SiloGen’s KAIWO component. KAIWO component makes sure that distributed jobs are adhering the policies enforced by resource managers and smart scheduling algorithms implemented.</p>
+<h3 id="secret-management-components">Secret management components<a class="headerlink" href="#secret-management-components" title="Permanent link">&para;</a></h3>
+<p>For enabling isolation of data and other resources, SiloGen enables the utilization of external key manager solutions for propagating specific projects and departments secrets into the compute clusters. Those secrets can for example relate with accessing data, images and models from HugginFace.</p>
+<h3 id="api-gateway">API gateway<a class="headerlink" href="#api-gateway" title="Permanent link">&para;</a></h3>
+<p>API Gateway acts as the front door to the backend SiloGen services, managing and routing incoming requests from clients to the appropriate services. It plays a critical role in load balancing by distributing traffic efficiently across multiple service instances to ensure high availability and performance. The gateway also handles traffic monitoring, providing insights into request patterns, performance metrics, and potential issues. On top of that, it enforces authorization and access control, ensuring that only authenticated and authorized users or services can access protected APIs—helping maintain both security and operational stability across the platform.</p>
+<h3 id="image-registry">Image registry<a class="headerlink" href="#image-registry" title="Permanent link">&para;</a></h3>
+<p>It provides a centralized service for storing, managing, and distributing container images. It allows developers and platform operators to push, pull, and version container images used to run applications and workloads across environments. The registry ensures that images are accessible to the right users or systems, often integrating with authentication and access control mechanisms. It also supports image tagging, scanning for vulnerabilities, and maintaining image history, which helps with traceability and security. By serving as the single source of truth for containerized applications, the image registry plays a key role in enabling consistent, secure, and scalable software deployments.</p>
+<h2 id="silogen-control-plane-components">SiloGen control plane components<a class="headerlink" href="#silogen-control-plane-components" title="Permanent link">&para;</a></h2>
+<h3 id="silogen-developer-center">SiloGen Developer Center<a class="headerlink" href="#silogen-developer-center" title="Permanent link">&para;</a></h3>
+<p>Purpose: Enables researchers to end-to-end manage AI workloads. The Developer Center enables the usage of the SiloGen AI workloads and focuses on the user experience, offering low code approaches for developing AI applications by simplifying the execution of fine-tuning, inference and other jobs. Focusing on the user experience the Developer Center also exposes a number of Catalogues enabling AI researchers to have a better understanding on which models, data and workloads can use and download for the purposes of their work. Finally, the Develop Center offers (and aims to expand the) integrations to well established MLOps tools such as MLFlow, Tensorboards and Kubeflow allowing researchers to use the AI developing tool that feels more natural to them.</p>
+<h3 id="ai-resource-manager-airman">AI Resource Manager (Airman)<a class="headerlink" href="#ai-resource-manager-airman" title="Permanent link">&para;</a></h3>
+<p>Purpose: Manages the resource utilization enforcing isolation (multitenancy) across projects, departments and organizations. AirMan creates configures and manages resources at the RnD compute cluster by mapping user groups and projects to compute, data and other resources. With the AIRMAN, enterprise can maximize the usage of GPUs by allowing projects and user groups to share GPUs and by configuring the compute clusters with policies that enable fair and smart scheduling. Finally, through the Airman platform and project administrate can monitor the GPU utilization at a project, department, cluster and Enterprise level.</p>
+<p><strong>Functions</strong></p>
+<ul>
+<li>Admin interface for defining user groups, policies, and compute pools.</li>
+<li>Maps development environments (workspaces) to projects.</li>
+<li>Provides dashboards for tracking operations and resources at group, department, job, and cluster levels.</li>
+<li>Provides the interface for communication with one or multiple RnD compute cluster(s).</li>
+</ul>
+<h3 id="production-inference-area">Production inference area<a class="headerlink" href="#production-inference-area" title="Permanent link">&para;</a></h3>
+<p>Purpose: the production inference area serves the need of exposing AI services to the business application, enabling value through the usage of AI.</p>
+<p><strong>Functions</strong></p>
+<p>Critical concerns that the inference layer and the related technologies address are:</p>
+<ul>
+<li>
+<p>Low Latency &amp; High Throughput:  Users expect near real-time responses, especially for interactive applications like chatbots and code generation. Efficient request handling and execution reduce waiting times.</p>
+</li>
+<li>
+<p>Scalability &amp; Elasticity: The usage of an AI service can vary significantly. The inference system must dynamically scale to accommodate fluctuating demand while optimizing resource utilization.</p>
+</li>
+<li>
+<p>Model Optimization (Quantization, Pruning, Distillation): Large models require high memory and computational power. Techniques like quantization (e.g., FP16/INT8), pruning, and should be supported by the inference engine.</p>
+</li>
+<li>
+<p>Efficient Memory &amp; GPU Utilization:  Large LLMs consume vast GPU memory. Efficient KV caching, paged attention, and tensor parallelism maximize hardware efficiency.</p>
+</li>
+<li>
+<p>Dynamic Batching &amp; Request Scheduling: Aggregating multiple inference requests into a batch reduces overhead, improving throughput. Token streaming further optimizes response times.</p>
+</li>
+<li>
+<p>Multi-Tenancy &amp; Isolation: Enterprises need to run multiple models securely. Tenant isolation ensures reliable, independent model execution without interference.</p>
+</li>
+<li>
+<p>Cost Awareness &amp; Fine-Grained Monitoring &amp; Logging: Real-time observability into inference latency, GPU usage and related costs, and errors enables proactive debugging and performance optimization.</p>
+</li>
+<li>
+<p>Secure API Access &amp; Governance: Enterprise LLMs require authentication, rate limiting, and audit logging to enforce security, compliance, and responsible AI practices.</p>
+</li>
+</ul>
+<h3 id="detailed-architecture-view">Detailed architecture view<a class="headerlink" href="#detailed-architecture-view" title="Permanent link">&para;</a></h3>
+<p>The above components are combined in the following detailed architecture view.  TODO NEED TO CHANGE THE DIAGRAM OF THE INFERENCE CLUSTER ALSO DESCRIBE THE USERS OF THE PLATFORM BETTER </p>
+<p>With blue color we tag components that can be provided by the clients. For example a client can bring their own storage technology and connect it to SiloGen. In addition a client can use their own secret management system, and a client can onboard and schedule its own workloads in the compute cluster. With Green color we visualize the Developer Center and with Red the AI Resource Manager. Developer Center as mentioned includes catalogues and services for developing and managing AI workloads, while AirMan has components for user and resource management.</p>
+<h2 id="from-functional-components-to-technology-choices">From functional components to technology choices<a class="headerlink" href="#from-functional-components-to-technology-choices" title="Permanent link">&para;</a></h2>
+<p>Having introduced the functional components of our system, in this section we present the relevant technology choices made for materializing them.</p>
+<h3 id="platform-capabilities-part-1">Platform capabilities - Part 1<a class="headerlink" href="#platform-capabilities-part-1" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th><strong>Feature - Functionality</strong></th>
+<th><strong>Functional Component</strong></th>
+<th><strong>Technology Choice</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Deploying &amp; triggering AI workloads to Compute Clusters</td>
+<td>AirMan &amp; Dev Center</td>
+<td>In-built SiloGen API services, RabbitMQ, Kubectl</td>
+</tr>
+<tr>
+<td>Connecting compute clusters to control plane</td>
+<td>AirMan</td>
+<td>Home-built SiloGen Dispatching services &amp; RabbitMQ</td>
+</tr>
+<tr>
+<td>Configuring resource policies to compute clusters</td>
+<td>AirMan</td>
+<td>API services, RabbitMQ, Kubectl, KAIWO, KUEUE</td>
+</tr>
+<tr>
+<td><strong>Monitoring and Observability</strong> <br><br> - Collecting execution logs <br> - Collecting GPU metrics at cluster, project &amp; workload level</td>
+<td>AirMan</td>
+<td>LGTM stack (Loki for logs, Grafana for dashboards, Tempo for traces, Mimir for metrics), AMD GPU operator</td>
+</tr>
+<tr>
+<td>Access Management <br><br> (Authorization / Authentication)</td>
+<td>AirMan &amp; Dev Center</td>
+<td>Keycloak</td>
+</tr>
+<tr>
+<td>Interactive Training Sessions <br><br> (GPU as a Service)</td>
+<td>Dev Center &amp; K-AIWO</td>
+<td>Visual Studio, Jupyter Notebooks, (SSH connections coming soon)</td>
+</tr>
+<tr>
+<td>AI Experiment and Workload Execution Tracking</td>
+<td>Dev Center</td>
+<td>MLFlow, TensorBoard</td>
+</tr>
+<tr>
+<td>Model Catalogue</td>
+<td>Dev Center</td>
+<td>Home-built</td>
+</tr>
+<tr>
+<td>Workload Catalogue</td>
+<td>Dev Center</td>
+<td>Home-built</td>
+</tr>
+<tr>
+<td>AI Workflow Management System <br><br> (Trigger, stop and manage single/multi-step workloads)</td>
+<td>Dev Center &amp; K-AIWO</td>
+<td>Home-built (possible integration with Kubeflow in future)</td>
+</tr>
+<tr>
+<td>Data Catalogue</td>
+<td>Dev Center</td>
+<td>Home-built</td>
+</tr>
+</tbody>
+</table>
+<h3 id="platform-capabilities-part-2">Platform Capabilities - Part 2<a class="headerlink" href="#platform-capabilities-part-2" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th><strong>Feature - Functionality</strong></th>
+<th><strong>Functional Component</strong></th>
+<th><strong>Technology Choice</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Workload Scheduling and Management</td>
+<td>K-AIWO</td>
+<td>In-built Kubernetes operator, KUEUE</td>
+</tr>
+<tr>
+<td>Inference Engine for Model Deployments</td>
+<td>SiloGen – Inference Layer</td>
+<td>vLLM, Ray Serve, SGLang, in-built deployment pipelines</td>
+</tr>
+<tr>
+<td><strong>API Gateway Features</strong> <br><br> - Reverse Proxy / Routing <br> - Rate Limiting &amp; Throttling <br> - Metrics &amp; Monitoring <br> - Load Balancing <br> - Networking Security (e.g., SSL/TLS termination)</td>
+<td>API Gateway</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Storage for Container Images (versioning, caching, security)</td>
+<td>Image Registry</td>
+<td>Harbor (if customer doesn’t have one)</td>
+</tr>
+<tr>
+<td>Data Management: storing and loading user/project data <br><br> <em>(SiloGen only stores metadata at the control plane)</em></td>
+<td>Control and Compute Plane</td>
+<td>SiloGen integrates with customer-defined storage via k8s StorageClasses; defaults: Longhorn &amp; Minio</td>
+</tr>
+<tr>
+<td>Support for Distributed Training and Inference across GPUs</td>
+<td>KAIWO</td>
+<td>Ray, Megatron (?)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="security-architecture-tables">Security &amp; Architecture Tables<a class="headerlink" href="#security-architecture-tables" title="Permanent link">&para;</a></h2>
+<h3 id="multi-tenancy-isolation">Multi-Tenancy &amp; Isolation<a class="headerlink" href="#multi-tenancy-isolation" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Security Component</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Namespace Isolation</td>
+<td>Each tenant or project operates in dedicated Kubernetes namespaces with enforced resource quotas</td>
+</tr>
+<tr>
+<td>Network Policies</td>
+<td>Strict pod-to-pod communication controls limit traffic flow between tenant environments</td>
+</tr>
+<tr>
+<td>Storage Isolation</td>
+<td>Dedicated storage volumes with tenant-specific access controls prevent unauthorized data access</td>
+</tr>
+<tr>
+<td>Resource Quotas</td>
+<td>Guaranteed resource allocation prevents noisy neighbor problems across tenants</td>
+</tr>
+</tbody>
+</table>
+<h3 id="authentication-authorization">Authentication &amp; Authorization<a class="headerlink" href="#authentication-authorization" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Security Component</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Unified Identity Management</td>
+<td>Integration with Keycloak provides centralized authentication</td>
+</tr>
+<tr>
+<td>Role-Based Access Control (RBAC)</td>
+<td>Granular permission sets mapped to enterprise roles (Administrator, Developer, Viewer, Resource Manager)</td>
+</tr>
+<tr>
+<td>Token-based Authentication</td>
+<td>Short-lived JWTs for secure API interactions</td>
+</tr>
+<tr>
+<td>Single Sign-On (SSO)</td>
+<td>Integration with enterprise identity providers via OIDC/SAML protocols</td>
+</tr>
+</tbody>
+</table>
+<h3 id="pod-to-pod-communication-security">Pod-to-Pod Communication Security<a class="headerlink" href="#pod-to-pod-communication-security" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Security Component</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Network Policies</td>
+<td>Enforced microsegmentation between pods with explicit allow lists</td>
+</tr>
+<tr>
+<td>Service Mesh</td>
+<td>Optional integration with service mesh technology for mTLS between services</td>
+</tr>
+<tr>
+<td>Istio Integration</td>
+<td>Traffic encryption, access control, and observability between microservices</td>
+</tr>
+<tr>
+<td>Pod Security Policies</td>
+<td>Strict pod execution controls preventing privilege escalation</td>
+</tr>
+</tbody>
+</table>
+<h3 id="external-access-security">External Access Security<a class="headerlink" href="#external-access-security" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Security Component</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>API Gateway Security</td>
+<td>Rate limiting, authentication, and input validation for all external requests</td>
+</tr>
+<tr>
+<td>Edge Protection</td>
+<td>WAF (Web Application Firewall) integration for protection against common attacks</td>
+</tr>
+<tr>
+<td>Ingress Control</td>
+<td>TLS termination and certificate management for all external access points</td>
+</tr>
+<tr>
+<td>VPN/Private Endpoints</td>
+<td>Option for private connectivity without public internet exposure</td>
+</tr>
+</tbody>
+</table>
+<h3 id="developer-security">Developer Security<a class="headerlink" href="#developer-security" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Security Component</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Secure Development Environments</td>
+<td>Isolated workspaces with controlled access to resources</td>
+</tr>
+<tr>
+<td>Secrets Management</td>
+<td>Integration with external vault solutions for secure credential handling</td>
+</tr>
+<tr>
+<td>Image Scanning</td>
+<td>Vulnerability scanning for container images before deployment</td>
+</tr>
+<tr>
+<td>Code Security</td>
+<td>Integration with CI/CD pipelines for security scanning and testing</td>
+</tr>
+</tbody>
+</table>
+<h3 id="data-security">Data Security<a class="headerlink" href="#data-security" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Security Component</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Encryption</td>
+<td>Data encryption at rest and in transit</td>
+</tr>
+<tr>
+<td>Key Management</td>
+<td>Integration with external key management services</td>
+</tr>
+<tr>
+<td>Data Access Controls</td>
+<td>Fine-grained access controls for datasets</td>
+</tr>
+<tr>
+<td>Data Lineage</td>
+<td>Tracking of data usage across the platform for compliance and audit purposes</td>
+</tr>
+</tbody>
+</table>
+<h2 id="cluster-forge-technology-tables">Cluster-Forge Technology Tables<a class="headerlink" href="#cluster-forge-technology-tables" title="Permanent link">&para;</a></h2>
+<h3 id="core-components">Core Components<a class="headerlink" href="#core-components" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>certmanager</td>
+<td>Certificate management</td>
+</tr>
+<tr>
+<td>amd-gpu-operator</td>
+<td>GPU enablement for AMD devices</td>
+</tr>
+<tr>
+<td>amd-device-config</td>
+<td>Configuration for AMD devices</td>
+</tr>
+<tr>
+<td>kueue</td>
+<td>Kubernetes-native job queueing</td>
+</tr>
+<tr>
+<td>external-secrets</td>
+<td>Secret management from external sources</td>
+</tr>
+<tr>
+<td>minio-operator &amp; minio-tenant</td>
+<td>S3-compatible object storage</td>
+</tr>
+<tr>
+<td>kuberay-operator</td>
+<td>For Ray distributed computing</td>
+</tr>
+<tr>
+<td>k8s-cluster-secret-store</td>
+<td>Secret backend using Kubernetes secrets</td>
+</tr>
+<tr>
+<td>kaiwo-cluster-config</td>
+<td>AI workflow orchestration</td>
+</tr>
+<tr>
+<td>keycloak</td>
+<td>Identity and access management (authentication)</td>
+</tr>
+<tr>
+<td>kyverno</td>
+<td>Policy management and enforcement</td>
+</tr>
+<tr>
+<td>prometheus-crds</td>
+<td>Custom resources for Prometheus monitoring</td>
+</tr>
+<tr>
+<td>opentelemetry-operator</td>
+<td>Telemetry data collection</td>
+</tr>
+<tr>
+<td>otel-lgtm-stack</td>
+<td>Monitoring stack (Loki, Grafana, Tempo, Mimir)</td>
+</tr>
+<tr>
+<td>gateway-api &amp; kgateway</td>
+<td>Network routing</td>
+</tr>
+<tr>
+<td>metallb</td>
+<td>Bare metal load balancer</td>
+</tr>
+<tr>
+<td>kaiwo-all</td>
+<td>Collection including certmanager, kuberay, kueue, etc.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="optional-components">Optional Components<a class="headerlink" href="#optional-components" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>grafana</td>
+<td>Visualization and dashboards</td>
+</tr>
+<tr>
+<td>kube-prometheus-stack</td>
+<td>Full monitoring solution</td>
+</tr>
+<tr>
+<td>longhorn</td>
+<td>Distributed block storage</td>
+</tr>
+<tr>
+<td>trivy</td>
+<td>Security scanning</td>
+</tr>
+<tr>
+<td>openobserve</td>
+<td>Alternative observability solution</td>
+</tr>
+<tr>
+<td>cnpg</td>
+<td>Cloud Native PostgreSQL</td>
+</tr>
+<tr>
+<td>redis</td>
+<td>In-memory data store</td>
+</tr>
+<tr>
+<td>promtail</td>
+<td>Log collection agent</td>
+</tr>
+</tbody>
+</table>
+<p>Here is a rewritten version with tables separating the components used for the <strong>Cluster Bloom program itself</strong> and the <strong>packages installed onto a cluster</strong>:</p>
+<hr />
+<h2 id="components-installed-with-cluster-bloom">Components installed with Cluster Bloom<a class="headerlink" href="#components-installed-with-cluster-bloom" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th><strong>Package/Component</strong></th>
+<th><strong>Purpose</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>RKE2 (Rancher Kubernetes Engine 2)</strong></td>
+<td>Kubernetes distribution used for cluster orchestration.</td>
+</tr>
+<tr>
+<td><strong>Longhorn</strong></td>
+<td>Kubernetes-native storage solution for persistent volumes.</td>
+</tr>
+<tr>
+<td><strong>MetalLB</strong></td>
+<td>Load balancer for bare-metal Kubernetes clusters.</td>
+</tr>
+<tr>
+<td><strong>AMD ROCm</strong></td>
+<td>AMD GPU software stack for GPU acceleration.</td>
+</tr>
+<tr>
+<td><strong>open-iscsi</strong></td>
+<td>iSCSI initiator for storage networking.</td>
+</tr>
+<tr>
+<td><strong>nfs-common</strong></td>
+<td>NFS client utilities for mounting NFS shares.</td>
+</tr>
+<tr>
+<td><strong>jq</strong></td>
+<td>Command-line JSON processor for parsing and manipulating JSON data.</td>
+</tr>
+<tr>
+<td><strong>kubectl</strong></td>
+<td>Kubernetes CLI tool for managing clusters.</td>
+</tr>
+<tr>
+<td><strong>k9s</strong></td>
+<td>Terminal-based UI for managing Kubernetes clusters.</td>
+</tr>
+<tr>
+<td><strong>iptables</strong></td>
+<td>Firewall configuration tool for managing network access.</td>
+</tr>
+<tr>
+<td><strong>linux-headers</strong></td>
+<td>Kernel headers required for building kernel modules (e.g., ROCm).</td>
+</tr>
+<tr>
+<td><strong>python3-setuptools</strong></td>
+<td>Python package management utility required for ROCm installation.</td>
+</tr>
+<tr>
+<td><strong>python3-wheel</strong></td>
+<td>Python package management utility required for ROCm installation.</td>
+</tr>
+<tr>
+<td><strong>amdgpu-install</strong></td>
+<td>AMD GPU driver installer for setting up ROCm.</td>
+</tr>
+<tr>
+<td><strong>multipath-tools</strong></td>
+<td>Tools for managing multipath I/O for storage devices.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["content.action.edit", "content.code.copy", "navigation.indexes", "navigation.tabs", "navigation.top", "search.highlight", "search.suggest"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+    
+  </body>
+</html>

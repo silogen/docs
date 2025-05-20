@@ -1,0 +1,236 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: "{{ .Values.general.job_name }}"
+spec:
+  template:
+    metadata:
+      labels:
+        app: "{{ .Values.general.job_name }}"
+    spec:
+      initContainers:
+        - name: model-inference-vllm
+          image: "{{ .Values.model_inference_container.image }}"
+          resources:
+            limits:
+              memory: "{{ .Values.model_inference_container.memory }}"
+              cpu: "{{ .Values.model_inference_container.cpu_count }}"
+              amd.com/gpu: "{{ .Values.model_inference_container.gpu_count }}"
+            requests:
+              memory: "{{ .Values.model_inference_container.memory }}"
+              cpu: "{{ .Values.model_inference_container.cpu_count }}"
+              amd.com/gpu: "{{ .Values.model_inference_container.gpu_count }}"
+          env:
+            - name: VLLM_NO_USAGE_STATS
+              value: "1"
+            - name: DO_NOT_TRACK
+              value: "1"
+            - name: HF_HOME
+              value: /local_models/HF_HOME
+            - name: HF_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: hf-token
+                  key: hf-token
+          command: ["sh", "-c"]
+          args:
+            - |
+              echo "Downloading model from HuggingFace...";
+              cd /local_models;
+              huggingface-cli download {{ .Values.model_inference_container.model_path }} --local-dir /local_models/inference_model;
+              echo "Downloaded model. Starting VLLM server...";
+              python3 -m vllm.entrypoints.openai.api_server \
+                      --host="0.0.0.0" \
+                      --port=8080 \
+                      --model="/local_models/inference_model" \
+                      --tensor-parallel-size="{{ .Values.model_inference_container.tensor_parallel_size }}" \
+                      --served-model-name="{{ .Values.model_inference_container.model }}" \
+                      --max-model-len={{ .Values.model_inference_container.max_model_len }};
+          restartPolicy: Always
+          ports:
+            - containerPort: 8080
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 8080
+          volumeMounts:
+            - name: inference-model-volume
+              mountPath: /local_models/inference_model
+              readOnly: false
+        - name: judge-inference-vllm
+          image: "{{ .Values.judge_inference_container.image }}"
+          resources:
+            limits:
+              memory: "{{ .Values.judge_inference_container.memory }}"
+              cpu: "{{ .Values.judge_inference_container.cpu_count }}"
+              amd.com/gpu: "{{ .Values.judge_inference_container.gpu_count }}"
+            requests:
+              memory: "{{ .Values.judge_inference_container.memory }}"
+              cpu: "{{ .Values.judge_inference_container.cpu_count }}"
+              amd.com/gpu: "{{ .Values.judge_inference_container.gpu_count }}"
+          env:
+            - name: VLLM_NO_USAGE_STATS
+              value: "1"
+            - name: DO_NOT_TRACK
+              value: "1"
+            - name: HF_HOME
+              value: /local_models/HF_HOME
+            - name: HF_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: hf-token
+                  key: hf-token
+          command: ["sh", "-c"]
+          args:
+            - |
+              echo "Downloading model from HuggingFace...";
+              cd /local_models;
+              huggingface-cli download {{ .Values.judge_inference_container.model_path }} --local-dir /local_models/judge_model;
+              echo "Downloaded model. Starting VLLM server...";
+              python3 -m vllm.entrypoints.openai.api_server \
+                      --host="0.0.0.0" \
+                      --port=8081 \
+                      --model="/local_models/judge_model" \
+                      --tensor-parallel-size="{{ .Values.judge_inference_container.tensor_parallel_size }}" \
+                      --served-model-name="{{ .Values.judge_inference_container.model }}" \
+                      --max-model-len={{ .Values.judge_inference_container.max_model_len }};
+          restartPolicy: Always
+          ports:
+            - containerPort: 8081
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 8081
+          volumeMounts:
+            - name: judge-model-volume
+              mountPath: /local_models/judge_model
+              readOnly: false
+      containers:
+        - name: evaluate-with-judge
+          image: "{{ .Values.judge_evaluation_container.image }}"
+          imagePullPolicy: Always
+          resources:
+            limits:
+              memory: "{{ .Values.judge_evaluation_container.memory }}"
+              cpu: "{{ .Values.judge_evaluation_container.cpu_count }}"
+            requests:
+              memory: "{{ .Values.judge_evaluation_container.memory }}"
+              cpu: "{{ .Values.judge_evaluation_container.cpu_count }}"
+          startupProbe:
+            exec:
+              command:
+                - sh
+                - -c
+                - |
+                  curl -sf http://localhost:8080/health && curl -sf http://localhost:8081/health
+            initialDelaySeconds: 60
+            periodSeconds: 10
+            failureThreshold: 30
+          command: ["sh", "-c"]
+          args:
+            - |
+              ls -lh /;
+              echo $(whoami);
+              until curl -sf http://localhost:8080/health && curl -sf http://localhost:8081/health; do
+                echo "Waiting for models to be ready..."
+                sleep 5
+              done;
+              echo "Both models ready. Running evaluation with judge...";
+              python3 run_inference_and_judge_evaluation.py \
+                --model-name="{{ .Values.model_inference_container.model }}" \
+                --model-path="{{ .Values.model_inference_container.model_path }}" \
+                --judge-model-name="{{ .Values.judge_inference_container.model }}" \
+                --judge-model-path="{{ .Values.judge_inference_container.model_path }}" \
+                --llm-base-url="http://localhost" \
+                --llm-port="8080" \
+                --llm-endpoint="v1" \
+                --judge-base-url="http://localhost" \
+                --judge-port="8081" \
+                --judge-endpoint="v1" \
+                --prompt-template-path="{{ .Values.storage.configmap_mount_path }}/{{ .Values.judge_evaluation_container.prompt_template_path }}" \
+                --judge-prompt1-template-path="{{ .Values.storage.configmap_mount_path }}/{{ .Values.judge_evaluation_container.judge_prompt_step1 }}" \
+                --judge-prompt2-template-path="{{ .Values.storage.configmap_mount_path }}/{{ .Values.judge_evaluation_container.judge_prompt_step2 }}" \
+                --evaluation-dataset-name="{{ .Values.judge_evaluation_container.dataset_path }}"\
+                --evaluation-dataset-version="{{ .Values.judge_evaluation_container.dataset_version }}" \
+                --dataset-split="{{ .Values.judge_evaluation_container.dataset_split }}" \
+                --output-dir-path="{{ .Values.judge_evaluation_container.output_dir_path }}" \
+                --maximum-context-size={{ .Values.model_inference_container.max_model_len}} \
+                --judge-maximum-context-size={{ .Values.judge_inference_container.max_model_len}} \
+                --batch-size="{{ .Values.model_inference_container.batch_size }}" \
+                --judge-batch-size="{{ .Values.judge_inference_container.batch_size }}" \
+                --context-column-name="{{ .Values.judge_evaluation_container.context_column_name}}"  \
+                --id-column-name="{{ .Values.judge_evaluation_container.id_column_name}}" \
+                --gold-standard-column-name="{{ .Values.judge_evaluation_container.gold_standard_column_name}}" \
+                --use-data-subset=5 ;
+          env:
+            - name: TRANSFORMERS_CACHE
+              value: /HF_HOME
+            - name: HF_HOME
+              value: /HF_HOME
+            - name: HF_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: hf-token
+                  key: hf-token
+            - name: BUCKET_STORAGE_HOST
+              value: "{{ .Values.storage.bucket_storage_host }}"
+            - name: BUCKET_STORAGE_BUCKET
+              value: "{{ .Values.storage.bucket_storage_bucket }}"
+            - name: BUCKET_STORAGE_ACCESS_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: minio-credentials
+                  key: minio-access-key
+            - name: BUCKET_STORAGE_SECRET_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: minio-credentials
+                  key: minio-secret-key
+          volumeMounts:
+            - name: evaluation-volume
+              mountPath: /local_resources
+              readOnly: false
+            - mountPath: "{{ .Values.storage.configmap_mount_path }}"
+              name: configmap-mount
+          securityContext:
+            allowPrivilegeEscalation: false
+            runAsNonRoot: true
+            runAsUser: 1000
+            seccompProfile:
+              type: RuntimeDefault
+            capabilities:
+              drop: ["ALL"]
+      restartPolicy: Never
+      volumes:
+        - name: inference-model-volume
+          ephemeral:
+            volumeClaimTemplate:
+              spec:
+                accessModes: [ "ReadWriteOnce" ]
+                storageClassName: "{{ .Values.storage.ephemeral.storageClassName }}"
+                resources:
+                  requests:
+                    storage: "{{ .Values.storage.ephemeral.quantity }}"
+        - name: judge-model-volume
+          ephemeral:
+            volumeClaimTemplate:
+              spec:
+                accessModes: [ "ReadWriteOnce" ]
+                storageClassName: "{{ .Values.storage.ephemeral.storageClassName }}"
+                resources:
+                  requests:
+                    storage: "{{ .Values.storage.ephemeral.quantity }}"
+        - name: evaluation-volume
+          ephemeral:
+            volumeClaimTemplate:
+              spec:
+                accessModes: [ "ReadWriteOnce" ]
+                storageClassName: "{{ .Values.storage.ephemeral.storageClassName }}"
+                resources:
+                  requests:
+                    storage: "{{ .Values.storage.ephemeral.quantity }}"
+        - configMap:
+            name: configmap-mount
+          name: configmap-mount
+  backoffLimit: 0
+  ttlSecondsAfterFinished: 600

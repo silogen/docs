@@ -1,0 +1,34 @@
+image: ghcr.io/silogen/logistics:v0.1
+
+# Use to add labels to the metadata of the resources created by this workload.
+labels: {}
+# Example:
+# labels:
+#   amd.com/label: 123
+
+# Data download and preprocess script:
+# This needs to be a text block of a script that downloads and preprocesses data to the /downloads/datasets/ directory.
+dataScript: |
+  import datasets
+  dataset = datasets.load_dataset("HuggingFaceH4/ultrachat_200k", split="train_sft")
+  dataset.to_json("/downloads/datasets/ultrachat_200k_train.jsonl") # Need to save any data files in this specific directory to be uploaded.
+
+# Where the resources should be stored:
+bucketDataDir: default-bucket/datasets/
+bucketStorageHost: http://minio.minio-tenant-default.svc.cluster.local:80
+
+# Bucket credentials from a secret:
+bucketCredentialsSecret:
+  name: minio-credentials
+  accessKeyKey: minio-access-key
+  secretKeyKey: minio-secret-key
+
+# Storage configuration:
+storageClass:
+storageQuantity: "10Gi"
+
+hfTokenSecret: {} # Optional secret reference that contains the Huggingface token
+# Example:
+# hfTokenSecret:
+#   name: hf-token
+#   key: hf-token

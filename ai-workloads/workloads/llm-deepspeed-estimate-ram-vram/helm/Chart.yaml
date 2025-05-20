@@ -1,0 +1,4 @@
+apiVersion: v2
+name: llm-deepspeed-estimate-ram-requirement
+description: A Helm chart to estimate RAM requirement for training a model using DeepSpeed
+version: 0.0.1

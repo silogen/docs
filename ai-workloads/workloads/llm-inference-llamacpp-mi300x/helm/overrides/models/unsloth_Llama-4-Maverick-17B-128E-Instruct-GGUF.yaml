@@ -1,0 +1,6 @@
+env_vars:
+  # image/model:tag
+  MODEL: "unsloth/Llama-4-Maverick-17B-128E-Instruct-GGUF:UD-Q2_K_XL"
+  GPU_LAYERS: "49"
+  TEMP: "0.6"
+  CTX_SIZE: "131072"

@@ -1,0 +1,6 @@
+apiVersion: v2
+name: prepare-data-for-megatron-lm
+description: Runs a script to download and preprocess data for Megatron-LM, then uploads to bucket storage. Also downloads Huggingface tokenizer and stores in cluster storage.
+type: application
+version: 0.0.1
+appVersion: "0.0.1"
