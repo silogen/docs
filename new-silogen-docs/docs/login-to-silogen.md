@@ -18,4 +18,8 @@ The next screen requires users to input their password. There is also a link to 
 
 ## Keycloak user authentication
 
-SiloGen Platform uses [Keycloak](https://www.keycloak.org/) for authenticating users. Keycloak is tightly integrated with all of the SiloGen services, and setting it up is straightforward. It can be federated so that users' credentials can be centrally managed in an enterprise solution, and integrated with LDAP or Active Directory.
+SiloGen platform uses [Keycloak](https://www.keycloak.org/) for authenticating users. Keycloak is tightly integrated with all of the SiloGen services, and setting it up is straightforward. It can be federated so that users' credentials can be centrally managed in an enterprise solution, and integrated with LDAP or Active Directory.
+
+## Other login measures
+
+SiloGen platform can be modified to utilize other login measures, such as working in an internal network through VPN.

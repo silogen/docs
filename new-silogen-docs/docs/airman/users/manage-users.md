@@ -26,4 +26,4 @@ The right pane lists users assignments to different user groups and their dedica
 
 ## Invite users
 
-Inviting new users happens in a special page. Only users with allowed domains are accepted on the platform. Platform administrators can update organization's allowed domains. The main view in Invited users view lists all of the invited users before they have accepted and activated their accounts.
+Inviting new users happens in a special page. Only users within allowed domains are accepted on the platform. Platform administrators can update organization's allowed domains. The main view in Invited users view lists all of the invited users before they have accepted and activated their accounts.

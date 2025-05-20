@@ -1,6 +1,13 @@
-# Create a new cluster
+---
+tags:
+  - airman
+  - cluster
+  - add cluster
+---
 
-This article explains how to create a cluster.
+# Create a new cluster in the UI
+
+This article explains how to create a new cluster in Airman user interface.
 
 To add a new cluster:
 
