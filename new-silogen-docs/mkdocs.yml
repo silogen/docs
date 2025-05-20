@@ -1,0 +1,167 @@
+site_name: SiloGen documentation
+site_description: Documentation for SiloGen AMD Enterprise AI Platform
+repo_url: https://github.com/silogen/docs
+docs_dir: docs
+edit_uri: https://github.com/silogen/docs/blob/main
+
+theme:
+  icon: material/developer-board
+  logo: media/logo.svg
+  name: material
+  palette:
+    # Palette toggle for automatic mode
+    - media: "(prefers-color-scheme)"
+      primary: black
+      accent: black
+      toggle:
+        icon: material/brightness-auto
+        name: Switch to light mode
+
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: black
+      accent: black
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: black
+      accent: black
+      toggle:
+        icon: material/brightness-4
+        name: Switch to system preference
+
+  features:
+    - content.action.edit
+    - content.code.copy
+    - navigation.indexes
+    - navigation.tabs
+    - navigation.top
+    - search.highlight
+    - search.suggest
+
+plugins:
+  - search
+  - tags
+ # - with-pdf
+  - multirepo:
+      cleanup: true
+      nav_repos:
+        - name: ai-workloads
+          import_url: https://github.com/silogen/ai-workloads?branch=main
+          imports: [docs/tutorials/*, workloads/*]
+
+        #- name: kaiwo
+        #  import_url: https://github.com/silogen/kaiwo?branch=main
+        #  imports: [docs/docs/*]
+
+  - redirects:
+      redirect_maps:
+        'ai-development/index.md': 'ai-development/overview.md'
+        'airman/index.md': 'airman/overview.md'
+        'airman/clusters/index.md': 'airman/clusters/overview.md'
+        'airman/quotas/index.md': 'airman/quotas/overview.md'
+        'airman/users/index.md': 'airman/users/overview.md'
+        'platform-installation/index.md': 'platform-installation/installation.md'
+        'references/index.md': 'references/overview.md'
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.superfences
+  - pymdownx.inlinehilite
+  - pymdownx.tabbed
+  - pymdownx.snippets:
+      base_path: !relative $docs_dir
+  - admonition
+  - footnotes
+  - attr_list
+  - toc:
+      permalink: true
+
+nav:
+  - Introduction:
+    - Home: index.md
+    - Platform overview: platform-overview.md
+    - Target audience: target-audience.md
+    - General topics:
+      - Login to SiloGen: login-to-silogen.md
+      - Personal preferences: personal-preferences.md
+
+  - Platform installation:
+    - Installation overview: platform-installation/installation.md
+    - Demo environment installation: platform-installation/demo-environment.md
+
+  - AI development:
+    - Overview: ai-development/overview.md
+    - AI catalogue: ai-development/ai-catalogue.md
+    - Fine-tuning: ai-development/fine-tuning.md
+    - Inference: ai-development/inference.md
+    # - Running AI workloads from GUI (Developer Center): ai-development/developer-center.md
+    # A placeholder for training
+    # A placeholder for evaluation
+    # A placeholder for RAG
+
+    - Tutorials:
+      - Overview: ai-development/tutorials.md
+      - Prerequisites for running the tutorials: ai-workloads/docs/tutorials/tutorial-prereqs.md
+      - Deliver resources and fine-tune: ai-workloads/docs/tutorials/tutorial-01-deliver-resources-and-finetune.md
+      - Language extension - Odia fine-tuning: ai-workloads/docs/tutorials/tutorial-02-language-extension-finetune.md
+
+    - Reference AI workloads:
+      - Overview: ai-workloads/workloads/workloads-overview.md
+      - dev-chatui-openwebui: ai-workloads/workloads/dev-chatui-openwebui/helm/README.md
+      - dev-openvscode-server: ai-workloads/workloads/dev-workspace-vscode/helm//README.md
+      - dev-text2image-comfyui: ai-workloads/workloads/dev-text2image-comfyui/helm/README.md
+      - download-data-to-bucket: ai-workloads/workloads/download-data-to-bucket/helm/README.md
+      - download-huggingface-model-to-bucket: ai-workloads/workloads/download-huggingface-model-to-bucket/helm/README.md
+      - k8s-namespace-setup: ai-workloads/workloads/k8s-namespace-setup/helm/README.md
+      # A placeholder for llm-finetune-engine-agnostic Helm version
+      - llm-finetune-silogen-engine:
+        - Overview: ai-workloads/workloads/llm-finetune-silogen-engine/helm/README.md
+        - Fine-tuning config: ai-workloads/workloads/llm-finetune-silogen-engine/helm/silogen_finetuning_config_readme.md
+      - llm-inference-llamacpp-mi300x: ai-workloads/workloads/llm-inference-llamacpp-mi300x/helm/README.md
+      - llm-inference-sglang: ai-workloads/workloads/llm-inference-sglang/helm/README.md
+      - llm-inference-vllm: ai-workloads/workloads/llm-inference-vllm/helm/README.md
+      - llm-inference-vllm-benchmark-mad: ai-workloads/workloads/llm-inference-vllm-benchmark-mad/helm/README.md
+
+  - AI resource management:
+    - Overview: airman/overview.md
+    - Clusters:
+      - Clusters overview: airman/clusters/overview.md
+      - Add new cluster: airman/clusters/add-clusters-ui.md
+    - Quotas:
+      - Quotas overview: airman/quotas/overview.md
+      - Set quotas: airman/quotas/set-quotas.md
+    - User management:
+      - Users overview: airman/users/overview.md
+      - Manage users: airman/users/manage-users.md
+      - Manage user groups: airman/users/manage-user-groups.md
+
+  - References:
+    - Overview: references/overview.md
+    - Tags: references/tags.md
+
+extra_css:
+  - stylesheets/extra.css
+
+exclude_docs: |
+  SilogenAMDEnterpriseAIPlatform.md
+
+  # References
+  references/best-practices.md
+  references/contributing.md
+
+  # AI development local documents
+
+  # Airman
+  airman/clusters/add-clusters-cli.md
+
+  # Platform installation
+  platform-installation/azure-environment.md
+  platform-installation/oci-environment.md
+  platform-installation/maintenance.md
