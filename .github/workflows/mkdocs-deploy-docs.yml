@@ -2,7 +2,7 @@ name: Publish docs via GitHub Pages using mkdocs
 on:
   push:
     branches:
-      - new-silogen-docs
+      - main
 
 jobs:
   build:
@@ -11,12 +11,7 @@ jobs:
     steps:
       - name: Checkout main
         uses: actions/checkout@v2
-      
-      - name: Install dependencies
-        run: |
-          sudo apt-get update
-          sudo apt install weasyprint
-      
+  
       - name: Deploy docs
         uses: mhausenblas/mkdocs-deploy-gh-pages@master
         # Or use mhausenblas/mkdocs-deploy-gh-pages@nomaterial to build without the mkdocs-material theme
