@@ -1,7 +1,7 @@
 ---
 tags:
+  - color theme
   - preferences
-  - theme
 ---
 
 # Personal preferences

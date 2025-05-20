@@ -1,6 +1,6 @@
 # SiloGen - AMD Enterprise AI Platform documentation
 
-Welcome to the documentation for SiloGen - AMD Enterprise AI Platform. Enterprises striving to scale AI often encounter roadblocks that increase costs, slow innovation, and limit impact. The AMD Enterprise AI stack is purpose-built to overcome these challenges and unlock the full potential of AI across the enterprise.
+Welcome to the documentation for SiloGen - AMD Enterprise AI Platform. Enterprises striving to scale AI often encounter roadblocks that increase costs, slow innovation, and limit impact. The AMD Enterprise AI stack is built to overcome these challenges and unlock the full potential of AI across the enterprise.
 
 This is your comprehensive handbook designed to help data scientists and platform engineers successfully deploy, manage, and run AI workloads on AMD compute. The guide provides step-by-step instructions for installing and configuring the necessary software, as well as practical tutorials and use cases to help you run AI workloads efficiently on a scalable Kubernetes platform.
 

@@ -1,7 +1,7 @@
 # References
 
 
-1. ClusterBloom: [https://github.com/silogen/cluster-bloom](https://github.com/silogen/cluster-bloom)
+1. Cluster Bloom: [https://github.com/silogen/cluster-bloom](https://github.com/silogen/cluster-bloom)
 
 2. Cluster Forge: [https://github.com/silogen/cluster-forge](https://github.com/silogen/cluster-forge)
 

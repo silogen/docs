@@ -187,7 +187,7 @@ The Control and Compute Plane components in SiloGen can either run together in t
 
 In addition to the control and compute planes, the SiloGen Enterprise AI stack includes two key software components. The first is the AI Workloads—a curated set of pre-built, well-tested workloads designed for tasks like fine-tuning, model evaluation, and deployment. These workloads help AI researchers and developers move faster by providing ready-to-use building blocks, all optimized to run efficiently on AMD GPUs.
 
-The second major asset is CloudForge, a tool built to help enterprises easily deploy a scalable, production-ready AI platform using open-source technologies. CloudForge automates the deployment of the control and compute planes onto Kubernetes clusters, integrates the prepackaged SiloGen AI Workloads, and enables organizations running on AMD hardware to start training and deploying models within just a few hours—essentially offering a streamlined, “one-click” setup for enterprise-grade AI infrastructure.
+The second major asset is Cloud Forge, a tool built to help enterprises easily deploy a scalable, production-ready AI platform using open-source technologies. Cloud Forge automates the deployment of the control and compute planes onto Kubernetes clusters, integrates the prepackaged SiloGen AI Workloads, and enables organizations running on AMD hardware to start training and deploying models within just a few hours—essentially offering a streamlined, "one-click" setup for enterprise-grade AI infrastructure.
 
 In the following paragraphs we describe further the four basic components.
 
@@ -435,11 +435,11 @@ Having introduced the functional components of our system, in this section we pr
 | redis | In-memory data store |
 | promtail | Log collection agent |
 
-Here is a rewritten version with tables separating the components used for the **ClusterBloom program itself** and the **packages installed onto a cluster**:
+Here is a rewritten version with tables separating the components used for the **Cluster Bloom program itself** and the **packages installed onto a cluster**:
 
 ---
 
-## Components Installed with ClusterBloom
+## Components installed with Cluster Bloom
 
 | **Package/Component**       | **Purpose**                                                                                     |
 |-----------------------------|-------------------------------------------------------------------------------------------------|
