@@ -140,6 +140,7 @@ nav:
       - Users overview: airman/users/overview.md
       - Manage users: airman/users/manage-users.md
       - Manage user groups: airman/users/manage-user-groups.md
+    # A placeholder for projects section
 
   - References:
     - Overview: references/overview.md
@@ -157,7 +158,8 @@ exclude_docs: |
   references/contributing.md
 
   # AI development local documents
-  ai-development/developer-center.md # - Running AI workloads from GUI (Developer Center):
+  # - Running AI workloads from GUI (Developer Center):
+  ai-development/developer-center.md
 
   # Airman
   airman/clusters/add-clusters-cli.md
