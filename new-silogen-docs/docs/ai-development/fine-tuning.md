@@ -20,11 +20,11 @@ Once you have procured training data for your model, navigate to the "Datasets" 
 
 Subsequently, click the "Upload" button and drop your JSONL file in with a name and description
 
-![Upload dataset](../media/finetuning/upload-finetuning-dataset.png)
+![Upload dataset](../media/finetuning/upload-dataset.png)
 
 ## Creating a fine-tuned model
 
-You can trigger the creation of your fine-tuned model by clicking the "Fine-Tune Model" button and selecting appropriate entries.
+Now navigate to Models page. You can trigger the creation of your fine-tuned model by clicking the "Fine-Tune Model" button and selecting appropriate entries.
 
 You must provide your model a name and can optionally specify a description and any of the three hyperparameters: batch-size, learning-rate multiplier and number of epochs. If you are unsure of the values to use, leave the fields empty, to auto-select the default certified values.
 

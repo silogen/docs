@@ -16,7 +16,7 @@ At the core of the SiloGen platform is the Developer Center which enables resear
 - [AI catalogue](./ai-catalogue.md) with pre-configured AI workloads: SiloGen platform provides researchers with a vast catalog of AI workloads and models optimized for AMD compute. The workloads include the most common developer tooling and frameworks: Jupyter Notebooks, Visual Studio Code and popular frameworks like Pytorch and Tensorflow.
 - GPU-as-a-Service: Self-service access to AMD compute and GPUs for running smaller fine-tuning jobs to large scale distributed pretraining workloads. Access to GPUs and quotas are predefined in the Airman module so your team always has the right amount of resources available.
 
-![The introduction page to Developer Center outlines the main chat features.](./devcenter-introduction.png)
+![The introduction page to Developer Center outlines the main chat features.](../media/ai-development/devcenter-introduction.png)
 
 ## SiloGen AI Workloads
 
