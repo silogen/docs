@@ -103,7 +103,7 @@ nav:
 
   - AI development:
     - Overview: core/docs/silogen-docs/external-docs/docs/overview.md
-    - AI catalogue: ai-development/ai-catalogue.md
+    - AI catalog: core/docs/silogen-docs/external-docs/docs/developer-center/ai-catalog.md
     - Fine-tuning: ai-development/fine-tuning.md
     - Inference: ai-development/inference.md
     # A placeholder for training
