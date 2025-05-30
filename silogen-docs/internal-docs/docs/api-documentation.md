@@ -1,7 +1,0 @@
----
-title: API Documentation
-description: Various APIs used in the SiloGen platform.
----
-
-- model-service: https://model-service.dev.silogen.ai/redoc
-- document-collection: https://document-collection.dev.silogen.ai/redoc
