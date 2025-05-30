@@ -1,0 +1,117 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: "{{ .Release.Name }}-configs"
+data:
+  accelerate_config.yaml: |
+    {{- if (eq .Values.distributedType "auto-deepspeed-stage1" ) }}
+    compute_environment: LOCAL_MACHINE
+    distributed_type: DEEPSPEED
+    deepspeed_config:
+      zero_stage: 1
+      bf16:
+        enabled: true
+    fsdp_config: {}
+    machine_rank: 0
+    main_process_ip: null
+    main_process_port: null
+    mixed_precision: bf16
+    num_machines: 1
+    num_processes: {{ .Values.finetuningGpus }}
+    use_cpu: false
+    {{- else if (eq .Values.distributedType "auto-deepspeed-stage3") }}
+    compute_environment: LOCAL_MACHINE
+    distributed_type: DEEPSPEED
+    deepspeed_config:
+      zero_stage: 3
+      bf16:
+        enabled: true
+      offload_optimizer_device: none
+      offload_param_device: none
+      zero3_init_flag: true
+      zero3_save_16bit_model: true
+    fsdp_config: {}
+    machine_rank: 0
+    main_process_ip: null
+    main_process_port: null
+    mixed_precision: bf16
+    num_machines: 1
+    num_processes: {{ .Values.finetuningGpus }}
+    use_cpu: false
+    {{- else if (eq .Values.distributedType "auto-single-process") }}
+    compute_environment: LOCAL_MACHINE
+    distributed_type: NO
+    fsdp_config: {}
+    machine_rank: 0
+    main_process_ip: null
+    main_process_port: null
+    mixed_precision: bf16
+    num_machines: 1
+    num_processes: {{ .Values.finetuningGpus }}
+    use_cpu: false
+    {{- else if (eq .Values.distributedType "auto-ddp") }}
+    compute_environment: LOCAL_MACHINE
+    debug: false
+    distributed_type: MULTI_GPU
+    downcast_bf16: 'no'
+    enable_cpu_affinity: false
+    machine_rank: 0
+    main_training_function: main
+    mixed_precision: bf16
+    num_machines: 1
+    num_processes: {{ .Values.finetuningGpus }}
+    rdzv_backend: static
+    same_network: true
+    tpu_env: []
+    tpu_use_cluster: false
+    tpu_use_sudo: false
+    use_cpu: false
+    {{- else if (eq .Values.distributedType "custom-accelerate-config") }}
+    {{- toYaml .Values.customAccelerateConfig | nindent 4 }}
+    {{- end }}
+  finetuning_config.yaml: |
+    {{- with .Values.finetuning_config }}
+    method: {{ .method }}
+    data_conf:
+      training_data:
+        type: {{ .data_conf.training_data.type }}
+        datasets:
+          {{- $get_train_sampling_weight := (eq .data_conf.training_data.type "PRECOMPUTE_WEIGHTED_MIX") }}
+          {{- range .data_conf.training_data.datasets }}
+          - path: /local_resources/{{ .path | replace "/" "_" }}
+          {{- if $get_train_sampling_weight }}
+            sampling_weight: {{ default 1.0 .sampling_weight }}
+          {{- end }}
+          {{- end }}
+      validation_data:
+        type: {{ .data_conf.validation_data.type }}
+        {{- if (eq .data_conf.validation_data.type "AUTO_SPLIT") }}
+        ratio: {{ .data_conf.validation_data.ratio }}
+        {{- else if (eq .validation_data_type "CONCATENATION") }}
+        datasets:
+          {{- range .data_conf.validation_data.datasets }}
+          - path: /local_resources/{{ .path | replace "/" "_" }}
+          {{- end }}
+        {{- end }}
+      chat_template_name: {{ .data_conf.chat_template_name }}
+      missing_pad_token_strategy: {{ .data_conf.missing_pad_token_strategy }}
+    training_args:
+      {{- toYaml .training_args | nindent 6 }}
+    overrides:
+      {{- toYaml .overrides | nindent 6 }}
+    batchsize_conf:
+      total_train_batch_size: {{ default $.Values.finetuningGpus .batchsize_conf.total_train_batch_size }}
+      max_per_device_train_batch_size: {{ .batchsize_conf.max_per_device_train_batch_size }}
+      per_device_eval_batch_size: {{ default "null" .batchsize_conf.per_device_eval_batch_size }}
+    peft_conf:
+      {{- toYaml .peft_conf | nindent 6 }}
+    quant_conf:
+      {{- toYaml .quant_conf | nindent 6 }}
+    run_conf:
+      model: /local_resources/basemodel
+      {{- toYaml .run_conf | nindent 6 }}
+    {{- if (eq .method "sft") }}
+    sft_args:
+      {{- toYaml .sft_args | nindent 6 }}
+    {{- end }}
+    {{- end }}
