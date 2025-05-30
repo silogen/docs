@@ -1,0 +1,90 @@
+---
+title: "FAQ: Frequently Asked Questions"
+description: Frequently and not so frequently asked questions about SiloGen.
+---
+
+### Is `max_model_len` a flag we can set, or do we just use the vllm default?
+
+    You can set it in server flags as `max-model-len` to edit the model and then edit the pipeline to use the new model version like `llm: edited_model_id`. If you haven't marked your model / pipeline ready, it doesn't even create an new version of it. In that case, only modifying the model should be enough. [[slack thread](https://siloai-internal.slack.com/archives/C068NU8J8SE/p1727961904198419?thread_ts=1726482678.322099&cid=C068NU8J8SE)]
+
+### I need some usage statistics regarding organization x. How can I get it?
+
+    In `packages/token_usage/README.md` you can find the usage instructions:
+
+    Print total or monthly token usage information for a selected organization. If organization is not specified print token usage information for all the organizations. Results can also be exported to a CSV file with a `--csv` option. Requires a Tailscale connection and uses production cluster by default.
+
+    Usage: `token_usage <total|monthly> <organization> [--csv] [--users] [--dev/--production]`
+
+    See `token_usage --help` for usage details. [[slack thread](https://siloai-internal.slack.com/archives/C061MM9E9A5/p1726674308938869?thread_ts=1726667622.007439&cid=C061MM9E9A5)]
+
+### Which services are available through Tailscale?
+
+    See this section in the [Internal Network](basics/internal-network#tailscale-services) documentation.
+
+### How to update to the latest version of silodev CLI?
+
+    In a terminal from any directory of the core repository, run the following commands:
+
+    ```
+    pushd $(git rev-parse --show-toplevel)
+    pip install -e packages/silocore[dev]
+    pip install -e packages/silodev[dev]
+    popd
+    ````
+    [[slack thread](https://siloai-internal.slack.com/archives/C068NU8J8SE/p1724918688138499)]
+
+### Debugging errors when deploying models
+
+If you get an error when trying to deploy a model on dev or when trying to call the model through model-service, please have a look at the [debugging tips](debugging-tips) documentation.
+
+### How to deploy your own embedding model
+
+I'm doing some embedding model finetuning experiments and would like to deploy my embedding models for the document collection to evaluate the whole LLM pipeline. Is this easily doable?
+
+Here are the steps (with sample commits and API docs):
+
+- Add the embedding model in gitops so that it is deployed on dev: https://github.com/silogen/silogen-gitops/commit/7a9fee545c5992072c8811de6e6ed0abfeed5cc5 https://github.com/silogen/silogen-gitops/commit/d284b1b44711117c686dd4a99c6955b07b63ea9a
+- Change the document collection service to also use this embedding server and deploy document collection: https://github.com/silogen/silogen-gitops/pull/923/commits/7e5bfaf1b8829a67246458787536a3f3d8b80cf5
+- Create a collection with the new embedding server: https://document-collection.dev.silogen.ai/docs#/collections/create_collection_v1_collections_post
+
+[[slack thread](https://siloai-internal.slack.com/archives/C068NU8J8SE/p1724741469174149?thread_ts=1724740641.071109&cid=C068NU8J8SE)]
+
+### Is it possible to use the OpenAI chat completions Python library to include all the below parameters supported in our API?
+
+Yes `extra_body` parameter is your answer: any named parameter that is not an explicit named parameter in the `completions.create()` call can be added in a dict passed in through `extra_body` parameter. [[slack thread](https://siloai-internal.slack.com/archives/C061MM9E9A5/p1718028620650739)]
+
+#### Example
+
+```python
+completion = client.chat.completions.create(
+    model=MODEL_ID,
+    messages=history_openai_format,
+    temperature=TEMPERATURE,
+    stream=STREAM,
+    extra_headers=AUTHORIZATION_HEADER,
+    extra_body=(
+        {
+            "collection": {
+                "collectionId": RAG_COLLECTION_ID,
+                "certainty": RAG_CERTAINTY,
+                "top_k": RAG_TOP_K,
+            },
+            "debug": RAG_DEBUG,
+        }
+        if RAG_COLLECTION_ID
+        else None
+    ),
+)  # type: ignore
+```
+
+> ---
+>
+> **Note: Note**
+>
+> Also see the [Common Parameters and Values](https://docs.silogen.ai/using-the-api/llm-service/common-parameters) in the external documentation for more details.
+>
+> ---
+
+### How do I sign my commits?
+
+Check the README in the [platform repository](https://github.com/silogen/platform?tab=readme-ov-file#signing-commits). [[slack thread](https://siloai-internal.slack.com/archives/C068NU8J8SE/p1711627079291349)]

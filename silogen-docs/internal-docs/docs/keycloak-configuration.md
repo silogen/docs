@@ -1,0 +1,60 @@
+---
+title: Keycloak Configuration
+description: How to configure Keycloak for use with the SiloGen platform.
+---
+
+We use Keycloak as our identity and access management solution. It is an open source project that provides a single sign-on solution with support for OpenID Connect and OAuth 2.0.
+
+> ---
+>
+> **Info: Tailscale**
+>
+> Requires Tailscale.
+>
+> ---
+
+## Keycloak Access
+
+We use separate instances for each runtime environment. For read access, you need the username silogen-read-only and the password stored as a secret in Google secrets manager to access these.
+
+> ---
+>
+> **Warning: Restricted access**
+>
+> Please note that utilizing admin access to Keycloak is done by a few select people. These access groups (with different levels of access) exist: - Admin - App team Admin - Customer Success - SiloGen Read-only
+>
+> ---
+
+- dev: https://dev-keycloak.tail5abf9.ts.net/admin/master/console/#/silogen
+- production: https://production-keycloak.tail5abf9.ts.net/admin/master/console/#/silogen
+
+If you have permission to do so, here is the command to get the silogen-read-only password, which is different for each environment:
+
+```bash
+kubectl get secret keycloak-credentials -n keycloak -o yaml | yq '.data.KEYCLOAK_ADMIN_PASSWORD' | base64 -d
+```
+
+### Configuring a Customer
+
+A customer is defined by configuring Keycloak as described below. After adding or changing anything in Keycloak, users will have to renew their tokens by logging out and logging in for changes to be applied.
+
+1. Create a group
+2. Configure the following required attributes. Attributes can be single or multi-valued. For a multi-valued attribute, the same attribute can be added multiple times with different values.
+   1. organization: the name of the customer
+   2. allowedDomains: multiple values (usually just one). Domain names from which users are allowed to log in to the customer’s account. If a user signs up with an email address (and can confirm that address) from one of the domains they will automatically be assigned to this group and customer.
+   3. billing_account: an email address used to track the token usage for this customer
+   4. pipelines: multiple values. The names of pipelines allowed for this customer which are not already in the customer’s organization, in the format “organization/pipeline” (without version information). For example, the organization “Bonk Business Inc.” has implicit access to all pipelines “Bonk Business Inc./\*“, but would need to add “Silogen/Poro 34B” to the pipelines list to access the pipeline “Silogen/Poro 34B:123abc“
+
+### Configuring Roles
+
+Roles are used to assign special capabilities to users or groups. If you assign a role to a user, the corresponding capabilities will be available to that user when they log in to the system.
+
+- **converse_without_rag** : Role to control access to seeing the possibility to "disable RAG" from the chat UI. When this role is active the user will see a checkbox, which when unchecked, will disable RAG, in effect making inferencing happen without any document collection.
+- **customer_developer** : Developer role for our Customers. Currently used to manage playground access. When this role is active for a user, they will be able to open the playground from a button visible in the regular chat UI.
+- **document_collection_admin** : It allows users to modify a collection by adding or removing documents. It is like a "write access" to a collection. It is automatically included if the user has role "customer_developer" which is needed for the user to access the AI Developer Center.
+- **feedback_mode_available**: Role to control access to the feedback collection feature in the chat UI
+- **docs_editor**: Role that gives access to the [visual documentation](https://internal-docs.services.silogen.ai/admin) editor. See [Editing Docs](basics/editing-docs.md) for more information.
+
+### Configuring Access to Collections
+
+Access to document collections is based on group on Keycloak. Each user belongs to a group which has an organization attribute. Each collection has an organization attribute which corresponds to the organization which owns it. There is also an `access_control_list[]` field on the collection which corresponds to the other organizations which have access to it. When a collection is created (via API), the organization of the user creating it is used as the owning organization. You can manage the other organizations' access through the API; specify it in the `POST` request when creating it or edit it later in a `PUT` request.

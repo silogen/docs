@@ -1,0 +1,37 @@
+---
+title: Internal Network
+description: Accessing our services using the internal network.
+---
+
+We use [Tailscale](https://tailscale.com/) to access internal resources via VPN. Below are some instructions for using Tailscale. Once it is set up you will be able to access many of the internal services using handy URLs. You can find a list (probably not perfectly up to date) below.
+
+## How to use Tailscale
+
+> ---
+>
+> **Info: GitHub**
+>
+> Requires SiloGen GitHub access.
+>
+> ---
+
+1. Go to [tailscale.com](https://tailscale.com/)
+2. Click login in the upper right corner
+3. Sign in with Github (not Google)
+4. Authorise that github can read your silogen-related user
+5. Join the **silogen.org.github** tailnet (do not configure your own net)
+6. Download tailscale
+7. Linux:
+   - Start service: sudo tailscale up
+   - Login again
+   - Connect
+   - Test with e.g. http://prod-prometheus
+8. Mac
+   - Download the tailscale app
+   - Install it by double clicking it
+   - Run the Tailscale app (you will find it in the Launchpad)
+   - Follow the installation wizard (you might have to login again)
+
+## Tailscale services
+
+You can find the current list in [this slack message](https://siloai-internal.slack.com/archives/C068NU8J8SE/p1706793663014929?thread_ts=1706793656.627109&cid=C068NU8J8SE).

@@ -2,42 +2,42 @@
   "label": "External Docs Sidebar",
   "items": [
     {
-      "document": "external-docs/docs/intro.mdx",
+      "document": "external-docs/docs/intro.md",
       "label": "SiloGen Docs Introduction",
       "_template": "doc"
     },
     {
-      "document": "external-docs/docs/registering.mdx",
+      "document": "external-docs/docs/registering.md",
       "label": "Registering a New User",
       "_template": "doc"
     },
     {
       "title": "Using the API",
       "link": "doc",
-      "docLink": "external-docs/docs/using-the-api/index.mdx",
+      "docLink": "external-docs/docs/using-the-api/index.md",
       "items": [
         {
-          "document": "external-docs/docs/using-the-api/authentication.mdx",
+          "document": "external-docs/docs/using-the-api/authentication.md",
           "label": "Authentication",
           "_template": "doc"
         },
         {
           "title": "LLM Service",
           "link": "doc",
-          "docLink": "external-docs/docs/using-the-api/llm-service/index.mdx",
+          "docLink": "external-docs/docs/using-the-api/llm-service/index.md",
           "items": [
             {
-              "document": "external-docs/docs/using-the-api/llm-service/changing-prompt-template.mdx",
+              "document": "external-docs/docs/using-the-api/llm-service/changing-prompt-template.md",
               "label": "Changing Prompt Template for RAG",
               "_template": "doc"
             },
             {
-              "document": "external-docs/docs/using-the-api/llm-service/python-example.mdx",
+              "document": "external-docs/docs/using-the-api/llm-service/python-example.md",
               "label": "Python Example",
               "_template": "doc"
             },
             {
-              "document": "external-docs/docs/using-the-api/llm-service/common-parameters.mdx",
+              "document": "external-docs/docs/using-the-api/llm-service/common-parameters.md",
               "label": "Common Parameters and Values",
               "_template": "doc"
             }
@@ -45,17 +45,12 @@
           "_template": "category"
         },
         {
-          "document": "external-docs/docs/using-the-api/document-collection-service.mdx",
-          "label": "Document Collection Service",
-          "_template": "doc"
-        },
-        {
-          "document": "external-docs/docs/using-the-api/feedback-collection.mdx",
+          "document": "external-docs/docs/using-the-api/feedback-collection.md",
           "label": "Feedback Collection [under development]",
           "_template": "doc"
         },
         {
-          "document": "external-docs/docs/using-the-api/response-status.mdx",
+          "document": "external-docs/docs/using-the-api/response-status.md",
           "label": "Response Status and Error Codes",
           "_template": "doc"
         }
@@ -63,48 +58,87 @@
       "_template": "category"
     },
     {
-      "document": "external-docs/docs/using-chat-ui.mdx",
-      "label": "Using the Chat UI",
-      "_template": "doc"
-    },
-    {
-      "title": "Developer Console",
+      "title": "Resource Management",
       "link": "doc",
-      "docLink": "external-docs/docs/developer-console/index.mdx",
+      "docLink": "external-docs/docs/resource-management/index.md",
       "items": [
         {
-          "document": "external-docs/docs/developer-console/playground-chat.mdx",
-          "label": "Playground - Chat",
+          "document": "external-docs/docs/resource-management/dashboard.md",
+          "label": "Dashboard",
           "_template": "doc"
         },
         {
-          "document": "external-docs/docs/developer-console/playground-compare.mdx",
-          "label": "Playground - Compare",
+          "document": "external-docs/docs/resource-management/clusters.md",
+          "label": "Clusters",
           "_template": "doc"
         },
         {
-          "document": "external-docs/docs/developer-console/collections.mdx",
-          "label": "Collections",
+          "document": "external-docs/docs/resource-management/quotas.md",
+          "label": "Quotas",
           "_template": "doc"
         },
         {
-          "document": "external-docs/docs/developer-console/fine-tuning.mdx",
-          "label": "Fine-tuning",
+          "document": "external-docs/docs/resource-management/organization.md",
+          "label": "Organization",
           "_template": "doc"
         },
         {
-          "document": "external-docs/docs/developer-console/evaluation.mdx",
-          "label": "Evaluation",
+          "document": "external-docs/docs/resource-management/access-control.md",
+          "label": "Access Control",
           "_template": "doc"
+        }
+      ],
+      "_template": "category"
+    },
+    {
+      "title": "AI Developer Center",
+      "link": "doc",
+      "docLink": "external-docs/docs/developer-console/index.md",
+      "items": [
+        {
+          "title": "Chat and Compare",
+          "link": "doc",
+          "docLink": "external-docs/docs/developer-console/chat-and-compare.md",
+          "items": [
+            {
+              "document": "external-docs/docs/developer-console/chat.md",
+              "label": "Chat",
+              "_template": "doc"
+            },
+            {
+              "document": "external-docs/docs/developer-console/compare.md",
+              "label": "Compare",
+              "_template": "doc"
+            }
+          ],
+          "_template": "category"
         },
         {
-          "document": "external-docs/docs/developer-console/datasets.mdx",
+          "document": "external-docs/docs/developer-console/datasets.md",
           "label": "Datasets",
           "_template": "doc"
         },
         {
-          "document": "external-docs/docs/developer-console/pipelines.mdx",
-          "label": "Pipelines",
+          "title": "Models",
+          "link": "doc",
+          "docLink": "external-docs/docs/developer-console/models.md",
+          "items": [
+            {
+              "document": "external-docs/docs/developer-console/fine-tuning.md",
+              "label": "Fine-tuning",
+              "_template": "doc"
+            }
+          ],
+          "_template": "category"
+        },
+        {
+          "document": "external-docs/docs/developer-console/workloads.md",
+          "label": "Workloads",
+          "_template": "doc"
+        },
+        {
+          "document": "external-docs/docs/developer-console/catalog.md",
+          "label": "Catalog",
           "_template": "doc"
         }
       ],
@@ -113,25 +147,25 @@
     {
       "title": "Models [Section in progress]",
       "link": "doc",
-      "docLink": "external-docs/docs/models/index.mdx",
+      "docLink": "external-docs/docs/models/index.md",
       "items": [
         {
-          "document": "external-docs/docs/models/viking-7b.mdx",
+          "document": "external-docs/docs/models/viking-7b.md",
           "label": "Viking-7b",
           "_template": "doc"
         },
         {
-          "document": "external-docs/docs/models/poro-34b.mdx",
+          "document": "external-docs/docs/models/poro-34b.md",
           "label": "Poro-34b",
           "_template": "doc"
         },
         {
-          "document": "external-docs/docs/models/mistral-7b-instruct.mdx",
+          "document": "external-docs/docs/models/mistral-7b-instruct.md",
           "label": "Mistral-7b-instruct",
           "_template": "doc"
         },
         {
-          "document": "external-docs/docs/models/poro-chat-34b.mdx",
+          "document": "external-docs/docs/models/poro-chat-34b.md",
           "label": "Poro-chat-34b",
           "_template": "doc"
         }

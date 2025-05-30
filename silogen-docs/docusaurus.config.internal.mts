@@ -124,7 +124,7 @@ function extractAuthorFromCommit(commit: any): string {
 async function getFileMetadata(
   filePath: string,
   getRelativeFilePathFunction = getRelativeFilePath,
-): Promise<{ authors: { name: string }[]; lastEdited: string } | []> {
+): Promise<{ authors: { name: string }[]; lastEdited: string } | undefined> {
   // Check if result is in cache
   if (fileMetadataCache[filePath]) {
     return fileMetadataCache[filePath];
@@ -138,7 +138,7 @@ async function getFileMetadata(
       console.error(
         `Invalid file path or missing environment variables. File path: ${relativeFilePath}, Environment variables: ${JSON.stringify(envVars)}`,
       );
-      return [];
+      return undefined;
     }
 
     const octokit = new Octokit({ auth: envVars.token });

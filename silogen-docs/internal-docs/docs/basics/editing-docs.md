@@ -1,0 +1,57 @@
+---
+title: Editing Docs
+description: How to edit docs
+---
+
+# How to Edit the Documentation
+
+The documentation is in markdown with the addition of react components (.mdx). More on this below.
+
+The source for both the internal and external documentation exists in the [silogen/core](https://github.com/silogen/core) repository under `docs/silogen-docs/external-docs` for external docs and `docs/silogen-docs/internal-docs` for the internal docs. Images for both should go into `docs/silogen-docs/public/img`.
+
+## Local Editing
+
+People that have permission to access the repo can edit the files in a cloned local repository and then commit and push the changes to silogen/core. You can either edit the raw markdown files in an editor or you can use the CMS tool locally. To run it locally follow these steps:
+
+- make sure to install the dependencies with `pnpm install`
+- run the local editing app with `npm run dev`. It will start a server at `http://localhost:3000/admin`.
+
+In both cases you need to create a PR in order to get the changes reviewed and merged.
+
+## Online Editing
+
+For those that don't have access to the repo there is the possibility to edit the contents of both the internal and external documentation from our online content management system TinaCMS. You will need to log in for this and your user must have the "docs_editor" role in Keycloak. You can get setup by asking in the developer channel on Slack. Then head over to [the admin page](https://internal-docs.services.silogen.ai/admin) to edit. Every edit you save will result in a commit on the `docs_edits` branch of the repo. When you finish editing you have to tell someone with access to the repository to create a PR and do the review. Once a PR is merged, the external documentation is automatically updated online. The internal documentation is updated when the internal-docs service is re-deployed.
+
+> ---
+>
+> **Danger: Beware**
+>
+> Beware. The editor app edits the same docs regardless of environment (dev, production).
+>
+> ---
+
+## Editing tips
+
+### Images
+
+> ---
+>
+> **Info: About images**
+>
+> Our online editing tool currently does not support uploading files. The work-around is to create the link in the document online and then commit the image in the repo.
+>
+> ---
+
+You can add an image like this:
+
+```markdown
+![Keycloak account manager](/img/keycloak-account-manager.png)
+\*Figure 1. Keycloak account manager: https://auth.services.silogen.ai/realms/silogen/account/_
+```
+
+The image link starts with the exclamation mark and then references an image in the img directory under `public`. The full path in the silogen/core repo would be docs/silogen-docs/public/img.
+
+![Keycloak account manager](/img/keycloak-account-manager.png)
+_Figure 1. Keycloak account manager: [https://auth.services.silogen.ai/realms/silogen/account/](https://auth.services.silogen.ai/realms/silogen/account/)_
+
+As you can see, the image is centered thanks to some custom CSS.

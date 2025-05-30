@@ -2,92 +2,68 @@
   "label": "Internal Docs Sidebar",
   "items": [
     {
-      "document": "internal-docs/docs/index.mdx",
+      "document": "internal-docs/docs/index.md",
       "label": "Start Here",
       "_template": "doc"
     },
     {
       "title": "Basics",
       "link": "doc",
-      "docLink": "internal-docs/docs/basics/index.mdx",
+      "docLink": "internal-docs/docs/basics/index.md",
       "items": [
         {
-          "document": "internal-docs/docs/basics/authentication_and_authorization.mdx",
+          "document": "internal-docs/docs/basics/authentication_and_authorization.md",
           "_template": "doc"
         },
         {
-          "document": "internal-docs/docs/basics/editing-docs.mdx",
+          "document": "internal-docs/docs/basics/editing-docs.md",
           "_template": "doc"
         },
         {
-          "document": "internal-docs/docs/basics/Code-repositories.mdx",
+          "document": "internal-docs/docs/basics/Code-repositories.md",
           "_template": "doc"
         },
         {
-          "document": "internal-docs/docs/basics/internal-network.mdx",
+          "document": "internal-docs/docs/basics/internal-network.md",
           "_template": "doc"
         }
       ],
       "_template": "category"
     },
     {
-      "document": "internal-docs/docs/keycloak-configuration.mdx",
+      "document": "internal-docs/docs/keycloak-configuration.md",
       "_template": "doc"
-    },
-    {
-      "title": "Models and Pipelines",
-      "link": "doc",
-      "docLink": "internal-docs/docs/models-and-pipelines/index.mdx",
-      "items": [
-        {
-          "document": "internal-docs/docs/models-and-pipelines/model-configuration-and-deployment.mdx",
-          "_template": "doc"
-        },
-        {
-          "document": "internal-docs/docs/models-and-pipelines/pipelines.mdx",
-          "_template": "doc"
-        },
-        {
-          "document": "internal-docs/docs/models-and-pipelines/adding-a-new-backend-model.mdx",
-          "_template": "doc"
-        },
-        {
-          "document": "internal-docs/docs/models-and-pipelines/model-catalog-tips-for-admins.mdx",
-          "_template": "doc"
-        }
-      ],
-      "_template": "category"
     },
     {
       "title": "Workflows",
       "link": "doc",
-      "docLink": "internal-docs/docs/workflows/index.mdx",
+      "docLink": "internal-docs/docs/workflows/index.md",
       "items": [
         {
-          "document": "internal-docs/docs/workflows/flyte.mdx",
+          "document": "internal-docs/docs/workflows/flyte.md",
           "_template": "doc"
         }
       ],
       "_template": "category"
     },
     {
-      "document": "internal-docs/docs/document-collection-service.mdx",
+      "document": "internal-docs/docs/document-collection-service.md",
       "_template": "doc"
     },
     {
-      "document": "internal-docs/docs/debugging-tips.mdx",
+      "document": "internal-docs/docs/debugging-tips.md",
       "_template": "doc"
     },
     {
-      "document": "internal-docs/docs/api-documentation.mdx",
+      "document": "internal-docs/docs/api-documentation.md",
       "_template": "doc"
     },
     {
-      "document": "internal-docs/docs/testing.mdx",
+      "document": "internal-docs/docs/testing.md",
       "_template": "doc"
     },
     {
-      "document": "internal-docs/docs/faq.mdx",
+      "document": "internal-docs/docs/faq.md",
       "_template": "doc"
     }
   ]
