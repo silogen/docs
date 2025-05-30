@@ -53,7 +53,7 @@ This is your comprehensive handbook designed to help data scientists and platfor
 
       <ul class="intro-links">
         <li>
-          <a href="./ai-development/overview/">AI development overview</a>
+          <a href="./core/docs/silogen-docs/external-docs/docs/overview/">AI development overview</a>
         </li>
         <li>
           <a href="./ai-development/tutorials/">Tutorials</a>
