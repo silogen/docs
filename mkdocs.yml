@@ -105,6 +105,7 @@ nav:
   - AI development:
     - Overview: core/docs/silogen-docs/external-docs/docs/developer-center/overview.md
     - AI catalog: core/docs/silogen-docs/external-docs/docs/developer-center/ai-catalog.md
+    - Workloads: core/docs/silogen-docs/external-docs/docs/developer-center/workloads.md
 
     - Training and fine-tuning:
       - Overview: core/docs/silogen-docs/external-docs/docs/developer-center/training/overview.md
@@ -131,7 +132,6 @@ nav:
       - download-data-to-bucket: ai-workloads/workloads/download-data-to-bucket/helm/README.md
       - download-huggingface-model-to-bucket: ai-workloads/workloads/download-huggingface-model-to-bucket/helm/README.md
       - k8s-namespace-setup: ai-workloads/workloads/k8s-namespace-setup/helm/README.md
-      # A placeholder for llm-finetune-engine-agnostic Helm version
       - llm-finetune-silogen-engine:
         - Overview: ai-workloads/workloads/llm-finetune-silogen-engine/helm/README.md
         - Fine-tuning config: ai-workloads/workloads/llm-finetune-silogen-engine/helm/silogen_finetuning_config_readme.md
