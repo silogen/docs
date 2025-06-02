@@ -49,11 +49,11 @@ sudo ./bloom
 
 The Cluster Bloom interface will appear:
 
-![Cluster Bloom Interface](../media/bloom.png)
+![Cluster Bloom Interface](../media/infra/bloom.png)
 
 For systems with unmounted physical disks, a selection prompt will appear:
 
-![Cluster Bloom Disk Selection](../media/bloom-disk-selection.png)
+![Cluster Bloom Disk Selection](../media/infra/bloom-disk-selection.png)
 
 After successful installation, Cluster Bloom generates `additional_node_command.txt` that contains the command for installing additional nodes into the cluster.
 

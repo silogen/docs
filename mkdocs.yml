@@ -69,8 +69,8 @@ plugins:
         'core/docs/silogen-docs/external-docs/docs/developer-center/training/index.md': 'core/docs/silogen-docs/external-docs/docs/developer-center/training/overview.md'
         'core/docs/silogen-docs/external-docs/docs/airman/index.md': 'core/docs/silogen-docs/external-docs/docs/airman/overview.md'
         'core/docs/silogen-docs/external-docs/docs/airman/clusters/index.md': 'core/docs/silogen-docs/external-docs/docs/airman/clusters/overview.md'
-        'airman/quotas/index.md': 'airman/quotas/overview.md'
-        'airman/users/index.md': 'airman/users/overview.md'
+        'core/docs/silogen-docs/external-docs/docs/airman/quotas/index.md': 'core/docs/silogen-docs/external-docs/docs/airman/quotas/overview.md'
+        'core/docs/silogen-docs/external-docs/docs/airman/users/index.md': 'core/docs/silogen-docs/external-docs/docs/airman/users/overview.md'
         'platform-installation/index.md': 'platform-installation/installation.md'
         'references/index.md': 'references/overview.md'
 
@@ -142,17 +142,17 @@ nav:
 
   - AI resource management:
     - Overview: core/docs/silogen-docs/external-docs/docs/airman/overview.md
+    - Dashboard: core/docs/silogen-docs/external-docs/docs/airman/dashboard.md
     - Clusters:
       - Clusters overview: core/docs/silogen-docs/external-docs/docs/airman/clusters/overview.md
       - Add new cluster: core/docs/silogen-docs/external-docs/docs/airman/clusters/add-clusters-ui.md
     - Quotas:
-      - Quotas overview: airman/quotas/overview.md
-      - Set quotas: airman/quotas/set-quotas.md
+      - Quotas overview: core/docs/silogen-docs/external-docs/docs/airman/quotas/overview.md
+      - Set quotas: core/docs/silogen-docs/external-docs/docs/airman/quotas/set-quotas.md
     - User management:
-      - Users overview: airman/users/overview.md
-      - Manage users: airman/users/manage-users.md
-      - Manage user groups: airman/users/manage-user-groups.md
-    # A placeholder for projects section
+      - Users overview: core/docs/silogen-docs/external-docs/docs/airman/users/overview.md
+      - Manage users: core/docs/silogen-docs/external-docs/docs/airman/users/manage-users.md
+      - Manage user groups: core/docs/silogen-docs/external-docs/docs/airman/users/manage-user-groups.md
 
   - References:
     - Overview: references/overview.md
@@ -164,10 +164,6 @@ extra_css:
 exclude_docs: |
   ref-architecture/SilogenAMDEnterpriseAIPlatform.md
   ref-architecture/Enterprise-AI-Architecture.md
-
-  platform-installation/azure-environment.md
-  platform-installation/oci-environment.md
-  platform-installation/maintenance.md
 
   references/best-practices.md
   references/contributing.md
