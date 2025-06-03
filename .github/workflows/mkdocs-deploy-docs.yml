@@ -2,7 +2,8 @@ name: Publish docs via GitHub Pages using mkdocs
 on:
   push:
     branches:
-      - main
+      - clone-from-private-repo
+    #  - main
 
 jobs:
   deploy:
@@ -39,7 +40,11 @@ jobs:
       - name: Install dependencies
         run: python3 -m pip install -r ./requirements.txt
 
-      - run: mkdocs build
+      - name: Build with mkdocs 
+        run: mkdocs build
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v4
