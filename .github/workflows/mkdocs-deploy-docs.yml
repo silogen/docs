@@ -41,9 +41,9 @@ jobs:
         run: python3 -m pip install -r ./requirements.txt
 
       - name: Build with mkdocs 
-        run: mkdocs build
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        - run: |
+          git config --global url."https://${{ github.token }}@github.com/".insteadOf "https://github.com/"
+          mkdocs build
 
 
       - name: Deploy
