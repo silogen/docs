@@ -71,7 +71,7 @@ plugins:
         'core/docs/silogen-docs/external-docs/docs/airman/clusters/index.md': 'core/docs/silogen-docs/external-docs/docs/airman/clusters/overview.md'
         'core/docs/silogen-docs/external-docs/docs/airman/quotas/index.md': 'core/docs/silogen-docs/external-docs/docs/airman/quotas/overview.md'
         'core/docs/silogen-docs/external-docs/docs/airman/users/index.md': 'core/docs/silogen-docs/external-docs/docs/airman/users/overview.md'
-        'platform-installation/index.md': 'platform-installation/installation.md'
+        'platform-infrastructure/index.md': 'platform-infrastructure/installation.md'
         'references/index.md': 'references/overview.md'
 
 markdown_extensions:

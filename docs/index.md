@@ -30,14 +30,14 @@ This is your comprehensive handbook designed to help data scientists and platfor
     </div>
 
     <div class="card-body">
-      <h3>Platform installation</h3>
+      <h3>Platform infrastructure</h3>
 
       <ul class="intro-links">
         <li>
-          <a href="./platform-installation/installation/">Platform installation basics</a>
+          <a href="./platform-infrastructure/installation/">Platform installation basics</a>
         </li>
         <li>
-          <a href="./platform-installation/demo-environment/">Setup demo environmenta</a>
+          <a href="./platform-infrastructure/demo-environment/">Setup demo environmenta</a>
         </li>
       </ul>
     </div>
