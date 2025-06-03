@@ -55,18 +55,23 @@ plugins:
           import_url: https://github.com/silogen/ai-workloads?branch=main
           imports: [docs/tutorials/*, workloads/workloads-overview.md, workloads/dev-chatui-openwebui/helm/README.md, workloads/dev-workspace-vscode/helm/README.md, workloads/dev-text2image-comfyui/helm/README.md, workloads/download-data-to-bucket/helm/README.md, workloads/download-huggingface-model-to-bucket/helm/README.md, workloads/k8s-namespace-setup/helm/README.md, workloads/llm-finetune-silogen-engine/helm/*,  workloads/llm-inference-llamacpp-mi300x/helm/README.md, workloads/llm-inference-sglang/helm/README.md, workloads/llm-inference-vllm/helm/README.md, workloads/llm-inference-vllm-benchmark-mad/helm/README.md]
 
+        - name: core
+          import_url: https://github.com/silogen/core?branch=main
+          imports: [docs/keycloak/sso.md, docs/silogen-docs/external-docs/docs/*]
+
         #- name: kaiwo
         #  import_url: https://github.com/silogen/kaiwo?branch=main
         #  imports: [docs/docs/*]
 
   - redirects:
       redirect_maps:
-        'ai-development/index.md': 'ai-development/overview.md'
-        'airman/index.md': 'airman/overview.md'
-        'airman/clusters/index.md': 'airman/clusters/overview.md'
-        'airman/quotas/index.md': 'airman/quotas/overview.md'
-        'airman/users/index.md': 'airman/users/overview.md'
-        'platform-installation/index.md': 'platform-installation/installation.md'
+        'core/docs/silogen-docs/external-docs/docs/developer-center/inference/index.md': 'core/docs/silogen-docs/external-docs/docs/developer-center/inference/overview.md'
+        'core/docs/silogen-docs/external-docs/docs/developer-center/training/index.md': 'core/docs/silogen-docs/external-docs/docs/developer-center/training/overview.md'
+        'core/docs/silogen-docs/external-docs/docs/airman/index.md': 'core/docs/silogen-docs/external-docs/docs/airman/overview.md'
+        'core/docs/silogen-docs/external-docs/docs/airman/clusters/index.md': 'core/docs/silogen-docs/external-docs/docs/airman/clusters/overview.md'
+        'core/docs/silogen-docs/external-docs/docs/airman/quotas/index.md': 'core/docs/silogen-docs/external-docs/docs/airman/quotas/overview.md'
+        'core/docs/silogen-docs/external-docs/docs/airman/users/index.md': 'core/docs/silogen-docs/external-docs/docs/airman/users/overview.md'
+        'platform-infrastructure/index.md': 'platform-infrastructure/installation.md'
         'references/index.md': 'references/overview.md'
 
 markdown_extensions:
@@ -92,21 +97,29 @@ nav:
       - Login to SiloGen: login-to-silogen.md
       - Personal preferences: personal-preferences.md
 
-  - Platform installation:
-    - Installation overview: platform-installation/installation.md
-    - Demo environment installation: platform-installation/demo-environment.md
+  - Platform infrastructure:
+    - Installation overview: platform-infrastructure/installation.md
+    - Demo environment installation: platform-infrastructure/demo-environment.md
+    - Enable single sign-on: core/docs/keycloak/sso.md
 
   - AI development:
-    - Overview: ai-development/overview.md
-    - AI catalogue: ai-development/ai-catalogue.md
-    - Fine-tuning: ai-development/fine-tuning.md
-    - Inference: ai-development/inference.md
-    # A placeholder for training
-    # A placeholder for evaluation
-    # A placeholder for RAG
+    - Overview: core/docs/silogen-docs/external-docs/docs/developer-center/overview.md
+    - AI catalog: core/docs/silogen-docs/external-docs/docs/developer-center/ai-catalog.md
+    - Workloads: core/docs/silogen-docs/external-docs/docs/developer-center/workloads.md
+
+    - Training and fine-tuning:
+      - Overview: core/docs/silogen-docs/external-docs/docs/developer-center/training/overview.md
+      - Models: core/docs/silogen-docs/external-docs/docs/developer-center/training/models.md
+      - Datasets: core/docs/silogen-docs/external-docs/docs/developer-center/training/datasets.md
+      - Fine-tuning: core/docs/silogen-docs/external-docs/docs/developer-center/training/fine-tuning.md
+
+    - Inference:
+      - Inference overview: core/docs/silogen-docs/external-docs/docs/developer-center/inference/overview.md
+      - Chat: core/docs/silogen-docs/external-docs/docs/developer-center/inference/chat.md
+      - Compare: core/docs/silogen-docs/external-docs/docs/developer-center/inference/compare.md
 
     - Tutorials:
-      - Overview: ai-development/tutorials.md
+      - Overview: ai-development-tutorials.md
       - Prerequisites for running the tutorials: ai-workloads/docs/tutorials/tutorial-prereqs.md
       - Deliver resources and fine-tune: ai-workloads/docs/tutorials/tutorial-01-deliver-resources-and-finetune.md
       - Language extension - Odia fine-tuning: ai-workloads/docs/tutorials/tutorial-02-language-extension-finetune.md
@@ -119,7 +132,6 @@ nav:
       - download-data-to-bucket: ai-workloads/workloads/download-data-to-bucket/helm/README.md
       - download-huggingface-model-to-bucket: ai-workloads/workloads/download-huggingface-model-to-bucket/helm/README.md
       - k8s-namespace-setup: ai-workloads/workloads/k8s-namespace-setup/helm/README.md
-      # A placeholder for llm-finetune-engine-agnostic Helm version
       - llm-finetune-silogen-engine:
         - Overview: ai-workloads/workloads/llm-finetune-silogen-engine/helm/README.md
         - Fine-tuning config: ai-workloads/workloads/llm-finetune-silogen-engine/helm/silogen_finetuning_config_readme.md
@@ -129,18 +141,18 @@ nav:
       - llm-inference-vllm-benchmark-mad: ai-workloads/workloads/llm-inference-vllm-benchmark-mad/helm/README.md
 
   - AI resource management:
-    - Overview: airman/overview.md
+    - Overview: core/docs/silogen-docs/external-docs/docs/airman/overview.md
+    - Dashboard: core/docs/silogen-docs/external-docs/docs/airman/dashboard.md
     - Clusters:
-      - Clusters overview: airman/clusters/overview.md
-      - Add new cluster: airman/clusters/add-clusters-ui.md
+      - Clusters overview: core/docs/silogen-docs/external-docs/docs/airman/clusters/overview.md
+      - Add new cluster: core/docs/silogen-docs/external-docs/docs/airman/clusters/add-clusters-ui.md
     - Quotas:
-      - Quotas overview: airman/quotas/overview.md
-      - Set quotas: airman/quotas/set-quotas.md
+      - Quotas overview: core/docs/silogen-docs/external-docs/docs/airman/quotas/overview.md
+      - Set quotas: core/docs/silogen-docs/external-docs/docs/airman/quotas/set-quotas.md
     - User management:
-      - Users overview: airman/users/overview.md
-      - Manage users: airman/users/manage-users.md
-      - Manage user groups: airman/users/manage-user-groups.md
-    # A placeholder for projects section
+      - Users overview: core/docs/silogen-docs/external-docs/docs/airman/users/overview.md
+      - Manage users: core/docs/silogen-docs/external-docs/docs/airman/users/manage-users.md
+      - Manage user groups: core/docs/silogen-docs/external-docs/docs/airman/users/manage-user-groups.md
 
   - References:
     - Overview: references/overview.md
@@ -150,21 +162,8 @@ extra_css:
   - stylesheets/extra.css
 
 exclude_docs: |
-  SilogenAMDEnterpriseAIPlatform.md
+  ref-architecture/SilogenAMDEnterpriseAIPlatform.md
   ref-architecture/Enterprise-AI-Architecture.md
 
-  # References
   references/best-practices.md
   references/contributing.md
-
-  # AI development local documents
-  # - Running AI workloads from GUI (Developer Center):
-  ai-development/developer-center.md
-
-  # Airman
-  airman/clusters/add-clusters-cli.md
-
-  # Platform installation
-  platform-installation/azure-environment.md
-  platform-installation/oci-environment.md
-  platform-installation/maintenance.md

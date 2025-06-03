@@ -1,7 +1,0 @@
-*
-!.gitignore
-!admin
-!img
-!/img/**
-!.nojekyll
-.DS_Store

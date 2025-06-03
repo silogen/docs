@@ -30,14 +30,14 @@ This is your comprehensive handbook designed to help data scientists and platfor
     </div>
 
     <div class="card-body">
-      <h3>Platform installation</h3>
+      <h3>Platform infrastructure</h3>
 
       <ul class="intro-links">
         <li>
-          <a href="./platform-installation/installation/">Platform installation basics</a>
+          <a href="./platform-infrastructure/installation/">Platform installation basics</a>
         </li>
         <li>
-          <a href="./platform-installation/demo-environment/">Setup demo environmenta</a>
+          <a href="./platform-infrastructure/demo-environment/">Setup demo environmenta</a>
         </li>
       </ul>
     </div>
@@ -53,16 +53,16 @@ This is your comprehensive handbook designed to help data scientists and platfor
 
       <ul class="intro-links">
         <li>
-          <a href="./ai-development/overview/">AI development overview</a>
+          <a href="./core/docs/silogen-docs/external-docs/docs/developer-center/overview/">AI development overview</a>
         </li>
         <li>
-          <a href="./ai-development/tutorials/">Tutorials</a>
+          <a href="./ai-development-tutorials/">Tutorials</a>
         </li>
         <li>
           <a href="./ai-workloads/workloads/workloads-overview/">Working with AI workloads</a>
         </li>
         <li>
-          <a href="./ai-development/developer-center/">Run AI workloads on Developer Center</a>
+          <a href="./core/docs/silogen-docs/external-docs/docs/developer-center/ai-catalog/">Find models in AI catalog</a>
         </li>
       </ul>
     </div>
@@ -78,13 +78,13 @@ This is your comprehensive handbook designed to help data scientists and platfor
 
       <ul class="intro-links">
         <li>
-          <a href="./airman/overview/">AI resource overview</a>
+          <a href="./core/docs/silogen-docs/external-docs/docs/airman/overview/">AI resource overview</a>
         </li>
         <li>
-          <a href="./airman/clusters/overview/">Managing clusters</a>
+          <a href="./core/docs/silogen-docs/external-docs/docs/airman/clusters/overview/">Managing clusters</a>
         </li>
         <li>
-          <a href="./airman/users/overview/">Managing users</a>
+          <a href="./core/docs/silogen-docs/external-docs/docs/airman/users/overview/">Managing users</a>
         </li>
       </ul>
     </div>
