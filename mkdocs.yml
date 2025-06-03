@@ -57,7 +57,7 @@ plugins:
 
         - name: core
           import_url: https://github.com/silogen/core?branch=feature/core_docs_merge
-          imports: [docs/keycloak/sso.md, docs/silogen-docs/external-docs/docs/*, docs/public/img/*]
+          imports: [docs/keycloak/sso.md, docs/silogen-docs/external-docs/docs/*]
 
         #- name: kaiwo
         #  import_url: https://github.com/silogen/kaiwo?branch=main
@@ -98,8 +98,8 @@ nav:
       - Personal preferences: personal-preferences.md
 
   - Platform infrastructure:
-    - Installation overview: platform-installation/installation.md
-    - Demo environment installation: platform-installation/demo-environment.md
+    - Installation overview: platform-infrastructure/installation.md
+    - Demo environment installation: platform-infrastructure/demo-environment.md
     - Enable single sign-on: core/docs/keycloak/sso.md
 
   - AI development:
