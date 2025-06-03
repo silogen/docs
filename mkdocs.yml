@@ -57,7 +57,6 @@ plugins:
 
         - name: core
           import_url: https://github.com/silogen/core?branch=main
-          #import_url: git@github.com:silogen/core.git?branch=main
           imports: [docs/keycloak/sso.md, docs/silogen-docs/external-docs/docs/*]
 
         #- name: kaiwo
