@@ -42,7 +42,7 @@ jobs:
 
       - name: Build with mkdocs 
         run: |
-          git config --global url."https://${{ github.token }}@github.com/".insteadOf "https://github.com/"
+          git config --global url."https://${{ secrets.GITHUB_TOKEN }}@github.com/".insteadOf "https://github.com/"
           mkdocs build   
 
 
