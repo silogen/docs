@@ -1,5 +1,5 @@
 site_name: SiloGen documentation
-site_description: Documentation for SiloGen AMD Enterprise AI Platform
+site_description: Documentation for SiloGen Enterprise AI Platform
 repo_url: https://github.com/silogen/docs
 docs_dir: docs
 edit_uri: https://github.com/silogen/docs/blob/main
