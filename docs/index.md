@@ -37,7 +37,7 @@ This is your comprehensive handbook designed to help data scientists and platfor
           <a href="./platform-infrastructure/installation/">Platform installation basics</a>
         </li>
         <li>
-          <a href="./platform-infrastructure/demo-environment/">Setup demo environmenta</a>
+          <a href="./platform-infrastructure/demo-environment/">Install demo environment</a>
         </li>
       </ul>
     </div>
