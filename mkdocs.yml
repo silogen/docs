@@ -55,9 +55,9 @@ plugins:
           import_url: https://github.com/silogen/ai-workloads?branch=main
           imports: [docs/tutorials/*, workloads/workloads-overview.md, workloads/dev-chatui-openwebui/helm/README.md, workloads/dev-workspace-vscode/helm/README.md, workloads/dev-text2image-comfyui/helm/README.md, workloads/download-data-to-bucket/helm/README.md, workloads/download-huggingface-model-to-bucket/helm/README.md, workloads/k8s-namespace-setup/helm/README.md, workloads/llm-finetune-silogen-engine/helm/*,  workloads/llm-inference-llamacpp-mi300x/helm/README.md, workloads/llm-inference-sglang/helm/README.md, workloads/llm-inference-vllm/helm/README.md, workloads/llm-inference-vllm-benchmark-mad/helm/README.md]
 
-        - name: core
-          import_url: https://github.com/silogen/core?branch=main
-          imports: [docs/keycloak/sso.md, docs/silogen-docs/external-docs/docs/*]
+      #  - name: core
+      #    import_url: https://github.com/silogen/core?branch=main
+      #    imports: [docs/keycloak/sso.md, docs/silogen-docs/external-docs/docs/*]
 
         #- name: kaiwo
         #  import_url: https://github.com/silogen/kaiwo?branch=main
@@ -65,12 +65,12 @@ plugins:
 
   - redirects:
       redirect_maps:
-        'core/docs/silogen-docs/external-docs/docs/developer-center/inference/index.md': 'core/docs/silogen-docs/external-docs/docs/developer-center/inference/overview.md'
-        'core/docs/silogen-docs/external-docs/docs/developer-center/training/index.md': 'core/docs/silogen-docs/external-docs/docs/developer-center/training/overview.md'
-        'core/docs/silogen-docs/external-docs/docs/airman/index.md': 'core/docs/silogen-docs/external-docs/docs/airman/overview.md'
-        'core/docs/silogen-docs/external-docs/docs/airman/clusters/index.md': 'core/docs/silogen-docs/external-docs/docs/airman/clusters/overview.md'
-        'core/docs/silogen-docs/external-docs/docs/airman/quotas/index.md': 'core/docs/silogen-docs/external-docs/docs/airman/quotas/overview.md'
-        'core/docs/silogen-docs/external-docs/docs/airman/users/index.md': 'core/docs/silogen-docs/external-docs/docs/airman/users/overview.md'
+        'core/docs/developer-center/inference/index.md': 'core/docs/developer-center/inference/overview.md'
+        'core/docs/developer-center/training/index.md': 'core/docs/developer-center/training/overview.md'
+        'core/docs/airman/index.md': 'core/docs/airman/overview.md'
+        'core/docs/airman/clusters/index.md': 'core/docs/airman/clusters/overview.md'
+        'core/docs/airman/quotas/index.md': 'core/docs/airman/quotas/overview.md'
+        'core/docs/airman/users/index.md': 'core/docs/airman/users/overview.md'
         'platform-infrastructure/index.md': 'platform-infrastructure/installation.md'
         'references/index.md': 'references/overview.md'
 
@@ -103,20 +103,20 @@ nav:
     - Enable single sign-on: core/docs/keycloak/sso.md
 
   - AI development:
-    - Overview: core/docs/silogen-docs/external-docs/docs/developer-center/overview.md
-    - AI catalog: core/docs/silogen-docs/external-docs/docs/developer-center/ai-catalog.md
-    - Workloads: core/docs/silogen-docs/external-docs/docs/developer-center/workloads.md
+    - Overview: core/docs/developer-center/overview.md
+    - AI catalog: core/docs/developer-center/ai-catalog.md
+    - Workloads: core/docs/developer-center/workloads.md
 
     - Training and fine-tuning:
-      - Overview: core/docs/silogen-docs/external-docs/docs/developer-center/training/overview.md
-      - Models: core/docs/silogen-docs/external-docs/docs/developer-center/training/models.md
-      - Datasets: core/docs/silogen-docs/external-docs/docs/developer-center/training/datasets.md
-      - Fine-tuning: core/docs/silogen-docs/external-docs/docs/developer-center/training/fine-tuning.md
+      - Overview: core/docs/developer-center/training/overview.md
+      - Models: core/docs/developer-center/training/models.md
+      - Datasets: core/docs/developer-center/training/datasets.md
+      - Fine-tuning: core/docs/developer-center/training/fine-tuning.md
 
     - Inference:
-      - Inference overview: core/docs/silogen-docs/external-docs/docs/developer-center/inference/overview.md
-      - Chat: core/docs/silogen-docs/external-docs/docs/developer-center/inference/chat.md
-      - Compare: core/docs/silogen-docs/external-docs/docs/developer-center/inference/compare.md
+      - Inference overview: core/docs/developer-center/inference/overview.md
+      - Chat: core/docs/developer-center/inference/chat.md
+      - Compare: core/docs/developer-center/inference/compare.md
 
     - Tutorials:
       - Overview: ai-development-tutorials.md
@@ -141,18 +141,18 @@ nav:
       - llm-inference-vllm-benchmark-mad: ai-workloads/workloads/llm-inference-vllm-benchmark-mad/helm/README.md
 
   - AI resource management:
-    - Overview: core/docs/silogen-docs/external-docs/docs/airman/overview.md
-    - Dashboard: core/docs/silogen-docs/external-docs/docs/airman/dashboard.md
+    - Overview: core/docs/airman/overview.md
+    - Dashboard: core/docs/airman/dashboard.md
     - Clusters:
-      - Clusters overview: core/docs/silogen-docs/external-docs/docs/airman/clusters/overview.md
-      - Add new cluster: core/docs/silogen-docs/external-docs/docs/airman/clusters/add-clusters-ui.md
+      - Clusters overview: core/docs/airman/clusters/overview.md
+      - Add new cluster: core/docs/airman/clusters/add-clusters-ui.md
     - Quotas:
-      - Quotas overview: core/docs/silogen-docs/external-docs/docs/airman/quotas/overview.md
-      - Set quotas: core/docs/silogen-docs/external-docs/docs/airman/quotas/set-quotas.md
+      - Quotas overview: core/docs/airman/quotas/overview.md
+      - Set quotas: core/docs/airman/quotas/set-quotas.md
     - User management:
-      - Users overview: core/docs/silogen-docs/external-docs/docs/airman/users/overview.md
-      - Manage users: core/docs/silogen-docs/external-docs/docs/airman/users/manage-users.md
-      - Manage user groups: core/docs/silogen-docs/external-docs/docs/airman/users/manage-user-groups.md
+      - Users overview: core/docs/airman/users/overview.md
+      - Manage users: core/docs/airman/users/manage-users.md
+      - Manage user groups: core/docs/airman/users/manage-user-groups.md
 
   - References:
     - Overview: references/overview.md
