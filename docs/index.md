@@ -37,7 +37,7 @@ This is your comprehensive handbook designed to help data scientists and platfor
           <a href="./platform-infrastructure/installation/">Platform installation basics</a>
         </li>
         <li>
-          <a href="./platform-infrastructure/demo-environment/">Setup demo environmenta</a>
+          <a href="./platform-infrastructure/demo-environment/">Install demo environment</a>
         </li>
       </ul>
     </div>
@@ -53,7 +53,7 @@ This is your comprehensive handbook designed to help data scientists and platfor
 
       <ul class="intro-links">
         <li>
-          <a href="./core/docs/silogen-docs/external-docs/docs/developer-center/overview/">AI development overview</a>
+          <a href="./core/docs/developer-center/overview/">AI development overview</a>
         </li>
         <li>
           <a href="./ai-development-tutorials/">Tutorials</a>
@@ -62,7 +62,7 @@ This is your comprehensive handbook designed to help data scientists and platfor
           <a href="./ai-workloads/workloads/workloads-overview/">Working with AI workloads</a>
         </li>
         <li>
-          <a href="./core/docs/silogen-docs/external-docs/docs/developer-center/ai-catalog/">Find models in AI catalog</a>
+          <a href="./core/docs/developer-center/ai-catalog/">Find models in AI catalog</a>
         </li>
       </ul>
     </div>
@@ -78,13 +78,13 @@ This is your comprehensive handbook designed to help data scientists and platfor
 
       <ul class="intro-links">
         <li>
-          <a href="./core/docs/silogen-docs/external-docs/docs/airman/overview/">AI resource overview</a>
+          <a href="./core/docs/airman/overview/">AI resource overview</a>
         </li>
         <li>
-          <a href="./core/docs/silogen-docs/external-docs/docs/airman/clusters/overview/">Managing clusters</a>
+          <a href="./core/docs/airman/clusters/overview/">Managing clusters</a>
         </li>
         <li>
-          <a href="./core/docs/silogen-docs/external-docs/docs/airman/users/overview/">Managing users</a>
+          <a href="./core/docs/airman/users/overview/">Managing users</a>
         </li>
       </ul>
     </div>
