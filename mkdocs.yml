@@ -68,6 +68,7 @@ plugins:
         'core/docs/airman/index.md': 'core/docs/airman/overview.md'
         'core/docs/airman/clusters/index.md': 'core/docs/airman/clusters/overview.md'
         'core/docs/airman/quotas/index.md': 'core/docs/airman/quotas/overview.md'
+        'core/docs/airman/projects/index.md': 'core/docs/airman/projects/manage-projects.md'
         'core/docs/airman/users/index.md': 'core/docs/airman/users/overview.md'
         'platform-infrastructure/index.md': 'platform-infrastructure/installation.md'
         'references/index.md': 'references/overview.md'
@@ -147,10 +148,11 @@ nav:
     - Quotas:
       - Quotas overview: core/docs/airman/quotas/overview.md
       - Set quotas: core/docs/airman/quotas/set-quotas.md
+    - Projects:
+      - Projects overview: core/docs/airman/projects/manage-projects.md
     - User management:
       - Users overview: core/docs/airman/users/overview.md
       - Manage users: core/docs/airman/users/manage-users.md
-      - Manage user groups: core/docs/airman/users/manage-user-groups.md
 
   - References:
     - Overview: references/overview.md
