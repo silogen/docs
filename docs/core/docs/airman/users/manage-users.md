@@ -2,6 +2,7 @@
 tags:
   - user management
   - invite users
+  - airman
 ---
 
 # Manage users
@@ -20,7 +21,7 @@ When clicking the user's name in the list, the view switches to the user view. I
 
 Below the form is an area called Danger zone. It contains a button for deleting the user account. Deleting an account is a permanent action, and shouldn't be done without proper consideration.
 
-The right pane lists users assignments to different user groups and their dedicated user role. User with proper user role can adjust individual users' user groups or change their role.
+The right pane lists users assignments to different projects and their dedicated user role. User with proper user role can adjust individual users' projects or change their role.
 
 ![The user view is basically a form for maintaining user properties and their assignments.](../../img/users/user-management-02.png)
 

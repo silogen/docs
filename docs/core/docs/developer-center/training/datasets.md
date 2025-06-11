@@ -16,7 +16,7 @@ The type of dataset should be selected when uploading the file, and the format o
 Depending on the selected dataset type, each row in the JSONL file should be formatted as below
 
 !!! info JSONL formatting
-In a real JSONL file, each object must be on a single line. Here, objects are formatted for readability.
+    In a real JSONL file, each object must be on a single line. Here, objects are formatted for readability.
 
 ### Fine-tuning
 

@@ -10,7 +10,7 @@ The section shows the number of onboarded clusters, the number of GPU nodes in t
 
 ## Allocations and Workloads
 
-This section displays current statistics for workloads such as GPU utilization, the number of running workloads and pending workloads. It also lists resource usage by user group.
+This section displays current statistics for workloads such as GPU utilization, the number of running workloads and pending workloads. It also lists resource usage by project.
 
 ![Clusters and nodes](../img/airman/allocations-and-worksloads-tiles.png)
 

@@ -22,7 +22,7 @@ The clusters overview provides a list of the clusters added to SiloGen platform,
 
 **Available nodes** - Total number of nodes available across all clusters. AI Resource Manager routinely pulls node information from clusters including resources and health
 
-**Allocated GPUs** - Total number of GPUs allocated to quotas, across all clusters. Users belonging to user groups with GPU quotas are guaranteed allocated GPU resources for their workloads, in the corresponding clusters.
+**Allocated GPUs** - Total number of GPUs allocated to quotas, across all clusters. Users belonging to projects with GPU quotas are guaranteed allocated GPU resources for their workloads, in the corresponding clusters.
 
 **Running workloads** - Total number of active workloads across all clusters. Workloads submitted via AI Resource Manager optimally scheduled, and tracked and monitored for resource usage and health.
 
@@ -33,9 +33,9 @@ The clusters overview provides a list of the clusters added to SiloGen platform,
 | Name              | The name of the cluster                                                                                                                                                                |
 | Status            | Status of the cluster                                                                                                                                                                  |
 | Nodes             | The number of nodes associated with this cluster. Shows the number of healthy nodes and total nodes.                                                                                   |
-| GPU allocation    | The share of the total number of GPUs allocated to quotas in the cluster. Users belonging to user groups with GPU quotas are guaranteed allocated GPU resources for their workloads.   |
-| CPU allocation    | The share of the total number of CPUs allocated to quotas in the cluster. Users belonging to user groups with CPU quotas are guaranteed allocated CPU resources for their workloads.   |
-| Memory allocation | The share of the total amount of memory allocated to quotas in the cluster. Users belonging to user groups with GPU quotas are guaranteed allocated GPU resources for their workloads. |
+| GPU allocation    | The share of the total number of GPUs allocated to quotas in the cluster. Users belonging to projects with GPU quotas are guaranteed allocated GPU resources for their workloads.      |
+| CPU allocation    | The share of the total number of CPUs allocated to quotas in the cluster. Users belonging to projects with CPU quotas are guaranteed allocated CPU resources for their workloads.      |
+| Memory allocation | The share of the total amount of memory allocated to quotas in the cluster. Users belonging to projects with GPU quotas are guaranteed allocated GPU resources for their workloads.    |
 
 ![A diagram of the clusters page.](../../img/clusters/view-clusters.png)
 
@@ -45,9 +45,9 @@ The Cluster page provides a quick and easy way to see the status of your cluster
 
 **Available nodes** - The total number of nodes available in the cluster. AI Resource Manager routinely pulls node information from the cluster including resources and health.
 
-**Assigned quotas** - Quotas assigned to the cluster resources. User groups can be assigned quotas to limit the amount of resources they are guaranteed on the cluster.
+**Assigned quotas** - Quotas assigned to the cluster resources. Each project has a quota to limit the amount of resources they are guaranteed on the cluster.
 
-**Allocated GPUs** - The total number of GPUs allocated to quotas in the cluster. Users belonging to user groups with GPU quotas are guaranteed allocated GPU resources for their workloads.
+**Allocated GPUs** - The total number of GPUs allocated to quotas in the cluster. Users belonging to projects with GPU quotas are guaranteed allocated GPU resources for their workloads.
 
 **Running workloads** - Total number of active workloads running on the cluster. Workloads submitted via AI Resource manager optimally scheduled, and tracked and monitored for resource usage and health.
 
@@ -57,7 +57,7 @@ The Cluster page provides a quick and easy way to see the status of your cluster
 | -------------- | -------------------------------------------- |
 | IDENTIFIER     | Unique identifier for the quota              |
 | STATUS         | Status of the quota                          |
-| ASSIGNED TO    | The user group that this quota applies to    |
+| ASSIGNED TO    | The project this quota applies to            |
 | GPU ALLOCATION | Total number of GPUs allocated to this quota |
 
 **NODES table**

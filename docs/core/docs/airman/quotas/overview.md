@@ -6,10 +6,9 @@ tags:
 
 # Quotas overview
 
-Quotas ensure that computational resources are appropriately shared between groups. Without quotas, some workloads might use all the resources, leaving other workloads waiting. Quotas define a _minimum_ set of resources that are guaranteed. There is no maximum, so quotas can be exceeded if unused resources are available.
+Quotas ensure that computational resources are appropriately shared between projects. Without quotas, some workloads might use all the resources, leaving other workloads waiting. Quotas define a _minimum_ set of resources that are guaranteed. There is no maximum, so quotas can be exceeded if unused resources are available.
 
-Quota is a usage limit reserved for a team to accomplish their tasks. Quotas are useful for ensuring everyone gets their fair share of compute resourses.
-In Airman you can manage GPU and CPUs quotas for your user groups.
+Quota is a usage limit reserved for a team to accomplish their tasks. Quotas are useful for ensuring everyone gets their fair share of compute resourses. In Airman you can manage GPU and CPUs quotas for your projects.
 
 ## Quotas table
 
@@ -21,8 +20,8 @@ The list view shows available quotas with the applied filters from the filter ba
 | -------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
 | Identifier     | The name of the quota                                                                                                                        |
 | Status         | Status of the quota                                                                                                                          |
-| Assigned to    | The user group that this quota applies to.                                                                                                   |
-| GPU allocation | Number of GPUs allocated for this user group. Users belonging to this user group are guaranteed the allocated GPU quota for their workloads. |
-| CPU allocation | Number of CPUs allocated for this user group. Users belonging to this user group are guaranteed the allocated CPU quota for their workloads. |
+| Assigned to    | The project this quota applies to.                                                                                                           |
+| GPU allocation | Number of GPUs allocated for this project. Users belonging to this project are guaranteed the allocated GPU quota for their workloads.       |
+| CPU allocation | Number of CPUs allocated for this project. Users belonging to this project are guaranteed the allocated CPU quota for their workloads.       |
 
 ![A diagram of the clusters page.](../../img/quotas/overview.png)
