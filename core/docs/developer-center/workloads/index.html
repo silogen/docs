@@ -847,6 +847,19 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Workloads
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -858,6 +871,85 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#actions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Actions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Actions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#show-details" class="md-nav__link">
+    <span class="md-ellipsis">
+      Show details
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete" class="md-nav__link">
+    <span class="md-ellipsis">
+      Delete
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#open-workspace" class="md-nav__link">
+    <span class="md-ellipsis">
+      Open Workspace
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#workload-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      Workload types
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#workload-statuses" class="md-nav__link">
+    <span class="md-ellipsis">
+      Workload statuses
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -2258,6 +2350,74 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#actions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Actions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Actions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#show-details" class="md-nav__link">
+    <span class="md-ellipsis">
+      Show details
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete" class="md-nav__link">
+    <span class="md-ellipsis">
+      Delete
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#open-workspace" class="md-nav__link">
+    <span class="md-ellipsis">
+      Open Workspace
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#workload-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      Workload types
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#workload-statuses" class="md-nav__link">
+    <span class="md-ellipsis">
+      Workload statuses
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2276,10 +2436,110 @@
 
 
 <h1 id="workloads">Workloads<a class="headerlink" href="#workloads" title="Permanent link">&para;</a></h1>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-</div>
-<p>A placeholder for workloads content.</p>
+<p>A workload is a batch job or a service running in the cluster with resources defined by the workload and limited by the quota that the workload owner has. This page shows all started workloads. View shows all workload statuses by default except <code>Deleted</code>.</p>
+<p>If a user belongs to multiple projects, the project needs to be selected first from the top of the page.</p>
+<p><img alt="Workload Actions" src="../../img/workloads/workloads-projects.png" /></p>
+<p>The paginated table shows the name of the workload, the cluster the workload is assigned to, and how many resources the workload requires. The <code>Status</code> column shows the last known status of the workload and is not updated automatically. Filters can be used for find workload by name, type or status.</p>
+<p><img alt="Workload Actions" src="../../img/workloads/workloads-filters.png" /></p>
+<h2 id="actions">Actions<a class="headerlink" href="#actions" title="Permanent link">&para;</a></h2>
+<p>Workload actions are available from the Actions column by pressing the three dot button.
+<img alt="Workload actions menu" src="../../img/workloads/workloads-actions.png" /></p>
+<h3 id="show-details">Show details<a class="headerlink" href="#show-details" title="Permanent link">&para;</a></h3>
+<p>Shows details of the workload like when workload was created and by who.</p>
+<h3 id="delete">Delete<a class="headerlink" href="#delete" title="Permanent link">&para;</a></h3>
+<p>Queues the workload for deletion.</p>
+<h3 id="open-workspace">Open Workspace<a class="headerlink" href="#open-workspace" title="Permanent link">&para;</a></h3>
+<p>If workload type is <code>Workspace</code>, selecting this action opens the workspace into a new browser tab.</p>
+<h2 id="workload-types">Workload types<a class="headerlink" href="#workload-types" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Model Download</strong></td>
+<td>Batch job for downloading a new AI model</td>
+</tr>
+<tr>
+<td><strong>Inference</strong></td>
+<td>Inference service</td>
+</tr>
+<tr>
+<td><strong>Training</strong></td>
+<td>Model training batch job which generates a new model</td>
+</tr>
+<tr>
+<td><strong>Pre-Training</strong></td>
+<td>Model pre-training batch job which generates a new base model</td>
+</tr>
+<tr>
+<td><strong>Fine-Tuning</strong></td>
+<td>Model fine-tuning batch job which generates a new model</td>
+</tr>
+<tr>
+<td><strong>Evaluation</strong></td>
+<td>Workload for evaluating model performance</td>
+</tr>
+<tr>
+<td><strong>Workspace</strong></td>
+<td>Workspace is for model experiments</td>
+</tr>
+</tbody>
+</table>
+<h2 id="workload-statuses">Workload statuses<a class="headerlink" href="#workload-statuses" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Added</strong></td>
+<td>Workload has been created</td>
+</tr>
+<tr>
+<td><strong>Pending</strong></td>
+<td>Waiting for start</td>
+</tr>
+<tr>
+<td><strong>Running</strong></td>
+<td>Workload is being executed</td>
+</tr>
+<tr>
+<td><strong>Complete</strong></td>
+<td>Workload has finished succesfully</td>
+</tr>
+<tr>
+<td><strong>Failed</strong></td>
+<td>Error has occured and workload did not complete</td>
+</tr>
+<tr>
+<td><strong>Delete Requested</strong></td>
+<td>Workload is queue for removal</td>
+</tr>
+<tr>
+<td><strong>Deleted</strong></td>
+<td>Workload succesfully deleted</td>
+</tr>
+<tr>
+<td><strong>Delete Failed</strong></td>
+<td>Delete failed and manual cleaning might be needed</td>
+</tr>
+<tr>
+<td><strong>Terminated</strong></td>
+<td>Executiona has been terminated</td>
+</tr>
+<tr>
+<td><strong>Unknown</strong></td>
+<td>Status cannot be determined</td>
+</tr>
+</tbody>
+</table>
 
 
 

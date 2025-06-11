@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#ai-development-overview" class="md-skip">
+        <a href="#ai-development-overview-developer-center" class="md-skip">
           Skip to content
         </a>
       
@@ -842,27 +842,69 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#developer-center" class="md-nav__link">
+  <a href="#developer-center-functionality" class="md-nav__link">
     <span class="md-ellipsis">
-      Developer Center
+      Developer Center functionality
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Developer Center functionality">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#developer-tooling" class="md-nav__link">
+    <span class="md-ellipsis">
+      Developer Tooling
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#silogen-ai-workloads" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#chat-and-compare" class="md-nav__link">
     <span class="md-ellipsis">
-      SiloGen AI workloads
+      Chat and Compare
     </span>
   </a>
   
 </li>
+        
+          <li class="md-nav__item">
+  <a href="#training-finetuning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Training &amp; Finetuning
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gpu-as-a-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      GPU-as-a-Service
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ai-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      AI models
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
-  <a href="#running-ai-workloads-on-kubernetes-command-line" class="md-nav__link">
+  <a href="#running-ai-workloads-on-command-line" class="md-nav__link">
     <span class="md-ellipsis">
-      Running AI workloads on Kubernetes command-line
+      Running AI workloads on command-line
     </span>
   </a>
   
@@ -2324,27 +2366,69 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#developer-center" class="md-nav__link">
+  <a href="#developer-center-functionality" class="md-nav__link">
     <span class="md-ellipsis">
-      Developer Center
+      Developer Center functionality
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Developer Center functionality">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#developer-tooling" class="md-nav__link">
+    <span class="md-ellipsis">
+      Developer Tooling
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#silogen-ai-workloads" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#chat-and-compare" class="md-nav__link">
     <span class="md-ellipsis">
-      SiloGen AI workloads
+      Chat and Compare
     </span>
   </a>
   
 </li>
+        
+          <li class="md-nav__item">
+  <a href="#training-finetuning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Training &amp; Finetuning
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gpu-as-a-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      GPU-as-a-Service
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ai-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      AI models
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
-  <a href="#running-ai-workloads-on-kubernetes-command-line" class="md-nav__link">
+  <a href="#running-ai-workloads-on-command-line" class="md-nav__link">
     <span class="md-ellipsis">
-      Running AI workloads on Kubernetes command-line
+      Running AI workloads on command-line
     </span>
   </a>
   
@@ -2391,23 +2475,24 @@
   
 
 
-<h1 id="ai-development-overview">AI development overview<a class="headerlink" href="#ai-development-overview" title="Permanent link">&para;</a></h1>
-<p>The SiloGen AI Developer Center is an interface for you to easily manage the lifecycle of your Generative AI stack. The Developer Center provides an easy-to-use no-code/low-code option for running and managing AI workloads. This article sets the ground for how to run and manage AI workloads on SiloGen platform.</p>
-<p>SiloGen platform offers API access to a selection of open source and proprietary large language models (LLMs). The LLM generation can be restricted to the content of a document collection with retrieval augmented generation (RAG). This allows the LLM to answer user queries based on an external knowledge base instead of just the LLM’s internal knowledge.</p>
-<p>The best results are achieved out-of-the-box with factual questions where the answer exists in the document collection. For many use cases, for example, handling specialised or technical terminology, it is often necessary to further fine-tune a model and/or design few-shot prompts to get good enough results.</p>
-<p>The Developer Center does not offer a general intelligence solution. Asking the system to draw conclusions about implications beyond the content of the document collection, for example environmental impact, impact on political stability or consequences in the future, can generate something that may sound like a reasonable answer but is most often just nonsense.</p>
-<h2 id="developer-center">Developer Center<a class="headerlink" href="#developer-center" title="Permanent link">&para;</a></h2>
-<p>At the core of the SiloGen platform is the Developer Center which enables researchers to manage AI workloads end-to-end. Developer Center enables the usage of the SiloGen AI workloads and focuses on the user experience, offering low code approaches for developing AI applications by simplifying the execution of <a href="../training/fine-tuning/">fine-tuning</a>, <a href="../inference/overview/">inference</a> and other jobs. Developer Center includes following capabilities:</p>
-<ul>
-<li><a href="../ai-catalog/">AI catalog</a> with pre-configured AI workloads: SiloGen platform provides researchers with a vast catalog of AI workloads and models optimized for AMD compute. The workloads include the most common developer tooling and frameworks: Jupyter Notebooks, Visual Studio Code and popular frameworks like Pytorch and Tensorflow.</li>
-<li>GPU-as-a-Service: Self-service access to AMD compute and GPUs for running smaller fine-tuning jobs to large scale distributed pretraining workloads. Access to GPUs and quotas are predefined in the Airman module so your team always has the right amount of resources available.</li>
-</ul>
+<h1 id="ai-development-overview-developer-center">AI development overview (Developer Center)<a class="headerlink" href="#ai-development-overview-developer-center" title="Permanent link">&para;</a></h1>
+<p>The SiloGen Developer Center is an interface for you as a developer to easily manage the lifecycle of your Generative AI stack. The Developer Center provides an easy-to-use no-code/low-code option for running and managing AI workloads. This article sets the ground for how to develop, run and manage AI workloads on Developer Center.</p>
 <p><img alt="The introduction page to Developer Center outlines the main chat features." src="../../img/ai-development/devcenter-introduction.png" /></p>
-<h2 id="silogen-ai-workloads">SiloGen AI workloads<a class="headerlink" href="#silogen-ai-workloads" title="Permanent link">&para;</a></h2>
-<p>SiloGen platform offers common AI workloads to AI researchers covering fine-tuning, evaluation and deployment of LLMs. Those AI workloads have been tested and executed on AMD GPUs and they have been open sourced (<a href="https://github.com/silogen/ai-workloads">https://github.com/silogen/ai-workloads</a>). SiloGen AI workloads provide building blocks for broader collaboration across the AI ecosystem and accelerate the development of AI use cases. The of predeveloped AI workloads is continuously updated.</p>
-<h2 id="running-ai-workloads-on-kubernetes-command-line">Running AI workloads on Kubernetes command-line<a class="headerlink" href="#running-ai-workloads-on-kubernetes-command-line" title="Permanent link">&para;</a></h2>
-<p>You can also run AI workloads directly through a command-line interface using Helm charts and kubectl. You can select a suitable workload from a list of reference workloads in order to get started quickly. The reference workloads offer intelligent workload scheduling based on policies to optimize GPU utilization across workloads.</p>
-<p><a href="../../../../../../../ai-workloads/workloads/workloads-overview">See how to run workloads on Kubernetes</a>.</p>
+<h2 id="developer-center-functionality">Developer Center functionality<a class="headerlink" href="#developer-center-functionality" title="Permanent link">&para;</a></h2>
+<p>The Developer Center includes following capabilities:</p>
+<h3 id="developer-tooling">Developer Tooling<a class="headerlink" href="#developer-tooling" title="Permanent link">&para;</a></h3>
+<p>The Developer Center provides developers with <a href="../ai-catalog/">tools and frameworks</a> to accelerate AI development and experimentation, featuring a comprehensive catalog of optimized AI workloads and models for AMD compute. The workloads include the most common developer tooling and frameworks such as Jupyter Notebooks, Visual Studio Code and popular frameworks like Pytorch and Tensorflow.</p>
+<h3 id="chat-and-compare">Chat and Compare<a class="headerlink" href="#chat-and-compare" title="Permanent link">&para;</a></h3>
+<p>The <a href="../inference/chat/">Chat page</a> allows developers to experiment with models they have access to - developers will be able to modify several Retrieval and Generation parameters to judge how they affect the model's response. The <a href="../inference/compare/">Model Comparison</a> page of the playground allows developers to compare output of different models, for the same set of settings.</p>
+<h3 id="training-finetuning">Training &amp; Finetuning<a class="headerlink" href="#training-finetuning" title="Permanent link">&para;</a></h3>
+<p><a href="../training/fine-tuning/">Fine-tuning</a> a model allows developers to customize it to their specific use-case and data. SiloGen provides a certified list of base-models which developers can fine-tune and we allow you to customize certain hyperparameters to get the best results.</p>
+<h3 id="gpu-as-a-service">GPU-as-a-Service<a class="headerlink" href="#gpu-as-a-service" title="Permanent link">&para;</a></h3>
+<p>Developer Center provides developers with self-service access to workspaces with GPU resources. Platform admins can set project-based quotas for GPU usage so your teams always have the right amount of resources available.</p>
+<h3 id="ai-models">AI models<a class="headerlink" href="#ai-models" title="Permanent link">&para;</a></h3>
+<p>The Developer Center offers a comprehensive catalog of curated open-source models, including state-of-the-art large language models (LLMs) and image/video generation models. Developers can easily discover, fine-tune, and deploy these models for their AI use cases.</p>
+<h2 id="running-ai-workloads-on-command-line">Running AI workloads on command-line<a class="headerlink" href="#running-ai-workloads-on-command-line" title="Permanent link">&para;</a></h2>
+<p>Developers can also deploy and run AI workloads through command-line interface using pre-validated and open-source <a href="https://github.com/silogen/ai-workloads">workloads</a> which have been published as Kubernetes manifests and Helm charts. The list of AI workloads is continuously updated.
+See more details on how to run workloads on <a href="../../../../../../../ai-workloads/workloads/workloads-overview">command-line</a>.</p>
 
 
 
