@@ -2159,7 +2159,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../users/manage-user-groups/" class="md-nav__link">
+      <a href="../../users/manage-user-groups.md" class="md-nav__link">
         
   
   
@@ -2376,20 +2376,20 @@
 
 
 <h1 id="manage-quotas">Manage quotas<a class="headerlink" href="#manage-quotas" title="Permanent link">&para;</a></h1>
-<p>This article explains how to define quotas for your user groups. In Airman you can set quotas for GPU and CPUs for your user groups. Users belonging to a user group are guaranteed the allocated quota for their AI workloads.</p>
+<p>This article explains how to define quotas for your projects. In Airman you can set quotas for GPU and CPUs for your projects. Users belonging to a project are guaranteed the allocated quota for their AI workloads.</p>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
+<p>There can be only one quota for a project per cluster.</p>
 </div>
-<p>There can be only one quota for a group per cluster.</p>
 <h2 id="create-quota">Create quota<a class="headerlink" href="#create-quota" title="Permanent link">&para;</a></h2>
 <p>Press the <code>Create Quota</code> button to create a new quota.</p>
 <p><strong>Cluster</strong> - The cluster to which the quota applies to.</p>
-<p><strong>Assignee</strong> - The user group for the quota. A quota can be assigned to only one user group.</p>
+<p><strong>Assignee</strong> - The project for the quota. A quota can be assigned to only one project.</p>
 <p><strong>Identifier</strong> - Unique identifier for the quota.</p>
 <p><strong>Description</strong> - A optional description that describes the quota.</p>
 <p><img alt="A diagram of the clusters page." src="../../../img/quotas/create-quota.png" /></p>
 <h2 id="set-the-guaranteed-quota-values">Set the guaranteed quota values<a class="headerlink" href="#set-the-guaranteed-quota-values" title="Permanent link">&para;</a></h2>
-<p>Define a quota below to gurarantee a fixed amount of compute resources for the assigned user group. Setting a quota category to 0 means no resources are guraranteed exclusively for that user group — its workloads will still use any available resource. Even with a quota in place, workloads may temporarily exceed their quota if additional resources are available.</p>
+<p>Define a quota below to gurarantee a fixed amount of compute resources for the assigned project. Setting a quota category to 0 means no resources are guraranteed exclusively for that project — its workloads will still use any available resource. Even with a quota in place, workloads may temporarily exceed their quota if additional resources are available.</p>
 <p><strong>GPUs</strong> - The guaranteed allocation for the number of GPUs. "Available to allocate" shows the total amount available.</p>
 <p><strong>CPU Cores</strong> - The guaranteed allocation for the number of CPUs. "Available to allocate" shows the total amount available.</p>
 <p><strong>System Memory</strong> - The guaranteed allocation for the amount of memory (GB). "Available to allocate" shows the total amount available.</p>

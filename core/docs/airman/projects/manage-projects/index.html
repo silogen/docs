@@ -11,10 +11,6 @@
       
       
       
-        <link rel="prev" href="../manage-users/">
-      
-      
-        <link rel="next" href="../../../../../references/overview/">
       
       
       <link rel="icon" href="../../../../../assets/images/favicon.png">
@@ -22,7 +18,7 @@
     
     
       
-        <title>Manage user groups - SiloGen documentation</title>
+        <title>Manage projects - SiloGen documentation</title>
       
     
     
@@ -76,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#manage-user-groups" class="md-skip">
+        <a href="#manage-projects" class="md-skip">
           Skip to content
         </a>
       
@@ -109,7 +105,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Manage user groups
+              Manage projects
             
           </span>
         </div>
@@ -296,12 +292,10 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
+      <li class="md-tabs__item">
         <a href="../../overview/" class="md-tabs__link">
           
   
@@ -1693,10 +1687,8 @@
       
   
   
-    
   
   
-  
     
     
       
@@ -1714,20 +1706,17 @@
     
     
       
-        
-        
-      
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
         
           
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
             
   
   
@@ -1740,7 +1729,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             AI resource management
@@ -1999,10 +1988,8 @@
                 
   
   
-    
   
   
-  
     
     
       
@@ -2019,11 +2006,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" >
         
           
           <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
@@ -2039,7 +2026,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4_5">
             <span class="md-nav__icon md-icon"></span>
             User management
@@ -2053,7 +2040,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../overview/" class="md-nav__link">
+      <a href="../../users/overview/" class="md-nav__link">
         
   
   
@@ -2076,7 +2063,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../manage-users/" class="md-nav__link">
+      <a href="../../users/manage-users/" class="md-nav__link">
         
   
   
@@ -2096,19 +2083,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../users/manage-user-groups.md" class="md-nav__link">
         
   
   
@@ -2119,7 +2097,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -2277,13 +2254,13 @@
       
       
       
-        <a href="../../../../../references/tags/#tag:user-groups" class="md-tag">user groups</a>
+        <a href="../../../../../references/tags/#tag:airman" class="md-tag">airman</a>
       
     
       
       
       
-        <a href="../../../../../references/tags/#tag:user-management" class="md-tag">user management</a>
+        <a href="../../../../../references/tags/#tag:projects" class="md-tag">projects</a>
       
     
   </nav>
@@ -2293,14 +2270,14 @@
   
 
 
-<h1 id="manage-user-groups">Manage user groups<a class="headerlink" href="#manage-user-groups" title="Permanent link">&para;</a></h1>
-<p>A user group is a collection of users bundled together to do AI work. Only platform administrators can create new user groups and assign users to them.</p>
-<p>The main view of user group management lists available user groups, the amount of assigned users and a short description about the groups.</p>
-<p><img alt="The user groups list displays the amount of users and a short description of the group." src="../../../img/users/user-management-03.png" /></p>
-<p>Clicking the user group's name opens the edit view. The view has a form for editing user group details. Adding new user groups happens by clicking the "Create user group" button. Click "Save changes" button to accept the update.</p>
-<p>Below the form is an area called Danger zone. It contains a button for deleting the user group. Deleting a group is a permanent action, and shouldn't be done without proper consideration.</p>
-<p>The right pane lists users assigned to the user group and option to add or invite new users.</p>
-<p><img alt="The user group editing and creation happens in a similar page." src="../../../img/users/user-management-04.png" /></p>
+<h1 id="manage-projects">Manage projects<a class="headerlink" href="#manage-projects" title="Permanent link">&para;</a></h1>
+<p>A project is a container for managing work. It has a specified compute quota which is used for limiting resources. Users can initiate workloads only in the projects they are assigned to. Only platform administrators can create new projects and assign users to them.</p>
+<p>The main projects view lists available projects, the amount of assigned users and a short description about the projects. Adding new projects happens by clicking the "Create project" button.</p>
+<p>The project-specific quota is currently set in the Quotas section of Airman.</p>
+<p><img alt="The projects list displays the amount of users and a short description of the project." src="../../../img/projects/projects-list.png" /></p>
+<p>Clicking the projects's name opens the edit view. The view has a form for editing project details. Project's name is permanent and cannot be changed. Click "Save changes" button to accept the updates.</p>
+<p>Below the form is an area called Danger zone. It contains a button for deleting the project. Deleting a project is a permanent action, and shouldn't be done without proper consideration.</p>
+<p>The right pane lists users assigned to the project and an option to add new project members. Administrators can also invite new users directly to the project.</p>
 
 
 
