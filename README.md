@@ -30,4 +30,5 @@ The built site will be in the `site` directory.
 See the [Contributing](docs/contributing.md) guide for development setup instructions.
 
 ## Publishing
+
 The external SiloGen documentation is published from this repository as a web site in Github pages.
