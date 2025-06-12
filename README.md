@@ -19,6 +19,7 @@ The documentation for this project is built using MkDocs with the Material theme
 ## Building documentation
 
 To build the documentation site:
+
 ```bash
 mkdocs build
 ```
