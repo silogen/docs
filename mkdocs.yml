@@ -45,7 +45,6 @@ theme:
 plugins:
   - search
   - tags
- # - with-pdf
   - multirepo:
       cleanup: true
       nav_repos:
