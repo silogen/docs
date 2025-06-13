@@ -103,7 +103,7 @@ nav:
 
   - AI development:
     - Overview: core/docs/developer-center/overview.md
-    - AI catalog: core/docs/developer-center/ai-catalog.md
+    - Workspaces: core/docs/developer-center/workspaces.md
     - Workloads: core/docs/developer-center/workloads.md
 
     - Training and fine-tuning:
