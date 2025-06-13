@@ -11,7 +11,7 @@
       
       
       
-        <link rel="prev" href="../ai-catalog/">
+        <link rel="prev" href="../overview/">
       
       
         <link rel="next" href="../training/overview/">
@@ -815,7 +815,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ai-catalog/" class="md-nav__link">
+      <a href="../ai-catalog.md" class="md-nav__link">
         
   
   
@@ -2548,48 +2548,59 @@
 <tr>
 <th>Status</th>
 <th>Description</th>
+<th>Condition</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><strong>Added</strong></td>
 <td>Workload has been created</td>
+<td>Workload component creation is not started</td>
 </tr>
 <tr>
 <td><strong>Pending</strong></td>
 <td>Waiting for start</td>
+<td>All components are in <code>Pending</code> state</td>
 </tr>
 <tr>
 <td><strong>Running</strong></td>
 <td>Workload is being executed</td>
+<td>Any component is in <code>Running</code> state</td>
 </tr>
 <tr>
 <td><strong>Complete</strong></td>
 <td>Workload has finished succesfully</td>
+<td>All components are in <code>Completed</code> state</td>
 </tr>
 <tr>
 <td><strong>Failed</strong></td>
 <td>Error has occured and workload did not complete</td>
+<td>Any component is in <code>Failed</code> state</td>
 </tr>
 <tr>
 <td><strong>Delete Requested</strong></td>
 <td>Workload is queue for removal</td>
+<td>Delete started, but not all components are <code>Deleted</code></td>
 </tr>
 <tr>
 <td><strong>Deleted</strong></td>
 <td>Workload succesfully deleted</td>
+<td>All components are in <code>Deleted</code> state</td>
 </tr>
 <tr>
 <td><strong>Delete Failed</strong></td>
 <td>Delete failed and manual cleaning might be needed</td>
+<td>Any component is in <code>Delete</code> failed state</td>
 </tr>
 <tr>
 <td><strong>Terminated</strong></td>
 <td>Executiona has been terminated</td>
+<td>All components are <code>Completed</code> or <code>Deleted</code> state</td>
 </tr>
 <tr>
 <td><strong>Unknown</strong></td>
 <td>Status cannot be determined</td>
+<td></td>
 </tr>
 </tbody>
 </table>

@@ -11,10 +11,6 @@
       
       
       
-        <link rel="prev" href="../overview/">
-      
-      
-        <link rel="next" href="../workloads/">
       
       
       <link rel="icon" href="../../../../assets/images/favicon.png">
@@ -22,7 +18,7 @@
     
     
       
-        <title>AI catalog - SiloGen documentation</title>
+        <title>Workspaces - SiloGen documentation</title>
       
     
     
@@ -76,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#ai-workloads-catalog" class="md-skip">
+        <a href="#workspaces" class="md-skip">
           Skip to content
         </a>
       
@@ -109,7 +105,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              AI catalog
+              Workspaces
             
           </span>
         </div>
@@ -274,12 +270,10 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
+      <li class="md-tabs__item">
         <a href="../overview/" class="md-tabs__link">
           
   
@@ -727,10 +721,8 @@
       
   
   
-    
   
   
-  
     
     
       
@@ -752,20 +744,17 @@
     
     
       
-        
-        
-      
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
             
   
   
@@ -778,7 +767,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             AI development
@@ -812,32 +801,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    AI catalog
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../ai-catalog.md" class="md-nav__link">
         
   
   
@@ -848,44 +815,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#select-a-workload" class="md-nav__link">
-    <span class="md-ellipsis">
-      Select a workload
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#deploy-a-workload" class="md-nav__link">
-    <span class="md-ellipsis">
-      Deploy a workload
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -2368,18 +2297,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#select-a-workload" class="md-nav__link">
+  <a href="#deploy-a-workspace" class="md-nav__link">
     <span class="md-ellipsis">
-      Select a workload
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#deploy-a-workload" class="md-nav__link">
-    <span class="md-ellipsis">
-      Deploy a workload
+      Deploy a workspace
     </span>
   </a>
   
@@ -2404,12 +2324,6 @@
       
       
       
-        <a href="../../../../references/tags/#tag:ai-catalog" class="md-tag">ai catalog</a>
-      
-    
-      
-      
-      
         <a href="../../../../references/tags/#tag:developer-center" class="md-tag">developer center</a>
       
     
@@ -2419,6 +2333,12 @@
         <a href="../../../../references/tags/#tag:workload" class="md-tag">workload</a>
       
     
+      
+      
+      
+        <a href="../../../../references/tags/#tag:workspaces" class="md-tag">workspaces</a>
+      
+    
   </nav>
 
 
@@ -2426,14 +2346,14 @@
   
 
 
-<h1 id="ai-workloads-catalog">AI workloads catalog<a class="headerlink" href="#ai-workloads-catalog" title="Permanent link">&para;</a></h1>
-<p>The AI Catalog contains reference AI workloads optimized for AMD compute. This includes model fine-tuning, pretraining, evaluation and inference workloads. The AI workloads have been tested and executed on top of AMD GPUs and they have been open sourced (<a href="https://github.com/silogen/ai-workloads">https://github.com/silogen/ai-workloads</a>).</p>
-<h2 id="select-a-workload">Select a workload<a class="headerlink" href="#select-a-workload" title="Permanent link">&para;</a></h2>
-<p>You can select a workload from the catalog by selecting "View and Deploy".</p>
-<p><img alt="AI Catalog" src="../../img/ai-development/ai-catalog.png" /></p>
-<h2 id="deploy-a-workload">Deploy a workload<a class="headerlink" href="#deploy-a-workload" title="Permanent link">&para;</a></h2>
-<p>You can deploy a workload by clicking "Quick deploy".</p>
+<h1 id="workspaces">Workspaces<a class="headerlink" href="#workspaces" title="Permanent link">&para;</a></h1>
+<p>Workspaces contain different kinds of interactive environments optimized for AMD compute. For example, JupyterLab and Visual Studio Code workspaces allow users to leverage the power of the cluster with zero configuration on the client computer.</p>
+<h2 id="deploy-a-workspace">Deploy a workspace<a class="headerlink" href="#deploy-a-workspace" title="Permanent link">&para;</a></h2>
+<p>You can deploy a workload by clicking <code>View and deploy</code>, which opens the workload deployment view.</p>
 <p><img alt="Deploy workload" src="../../img/ai-development/deploy-workload.png" /></p>
+<p>From the deployment view, you can change the workload name if you want to. The default resource allocation should be sufficient for most workspaces, but it is possible to customize these settings if needed.</p>
+<p>Once the values have been set, press <code>Quick deploy</code> to deploy the workspace. It takes a while for the workspace to start, but once it has started, the deployment overlay will show a <code>Launch</code> button, which can be used to access the workspace. The workspace can also be accessed later from the <a href="../workloads/#open-workspace">Workloads</a> page.</p>
+<p><img alt="Deploy workload" src="../../img/ai-development/workspaces-deployed-success.png" /></p>
 
 
 
