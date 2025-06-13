@@ -18,13 +18,9 @@ The documentation for this project is built using MkDocs with the Material theme
 
 ## Building documentation
 
-To build the documentation site:
+To build the documentation site without serving it run `mkdocs build`.
 
-```bash
-mkdocs build
-```
-
-The built site will be in the `site` directory.
+The built site will be in the `site` directory. The serve function also watches for changes in the documents and builds the site automatically
 
 ## Development
 
