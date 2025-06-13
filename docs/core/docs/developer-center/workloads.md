@@ -41,15 +41,15 @@ If workload type is `Workspace`, selecting this action opens the workspace into 
 
 ## Workload statuses
 
-| Status               | Description                                       |
-| -------------------- | ------------------------------------------------- |
-| **Added**            | Workload has been created                         |
-| **Pending**          | Waiting for start                                 |
-| **Running**          | Workload is being executed                        |
-| **Complete**         | Workload has finished succesfully                 |
-| **Failed**           | Error has occured and workload did not complete   |
-| **Delete Requested** | Workload is queue for removal                     |
-| **Deleted**          | Workload succesfully deleted                      |
-| **Delete Failed**    | Delete failed and manual cleaning might be needed |
-| **Terminated**       | Executiona has been terminated                    |
-| **Unknown**          | Status cannot be determined                       |
+| Status               | Description                                       | Condition                                            |
+| -------------------- | ------------------------------------------------- | ---------------------------------------------------- |
+| **Added**            | Workload has been created                         | Workload component creation is not started           |
+| **Pending**          | Waiting for start                                 | All components are in `Pending` state                |
+| **Running**          | Workload is being executed                        | Any component is in `Running` state                  |
+| **Complete**         | Workload has finished succesfully                 | All components are in `Completed` state              |
+| **Failed**           | Error has occured and workload did not complete   | Any component is in `Failed` state                   |
+| **Delete Requested** | Workload is queue for removal                     | Delete started, but not all components are `Deleted` |
+| **Deleted**          | Workload succesfully deleted                      | All components are in `Deleted` state                |
+| **Delete Failed**    | Delete failed and manual cleaning might be needed | Any component is in `Delete` failed state            |
+| **Terminated**       | Executiona has been terminated                    | All components are `Completed` or `Deleted` state    |
+| **Unknown**          | Status cannot be determined                       |                                                      |

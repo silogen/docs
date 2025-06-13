@@ -16,12 +16,12 @@ The filter bar can be used to find the correct quota. Filtering can be done by k
 
 The list view shows available quotas with the applied filters from the filter bar. Each quota has a submenu that allows you to modify or delete the quota.
 
-| Column         | Description                                                                                                                                  |
-| -------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
-| Identifier     | The name of the quota                                                                                                                        |
-| Status         | Status of the quota                                                                                                                          |
-| Assigned to    | The project this quota applies to.                                                                                                           |
-| GPU allocation | Number of GPUs allocated for this project. Users belonging to this project are guaranteed the allocated GPU quota for their workloads.       |
-| CPU allocation | Number of CPUs allocated for this project. Users belonging to this project are guaranteed the allocated CPU quota for their workloads.       |
+| Column         | Description                                                                                                                            |
+| -------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
+| Identifier     | The name of the quota                                                                                                                  |
+| Status         | Status of the quota                                                                                                                    |
+| Assigned to    | The project this quota applies to.                                                                                                     |
+| GPU allocation | Number of GPUs allocated for this project. Users belonging to this project are guaranteed the allocated GPU quota for their workloads. |
+| CPU allocation | Number of CPUs allocated for this project. Users belonging to this project are guaranteed the allocated CPU quota for their workloads. |
 
 ![A diagram of the clusters page.](../../img/quotas/overview.png)
