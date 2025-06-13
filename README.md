@@ -1,6 +1,6 @@
 # SiloGen AMD Enterprise AI platform documentation
 
-The documentation for this project is built using MkDocs with the Material theme.
+The documentation for this project is built using MkDocs with the Material theme. The documentation utilizes Github actions which import Markdown files from multiple sources into this consolidated documentation repository.
 
 ## Setting up documentation locally
 
