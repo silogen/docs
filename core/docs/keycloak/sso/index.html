@@ -11,10 +11,10 @@
       
       
       
-        <link rel="prev" href="../../llm-inference-llamacpp-mi300x/helm/">
+        <link rel="prev" href="../../../../platform-infrastructure/demo-environment/">
       
       
-        <link rel="next" href="../../llm-inference-vllm/helm/">
+        <link rel="next" href="../../developer-center/overview/">
       
       
       <link rel="icon" href="../../../../assets/images/favicon.png">
@@ -22,7 +22,7 @@
     
     
       
-        <title>llm-inference-sglang - SiloGen documentation</title>
+        <title>Enable single sign-on - SiloGen documentation</title>
       
     
     
@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#llm-inference-with-sglang" class="md-skip">
+        <a href="#adding-identity-provider-to-enable-single-sign-on" class="md-skip">
           Skip to content
         </a>
       
@@ -109,7 +109,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              llm-inference-sglang
+              Enable single sign-on
             
           </span>
         </div>
@@ -252,10 +252,12 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
+      <li class="md-tabs__item md-tabs__item--active">
         <a href="../../../../platform-infrastructure/installation/" class="md-tabs__link">
           
   
@@ -274,13 +276,11 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../../../../core/docs/developer-center/overview/" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../developer-center/overview/" class="md-tabs__link">
           
   
   
@@ -302,7 +302,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../../core/docs/airman/overview/" class="md-tabs__link">
+        <a href="../../airman/overview/" class="md-tabs__link">
           
   
   
@@ -602,8 +602,10 @@
       
   
   
+    
   
   
+  
     
     
       
@@ -617,17 +619,20 @@
     
     
       
+        
+        
+      
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
             
   
   
@@ -640,7 +645,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Platform infrastructure
@@ -697,10 +702,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../../../core/docs/keycloak/sso/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Enable single sign-on
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -711,6 +738,77 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prequisite" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prequisite
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#add-identity-provider" class="md-nav__link">
+    <span class="md-ellipsis">
+      Add identity provider
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Add identity provider">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mapping-rights" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mapping rights
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#link-identity-provider-to-organization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Link Identity provider to organization
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#add-authentication-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Add authentication flow
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -727,10 +825,8 @@
       
   
   
-    
   
   
-  
     
     
       
@@ -752,20 +848,17 @@
     
     
       
-        
-        
-      
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
             
   
   
@@ -778,7 +871,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             AI development
@@ -792,7 +885,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../core/docs/developer-center/overview/" class="md-nav__link">
+      <a href="../../developer-center/overview/" class="md-nav__link">
         
   
   
@@ -815,7 +908,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../core/docs/developer-center/workspaces/" class="md-nav__link">
+      <a href="../../developer-center/workspaces/" class="md-nav__link">
         
   
   
@@ -838,7 +931,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../core/docs/developer-center/workloads/" class="md-nav__link">
+      <a href="../../developer-center/workloads/" class="md-nav__link">
         
   
   
@@ -912,7 +1005,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../core/docs/developer-center/training/overview/" class="md-nav__link">
+      <a href="../../developer-center/training/overview/" class="md-nav__link">
         
   
   
@@ -935,7 +1028,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../core/docs/developer-center/training/models/" class="md-nav__link">
+      <a href="../../developer-center/training/models/" class="md-nav__link">
         
   
   
@@ -958,7 +1051,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../core/docs/developer-center/training/datasets/" class="md-nav__link">
+      <a href="../../developer-center/training/datasets/" class="md-nav__link">
         
   
   
@@ -981,7 +1074,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../core/docs/developer-center/training/fine-tuning/" class="md-nav__link">
+      <a href="../../developer-center/training/fine-tuning/" class="md-nav__link">
         
   
   
@@ -1061,7 +1154,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../core/docs/developer-center/inference/overview/" class="md-nav__link">
+      <a href="../../developer-center/inference/overview/" class="md-nav__link">
         
   
   
@@ -1084,7 +1177,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../core/docs/developer-center/inference/chat/" class="md-nav__link">
+      <a href="../../developer-center/inference/chat/" class="md-nav__link">
         
   
   
@@ -1107,7 +1200,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../core/docs/developer-center/inference/compare/" class="md-nav__link">
+      <a href="../../developer-center/inference/compare/" class="md-nav__link">
         
   
   
@@ -1212,7 +1305,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../docs/tutorials/tutorial-prereqs/" class="md-nav__link">
+      <a href="../../../../ai-workloads/docs/tutorials/tutorial-prereqs/" class="md-nav__link">
         
   
   
@@ -1235,7 +1328,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../docs/tutorials/tutorial-01-deliver-resources-and-finetune/" class="md-nav__link">
+      <a href="../../../../ai-workloads/docs/tutorials/tutorial-01-deliver-resources-and-finetune/" class="md-nav__link">
         
   
   
@@ -1258,7 +1351,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../docs/tutorials/tutorial-02-language-extension-finetune/" class="md-nav__link">
+      <a href="../../../../ai-workloads/docs/tutorials/tutorial-02-language-extension-finetune/" class="md-nav__link">
         
   
   
@@ -1286,8 +1379,6 @@
                 
   
   
-    
-  
   
   
     
@@ -1326,15 +1417,15 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_7" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_7" >
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../dev-chatui-openwebui/helm/" class="md-nav__link ">
+            <a href="../../../../ai-workloads/workloads/dev-chatui-openwebui/helm/" class="md-nav__link ">
               
   
   
@@ -1353,7 +1444,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_7_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_7_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3_7">
             <span class="md-nav__icon md-icon"></span>
             Reference AI workloads
@@ -1367,7 +1458,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../workloads-overview/" class="md-nav__link">
+      <a href="../../../../ai-workloads/workloads/workloads-overview/" class="md-nav__link">
         
   
   
@@ -1392,7 +1483,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../dev-workspace-vscode/helm/" class="md-nav__link">
+      <a href="../../../../ai-workloads/workloads/dev-workspace-vscode/helm/" class="md-nav__link">
         
   
   
@@ -1415,7 +1506,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../dev-text2image-comfyui/helm/" class="md-nav__link">
+      <a href="../../../../ai-workloads/workloads/dev-text2image-comfyui/helm/" class="md-nav__link">
         
   
   
@@ -1438,7 +1529,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../download-data-to-bucket/helm/" class="md-nav__link">
+      <a href="../../../../ai-workloads/workloads/download-data-to-bucket/helm/" class="md-nav__link">
         
   
   
@@ -1461,7 +1552,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../download-huggingface-model-to-bucket/helm/" class="md-nav__link">
+      <a href="../../../../ai-workloads/workloads/download-huggingface-model-to-bucket/helm/" class="md-nav__link">
         
   
   
@@ -1484,7 +1575,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../k8s-namespace-setup/helm/" class="md-nav__link">
+      <a href="../../../../ai-workloads/workloads/k8s-namespace-setup/helm/" class="md-nav__link">
         
   
   
@@ -1530,7 +1621,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../llm-finetune-silogen-engine/helm/" class="md-nav__link ">
+            <a href="../../../../ai-workloads/workloads/llm-finetune-silogen-engine/helm/" class="md-nav__link ">
               
   
   
@@ -1565,7 +1656,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../llm-finetune-silogen-engine/helm/silogen_finetuning_config_readme/" class="md-nav__link">
+      <a href="../../../../ai-workloads/workloads/llm-finetune-silogen-engine/helm/silogen_finetuning_config_readme/" class="md-nav__link">
         
   
   
@@ -1596,7 +1687,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../llm-inference-llamacpp-mi300x/helm/" class="md-nav__link">
+      <a href="../../../../ai-workloads/workloads/llm-inference-llamacpp-mi300x/helm/" class="md-nav__link">
         
   
   
@@ -1616,32 +1707,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    llm-inference-sglang
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../../ai-workloads/workloads/llm-inference-sglang/helm/" class="md-nav__link">
         
   
   
@@ -1652,128 +1721,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#prerequisites" class="md-nav__link">
-    <span class="md-ellipsis">
-      Prerequisites
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#deploying-the-workload" class="md-nav__link">
-    <span class="md-ellipsis">
-      Deploying the Workload
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Deploying the Workload">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#alternative-1-deploy-a-specific-model-configuration" class="md-nav__link">
-    <span class="md-ellipsis">
-      Alternative 1: Deploy a Specific Model Configuration
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#alternative-2-override-the-model" class="md-nav__link">
-    <span class="md-ellipsis">
-      Alternative 2: Override the Model
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#alternative-3-deploy-a-model-from-bucket-storage" class="md-nav__link">
-    <span class="md-ellipsis">
-      Alternative 3: Deploy a Model from Bucket Storage
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#user-input-values" class="md-nav__link">
-    <span class="md-ellipsis">
-      User Input Values
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#interacting-with-deployed-model" class="md-nav__link">
-    <span class="md-ellipsis">
-      Interacting with Deployed Model
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Interacting with Deployed Model">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#verify-deployment" class="md-nav__link">
-    <span class="md-ellipsis">
-      Verify Deployment
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#port-forwarding" class="md-nav__link">
-    <span class="md-ellipsis">
-      Port Forwarding
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#test-the-deployment" class="md-nav__link">
-    <span class="md-ellipsis">
-      Test the Deployment
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1786,7 +1733,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../llm-inference-vllm/helm/" class="md-nav__link">
+      <a href="../../../../ai-workloads/workloads/llm-inference-vllm/helm/" class="md-nav__link">
         
   
   
@@ -1809,7 +1756,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../llm-inference-vllm-benchmark-mad/helm/" class="md-nav__link">
+      <a href="../../../../ai-workloads/workloads/llm-inference-vllm-benchmark-mad/helm/" class="md-nav__link">
         
   
   
@@ -1902,7 +1849,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../core/docs/airman/overview/" class="md-nav__link">
+      <a href="../../airman/overview/" class="md-nav__link">
         
   
   
@@ -1925,7 +1872,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../core/docs/airman/dashboard/" class="md-nav__link">
+      <a href="../../airman/dashboard/" class="md-nav__link">
         
   
   
@@ -1995,7 +1942,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../core/docs/airman/clusters/overview/" class="md-nav__link">
+      <a href="../../airman/clusters/overview/" class="md-nav__link">
         
   
   
@@ -2018,7 +1965,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../core/docs/airman/clusters/add-clusters-ui/" class="md-nav__link">
+      <a href="../../airman/clusters/add-clusters-ui/" class="md-nav__link">
         
   
   
@@ -2096,7 +2043,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../core/docs/airman/quotas/overview/" class="md-nav__link">
+      <a href="../../airman/quotas/overview/" class="md-nav__link">
         
   
   
@@ -2119,7 +2066,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../core/docs/airman/quotas/set-quotas/" class="md-nav__link">
+      <a href="../../airman/quotas/set-quotas/" class="md-nav__link">
         
   
   
@@ -2195,7 +2142,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../core/docs/airman/projects/manage-projects/" class="md-nav__link">
+      <a href="../../airman/projects/manage-projects/" class="md-nav__link">
         
   
   
@@ -2273,7 +2220,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../core/docs/airman/users/overview/" class="md-nav__link">
+      <a href="../../airman/users/overview/" class="md-nav__link">
         
   
   
@@ -2296,7 +2243,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../core/docs/airman/users/manage-users/" class="md-nav__link">
+      <a href="../../airman/users/manage-users/" class="md-nav__link">
         
   
   
@@ -2454,46 +2401,28 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#prerequisites" class="md-nav__link">
+  <a href="#prequisite" class="md-nav__link">
     <span class="md-ellipsis">
-      Prerequisites
+      Prequisite
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#deploying-the-workload" class="md-nav__link">
+  <a href="#add-identity-provider" class="md-nav__link">
     <span class="md-ellipsis">
-      Deploying the Workload
+      Add identity provider
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Deploying the Workload">
+    <nav class="md-nav" aria-label="Add identity provider">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#alternative-1-deploy-a-specific-model-configuration" class="md-nav__link">
+  <a href="#mapping-rights" class="md-nav__link">
     <span class="md-ellipsis">
-      Alternative 1: Deploy a Specific Model Configuration
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#alternative-2-override-the-model" class="md-nav__link">
-    <span class="md-ellipsis">
-      Alternative 2: Override the Model
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#alternative-3-deploy-a-model-from-bucket-storage" class="md-nav__link">
-    <span class="md-ellipsis">
-      Alternative 3: Deploy a Model from Bucket Storage
+      Mapping rights
     </span>
   </a>
   
@@ -2505,53 +2434,20 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#user-input-values" class="md-nav__link">
+  <a href="#link-identity-provider-to-organization" class="md-nav__link">
     <span class="md-ellipsis">
-      User Input Values
+      Link Identity provider to organization
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#interacting-with-deployed-model" class="md-nav__link">
+  <a href="#add-authentication-flow" class="md-nav__link">
     <span class="md-ellipsis">
-      Interacting with Deployed Model
+      Add authentication flow
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Interacting with Deployed Model">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#verify-deployment" class="md-nav__link">
-    <span class="md-ellipsis">
-      Verify Deployment
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#port-forwarding" class="md-nav__link">
-    <span class="md-ellipsis">
-      Port Forwarding
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#test-the-deployment" class="md-nav__link">
-    <span class="md-ellipsis">
-      Test the Deployment
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -2574,59 +2470,55 @@
   
 
 
-<h1 id="llm-inference-with-sglang">LLM Inference with SGLang<a class="headerlink" href="#llm-inference-with-sglang" title="Permanent link">&para;</a></h1>
-<p>This Helm Chart deploys the LLM Inference SGLang workload.</p>
-<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
-<p>Ensure the following prerequisites are met before deploying any workloads:</p>
-<ol>
-<li><strong>Helm</strong>: Install <code>helm</code>. Refer to the <a href="https://helm.sh/">Helm documentation</a> for instructions.</li>
-<li><strong>Secrets</strong>: Create the following secrets in the namespace:<ul>
-<li><code>minio-credentials</code> with keys <code>minio-access-key</code> and <code>minio-secret-key</code>.</li>
-<li><code>hf-token</code> with key <code>hf-token</code>.</li>
+<h1 id="adding-identity-provider-to-enable-single-sign-on">Adding identity provider to enable single sign-on<a class="headerlink" href="#adding-identity-provider-to-enable-single-sign-on" title="Permanent link">&para;</a></h1>
+<p>This is a general guide for setting up a single sign-on (SSO) with identity provider. This has been tested with OpenID Connect (Okta) but guide tries to be provider agnostic.</p>
+<h2 id="prequisite">Prequisite<a class="headerlink" href="#prequisite" title="Permanent link">&para;</a></h2>
+<p>Keycloak is set up for AIRM so organizations, realms, etc. are already created. Correct realm is selected as all the actions are realm specific.</p>
+<h2 id="add-identity-provider">Add identity provider<a class="headerlink" href="#add-identity-provider" title="Permanent link">&para;</a></h2>
+<p>Select Identity provider under Configure and add new provider. There are many identity providers and this guide won't go deep into every identity provider supported by Keycloak.</p>
+<p>The main thing you need are</p>
+<ul>
+<li>Redirect URI from Keycloak</li>
+<li>Configured to the identity provider so that when Keycloak directs authentication to the external identity provider, the provider can then redirect the user back to Keycloak</li>
+<li>Client ID from the identity provider</li>
+<li>Identity provider offers ID so it can distinguis between different clients (applications) making requests to the provider</li>
+<li>Client secret from the identity provider</li>
+<li>Secret generated by the identity provider. Not to be mixed up with UI client secret for example.</li>
 </ul>
-</li>
-</ol>
-<h2 id="deploying-the-workload">Deploying the Workload<a class="headerlink" href="#deploying-the-workload" title="Permanent link">&para;</a></h2>
-<p>It is recommended to use <code>helm template</code> and pipe the result to <code>kubectl apply</code> , rather than using <code>helm install</code>. Generally, a command looks as follows
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>helm<span class="w"> </span>template<span class="w"> </span><span class="o">[</span>optional-release-name<span class="o">]</span><span class="w"> </span>&lt;helm-dir&gt;<span class="w"> </span>-f<span class="w"> </span>&lt;overrides/xyz.yaml&gt;<span class="w"> </span>--set<span class="w"> </span>&lt;name&gt;<span class="o">=</span>&lt;value&gt;<span class="w"> </span><span class="p">|</span><span class="w"> </span>kubectl<span class="w"> </span>apply<span class="w"> </span>-n<span class="w"> </span>&lt;namespace&gt;<span class="w"> </span>-f<span class="w"> </span>-
-</code></pre></div></p>
-<p>The chart provides three main ways to deploy models, detailed below.</p>
-<h3 id="alternative-1-deploy-a-specific-model-configuration">Alternative 1: Deploy a Specific Model Configuration<a class="headerlink" href="#alternative-1-deploy-a-specific-model-configuration" title="Permanent link">&para;</a></h3>
-<p>To deploy a specific model along with its settings, use the following command from the <code>helm</code> directory:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>helm<span class="w"> </span>template<span class="w"> </span>tiny-llama<span class="w"> </span>.<span class="w"> </span>-f<span class="w"> </span>overrides/models/tinyllama_tinyllama-1.1b-chat-v1.0.yaml<span class="w"> </span><span class="p">|</span><span class="w"> </span>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>-
-</code></pre></div>
-<h3 id="alternative-2-override-the-model">Alternative 2: Override the Model<a class="headerlink" href="#alternative-2-override-the-model" title="Permanent link">&para;</a></h3>
-<p>You can also override the model on the command line:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>helm<span class="w"> </span>template<span class="w"> </span>qwen2-0-5b<span class="w"> </span>.<span class="w"> </span>--set<span class="w"> </span><span class="nv">model</span><span class="o">=</span>Qwen/Qwen2-0.5B-Instruct<span class="w"> </span><span class="p">|</span><span class="w"> </span>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>-
-</code></pre></div>
-<h3 id="alternative-3-deploy-a-model-from-bucket-storage">Alternative 3: Deploy a Model from Bucket Storage<a class="headerlink" href="#alternative-3-deploy-a-model-from-bucket-storage" title="Permanent link">&para;</a></h3>
-<p>If you have downloaded your model to bucket storage, use:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>helm<span class="w"> </span>template<span class="w"> </span>qwen2-0-5b<span class="w"> </span>.<span class="w"> </span>--set<span class="w"> </span><span class="nv">model</span><span class="o">=</span>s3://models/Qwen/Qwen2-0.5B-Instruct<span class="w"> </span><span class="p">|</span><span class="w"> </span>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>-
-</code></pre></div>
-<p>The model will be automatically downloaded before starting the inference server.</p>
-<h2 id="user-input-values">User Input Values<a class="headerlink" href="#user-input-values" title="Permanent link">&para;</a></h2>
-<p>Refer to the <code>values.yaml</code> file for the user input values you can provide, along with instructions.</p>
-<h2 id="interacting-with-deployed-model">Interacting with Deployed Model<a class="headerlink" href="#interacting-with-deployed-model" title="Permanent link">&para;</a></h2>
-<h3 id="verify-deployment">Verify Deployment<a class="headerlink" href="#verify-deployment" title="Permanent link">&para;</a></h3>
-<p>Check the deployment status:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>kubectl<span class="w"> </span>get<span class="w"> </span>deployment
-</code></pre></div>
-<h3 id="port-forwarding">Port Forwarding<a class="headerlink" href="#port-forwarding" title="Permanent link">&para;</a></h3>
-<p>Forward the port to access the service (assuming the service is named <code>llm-inference-sglang-tiny-llama</code> ):</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>kubectl<span class="w"> </span>port-forward<span class="w"> </span>deployments/llm-inference-sglang-tiny-llama<span class="w"> </span><span class="m">8080</span>:80
-</code></pre></div>
-<h3 id="test-the-deployment">Test the Deployment<a class="headerlink" href="#test-the-deployment" title="Permanent link">&para;</a></h3>
-<p>Send a test request to verify the service, assuming <code>TinyLlama/TinyLlama-1.1B-Chat-v1.0</code> model:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>curl<span class="w"> </span>http://localhost:8080/v1/chat/completions<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">    </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">    </span>-d<span class="w"> </span><span class="s1">&#39;{</span>
-<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="s1">        &quot;model&quot;: &quot;TinyLlama/TinyLlama-1.1B-Chat-v1.0&quot;,</span>
-<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="s1">        &quot;messages&quot;: [</span>
-<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="s1">            {&quot;role&quot;: &quot;system&quot;, &quot;content&quot;: &quot;You are a helpful assistant.&quot;},</span>
-<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="s1">            {&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: &quot;Who won the world series in 2020?&quot;}</span>
-<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="s1">        ]</span>
-<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="s1">    }&#39;</span>
-</code></pre></div>
+<p>Rest of the settings will vary between different types of identity providers.</p>
+<h3 id="mapping-rights">Mapping rights<a class="headerlink" href="#mapping-rights" title="Permanent link">&para;</a></h3>
+<p>When you control authentication with a identity provider, then you can automatically assign minimum rights to every user (i.e. all users that are allowed to access the system, can be assumed to also have at least minimum rights). Do this by opening the configured identity provider and going to Mappers tab. Select Add mapper and use following settings</p>
+<ul>
+<li>Name = default-user-role (or any other name you prefer)</li>
+<li>Mapper type = Hardcoded Role</li>
+<li>Role = Team Member</li>
+<li>Sync mode override = Inherit</li>
+</ul>
+<p>Additional rights can still be granted in Keycloak manually even if the minimum rights is hard-coded. Also note that without <em>any</em> rights, the users can login, but cannot use the system.</p>
+<p>It's also possible to map roles from the identity provider by configuring mapper to Identity provider for automatic role assignment which move the authorization from Keycloak to the Identity provider. Remember to set <code>Sync mode override</code> to <code>Force</code> to ensure that rights are also deducted, not just added.</p>
+<h2 id="link-identity-provider-to-organization">Link Identity provider to organization<a class="headerlink" href="#link-identity-provider-to-organization" title="Permanent link">&para;</a></h2>
+<p>Select correct organization from Organizations and go to Identity providers tab. Select Link identity provider and then select newly created identity provider from the list. Set</p>
+<ul>
+<li>Identity provider = [You new identiyt provider]</li>
+<li>Domain = [Domain attached to the organization]</li>
+<li>Hide on login page = Off</li>
+<li>Redirect when email matches = Off</li>
+</ul>
+<h2 id="add-authentication-flow">Add authentication flow<a class="headerlink" href="#add-authentication-flow" title="Permanent link">&para;</a></h2>
+<p>To automatically enroll user to an orgranization, one must create new Flow under Authentication. This can be adapted to the specific need, but here is one option to give an idea how to create simple automatic flow for IDP. Add executions steps in this order with specified Requirement type</p>
+<ul>
+<li>Create User If Unique [Required]</li>
+<li>Creates new user to Keycloak if one doesn't already exist</li>
+<li>Automatically set existing user [Alternative]</li>
+<li>Set user to existing one as alternative to Create user if unique</li>
+<li>Review profile [Required]</li>
+<li>Update Keycloak profile data with the data identity provider offers using attribute mappers</li>
+<li>Organization Member Onboard [Required]</li>
+<li>Adds user to the organization that identity provider is linked to</li>
+<li>Allows access [Required]</li>
+<li>Permit user to log in</li>
+</ul>
+<p>After the flow has been created, you need to navigate to your Identity provider and change <code>First Login Flow</code> to that custom authentication flow.</p>
 
 
 
