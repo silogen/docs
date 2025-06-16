@@ -1,10 +1,8 @@
 # SiloGen AMD Enterprise AI platform documentation
 
-## Documentation
+The documentation for this project is built using MkDocs with the Material theme. The documentation utilizes Github actions which import Markdown files from multiple sources into this consolidated documentation repository.
 
-The documentation for this project is built using MkDocs with the Material theme.
-
-### Setting up documentation locally
+## Setting up documentation locally
 
 1. Install documentation dependencies:
    ```bash
@@ -18,18 +16,16 @@ The documentation for this project is built using MkDocs with the Material theme
 
 3. View the documentation at http://localhost:8000
 
-### Building documentation
+## Building documentation
 
-To build the documentation site:
-```bash
-mkdocs build
-```
+To build the documentation site without serving it run `mkdocs build`.
 
-The built site will be in the `site` directory.
+The built site will be in the `site` directory. The serve function also watches for changes in the documents and builds the site automatically
 
 ## Development
 
 See the [Contributing](docs/contributing.md) guide for development setup instructions.
 
 ## Publishing
-The external SiloGen documentation is published from this repository as a web site in Github pages.
+
+The external SiloGen documentation is published from this repository as a web site in Github pages in address [docs.silogen.ai](https://docs.silogen.ai).
