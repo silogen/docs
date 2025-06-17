@@ -1,0 +1,185 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "metadata": {
+      "type": "object",
+      "description": "Metadata for the deployment",
+      "properties": {
+        "labels": {
+          "type": "object",
+          "description": "Labels to apply to the deployment",
+          "additionalProperties": {
+            "type": "string"
+          }
+        }
+      },
+      "required": ["labels"]
+    },
+    "image": {
+      "type": "string",
+      "description": "Docker image to use for the deployment"
+    },
+    "imagePullPolicy": {
+      "type": "string",
+      "description": "Image pull policy",
+      "enum": ["Always", "IfNotPresent", "Never"]
+    },
+    "model": {
+      "type": "string",
+      "description": "Model to use for inference"
+    },
+    "gpus": {
+      "type": "integer",
+      "description": "Number of GPUs to allocate",
+      "minimum": 1
+    },
+    "memory_per_gpu": {
+      "type": "integer",
+      "description": "Memory per GPU in Gi",
+      "minimum": 1
+    },
+    "cpu_per_gpu": {
+      "type": "integer",
+      "description": "CPU cores per GPU",
+      "minimum": 1
+    },
+    "sglang_server_args": {
+      "type": "object",
+      "description": "Arguments for the sglang server",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "env_vars": {
+      "type": "object",
+      "description": "Environment variables for the deployment",
+      "properties": {
+        "BUCKET_STORAGE_HOST": {
+          "type": "string",
+          "description": "Bucket storage host URL",
+          "format": "uri"
+        },
+        "BUCKET_STORAGE_ACCESS_KEY": {
+          "type": "object",
+          "description": "Access key for bucket storage",
+          "properties": {
+            "name": {
+            "type": "string",
+            "description": "Name of the secret containing the access key"
+            },
+            "key": {
+              "type": "string",
+              "description": "Key in the secret containing the access key"
+            }
+          },
+          "required": ["name", "key"]
+        },
+        "BUCKET_STORAGE_SECRET_KEY": {
+          "type": "object",
+          "description": "Secret key for bucket storage",
+          "properties": {
+            "name": {
+              "type": "string",
+              "description": "Name of the secret containing the secret key"
+            },
+            "key": {
+              "type": "string",
+              "description": "Key in the secret containing the secret key"
+            }
+          },
+          "required": ["name", "key"]
+        },
+        "HF_HOME": {
+          "type": "string",
+          "description": "Home directory for Hugging Face"
+        }
+      },
+      "required": ["BUCKET_STORAGE_HOST", "BUCKET_STORAGE_ACCESS_KEY", "BUCKET_STORAGE_SECRET_KEY", "HF_HOME"]
+    },
+    "storage": {
+      "type": "object",
+      "description": "Storage configuration",
+      "properties": {
+        "ephemeral": {
+          "type": "object",
+          "description": "Ephemeral storage configuration",
+          "properties": {
+            "quantity": {
+              "type": "string",
+              "description": "Quantity of ephemeral storage"
+            },
+            "storageClassName": {
+              "type": "string",
+              "description": "Storage class name for ephemeral storage"
+            },
+            "accessModes": {
+              "type": "array",
+              "description": "Access modes for ephemeral storage",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "required": ["quantity", "storageClassName", "accessModes"]
+        },
+        "dshm": {
+          "type": "object",
+          "description": "Shared memory configuration",
+          "properties": {
+            "sizeLimit": {
+              "type": "string",
+              "description": "Size limit for shared memory"
+            }
+          },
+          "required": ["sizeLimit"]
+        }
+      },
+      "required": ["ephemeral", "dshm"]
+    },
+    "deployment": {
+      "type": "object",
+      "description": "Deployment configuration",
+      "properties": {
+        "ports": {
+          "type": "object",
+          "description": "Ports for the deployment",
+          "properties": {
+            "http": {
+              "type": "integer",
+              "description": "HTTP port for the deployment"
+            }
+          },
+          "required": ["http"]
+        }
+      },
+      "required": ["ports"]
+    },
+    "kaiwo": {
+      "type": "object",
+      "properties": {
+        "enabled": {
+          "type": "boolean",
+          "description": "If true, use Kaiwo CRDs to have Kaiwo operator manage the workload"
+        }
+      }
+    },
+    "startupProbe": {
+      "type": ["object"],
+      "additionalProperties": true,
+      "description": "Startup probe configuration for the container"
+    },
+    "livenessProbe": {
+      "type": ["object"],
+      "additionalProperties": true,
+      "description": "Liveness probe configuration for the container"
+    },
+    "readinessProbe": {
+      "type": ["object"],
+      "additionalProperties": true,
+      "description": "Readiness probe configuration for the container"
+    }
+  },
+  "required": ["metadata", "image", "imagePullPolicy", "model", "gpus", "memory_per_gpu", "cpu_per_gpu", "sglang_server_args", "env_vars", "storage", "deployment", "kaiwo", "startupProbe", "livenessProbe", "readinessProbe"],
+  "additionalProperties": false
+}

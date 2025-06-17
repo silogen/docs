@@ -46,12 +46,12 @@ plugins:
   - search
   - tags
   # - with-pdf
-  - multirepo:
-      cleanup: true
-      nav_repos:
-        - name: ai-workloads
-          import_url: https://github.com/silogen/ai-workloads?branch=main
-          imports: [docs/tutorials/*, workloads/workloads-overview.md, workloads/dev-chatui-openwebui/helm/README.md, workloads/dev-workspace-vscode/helm/README.md, workloads/dev-text2image-comfyui/helm/README.md, workloads/download-data-to-bucket/helm/README.md, workloads/download-huggingface-model-to-bucket/helm/README.md, workloads/k8s-namespace-setup/helm/README.md, workloads/llm-finetune-silogen-engine/helm/*,  workloads/llm-inference-llamacpp-mi300x/helm/README.md, workloads/llm-inference-sglang/helm/README.md, workloads/llm-inference-vllm/helm/README.md, workloads/llm-inference-vllm-benchmark-mad/helm/README.md]
+  #- multirepo:
+  #    cleanup: true
+  #    nav_repos:
+  #      - name: ai-workloads
+  #        import_url: https://github.com/silogen/ai-workloads?branch=main
+  #        imports: [docs/tutorials/*, workloads/workloads-overview.md, workloads/dev-chatui-openwebui/helm/README.md, workloads/dev-workspace-vscode/helm/README.md, workloads/dev-text2image-comfyui/helm/README.md, workloads/download-data-to-bucket/helm/README.md, workloads/download-huggingface-model-to-bucket/helm/README.md, workloads/k8s-namespace-setup/helm/README.md, workloads/llm-finetune-silogen-engine/helm/*,  workloads/llm-inference-llamacpp-mi300x/helm/README.md, workloads/llm-inference-sglang/helm/README.md, workloads/llm-inference-vllm/helm/README.md, workloads/llm-inference-vllm-benchmark-mad/helm/README.md]
 
       #  - name: core
       #    import_url: https://github.com/silogen/core?branch=main
@@ -119,25 +119,25 @@ nav:
 
     - Tutorials:
       - Overview: ai-development-tutorials.md
-      - Prerequisites for running the tutorials: ai-workloads/docs/tutorials/tutorial-prereqs.md
-      - Deliver resources and fine-tune: ai-workloads/docs/tutorials/tutorial-01-deliver-resources-and-finetune.md
-      - Language extension - Odia fine-tuning: ai-workloads/docs/tutorials/tutorial-02-language-extension-finetune.md
+      - Prerequisites for running the tutorials: ai-workloads-docs/tutorials/tutorial-prereqs.md
+      - Deliver resources and fine-tune: ai-workloads-docs/tutorials/tutorial-01-deliver-resources-and-finetune.md
+      - Language extension - Odia fine-tuning: ai-workloads-docs/tutorials/tutorial-02-language-extension-finetune.md
 
     - Reference AI workloads:
-      - Overview: ai-workloads/workloads/workloads-overview.md
-      - dev-chatui-openwebui: ai-workloads/workloads/dev-chatui-openwebui/helm/README.md
-      - dev-openvscode-server: ai-workloads/workloads/dev-workspace-vscode/helm/README.md
-      - dev-text2image-comfyui: ai-workloads/workloads/dev-text2image-comfyui/helm/README.md
-      - download-data-to-bucket: ai-workloads/workloads/download-data-to-bucket/helm/README.md
-      - download-huggingface-model-to-bucket: ai-workloads/workloads/download-huggingface-model-to-bucket/helm/README.md
-      - k8s-namespace-setup: ai-workloads/workloads/k8s-namespace-setup/helm/README.md
+      - Overview: ai-workloads-manifests/workloads-overview.md
+      - dev-chatui-openwebui: ai-workloads-manifests/dev-chatui-openwebui/helm/README.md
+      - dev-openvscode-server: ai-workloads-manifests/dev-workspace-vscode/helm/README.md
+      - dev-text2image-comfyui: ai-workloads-manifests/dev-text2image-comfyui/helm/README.md
+      - download-data-to-bucket: ai-workloads-manifests/download-data-to-bucket/helm/README.md
+      - download-huggingface-model-to-bucket: ai-workloads-manifests/download-huggingface-model-to-bucket/helm/README.md
+      - k8s-namespace-setup: ai-workloads-manifests/k8s-namespace-setup/helm/README.md
       - llm-finetune-silogen-engine:
-        - Overview: ai-workloads/workloads/llm-finetune-silogen-engine/helm/README.md
-        - Fine-tuning config: ai-workloads/workloads/llm-finetune-silogen-engine/helm/silogen_finetuning_config_readme.md
-      - llm-inference-llamacpp-mi300x: ai-workloads/workloads/llm-inference-llamacpp-mi300x/helm/README.md
-      - llm-inference-sglang: ai-workloads/workloads/llm-inference-sglang/helm/README.md
-      - llm-inference-vllm: ai-workloads/workloads/llm-inference-vllm/helm/README.md
-      - llm-inference-vllm-benchmark-mad: ai-workloads/workloads/llm-inference-vllm-benchmark-mad/helm/README.md
+        - Overview: ai-workloads-manifests/llm-finetune-silogen-engine/helm/README.md
+        - Fine-tuning config: ai-workloads-manifests/llm-finetune-silogen-engine/helm/silogen_finetuning_config_readme.md
+      - llm-inference-llamacpp-mi300x: ai-workloads-manifests/llm-inference-llamacpp-mi300x/helm/README.md
+      - llm-inference-sglang: ai-workloads-manifests/llm-inference-sglang/helm/README.md
+      - llm-inference-vllm: ai-workloads-manifests/llm-inference-vllm/helm/README.md
+      - llm-inference-vllm-benchmark-mad: ai-workloads-manifests/llm-inference-vllm-benchmark-mad/helm/README.md
 
   - AI resource management:
     - Overview: core/docs/airman/overview.md

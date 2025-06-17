@@ -1,0 +1,4 @@
+apiVersion: v2
+name: llm-inference-tgi
+description: A Helm chart for TGI inference
+version: 0.0.1

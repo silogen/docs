@@ -1,0 +1,120 @@
+{{- define "job" -}}
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: "{{ .Release.Name }}-job"
+  {{- if .Values.labels }}
+  labels:
+    {{- range $label, $value := .Values.labels }}
+    {{ $label }}: {{ $value | quote }}
+    {{- end }}
+  {{- end }}
+spec:
+  ttlSecondsAfterFinished: 3600
+  backoffLimit: 0
+  template:
+    spec:
+      restartPolicy: Never
+      {{- if .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- range .Values.imagePullSecrets }}
+        - name: {{ . }}
+        {{- end }}
+      {{- end }}
+      containers:
+        - name: finetuning
+          image: "{{ .Values.finetuningImage }}"
+          imagePullPolicy: Always
+          env:
+            # storage
+            - name: BUCKET_STORAGE_HOST
+              value: {{ .Values.bucketStorageHost }}
+            - name: BUCKET_STORAGE_ACCESS_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: {{ .Values.bucketCredentialsSecret.name }}
+                  key: {{ .Values.bucketCredentialsSecret.accessKeyKey }}
+            - name: BUCKET_STORAGE_SECRET_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: {{ .Values.bucketCredentialsSecret.name }}
+                  key: {{ .Values.bucketCredentialsSecret.secretKeyKey }}
+          command:
+            - /bin/bash
+            - -l
+            - -e
+            - -u
+            - -c
+          args:
+            - |
+              echo '===== Download Checkpoints ====='
+              {{- include "downloadEntrypoint" . | nindent 14 }}
+              echo '===== Finetuning and Checkpoint Upload ====='
+              {{- include "finetuningAndUploadEntrypoint" . | nindent 14 }}
+          resources:
+            limits:
+              memory: "{{ mul .Values.finetuningGpus 48 }}Gi"
+              cpu: "{{ mul .Values.finetuningGpus 4 }}"
+              amd.com/gpu: "{{ .Values.finetuningGpus }}"
+            requests:
+              memory: "{{ mul .Values.finetuningGpus 48 }}Gi"
+              cpu: "{{ mul .Values.finetuningGpus 4 }}"
+              amd.com/gpu: "{{ .Values.finetuningGpus }}"
+          volumeMounts:
+            - name: dshm # Increase SHM size for the container by mounting /dev/shm, for Pytorch parallel processing
+              mountPath: /dev/shm
+            - name: checkpoints
+              mountPath: /workdir/checkpoints
+              readOnly: false
+            - name: configs
+              mountPath: /configs
+              readOnly: true
+          securityContext:
+            allowPrivilegeEscalation: false
+            runAsNonRoot: true
+            runAsUser: 1000
+            seccompProfile:
+              type: RuntimeDefault
+            capabilities:
+              drop: ["ALL"]
+      securityContext:
+        fsGroup: 1000
+      volumes:
+        - name: dshm
+          emptyDir:
+            medium: Memory # equivalent to `docker run --shm-size=(total_memory/2)`
+        {{- if .Values.storageClass }}
+        - name: checkpoints
+          ephemeral:
+            volumeClaimTemplate:
+              spec:
+                accessModes: [ "ReadWriteOnce" ]
+                storageClassName: {{ .Values.storageClass }}
+                resources:
+                  requests:
+                    storage: "{{ .Values.checkpointsReservedSize }}"
+        {{- else }}
+        - name: checkpoints
+          emptyDir:
+            sizeLimit: "{{ .Values.checkpointsReservedSize }}"
+        {{- end }}
+        - name: configs
+          configMap:
+            name: "{{ .Release.Name }}-configs"
+{{- end -}}
+
+{{- define "job_wrapped_with_kaiwojob" -}}
+apiVersion: kaiwo.silogen.ai/v1alpha1
+kind: KaiwoJob
+metadata:
+  name: "{{ .Release.Name }}-job"
+spec:
+  job:
+    {{- include "job" . | nindent 4 }}
+{{- end -}}
+
+{{- if .Values.kaiwo.enabled -}}
+{{- include "job_wrapped_with_kaiwojob" . }}
+{{- else -}}
+{{- include "job" . }}
+{{- end -}}
