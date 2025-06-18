@@ -1,0 +1,4 @@
+apiVersion: v2
+name: llm-finetune-axolotl
+description: A Helm chart for fine-tuning with Axolotl
+version: 0.0.1

@@ -1,0 +1,217 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "metadata": {
+      "type": "object",
+      "properties": {
+        "labels": {
+          "type": "object",
+          "description": "Metadata labels",
+          "additionalProperties": true
+        }
+      },
+      "required": []
+    },
+    "image": {
+      "type": "string",
+      "description": "Image repository and tag"
+    },
+    "imagePullPolicy": {
+      "type": "string",
+      "description": "Image pull policy",
+      "enum": [
+        "Always",
+        "IfNotPresent",
+        "Never"
+      ]
+    },
+    "gpus": {
+      "type": "integer",
+      "description": "Number of GPUs",
+      "minimum": 0
+    },
+    "memory_per_gpu": {
+      "type": "integer",
+      "description": "Memory per GPU in Gi",
+      "minimum": 1
+    },
+    "cpu_per_gpu": {
+      "type": "integer",
+      "description": "CPU cores per GPU",
+      "minimum": 1
+    },
+    "env_vars": {
+      "type": "object",
+      "properties": {
+        "MODEL": {
+          "type": "string",
+          "description": "Model identifier"
+        },
+        "ROCM_ARCH": {
+          "type": "string",
+          "description": "ROCm architecture"
+        },
+        "GPU_LAYERS": {
+          "type": "string",
+          "description": "Number of GPU layers"
+        },
+        "TEMP": {
+          "type": "string",
+          "description": "Temperature setting"
+        },
+        "CTX_SIZE": {
+          "type": "string",
+          "description": "Context size"
+        },
+        "BUCKET_STORAGE_HOST": {
+          "type": "string",
+          "description": "Bucket storage host URL"
+        },
+        "BUCKET_STORAGE_ACCESS_KEY": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string",
+              "description": "Name of the secret containing the bucket storage access key"
+            },
+            "key": {
+              "type": "string",
+              "description": "Key of the bucket storage access key in the secret"
+            }
+          },
+          "required": [
+            "name",
+            "key"
+          ]
+        },
+        "BUCKET_STORAGE_SECRET_KEY": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string",
+              "description": "Name of the secret containing the bucket storage secret key"
+            },
+            "key": {
+              "type": "string",
+              "description": "Key of the bucket storage secret key in the secret"
+            }
+          },
+          "required": [
+            "name",
+            "key"
+          ]
+        },
+        "BIN_PATH": {
+          "type": "string",
+          "description": "Path to the MioIO bucket containing Llama.cpp binaries"
+        }
+      },
+      "required": [
+        "MODEL"
+      ]
+    },
+    "storage": {
+      "type": "object",
+      "properties": {
+        "ephemeral": {
+          "type": "object",
+          "properties": {
+            "quantity": {
+              "type": "string",
+              "description": "Ephemeral storage quantity"
+            },
+            "storageClassName": {
+              "type": "string",
+              "description": "Ephemeral storage class name"
+            },
+            "accessModes": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "description": "Ephemeral storage access modes"
+            }
+          },
+          "required": [
+            "quantity",
+            "storageClassName",
+            "accessModes"
+          ]
+        },
+        "dshm": {
+          "type": "object",
+          "properties": {
+            "sizeLimit": {
+              "type": "string",
+              "description": "Size limit for /dev/shm"
+            }
+          },
+          "required": [
+            "sizeLimit"
+          ]
+        }
+      },
+      "required": [
+        "ephemeral",
+        "dshm"
+      ]
+    },
+    "deployment": {
+      "type": "object",
+      "properties": {
+      "ports": {
+        "type": "object",
+        "description": "Deployment ports as a key-value mapping of string to integer",
+        "additionalProperties": {
+        "type": "integer"
+        }
+      }
+      },
+      "required": [
+        "ports"
+      ]
+    },
+    "entrypoint": {
+      "type": "string",
+      "description": "Entrypoint script"
+    },
+    "startupProbe": {
+      "type": ["object"],
+      "additionalProperties": true
+    },
+    "livenessProbe": {
+      "type": ["object"],
+      "additionalProperties": true
+    },
+    "readinessProbe": {
+      "type": ["object"],
+      "additionalProperties": true
+    },
+    "kaiwo": {
+      "type": "object",
+      "properties": {
+        "enabled": {
+          "type": "boolean",
+          "description": "If true, use Kaiwo CRDs to have Kaiwo operator manage the workload"
+        }
+      }
+    }
+  },
+  "required": [
+    "image",
+    "imagePullPolicy",
+    "gpus",
+    "memory_per_gpu",
+    "cpu_per_gpu",
+    "env_vars",
+    "storage",
+    "deployment",
+    "entrypoint",
+    "startupProbe",
+    "livenessProbe",
+    "readinessProbe",
+    "kaiwo"
+  ],
+  "additionalProperties": false
+}
