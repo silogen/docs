@@ -993,29 +993,32 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Definitions">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#model-type" class="md-nav__link">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#subpage-community-models" class="md-nav__link">
     <span class="md-ellipsis">
-      Model type
+      Subpage: Community models
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#model-status" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#subpage-custom-models" class="md-nav__link">
     <span class="md-ellipsis">
-      Model status
+      Subpage: Custom models
     </span>
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#subpage-active-deployments" class="md-nav__link">
+    <span class="md-ellipsis">
+      Subpage: Active deployments
+    </span>
+  </a>
   
 </li>
       
@@ -2391,29 +2394,32 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Definitions">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#model-type" class="md-nav__link">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#subpage-community-models" class="md-nav__link">
     <span class="md-ellipsis">
-      Model type
+      Subpage: Community models
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#model-status" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#subpage-custom-models" class="md-nav__link">
     <span class="md-ellipsis">
-      Model status
+      Subpage: Custom models
     </span>
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#subpage-active-deployments" class="md-nav__link">
+    <span class="md-ellipsis">
+      Subpage: Active deployments
+    </span>
+  </a>
   
 </li>
       
@@ -2438,27 +2444,50 @@
 
 <h1 id="models">Models<a class="headerlink" href="#models" title="Permanent link">&para;</a></h1>
 <p>The Models view lists all available models than can be deployed or <a href="../fine-tuning/">fine-tuned</a>.</p>
-<p>The filter bar helps filtering down the model list. The model type and status are described more detailed under <a href="#definitions">Defitions</a>.</p>
-<p><img alt="Model filters" src="../../../img/training/models-filtering.png" /></p>
-<p>Models list always shows models mathing the current filter values.</p>
-<p><img alt="Model list" src="../../../img/training/models-list.png" /></p>
-<p>Model specific actions can be performed using the three dot menu button.</p>
-<p><img alt="Model submenu" src="../../../img/training/models-list-submenu.png" /></p>
+<p>The view is divided to three different subpages: community models, custom models and active deployments. The <strong>Community</strong> models page lists available industry standard models, such as common large language models. <strong>Custom models</strong> page lists all available custom models and fine-tuned models. <strong>Active deployments</strong> lists deployed models and their statuses.</p>
 <h2 id="definitions">Definitions<a class="headerlink" href="#definitions" title="Permanent link">&para;</a></h2>
-<h3 id="model-type">Model type<a class="headerlink" href="#model-type" title="Permanent link">&para;</a></h3>
-<p>Model type is one of the following</p>
+<p>Model can be one of the following types:</p>
 <ul>
-<li><strong>Base model</strong></li>
-<li><strong>Merged model</strong></li>
-<li><strong>Adapter</strong></li>
+<li><strong>Base model</strong>: A foundation model trained with a vast amounts of data.</li>
+<li><strong>Merged model</strong>: A model that has been improved for specific use cases.</li>
+<li><strong>Adapter</strong>: Small modules that alter the base model behavior.</li>
 </ul>
-<h3 id="model-status">Model status<a class="headerlink" href="#model-status" title="Permanent link">&para;</a></h3>
-<p>Model can be in one of the following states</p>
+<p>Model can be in one of the following states:</p>
 <ul>
-<li><strong>Pending</strong>: Model is being prepared</li>
-<li><strong>Ready</strong>: Model is ready for use</li>
+<li><strong>Pending</strong>: Model is being prepared.</li>
+<li><strong>Ready</strong>: Model is ready for use.</li>
 <li><strong>Failed</strong>: There was some issue loading the model and model is not available for use.</li>
 </ul>
+<h2 id="subpage-community-models">Subpage: Community models<a class="headerlink" href="#subpage-community-models" title="Permanent link">&para;</a></h2>
+<p>All of the available ready-to-deploy open source models are listed in this view. Users can filter the list by using the available search field and tags dropdown.</p>
+<p><img alt="The community models page lists all of the available open source models." src="../../../img/training/models-community.png" /></p>
+<p>The model boxes contain helpful information about the models. Along the name users can click a link, which takes them to the external model webpage. Each model has also a short description and tags.</p>
+<p>The models contain an action button which can be one of the following:</p>
+<ul>
+<li><strong>Download</strong>: Downloads a base model into the custom models catalog.</li>
+<li><strong>Fine-tune</strong>: Fine-tune a model that is eligible for that. Read more about <a href="../fine-tuning/">fine-tuning</a>.</li>
+<li><strong>Deploy</strong>: Prepares the model into use.</li>
+<li><strong>Connect</strong>: Opens a set of parameters that can be used for connecting your applications to the model. For chattable models, let's you take the model into the chat window.</li>
+</ul>
+<p>The platform's development team maintains the available community models.</p>
+<h2 id="subpage-custom-models">Subpage: Custom models<a class="headerlink" href="#subpage-custom-models" title="Permanent link">&para;</a></h2>
+<p>The custom models page lists all of the available custom models activated from the community models page.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Custom models page does not currently allow the implementation of users' own models, such as own business intelligence solutions.</p>
+</div>
+<p><img alt="The custom models page lists all of the available base and fine-tuned models." src="../../../img/training/models-custom-models.png" /></p>
+<p>The page has a prominent <strong>Fine-tune model</strong> button which opens the <a href="../fine-tuning/">fine-tuning</a> dialog. Click each model's action menu shows a list of available function: show details, fine-tune, deploy or delete.</p>
+<ul>
+<li><strong>Show details</strong> opens a dialog containing relevant information.</li>
+<li><strong>Fine-tune</strong> action opens the fine-tuningn dialog.</li>
+<li><strong>Deploy</strong> opens the a drawer which instructs user in deploying the model for use.</li>
+<li><strong>Delete</strong> action let's users delete their models. We advice caution when using this action, since it is irreversible.</li>
+</ul>
+<h2 id="subpage-active-deployments">Subpage: Active deployments<a class="headerlink" href="#subpage-active-deployments" title="Permanent link">&para;</a></h2>
+<p>The view lists active models that are deployed into the cluster. Each model is associated with a lifetime status.</p>
+<p>From the actions menus users can view model details or delete the models. Filter bar offers various ways to select a subset of models for viewing.</p>
+<p><img alt="The active deployments page lists all of the deployments." src="../../../img/training/models-active-deployments.png" /></p>
 
 
 
