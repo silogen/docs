@@ -7,6 +7,13 @@
   justify-content: center;
 }
 
+.md-content img {
+  background: #fff;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  border-radius: 0.5em;
+  padding: 4px;
+}
+
 /* Media queries for large screens */
 @media screen and (min-width: 76.25em) {
   .md-nav--lifted>.md-nav__list>.md-nav__item--active>.md-nav__link {
