@@ -15,15 +15,15 @@ The SiloGen Developer Center is an interface for you as a developer to easily ma
 
 The Developer Center includes following capabilities:
 
-### Developer Tooling
+### Developer tooling
 
-The Developer Center provides developers with [tools and frameworks](./ai-catalog.md) to accelerate AI development and experimentation, featuring a comprehensive catalog of optimized AI workloads and models for AMD compute. The workloads include the most common developer tooling and frameworks such as Jupyter Notebooks, Visual Studio Code and popular frameworks like Pytorch and Tensorflow.
+The Developer Center provides developers with [tools and frameworks](./workspaces.md) to accelerate AI development and experimentation, featuring a comprehensive catalog of optimized AI workloads and models for AMD compute. The workloads include the most common developer tooling and frameworks such as Jupyter Notebooks, Visual Studio Code and popular frameworks like Pytorch and Tensorflow.
 
-### Chat and Compare
+### Chat and compare
 
-The [Chat page](./inference/chat.md) allows developers to experiment with models they have access to - developers will be able to modify several Retrieval and Generation parameters to judge how they affect the model's response. The [Model Comparison](./inference/compare.md) page of the playground allows developers to compare output of different models, for the same set of settings.
+The [Chat page](./inference/chat.md) allows developers to experiment with models they have access to - developers will be able to modify several Retrieval and Generation parameters to judge how they affect the model's response. The [Model comparison](./inference/compare.md) page of the playground allows developers to compare output of different models, for the same set of settings.
 
-### Training & Finetuning
+### Training & fine-tuning
 
 [Fine-tuning](./training/fine-tuning.md) a model allows developers to customize it to their specific use-case and data. SiloGen provides a certified list of base-models which developers can fine-tune and we allow you to customize certain hyperparameters to get the best results.
 
@@ -38,4 +38,5 @@ The Developer Center offers a comprehensive catalog of curated open-source model
 ## Running AI workloads on command-line
 
 Developers can also deploy and run AI workloads through command-line interface using pre-validated and open-source [workloads](https://github.com/silogen/ai-workloads) which have been published as Kubernetes manifests and Helm charts. The list of AI workloads is continuously updated.
-See more details on how to run workloads on [command-line](../../../../../../../ai-workloads/workloads/workloads-overview).
+
+See more details on how to run workloads on [command-line](../../../../ai-workloads-manifests/workloads-overview/).

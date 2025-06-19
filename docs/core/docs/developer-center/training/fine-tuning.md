@@ -76,6 +76,6 @@ You can view the details of the merge process in the "Run status" section of the
 
 ## Examples
 
-[Run model fine-tuning workload through Kubernetes CLI](../../../../../../../ai-workloads/workloads/llm-finetune-silogen-engine/helm/README.md)
+[Run model fine-tuning workload through Kubernetes CLI](../../../../../ai-workloads-manifests/llm-finetune-silogen-engine/helm/)
 
-[Scalable fine-tuning](../../../../../../../ai-workloads/docs/tutorials/tutorial-01-deliver-resources-and-finetune.md)
+[Scalable fine-tuning](../../../../../ai-workloads-docs/tutorials/tutorial-01-deliver-resources-and-finetune/)

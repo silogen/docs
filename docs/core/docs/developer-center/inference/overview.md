@@ -32,8 +32,8 @@ Once you have a response from the model, you can inspect the messages that were 
 
 This section contains examples and reference workloads for running model inference on SiloGen platform.
 
-[Model inferencing using SGLang](../../../../../../../ai-workloads/workloads/llm-inference-sglang/helm/README.md)
+[Model inferencing using SGLang](../../../../../ai-workloads-manifests/llm-inference-sglang/helm/)
 
-[Model inferencing using vLLM](../../../../../../../ai-workloads/workloads/llm-inference-vllm/helm/README.md)
+[Model inferencing using vLLM](../../../../../ai-workloads-manifests/llm-inference-vllm/helm/)
 
-[Using your own model and data](../../../../../../../ai-workloads/docs/tutorials/tutorial-01-deliver-resources-and-finetune.md#next-steps-how-to-use-your-own-model-and-data)
+[Using your own model and data](../../../../../ai-workloads-docs/tutorials/tutorial-01-deliver-resources-and-finetune#next-steps-how-to-use-your-own-model-and-data)
