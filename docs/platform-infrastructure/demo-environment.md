@@ -6,11 +6,11 @@ tags:
   - kubernetes
 ---
 
-# Install SiloGen demo environment
+# Install a SiloGen demo environment
 
 This article explains how to install a Kubernetes cluster from metal to model in a streamlined manner.
 
-The demo environment runs on top of Kubernetes platform and includes some necessary Kubernetes platform components for monitoring, secrets management and certificate management.
+The demo environment runs on top of a Kubernetes platform and includes essential Kubernetes components for monitoring, secrets management, and certificate management.
 
 The installation process leverages helper tools called **Cluster Bloom** and **Cluster Forge** that deploy and configure all necessary platform components, preparing a Kubernetes cluster for executing AI workloads.
 
@@ -24,7 +24,7 @@ The installation process leverages helper tools called **Cluster Bloom** and **C
 
 ## Set up the Kubernetes cluster
 
-Please choose the appropriate install scenario based on your infrastructure preferences.
+Please choose the appropriate installation scenario based on your infrastructure preferences.
 
 ### Set up a Kubernetes cluster (no existing Kubernetes cluster)
 
@@ -39,10 +39,13 @@ Use **Cluster Bloom** to install and configure a Kubernetes cluster. It installs
 
 #### Installation steps
 Download the latest Cluster Bloom release (adjust the URL to the release of your preference):
+
 ```
 wget https://github.com/silogen/cluster-bloom/releases/latest/download/bloom
 ```
+
 and run:
+
 ```
 sudo ./bloom
 ```
@@ -55,13 +58,13 @@ For systems with unmounted physical disks, a selection prompt will appear:
 
 ![Cluster Bloom Disk Selection](../media/infra/bloom-disk-selection.png)
 
-After successful installation, Cluster Bloom generates `additional_node_command.txt` that contains the command for installing additional nodes into the cluster.
+After successful installation, Cluster Bloom generates `additional_node_command.txt`, which contains the command for installing additional nodes into the cluster.
 
 ### Install Kubernetes software into an existing Kubernetes cluster
 
-To enable running AI workloads on SiloGen platform on an existing Kubernetes cluster, download a Cluster Forge release package and run `deploy.sh`. This assumes there is a working Kubernetes cluster to deploy into, and the current Kubeconfig context refers to that cluster.
+To enable running AI workloads on the SiloGen platform in an existing Kubernetes cluster, download a Cluster Forge release package and run `deploy.sh`. This assumes there is a working Kubernetes cluster to deploy into, and the current Kubeconfig context refers to that cluster.
 
-For Cluster Forge `deploy` release:
+For the Cluster Forge `deploy` release:
 
 ```
 wget https://github.com/silogen/cluster-forge/releases/download/deploy/deploy-release.tar.gz
@@ -71,8 +74,8 @@ sudo bash clusterforge/deploy.sh
 
 ## Validating the installation
 
-Verify successful installation by running TinyLlama workloads in
-[here](../ai-workloads-manifests/llm-inference-vllm/helm/README.md)
+Verify successful installation by running TinyLlama workloads as described
+[here](../ai-workloads-manifests/llm-inference-vllm/helm/README.md).
 You can confirm that services are running in the cluster using K9s, a terminal-based UI for Kubernetes clusters, which is installed by Cluster Bloom.
 
 ## Appendix
