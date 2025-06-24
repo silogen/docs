@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#install-silogen-demo-environment" class="md-skip">
+        <a href="#install-a-silogen-demo-environment" class="md-skip">
           Skip to content
         </a>
       
@@ -2546,9 +2546,9 @@
   
 
 
-<h1 id="install-silogen-demo-environment">Install SiloGen demo environment<a class="headerlink" href="#install-silogen-demo-environment" title="Permanent link">&para;</a></h1>
+<h1 id="install-a-silogen-demo-environment">Install a SiloGen demo environment<a class="headerlink" href="#install-a-silogen-demo-environment" title="Permanent link">&para;</a></h1>
 <p>This article explains how to install a Kubernetes cluster from metal to model in a streamlined manner.</p>
-<p>The demo environment runs on top of Kubernetes platform and includes some necessary Kubernetes platform components for monitoring, secrets management and certificate management.</p>
+<p>The demo environment runs on top of a Kubernetes platform and includes essential Kubernetes components for monitoring, secrets management, and certificate management.</p>
 <p>The installation process leverages helper tools called <strong>Cluster Bloom</strong> and <strong>Cluster Forge</strong> that deploy and configure all necessary platform components, preparing a Kubernetes cluster for executing AI workloads.</p>
 <h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
 <ul>
@@ -2559,7 +2559,7 @@
 <li>Root/sudo access</li>
 </ul>
 <h2 id="set-up-the-kubernetes-cluster">Set up the Kubernetes cluster<a class="headerlink" href="#set-up-the-kubernetes-cluster" title="Permanent link">&para;</a></h2>
-<p>Please choose the appropriate install scenario based on your infrastructure preferences.</p>
+<p>Please choose the appropriate installation scenario based on your infrastructure preferences.</p>
 <h3 id="set-up-a-kubernetes-cluster-no-existing-kubernetes-cluster">Set up a Kubernetes cluster (no existing Kubernetes cluster)<a class="headerlink" href="#set-up-a-kubernetes-cluster-no-existing-kubernetes-cluster" title="Permanent link">&para;</a></h3>
 <p>Use <strong>Cluster Bloom</strong> to install and configure a Kubernetes cluster. It installs the following features to prepare a (primarily AMD GPU) node to be part of a Kubernetes cluster:</p>
 <ul>
@@ -2571,27 +2571,27 @@
 <li>Cluster Forge integration</li>
 </ul>
 <h4 id="installation-steps">Installation steps<a class="headerlink" href="#installation-steps" title="Permanent link">&para;</a></h4>
-<p>Download the latest Cluster Bloom release (adjust the URL to the release of your preference):
+<p>Download the latest Cluster Bloom release (adjust the URL to the release of your preference):</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>wget https://github.com/silogen/cluster-bloom/releases/latest/download/bloom
 </code></pre></div>
-and run:
+<p>and run:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>sudo ./bloom
-</code></pre></div></p>
+</code></pre></div>
 <p>The Cluster Bloom interface will appear:</p>
 <p><img alt="Cluster Bloom Interface" src="../../media/infra/bloom.png" /></p>
 <p>For systems with unmounted physical disks, a selection prompt will appear:</p>
 <p><img alt="Cluster Bloom Disk Selection" src="../../media/infra/bloom-disk-selection.png" /></p>
-<p>After successful installation, Cluster Bloom generates <code>additional_node_command.txt</code> that contains the command for installing additional nodes into the cluster.</p>
+<p>After successful installation, Cluster Bloom generates <code>additional_node_command.txt</code>, which contains the command for installing additional nodes into the cluster.</p>
 <h3 id="install-kubernetes-software-into-an-existing-kubernetes-cluster">Install Kubernetes software into an existing Kubernetes cluster<a class="headerlink" href="#install-kubernetes-software-into-an-existing-kubernetes-cluster" title="Permanent link">&para;</a></h3>
-<p>To enable running AI workloads on SiloGen platform on an existing Kubernetes cluster, download a Cluster Forge release package and run <code>deploy.sh</code>. This assumes there is a working Kubernetes cluster to deploy into, and the current Kubeconfig context refers to that cluster.</p>
-<p>For Cluster Forge <code>deploy</code> release:</p>
+<p>To enable running AI workloads on the SiloGen platform in an existing Kubernetes cluster, download a Cluster Forge release package and run <code>deploy.sh</code>. This assumes there is a working Kubernetes cluster to deploy into, and the current Kubeconfig context refers to that cluster.</p>
+<p>For the Cluster Forge <code>deploy</code> release:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>wget https://github.com/silogen/cluster-forge/releases/download/deploy/deploy-release.tar.gz
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>tar -xzvf deploy-release.tar.gz
 <a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>sudo bash clusterforge/deploy.sh
 </code></pre></div>
 <h2 id="validating-the-installation">Validating the installation<a class="headerlink" href="#validating-the-installation" title="Permanent link">&para;</a></h2>
-<p>Verify successful installation by running TinyLlama workloads in
-<a href="../../ai-workloads-manifests/llm-inference-vllm/helm/">here</a>
+<p>Verify successful installation by running TinyLlama workloads as described
+<a href="../../ai-workloads-manifests/llm-inference-vllm/helm/">here</a>.
 You can confirm that services are running in the cluster using K9s, a terminal-based UI for Kubernetes clusters, which is installed by Cluster Bloom.</p>
 <h2 id="appendix">Appendix<a class="headerlink" href="#appendix" title="Permanent link">&para;</a></h2>
 <ul>
