@@ -14,6 +14,4 @@ The SiloGen platform and this documentation are designed for various personas, c
 - **Platform engineers:** Engineers responsible for setting up, maintaining, and optimizing the infrastructure that supports AI workloads.
 - **Field and application engineers:** Specialists who support customers in deploying and operating the platform.
 
-While some familiarity with Kubernetes, containerization, and AI/ML concepts is helpful, this handbook provides detailed instructions and explanations to accommodate users with varying levels of expertise.
-
-By the end of this handbook, you will have a fully functional Kubernetes platform optimized for AI workloads, along with the knowledge to run and manage AI use cases effectively.
+While some familiarity with Kubernetes, containerization, and AI/ML concepts is helpful, this handbook provides detailed instructions and explanations to accommodate users with varying levels of expertise. The handbook guides you to set up a fully deployed SiloGen Enterprise AI platform optimized for AI workloads on AMD compute The handbook also provides the knowledge needed to run and manage AI use cases effectively.
