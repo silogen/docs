@@ -1,4 +1,4 @@
-# Training and fine-tuning in SiloGen platform
+# Training and fine-tuning in the SiloGen platform
 
 !!! note
-    A placeholder page for training and fine-tuning overview.
+    This is a placeholder page for the training and fine-tuning overview.
