@@ -2443,51 +2443,51 @@
 
 
 <h1 id="models">Models<a class="headerlink" href="#models" title="Permanent link">&para;</a></h1>
-<p>The Models view lists all available models than can be deployed or <a href="../fine-tuning/">fine-tuned</a>.</p>
-<p>The view is divided to three different subpages: community models, custom models and active deployments. The <strong>Community</strong> models page lists available industry standard models, such as common large language models. <strong>Custom models</strong> page lists all available custom models and fine-tuned models. <strong>Active deployments</strong> lists deployed models and their statuses.</p>
+<p>The Models view lists all available models that can be deployed or <a href="../fine-tuning/">fine-tuned</a>.</p>
+<p>The view is divided into three different subpages: community models, custom models, and active deployments. The <strong>Community</strong> page lists available industry-standard models, such as common large language models. The <strong>Custom models</strong> page lists all available custom and fine-tuned models. <strong>Active deployments</strong> lists deployed models and their statuses.</p>
 <h2 id="definitions">Definitions<a class="headerlink" href="#definitions" title="Permanent link">&para;</a></h2>
-<p>Model can be one of the following types:</p>
+<p>A model can be one of the following types:</p>
 <ul>
-<li><strong>Base model</strong>: A foundation model trained with a vast amounts of data.</li>
-<li><strong>Merged model</strong>: A model that has been improved for specific use cases.</li>
-<li><strong>Adapter</strong>: Small modules that alter the base model behavior.</li>
+<li><strong>Base model:</strong> A foundation model trained with vast amounts of data.</li>
+<li><strong>Merged model:</strong> A model that has been improved for specific use cases.</li>
+<li><strong>Adapter:</strong> Small modules that alter the base model's behavior.</li>
 </ul>
 <p>Model can be in one of the following states:</p>
 <ul>
-<li><strong>Pending</strong>: Model is being prepared.</li>
-<li><strong>Ready</strong>: Model is ready for use.</li>
-<li><strong>Failed</strong>: There was some issue loading the model and model is not available for use.</li>
+<li><strong>Pending:</strong> The model is being prepared.</li>
+<li><strong>Ready:</strong> The model is ready for use.</li>
+<li><strong>Failed:</strong> There was an issue loading the model, and it is not available for use.</li>
 </ul>
 <h2 id="subpage-community-models">Subpage: Community models<a class="headerlink" href="#subpage-community-models" title="Permanent link">&para;</a></h2>
-<p>All of the available ready-to-deploy open source models are listed in this view. Users can filter the list by using the available search field and tags dropdown.</p>
-<p><img alt="The community models page lists all of the available open source models." src="../../../img/training/models-community.png" /></p>
-<p>The model boxes contain helpful information about the models. Along the name users can click a link, which takes them to the external model webpage. Each model has also a short description and tags.</p>
-<p>The models contain an action button which can be one of the following:</p>
+<p>All available ready-to-deploy open-source models are listed in this view. Users can filter the list using the search field and tags dropdown.</p>
+<p><img alt="The community models page lists all available open-source models." src="../../../img/training/models-community.png" /></p>
+<p>The model boxes contain helpful information about each model. Along with the name, users can click a link to the external model webpage. Each model also has a short description and tags.</p>
+<p>The models contain an action button, which can be one of the following:</p>
 <ul>
-<li><strong>Download</strong>: Downloads a base model into the custom models catalog.</li>
-<li><strong>Fine-tune</strong>: Fine-tune a model that is eligible for that. Read more about <a href="../fine-tuning/">fine-tuning</a>.</li>
-<li><strong>Deploy</strong>: Prepares the model into use.</li>
-<li><strong>Connect</strong>: Opens a set of parameters that can be used for connecting your applications to the model. For chattable models, let's you take the model into the chat window.</li>
+<li><strong>Download:</strong> Downloads a base model into the custom models catalog.</li>
+<li><strong>Fine-tune:</strong> Fine-tune a model that is eligible for it. Read more about <a href="../fine-tuning/">fine-tuning</a>.</li>
+<li><strong>Deploy:</strong> Prepares the model for use.</li>
+<li><strong>Connect:</strong> Opens a set of parameters that can be used for connecting your applications to the model. For chattable models, this lets you use the model in the chat window.</li>
 </ul>
 <p>The platform's development team maintains the available community models.</p>
 <h2 id="subpage-custom-models">Subpage: Custom models<a class="headerlink" href="#subpage-custom-models" title="Permanent link">&para;</a></h2>
-<p>The custom models page lists all of the available custom models activated from the community models page.</p>
+<p>The custom models page lists all available custom models activated from the community models page.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>Custom models page does not currently allow the implementation of users' own models, such as own business intelligence solutions.</p>
+<p>The custom models page does not currently allow the implementation of users' own models, such as custom business intelligence solutions.</p>
 </div>
-<p><img alt="The custom models page lists all of the available base and fine-tuned models." src="../../../img/training/models-custom-models.png" /></p>
-<p>The page has a prominent <strong>Fine-tune model</strong> button which opens the <a href="../fine-tuning/">fine-tuning</a> dialog. Click each model's action menu shows a list of available function: show details, fine-tune, deploy or delete.</p>
+<p><img alt="The custom models page lists all available base and fine-tuned models." src="../../../img/training/models-custom-models.png" /></p>
+<p>The page has a prominent <strong>Fine-tune model</strong> button, which opens the <a href="../fine-tuning/">fine-tuning</a> dialog. Clicking each model's action menu shows a list of available functions: show details, fine-tune, deploy, or delete.</p>
 <ul>
 <li><strong>Show details</strong> opens a dialog containing relevant information.</li>
-<li><strong>Fine-tune</strong> action opens the fine-tuningn dialog.</li>
-<li><strong>Deploy</strong> opens the a drawer which instructs user in deploying the model for use.</li>
-<li><strong>Delete</strong> action let's users delete their models. We advice caution when using this action, since it is irreversible.</li>
+<li><strong>Fine-tune</strong> opens the fine-tuning dialog.</li>
+<li><strong>Deploy</strong> opens a drawer that instructs the user on deploying the model for use.</li>
+<li><strong>Delete</strong> lets users delete their models. We advise caution when using this action, as it is irreversible.</li>
 </ul>
 <h2 id="subpage-active-deployments">Subpage: Active deployments<a class="headerlink" href="#subpage-active-deployments" title="Permanent link">&para;</a></h2>
-<p>The view lists active models that are deployed into the cluster. Each model is associated with a lifetime status.</p>
-<p>From the actions menus users can view model details or delete the models. Filter bar offers various ways to select a subset of models for viewing.</p>
-<p><img alt="The active deployments page lists all of the deployments." src="../../../img/training/models-active-deployments.png" /></p>
+<p>This view lists active models that are deployed into the cluster. Each model is associated with a lifetime status.</p>
+<p>From the actions menu, users can view model details or delete models. The filter bar offers various ways to select a subset of models for viewing.</p>
+<p><img alt="The active deployments page lists all deployments." src="../../../img/training/models-active-deployments.png" /></p>
 
 
 

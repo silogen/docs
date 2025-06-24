@@ -2444,13 +2444,13 @@
 <p>The Clusters page provides a quick and easy way to see the status of all your clusters.</p>
 <h2 id="what-is-a-cluster">What is a cluster?<a class="headerlink" href="#what-is-a-cluster" title="Permanent link">&para;</a></h2>
 <p>A cluster is a set of nodes (interconnected computers) that work together to run containerized applications, including AI/ML models, data pipelines, and inference services.</p>
-<p>Cluster is the physical part of the platform installation which can be managed in the Airman user interface.</p>
+<p>A cluster is the physical part of the platform installation, which can be managed in the Airman user interface.</p>
 <h2 id="clusters-overview-page">Clusters overview page<a class="headerlink" href="#clusters-overview-page" title="Permanent link">&para;</a></h2>
-<p>The clusters overview provides a list of the clusters added to SiloGen platform, along with their status. You can see the following information about your clusters:</p>
-<p><strong>Clusters</strong> - Clusters for your organization that have been onboarded to AI Resource Manager. Onboarding clusters allows you to manage resources, quotas, and workloads on them.</p>
-<p><strong>Available nodes</strong> - Total number of nodes available across all clusters. AI Resource Manager routinely pulls node information from clusters including resources and health</p>
-<p><strong>Allocated GPUs</strong> - Total number of GPUs allocated to quotas, across all clusters. Users belonging to projects with GPU quotas are guaranteed allocated GPU resources for their workloads, in the corresponding clusters.</p>
-<p><strong>Running workloads</strong> - Total number of active workloads across all clusters. Workloads submitted via AI Resource Manager optimally scheduled, and tracked and monitored for resource usage and health.</p>
+<p>The clusters overview provides a list of the clusters added to the SiloGen platform, along with their status. You can see the following information about your clusters:</p>
+<p><strong>Clusters:</strong> Clusters for your organization that have been onboarded to AI Resource Manager. Onboarding clusters allows you to manage resources, quotas, and workloads on them.</p>
+<p><strong>Available nodes:</strong> The total number of nodes available across all clusters. AI Resource Manager routinely pulls node information from clusters, including resources and health.</p>
+<p><strong>Allocated GPUs:</strong> The total number of GPUs allocated to quotas across all clusters. Users belonging to projects with GPU quotas are guaranteed allocated GPU resources for their workloads in the corresponding clusters.</p>
+<p><strong>Running workloads:</strong> The total number of active workloads across all clusters. Workloads submitted via AI Resource Manager are optimally scheduled, tracked, and monitored for resource usage and health.</p>
 <p><strong>Clusters table</strong></p>
 <table>
 <thead>
@@ -2482,18 +2482,18 @@
 </tr>
 <tr>
 <td>Memory allocation</td>
-<td>The share of the total amount of memory allocated to quotas in the cluster. Users belonging to projects with GPU quotas are guaranteed allocated GPU resources for their workloads.</td>
+<td>The share of the total amount of memory allocated to quotas in the cluster. Users belonging to projects with memory quotas are guaranteed allocated memory resources for their workloads.</td>
 </tr>
 </tbody>
 </table>
 <p><img alt="A diagram of the clusters page." src="../../../img/clusters/view-clusters.png" /></p>
 <h2 id="single-cluster-status">Single cluster status<a class="headerlink" href="#single-cluster-status" title="Permanent link">&para;</a></h2>
 <p>The Cluster page provides a quick and easy way to see the status of your cluster.</p>
-<p><strong>Available nodes</strong> - The total number of nodes available in the cluster. AI Resource Manager routinely pulls node information from the cluster including resources and health.</p>
-<p><strong>Assigned quotas</strong> - Quotas assigned to the cluster resources. Each project has a quota to limit the amount of resources they are guaranteed on the cluster.</p>
-<p><strong>Allocated GPUs</strong> - The total number of GPUs allocated to quotas in the cluster. Users belonging to projects with GPU quotas are guaranteed allocated GPU resources for their workloads.</p>
-<p><strong>Running workloads</strong> - Total number of active workloads running on the cluster. Workloads submitted via AI Resource manager optimally scheduled, and tracked and monitored for resource usage and health.</p>
-<p><strong>ASSIGNED QUOTAS table</strong></p>
+<p><strong>Available nodes:</strong> The total number of nodes available in the cluster. AI Resource Manager routinely pulls node information from the cluster, including resources and health.</p>
+<p><strong>Assigned quotas:</strong> Quotas assigned to the cluster resources. Each project has a quota to limit the amount of resources they are guaranteed on the cluster.</p>
+<p><strong>Allocated GPUs:</strong> The total number of GPUs allocated to quotas in the cluster. Users belonging to projects with GPU quotas are guaranteed allocated GPU resources for their workloads.</p>
+<p><strong>Running workloads:</strong> The total number of active workloads running on the cluster. Workloads submitted via AI Resource Manager are optimally scheduled, tracked, and monitored for resource usage and health.</p>
+<p><strong>Assigned quotas table</strong></p>
 <table>
 <thead>
 <tr>
@@ -2503,24 +2503,24 @@
 </thead>
 <tbody>
 <tr>
-<td>IDENTIFIER</td>
+<td>Identifier</td>
 <td>Unique identifier for the quota</td>
 </tr>
 <tr>
-<td>STATUS</td>
+<td>Status</td>
 <td>Status of the quota</td>
 </tr>
 <tr>
-<td>ASSIGNED TO</td>
+<td>Assigned to</td>
 <td>The project this quota applies to</td>
 </tr>
 <tr>
-<td>GPU ALLOCATION</td>
+<td>GPU allocation</td>
 <td>Total number of GPUs allocated to this quota</td>
 </tr>
 </tbody>
 </table>
-<p><strong>NODES table</strong></p>
+<p><strong>Nodes table</strong></p>
 <table>
 <thead>
 <tr>
@@ -2530,27 +2530,27 @@
 </thead>
 <tbody>
 <tr>
-<td>NAME</td>
-<td>Name for the node</td>
+<td>Name</td>
+<td>Name of the node</td>
 </tr>
 <tr>
-<td>STATUS</td>
+<td>Status</td>
 <td>Status of the node</td>
 </tr>
 <tr>
-<td>CPU CORES</td>
+<td>CPU cores</td>
 <td>Number of CPU cores available on the node</td>
 </tr>
 <tr>
-<td>CPU MEMORY</td>
-<td>Total number of GPUs allocated to this quota</td>
+<td>CPU memory</td>
+<td>Amount of memory available on the node</td>
 </tr>
 <tr>
-<td>GPU TYPE</td>
+<td>GPU type</td>
 <td>Type of GPU</td>
 </tr>
 <tr>
-<td>GPU DEVICES</td>
+<td>GPU devices</td>
 <td>Number of GPUs on the node</td>
 </tr>
 </tbody>

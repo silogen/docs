@@ -2489,20 +2489,20 @@
 
 
 <h1 id="workloads">Workloads<a class="headerlink" href="#workloads" title="Permanent link">&para;</a></h1>
-<p>A workload is a batch job or a service running in the cluster with resources defined by the workload and limited by the quota that the workload owner has. This page shows all started workloads. View shows all workload statuses by default except <code>Deleted</code>.</p>
+<p>A workload is a batch job or a service running in the cluster with resources defined by the workload and limited by the quota that the workload owner has. This page shows all started workloads. The view shows all workload statuses by default except <code>Deleted</code>.</p>
 <p>If a user belongs to multiple projects, the project needs to be selected first from the top of the page.</p>
-<p><img alt="Workload Actions" src="../../img/workloads/workloads-projects.png" /></p>
-<p>The paginated table shows the name of the workload, the cluster the workload is assigned to, and how many resources the workload requires. The <code>Status</code> column shows the last known status of the workload and is not updated automatically. Filters can be used for find workload by name, type or status.</p>
-<p><img alt="Workload Actions" src="../../img/workloads/workloads-filters.png" /></p>
+<p><img alt="Workload actions" src="../../img/workloads/workloads-projects.png" /></p>
+<p>The paginated table shows the name of the workload, the cluster the workload is assigned to, and how many resources the workload requires. The <code>Status</code> column shows the last known status of the workload and is not updated automatically. Filters can be used to find workloads by name, type, or status.</p>
+<p><img alt="Workload filters" src="../../img/workloads/workloads-filters.png" /></p>
 <h2 id="actions">Actions<a class="headerlink" href="#actions" title="Permanent link">&para;</a></h2>
-<p>Workload actions are available from the Actions column by pressing the three dot button.
-<img alt="Workload actions menu" src="../../img/workloads/workloads-actions.png" /></p>
+<p>Workload actions are available from the Actions column by pressing the three-dot button.</p>
+<p><img alt="Workload actions menu" src="../../img/workloads/workloads-actions.png" /></p>
 <h3 id="show-details">Show details<a class="headerlink" href="#show-details" title="Permanent link">&para;</a></h3>
-<p>Shows details of the workload like when workload was created and by who.</p>
+<p>Shows details of the workload, such as when it was created and by whom.</p>
 <h3 id="delete">Delete<a class="headerlink" href="#delete" title="Permanent link">&para;</a></h3>
 <p>Queues the workload for deletion.</p>
 <h3 id="open-workspace">Open Workspace<a class="headerlink" href="#open-workspace" title="Permanent link">&para;</a></h3>
-<p>If workload type is <code>Workspace</code>, selecting this action opens the workspace into a new browser tab.</p>
+<p>If the workload type is <code>Workspace</code>, selecting this action opens the workspace in a new browser tab.</p>
 <h2 id="workload-types">Workload types<a class="headerlink" href="#workload-types" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
@@ -2538,7 +2538,7 @@
 </tr>
 <tr>
 <td><strong>Workspace</strong></td>
-<td>Workspace is for model experiments</td>
+<td>Workspace for model experiments</td>
 </tr>
 </tbody>
 </table>
@@ -2555,47 +2555,47 @@
 <tr>
 <td><strong>Added</strong></td>
 <td>Workload has been created</td>
-<td>Workload component creation is not started</td>
+<td>Workload component creation has not started</td>
 </tr>
 <tr>
 <td><strong>Pending</strong></td>
-<td>Waiting for start</td>
-<td>All components are in <code>Pending</code> state</td>
+<td>Waiting to start</td>
+<td>All components are in the <code>Pending</code> state</td>
 </tr>
 <tr>
 <td><strong>Running</strong></td>
 <td>Workload is being executed</td>
-<td>Any component is in <code>Running</code> state</td>
+<td>Any component is in the <code>Running</code> state</td>
 </tr>
 <tr>
 <td><strong>Complete</strong></td>
-<td>Workload has finished succesfully</td>
-<td>All components are in <code>Completed</code> state</td>
+<td>Workload has finished successfully</td>
+<td>All components are in the <code>Completed</code> state</td>
 </tr>
 <tr>
 <td><strong>Failed</strong></td>
-<td>Error has occured and workload did not complete</td>
-<td>Any component is in <code>Failed</code> state</td>
+<td>An error has occurred and the workload did not complete</td>
+<td>Any component is in the <code>Failed</code> state</td>
 </tr>
 <tr>
 <td><strong>Delete Requested</strong></td>
-<td>Workload is queue for removal</td>
+<td>Workload is queued for removal</td>
 <td>Delete started, but not all components are <code>Deleted</code></td>
 </tr>
 <tr>
 <td><strong>Deleted</strong></td>
-<td>Workload succesfully deleted</td>
-<td>All components are in <code>Deleted</code> state</td>
+<td>Workload successfully deleted</td>
+<td>All components are in the <code>Deleted</code> state</td>
 </tr>
 <tr>
 <td><strong>Delete Failed</strong></td>
-<td>Delete failed and manual cleaning might be needed</td>
-<td>Any component is in <code>Delete</code> failed state</td>
+<td>Delete failed and manual cleanup might be needed</td>
+<td>Any component is in the <code>Delete Failed</code> state</td>
 </tr>
 <tr>
 <td><strong>Terminated</strong></td>
-<td>Executiona has been terminated</td>
-<td>All components are <code>Completed</code> or <code>Deleted</code> state</td>
+<td>Execution has been terminated</td>
+<td>All components are in the <code>Completed</code> or <code>Deleted</code> state</td>
 </tr>
 <tr>
 <td><strong>Unknown</strong></td>
