@@ -59,10 +59,10 @@ This is your comprehensive handbook designed to help data scientists and platfor
           <a href="./ai-development-tutorials/">Tutorials</a>
         </li>
         <li>
-          <a href="./ai-workloads/workloads/workloads-overview/">Working with AI workloads</a>
+          <a href="./ai-workloads-manifests/workloads-overview/">Working with AI workloads</a>
         </li>
         <li>
-          <a href="./core/docs/developer-center/ai-catalog/">Find models in AI catalog</a>
+          <a href="./core/docs/developer-center/training/models/">Find models in the models directory</a>
         </li>
       </ul>
     </div>
