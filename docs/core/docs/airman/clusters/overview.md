@@ -28,13 +28,13 @@ The clusters overview provides a list of the clusters added to the SiloGen platf
 
 **Clusters table**
 
-| Column            | Description                                                                                                                                                                         |
-| ----------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Name              | The name of the cluster                                                                                                                                                             |
-| Status            | Status of the cluster                                                                                                                                                               |
-| Nodes             | The number of nodes associated with this cluster. Shows the number of healthy nodes and total nodes.                                                                                |
-| GPU allocation    | The share of the total number of GPUs allocated to quotas in the cluster. Users belonging to projects with GPU quotas are guaranteed allocated GPU resources for their workloads.   |
-| CPU allocation    | The share of the total number of CPUs allocated to quotas in the cluster. Users belonging to projects with CPU quotas are guaranteed allocated CPU resources for their workloads.   |
+| Column            | Description                                                                                                                                                                               |
+| ----------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Name              | The name of the cluster                                                                                                                                                                   |
+| Status            | Status of the cluster                                                                                                                                                                     |
+| Nodes             | The number of nodes associated with this cluster. Shows the number of healthy nodes and total nodes.                                                                                      |
+| GPU allocation    | The share of the total number of GPUs allocated to quotas in the cluster. Users belonging to projects with GPU quotas are guaranteed allocated GPU resources for their workloads.         |
+| CPU allocation    | The share of the total number of CPUs allocated to quotas in the cluster. Users belonging to projects with CPU quotas are guaranteed allocated CPU resources for their workloads.         |
 | Memory allocation | The share of the total amount of memory allocated to quotas in the cluster. Users belonging to projects with memory quotas are guaranteed allocated memory resources for their workloads. |
 
 ![A diagram of the clusters page.](../../img/clusters/view-clusters.png)
@@ -62,13 +62,13 @@ The Cluster page provides a quick and easy way to see the status of your cluster
 
 **Nodes table**
 
-| Column      | Description                                   |
-| ----------- | --------------------------------------------- |
-| Name        | Name of the node                              |
-| Status      | Status of the node                            |
-| CPU cores   | Number of CPU cores available on the node     |
-| CPU memory  | Amount of memory available on the node        |
-| GPU type    | Type of GPU                                   |
-| GPU devices | Number of GPUs on the node                    |
+| Column      | Description                               |
+| ----------- | ----------------------------------------- |
+| Name        | Name of the node                          |
+| Status      | Status of the node                        |
+| CPU cores   | Number of CPU cores available on the node |
+| CPU memory  | Amount of memory available on the node    |
+| GPU type    | Type of GPU                               |
+| GPU devices | Number of GPUs on the node                |
 
 ![A diagram of the single cluster page.](../../img/clusters/view-single-cluster.png)
