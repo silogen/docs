@@ -78,6 +78,7 @@ nav:
     - Home: index.md
     - Platform overview: platform-overview.md
     - Target audience: target-audience.md
+    - Quick-start: quick-start.md
     - General topics:
       - Login to SiloGen: login-to-silogen.md
       - Personal preferences: personal-preferences.md

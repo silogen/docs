@@ -18,6 +18,9 @@ This is your comprehensive handbook designed to help data scientists and platfor
           <a href="./platform-overview/">Platform components overview</a>
         </li>
         <li>
+          <a href="./quick-start/">Quick start guide</a>
+        </li>
+        <li>
           <a href="./target-audience/">Who is SiloGen for?</a>
         </li>
       </ul>
