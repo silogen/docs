@@ -24,10 +24,10 @@ Follow the instructions in ["Install SiloGen platform"](./platform-infrastructur
 !!! note
     Target audience for the onboarding is platform admins, resource managers and team leads
 
-Follow the instructions in ["Quick start for resource managers"](./core/) to onboard organization, projects and users
+Follow the instructions in ["Quick start for resource managers"](./core/docs/airman/quick-start.md) to onboard organization, projects and users
 
 ## Get started with AI development in Developer Center
 !!! note
     Target audience for this section is data scientists, AI engineers and application developers.
 
-  Follow the instructions in ["Quick start for AI developers"](./core/) to get started with finetuning and deploying AI models and managing AI workloads.
+  Follow the instructions in ["Quick start for AI developers"](./core/docs/developer-center/quick-start.md) to get started with finetuning and deploying AI models and managing AI workloads.
