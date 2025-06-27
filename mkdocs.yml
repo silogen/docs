@@ -46,20 +46,6 @@ plugins:
   - search
   - tags
   # - with-pdf
-  #- multirepo:
-  #    cleanup: true
-  #    nav_repos:
-  #      - name: ai-workloads
-  #        import_url: https://github.com/silogen/ai-workloads?branch=main
-  #        imports: [docs/tutorials/*, workloads/workloads-overview.md, workloads/dev-chatui-openwebui/helm/README.md, workloads/dev-workspace-vscode/helm/README.md, workloads/dev-text2image-comfyui/helm/README.md, workloads/download-data-to-bucket/helm/README.md, workloads/download-huggingface-model-to-bucket/helm/README.md, workloads/k8s-namespace-setup/helm/README.md, workloads/llm-finetune-silogen-engine/helm/*,  workloads/llm-inference-llamacpp-mi300x/helm/README.md, workloads/llm-inference-sglang/helm/README.md, workloads/llm-inference-vllm/helm/README.md, workloads/llm-inference-vllm-benchmark-mad/helm/README.md]
-
-      #  - name: core
-      #    import_url: https://github.com/silogen/core?branch=main
-      #    imports: [docs/keycloak/sso.md, docs/silogen-docs/external-docs/docs/*]
-
-        #- name: kaiwo
-        #  import_url: https://github.com/silogen/kaiwo?branch=main
-        #  imports: [docs/docs/*]
 
   - redirects:
       redirect_maps:
