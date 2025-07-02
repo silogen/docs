@@ -5,11 +5,11 @@ tags:
   - add cluster
 ---
 
-# Create a new cluster in the UI
+# Onboard a new cluster
 
-This article explains how to create a new cluster in the Airman user interface.
+This article explains how to onboard a new cluster in the Airman user interface.
 
-To add a new cluster:
+To onboard a new cluster:
 
 1. Click the "Add Cluster" button.
 2. Cluster identification - Set a unique identifier for your cluster.
