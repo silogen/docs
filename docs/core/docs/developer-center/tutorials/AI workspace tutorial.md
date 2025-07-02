@@ -90,8 +90,10 @@ curl -X 'POST' \
   -F 'type=Fine-tuning' \
   -F 'jsonl=@dataset.jsonl'
 ```
+
 Example: API call using Python
-````python
+
+```python
 import requests
 
 BASE_URL = "https://api-demo.silogen.ai/v1/datasets/upload?project_id=ADD_YOUR_PROJECT_ID"
