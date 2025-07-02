@@ -78,7 +78,7 @@ nav:
     - Home: index.md
     - Platform overview: platform-overview.md
     - Target audience: target-audience.md
-    - Quick-start: quick-start.md
+    - Quick start guide: quick-start.md
     - General topics:
       - Login to SiloGen: login-to-silogen.md
       - Personal preferences: personal-preferences.md
@@ -90,6 +90,7 @@ nav:
 
   - AI development:
     - Overview: core/docs/developer-center/overview.md
+    - Quick start guide: core/docs/developer-center/quick-start.md
     - Workspaces: core/docs/developer-center/workspaces.md
     - Workloads: core/docs/developer-center/workloads.md
 
@@ -128,15 +129,15 @@ nav:
 
   - AI resource management:
     - Overview: core/docs/airman/overview.md
+    - Quick start guide: core/docs/airman/quick-start.md
     - Dashboard: core/docs/airman/dashboard.md
     - Clusters:
       - Clusters overview: core/docs/airman/clusters/overview.md
       - Add new cluster: core/docs/airman/clusters/add-clusters-ui.md
-    - Quotas:
-      - Quotas overview: core/docs/airman/quotas/overview.md
-      - Set quotas: core/docs/airman/quotas/set-quotas.md
     - Projects:
       - Projects overview: core/docs/airman/projects/manage-projects.md
+      - Project dashboard: core/docs/airman/projects/project-dashboard.md
+      - Set quotas: core/docs/airman/quotas/set-quotas.md
     - User management:
       - Users overview: core/docs/airman/users/overview.md
       - Manage users: core/docs/airman/users/manage-users.md

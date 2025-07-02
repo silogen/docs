@@ -12,20 +12,6 @@ This article explains how to define quotas for your projects. In Airman, you can
 !!! info
     There can be only one quota for a project per cluster.
 
-## Create quota
-
-Press the "Create Quota" button to create a new quota.
-
-**Cluster:** The cluster to which the quota applies.
-
-**Assignee:** The project for the quota. A quota can be assigned to only one project.
-
-**Identifier:** Unique identifier for the quota.
-
-**Description:** An optional description that describes the quota.
-
-![A diagram of the create quota page.](../../img/quotas/create-quota.png)
-
 ## Set the guaranteed quota values
 
 Define a quota below to guarantee a fixed amount of compute resources for the assigned project. Setting a quota category to 0 means no resources are guaranteed exclusively for that project—its workloads will still use any available resources. Even with a quota in place, workloads may temporarily exceed their quota if additional resources are available.
