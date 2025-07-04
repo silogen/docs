@@ -6,12 +6,11 @@ tags:
 
 # Target audience of the SiloGen platform
 
-The SiloGen platform and this documentation are designed for various personas, covering multiple aspects of AI development.
+The SiloGen platform and this documentation is designed for three user personas, each focusing on different layer and aspects of the AI technology stack and lifecycle.
 
-- **Data scientists:** Professionals who develop and train AI/ML models and need a reliable platform to deploy and scale their workloads.
-- **AI practitioners:** Anyone involved in building, deploying, or managing AI solutions in an enterprise environment.
-- **Team leaders:** Managers responsible for granting access to compute resources, maintaining quotas, and monitoring analytics.
-- **Platform engineers:** Engineers responsible for setting up, maintaining, and optimizing the infrastructure that supports AI workloads.
-- **Field and application engineers:** Specialists who support customers in deploying and operating the platform.
+- **Infrastructure administrators:** Professionals responsible for setting up, maintaining, and optimizing the infrastructure that supports AI workloads.
+- **AI resource managers:** Professionals responsible for granting access to compute resources, maintaining projects, users and quotas, and optimizing AI resources.
 
-While some familiarity with Kubernetes, containerization, and AI/ML concepts is helpful, this handbook provides detailed instructions and explanations to accommodate users with varying levels of expertise. The handbook guides you to set up a fully deployed SiloGen Enterprise AI platform optimized for AI workloads on AMD compute The handbook also provides the knowledge needed to run and manage AI use cases effectively.
+- **AI practitioners:** Professionals who train, deploy and manage AI models and applications in an enterprise environment.
+
+While some familiarity with Kubernetes, containerization, and AI/ML concepts is helpful, this handbook provides detailed instructions and explanations to accommodate users with varying levels of expertise. The handbook guides you to set up a fully deployed SiloGen Enterprise AI platform optimized for AI workloads on AMD compute. The handbook also provides the knowledge needed to run and manage AI use cases effectively.

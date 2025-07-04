@@ -83,22 +83,21 @@ nav:
       - Login to SiloGen: login-to-silogen.md
       - Personal preferences: personal-preferences.md
 
-  - Platform infrastructure:
+  - Infrastructure administrator:
     - Installation overview: platform-infrastructure/installation.md
-    - Demo environment installation: platform-infrastructure/demo-environment.md
+    - On-premises installation: platform-infrastructure/demo-environment.md
     - Enable single sign-on: core/docs/keycloak/sso.md
 
-  - AI development:
+  - AI practitioner:
     - Overview: core/docs/developer-center/overview.md
     - Quick start guide: core/docs/developer-center/quick-start.md
     - Workspaces: core/docs/developer-center/workspaces.md
     - Workloads: core/docs/developer-center/workloads.md
 
     - Training and fine-tuning:
-      - Overview: core/docs/developer-center/training/overview.md
+      - Fine-tuning: core/docs/developer-center/training/fine-tuning.md
       - Models: core/docs/developer-center/training/models.md
       - Datasets: core/docs/developer-center/training/datasets.md
-      - Fine-tuning: core/docs/developer-center/training/fine-tuning.md
 
     - Inference:
       - Inference overview: core/docs/developer-center/inference/overview.md
@@ -106,10 +105,14 @@ nav:
       - Compare: core/docs/developer-center/inference/compare.md
 
     - Tutorials:
-      - Overview: ai-development-tutorials.md
-      - Prerequisites for running the tutorials: ai-workloads-docs/tutorials/tutorial-prereqs.md
-      - Deliver resources and fine-tune: ai-workloads-docs/tutorials/tutorial-01-deliver-resources-and-finetune.md
-      - Language extension - Odia fine-tuning: ai-workloads-docs/tutorials/tutorial-02-language-extension-finetune.md
+      - GUI access:
+        - No-code tutorial: tutorials/no-code-finetuning-tutorial.md
+        - AI workspace tutorial: tutorials/AI-workspace-tutorial.md
+      - CLI access:
+        - Overview: ai-development-tutorials.md
+        - Prerequisites for running the tutorials: ai-workloads-docs/tutorials/tutorial-prereqs.md
+        - Deliver resources and fine-tune: ai-workloads-docs/tutorials/tutorial-01-deliver-resources-and-finetune.md
+        - Language extension - Odia fine-tuning: ai-workloads-docs/tutorials/tutorial-02-language-extension-finetune.md
 
     - Reference AI workloads:
       - Overview: ai-workloads-manifests/workloads-overview.md
@@ -127,7 +130,7 @@ nav:
       - llm-inference-vllm: ai-workloads-manifests/llm-inference-vllm/helm/README.md
       - llm-inference-vllm-benchmark-mad: ai-workloads-manifests/llm-inference-vllm-benchmark-mad/helm/README.md
 
-  - AI resource management:
+  - AI resource manager:
     - Overview: core/docs/airman/overview.md
     - Quick start guide: core/docs/airman/quick-start.md
     - Dashboard: core/docs/airman/dashboard.md
@@ -141,6 +144,8 @@ nav:
     - User management:
       - Users overview: core/docs/airman/users/overview.md
       - Manage users: core/docs/airman/users/manage-users.md
+    - Tutorials:
+        - Resource utilization: tutorials/resource-utilization.md
 
   - References:
     - Overview: references/overview.md

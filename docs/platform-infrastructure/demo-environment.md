@@ -6,11 +6,11 @@ tags:
   - kubernetes
 ---
 
-# Install a SiloGen demo environment
+# Install SiloGen on-premises
 
-This article explains how to install a Kubernetes cluster from metal to model in a streamlined manner.
+This article explains how to install SiloGen in an on-premises environment, covering the full stack from metal to application layer in a streamlined manner.
 
-The demo environment runs on top of a Kubernetes platform and includes essential Kubernetes components for monitoring, secrets management, and certificate management.
+The SiloGen platform runs on top of Kubernetes orchestration platform and includes essential Kubernetes components for monitoring, secrets management, and certificate management.
 
 The installation process leverages helper tools called **Cluster Bloom** and **Cluster Forge** that deploy and configure all necessary platform components, preparing a Kubernetes cluster for executing AI workloads.
 

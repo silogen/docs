@@ -16,18 +16,18 @@ SiloGen Enterprise AI Platform supports bare-metal, on-premises and public cloud
 
 ## Install SiloGen platform
 !!! note
-    Target audience for the installation is infrastructure and system administrators
+    Target audience for the installation section is infrastructure administrators.
 
 Follow the instructions in ["Install SiloGen platform"](./platform-infrastructure/demo-environment.md) to install SiloGen in an on-premises environment.
 
 ## Onboard organization, projects and users
 !!! note
-    Target audience for the onboarding is platform admins, resource managers and team leads
+    Target audience for this onboarding section is AI resource managers.
 
-Follow the instructions in ["Quick start for resource managers"](./core/docs/airman/quick-start.md) to onboard organization, projects and users
+Follow the instructions in ["Quick start for AI resource managers"](./quick-start-guides/airman-quick-start.md) to onboard organization, projects and users
 
-## Get started with AI development in Developer Center
+## Train and deploy models in Developer Center
 !!! note
-    Target audience for this section is data scientists, AI engineers and application developers.
+    Target audience for this section is AI practitioners.
 
-  Follow the instructions in ["Quick start for AI developers"](./core/docs/developer-center/quick-start.md) to get started with finetuning and deploying AI models and managing AI workloads.
+  Follow the instructions in ["Quick start for AI practitioners"](./quick-start-guides/devcenter-quick-start.md) to get started with finetuning and deploying AI models and managing AI workloads.
