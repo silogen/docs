@@ -42,28 +42,26 @@ SiloGen provides two options to onboard users into the platform. For small-scale
 
 #### Option A - Invite users through email
 
-Follow the instructions in ["User management"](./users/manage-users.md) to invite and manage more users in SiloGen.
+Follow the instructions in ["User management"](../core/docs/airman/users/manage-users.md) to invite and manage more users in SiloGen.
 #### Option B - Onboard users through single sign-on (SSO)
-Follow the instructions in ["Adding an identity provider to enable single sign-on"](../keycloak/sso.md) to onboard users through SSO.
+Follow the instructions in ["Adding an identity provider to enable single sign-on"](../core/docs/keycloak/sso.md) to onboard users through SSO.
 
 ### 2. Onboard a compute cluster
 !!! Note
     A compute cluster has already been connected to your control plane as part of the installation process.
 
-To learn how to onboard a new compute cluster, please follow these intructions in ["Onboard a new cluster"](./clusters/add-clusters-ui.md)
+To learn how to onboard a new compute cluster, please follow these intructions in ["Onboard a new cluster"](../core/docs/airman/clusters/add-clusters-ui.md)
 
 ### 3. Create a project with quota
 
 !!! Note
     A default project and quota has already been created for your organization as part of the installation process.
 
-To learn how to create a new project with quota follow the instructions in ["Manage projects"](./projects/manage-projects.md)
+To learn how to create a new project with quota follow the instructions in ["Manage projects"](../core/docs/airman/projects/manage-projects.md)
 
 ### 4. Change the default password
 To change the default password that was created as part of the installation process, please follow these instructions.
 
 ### 5. Bonus step - Tutorial: GPU resource utilization
 
-To learn how to analyze GPU utilization, follow this tutorial guide["Resource utilization tutorial"](./tutorials/resource-utilization.md).
-
-## Further discovery
+To learn how to analyze GPU utilization, follow this tutorial guide["Resource utilization tutorial"](../tutorials/resource-utilization.md).

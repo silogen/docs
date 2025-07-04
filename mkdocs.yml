@@ -90,7 +90,7 @@ nav:
 
   - AI practitioner:
     - Overview: core/docs/developer-center/overview.md
-    - Quick start guide: core/docs/developer-center/quick-start.md
+    - Quick start guide: quick-start-guides/devcenter-quick-start.md
     - Workspaces: core/docs/developer-center/workspaces.md
     - Workloads: core/docs/developer-center/workloads.md
 
@@ -132,7 +132,7 @@ nav:
 
   - AI resource manager:
     - Overview: core/docs/airman/overview.md
-    - Quick start guide: core/docs/airman/quick-start.md
+    - Quick start guide: quick-start-guides/airman-quick-start.md
     - Dashboard: core/docs/airman/dashboard.md
     - Clusters:
       - Clusters overview: core/docs/airman/clusters/overview.md
