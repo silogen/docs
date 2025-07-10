@@ -18,7 +18,7 @@
     
     
       
-        <title>Resource utilization of AI workloads - SiloGen documentation</title>
+        <title>Quotas overview - SiloGen documentation</title>
       
     
     
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#resource-utilization-of-ai-workloads" class="md-skip">
+        <a href="#quotas-overview" class="md-skip">
           Skip to content
         </a>
       
@@ -105,7 +105,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Resource utilization of AI workloads
+              Quotas overview
             
           </span>
         </div>
@@ -2193,7 +2193,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../projects/set-quotas/" class="md-nav__link">
+      <a href="../../projects/set-quotas.md" class="md-nav__link">
         
   
   
@@ -2528,27 +2528,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-consume-resources-by-running-ai-workloads" class="md-nav__link">
+  <a href="#quotas-table" class="md-nav__link">
     <span class="md-ellipsis">
-      1. Consume resources by running AI workloads
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-observe-the-change-in-resource-utilization" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. Observe the change in resource utilization
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-adjust-the-quota" class="md-nav__link">
-    <span class="md-ellipsis">
-      3. Adjust the quota
+      Quotas table
     </span>
   </a>
   
@@ -2568,36 +2550,73 @@
                 
                   
 
+  <nav class="md-tags" >
+    
+      
+      
+      
+        <a href="../../../../../references/tags/#tag:airman" class="md-tag">airman</a>
+      
+    
+      
+      
+      
+        <a href="../../../../../references/tags/#tag:quota" class="md-tag">quota</a>
+      
+    
+  </nav>
+
 
   
   
 
 
-<h1 id="resource-utilization-of-ai-workloads">Resource utilization of AI workloads<a class="headerlink" href="#resource-utilization-of-ai-workloads" title="Permanent link">&para;</a></h1>
-<p>This guide teaches you how you can observe and manage the amount of resources that your AI workloads are using.</p>
-<ol>
-<li>We first start a new AI workload in order to consume some resources</li>
-<li>We then observe the amount of resources this AI workload is using by looking at the different dashboards in SiloGen AI Resource Manager.</li>
-<li>Finally we look at how we can adjust the resource quotas.</li>
-</ol>
-<h2 id="1-consume-resources-by-running-ai-workloads">1. Consume resources by running AI workloads<a class="headerlink" href="#1-consume-resources-by-running-ai-workloads" title="Permanent link">&para;</a></h2>
-<p>In order to consume some resources you can start a new AI workload that uses GPUs. For this purpose you can run a model finetuning workload by following the instructions in <a href="../../../developer-center/training/fine-tuning/">"Model finetuning"</a>. Once the workload has started you can go to the <code>Project dashboard</code> to observe the amount of GPUs and VRAM the workload is using.</p>
-<p>You can see an example in the below picture.</p>
-<p><img alt="A diagram of the workloads using resources." src="../../../img/airman/workloads%20running.png" /></p>
-<h2 id="2-observe-the-change-in-resource-utilization">2. Observe the change in resource utilization<a class="headerlink" href="#2-observe-the-change-in-resource-utilization" title="Permanent link">&para;</a></h2>
-<p>Go to the <code>Dashboard</code> and select the "Last hour" time period to observe the change in resource consumption.
-You can see that the resource utilization has increased due to the model finetuning workload.</p>
-<p><img alt="A diagram of the resource utilization." src="../../../img/airman/resource-consumption-after.png" /></p>
-<p>You can see more details of the resource utilization on the <code>Project dashboard</code>.</p>
-<p><img alt="A diagram of the resource utilization." src="../../../img/airman/projects-dashboard-after.png" /></p>
-<h2 id="3-adjust-the-quota">3. Adjust the quota<a class="headerlink" href="#3-adjust-the-quota" title="Permanent link">&para;</a></h2>
-<p>In case your AI workloads are pending to get started you might need to allocate more resources for them. This is done by changing the project quota so you have more resources available.</p>
+<h1 id="quotas-overview">Quotas overview<a class="headerlink" href="#quotas-overview" title="Permanent link">&para;</a></h1>
+<p>Quotas ensure that computational resources are appropriately shared between projects. Without quotas, some workloads might use all the resources, leaving other workloads waiting. Quotas define a <em>minimum</em> set of resources that are guaranteed. There is no maximum, so quotas can be exceeded if unused resources are available.</p>
+<p>A quota is a usage limit reserved for a team to accomplish their tasks. Quotas are useful for ensuring everyone gets their fair share of compute resources. In Airman, you can manage GPU and CPU quotas for your projects.</p>
+<h2 id="quotas-table">Quotas table<a class="headerlink" href="#quotas-table" title="Permanent link">&para;</a></h2>
+<p>The filter bar can be used to find the correct quota. Filtering can be done by keyword, cluster, or quota assignee.</p>
+<p>The list view shows available quotas with the applied filters from the filter bar. Each quota has a submenu that allows you to modify or delete the quota.</p>
+<table>
+<thead>
+<tr>
+<th>Column</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Identifier</td>
+<td>The name of the quota</td>
+</tr>
+<tr>
+<td>Status</td>
+<td>Status of the quota</td>
+</tr>
+<tr>
+<td>Assigned to</td>
+<td>The project this quota applies to.</td>
+</tr>
+<tr>
+<td>GPU allocation</td>
+<td>Number of GPUs allocated for this project. Users belonging to this project are guaranteed the allocated GPU quota for their workloads.</td>
+</tr>
+<tr>
+<td>CPU allocation</td>
+<td>Number of CPUs allocated for this project. Users belonging to this project are guaranteed the allocated CPU quota for their workloads.</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="A diagram of the quotas page." src="../../../img/quotas/overview.png" /></p>
 
 
 
 
 
 
+
+  
+  
 
 
 
