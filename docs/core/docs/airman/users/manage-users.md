@@ -2,7 +2,7 @@
 tags:
   - user management
   - invite users
-  - airman
+  - airm
 ---
 
 # Manage users
@@ -11,7 +11,7 @@ Users enter the SiloGen platform with their email address after being granted ac
 
 ## Main view
 
-The main user management view lists users with all relevant information. The user's name and email address identify who the user is, and the role indicates their capabilities on the platform. Above the list is a search field that can search by name and address. Below the user list is pagination for navigating the user list.
+The main user management view lists users with all relevant information. The user's name and email address identify who the user is, and the role indicates their capabilities on the platform. The projects column shows the project the user belongs to. If there is more than one project, hovering over the project name will show all of them. Above the list is a search field that can search by name and address. Below the user list is pagination for navigating the user list.
 
 ![The main user view lists all users and their roles in the platform.](../../img/users/user-management-01.png)
 

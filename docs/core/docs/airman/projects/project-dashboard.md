@@ -1,7 +1,7 @@
 ---
 tags:
   - projects
-  - airman
+  - airm
 ---
 
 # Project dashboard

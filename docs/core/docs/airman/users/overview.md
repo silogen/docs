@@ -3,7 +3,7 @@ tags:
   - user management
   - keycloak
   - roles
-  - airman
+  - airm
 ---
 
 # Users overview
@@ -14,7 +14,7 @@ Tools for managing the organization and user access are found in the navigation 
 
 ## Roles
 
-Airman and Developer Center have two different user roles: platform admin and team member.
+Airm and Developer Center have two different user roles: platform admin and team member.
 
 The **platform admin** has access to everything on the platform. When submitting workloads, they follow the regular project rules, meaning they can submit workloads only to clusters where they have a project. Administrators can change a user's role.
 

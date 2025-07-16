@@ -1,6 +1,6 @@
 ---
 tags:
-  - airman
+  - airm
   - cluster
 ---
 
@@ -12,7 +12,7 @@ The Clusters page provides a quick and easy way to see the status of all your cl
 
 A cluster is a set of nodes (interconnected computers) that work together to run containerized applications, including AI/ML models, data pipelines, and inference services.
 
-A cluster is the physical part of the platform installation, which can be managed in the Airman user interface.
+A cluster is the physical part of the platform installation, which can be managed in the Airm user interface.
 
 ## Clusters overview page
 
