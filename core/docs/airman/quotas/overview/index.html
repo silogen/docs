@@ -18,7 +18,7 @@
     
     
       
-        <title>Quotas overview - SiloGen documentation</title>
+        <title>Project quotas overview - SiloGen documentation</title>
       
     
     
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#quotas-overview" class="md-skip">
+        <a href="#project-quotas-overview" class="md-skip">
           Skip to content
         </a>
       
@@ -105,7 +105,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Quotas overview
+              Project quotas overview
             
           </span>
         </div>
@@ -2528,9 +2528,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#quotas-table" class="md-nav__link">
+  <a href="#quota-status" class="md-nav__link">
     <span class="md-ellipsis">
-      Quotas table
+      Quota status
     </span>
   </a>
   
@@ -2555,7 +2555,13 @@
       
       
       
-        <a href="../../../../../references/tags/#tag:airman" class="md-tag">airman</a>
+        <a href="../../../../../references/tags/#tag:airm" class="md-tag">airm</a>
+      
+    
+      
+      
+      
+        <a href="../../../../../references/tags/#tag:project" class="md-tag">project</a>
       
     
       
@@ -2571,43 +2577,15 @@
   
 
 
-<h1 id="quotas-overview">Quotas overview<a class="headerlink" href="#quotas-overview" title="Permanent link">&para;</a></h1>
-<p>Quotas ensure that computational resources are appropriately shared between projects. Without quotas, some workloads might use all the resources, leaving other workloads waiting. Quotas define a <em>minimum</em> set of resources that are guaranteed. There is no maximum, so quotas can be exceeded if unused resources are available.</p>
-<p>A quota is a usage limit reserved for a team to accomplish their tasks. Quotas are useful for ensuring everyone gets their fair share of compute resources. In Airman, you can manage GPU and CPU quotas for your projects.</p>
-<h2 id="quotas-table">Quotas table<a class="headerlink" href="#quotas-table" title="Permanent link">&para;</a></h2>
-<p>The filter bar can be used to find the correct quota. Filtering can be done by keyword, cluster, or quota assignee.</p>
-<p>The list view shows available quotas with the applied filters from the filter bar. Each quota has a submenu that allows you to modify or delete the quota.</p>
-<table>
-<thead>
-<tr>
-<th>Column</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Identifier</td>
-<td>The name of the quota</td>
-</tr>
-<tr>
-<td>Status</td>
-<td>Status of the quota</td>
-</tr>
-<tr>
-<td>Assigned to</td>
-<td>The project this quota applies to.</td>
-</tr>
-<tr>
-<td>GPU allocation</td>
-<td>Number of GPUs allocated for this project. Users belonging to this project are guaranteed the allocated GPU quota for their workloads.</td>
-</tr>
-<tr>
-<td>CPU allocation</td>
-<td>Number of CPUs allocated for this project. Users belonging to this project are guaranteed the allocated CPU quota for their workloads.</td>
-</tr>
-</tbody>
-</table>
-<p><img alt="A diagram of the quotas page." src="../../../img/quotas/overview.png" /></p>
+<h1 id="project-quotas-overview">Project quotas overview<a class="headerlink" href="#project-quotas-overview" title="Permanent link">&para;</a></h1>
+<p>A quota is a usage limit set on a project. Teams use project quotas to accomplish their tasks by ensuring everyone gets their fair share of compute resources. Without quotas, some workloads might use all the resources, leaving other workloads waiting.</p>
+<p>Quotas define a <em>minimum</em> set of resources that are guaranteed. There is no maximum, so quotas can be exceeded if unused resources are available.</p>
+<p>In AIRM, you can manage GPU, CPU, memory and disk quotas for your projects. When a new project is created the quota for all resources is zero. Only after the project is created can the quotas be updated.</p>
+<h2 id="quota-status">Quota status<a class="headerlink" href="#quota-status" title="Permanent link">&para;</a></h2>
+<p>In AIRM a project is a way to separate whatever tasks a team is working on. The status of the project is the status of those tasks.</p>
+<p>For the most part AIRM works with AI focussed tasks which are primarily resource heavy workloads. In order for the workload to run, the cluster needs to be made aware of the the quota requested by the project.</p>
+<p>Currently, the project status reflects the state of this application of the quota to the cluster.</p>
+<p><img alt="The projects list page." src="../../../img/projects/proj-list.png" /></p>
 
 
 
