@@ -53,7 +53,6 @@ plugins:
         'core/docs/developer-center/training/index.md': 'core/docs/developer-center/training/overview.md'
         'core/docs/airman/index.md': 'core/docs/airman/overview.md'
         'core/docs/airman/clusters/index.md': 'core/docs/airman/clusters/overview.md'
-        'core/docs/airman/quotas/index.md': 'core/docs/airman/quotas/overview.md'
         'core/docs/airman/projects/index.md': 'core/docs/airman/projects/manage-projects.md'
         'core/docs/airman/users/index.md': 'core/docs/airman/users/overview.md'
         'platform-infrastructure/index.md': 'platform-infrastructure/installation.md'
@@ -106,7 +105,7 @@ nav:
 
     - Tutorials:
       - GUI access:
-        - No-code tutorial: tutorials/no-code-finetuning-tutorial.md
+        - No-code tutorial: tutorials/no-code-fine-tuning-tutorial.md
         - AI workspace tutorial: tutorials/ai-workspace-tutorial.md
       - CLI access:
         - Overview: ai-development-tutorials.md
@@ -140,7 +139,6 @@ nav:
     - Projects:
       - Projects overview: core/docs/airman/projects/manage-projects.md
       - Project dashboard: core/docs/airman/projects/project-dashboard.md
-      - Set quotas: core/docs/airman/projects/set-quotas.md
     - User management:
       - Users overview: core/docs/airman/users/overview.md
       - Manage users: core/docs/airman/users/manage-users.md
