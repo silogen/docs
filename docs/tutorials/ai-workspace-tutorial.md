@@ -1,18 +1,17 @@
 # Working in AI workspaces hands-on
 
-This guide teaches you how to work in the SiloGen AI workspace using Jupyter Lab notebook.
+This guide teaches you how to work in the SiloGen AI workspace using a Jupyter Lab notebook.
 
-## Tutorial: Fine-tune Llama-3.1 8B with torchtune
+## Tutorial: fine-tune Llama-3.1 8B with torchtune
 
-This tutorial demonstrates how to fine-tune the Llama-3.1 8B large language model (LLM) on AMD ROCm GPUs by leveraging torchtune. Torchtune is an easy-to-use PyTorch library for authoring, post-training, and experimenting with LLMs. It features
+This tutorial demonstrates how to fine-tune the Llama-3.1 8B large language model (LLM) on AMD ROCm GPUs using torchtune. Torchtune is an easy-to-use PyTorch library for authoring, post-training, and experimenting with LLMs.
 
-Please access the tutorial [here](https://rocm.docs.amd.com/projects/ai-developer-hub/en/v3.0/notebooks/fine_tune/llama_factory_llama3.html)
-
+Access the tutorial [here](https://rocm.docs.amd.com/projects/ai-developer-hub/en/v3.0/notebooks/fine_tune/llama_factory_llama3.html).
 
 !!! Note
-    You should skip the steps 1-3 in the chapter `Prepare the training environment`, as these do not apply to the SiloGen (Kubernetes) environment.
+    Skip steps 1-3 in the chapter `Prepare the training environment`, as these do not apply to the SiloGen (Kubernetes) environment.
 
-## Tutorial: Prepare and upload data set to SiloGen Developer Center
+## Tutorial: Prepare and upload a dataset to SiloGen Developer Center
 
 ### 1. Run the data preparation script in the Jupyter Notebook
 
@@ -72,12 +71,13 @@ for file in data_in:
         sample_out = out_path.replace(".jsonl", f".sample{create_sample_n}.jsonl")
         create_sample(out_path, sample_out, create_sample_n)
         print(f'Created random sample of {create_sample_n} lines: {sample_out}')
-
 ```
-### 2. Upload dataset to Developer Center data set catalogue
-You can upload a dataset into SiloGen using the SiloGen API. See example below:
 
-Example: API call using Curl
+### 2. Upload the dataset to the Developer Center catalog
+
+You can upload a dataset to SiloGen using the SiloGen API. See the examples below.
+
+**Example:** API call using Curl
 
 ```python
 curl -X 'POST' \
@@ -91,7 +91,7 @@ curl -X 'POST' \
   -F 'jsonl=@dataset.jsonl'
 ```
 
-Example: API call using Python
+**Example:** API call using Python
 
 ```python
 import requests
@@ -104,7 +104,7 @@ data={
     "description": "description",
     "path": "path_to_your_dataset",
     "type": "Fine-tuning"
-  }
+}
 response = requests.post(
   url=BASE_URL,
   data=data,

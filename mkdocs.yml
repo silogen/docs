@@ -107,7 +107,7 @@ nav:
     - Tutorials:
       - GUI access:
         - No-code tutorial: tutorials/no-code-finetuning-tutorial.md
-        - AI workspace tutorial: tutorials/AI-workspace-tutorial.md
+        - AI workspace tutorial: tutorials/ai-workspace-tutorial.md
       - CLI access:
         - Overview: ai-development-tutorials.md
         - Prerequisites for running the tutorials: ai-workloads-docs/tutorials/tutorial-prereqs.md
