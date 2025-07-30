@@ -271,7 +271,7 @@ Purpose: Enables researchers to end-to-end manage AI workloads. The Developer Ce
 
 ### AI Resource Manager (Airman)
 
-Purpose: Manages the resource utilization enforcing isolation (multitenancy) across projects, departments and organizations. AirMan creates configures and manages resources at the RnD compute cluster by mapping user groups and projects to compute, data and other resources. With the AIRMAN, enterprise can maximize the usage of GPUs by allowing projects and user groups to share GPUs and by configuring the compute clusters with policies that enable fair and smart scheduling. Finally, through the Airman platform and project administrate can monitor the GPU utilization at a project, department, cluster and Enterprise level.
+Purpose: Manages the resource utilization enforcing isolation (multitenancy) across projects, departments and organizations. Airman creates configures and manages resources at the RnD compute cluster by mapping user groups and projects to compute, data and other resources. With the Airman, enterprise can maximize the usage of GPUs by allowing projects and user groups to share GPUs and by configuring the compute clusters with policies that enable fair and smart scheduling. Finally, through the Airman platform and project administrate can monitor the GPU utilization at a project, department, cluster and Enterprise level.
 
 **Functions**
 
@@ -308,7 +308,7 @@ Critical concerns that the inference layer and the related technologies address 
 
 The above components are combined in the following detailed architecture view.  TODO NEED TO CHANGE THE DIAGRAM OF THE INFERENCE CLUSTER ALSO DESCRIBE THE USERS OF THE PLATFORM BETTER 
 
-With blue color we tag components that can be provided by the clients. For example a client can bring their own storage technology and connect it to SiloGen. In addition a client can use their own secret management system, and a client can onboard and schedule its own workloads in the compute cluster. With Green color we visualize the Developer Center and with Red the AI Resource Manager. Developer Center as mentioned includes catalogues and services for developing and managing AI workloads, while AirMan has components for user and resource management.
+With blue color we tag components that can be provided by the clients. For example a client can bring their own storage technology and connect it to SiloGen. In addition a client can use their own secret management system, and a client can onboard and schedule its own workloads in the compute cluster. With Green color we visualize the Developer Center and with Red the AI Resource Manager. Developer Center as mentioned includes catalogues and services for developing and managing AI workloads, while an has components for user and resource management.
 
 ## From functional components to technology choices
 
@@ -318,11 +318,11 @@ Having introduced the functional components of our system, in this section we pr
 
 | **Feature - Functionality** | **Functional Component** | **Technology Choice** |
 |-----------------------------|---------------------------|------------------------|
-| Deploying & triggering AI workloads to Compute Clusters | AirMan & Dev Center | In-built SiloGen API services, RabbitMQ, Kubectl |
-| Connecting compute clusters to control plane | AirMan | Home-built SiloGen Dispatching services & RabbitMQ |
-| Configuring resource policies to compute clusters | AirMan | API services, RabbitMQ, Kubectl, KAIWO, KUEUE |
-| **Monitoring and Observability** <br><br> - Collecting execution logs <br> - Collecting GPU metrics at cluster, project & workload level | AirMan | LGTM stack (Loki for logs, Grafana for dashboards, Tempo for traces, Mimir for metrics), AMD GPU operator |
-| Access Management <br><br> (Authorization / Authentication) | AirMan & Dev Center | Keycloak |
+| Deploying & triggering AI workloads to Compute Clusters | Airman & Dev Center | In-built SiloGen API services, RabbitMQ, Kubectl |
+| Connecting compute clusters to control plane | Airman | Home-built SiloGen Dispatching services & RabbitMQ |
+| Configuring resource policies to compute clusters | Airman | API services, RabbitMQ, Kubectl, KAIWO, KUEUE |
+| **Monitoring and Observability** <br><br> - Collecting execution logs <br> - Collecting GPU metrics at cluster, project & workload level | Airman | LGTM stack (Loki for logs, Grafana for dashboards, Tempo for traces, Mimir for metrics), AMD GPU operator |
+| Access Management <br><br> (Authorization / Authentication) | Airman & Dev Center | Keycloak |
 | Interactive Training Sessions <br><br> (GPU as a Service) | Dev Center & K-AIWO | Visual Studio, Jupyter Notebooks, (SSH connections coming soon) |
 | AI Experiment and Workload Execution Tracking | Dev Center | MLFlow, TensorBoard |
 | Model Catalogue | Dev Center | Home-built |

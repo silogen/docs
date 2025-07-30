@@ -53,7 +53,6 @@ plugins:
         'core/docs/developer-center/training/index.md': 'core/docs/developer-center/training/overview.md'
         'core/docs/airman/index.md': 'core/docs/airman/overview.md'
         'core/docs/airman/clusters/index.md': 'core/docs/airman/clusters/overview.md'
-        'core/docs/airman/quotas/index.md': 'core/docs/airman/quotas/overview.md'
         'core/docs/airman/projects/index.md': 'core/docs/airman/projects/manage-projects.md'
         'core/docs/airman/users/index.md': 'core/docs/airman/users/overview.md'
         'platform-infrastructure/index.md': 'platform-infrastructure/installation.md'
@@ -89,7 +88,7 @@ nav:
     - Enable single sign-on: core/docs/keycloak/sso.md
 
   - AI practitioner:
-    - Overview: core/docs/developer-center/overview.md
+    - Developer Center overview: core/docs/developer-center/overview.md
     - Quick start guide: quick-start-guides/devcenter-quick-start.md
     - Workspaces: core/docs/developer-center/workspaces.md
     - Workloads: core/docs/developer-center/workloads.md
@@ -106,16 +105,16 @@ nav:
 
     - Tutorials:
       - GUI access:
-        - No-code tutorial: tutorials/no-code-finetuning-tutorial.md
-        - AI workspace tutorial: tutorials/AI-workspace-tutorial.md
+        - No-code tutorial: tutorials/no-code-fine-tuning-tutorial.md
+        - AI workspace tutorial: tutorials/ai-workspace-tutorial.md
       - CLI access:
-        - Overview: ai-development-tutorials.md
+        - CLI tutorials overview: ai-development-tutorials.md
         - Prerequisites for running the tutorials: ai-workloads-docs/tutorials/tutorial-prereqs.md
         - Deliver resources and fine-tune: ai-workloads-docs/tutorials/tutorial-01-deliver-resources-and-finetune.md
         - Language extension - Odia fine-tuning: ai-workloads-docs/tutorials/tutorial-02-language-extension-finetune.md
 
     - Reference AI workloads:
-      - Overview: ai-workloads-manifests/workloads-overview.md
+      - Workloads overview: ai-workloads-manifests/workloads-overview.md
       - dev-chatui-openwebui: ai-workloads-manifests/dev-chatui-openwebui/helm/README.md
       - dev-openvscode-server: ai-workloads-manifests/dev-workspace-vscode/helm/README.md
       - dev-text2image-comfyui: ai-workloads-manifests/dev-text2image-comfyui/helm/README.md
@@ -123,7 +122,7 @@ nav:
       - download-huggingface-model-to-bucket: ai-workloads-manifests/download-huggingface-model-to-bucket/helm/README.md
       - k8s-namespace-setup: ai-workloads-manifests/k8s-namespace-setup/helm/README.md
       - llm-finetune-silogen-engine:
-        - Overview: ai-workloads-manifests/llm-finetune-silogen-engine/helm/README.md
+        - LLM fine-tuning overview: ai-workloads-manifests/llm-finetune-silogen-engine/helm/README.md
         - Fine-tuning config: ai-workloads-manifests/llm-finetune-silogen-engine/helm/silogen_finetuning_config_readme.md
       - llm-inference-llamacpp-mi300x: ai-workloads-manifests/llm-inference-llamacpp-mi300x/helm/README.md
       - llm-inference-sglang: ai-workloads-manifests/llm-inference-sglang/helm/README.md
@@ -131,7 +130,7 @@ nav:
       - llm-inference-vllm-benchmark-mad: ai-workloads-manifests/llm-inference-vllm-benchmark-mad/helm/README.md
 
   - AI resource manager:
-    - Overview: core/docs/airman/overview.md
+    - Airman overview: core/docs/airman/overview.md
     - Quick start guide: quick-start-guides/airman-quick-start.md
     - Dashboard: core/docs/airman/dashboard.md
     - Clusters:
@@ -140,7 +139,6 @@ nav:
     - Projects:
       - Projects overview: core/docs/airman/projects/manage-projects.md
       - Project dashboard: core/docs/airman/projects/project-dashboard.md
-      - Set quotas: core/docs/airman/projects/set-quotas.md
     - User management:
       - Users overview: core/docs/airman/users/overview.md
       - Manage users: core/docs/airman/users/manage-users.md
@@ -148,7 +146,7 @@ nav:
         - Resource utilization: tutorials/resource-utilization.md
 
   - References:
-    - Overview: references/overview.md
+    - References: references/overview.md
     - Tags: references/tags.md
 
 extra_css:

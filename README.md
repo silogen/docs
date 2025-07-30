@@ -6,7 +6,7 @@ The documentation for this project is built using MkDocs with the Material theme
 
 1. Install documentation dependencies:
    ```bash
-   pip install -r requirements-docs.txt
+   pip install -r requirements.txt
    ```
 
 2. Start the documentation server:
