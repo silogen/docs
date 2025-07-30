@@ -11,22 +11,22 @@
       
       
       
-        <link rel="prev" href="../../core/docs/developer-center/inference/compare/">
+        <link rel="prev" href="../no-code-fine-tuning-tutorial/">
       
       
-        <link rel="next" href="../AI-workspace-tutorial/">
+        <link rel="next" href="../../ai-development-tutorials/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.15">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.16">
     
     
       
-        <title>No-code tutorial - SiloGen documentation</title>
+        <title>AI workspace tutorial - SiloGen documentation</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7e37652d.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#finetune-a-model-with-no-code" class="md-skip">
+        <a href="#working-in-ai-workspaces-hands-on" class="md-skip">
           Skip to content
         </a>
       
@@ -109,7 +109,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              No-code tutorial
+              AI workspace tutorial
             
           </span>
         </div>
@@ -204,7 +204,7 @@
         <a href="https://github.com/silogen/docs" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
   </div>
   <div class="md-source__repository">
     GitHub
@@ -372,7 +372,7 @@
       <a href="https://github.com/silogen/docs" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
   </div>
   <div class="md-source__repository">
     GitHub
@@ -824,7 +824,7 @@
   
   
   <span class="md-ellipsis">
-    Overview
+    Developer Center overview
     
   </span>
   
@@ -1258,6 +1258,29 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../no-code-fine-tuning-tutorial/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    No-code tutorial
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -1275,7 +1298,7 @@
   
   
   <span class="md-ellipsis">
-    No-code tutorial
+    AI workspace tutorial
     
   </span>
   
@@ -1288,7 +1311,7 @@
   
   
   <span class="md-ellipsis">
-    No-code tutorial
+    AI workspace tutorial
     
   </span>
   
@@ -1311,46 +1334,37 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-select-a-basemodel-and-dataset-for-finetuning" class="md-nav__link">
+  <a href="#tutorial-fine-tune-llama-31-8b-with-torchtune" class="md-nav__link">
     <span class="md-ellipsis">
-      1. Select a basemodel and dataset for finetuning
+      Tutorial: fine-tune Llama-3.1 8B with torchtune
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-observe-the-model-finetuning-workload" class="md-nav__link">
+  <a href="#tutorial-prepare-and-upload-a-dataset-to-silogen-developer-center" class="md-nav__link">
     <span class="md-ellipsis">
-      2. Observe the model finetuning workload
+      Tutorial: Prepare and upload a dataset to SiloGen Developer Center
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-deploy-the-model-for-inference" class="md-nav__link">
-    <span class="md-ellipsis">
-      3. Deploy the model for inference
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-chat-with-the-model" class="md-nav__link">
-    <span class="md-ellipsis">
-      4. Chat with the model
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="4. Chat with the model">
+    <nav class="md-nav" aria-label="Tutorial: Prepare and upload a dataset to SiloGen Developer Center">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#inspecting-the-debug-output-of-the-model" class="md-nav__link">
+  <a href="#1-run-the-data-preparation-script-in-the-jupyter-notebook" class="md-nav__link">
     <span class="md-ellipsis">
-      Inspecting the debug output of the model
+      1. Run the data preparation script in the Jupyter Notebook
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-upload-the-dataset-to-the-developer-center-catalog" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Upload the dataset to the Developer Center catalog
     </span>
   </a>
   
@@ -1365,29 +1379,6 @@
   
 </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../AI-workspace-tutorial/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    AI workspace tutorial
-    
-  </span>
-  
-
-      </a>
     </li>
   
 
@@ -1464,7 +1455,7 @@
   
   
   <span class="md-ellipsis">
-    Overview
+    CLI tutorials overview
     
   </span>
   
@@ -1648,7 +1639,7 @@
   
   
   <span class="md-ellipsis">
-    Overview
+    Workloads overview
     
   </span>
   
@@ -2041,7 +2032,7 @@
   
   
   <span class="md-ellipsis">
-    Overview
+    Airman overview
     
   </span>
   
@@ -2212,8 +2203,6 @@
       
         
       
-        
-      
     
     
     
@@ -2284,29 +2273,6 @@
   
   <span class="md-ellipsis">
     Project dashboard
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../core/docs/airman/projects/set-quotas.md" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Set quotas
     
   </span>
   
@@ -2568,7 +2534,7 @@
   
   
   <span class="md-ellipsis">
-    Overview
+    References
     
   </span>
   
@@ -2636,46 +2602,37 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-select-a-basemodel-and-dataset-for-finetuning" class="md-nav__link">
+  <a href="#tutorial-fine-tune-llama-31-8b-with-torchtune" class="md-nav__link">
     <span class="md-ellipsis">
-      1. Select a basemodel and dataset for finetuning
+      Tutorial: fine-tune Llama-3.1 8B with torchtune
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-observe-the-model-finetuning-workload" class="md-nav__link">
+  <a href="#tutorial-prepare-and-upload-a-dataset-to-silogen-developer-center" class="md-nav__link">
     <span class="md-ellipsis">
-      2. Observe the model finetuning workload
+      Tutorial: Prepare and upload a dataset to SiloGen Developer Center
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-deploy-the-model-for-inference" class="md-nav__link">
-    <span class="md-ellipsis">
-      3. Deploy the model for inference
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-chat-with-the-model" class="md-nav__link">
-    <span class="md-ellipsis">
-      4. Chat with the model
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="4. Chat with the model">
+    <nav class="md-nav" aria-label="Tutorial: Prepare and upload a dataset to SiloGen Developer Center">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#inspecting-the-debug-output-of-the-model" class="md-nav__link">
+  <a href="#1-run-the-data-preparation-script-in-the-jupyter-notebook" class="md-nav__link">
     <span class="md-ellipsis">
-      Inspecting the debug output of the model
+      1. Run the data preparation script in the Jupyter Notebook
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-upload-the-dataset-to-the-developer-center-catalog" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Upload the dataset to the Developer Center catalog
     </span>
   </a>
   
@@ -2700,53 +2657,141 @@
                 
                   
 
+  <nav class="md-tags" >
+    
+      
+      
+      
+        <a href="../../references/tags/#tag:developer-center" class="md-tag">developer center</a>
+      
+    
+      
+      
+      
+        <a href="../../references/tags/#tag:tutorial" class="md-tag">tutorial</a>
+      
+    
+      
+      
+      
+        <a href="../../references/tags/#tag:workspaces" class="md-tag">workspaces</a>
+      
+    
+  </nav>
+
 
   
   
 
 
-<h1 id="finetune-a-model-with-no-code">Finetune a model with no code<a class="headerlink" href="#finetune-a-model-with-no-code" title="Permanent link">&para;</a></h1>
-<p>This guide teaches you how you can finetune a model though the Developer Center GUI without using any code.</p>
-<ol>
-<li>We first select a basemodel and dataset for finetuning</li>
-<li>We then start the model finetuning workload and observe the status of the workload.</li>
-<li>We then deploy the finetuned model for inference</li>
-<li>Finally we chat with the finetuned model through the chat interface.</li>
-</ol>
-<h2 id="1-select-a-basemodel-and-dataset-for-finetuning">1. Select a basemodel and dataset for finetuning<a class="headerlink" href="#1-select-a-basemodel-and-dataset-for-finetuning" title="Permanent link">&para;</a></h2>
-<p>Go to the <code>Models</code> page and select the <code>Custom models</code> tab. You can trigger the creation of your fine-tuned model by clicking the "Fine-Tune Model" button and selecting the appropriate entries.</p>
-<ul>
-<li>In the <code>Base Model</code> field, select the preloaded model.</li>
-<li>In the <code>Training data</code> field, select the preloaded data set.</li>
-<li>In the <code>Name</code> field, you must specify a unique name for the finetuned model.</li>
-<li>In the <code>Description</code> field, specify a description for the finetuned model.</li>
-<li>You can skip the <code>Advanced parameter</code> fields and use the default values.</li>
-<li>Finally, click <code>Create</code> to start the model finetuning.
-<img alt="Create fine-tuned model" src="../../core/docs/img/training/fine-tuning-trigger.png" /></li>
-</ul>
-<h2 id="2-observe-the-model-finetuning-workload">2. Observe the model finetuning workload<a class="headerlink" href="#2-observe-the-model-finetuning-workload" title="Permanent link">&para;</a></h2>
-<p>Go to the <code>Workloads</code> page and view the details of the running model AI workload. In the table you can see name of the workload, the cluster the workload is assigned to, and how many resources the workload requires. The <code>Status</code> column shows the last known status of the workload and is not updated automatically. Filters can be used to find workloads by name, type, or status.</p>
-<p><img alt="Workload filters" src="../../core/docs/img/workloads/workloads-filters.png" /></p>
-<p>You can find more details about the workloads <a href="../../core/docs/developer-center/workloads/">here</a></p>
-<h2 id="3-deploy-the-model-for-inference">3. Deploy the model for inference<a class="headerlink" href="#3-deploy-the-model-for-inference" title="Permanent link">&para;</a></h2>
-<p>Click the <code>Deploy</code> button corresponding to the model you would like to deploy to make it available for inferencing. Please note that a model, once deployed, can take up to 5 minutes before it can serve requests.</p>
-<p><img alt="Deploy fine-tuned model" src="../../core/docs/img/training/fine-tuning-deploy-model.png" /></p>
-<p>Once deployed, you can navigate to the <code>Chat and Compare</code> page to converse with the model.</p>
-<p>After you have verified that your model performs as expected, you can click the <code>View Code</code> menu item on the row in the Models page and use the code snippet for inference via the API.</p>
-<h2 id="4-chat-with-the-model">4. Chat with the model<a class="headerlink" href="#4-chat-with-the-model" title="Permanent link">&para;</a></h2>
-<p>In the <code>Chat</code> page, choose the name of the finetuned model from the drop-down list in the top-right corner.</p>
-<p>Write a question in the chat to interact with the model.</p>
-<p><img alt="Chat" src="../../core/docs/img/inference/chat.png" /></p>
-<h3 id="inspecting-the-debug-output-of-the-model">Inspecting the debug output of the model<a class="headerlink" href="#inspecting-the-debug-output-of-the-model" title="Permanent link">&para;</a></h3>
-<p>Once you have a response from the model, you can inspect the messages sent to the model, the context retrieved as part of RAG, and the consumed tokens by clicking the "bug" icon next to the response.</p>
-<p><img alt="Debug icon" src="../../core/docs/img/inference/debug-icon.png" /></p>
-<p><img alt="Debug output" src="../../core/docs/img/inference/debug-output.png" /></p>
+<h1 id="working-in-ai-workspaces-hands-on">Working in AI workspaces hands-on<a class="headerlink" href="#working-in-ai-workspaces-hands-on" title="Permanent link">&para;</a></h1>
+<p>This guide teaches you how to work in the SiloGen AI workspace using a Jupyter Lab notebook.</p>
+<h2 id="tutorial-fine-tune-llama-31-8b-with-torchtune">Tutorial: fine-tune Llama-3.1 8B with torchtune<a class="headerlink" href="#tutorial-fine-tune-llama-31-8b-with-torchtune" title="Permanent link">&para;</a></h2>
+<p>This tutorial demonstrates how to fine-tune the Llama-3.1 8B large language model (LLM) on AMD ROCm GPUs using torchtune. Torchtune is an easy-to-use PyTorch library for authoring, post-training, and experimenting with LLMs.</p>
+<p>Access the tutorial <a href="https://rocm.docs.amd.com/projects/ai-developer-hub/en/v3.0/notebooks/fine_tune/llama_factory_llama3.html">here</a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Skip steps 1-3 in the chapter <code>Prepare the training environment</code>, as these do not apply to the SiloGen (Kubernetes) environment.</p>
+</div>
+<h2 id="tutorial-prepare-and-upload-a-dataset-to-silogen-developer-center">Tutorial: Prepare and upload a dataset to SiloGen Developer Center<a class="headerlink" href="#tutorial-prepare-and-upload-a-dataset-to-silogen-developer-center" title="Permanent link">&para;</a></h2>
+<h3 id="1-run-the-data-preparation-script-in-the-jupyter-notebook">1. Run the data preparation script in the Jupyter Notebook<a class="headerlink" href="#1-run-the-data-preparation-script-in-the-jupyter-notebook" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">huggingface_hub</span><span class="w"> </span><span class="kn">import</span> <span class="n">hf_hub_download</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="k">def</span><span class="w"> </span><span class="nf">convert_opi</span><span class="p">(</span><span class="n">input_file</span><span class="p">,</span> <span class="n">output_file</span><span class="p">):</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="sd">    Converts a JSON array of objects with &#39;instruction&#39;, &#39;input&#39;, and &#39;output&#39; fields</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="sd">    into a JSONL file with the specified message format.</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="sd">    &quot;&quot;&quot;</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">input_file</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>        <span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">output_file</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>        <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>            <span class="k">if</span> <span class="nb">all</span><span class="p">(</span><span class="n">k</span> <span class="ow">in</span> <span class="n">row</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">&quot;instruction&quot;</span><span class="p">,</span> <span class="s2">&quot;input&quot;</span><span class="p">,</span> <span class="s2">&quot;output&quot;</span><span class="p">)):</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>                <span class="n">line</span> <span class="o">=</span> <span class="p">{</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>                    <span class="s2">&quot;messages&quot;</span><span class="p">:</span> <span class="p">[</span>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>                        <span class="p">{</span><span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;user&quot;</span><span class="p">,</span> <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;instruction&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"> Sequence: </span><span class="si">{</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;input&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">},</span>
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>                        <span class="p">{</span><span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;assistant&quot;</span><span class="p">,</span> <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="n">row</span><span class="p">[</span><span class="s2">&quot;output&quot;</span><span class="p">]}</span>
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>                    <span class="p">]</span>
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>                <span class="p">}</span>
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>                <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">line</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>
+<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="k">def</span><span class="w"> </span><span class="nf">create_sample</span><span class="p">(</span><span class="n">input_jsonl</span><span class="p">,</span> <span class="n">output_jsonl</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Create a random sample of n lines from input_jsonl and write to output_jsonl.&quot;&quot;&quot;</span>
+<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">input_jsonl</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a>        <span class="n">lines</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+<a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a>    <span class="n">sample</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">lines</span><span class="p">,</span> <span class="nb">min</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">lines</span><span class="p">)))</span>
+<a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a>    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">output_jsonl</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a>        <span class="n">f</span><span class="o">.</span><span class="n">writelines</span><span class="p">(</span><span class="n">sample</span><span class="p">)</span>
+<a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a>
+<a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a><span class="n">repo_id</span> <span class="o">=</span> <span class="s2">&quot;BAAI/OPI&quot;</span>
+<a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a><span class="n">target_dir</span> <span class="o">=</span> <span class="s2">&quot;./datasets&quot;</span>
+<a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a><span class="n">output_dir</span> <span class="o">=</span> <span class="s2">&quot;./datasets&quot;</span>
+<a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a><span class="n">data_in</span> <span class="o">=</span> <span class="p">[</span>
+<a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a>    <span class="s2">&quot;OPI_DATA/OPI_updated_160k.json&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a><span class="p">]</span>
+<a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a><span class="n">create_sample_n</span> <span class="o">=</span> <span class="mi">1000</span>  <span class="c1"># Set to None to disable</span>
+<a id="__codelineno-0-40" name="__codelineno-0-40" href="#__codelineno-0-40"></a>
+<a id="__codelineno-0-41" name="__codelineno-0-41" href="#__codelineno-0-41"></a><span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">data_in</span><span class="p">:</span>
+<a id="__codelineno-0-42" name="__codelineno-0-42" href="#__codelineno-0-42"></a>    <span class="n">hf_hub_download</span><span class="p">(</span><span class="n">repo_id</span><span class="o">=</span><span class="n">repo_id</span><span class="p">,</span>
+<a id="__codelineno-0-43" name="__codelineno-0-43" href="#__codelineno-0-43"></a>                    <span class="n">filename</span><span class="o">=</span><span class="n">file</span><span class="p">,</span>
+<a id="__codelineno-0-44" name="__codelineno-0-44" href="#__codelineno-0-44"></a>                    <span class="n">repo_type</span><span class="o">=</span><span class="s2">&quot;dataset&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-45" name="__codelineno-0-45" href="#__codelineno-0-45"></a>                    <span class="n">local_dir</span><span class="o">=</span><span class="n">target_dir</span><span class="p">)</span>
+<a id="__codelineno-0-46" name="__codelineno-0-46" href="#__codelineno-0-46"></a>    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Downloaded&#39;</span><span class="p">,</span> <span class="n">file</span><span class="p">)</span>
+<a id="__codelineno-0-47" name="__codelineno-0-47" href="#__codelineno-0-47"></a>    <span class="n">file_out</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;.json&quot;</span><span class="p">,</span> <span class="s2">&quot;.jsonl&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-48" name="__codelineno-0-48" href="#__codelineno-0-48"></a>    <span class="n">out_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output_dir</span><span class="p">,</span> <span class="n">file_out</span><span class="p">)</span>
+<a id="__codelineno-0-49" name="__codelineno-0-49" href="#__codelineno-0-49"></a>    <span class="n">convert_opi</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">target_dir</span><span class="p">,</span> <span class="n">file</span><span class="p">),</span> <span class="n">out_path</span><span class="p">)</span>
+<a id="__codelineno-0-50" name="__codelineno-0-50" href="#__codelineno-0-50"></a>    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Converted&#39;</span><span class="p">,</span> <span class="n">file</span><span class="p">,</span> <span class="s1">&#39;to&#39;</span><span class="p">,</span> <span class="n">file_out</span><span class="p">)</span>
+<a id="__codelineno-0-51" name="__codelineno-0-51" href="#__codelineno-0-51"></a>
+<a id="__codelineno-0-52" name="__codelineno-0-52" href="#__codelineno-0-52"></a>    <span class="k">if</span> <span class="n">create_sample_n</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<a id="__codelineno-0-53" name="__codelineno-0-53" href="#__codelineno-0-53"></a>        <span class="n">sample_out</span> <span class="o">=</span> <span class="n">out_path</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;.jsonl&quot;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;.sample</span><span class="si">{</span><span class="n">create_sample_n</span><span class="si">}</span><span class="s2">.jsonl&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-54" name="__codelineno-0-54" href="#__codelineno-0-54"></a>        <span class="n">create_sample</span><span class="p">(</span><span class="n">out_path</span><span class="p">,</span> <span class="n">sample_out</span><span class="p">,</span> <span class="n">create_sample_n</span><span class="p">)</span>
+<a id="__codelineno-0-55" name="__codelineno-0-55" href="#__codelineno-0-55"></a>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Created random sample of </span><span class="si">{</span><span class="n">create_sample_n</span><span class="si">}</span><span class="s1"> lines: </span><span class="si">{</span><span class="n">sample_out</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="2-upload-the-dataset-to-the-developer-center-catalog">2. Upload the dataset to the Developer Center catalog<a class="headerlink" href="#2-upload-the-dataset-to-the-developer-center-catalog" title="Permanent link">&para;</a></h3>
+<p>You can upload a dataset to SiloGen using the SiloGen API. See the examples below.</p>
+<p><strong>Example:</strong> API call using Curl</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">curl</span> <span class="o">-</span><span class="n">X</span> <span class="s1">&#39;POST&#39;</span> \
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>  <span class="s1">&#39;https://api-demo.silogen.ai/v1/datasets/upload?project_id=YOUR_PROJECT_UUID_HERE&#39;</span> \
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>  <span class="o">-</span><span class="n">H</span> <span class="s1">&#39;accept: application/json&#39;</span> \
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>  <span class="o">-</span><span class="n">H</span> <span class="s1">&#39;Authorization: Bearer YOUR_TOKEN_HERE&#39;</span> \
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>  <span class="o">-</span><span class="n">H</span> <span class="s1">&#39;Content-Type: multipart/form-data&#39;</span> \
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>  <span class="o">-</span><span class="n">F</span> <span class="s1">&#39;name=string&#39;</span> \
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>  <span class="o">-</span><span class="n">F</span> <span class="s1">&#39;description=string&#39;</span> \
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>  <span class="o">-</span><span class="n">F</span> <span class="s1">&#39;type=Fine-tuning&#39;</span> \
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>  <span class="o">-</span><span class="n">F</span> <span class="s1">&#39;jsonl=@dataset.jsonl&#39;</span>
+</code></pre></div>
+<p><strong>Example:</strong> API call using Python</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="n">BASE_URL</span> <span class="o">=</span> <span class="s2">&quot;https://api-demo.silogen.ai/v1/datasets/upload?project_id=ADD_YOUR_PROJECT_ID&quot;</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;accept&quot;</span><span class="p">:</span> <span class="s2">&quot;application/json&quot;</span><span class="p">,</span> <span class="s2">&quot;content-type&quot;</span> <span class="p">:</span> <span class="s2">&quot;multipart/form-data&quot;</span><span class="p">,</span> <span class="s2">&quot;Authorization&quot;</span><span class="p">:</span> <span class="s2">&quot;Bearer ADD_YOUR_TOKEN&quot;</span><span class="p">}</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="n">data</span><span class="o">=</span><span class="p">{</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>    <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;dataset_xxx&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>    <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;description&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>    <span class="s2">&quot;path&quot;</span><span class="p">:</span> <span class="s2">&quot;path_to_your_dataset&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>    <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;Fine-tuning&quot;</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="p">}</span>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>  <span class="n">url</span><span class="o">=</span><span class="n">BASE_URL</span><span class="p">,</span>
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>  <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span>
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>  <span class="n">headers</span><span class="o">=</span><span class="n">headers</span>
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="p">)</span>
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+</code></pre></div>
 
 
 
 
 
 
+
+  
+  
 
 
 
@@ -2798,7 +2843,7 @@
       <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "navigation.indexes", "navigation.tabs", "navigation.top", "search.highlight", "search.suggest"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.56ea9cef.min.js"></script>
+      <script src="../../assets/javascripts/bundle.50899def.min.js"></script>
       
     
   </body>
