@@ -1,3 +1,10 @@
+---
+tags:
+  - developer center
+  - fine-tuning
+  - tutorial
+---
+
 # Fine-tune a model with no code
 
 This guide teaches you how to fine-tune a model through the Developer Center user interface without writing any code. Follow these steps to complete a fine-tuning job:

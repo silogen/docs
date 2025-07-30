@@ -1,3 +1,10 @@
+---
+tags:
+  - developer center
+  - workspaces
+  - tutorial
+---
+
 # Working in AI workspaces hands-on
 
 This guide teaches you how to work in the SiloGen AI workspace using a Jupyter Lab notebook.

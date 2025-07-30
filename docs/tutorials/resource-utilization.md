@@ -1,3 +1,10 @@
+---
+tags:
+  - airman
+  - resource management
+  - tutorial
+---
+
 # Resource utilization of AI workloads
 
 This guide teaches you how you can observe and manage the amount of resources that your AI workloads are using.  Follow these steps to complete find about resource utilization:

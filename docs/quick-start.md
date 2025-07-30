@@ -2,7 +2,7 @@
 tags:
   - quick start
   - install
-  - onboard
+  - introduction
 ---
 
 # Quick start guide
