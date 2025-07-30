@@ -1,3 +1,10 @@
+---
+tags:
+  - developer center
+  - models
+  - deployments
+---
+
 # Models
 
 The Models view lists all available models that can be deployed or [fine-tuned](./fine-tuning.md).

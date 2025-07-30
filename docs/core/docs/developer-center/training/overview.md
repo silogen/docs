@@ -1,3 +1,10 @@
+---
+tags:
+  - developer center
+  - training
+  - fine-tuning
+---
+
 # Training and fine-tuning in the SiloGen platform
 
 !!! note

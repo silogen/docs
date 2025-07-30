@@ -2,7 +2,7 @@
 tags:
   - user management
   - invite users
-  - airm
+  - airman
 ---
 
 # Manage users

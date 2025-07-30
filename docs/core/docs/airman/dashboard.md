@@ -1,3 +1,10 @@
+---
+tags:
+  - airman
+  - resources
+  - dashboard
+---
+
 # Dashboard
 
 The dashboard provides users with an overview of the cluster and the workloads running on it.

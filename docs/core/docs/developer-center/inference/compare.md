@@ -1,3 +1,10 @@
+---
+tags:
+  - developer center
+  - chat
+  - comparison
+---
+
 # Comparison
 
 The model comparison view allows you to compare the output of different models using the same set of settings.

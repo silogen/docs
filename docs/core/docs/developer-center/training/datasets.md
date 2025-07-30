@@ -1,3 +1,10 @@
+---
+tags:
+  - developer center
+  - datasets
+  - fine-tuning
+---
+
 # Datasets
 
 SiloGen allows you to create and manage datasets on the platform for fine-tuning purposes. Datasets are collections of data points, where each data point represents a conversation, with or without the model's expected response, depending on the use case.

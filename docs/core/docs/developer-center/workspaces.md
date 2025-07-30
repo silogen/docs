@@ -2,7 +2,7 @@
 tags:
   - developer center
   - workspaces
-  - workload
+  - workloads
 ---
 
 # Workspaces

@@ -1,3 +1,10 @@
+---
+tags:
+  - developer center
+  - chat
+  - rag
+---
+
 # Chat
 
 The Chat page allows you to experiment with models you have access to. You can modify several retrieval and generation parameters to see how they affect the model's response.

@@ -1,10 +1,17 @@
+---
+tags:
+  - keycloak
+  - login
+  - single sign-on
+---
+
 # Adding an identity provider to enable single sign-on
 
 This is a general guide for setting up single sign-on (SSO) with an identity provider. This has been tested with OpenID Connect (Okta), but the guide aims to be provider-agnostic.
 
 ## Prerequisite
 
-Keycloak is set up for Airm, so organizations, realms, etc. are already created. Correct realm is selected as all the actions are realm specific.
+Keycloak is set up for Airman, so organizations, realms, etc. are already created. Correct realm is selected as all the actions are realm specific.
 
 ## Add an identity provider
 
