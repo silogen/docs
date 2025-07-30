@@ -25,7 +25,7 @@ Create a fine-tuned model by clicking the "Fine-Tune Model" button and choosing 
 - In the `Name` field, enter a unique name for your fine-tuned model.
 - In the `Description` field, provide a description for your fine-tuned model.
 - You can skip the `Advanced parameter` fields and use the default values.
-- Finally, click `Create` to start fine-tuning the model.
+- Finally, click `Start training` to start fine-tuning the model.
 
 ![Create fine-tuned model](../core/docs/img/training/fine-tuning-trigger.png)
 
