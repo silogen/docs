@@ -108,7 +108,7 @@ nav:
         - No-code tutorial: tutorials/no-code-fine-tuning-tutorial.md
         - AI workspace tutorial: tutorials/ai-workspace-tutorial.md
       - CLI access:
-        - CLI tutorials overview: ai-development-tutorials.md
+        - CLI tutorials overview: cli-tutorials-overview.md
         - Prerequisites for running the tutorials: ai-workloads-docs/tutorials/tutorial-prereqs.md
         - Deliver resources and fine-tune: ai-workloads-docs/tutorials/tutorial-01-deliver-resources-and-finetune.md
         - Language extension - Odia fine-tuning: ai-workloads-docs/tutorials/tutorial-02-language-extension-finetune.md
