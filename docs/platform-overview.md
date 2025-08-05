@@ -2,7 +2,7 @@
 tags:
   - platform
   - introduction
-  - components
+  - features
 ---
 
 # Overview of the SiloGen Enterprise AI platform
@@ -27,7 +27,7 @@ Unlike traditional schedulers, SiloGen is optimized for AI. It intelligently pri
 
 With SiloGen, enterprises reduce complexity, accelerate AI deployment, and maximize ROI—turning AI from a cost center into a strategic advantage.
 
-## Key Components of the SiloGen platform
+## Key components of the SiloGen platform
 
 The SiloGen platform is designed to provide a solid end-to-end model development, evaluation, and inference experience optimized for AMD DC GPUs.
 

@@ -1,7 +1,7 @@
 ---
 tags:
   - quick start
-  - install
+  - installation
   - introduction
 ---
 
@@ -14,7 +14,7 @@ SiloGen Enterprise AI Platform supports bare-metal, on-premises, and public clou
 !!! warning
     These instructions are intended for installing SiloGen as a self-contained solution in an on-premises environment. For larger-scale, production-level deployments, refer to AMD SiloGen Enterprise AI support services.
 
-## Install the SiloGen Platform
+## Install the SiloGen platform
 
 !!! note
     The target audience for the installation section is infrastructure administrators.
