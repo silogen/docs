@@ -1,7 +1,7 @@
 ---
 tags:
   - airman
-  - resources
+  - resource management
   - dashboard
 ---
 

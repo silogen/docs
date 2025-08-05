@@ -39,7 +39,7 @@ Depending on the selected dataset type, each row in the JSONL file should be for
 }
 ```
 
-### Direct Preference
+### Direct preference
 
 ```json
 {

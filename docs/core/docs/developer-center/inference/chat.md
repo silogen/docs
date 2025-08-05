@@ -9,7 +9,7 @@ tags:
 
 The Chat page allows you to experiment with models you have access to. You can modify several retrieval and generation parameters to see how they affect the model's response.
 
-## Accessing the Chat
+## Accessing the chat
 
 Navigate to the **AI Developer Center** → `Chat and Compare` to access the Chat.
 

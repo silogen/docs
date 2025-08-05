@@ -5,13 +5,13 @@ tags:
   - features
 ---
 
-# Overview
+# AI Resource Manager overview
 
 The SiloGen platform provides administrators with tools to oversee and control the platform’s computational resources and user access. These features are managed through a module called Airman, short for AI Resource Manager. Its key capabilities include cluster management, monitoring, and maintaining teams' access to computational resources.
 
 ## Airman features
 
-Airman is built around the basic usage pattern of maintaining compute resources, setting up teams and projects, adding quotas, and allowing individual users to utilize the resources for their compute needs.
+Airman is built around the basic usage pattern of maintaining compute resources, setting up teams and projects, and allowing individual users to utilize the resources for their compute needs.
 
 - **Cluster:** The physical part of the platform installation, which can be managed in the Airman user interface.
 - **Organization:** An organization is built from teams. Each team can have multiple users and multiple projects.

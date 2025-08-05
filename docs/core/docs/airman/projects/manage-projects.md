@@ -10,8 +10,6 @@ A project is a container for managing work. It has a specified compute quota, wh
 
 The main projects view lists available projects, the number of assigned users, and a short description of each project. To add a new project, click the "Create project" button.
 
-The project-specific quota is currently set in the Quotas section of Airman.
-
 ![The projects list displays the number of users and a short description of the project.](../../img/projects/projects-list.png)
 
 Clicking a project's name opens the edit view. This view has a form for editing project details. The project's name is permanent and cannot be changed. Click the "Save changes" button to apply updates.

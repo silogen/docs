@@ -18,11 +18,11 @@ A cluster is the physical part of the platform installation, which can be manage
 
 The clusters overview provides a list of the clusters added to the SiloGen platform, along with their status. You can see the following information about your clusters:
 
-**Clusters:** Clusters for your organization that have been onboarded to AI Resource Manager. Onboarding clusters allows you to manage resources, quotas, and workloads on them.
+**Clusters:** Clusters for your organization that have been onboarded to AI Resource Manager. Onboarding clusters allows you to manage resources, projects, and workloads on them.
 
 **Available nodes:** The total number of nodes available across all clusters. AI Resource Manager routinely pulls node information from clusters, including resources and health.
 
-**Allocated GPUs:** The total number of GPUs allocated to quotas across all clusters. Users belonging to projects with GPU quotas are guaranteed allocated GPU resources for their workloads in the corresponding clusters.
+**Allocated GPUs:** The total number of GPUs allocated to project quotas across all clusters. Users belonging to projects with GPU quotas are guaranteed allocated GPU resources for their workloads in the corresponding clusters.
 
 **Running workloads:** The total number of active workloads across all clusters. Workloads submitted via AI Resource Manager are optimally scheduled, tracked, and monitored for resource usage and health.
 
@@ -51,24 +51,25 @@ The Cluster page provides a quick and easy way to see the status of your cluster
 
 **Running workloads:** The total number of active workloads running on the cluster. Workloads submitted via AI Resource Manager are optimally scheduled, tracked, and monitored for resource usage and health.
 
-**Assigned quotas table**
+**Projects table**
 
-| Column         | Description                                  |
-| -------------- | -------------------------------------------- |
-| Identifier     | Unique identifier for the quota              |
-| Status         | Status of the quota                          |
-| Assigned to    | The project this quota applies to            |
-| GPU allocation | Total number of GPUs allocated to this quota |
+| Column         | Description                                    |
+| -------------- | ---------------------------------------------- |
+| Name           | Unique identifier for the projects             |
+| Status         | Status of the project                          |
+| GPU allocation | Total number of GPUs allocated to this project |
+| CPU allocation | Total number of GPUs allocated to this project |
 
 **Nodes table**
 
-| Column      | Description                               |
-| ----------- | ----------------------------------------- |
-| Name        | Name of the node                          |
-| Status      | Status of the node                        |
-| CPU cores   | Number of CPU cores available on the node |
-| CPU memory  | Amount of memory available on the node    |
-| GPU type    | Type of GPU                               |
-| GPU devices | Number of GPUs on the node                |
+| Column      | Description                                   |
+| ----------- | --------------------------------------------- |
+| Name        | Name of the node                              |
+| Status      | Status of the node                            |
+| CPU cores   | Number of CPU cores available on the node     |
+| CPU memory  | Amount of memory available on the node        |
+| GPU type    | Type of GPU                                   |
+| GPU devices | Number of GPUs on the node                    |
+| GPU memory  | Amount of GPU memory available on the node    |
 
 ![A diagram of the single cluster page.](../../img/clusters/view-single-cluster.png)

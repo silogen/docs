@@ -31,7 +31,7 @@ Shows details of the workload, such as when it was created and by whom.
 
 Queues the workload for deletion.
 
-### Open Workspace
+### Open workspace
 
 If the workload type is `Workspace`, selecting this action opens the workspace in a new browser tab.
 
