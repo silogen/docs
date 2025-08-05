@@ -2653,9 +2653,9 @@
 <p>A cluster is the physical part of the platform installation, which can be managed in the Airman user interface.</p>
 <h2 id="clusters-overview-page">Clusters overview page<a class="headerlink" href="#clusters-overview-page" title="Permanent link">&para;</a></h2>
 <p>The clusters overview provides a list of the clusters added to the SiloGen platform, along with their status. You can see the following information about your clusters:</p>
-<p><strong>Clusters:</strong> Clusters for your organization that have been onboarded to AI Resource Manager. Onboarding clusters allows you to manage resources, quotas, and workloads on them.</p>
+<p><strong>Clusters:</strong> Clusters for your organization that have been onboarded to AI Resource Manager. Onboarding clusters allows you to manage resources, projects, and workloads on them.</p>
 <p><strong>Available nodes:</strong> The total number of nodes available across all clusters. AI Resource Manager routinely pulls node information from clusters, including resources and health.</p>
-<p><strong>Allocated GPUs:</strong> The total number of GPUs allocated to quotas across all clusters. Users belonging to projects with GPU quotas are guaranteed allocated GPU resources for their workloads in the corresponding clusters.</p>
+<p><strong>Allocated GPUs:</strong> The total number of GPUs allocated to project quotas across all clusters. Users belonging to projects with GPU quotas are guaranteed allocated GPU resources for their workloads in the corresponding clusters.</p>
 <p><strong>Running workloads:</strong> The total number of active workloads across all clusters. Workloads submitted via AI Resource Manager are optimally scheduled, tracked, and monitored for resource usage and health.</p>
 <p><strong>Clusters table</strong></p>
 <table>
@@ -2699,7 +2699,7 @@
 <p><strong>Assigned quotas:</strong> Quotas assigned to the cluster resources. Each project has a quota to limit the amount of resources they are guaranteed on the cluster.</p>
 <p><strong>Allocated GPUs:</strong> The total number of GPUs allocated to quotas in the cluster. Users belonging to projects with GPU quotas are guaranteed allocated GPU resources for their workloads.</p>
 <p><strong>Running workloads:</strong> The total number of active workloads running on the cluster. Workloads submitted via AI Resource Manager are optimally scheduled, tracked, and monitored for resource usage and health.</p>
-<p><strong>Assigned quotas table</strong></p>
+<p><strong>Projects table</strong></p>
 <table>
 <thead>
 <tr>
@@ -2709,20 +2709,20 @@
 </thead>
 <tbody>
 <tr>
-<td>Identifier</td>
-<td>Unique identifier for the quota</td>
+<td>Name</td>
+<td>Unique identifier for the projects</td>
 </tr>
 <tr>
 <td>Status</td>
-<td>Status of the quota</td>
-</tr>
-<tr>
-<td>Assigned to</td>
-<td>The project this quota applies to</td>
+<td>Status of the project</td>
 </tr>
 <tr>
 <td>GPU allocation</td>
-<td>Total number of GPUs allocated to this quota</td>
+<td>Total number of GPUs allocated to this project</td>
+</tr>
+<tr>
+<td>CPU allocation</td>
+<td>Total number of GPUs allocated to this project</td>
 </tr>
 </tbody>
 </table>
@@ -2758,6 +2758,10 @@
 <tr>
 <td>GPU devices</td>
 <td>Number of GPUs on the node</td>
+</tr>
+<tr>
+<td>GPU memory</td>
+<td>Amount of GPU memory available on the node</td>
 </tr>
 </tbody>
 </table>
