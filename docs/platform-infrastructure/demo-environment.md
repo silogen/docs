@@ -22,6 +22,9 @@ The installation process leverages helper tools called **Cluster Bloom** and **C
 - ROCm-compatible AMD GPUs (for GPU nodes)
 - Root/sudo access
 
+### Domain and SSL certificate prerequisites
+Before installing the Kubernetes services, you'll need a domain name (such as myapp.example.com) that points to your server's IP address. For production environments, this domain should point to a load balancer that distributes traffic across multiple servers. For smaller setups or demonstrations, the domain can point directly to a single server's IP address, and MetalLB will be configured to handle load balancing within the Kubernetes cluster. Additionally, you'll need an SSL certificate to enable secure HTTPS connections to your services. You can either provide your own trusted SSL certificate purchased from a certificate authority, or use the free Let's Encrypt service to automatically generate one. If using Let's Encrypt, your setup must meet one of these requirements: either have port 80 accessible from the internet (allowing Let's Encrypt to verify domain ownership through your website), or have DNS management capabilities that allow automated domain validation (where Let's Encrypt can verify ownership by temporarily adding DNS records to your domain). Finally, ensure that any firewalls, security groups, or network routing configurations are updated to allow incoming connections from users who will be accessing these services.
+
 ## Set up the Kubernetes cluster
 
 Please choose the appropriate installation scenario based on your infrastructure preferences.

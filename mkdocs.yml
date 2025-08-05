@@ -84,7 +84,7 @@ nav:
 
   - Infrastructure administrator:
     - Installation overview: platform-infrastructure/installation.md
-    - On-premises installation: platform-infrastructure/demo-environment.md
+    - On-premises installation: platform-infrastructure/onpremises-installation.md
     - Enable single sign-on: core/docs/keycloak/sso.md
 
   - AI practitioner:
