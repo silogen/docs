@@ -27,7 +27,7 @@ This quick start guide outlines the steps to set up essential AI compute resourc
 
 This guide assumes you have access to an installed SiloGen platform. To assist you with onboarding, the following configurations have already been created during the installation process:
 
-- A platform admin user has been created. The platform admin user can manage the SiloGen platform and onboard more users.
+- Platform admin users have already been created for your organization as part of the installation process. These are named devuser@domain and silogen-admin. The platform admin user can manage the SiloGen platform and onboard more users.
 - A project with a default resource quota has been created.
 - An organization entity has been created.
 - A compute cluster has been onboarded and connected to SiloGen platform.
@@ -39,34 +39,24 @@ This section outlines the steps to set up essential AI compute resources for pro
 
 ### Onboard users
 !!! Note
-    Two platform admin users have already been created for your organization as part of the installation process. These are named: devuser@domain, silogen-admin
-
-SiloGen provides multiple options for onboarding users into the platform. For small-scale trial deployments you can use 'email invite' or 'manual workaround', but for more large scale deployments we recommend using single sign-on (SSO).
+    SiloGen provides multiple options for onboarding users into the platform. For small-scale trial deployments you can invite users through email or add them manually, but for large scale deployments we recommend using single sign-on (SSO).
 
 #### Invite users through email
 
-Follow the instructions in ["User management"](../core/docs/airman/users/manage-users.md) to invite and manage more users in SiloGen.
+Follow the instructions in ["Inviting users and configuring SMTP in Keycloak"](../core/docs/keycloak/smtp-configuration.md) to invite users through email.
 
 #### Onboard users through single sign-on (SSO)
 Follow the instructions in ["Adding an identity provider to enable single sign-on"](../core/docs/keycloak/sso.md) to onboard users through SSO.
 
-#### Manual workaround
-For small scale trial customers who don't have SMTP server or SSO we provide a manual workaround solution.
-Creating a new user requires two logins with two passwords and two systems:
-- Login to keycloak (kc.domain) with silogen-admin
-  - change realm to airm
-  - add the user
-  - check 'email verified'
-  - click organizations
-  - find the airm organization
-  - add the organization
-- Login as a platform admin user to airm itself (airm.domain)
-  - click projects
-  - add the user
+#### Invite users manually
+In case your organization does not have SSO or SMTP server set up you can add users manually.
 
-### Change the default user passwords
+Follow the instructions in ["Manually managing and activating users in Airman"](../core/docs/keycloak/manual-user-managment.md) to add users manually.
 
-It is recommended to change the initial users' passwords that were created as part of the installation process. To change the passwords you need to change the Kubernetes secrets.
+
+### Change the default admin user passwords
+
+It is recommended to change the initial admin users' passwords that were created as part of the installation process. To change the passwords you need to change the Kubernetes secrets.
 
 ### Optional: Create new projects (for advanced users)
 

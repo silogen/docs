@@ -96,10 +96,10 @@ nav:
     - Training and fine-tuning:
       - Fine-tuning: core/docs/developer-center/training/fine-tuning.md
       - Models: core/docs/developer-center/training/models.md
-      - Datasets: core/docs/developer-center/training/datasets.md
+      - Onboard datasets: core/docs/developer-center/training/datasets.md
 
     - Inference:
-      - Inference overview: core/docs/developer-center/inference/overview.md
+      - Inference overview: core/docs/developer-center/inference/how-to-deploy-and-inference.md
       - Chat: core/docs/developer-center/inference/chat.md
       - Compare: core/docs/developer-center/inference/compare.md
 
