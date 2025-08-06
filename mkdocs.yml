@@ -83,8 +83,8 @@ nav:
       - Personal preferences: personal-preferences.md
 
   - Infrastructure administrator:
-    - Installation overview: platform-infrastructure/installation.md
     - On-premises installation: platform-infrastructure/onpremises-installation.md
+    - Target platforms: platform-infrastructure/target-platforms.md
     - Enable single sign-on: core/docs/keycloak/sso.md
     - Configure SMTP and invite users: core/docs/keycloak/smtp-configuration.md
     - Manual user management: core/docs/keycloak/manual-user-managment.md
