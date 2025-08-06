@@ -86,6 +86,8 @@ nav:
     - Installation overview: platform-infrastructure/installation.md
     - On-premises installation: platform-infrastructure/demo-environment.md
     - Enable single sign-on: core/docs/keycloak/sso.md
+    - Configure SMPT and invite users: core/docs/keycloak/smtp-configuration.md
+    - Manual user management: core/docs/keycloak/manual-user-managment.md
 
   - AI practitioner:
     - Developer Center overview: core/docs/developer-center/overview.md
