@@ -86,6 +86,8 @@ nav:
     - Installation overview: platform-infrastructure/installation.md
     - On-premises installation: platform-infrastructure/demo-environment.md
     - Enable single sign-on: core/docs/keycloak/sso.md
+    - Configure SMTP and invite users: core/docs/keycloak/smtp-configuration.md
+    - Manual user management: core/docs/keycloak/manual-user-managment.md
 
   - AI practitioner:
     - Developer Center overview: core/docs/developer-center/overview.md
@@ -159,3 +161,25 @@ exclude_docs: |
 
   references/best-practices.md
   references/contributing.md
+
+  # Imported files
+  ai-workloads-docs/contributing.md
+  ai-workloads-docs/getting-started.md
+  ai-workloads-docs/tutorials.md
+  ai-workloads-docs/workloads.md
+  ai-workloads-manifests/dev-chatui-aiaio/helm/mount/README.md
+  ai-workloads-manifests/dev-chatui-openwebui/helm/mount/README.md
+  ai-workloads-manifests/dev-text2image-comfyui/helm/mount/README.md
+  ai-workloads-manifests/dev-workspace-jupyterlab/helm/mount/README.md
+  ai-workloads-manifests/dev-workspace-vscode/helm/mount/README.md
+  ai-workloads-manifests/llm-inference-llamacpp-mi300x/helm/mount/README.md
+  ai-workloads-manifests/llm-inference-ollama/helm/mount/README.md
+  ai-workloads-manifests/llm-inference-openai-benchmark-guidellm/helm/mount/README.md
+  ai-workloads-manifests/llm-inference-openai-benchmark-rocmblog/helm/mount/README.md
+  ai-workloads-manifests/llm-inference-sglang/helm/mount/README.md
+  ai-workloads-manifests/llm-inference-tgi/helm/mount/README.md
+  ai-workloads-manifests/llm-inference-vllm-benchmark-mad/helm/mount/README.md
+  ai-workloads-manifests/llm-inference-vllm-benchmark-rocmblog/helm/mount/README.md
+  ai-workloads-manifests/llm-inference-vllm/helm/mount/README.md
+  ai-workloads-manifests/llm-pretraining-megatron-lm/helm/mount/README.md
+  ai-workloads-manifests/rag-embedding-infinity/helm/mount/README.md
