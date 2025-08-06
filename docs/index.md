@@ -59,7 +59,7 @@ This is your comprehensive handbook designed to help Infrastructure administrato
           <a href="./core/docs/developer-center/overview/">AI development overview</a>
         </li>
         <li>
-          <a href="./ai-development-tutorials/">Tutorials</a>
+          <a href="./cli-tutorials-overview/">Tutorials</a>
         </li>
         <li>
           <a href="./ai-workloads-manifests/workloads-overview/">Working with AI workloads</a>

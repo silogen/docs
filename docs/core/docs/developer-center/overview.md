@@ -1,8 +1,8 @@
 ---
 tags:
   - developer center
-  - ai catalog
-  - workload
+  - model catalog
+  - workloads
 ---
 
 # AI Development overview (Developer Center)

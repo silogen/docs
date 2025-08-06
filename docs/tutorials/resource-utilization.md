@@ -7,7 +7,7 @@ tags:
 
 # Resource utilization of AI workloads
 
-This guide teaches you how you can observe and manage the amount of resources that your AI workloads are using.  Follow these steps to complete find about resource utilization:
+This guide teaches you how you can observe and manage the amount of resources that your AI workloads are using. Follow these steps to complete find about resource utilization:
 
 1. Start a new AI workload to consume resources.
 2. Observe the amount of resources your AI workload is using by viewing the dashboards in SiloGen AI Resource Manager.

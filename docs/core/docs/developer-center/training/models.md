@@ -1,7 +1,7 @@
 ---
 tags:
   - developer center
-  - models
+  - model catalog
   - deployments
 ---
 

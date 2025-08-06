@@ -5,7 +5,7 @@ tags:
   - model training
 ---
 
-# Tutorials
+# CLI tutorials overview
 
 These tutorials are step-by-step guides with practical examples on how to run AI model training, fine-tuning, and inference workloads using the SiloGen platform.
 
