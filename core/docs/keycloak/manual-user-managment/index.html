@@ -839,9 +839,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#updating-the-domains-for-organization" class="md-nav__link">
+  <a href="#updating-the-email-domains-for-organization" class="md-nav__link">
     <span class="md-ellipsis">
-      Updating the domain(s) for organization
+      Updating the email domain(s) for organization
     </span>
   </a>
   
@@ -2691,9 +2691,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#updating-the-domains-for-organization" class="md-nav__link">
+  <a href="#updating-the-email-domains-for-organization" class="md-nav__link">
     <span class="md-ellipsis">
-      Updating the domain(s) for organization
+      Updating the email domain(s) for organization
     </span>
   </a>
   
@@ -2777,11 +2777,24 @@
 <p>Airman is optimized to support user management where either users are federated via an identity provider (IdP) through SSO or the user management workflow is orchestrated by the Airman UI, relying on access to an SMTP server.
 If neither option is suitable, you can manage users using the Keycloak admin console and the Airman UI.</p>
 <h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
-<p>Keycloak is set up for Airman with organizations and realms already created. The correct realm must be selected (typically <code>airm</code>) as all actions are realm-specific.</p>
-<h2 id="updating-the-domains-for-organization">Updating the domain(s) for organization<a class="headerlink" href="#updating-the-domains-for-organization" title="Permanent link">&para;</a></h2>
-<p>If you are managing users for your installation, it is likely that the default domain(s) configured for the organization will need to be updated.
+<ul>
+<li>
+<p>The URL of the keycloak instance for your application, and corresponding admin credentials are known.</p>
+</li>
+<li>
+<p>The keycloak URL is typically https://kc.<domain provided during installation>/admin/master/console/</p>
+</li>
+<li>
+<p>The keycloak credentials should be provided to you by AMD's customer success team during installation.</p>
+</li>
+<li>
+<p>Once you have logged into Keycloak, the correct realm must be selected (typically <code>airm</code>) as all actions are realm-specific.</p>
+</li>
+</ul>
+<h2 id="updating-the-email-domains-for-organization">Updating the email domain(s) for organization<a class="headerlink" href="#updating-the-email-domains-for-organization" title="Permanent link">&para;</a></h2>
+<p>If you are managing users for your installation, it is likely that the default email domain(s) configured for the organization will need to be updated.
 This can be done by navigating to the <strong>Organizations</strong> tab in Keycloak and selecting the pre-configured organization.
-Subsequently, adjust the <strong>Domain</strong> of the organization to reflect the domain(s) associated with your organization (e.g. <code>myorg.com</code> and <code>myorg.org</code>)</p>
+Subsequently, adjust the <strong>Domain</strong> of the organization to reflect the email domain(s) associated with your organization (e.g. <code>myorg.com</code> and <code>myorg.org</code>). If you are intending to support users from multiple domains in the platform, add a row for each of the email domains.</p>
 <h2 id="manual-user-management">Manual user management<a class="headerlink" href="#manual-user-management" title="Permanent link">&para;</a></h2>
 <h3 id="keycloak">Keycloak<a class="headerlink" href="#keycloak" title="Permanent link">&para;</a></h3>
 <p>Navigate to the <strong>Users</strong> in the realm. Here you can click the <strong>Add user</strong> button to create a new user. You will need to fill in the following fields:</p>

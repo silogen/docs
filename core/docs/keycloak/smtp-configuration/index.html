@@ -816,9 +816,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#updating-the-domains-for-organization" class="md-nav__link">
+  <a href="#updating-the-email-domains-for-organization" class="md-nav__link">
     <span class="md-ellipsis">
-      Updating the domain(s) for organization
+      Updating the email domain(s) for organization
     </span>
   </a>
   
@@ -2676,9 +2676,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#updating-the-domains-for-organization" class="md-nav__link">
+  <a href="#updating-the-email-domains-for-organization" class="md-nav__link">
     <span class="md-ellipsis">
-      Updating the domain(s) for organization
+      Updating the email domain(s) for organization
     </span>
   </a>
   
@@ -2753,13 +2753,24 @@
 <p>This is a guide for configuring an SMTP server in Keycloak, which is a prerequisite for inviting users to Silogen via the application.</p>
 <h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Keycloak is set up for Airman with organizations and realms already created. The correct realm must be selected (typically <code>airm</code>) as all actions are realm-specific.</li>
-<li>The organization has an SMTP server accessible that they can use to integrate with Keycloak and Airman.</li>
+<li>
+<p>The URL of the keycloak instance for your application, and corresponding admin credentials are known.</p>
+</li>
+<li>
+<p>The keycloak URL is typically https://kc.<domain provided during installation>/admin/master/console/</p>
+</li>
+<li>
+<p>The keycloak credentials should be provided to you by AMD's customer success team during installation.</p>
+</li>
+<li>
+<p>Once you have logged into Keycloak, the correct realm must be selected (typically <code>airm</code>) as all actions are realm-specific.</p>
+</li>
+<li>The organization must have an SMTP server accessible that they can use to integrate with Keycloak and Airman.</li>
 </ul>
-<h2 id="updating-the-domains-for-organization">Updating the domain(s) for organization<a class="headerlink" href="#updating-the-domains-for-organization" title="Permanent link">&para;</a></h2>
-<p>If you are managing users for your installation, it is likely that the default domain(s) configured for the organization will need to be updated.
+<h2 id="updating-the-email-domains-for-organization">Updating the email domain(s) for organization<a class="headerlink" href="#updating-the-email-domains-for-organization" title="Permanent link">&para;</a></h2>
+<p>If you are managing users for your installation, it is likely that the default email domain(s) configured for the organization will need to be updated.
 This can be done by navigating to the <strong>Organizations</strong> tab in Keycloak and selecting the pre-configured organization.
-Subsequently, adjust the <strong>Domain</strong> of the organization to reflect the domain(s) associated with your organization (e.g. <code>myorg.com</code> and <code>myorg.org</code>)</p>
+Subsequently, adjust the <strong>Domain</strong> of the organization to reflect the email domain(s) associated with your organization (e.g. <code>myorg.com</code> and <code>myorg.org</code>). If you are intending to support users from multiple domains in the platform, add a row for each of the email domains.</p>
 <h2 id="configuring-the-smtp-server">Configuring the SMTP server<a class="headerlink" href="#configuring-the-smtp-server" title="Permanent link">&para;</a></h2>
 <p>Navigate to <strong>Realm settings</strong> and then to the <strong>Email</strong> tab. Here you can configure the SMTP server that Keycloak will use to send emails. The settings you need to fill in are:</p>
 <ul>
