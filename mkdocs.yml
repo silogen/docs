@@ -55,7 +55,7 @@ plugins:
         'core/docs/airman/clusters/index.md': 'core/docs/airman/clusters/overview.md'
         'core/docs/airman/projects/index.md': 'core/docs/airman/projects/manage-projects.md'
         'core/docs/airman/users/index.md': 'core/docs/airman/users/overview.md'
-        'platform-infrastructure/index.md': 'platform-infrastructure/installation.md'
+        'platform-infrastructure/index.md': 'platform-infrastructure/on-premises-installation.md'
         'references/index.md': 'references/overview.md'
 
 markdown_extensions:
@@ -83,7 +83,7 @@ nav:
       - Personal preferences: personal-preferences.md
 
   - Infrastructure administrator:
-    - On-premises installation: platform-infrastructure/onpremises-installation.md
+    - On-premises installation: platform-infrastructure/on-premises-installation.md
     - Target platforms: platform-infrastructure/target-platforms.md
     - Enable single sign-on: core/docs/keycloak/sso.md
     - Configure SMTP and invite users: core/docs/keycloak/smtp-configuration.md

@@ -38,7 +38,7 @@ This is your comprehensive handbook designed to help Infrastructure administrato
       <ul class="intro-links">
         </li>
         <li>
-          <a href="./platform-infrastructure/onpremises-installation/">Install on-premises environment</a>
+          <a href="./platform-infrastructure/on-premises-installation/">Install on-premises environment</a>
         </li>
         <li>
           <a href="./core/docs/keycloak/sso/">Single sign-on</a>
