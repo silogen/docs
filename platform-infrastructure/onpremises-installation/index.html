@@ -11,10 +11,10 @@
       
       
       
-        <link rel="prev" href="../installation/">
+        <link rel="prev" href="../../personal-preferences/">
       
       
-        <link rel="next" href="../../core/docs/keycloak/sso/">
+        <link rel="next" href="../target-platforms/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -258,7 +258,7 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="../installation/" class="md-tabs__link">
+        <a href="./" class="md-tabs__link">
           
   
   
@@ -685,29 +685,6 @@
                 
   
   
-  
-  
-    <li class="md-nav__item">
-      <a href="../installation/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Installation overview
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
     
   
   
@@ -766,6 +743,21 @@
       Prerequisites
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Prerequisites">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#domain-and-ssl-certificate-prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Domain and SSL certificate prerequisites
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -839,6 +831,29 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../target-platforms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Target platforms
+    
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -1178,7 +1193,7 @@
   
   
   <span class="md-ellipsis">
-    Datasets
+    Onboard datasets
     
   </span>
   
@@ -1253,7 +1268,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../core/docs/developer-center/inference/overview/" class="md-nav__link">
+      <a href="../../core/docs/developer-center/inference/how-to-deploy-and-inference/" class="md-nav__link">
         
   
   
@@ -1477,7 +1492,7 @@
   
   
   <span class="md-ellipsis">
-    Deploy a model and run inference
+    Inference overview
     
   </span>
   
@@ -2712,6 +2727,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Prerequisites">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#domain-and-ssl-certificate-prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Domain and SSL certificate prerequisites
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -2839,6 +2869,8 @@
 <li>ROCm-compatible AMD GPUs (for GPU nodes)</li>
 <li>Root/sudo access</li>
 </ul>
+<h3 id="domain-and-ssl-certificate-prerequisites">Domain and SSL certificate prerequisites<a class="headerlink" href="#domain-and-ssl-certificate-prerequisites" title="Permanent link">&para;</a></h3>
+<p>Before installing the Kubernetes services, you'll need a domain name (such as myapp.example.com) that points to your server's IP address. For production environments, this domain should point to a load balancer that distributes traffic across multiple servers. For smaller setups or demonstrations, the domain can point directly to a single server's IP address, and MetalLB will be configured to handle load balancing within the Kubernetes cluster. Additionally, you'll need an SSL certificate to enable secure HTTPS connections to your services. You can either provide your own trusted SSL certificate purchased from a certificate authority, or use the free Let's Encrypt service to automatically generate one. If using Let's Encrypt, your setup must meet one of these requirements: either have port 80 accessible from the internet (allowing Let's Encrypt to verify domain ownership through your website), or have DNS management capabilities that allow automated domain validation (where Let's Encrypt can verify ownership by temporarily adding DNS records to your domain). Finally, ensure that any firewalls, security groups, or network routing configurations are updated to allow incoming connections from users who will be accessing these services.</p>
 <h2 id="set-up-the-kubernetes-cluster">Set up the Kubernetes cluster<a class="headerlink" href="#set-up-the-kubernetes-cluster" title="Permanent link">&para;</a></h2>
 <p>Please choose the appropriate installation scenario based on your infrastructure preferences.</p>
 <h3 id="set-up-a-kubernetes-cluster-no-existing-kubernetes-cluster">Set up a Kubernetes cluster (no existing Kubernetes cluster)<a class="headerlink" href="#set-up-a-kubernetes-cluster-no-existing-kubernetes-cluster" title="Permanent link">&para;</a></h3>
