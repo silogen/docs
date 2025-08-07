@@ -13,6 +13,9 @@ The SiloGen platform provides a stable starting point for AI model development, 
 
 This guide assumes the user has access to an installed SiloGen platform. Besides that, you should have access to compute cluster and a project with allocated compute resources.
 
+!!! warning
+    Your system needs a Hugging Face token to download models.
+
 ## Getting started
 
 1. Activate your SiloGen account and login to SiloGen Developer Center.
@@ -32,7 +35,7 @@ Based on your background you can choose either no-code or more advanced coding t
 
 #### Model deployment and inference
 
-To learn how to deploy a model and run inference, please complete the tutorial ["How to deploy a model and run inference"](..core/docs/developer-center/inference/how-to-deploy-and-inference.md).
+To learn how to deploy a model and run inference, please complete the tutorial ["How to deploy a model and run inference"](../core/docs/developer-center/inference/how-to-deploy-and-inference.md).
 
 
 #### No-code tutorial: fine-tune a model with no code
