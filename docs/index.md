@@ -36,11 +36,12 @@ This is your comprehensive handbook designed to help Infrastructure administrato
       <h3>Infrastructure administrator</h3>
 
       <ul class="intro-links">
-        <li>
-          <a href="./platform-infrastructure/installation/">Platform installation basics</a>
         </li>
         <li>
-          <a href="./platform-infrastructure/demo-environment/">Install on-premises environment</a>
+          <a href="./platform-infrastructure/onpremises-installation/">Install on-premises environment</a>
+        </li>
+        <li>
+          <a href="./core/docs/keycloak/sso/">Single sign-on</a>
         </li>
       </ul>
     </div>
@@ -59,13 +60,13 @@ This is your comprehensive handbook designed to help Infrastructure administrato
           <a href="./core/docs/developer-center/overview/">AI development overview</a>
         </li>
         <li>
-          <a href="./cli-tutorials-overview/">Tutorials</a>
+          <a href="./core/docs/developer-center/inference/how-to-deploy-and-inference/">Deploy model and run inference</a>
         </li>
         <li>
-          <a href="./ai-workloads-manifests/workloads-overview/">Working with AI workloads</a>
+          <a href="./core/docs/developer-center/training/fine-tuning/">Model finetuning</a>
         </li>
         <li>
-          <a href="./core/docs/developer-center/training/models/">Access models in the models catalogue</a>
+          <a href="./core/docs/developer-center/training/models/">Access models</a>
         </li>
       </ul>
     </div>
@@ -82,6 +83,9 @@ This is your comprehensive handbook designed to help Infrastructure administrato
       <ul class="intro-links">
         <li>
           <a href="./core/docs/airman/overview/">AI resource overview</a>
+        </li>
+        <li>
+          <a href="./quick-start-guides/airman-quick-start/">Getting started</a>
         </li>
         <li>
           <a href="./core/docs/airman/clusters/overview/">Managing clusters</a>

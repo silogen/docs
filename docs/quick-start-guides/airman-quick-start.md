@@ -26,7 +26,8 @@ This quick start guide outlines the steps to set up essential AI compute resourc
 ## Prerequisites
 
 This guide assumes you have access to an installed SiloGen platform. To assist you with onboarding, the following configurations have already been created during the installation process:
-- A platform admin user has been created. The platform admin user can manage the SiloGen platform and onboard more users.
+
+- Platform admin users have already been created for your organization as part of the installation process. These are named devuser@domain and silogen-admin. The platform admin user can manage the SiloGen platform and onboard more users.
 - A project with a default resource quota has been created.
 - An organization entity has been created.
 - A compute cluster has been onboarded and connected to SiloGen platform.
@@ -34,34 +35,32 @@ This guide assumes you have access to an installed SiloGen platform. To assist y
 
 ## Getting started
 
-### 1. Onboard users
+This section outlines the steps to set up essential AI compute resources for project work.
+
+### Onboard users
 !!! Note
-    A platform admin user has already been created for your organization as part of the installation process.
+    SiloGen provides multiple options for onboarding users into the platform. For small-scale trial deployments you can invite users through email or add them manually, but for large scale deployments we recommend using single sign-on (SSO).
 
-SiloGen provides two options to onboard users into the platform. For small-scale trial deployments you can use Option A, but for more large scale deployments we recommend Option B using SSO.
+#### Invite users through email
 
-#### Option A - Invite users through email
+Follow the instructions in ["Inviting users and configuring SMTP in Keycloak"](../core/docs/keycloak/smtp-configuration.md) to invite users through email.
 
-Follow the instructions in ["User management"](../core/docs/airman/users/manage-users.md) to invite and manage more users in SiloGen.
-#### Option B - Onboard users through single sign-on (SSO)
+#### Onboard users through single sign-on (SSO)
 Follow the instructions in ["Adding an identity provider to enable single sign-on"](../core/docs/keycloak/sso.md) to onboard users through SSO.
 
-### 2. Onboard a compute cluster
+#### Invite users manually
+In case your organization does not have SSO or SMTP server set up you can add users manually.
+
+Follow the instructions in ["Manually managing and activating users in Airman"](../core/docs/keycloak/manual-user-managment.md) to add users manually.
+
+
+### Change the default admin user passwords
+
+It is recommended to change the initial admin users' passwords that were created as part of the installation process. To change the passwords you need to change the Kubernetes secrets.
+
+### Optional: Create new projects (for advanced users)
+
 !!! Note
-    A compute cluster has already been connected to your control plane as part of the installation process.
+    A default project with quota has already been created for your organization as part of the installation process. In case you want to create new projects follow the instructions below.
 
-To learn how to onboard a new compute cluster, please follow these intructions in ["Onboard a new cluster"](../core/docs/airman/clusters/add-clusters-ui.md)
-
-### 3. Create a project with quota
-
-!!! Note
-    A default project and quota has already been created for your organization as part of the installation process.
-
-To learn how to create a new project with quota follow the instructions in ["Manage projects"](../core/docs/airman/projects/manage-projects.md)
-
-### 4. Change the default password
-To change the default password that was created as part of the installation process, please follow these instructions.
-
-### 5. Bonus step - Tutorial: GPU resource utilization
-
-To learn how to analyze GPU utilization, follow this tutorial guide["Resource utilization tutorial"](../tutorials/resource-utilization.md).
+To learn how to create a new project with guaranteed quota follow the instructions in ["Manage projects"](../core/docs/airman/projects/manage-projects.md)

@@ -83,8 +83,8 @@ nav:
       - Personal preferences: personal-preferences.md
 
   - Infrastructure administrator:
-    - Installation overview: platform-infrastructure/installation.md
-    - On-premises installation: platform-infrastructure/demo-environment.md
+    - On-premises installation: platform-infrastructure/onpremises-installation.md
+    - Target platforms: platform-infrastructure/target-platforms.md
     - Enable single sign-on: core/docs/keycloak/sso.md
     - Configure SMTP and invite users: core/docs/keycloak/smtp-configuration.md
     - Manual user management: core/docs/keycloak/manual-user-managment.md
@@ -98,10 +98,10 @@ nav:
     - Training and fine-tuning:
       - Fine-tuning: core/docs/developer-center/training/fine-tuning.md
       - Models: core/docs/developer-center/training/models.md
-      - Datasets: core/docs/developer-center/training/datasets.md
+      - Onboard datasets: core/docs/developer-center/training/datasets.md
 
     - Inference:
-      - Inference overview: core/docs/developer-center/inference/overview.md
+      - Inference overview: core/docs/developer-center/inference/how-to-deploy-and-inference.md
       - Chat: core/docs/developer-center/inference/chat.md
       - Compare: core/docs/developer-center/inference/compare.md
 
