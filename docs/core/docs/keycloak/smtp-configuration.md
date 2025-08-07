@@ -12,13 +12,19 @@ This is a guide for configuring an SMTP server in Keycloak, which is a prerequis
 
 ## Prerequisites
 
-- Keycloak is set up for Airman with organizations and realms already created. The correct realm must be selected (typically `airm`) as all actions are realm-specific.
-- The organization has an SMTP server accessible that they can use to integrate with Keycloak and Airman.
+- The URL of the keycloak instance for your application, and corresponding admin credentials are known.
 
-## Updating the domain(s) for organization
-If you are managing users for your installation, it is likely that the default domain(s) configured for the organization will need to be updated.
+  - The keycloak URL is typically https://kc.<domain provided during installation>/admin/master/console/
+  - The keycloak credentials should be provided to you by AMD's customer success team during installation.
+
+- Once you have logged into Keycloak, the correct realm must be selected (typically `airm`) as all actions are realm-specific.
+- The organization must have an SMTP server accessible that they can use to integrate with Keycloak and Airman.
+
+## Updating the email domain(s) for organization
+
+If you are managing users for your installation, it is likely that the default email domain(s) configured for the organization will need to be updated.
 This can be done by navigating to the **Organizations** tab in Keycloak and selecting the pre-configured organization.
-Subsequently, adjust the **Domain** of the organization to reflect the domain(s) associated with your organization (e.g. `myorg.com` and `myorg.org`)
+Subsequently, adjust the **Domain** of the organization to reflect the email domain(s) associated with your organization (e.g. `myorg.com` and `myorg.org`). If you are intending to support users from multiple domains in the platform, add a row for each of the email domains.
 
 ## Configuring the SMTP server
 
