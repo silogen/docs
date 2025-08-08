@@ -101,7 +101,7 @@ nav:
       - Onboard datasets: core/docs/developer-center/training/datasets.md
 
     - Inference:
-      - Inference overview: core/docs/developer-center/inference/how-to-deploy-and-inference.md
+      - Inference overview: core/docs/developer-center/inference/overview.md
       - Chat: core/docs/developer-center/inference/chat.md
       - Compare: core/docs/developer-center/inference/compare.md
 
