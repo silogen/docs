@@ -23,37 +23,78 @@ The installation process leverages helper tools called **Cluster Bloom** and **C
 - Root/sudo access
 
 ### Domain and SSL certificate prerequisites
-Before installing the Kubernetes services, you'll need a domain name (such as myapp.example.com) that points to your server's IP address. For production environments, this domain should point to a load balancer that distributes traffic across multiple servers. For smaller setups or demonstrations, the domain can point directly to a single server's IP address, and MetalLB will be configured to handle load balancing within the Kubernetes cluster. Additionally, you'll need an SSL certificate to enable secure HTTPS connections to your services. You can either provide your own trusted SSL certificate purchased from a certificate authority, or use the free Let's Encrypt service to automatically generate one. If using Let's Encrypt, your setup must meet one of these requirements: either have port 80 accessible from the internet (allowing Let's Encrypt to verify domain ownership through your website), or have DNS management capabilities that allow automated domain validation (where Let's Encrypt can verify ownership by temporarily adding DNS records to your domain). Finally, ensure that any firewalls, security groups, or network routing configurations are updated to allow incoming connections from users who will be accessing these services.
+- Before installing the Kubernetes services, you'll need a domain name (such as myapp.example.com) that points to your server's IP address.
+  - For production environments, this domain should point to a load balancer that distributes traffic across multiple servers.
+  - For smaller setups or demonstrations, the domain can point directly to a single server's IP address, and MetalLB will be configured to handle load balancing within the Kubernetes cluster.
+- Additionally, you'll need an SSL certificate to enable secure HTTPS connections to your services.
+  - You can either provide your own trusted SSL certificate purchased from a certificate authority, or use the free Let's Encrypt service to automatically generate one.
+  - If using Let's Encrypt, your setup must meet one of these requirements: either have port 80 accessible from the internet (allowing Let's Encrypt to verify domain ownership through your website), or have DNS management capabilities that allow automated domain validation (where Let's Encrypt can verify ownership by temporarily adding DNS records to your domain).
+- Finally, ensure that any firewalls, security groups, or network routing configurations are updated to allow incoming connections from users who will be accessing these services.
 
-## Set up the Kubernetes cluster
+## Install Kubernetes cluster and software
 
-Please choose the appropriate installation scenario based on your infrastructure preferences.
-
-### Set up a Kubernetes cluster (no existing Kubernetes cluster)
-
-Use **Cluster Bloom** to install and configure a Kubernetes cluster. It installs the following features to prepare a (primarily AMD GPU) node to be part of a Kubernetes cluster:
+You will use an installation script called **Cluster Bloom** to install and configure a Kubernetes cluster and install the SiloGen software. It installs the following features to prepare an AMD GPU node to be part of a Kubernetes cluster:
 
 - Automated RKE2 Kubernetes cluster deployment
 - ROCm setup and configuration for AMD GPU nodes
 - Disk management and Longhorn storage integration
 - Multi-node cluster support with easy node joining
 - 1Password integration for secrets management
-- Cluster Forge integration
+- Install the SiloGen software using Cluster Forge tool
 
-#### Installation steps
-Download the latest Cluster Bloom release (adjust the URL to the release of your preference):
+### 1. SSH to node as root user
+Access the node using SSH as root user.
 
+### 2. Download the latest installation script
+
+Go to the working folder where you want to install the release.
+
+Download the latest installation script (adjust the URL to the release of your preference):
 ```
 wget https://github.com/silogen/cluster-bloom/releases/latest/download/bloom
 ```
-
-and run:
-
+### 3. Make file executable
+```
+chmod +x bloom
+```
+### 4. Start the installation process
 ```
 sudo ./bloom
 ```
+### 5. Create installation configuration using the Installation wizard
 
-The Cluster Bloom interface will appear:
+The Installation wizard is a helper tool that guides the user in creating the optimal configuration for the installation.
+The wizard includes the following values:
+
+#### First node
+Specifies if this is the first node in the cluster. Set to `false` for additional nodes joining an existing cluster.
+#### GPU node
+Specifies whether the node has GPUs. Set to `false` for CPU-only nodes. When true, ROCm will be installed and configured.
+#### OIDC URL
+URL of the OIDC provider for authentication. Leave empty to skip OIDC configuration.
+#### Skip disk check
+Specifies if disk check should be performed. Set to `true` if you don't want automatic disk setup.
+#### Selected disks
+List of disk devices to use. Example: `dev/sdb`. Leave empty for automatic selection.
+#### Longhorn disks
+List of disk paths for Longhorn storage. Leave empty for automatic configuration.
+#### Cluster-Forge release
+The ClusterForge release `URL` or `none` to skip the SW installation.
+#### Domain
+Domain name for the cluster, e.g., `cluster.example.com`. The domain name is used for ingress configuration.
+#### Use cert manager
+Set to `Yes` to use cert-manager with Let's encrypt for automatic TLS certificates. Set to `false` to provide your own certificates.
+#### Cert option
+Certificate option when `Use cert manager` is false. Choose `existing` to use existing certificate files, or `generate` to create a self-signed certificate.
+
+#### Configuration complete!
+Once the wizard has completed you can find the configuration file in `bloom.yaml`.
+
+### 6. Run the installation with the configuration
+To run the actual installation select `y` in the following step
+`Would you like to run bloom with this configuration no? (y/n)`
+
+The installation will take roughly 30 minutes. You can now follow the installation progress through the user interface:
 
 ![Cluster Bloom Interface](../media/infra/bloom.png)
 
@@ -61,11 +102,21 @@ For systems with unmounted physical disks, a selection prompt will appear:
 
 ![Cluster Bloom Disk Selection](../media/infra/bloom-disk-selection.png)
 
+### 7. Adding a second node to cluster (optional)
 After successful installation, Cluster Bloom generates `additional_node_command.txt`, which contains the command for installing additional nodes into the cluster.
 
-### Install Kubernetes software into an existing Kubernetes cluster
+### 8. Specify HuggingFace token
+In order to download and access gated models from Hugging Face, you need to provide a Hugging Face token. The HuggingFace token is defined as a Kubernetes secret within SiloGen platform.
 
-To enable running AI workloads on the SiloGen platform in an existing Kubernetes cluster, download a Cluster Forge release package and run `deploy.sh`. This assumes there is a working Kubernetes cluster to deploy into, and the current Kubeconfig context refers to that cluster.
+### 8. Validating the installation
+
+Verify successful installation by running TinyLlama workloads as described
+[here](../ai-workloads-manifests/llm-inference-vllm/helm/README.md).
+You can confirm that services are running in the cluster using K9s, a terminal-based UI for Kubernetes clusters, which is installed by Cluster Bloom.
+
+## Install only software into an existing Kubernetes cluster
+
+To install SiloGen platform in an existing Kubernetes cluster, download a Cluster Forge release package and run `deploy.sh`. This assumes there is a working Kubernetes cluster to deploy into, and the current Kubeconfig context refers to that cluster.
 
 For the Cluster Forge `deploy` release:
 
@@ -74,12 +125,6 @@ wget https://github.com/silogen/cluster-forge/releases/download/deploy/deploy-re
 tar -xzvf deploy-release.tar.gz
 sudo bash clusterforge/deploy.sh
 ```
-
-## Validating the installation
-
-Verify successful installation by running TinyLlama workloads as described
-[here](../ai-workloads-manifests/llm-inference-vllm/helm/README.md).
-You can confirm that services are running in the cluster using K9s, a terminal-based UI for Kubernetes clusters, which is installed by Cluster Bloom.
 
 ## Appendix
 
