@@ -102,9 +102,10 @@ For systems with unmounted physical disks, a selection prompt will appear:
 
 ![Cluster Bloom Disk Selection](../media/infra/bloom-disk-selection.png)
 
+### 7. Adding a second node to cluster (optional)
 After successful installation, Cluster Bloom generates `additional_node_command.txt`, which contains the command for installing additional nodes into the cluster.
 
-### 7. Specify HuggingFace token
+### 8. Specify HuggingFace token
 In order to download and access gated models from Hugging Face, you need to provide a Hugging Face token. The HuggingFace token is defined as a Kubernetes secret within SiloGen platform.
 
 ### 8. Validating the installation
