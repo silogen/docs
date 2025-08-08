@@ -762,29 +762,155 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#set-up-the-kubernetes-cluster" class="md-nav__link">
+  <a href="#install-kubernetes-cluster-and-software" class="md-nav__link">
     <span class="md-ellipsis">
-      Set up the Kubernetes cluster
+      Install Kubernetes cluster and software
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Set up the Kubernetes cluster">
+    <nav class="md-nav" aria-label="Install Kubernetes cluster and software">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#set-up-a-kubernetes-cluster-no-existing-kubernetes-cluster" class="md-nav__link">
+  <a href="#1-ssh-to-node-as-root-user" class="md-nav__link">
     <span class="md-ellipsis">
-      Set up a Kubernetes cluster (no existing Kubernetes cluster)
+      1. SSH to node as root user
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Set up a Kubernetes cluster (no existing Kubernetes cluster)">
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-download-the-latest-installation-script" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Download the latest installation script
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-make-file-executable" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Make file executable
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-start-the-installation-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Start the installation process
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-create-installation-configuration-using-the-installation-wizard" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Create installation configuration using the Installation wizard
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Create installation configuration using the Installation wizard">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#installation-steps" class="md-nav__link">
+  <a href="#first-node" class="md-nav__link">
     <span class="md-ellipsis">
-      Installation steps
+      First node
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gpu-node" class="md-nav__link">
+    <span class="md-ellipsis">
+      GPU node
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#oidc-url" class="md-nav__link">
+    <span class="md-ellipsis">
+      OIDC URL
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#skip-disk-check" class="md-nav__link">
+    <span class="md-ellipsis">
+      Skip disk check
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#selected-disks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Selected disks
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#longhorn-disks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Longhorn disks
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cluster-forge-release" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cluster-Forge release
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#domain" class="md-nav__link">
+    <span class="md-ellipsis">
+      Domain
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-cert-manager" class="md-nav__link">
+    <span class="md-ellipsis">
+      Use cert manager
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cert-option" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cert option
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuration-complete" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuration complete!
     </span>
   </a>
   
@@ -796,9 +922,36 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#install-kubernetes-software-into-an-existing-kubernetes-cluster" class="md-nav__link">
+  <a href="#6-run-the-installation-with-the-configuration" class="md-nav__link">
     <span class="md-ellipsis">
-      Install Kubernetes software into an existing Kubernetes cluster
+      6. Run the installation with the configuration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-adding-a-second-node-to-cluster-optional" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Adding a second node to cluster (optional)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-specify-huggingface-token" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Specify HuggingFace token
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-validating-the-installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Validating the installation
     </span>
   </a>
   
@@ -810,9 +963,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#validating-the-installation" class="md-nav__link">
+  <a href="#install-only-software-into-an-existing-kubernetes-cluster" class="md-nav__link">
     <span class="md-ellipsis">
-      Validating the installation
+      Install only software into an existing Kubernetes cluster
     </span>
   </a>
   
@@ -2745,29 +2898,155 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#set-up-the-kubernetes-cluster" class="md-nav__link">
+  <a href="#install-kubernetes-cluster-and-software" class="md-nav__link">
     <span class="md-ellipsis">
-      Set up the Kubernetes cluster
+      Install Kubernetes cluster and software
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Set up the Kubernetes cluster">
+    <nav class="md-nav" aria-label="Install Kubernetes cluster and software">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#set-up-a-kubernetes-cluster-no-existing-kubernetes-cluster" class="md-nav__link">
+  <a href="#1-ssh-to-node-as-root-user" class="md-nav__link">
     <span class="md-ellipsis">
-      Set up a Kubernetes cluster (no existing Kubernetes cluster)
+      1. SSH to node as root user
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Set up a Kubernetes cluster (no existing Kubernetes cluster)">
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-download-the-latest-installation-script" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Download the latest installation script
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-make-file-executable" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Make file executable
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-start-the-installation-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Start the installation process
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-create-installation-configuration-using-the-installation-wizard" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Create installation configuration using the Installation wizard
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Create installation configuration using the Installation wizard">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#installation-steps" class="md-nav__link">
+  <a href="#first-node" class="md-nav__link">
     <span class="md-ellipsis">
-      Installation steps
+      First node
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gpu-node" class="md-nav__link">
+    <span class="md-ellipsis">
+      GPU node
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#oidc-url" class="md-nav__link">
+    <span class="md-ellipsis">
+      OIDC URL
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#skip-disk-check" class="md-nav__link">
+    <span class="md-ellipsis">
+      Skip disk check
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#selected-disks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Selected disks
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#longhorn-disks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Longhorn disks
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cluster-forge-release" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cluster-Forge release
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#domain" class="md-nav__link">
+    <span class="md-ellipsis">
+      Domain
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-cert-manager" class="md-nav__link">
+    <span class="md-ellipsis">
+      Use cert manager
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cert-option" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cert option
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuration-complete" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuration complete!
     </span>
   </a>
   
@@ -2779,9 +3058,36 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#install-kubernetes-software-into-an-existing-kubernetes-cluster" class="md-nav__link">
+  <a href="#6-run-the-installation-with-the-configuration" class="md-nav__link">
     <span class="md-ellipsis">
-      Install Kubernetes software into an existing Kubernetes cluster
+      6. Run the installation with the configuration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-adding-a-second-node-to-cluster-optional" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Adding a second node to cluster (optional)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-specify-huggingface-token" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Specify HuggingFace token
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-validating-the-installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Validating the installation
     </span>
   </a>
   
@@ -2793,9 +3099,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#validating-the-installation" class="md-nav__link">
+  <a href="#install-only-software-into-an-existing-kubernetes-cluster" class="md-nav__link">
     <span class="md-ellipsis">
-      Validating the installation
+      Install only software into an existing Kubernetes cluster
     </span>
   </a>
   
@@ -2870,42 +3176,85 @@
 <li>Root/sudo access</li>
 </ul>
 <h3 id="domain-and-ssl-certificate-prerequisites">Domain and SSL certificate prerequisites<a class="headerlink" href="#domain-and-ssl-certificate-prerequisites" title="Permanent link">&para;</a></h3>
-<p>Before installing the Kubernetes services, you'll need a domain name (such as myapp.example.com) that points to your server's IP address. For production environments, this domain should point to a load balancer that distributes traffic across multiple servers. For smaller setups or demonstrations, the domain can point directly to a single server's IP address, and MetalLB will be configured to handle load balancing within the Kubernetes cluster. Additionally, you'll need an SSL certificate to enable secure HTTPS connections to your services. You can either provide your own trusted SSL certificate purchased from a certificate authority, or use the free Let's Encrypt service to automatically generate one. If using Let's Encrypt, your setup must meet one of these requirements: either have port 80 accessible from the internet (allowing Let's Encrypt to verify domain ownership through your website), or have DNS management capabilities that allow automated domain validation (where Let's Encrypt can verify ownership by temporarily adding DNS records to your domain). Finally, ensure that any firewalls, security groups, or network routing configurations are updated to allow incoming connections from users who will be accessing these services.</p>
-<h2 id="set-up-the-kubernetes-cluster">Set up the Kubernetes cluster<a class="headerlink" href="#set-up-the-kubernetes-cluster" title="Permanent link">&para;</a></h2>
-<p>Please choose the appropriate installation scenario based on your infrastructure preferences.</p>
-<h3 id="set-up-a-kubernetes-cluster-no-existing-kubernetes-cluster">Set up a Kubernetes cluster (no existing Kubernetes cluster)<a class="headerlink" href="#set-up-a-kubernetes-cluster-no-existing-kubernetes-cluster" title="Permanent link">&para;</a></h3>
-<p>Use <strong>Cluster Bloom</strong> to install and configure a Kubernetes cluster. It installs the following features to prepare a (primarily AMD GPU) node to be part of a Kubernetes cluster:</p>
+<ul>
+<li>Before installing the Kubernetes services, you'll need a domain name (such as myapp.example.com) that points to your server's IP address.</li>
+<li>For production environments, this domain should point to a load balancer that distributes traffic across multiple servers.</li>
+<li>For smaller setups or demonstrations, the domain can point directly to a single server's IP address, and MetalLB will be configured to handle load balancing within the Kubernetes cluster.</li>
+<li>Additionally, you'll need an SSL certificate to enable secure HTTPS connections to your services.</li>
+<li>You can either provide your own trusted SSL certificate purchased from a certificate authority, or use the free Let's Encrypt service to automatically generate one.</li>
+<li>If using Let's Encrypt, your setup must meet one of these requirements: either have port 80 accessible from the internet (allowing Let's Encrypt to verify domain ownership through your website), or have DNS management capabilities that allow automated domain validation (where Let's Encrypt can verify ownership by temporarily adding DNS records to your domain).</li>
+<li>Finally, ensure that any firewalls, security groups, or network routing configurations are updated to allow incoming connections from users who will be accessing these services.</li>
+</ul>
+<h2 id="install-kubernetes-cluster-and-software">Install Kubernetes cluster and software<a class="headerlink" href="#install-kubernetes-cluster-and-software" title="Permanent link">&para;</a></h2>
+<p>You will use an installation script called <strong>Cluster Bloom</strong> to install and configure a Kubernetes cluster and install the SiloGen software. It installs the following features to prepare an AMD GPU node to be part of a Kubernetes cluster:</p>
 <ul>
 <li>Automated RKE2 Kubernetes cluster deployment</li>
 <li>ROCm setup and configuration for AMD GPU nodes</li>
 <li>Disk management and Longhorn storage integration</li>
 <li>Multi-node cluster support with easy node joining</li>
 <li>1Password integration for secrets management</li>
-<li>Cluster Forge integration</li>
+<li>Install the SiloGen software using Cluster Forge tool</li>
 </ul>
-<h4 id="installation-steps">Installation steps<a class="headerlink" href="#installation-steps" title="Permanent link">&para;</a></h4>
-<p>Download the latest Cluster Bloom release (adjust the URL to the release of your preference):</p>
+<h3 id="1-ssh-to-node-as-root-user">1. SSH to node as root user<a class="headerlink" href="#1-ssh-to-node-as-root-user" title="Permanent link">&para;</a></h3>
+<p>Access the node using SSH as root user.</p>
+<h3 id="2-download-the-latest-installation-script">2. Download the latest installation script<a class="headerlink" href="#2-download-the-latest-installation-script" title="Permanent link">&para;</a></h3>
+<p>Go to the working folder where you want to install the release.</p>
+<p>Download the latest installation script (adjust the URL to the release of your preference):
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>wget https://github.com/silogen/cluster-bloom/releases/latest/download/bloom
+</code></pre></div></p>
+<h3 id="3-make-file-executable">3. Make file executable<a class="headerlink" href="#3-make-file-executable" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>chmod +x bloom
 </code></pre></div>
-<p>and run:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>sudo ./bloom
+<h3 id="4-start-the-installation-process">4. Start the installation process<a class="headerlink" href="#4-start-the-installation-process" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>sudo ./bloom
 </code></pre></div>
-<p>The Cluster Bloom interface will appear:</p>
+<h3 id="5-create-installation-configuration-using-the-installation-wizard">5. Create installation configuration using the Installation wizard<a class="headerlink" href="#5-create-installation-configuration-using-the-installation-wizard" title="Permanent link">&para;</a></h3>
+<p>The Installation wizard is a helper tool that guides the user in creating the optimal configuration for the installation.
+The wizard includes the following values:</p>
+<h4 id="first-node">First node<a class="headerlink" href="#first-node" title="Permanent link">&para;</a></h4>
+<p>Specifies if this is the first node in the cluster. Set to <code>false</code> for additional nodes joining an existing cluster.</p>
+<h4 id="gpu-node">GPU node<a class="headerlink" href="#gpu-node" title="Permanent link">&para;</a></h4>
+<p>Specifies whether the node has GPUs. Set to <code>false</code> for CPU-only nodes. When true, ROCm will be installed and configured.</p>
+<h4 id="oidc-url">OIDC URL<a class="headerlink" href="#oidc-url" title="Permanent link">&para;</a></h4>
+<p>URL of the OIDC provider for authentication. Leave empty to skip OIDC configuration.</p>
+<h4 id="skip-disk-check">Skip disk check<a class="headerlink" href="#skip-disk-check" title="Permanent link">&para;</a></h4>
+<p>Specifies if disk check should be performed. Set to <code>true</code> if you don't want automatic disk setup.</p>
+<h4 id="selected-disks">Selected disks<a class="headerlink" href="#selected-disks" title="Permanent link">&para;</a></h4>
+<p>List of disk devices to use. Example: <code>dev/sdb</code>. Leave empty for automatic selection.</p>
+<h4 id="longhorn-disks">Longhorn disks<a class="headerlink" href="#longhorn-disks" title="Permanent link">&para;</a></h4>
+<p>List of disk paths for Longhorn storage. Leave empty for automatic configuration.</p>
+<h4 id="cluster-forge-release">Cluster-Forge release<a class="headerlink" href="#cluster-forge-release" title="Permanent link">&para;</a></h4>
+<p>The ClusterForge release <code>URL</code> or <code>none</code> to skip the SW installation.</p>
+<h4 id="domain">Domain<a class="headerlink" href="#domain" title="Permanent link">&para;</a></h4>
+<p>Domain name for the cluster, e.g., <code>cluster.example.com</code>. The domain name is used for ingress configuration.</p>
+<h4 id="use-cert-manager">Use cert manager<a class="headerlink" href="#use-cert-manager" title="Permanent link">&para;</a></h4>
+<p>Set to <code>Yes</code> to use cert-manager with Let's encrypt for automatic TLS certificates. Set to <code>false</code> to provide your own certificates.</p>
+<h4 id="cert-option">Cert option<a class="headerlink" href="#cert-option" title="Permanent link">&para;</a></h4>
+<p>Certificate option when <code>Use cert manager</code> is false. Choose <code>existing</code> to use existing certificate files, or <code>generate</code> to create a self-signed certificate.</p>
+<h4 id="configuration-complete">Configuration complete!<a class="headerlink" href="#configuration-complete" title="Permanent link">&para;</a></h4>
+<p>Once the wizard has completed you can find the configuration file in <code>bloom.yaml</code>.</p>
+<h3 id="6-run-the-installation-with-the-configuration">6. Run the installation with the configuration<a class="headerlink" href="#6-run-the-installation-with-the-configuration" title="Permanent link">&para;</a></h3>
+<p>To run the actual installation select <code>y</code> in the following step
+<code>Would you like to run bloom with this configuration no? (y/n)</code></p>
+<p>The installation will take roughly 30 minutes. You can now follow the installation progress through the user interface:</p>
 <p><img alt="Cluster Bloom Interface" src="../../media/infra/bloom.png" /></p>
 <p>For systems with unmounted physical disks, a selection prompt will appear:</p>
 <p><img alt="Cluster Bloom Disk Selection" src="../../media/infra/bloom-disk-selection.png" /></p>
+<h3 id="7-adding-a-second-node-to-cluster-optional">7. Adding a second node to cluster (optional)<a class="headerlink" href="#7-adding-a-second-node-to-cluster-optional" title="Permanent link">&para;</a></h3>
 <p>After successful installation, Cluster Bloom generates <code>additional_node_command.txt</code>, which contains the command for installing additional nodes into the cluster.</p>
-<h3 id="install-kubernetes-software-into-an-existing-kubernetes-cluster">Install Kubernetes software into an existing Kubernetes cluster<a class="headerlink" href="#install-kubernetes-software-into-an-existing-kubernetes-cluster" title="Permanent link">&para;</a></h3>
-<p>To enable running AI workloads on the SiloGen platform in an existing Kubernetes cluster, download a Cluster Forge release package and run <code>deploy.sh</code>. This assumes there is a working Kubernetes cluster to deploy into, and the current Kubeconfig context refers to that cluster.</p>
-<p>For the Cluster Forge <code>deploy</code> release:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>wget https://github.com/silogen/cluster-forge/releases/download/deploy/deploy-release.tar.gz
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>tar -xzvf deploy-release.tar.gz
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>sudo bash clusterforge/deploy.sh
-</code></pre></div>
-<h2 id="validating-the-installation">Validating the installation<a class="headerlink" href="#validating-the-installation" title="Permanent link">&para;</a></h2>
+<h3 id="8-specify-huggingface-token">8. Specify HuggingFace token<a class="headerlink" href="#8-specify-huggingface-token" title="Permanent link">&para;</a></h3>
+<p>In order to download and access gated models from Hugging Face, you need to provide a Hugging Face token. The HuggingFace token is defined as a Kubernetes secret within SiloGen platform.</p>
+<h3 id="8-validating-the-installation">8. Validating the installation<a class="headerlink" href="#8-validating-the-installation" title="Permanent link">&para;</a></h3>
 <p>Verify successful installation by running TinyLlama workloads as described
 <a href="../../ai-workloads-manifests/llm-inference-vllm/helm/">here</a>.
 You can confirm that services are running in the cluster using K9s, a terminal-based UI for Kubernetes clusters, which is installed by Cluster Bloom.</p>
+<h2 id="install-only-software-into-an-existing-kubernetes-cluster">Install only software into an existing Kubernetes cluster<a class="headerlink" href="#install-only-software-into-an-existing-kubernetes-cluster" title="Permanent link">&para;</a></h2>
+<p>To install SiloGen platform in an existing Kubernetes cluster, download a Cluster Forge release package and run <code>deploy.sh</code>. This assumes there is a working Kubernetes cluster to deploy into, and the current Kubeconfig context refers to that cluster.</p>
+<p>For the Cluster Forge <code>deploy</code> release:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>wget https://github.com/silogen/cluster-forge/releases/download/deploy/deploy-release.tar.gz
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>tar -xzvf deploy-release.tar.gz
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>sudo bash clusterforge/deploy.sh
+</code></pre></div>
 <h2 id="appendix">Appendix<a class="headerlink" href="#appendix" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Cluster Forge: <a href="https://github.com/silogen/cluster-forge">https://github.com/silogen/cluster-forge</a></li>
