@@ -13,8 +13,7 @@ The SiloGen platform provides a stable starting point for AI model development, 
 
 This guide assumes the user has access to an installed SiloGen platform. Besides that, you should have access to compute cluster and a project with allocated compute resources.
 
-!!! warning
-    Your system needs a Hugging Face token to download models.
+**Your system needs a Hugging Face token to download models.**
 
 ## Getting started
 
