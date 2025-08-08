@@ -14,7 +14,7 @@ This is a guide for configuring an SMTP server in Keycloak, which is a prerequis
 
 - The URL of the keycloak instance for your application, and corresponding admin credentials are known.
 
-  - The keycloak URL is typically https://kc.<domain provided during installation>/admin/master/console/
+  - The keycloak URL is typically https://kc.&lt;domain provided during installation&gt;/admin/master/console/
   - The keycloak credentials should be provided to you by AMD's customer success team during installation.
 
 - Once you have logged into Keycloak, the correct realm must be selected (typically `airm`) as all actions are realm-specific.

@@ -19,7 +19,7 @@ SiloGen Enterprise AI Platform supports bare-metal, on-premises, and public clou
 !!! note
     The target audience for the installation section is infrastructure administrators.
 
-Follow the instructions in [Install SiloGen platform](./platform-infrastructure/demo-environment.md) to install SiloGen in an on-premises environment.
+Follow the instructions in [Install SiloGen platform](./platform-infrastructure/on-premises-installation.md) to install SiloGen in an on-premises environment.
 
 ## Onboard organization, projects and users
 
