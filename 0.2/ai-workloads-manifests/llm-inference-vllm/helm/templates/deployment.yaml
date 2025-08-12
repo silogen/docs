@@ -1,0 +1,84 @@
+{{- define "deployment" -}}
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "release.fullname" . }}
+  labels:
+    app: {{ include "release.fullname" . }}
+    {{- range $key, $value := .Values.metadata.labels }}
+    {{ $key }}: {{ $value | quote }}
+    {{- end }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: {{ include "release.fullname" . }}
+  template:
+    metadata:
+      labels:
+        app: {{ include "release.fullname" . }}
+    spec:
+      containers:
+        - name: {{ .Chart.Name }}
+          args:
+          - |
+            {{- include "entrypoint" . | nindent 12 }}
+          command: ["sh", "-c"]
+          {{- if .Values.env_vars }}
+          env:
+            {{- include "container.env" . | nindent 12 }}
+          {{- end }}
+          image: {{ .Values.image | quote}}
+          imagePullPolicy: {{ default "Always" .Values.imagePullPolicy | quote }}
+          {{- if .Values.livenessProbe }}
+          livenessProbe:
+            {{- .Values.livenessProbe | toYaml | nindent 12 -}}
+          {{- end }}
+          ports:
+            {{- range $key, $value := .Values.deployment.ports }}
+            - name: {{ $key }}
+              containerPort: {{ $value }}
+            {{- end }}
+          {{- if .Values.readinessProbe }}
+          readinessProbe:
+            {{- .Values.readinessProbe | toYaml | nindent 12 -}}
+          {{- end }}
+          resources:
+            {{- include "container.resources" . | nindent 12 }}
+          {{- if .Values.startupProbe }}
+          startupProbe:
+            {{- .Values.startupProbe | toYaml | nindent 12 -}}
+          {{- end }}
+          volumeMounts:
+            {{- include "container.volumeMounts" . | nindent 12 }}
+      volumes:
+        {{- include "container.volumes" . | nindent 8 }}
+{{- end -}}
+
+{{- define "deployment_stripped" -}}
+{{- $deployment := include "deployment" . | fromYaml }}
+{{- $ := unset $deployment "metadata" }}
+{{- $ := unset $deployment.spec.template "metadata" }}
+{{- $deployment | toYaml }}
+{{- end -}}
+
+{{- define "deployment_wrapped_with_kaiwoservice" -}}
+apiVersion: kaiwo.silogen.ai/v1alpha1
+kind: KaiwoService
+metadata:
+  name: {{ include "release.fullname" . }}
+  labels:
+    app: {{ include "release.fullname" . }}
+    {{- range $key, $value := .Values.metadata.labels }}
+    {{ $key }}: {{ $value | quote }}
+    {{- end }}
+spec:
+  deployment:
+    {{- include "deployment" . | nindent 4 }}
+{{- end -}}
+
+{{- if .Values.kaiwo.enabled -}}
+{{- include "deployment_wrapped_with_kaiwoservice" . }}
+{{- else -}}
+{{- include "deployment" . }}
+{{- end -}}

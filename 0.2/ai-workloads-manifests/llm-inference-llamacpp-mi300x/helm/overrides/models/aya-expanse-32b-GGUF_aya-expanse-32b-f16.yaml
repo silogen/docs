@@ -1,0 +1,6 @@
+env_vars:
+  # image/model:tag
+  MODEL: "bartowski/aya-expanse-32b-GGUF:aya-expanse-32b-f16"
+  GPU_LAYERS: "41"
+  TEMP: "0.8"
+  CTX_SIZE: "8192"

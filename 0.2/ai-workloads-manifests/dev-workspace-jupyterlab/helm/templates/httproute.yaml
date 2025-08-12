@@ -1,0 +1,24 @@
+{{- if .Values.http_route.enabled -}}
+apiVersion: gateway.networking.k8s.io/v1
+kind: HTTPRoute
+metadata:
+  name: {{ include "release.fullname" . }}
+spec:
+  parentRefs:
+    - name: https
+      namespace: kgateway-system
+  rules:
+    - backendRefs:
+        - name:  {{ include "release.fullname" . }}
+          port: 80
+      matches:
+      - path:
+          type: PathPrefix
+          value: {{ include "httpRoute.baseUrl" . }}
+      # filters:
+      #   - type: URLRewrite
+      #     urlRewrite:
+      #       path:
+      #         type: ReplacePrefixMatch
+      #         replacePrefixMatch: /
+{{- end -}}

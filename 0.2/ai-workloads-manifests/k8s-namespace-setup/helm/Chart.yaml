@@ -1,0 +1,4 @@
+apiVersion: v2
+name: k8s-namespace-setup
+description: A Helm chart for Kubernetes namespace setup
+version: 0.0.1

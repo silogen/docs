@@ -1,0 +1,28 @@
+remoteSourceModelPath: default-bucket/models/meta-llama/Llama-3.1-70B
+remoteDestinationModelPath: default-bucket/megatron-models/meta-llama/Llama-3.1-70B/
+
+# Resources of main workload container
+resources:
+  gpu: 1
+  cpu: 8
+  memory: 800Gi
+
+storage:
+  ephemeral:
+    quantity: 600Gi
+    storageClassName: mlstorage
+    accessModes: [ ReadWriteOnce ]
+  dshm:
+    sizeLimit: 200Gi
+
+# Conversion settings
+conversionArgs:
+  modelName: "llama3-70B"
+  modelType: "GPT"
+  loader: "llama_mistral"
+  saver: "mcore"
+  tensorParallel: 8
+
+env:
+- name: CUDA_DEVICE_MAX_CONNECTIONS # Required when sequence parallelism is enabled as a result of tensor parallelism > 1
+  value: "1"

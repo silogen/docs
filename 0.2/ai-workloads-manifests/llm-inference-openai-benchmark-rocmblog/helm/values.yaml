@@ -1,0 +1,34 @@
+metadata:
+  labels: {}
+
+image: "rocm/vllm-dev:20250205_aiter"
+imagePullPolicy: Always
+
+env_vars:
+  OPENAI_API_BASE_URL: "http://example-open-ai-api-server.com/v1/"
+  TOKENIZER: deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B
+
+  BUCKET_STORAGE_HOST: http://minio.minio-tenant-default.svc.cluster.local:80
+  BUCKET_STORAGE_ACCESS_KEY:
+    name: minio-credentials
+    key: minio-access-key
+  BUCKET_STORAGE_SECRET_KEY:
+    name: minio-credentials
+    key: minio-secret-key
+  BUCKET_RESULT_PATH: "default-bucket/benchmark-results"
+
+storage:
+  ephemeral:
+    quantity: 10Gi
+    storageClassName: mlstorage
+    accessModes:
+      - ReadWriteOnce
+  dshm:
+    sizeLimit: 8Gi
+
+entrypoint: |
+  cd /workload
+  bash /workload/mount/entrypoint.sh
+
+kaiwo:
+  enabled: false

@@ -1,0 +1,4 @@
+apiVersion: v2
+name: llm-inference-vllm
+description: A Helm chart for vLLM inference
+version: 0.0.1
