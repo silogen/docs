@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "release.fullname" . }}
+  labels:
+    app: {{ include "release.fullname" . }}
+spec:
+  type: ClusterIP
+  ports:
+    {{ range $name, $port := .Values.deployment.ports }}
+    {{- if ne $name "http" }}
+    - name: {{ $name }}
+      port: {{ $port }}
+      targetPort: {{ $port }}
+    {{- else -}}
+    - name: {{ $name }}
+      port: 80
+      targetPort: {{ $port }}
+    {{- end }}
+    {{- end }}
+  selector:
+    app: {{ include "release.fullname" . }}

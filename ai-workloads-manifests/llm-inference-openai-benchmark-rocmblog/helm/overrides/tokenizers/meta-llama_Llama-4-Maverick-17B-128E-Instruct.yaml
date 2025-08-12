@@ -1,0 +1,5 @@
+env_vars:
+  TOKENIZER: "meta-llama/Llama-4-Maverick-17B-128E-Instruct"
+  HF_TOKEN:
+    key: hf-token
+    name: hf-token

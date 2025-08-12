@@ -1,0 +1,4 @@
+apiVersion: v2
+name: llm-inference-llamacpp-mi300x
+description: llama.cpp inference service with a deployment of 1.73-bit quantized DeepSeek R1 (671B)
+version: 0.0.1

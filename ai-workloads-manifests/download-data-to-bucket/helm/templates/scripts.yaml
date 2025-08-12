@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: "{{ .Release.Name }}-configs"
+data:
+  data_script.py: |
+    {{- .Values.dataScript | nindent 4 }}

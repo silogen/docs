@@ -1,0 +1,6 @@
+env_vars:
+  USE_MAD: "true"
+  USE_SCENARIO: "false"
+  TESTOPT: latency
+  MAD_MODEL: Qwen/Qwen2.5-0.5B-Instruct
+  MAD_DTYPE: float16

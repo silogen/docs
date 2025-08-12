@@ -1,0 +1,19 @@
+# image/model
+model: "meta-llama/Llama-3.3-70B-Instruct"
+
+# vllm engine args (ref: https://docs.vllm.ai/en/latest/serving/engine_args.html)
+vllm_engine_args:
+  gpu-memory-utilization: "0.95"
+
+# env vars (vllm ref: https://docs.vllm.ai/en/latest/serving/env_vars.html)
+env_vars:
+  HF_TOKEN:
+    key: hf-token
+    name: hf-token
+
+storage:
+  ephemeral:
+    quantity: 256Gi
+    storageClassName: mlstorage
+    accessModes:
+      - ReadWriteOnce

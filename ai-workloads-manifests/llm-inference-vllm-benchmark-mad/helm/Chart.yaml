@@ -1,0 +1,4 @@
+apiVersion: v2
+name: llm-inference-vllm-benchmark-mad
+description: vLLM benchmarking with MAD or predefined scenarios
+version: 0.0.1

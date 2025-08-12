@@ -1,0 +1,8 @@
+# Resources:
+checkpointsReservedSize: 10Gi
+
+### Axolotl config file name ###
+configFile: "lora-1b.yml"
+
+### Model output path ###
+checkpointsRemote: "default-bucket/experiments/llama-1b-axolotl-lora"

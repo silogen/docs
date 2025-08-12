@@ -1,0 +1,45 @@
+general:
+  job_name: evaluation-judge-async
+model_inference_container:
+  image: rocm/vllm-dev:20241205-tuned
+  memory: 24Gi
+  gpu_count: 1
+  cpu_count: 2
+  model: llama-3.1-8B
+  model_path: meta-llama/Llama-3.1-8B-Instruct
+  tensor_parallel_size: 1
+  max_model_len: 2048
+  batch_size: 32
+judge_inference_container:
+  image: rocm/vllm-dev:20241205-tuned
+  memory: 24Gi
+  gpu_count: 1
+  cpu_count: 2
+  model: llama-3.1-8B
+  model_path: meta-llama/Llama-3.1-8B-Instruct
+  tensor_parallel_size: 1
+  max_model_len: 2048
+  batch_size: 32
+judge_evaluation_container:
+  image: rocm/vllm-dev:20241205-tuned
+  memory: 24Gi
+  cpu_count: 2
+  prompt_template_path: summarization_prompt_template.txt
+  judge_prompt_step1: judge_prompt_explanation.txt
+  judge_prompt_step2: judge_prompt_grade.txt
+  dataset_path: abisee/cnn_dailymail
+  dataset_version: 3.0.0
+  dataset_split: test
+  context_column_name: article
+  id_column_name: id
+  gold_standard_column_name: highlights
+  output_dir_path: /home/evaluation/results
+storage:
+  ephemeral:
+    quantity: 100Gi
+    storageClassName: mlstorage
+    accessModes:
+      - ReadWriteOnce
+  bucket_storage_host: default-minio-tenant-hl.minio-tenant-default.svc.cluster.local:9000
+  bucket_storage_bucket: default-bucket
+  configmap_mount_path: /local_resources/mount
