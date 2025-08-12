@@ -1,4 +1,0 @@
-apiVersion: v2
-name: download-huggingface-model-to-bucket
-description: A Helm chart for downloading HuggingFace resources to a bucket
-version: 0.0.1

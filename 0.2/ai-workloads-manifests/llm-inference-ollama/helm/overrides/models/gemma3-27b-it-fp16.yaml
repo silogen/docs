@@ -1,3 +1,0 @@
-env_vars:
-  # model:tag
-  MODEL: "gemma3:27b-it-fp16"

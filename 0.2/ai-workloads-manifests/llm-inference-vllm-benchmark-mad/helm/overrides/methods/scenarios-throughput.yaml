@@ -1,4 +1,0 @@
-env_vars:
-  USE_MAD: "false"
-  USE_SCENARIO: "true"
-  TESTOPT: throughput

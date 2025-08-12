@@ -1,3 +1,0 @@
-kueue:
-  setup: true
-  cluster_queue_name: "kaiwo"

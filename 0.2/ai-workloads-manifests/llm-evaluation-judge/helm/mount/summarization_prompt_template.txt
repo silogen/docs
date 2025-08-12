@@ -1,3 +1,0 @@
-Summarize the following text in a concise and clear manner, capturing the main points and key details:
-{context}
-Summary:
