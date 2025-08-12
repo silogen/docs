@@ -11,10 +11,6 @@
       
       
       
-        <link rel="prev" href="../on-premises-installation/">
-      
-      
-        <link rel="next" href="../../core/docs/keycloak/sso/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -22,7 +18,7 @@
     
     
       
-        <title>Target platforms - SiloGen documentation</title>
+        <title>Install SiloGen on DigitalOcean cloud - SiloGen documentation</title>
       
     
     
@@ -76,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#target-platforms" class="md-skip">
+        <a href="#install-silogen-on-digitalocean-cloud" class="md-skip">
           Skip to content
         </a>
       
@@ -109,7 +105,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Target platforms
+              Install SiloGen on DigitalOcean cloud
             
           </span>
         </div>
@@ -252,12 +248,10 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
+      <li class="md-tabs__item">
         <a href="../on-premises-installation/" class="md-tabs__link">
           
   
@@ -627,10 +621,8 @@
       
   
   
-    
   
   
-  
     
     
       
@@ -648,20 +640,17 @@
     
     
       
-        
-        
-      
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
             
   
   
@@ -674,7 +663,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Infrastructure administrator
@@ -708,19 +697,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../target-platforms/" class="md-nav__link">
         
   
   
@@ -731,7 +711,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -2592,6 +2571,32 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installation steps
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2604,49 +2609,45 @@
                 
                   
 
-  <nav class="md-tags" >
-    
-      
-      
-      
-        <a href="../../references/tags/#tag:demo-environment" class="md-tag">demo environment</a>
-      
-    
-      
-      
-      
-        <a href="../../references/tags/#tag:installation" class="md-tag">installation</a>
-      
-    
-      
-      
-      
-        <a href="../../references/tags/#tag:platform" class="md-tag">platform</a>
-      
-    
-  </nav>
-
 
   
   
 
 
-<h1 id="target-platforms">Target platforms<a class="headerlink" href="#target-platforms" title="Permanent link">&para;</a></h1>
-<p>The following infrastructure platforms are supported:</p>
-<ul>
-<li><strong>On-premises environment:</strong> This includes setting up a one-node demo cluster with built-in storage and secrets management. The main use case is to quickly get started running AI workloads on the SiloGen platform. Access the installation article <a href="../on-premises-installation/">here</a>.</li>
-<li><strong>DigitalOcean cloud:</strong> This article explains how to install SiloGen on DigitalOcean cloud. Access the installation article <a href="../digitalocean-installation/">here</a></li>
-<li><strong>Azure cloud with AKS:</strong> See instructions on how to set up a virtual machine with Instinct MI300X and the SiloGen platform on Azure cloud <a href="https://instinct.docs.amd.com/projects/instinct-azure/latest/mi300x.html">here</a></li>
-</ul>
+<h1 id="install-silogen-on-digitalocean-cloud">Install SiloGen on DigitalOcean cloud<a class="headerlink" href="#install-silogen-on-digitalocean-cloud" title="Permanent link">&para;</a></h1>
+<p>This article explains how to install SiloGen in DigitalOcean cloud environment, covering the full stack from metal to application layer in a streamlined manner.</p>
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
+<p>Suggested digital ocean minimal droplet configuration:</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>AMD MI300X
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>1 GPU - 192 GB VRAM - 20 vCPU - 240 GB RAM
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>Boot disk: 720 GB NVMe- Scratch disk: 5 TB NVMe
+</code></pre></div>
+Quick start:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>ROCm™ Software
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>ROCm 6.4.0. Install any AI tools you need.
+</code></pre></div></p>
+<h2 id="installation-steps">Installation steps<a class="headerlink" href="#installation-steps" title="Permanent link">&para;</a></h2>
+<p>In order to install on a Digital Ocean droplet, copy the following text into a file bloom.yaml, replacing <your-ip-address> with the ip address of the node.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>DOMAIN: &lt;your-ip-address&gt;.nip.io
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>CERT_OPTION: generate
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>CLUSTERFORGE_RELEASE: https://github.com/silogen/cluster-forge/releases/download/20250812-1-enterprise/release-enterprise-20250812-1.tar.gz
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>FIRST_NODE: true
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>GPU_NODE: true
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>SKIP_DISK_CHECK: false
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>USE_CERT_MANAGER: false
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>SELECTED_DISKS: /dev/vdc1
+</code></pre></div></p>
+<p>Run bloom with the following command
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>chmod +x bloom
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>sudo ./bloom --config bloom.yaml
+</code></pre></div></p>
 
 
 
 
 
 
-
-  
-  
 
 
 
