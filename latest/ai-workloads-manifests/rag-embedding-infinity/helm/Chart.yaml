@@ -1,4 +1,0 @@
-apiVersion: v2
-name: rag-embedding-infinity
-description: A Helm chart for embedding inference with Infinity
-version: 0.0.1
