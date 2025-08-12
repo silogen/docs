@@ -84,6 +84,7 @@ nav:
 
   - Infrastructure administrator:
     - On-premises installation: platform-infrastructure/on-premises-installation.md
+    - DigitalOcean cloud installation: platform-infrastructure/digitalocean-installation.md
     - Target platforms: platform-infrastructure/target-platforms.md
     - Enable single sign-on: core/docs/keycloak/sso.md
     - Configure SMTP and invite users: core/docs/keycloak/smtp-configuration.md
