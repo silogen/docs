@@ -31,6 +31,11 @@ USE_CERT_MANAGER: false
 SELECTED_DISKS: /dev/vdc1
 ```
 
+Download the installation tool ("bloom")
+
+```
+wget https://github.com/silogen/cluster-bloom/releases/latest/download/bloom
+```
 Run bloom with the following command
 ```
 chmod +x bloom
