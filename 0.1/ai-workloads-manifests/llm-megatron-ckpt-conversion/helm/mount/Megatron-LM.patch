@@ -1,0 +1,60 @@
+diff --git a/megatron/core/dist_checkpointing/strategies/filesystem_async.py b/megatron/core/dist_checkpointing/strategies/filesystem_async.py
+index 47ab4d11..0c1b868d 100644
+--- a/megatron/core/dist_checkpointing/strategies/filesystem_async.py
++++ b/megatron/core/dist_checkpointing/strategies/filesystem_async.py
+@@ -20,6 +20,15 @@ from torch.distributed.checkpoint.planner import SavePlan, SavePlanner, WriteIte
+ from torch.distributed.checkpoint.storage import WriteResult
+ from torch.futures import Future
+
++try:
++    # This PR https://github.com/pytorch/pytorch/pull/143359 introduced breaking change to saving checkpoints
++    # in torch_dist format. This is a workaround to fix the issue.
++    from torch.distributed.checkpoint.filesystem import _StorageWriterTransforms
++    from functools import partial
++    _write_item = partial(_write_item, _StorageWriterTransforms())
++except ImportError:
++    pass
++
+ logger = logging.getLogger(__name__)
+
+ WriteBucket = Tuple[Path, str, Tuple[list, list]]  # represents writes to a single file
+diff --git a/tools/checkpoint/convert.py b/tools/checkpoint/convert.py
+index 935613b1..4a2297f6 100644
+--- a/tools/checkpoint/convert.py
++++ b/tools/checkpoint/convert.py
+@@ -151,4 +151,8 @@ def main():
+
+
+ if __name__ == '__main__':
++    try:
++        mp.set_start_method('spawn')
++    except RuntimeError:
++        pass
+     main()
+diff --git a/tools/checkpoint/loader_llama_mistral.py b/tools/checkpoint/loader_llama_mistral.py
+index b6697964..054ab941 100644
+--- a/tools/checkpoint/loader_llama_mistral.py
++++ b/tools/checkpoint/loader_llama_mistral.py
+@@ -457,6 +457,7 @@ def _load_checkpoint(queue, args):
+                 '--no-save-rng',
+                 '--mock-data', # To pass the "blend data checks" in arguments.py
+                 '--no-initialization',
++                '--no-gradient-accumulation-fusion',
+                 '--load', args.load_dir,
+                 '--no-one-logger',
+                 ]
+diff --git a/tools/checkpoint/saver_mcore.py b/tools/checkpoint/saver_mcore.py
+index 2caf26a9..0bfe2a8a 100644
+--- a/tools/checkpoint/saver_mcore.py
++++ b/tools/checkpoint/saver_mcore.py
+@@ -188,8 +188,8 @@ def save_checkpoint(queue, args):
+     margs.apply_query_key_layer_scaling = md.checkpoint_args.apply_query_key_layer_scaling
+
+     # Sequence parallel is required if use both tensor-parallel and Moe.
+-    if margs.num_experts is not None and args.target_tensor_parallel_size is not None:
+-        if margs.num_experts > 1 and args.target_tensor_parallel_size > 1:
++    if args.target_tensor_parallel_size is not None:
++        if args.target_tensor_parallel_size > 1:
+             margs.sequence_parallel = True
+
+     validate_args(margs)

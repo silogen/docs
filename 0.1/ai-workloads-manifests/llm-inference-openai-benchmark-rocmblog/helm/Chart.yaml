@@ -1,0 +1,4 @@
+apiVersion: v2
+name: llm-inference-openai-benchmark-rocmblog
+description: Benchmarking an OpenAI-compatible endpoint with vLLM benchmark serving script
+version: 0.0.1

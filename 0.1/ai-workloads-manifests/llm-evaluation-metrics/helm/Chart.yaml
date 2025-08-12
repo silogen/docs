@@ -1,0 +1,4 @@
+apiVersion: v2
+name: llm-evaluation-metrics
+description: A Helm chart for LLM evaluation with metrics
+version: 0.0.1

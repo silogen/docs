@@ -1,0 +1,4 @@
+apiVersion: v2
+name: llm-inference-ollama
+description: Build and deploy an Ollama service
+version: 0.0.1
