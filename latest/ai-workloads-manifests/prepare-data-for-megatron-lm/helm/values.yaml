@@ -1,0 +1,81 @@
+ioImage: ghcr.io/silogen/logistics:v0.1r
+preprocessingImage: rocm/megatron-lm:v25.4
+
+# Use to add labels to the metadata of the resources created by this workload.
+labels: {}
+# Example:
+# labels:
+#   amd.com/label: 123
+
+# Data download script:
+# This needs to be a text block of a script that downloads data to the directory specified by `--target-dir` script argument.
+dataScript: |
+  import argparse
+  from huggingface_hub import snapshot_download
+  from datasets import load_dataset
+  import os
+
+  def main():
+      parser = argparse.ArgumentParser(description="Download and process FineWeb-EDU dataset")
+      parser.add_argument("--target-dir", default="./fineweb-edu/", help="Target directory for dataset (default: ./fineweb-edu/)")
+      args = parser.parse_args()
+
+      target_dir = args.target_dir
+      os.makedirs(target_dir, exist_ok=True)
+
+      folder = snapshot_download(
+          "HuggingFaceFW/fineweb-edu",
+          repo_type="dataset",
+          local_dir=target_dir,
+          # limit download to just one parquet file
+          allow_patterns="sample/10BT/000_*",
+      )
+
+      print("Loading dataset")
+      dataset = load_dataset("parquet", data_dir=os.path.join(target_dir, "sample/10BT/"))
+      for d in dataset:
+          dataset[d].to_json(os.path.join(target_dir, f"fineweb-edu-{d}.jsonl"), lines=True)
+
+  if __name__ == "__main__":
+      main()
+
+# Where the resources should be stored:
+bucketDataDir: default-bucket/datasets/
+bucketTokenizersDir: default-bucket/tokenizers/
+bucketStorageHost: http://minio.minio-tenant-default.svc.cluster.local:80
+
+# Bucket credentials from a secret:
+bucketCredentialsSecret:
+  name: minio-credentials
+  accessKeyKey: minio-access-key
+  secretKeyKey: minio-secret-key
+
+# Storage configuration:
+storageClass:
+storageQuantity: "50Gi"
+
+# Resources
+resources:
+  mainContainer:
+    gpu: 1
+    cpu: 8
+    memory: 100Gi
+  downloadContainer:
+    cpu: 1
+    memory: 5Gi
+
+hfTokenSecret: {} # Optional secret reference that contains the Huggingface token
+# Example:
+# hfTokenSecret:
+#   name: hf-token
+#   key: hf-token
+
+# Huggingface model id that has Huggingface tokenizer files: special_tokens_map.json, tokenizer.json, tokenizer_config.json
+tokenizer: NousResearch/Meta-Llama-3.1-8B
+
+# Parameters required to preprocess dataset
+dataset:
+  jsonKey: "text" # key to extract text from json
+  outputPrefix: "fineweb-edu-train" # prefix of the preprocessed files, the full names of the two resulting files will be <outputPrefix>_<jsonKey>_document.<bin|idx> with only extension differing
+  dsName: "fineweb-edu" # name of the dataset, will be used to create the preprocessed dataset directory
+  fileName: "fineweb-edu-train.jsonl" # name of the downloaded file that has to be preprocessed

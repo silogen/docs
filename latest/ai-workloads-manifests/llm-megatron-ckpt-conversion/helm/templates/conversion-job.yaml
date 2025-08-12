@@ -1,0 +1,155 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: {{ include "release.fullname" . }}
+  {{- if .Values.metadata.labels }}
+  labels:
+    {{- range $label, $value := .Values.metadata.labels }}
+    {{ $label }}: {{ $value | quote }}
+    {{- end }}
+  {{- end }}
+spec:
+  backoffLimit: 0
+  ttlSecondsAfterFinished: 3600
+  template:
+    spec:
+      restartPolicy: Never
+      {{- if .Values.extra_template_spec }}
+      {{- toYaml .Values.extra_template_spec | nindent 6 }}
+      {{- end }}
+      volumes:
+        {{- include "container.volumes" . | nindent 8 }}
+      initContainers:
+        - name: download
+          image: {{ .Values.logistics.image | quote }}
+          imagePullPolicy: Always
+          command: ["sh", "-euc"]
+          args:
+            - |
+              # Setup MinIO, Download resources:
+              mc alias set minio-host $${BUCKET_STORAGE_HOST} $${BUCKET_STORAGE_ACCESS_KEY} $${BUCKET_STORAGE_SECRET_KEY};
+
+              echo "Listing contents of the model path:";
+              mc ls minio-host/{{ .Values.remoteSourceModelPath | trimSuffix "/" }}/ || echo "Model path not found!";
+
+              echo "Copying model checkpoint to container...";
+              mc cp -r minio-host/{{ .Values.remoteSourceModelPath | trimSuffix "/" }}/ /local-resources/sourcemodel || echo "Failed to copy model!";
+
+              echo "Listing contents of /local-resources/:";
+              ls -la /local-resources/ || echo "Local resources directory not found!";
+
+              echo "Listing contents of /local-resources/sourcemodel:";
+              ls -la /local-resources/sourcemodel || echo "Source model directory not found!";
+
+              echo "Done copying resources to container";
+          resources:
+            limits:
+              memory: "1Gi"
+              cpu: "1"
+            requests:
+              memory: "1Gi"
+              cpu: "1"
+          env:
+            {{- include "logistics.container.env" . | nindent 12 }}
+          volumeMounts:
+            - name: ephemeral-storage
+              mountPath: /local-resources
+
+        - name: upload
+          image: {{ .Values.logistics.image | quote }}
+          imagePullPolicy: Always
+          restartPolicy: Always
+          command: ["sh", "-euc"]
+          args:
+            - |
+              # Setup MinIO, Upload resources:
+              mc alias set minio-host $${BUCKET_STORAGE_HOST} $${BUCKET_STORAGE_ACCESS_KEY} $${BUCKET_STORAGE_SECRET_KEY};
+
+              while [ ! -f /local-resources/done-conversion ]; do
+                echo "Waiting for conversion to finish...";
+                sleep 60
+              done
+
+              echo "Conversion done, syncing checkpoint artifacts to remote storage...";
+              mc mirror --overwrite \
+                /local-resources/checkpoints/ minio-host/{{ .Values.remoteDestinationModelPath | trimSuffix "/" }}/;
+
+              echo "Done uploading. Signal to the main container that it can exit.";
+
+              touch /local-resources/done-uploading;
+          resources:
+            limits:
+              memory: "2Gi"
+              cpu: "1"
+            requests:
+              memory: "2Gi"
+              cpu: "1"
+          env:
+            {{- include "logistics.container.env" . | nindent 12 }}
+          volumeMounts:
+            - name: ephemeral-storage
+              mountPath: /local-resources
+            - name: workload-mount
+              mountPath: /local-resources/mount
+
+      containers:
+        - name: conversion
+          image: {{ .Values.mainWorkloadImage | quote }}
+          command: ["/bin/bash", "-euc"]
+          volumeMounts:
+            - name: ephemeral-storage
+              mountPath: /local-resources
+            - name: workload-mount
+              mountPath: /local-resources/mount
+              readOnly: true
+            - name: dshm
+              mountPath: /dev/shm
+          {{- if .Values.env }}
+          env:
+            {{- toYaml .Values.env | nindent 12 }}
+          {{- end }}
+          args:
+            - |
+              {{- with .Values.conversionArgs }}
+              rocm-smi;
+
+              echo "Container started, inspecting environment...";
+              echo "Current working directory:";
+              pwd;
+              echo "Listing contents of /local-resources/sourcemodel:";
+              ls -la /local-resources/sourcemodel || echo "Source model directory not found!";
+
+              git apply /local-resources/mount/Megatron-LM.patch
+
+              mkdir -p /local-resources/checkpoints
+              echo "Starting conversion...";
+              echo "Running python tools/checkpoint/convert.py...";
+              python tools/checkpoint/convert.py \
+                    --model-type {{ .modelType }} \
+                    --model-size {{ .modelName }} \
+                    --loader {{ .loader }} \
+                    --saver {{ .saver }} \
+                    --target-tensor-parallel-size {{ .tensorParallel }} \
+                    --checkpoint-type hf \
+                    --load-dir /local-resources/sourcemodel \
+                    --save-dir /local-resources/checkpoints \
+                    --tokenizer-model /local-resources/sourcemodel
+
+              echo "Checkpoint conversion completed"
+
+              touch /local-resources/done-conversion;
+              while [ ! -f /local-resources/done-uploading ]; do
+                sleep 15
+              done
+              {{- end }}
+          resources:
+            {{- with .Values.resources }}
+            limits:
+              memory: "{{ .memory }}"
+              cpu: "{{ .cpu }}"
+              amd.com/gpu: "{{ .gpu }}"
+            requests:
+              memory: "{{ .memory }}"
+              cpu: "{{ .cpu }}"
+              amd.com/gpu: "{{ .gpu }}"
+            {{- end }}

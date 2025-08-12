@@ -1,0 +1,4 @@
+apiVersion: v2
+name: llm-pretraining-megatron-lm
+description: A Helm chart for single node continuous pretraining with Megatron-LM
+version: 0.0.1

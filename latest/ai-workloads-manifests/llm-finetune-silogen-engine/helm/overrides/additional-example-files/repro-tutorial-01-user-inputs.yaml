@@ -1,0 +1,4 @@
+# This file completes the overrides/models/tiny-llama_tinyllama-1.1b-chat-v1.0.yaml model configuration file.
+basemodel: "default-bucket/models/tiny-llama/tinyllama-1.1b-chat-v1.0"
+checkpointsRemote: "default-bucket/experiments/tinyllama-1.1b-chat-v1.0_argilla_alpha"
+trainingData: "default-bucket/datasets/argilla-mistral-large-human-prompts.jsonl"

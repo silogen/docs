@@ -1,0 +1,140 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "metadata": {
+      "type": "object",
+      "properties": {
+        "labels": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "image": {
+      "type": "string"
+    },
+    "imagePullPolicy": {
+      "type": "string"
+    },
+    "gpus": {
+      "type": "integer"
+    },
+    "memory_per_gpu": {
+      "type": "integer"
+    },
+    "cpu_per_gpu": {
+      "type": "integer"
+    },
+    "env_vars": {
+      "type": "object",
+      "properties": {
+        "MODEL": {
+          "type": "string"
+        },
+        "NCPU": {
+          "type": "string"
+        },
+        "BUCKET_STORAGE_HOST": {
+          "type": "string"
+        },
+        "BUCKET_STORAGE_ACCESS_KEY": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "key": {
+              "type": "string"
+            }
+          }
+        },
+        "BUCKET_STORAGE_SECRET_KEY": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "key": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "required": [
+        "MODEL"
+      ]
+    },
+    "storage": {
+      "type": "object",
+      "properties": {
+        "ephemeral": {
+          "type": "object",
+          "properties": {
+            "quantity": {
+              "type": "string"
+            },
+            "storageClassName": {
+              "type": "string"
+            },
+            "accessModes": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "dshm": {
+          "type": "object",
+          "properties": {
+            "sizeLimit": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "deployment": {
+      "type": "object",
+      "properties": {
+        "ports": {
+          "type": "object",
+          "properties": {
+            "http": {
+              "type": "integer",
+              "description": "HTTP port for the deployment"
+            }
+          },
+          "required": ["http"]
+        }
+      }
+    },
+    "startupProbe": {
+      "type": ["object"],
+      "additionalProperties": true
+    },
+    "livenessProbe": {
+      "type": ["object"],
+      "additionalProperties": true
+    },
+    "readinessProbe": {
+      "type": ["object"],
+      "additionalProperties": true
+    },
+    "entrypoint": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "image",
+    "imagePullPolicy",
+    "gpus",
+    "memory_per_gpu",
+    "cpu_per_gpu",
+    "env_vars",
+    "storage"
+  ]
+}

@@ -1,0 +1,50 @@
+metadata:
+  labels: {}
+
+image: "rocm/dev-ubuntu-22.04:6.2.4"
+
+imagePullPolicy: Always
+gpus: 1
+cpu_per_gpu: 16
+memory_per_gpu: 128
+
+env_vars: {}
+
+storage:
+  ephemeral:
+    quantity: 200Gi
+    storageClassName: mlstorage
+    accessModes:
+      - ReadWriteOnce
+  dshm:
+    sizeLimit: 32Gi
+
+deployment:
+  ports:
+    http: 8188
+
+# startupProbe - checks if the container has successfully started. It disables liveness and readiness probes until it succeeds, useful for slow-starting applications.
+# livenessProbe - checks if the container is still alive. If it fails, Kubernetes restarts the container to recover from failure.
+# readinessProbe - checks if the container is ready to serve traffic. If it fails, the container is removed from the service's endpoints but remains running.
+# ref: https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/
+startupProbe:
+  httpGet:
+    path: /queue
+    port: http
+  failureThreshold: 60  # 60 x 10s => allow for 10 minutes startup time
+  periodSeconds: 10
+livenessProbe:
+  httpGet:
+    path: /queue
+    port: http
+readinessProbe:
+  httpGet:
+    path: /queue
+    port: http
+
+entrypoint: |
+  bash /workload/mount/comfyui.sh
+
+# kaiwo settings (if enabled, use kaiwo CRDs to have kaiwo operator manage the workload)
+kaiwo:
+  enabled: false

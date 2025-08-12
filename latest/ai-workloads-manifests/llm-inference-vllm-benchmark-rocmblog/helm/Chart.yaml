@@ -1,0 +1,4 @@
+apiVersion: v2
+name: llm-inference-vllm-benchmark-rocmblog
+description: A Helm chart for benchmarking vLLM inference according to the ROCm best-practice post.
+version: 0.0.1
