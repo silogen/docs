@@ -1,3 +1,0 @@
-{{- include "namespace-setup.kueue" . }}
-{{- include "namespace-setup.external-secret" . }}
-{{- include "namespace-setup.role" . }}

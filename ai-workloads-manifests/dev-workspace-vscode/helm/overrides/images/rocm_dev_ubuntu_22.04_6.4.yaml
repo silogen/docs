@@ -1,2 +1,0 @@
-image: rocm/dev-ubuntu-22.04:6.4
-gpus: 1
