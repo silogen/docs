@@ -257,8 +257,15 @@
   
     
     
+      
+  
+  
+  
+  
+    
+    
       <li class="md-tabs__item">
-        <a href="../platform-infrastructure/on-premises-installation/" class="md-tabs__link">
+        <a href="../platform-infrastructure/supported-environments/" class="md-tabs__link">
           
   
   
@@ -268,6 +275,9 @@
 
         </a>
       </li>
+    
+  
+
     
   
 
@@ -710,14 +720,6 @@
       
         
       
-        
-      
-        
-      
-        
-      
-        
-      
     
     
     
@@ -751,6 +753,78 @@
             Infrastructure administrator
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Installation
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            Installation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../platform-infrastructure/supported-environments/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Supported environments
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
             
               
                 
@@ -798,28 +872,62 @@
 
               
             
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
               
                 
   
   
   
   
-    <li class="md-nav__item">
-      <a href="../platform-infrastructure/target-platforms/" class="md-nav__link">
+    
+    
+      
         
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
   
   
   <span class="md-ellipsis">
-    Target platforms
+    User management
     
   </span>
   
 
-      </a>
-    </li>
-  
-
-              
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            User management
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
             
               
                 
@@ -885,6 +993,14 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -1155,7 +1271,7 @@
   
   
   <span class="md-ellipsis">
-    Onboard datasets
+    Datasets
     
   </span>
   
@@ -1258,7 +1374,7 @@
   
   
   <span class="md-ellipsis">
-    Chat
+    Chat with models
     
   </span>
   
@@ -1281,7 +1397,7 @@
   
   
   <span class="md-ellipsis">
-    Compare
+    Compare models
     
   </span>
   
@@ -2753,27 +2869,18 @@
 <h1 id="quick-start-guide">Quick start guide<a class="headerlink" href="#quick-start-guide" title="Permanent link">&para;</a></h1>
 <p>This quick start guide will help you rapidly install, configure, and begin using the AMD SiloGen Enterprise AI platform for your AI workloads.</p>
 <p>SiloGen Enterprise AI Platform supports bare-metal, on-premises, and public cloud deployments of AI workloads. SiloGen Enterprise AI currently supports AMD Instinct MI250, MI300, and MI325 GPUs.</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <p>These instructions are intended for installing SiloGen as a self-contained solution in an on-premises environment. For larger-scale, production-level deployments, refer to AMD SiloGen Enterprise AI support services.</p>
 </div>
 <h2 id="install-the-silogen-platform">Install the SiloGen platform<a class="headerlink" href="#install-the-silogen-platform" title="Permanent link">&para;</a></h2>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The target audience for the installation section is infrastructure administrators.</p>
-</div>
+<p><strong>The target audience for the installation section is infrastructure administrators.</strong></p>
 <p>Follow the instructions in <a href="../platform-infrastructure/on-premises-installation/">Install SiloGen platform</a> to install SiloGen in an on-premises environment.</p>
 <h2 id="onboard-organization-projects-and-users">Onboard organization, projects and users<a class="headerlink" href="#onboard-organization-projects-and-users" title="Permanent link">&para;</a></h2>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The target audience for this onboarding section is AI resource managers.</p>
-</div>
+<p><strong>The target audience for this onboarding section is AI resource managers.</strong></p>
 <p>Follow the instructions in <a href="../quick-start-guides/airman-quick-start/">Quick start for AI resource managers</a> to onboard your organization, projects, and users.</p>
 <h2 id="train-and-deploy-models-in-the-developer-center">Train and deploy models in the Developer Center<a class="headerlink" href="#train-and-deploy-models-in-the-developer-center" title="Permanent link">&para;</a></h2>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The target audience for this section is AI practitioners.</p>
-</div>
+<p><strong>The target audience for this section is AI practitioners.</strong></p>
 <p>Follow the instructions in <a href="../quick-start-guides/devcenter-quick-start/">Quick start for AI practitioners</a> to get started with fine-tuning and deploying AI models, and managing AI workloads.</p>
 
 
