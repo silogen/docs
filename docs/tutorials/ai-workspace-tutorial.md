@@ -101,21 +101,22 @@ curl -X 'POST' \
 **Example:** API call using Python
 
 ```python
-import requests
+from pathlib import Path
+import requests, certifi
 
 BASE_URL = "https://api-demo.silogen.ai/v1/datasets/upload?project_id=ADD_YOUR_PROJECT_ID"
+file_path = Path("path_to_your_dataset")
+headers = {"accept": "application/json", "Authorization": "Bearer ADD_YOUR_TOKEN"}
+data = {"name": "dataset_name", "description": "dataset_decription", "type": "Fine-tuning"}
 
-headers = {"accept": "application/json", "content-type" : "multipart/form-data", "Authorization": "Bearer ADD_YOUR_TOKEN"}
-data={
-    "name": "dataset_xxx",
-    "description": "description",
-    "path": "path_to_your_dataset",
-    "type": "Fine-tuning"
-}
-response = requests.post(
-  url=BASE_URL,
-  data=data,
-  headers=headers
-)
-response.json()
+with file_path.open("rb") as f:
+    response = requests.post(
+        url=BASE_URL,
+        headers=headers,
+        data=data,
+        files={"jsonl": f},
+        verify=certifi.where(),
+        timeout=300,
+    )
+print(response.json())
 ```

@@ -83,12 +83,14 @@ nav:
       - Personal preferences: personal-preferences.md
 
   - Infrastructure administrator:
-    - On-premises installation: platform-infrastructure/on-premises-installation.md
-    - DigitalOcean cloud installation: platform-infrastructure/digitalocean-installation.md
-    - Target platforms: platform-infrastructure/target-platforms.md
-    - Enable single sign-on: core/docs/keycloak/sso.md
-    - Configure SMTP and invite users: core/docs/keycloak/smtp-configuration.md
-    - Manual user management: core/docs/keycloak/manual-user-managment.md
+    - Installation:
+      - Supported environments: platform-infrastructure/supported-environments.md
+      - On-premises installation: platform-infrastructure/on-premises-installation.md
+      - DigitalOcean cloud installation: platform-infrastructure/digitalocean-installation.md
+    - User management:
+      - Enable single sign-on: core/docs/keycloak/sso.md
+      - Configure SMTP and invite users: core/docs/keycloak/smtp-configuration.md
+      - Manual user management: core/docs/keycloak/manual-user-managment.md
 
   - AI practitioner:
     - Developer Center overview: core/docs/developer-center/overview.md
@@ -99,12 +101,12 @@ nav:
     - Training and fine-tuning:
       - Fine-tuning: core/docs/developer-center/training/fine-tuning.md
       - Models: core/docs/developer-center/training/models.md
-      - Onboard datasets: core/docs/developer-center/training/datasets.md
+      - Datasets: core/docs/developer-center/training/datasets.md
 
     - Inference:
       - Inference overview: core/docs/developer-center/inference/overview.md
-      - Chat: core/docs/developer-center/inference/chat.md
-      - Compare: core/docs/developer-center/inference/compare.md
+      - Chat with models: core/docs/developer-center/inference/chat.md
+      - Compare models: core/docs/developer-center/inference/compare.md
 
     - Tutorials:
       - GUI access:
