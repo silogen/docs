@@ -72,7 +72,7 @@ To start the wizard:
 sudo ./bloom
 ```
 
-The wizard includes the following values:
+The wizard includes the following steps:
 
 **First node**
 
@@ -80,7 +80,7 @@ Specifies if this is the first node in the cluster. Set to `false` for additiona
 
 **GPU node**
 
-Specifies whether the node has GPUs. Set to `false` for CPU-only nodes. When true, ROCm will be installed and configured.
+Specifies whether the node has GPUs. Set to `false` for CPU-only nodes. When `true`, ROCm will be installed and configured.
 
 **OIDC URL**
 
@@ -143,7 +143,7 @@ To start the installation:
 sudo ./bloom --config bloom.yaml
 ```
 
-### 6. During installation
+### 6. Follow the installation progress
 
 The installation will take roughly 15 minutes. You can now follow the installation progress through the user interface:
 
@@ -183,16 +183,12 @@ kubectl create secret generic hf-token \
     -n my_namespace
 ```
 
-### 8. Validating the installation
+### 8. Confirm successful installation
 
-Verify successful installation by logging into to the Developer Center.
+To confirm that the installation was successful, ensure you are able to log in to the Developer Center.
 
-1. Access the SiloGen URL (your domain name)
-2. Login as devuser@domain and use the default password
-
-As a next step you can run an AI workload as described
-[here](../ai-workloads-manifests/llm-inference-vllm/helm/README.md).
-You can confirm that services are running in the cluster using K9s, a terminal-based UI for Kubernetes clusters, which is installed by Cluster Bloom.
+1. Access the SiloGen URL (your domain name). See more details [here](../login-to-silogen.md)
+2. Login as `devuser@domain` user and use the default password.
 
 ## Install only software into an existing Kubernetes cluster
 
