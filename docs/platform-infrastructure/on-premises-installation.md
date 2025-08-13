@@ -57,44 +57,95 @@ wget https://github.com/silogen/cluster-bloom/releases/latest/download/bloom
 ```
 chmod +x bloom
 ```
-### 4. Start the installation process
+### 4. Installation steps
+
+Before you can start the installation you need to create the configuration for your installation to tailor the installation based on your environment.
+You can use a Configuration wizard that facilitates the creation of the configuration (Option A) or add the values directly in the configuration file (Option B).
+
+#### Option A - Create configuration using the Installation wizard
+
+The Installation wizard is a helper tool that guides the user in creating the optimal configuration for the installation.
+For the standard installation you should select the default values, only exception is the domain name where you should provide a valid domain name.
+
+To start the wizard:
 ```
 sudo ./bloom
 ```
-### 5. Create installation configuration using the Installation wizard
 
-The Installation wizard is a helper tool that guides the user in creating the optimal configuration for the installation.
 The wizard includes the following values:
 
-#### First node
+**First node**
+
 Specifies if this is the first node in the cluster. Set to `false` for additional nodes joining an existing cluster.
-#### GPU node
+
+**GPU node**
+
 Specifies whether the node has GPUs. Set to `false` for CPU-only nodes. When true, ROCm will be installed and configured.
-#### OIDC URL
+
+**OIDC URL**
+
 URL of the OIDC provider for authentication. Leave empty to skip OIDC configuration.
-#### Skip disk check
+
+**Skip disk check**
+
 Specifies if disk check should be performed. Set to `true` if you don't want automatic disk setup.
-#### Selected disks
+
+**Selected disks**
+
 List of disk devices to use. Example: `dev/sdb`. Leave empty for automatic selection.
-#### Longhorn disks
+
+**Longhorn disks**
+
 List of disk paths for Longhorn storage. Leave empty for automatic configuration.
-#### Cluster-Forge release
+
+**Cluster-Forge release**
+
 The ClusterForge release `URL` or `none` to skip the SW installation.
-#### Domain
+
+**Domain**
+
 Domain name for the cluster, e.g., `cluster.example.com`. The domain name is used for ingress configuration.
-#### Use cert manager
+
+**Use cert manager**
+
 Set to `Yes` to use cert-manager with Let's encrypt for automatic TLS certificates. Set to `false` to provide your own certificates.
-#### Cert option
+
+**Cert option**
+
 Certificate option when `Use cert manager` is false. Choose `existing` to use existing certificate files, or `generate` to create a self-signed certificate.
 
-#### Configuration complete!
+**Configuration complete!**
+
 Once the wizard has completed you can find the configuration file in `bloom.yaml`.
 
-### 6. Run the installation with the configuration
+**Start the installation**
+
 To run the actual installation select `y` in the following step
 `Would you like to run bloom with this configuration no? (y/n)`
 
-The installation will take roughly 30 minutes. You can now follow the installation progress through the user interface:
+#### Option B - Specify the values in configuration file
+
+You can also specify the values in the configuration file directly and skip the installation wizard process.
+
+Below is an example configuration for the configuration file bloom.yaml:
+```
+DOMAIN: <your-ip-address>.nip.io
+CERT_OPTION: generate
+CLUSTERFORGE_RELEASE: https://github.com/silogen/cluster-forge/releases/download/20250812-1-enterprise/release-enterprise-20250812-1.tar.gz
+FIRST_NODE: true
+GPU_NODE: true
+SKIP_DISK_CHECK: false
+USE_CERT_MANAGER: false
+SELECTED_DISKS: /dev/vdc1
+```
+To start the installation:
+```
+sudo ./bloom --config bloom.yaml
+```
+
+### 6. During installation
+
+The installation will take roughly 15 minutes. You can now follow the installation progress through the user interface:
 
 ![Cluster Bloom Interface](../media/infra/bloom.png)
 
@@ -106,11 +157,40 @@ For systems with unmounted physical disks, a selection prompt will appear:
 After successful installation, Cluster Bloom generates `additional_node_command.txt`, which contains the command for installing additional nodes into the cluster.
 
 ### 8. Specify HuggingFace token
-In order to download and access gated models from Hugging Face, you need to provide a Hugging Face token. The HuggingFace token is defined as a Kubernetes secret within SiloGen platform.
+In order to download and access gated models from Hugging Face, you need to provide a Hugging Face token. Tokens contain sensitive information. To keep them secure and prevent unauthorized access, they should not be stored in plain text in your code or configuration files. Instead, they are stored as **secrets**, a secure way to manage sensitive data.
+
+#### How to get a Hugging Face token
+
+1. Create or log in to your Hugging Face account:
+    [https://huggingface.co](https://huggingface.co/).
+
+2. Navigate to your account settings.
+
+3. Under **Access Tokens**, generate a new token.
+
+4. Copy the token (keep it safe; don\'t share it).
+
+#### Where to install the token
+
+The token needs to be installed as a secret in your environment. Here
+are examples of how to do this in common platforms:
+
+On Kubernetes, save the token in an environment variable in your terminal:
+
+```
+kubectl create secret generic hf-token \
+    --from-literal=hf-token=my_super_secret_token \
+    -n my_namespace
+```
 
 ### 8. Validating the installation
 
-Verify successful installation by running TinyLlama workloads as described
+Verify successful installation by logging into to the Developer Center.
+
+1. Access the SiloGen URL (your domain name)
+2. Login as devuser@domain and use the default password
+
+As a next step you can run an AI workload as described
 [here](../ai-workloads-manifests/llm-inference-vllm/helm/README.md).
 You can confirm that services are running in the cluster using K9s, a terminal-based UI for Kubernetes clusters, which is installed by Cluster Bloom.
 
