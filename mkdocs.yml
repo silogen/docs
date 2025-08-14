@@ -90,7 +90,7 @@ nav:
     - User management:
       - Enable single sign-on: core/docs/keycloak/sso.md
       - Configure SMTP and invite users: core/docs/keycloak/smtp-configuration.md
-      - Manual user management: core/docs/keycloak/manual-user-managment.md
+      - Manual user management: core/docs/keycloak/manual-user-management.md
 
   - AI practitioner:
     - Developer Center overview: core/docs/developer-center/overview.md
