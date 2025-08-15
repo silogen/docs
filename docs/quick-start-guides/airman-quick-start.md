@@ -51,7 +51,7 @@ Follow the instructions in ["Adding an identity provider to enable single sign-o
 #### Invite users manually
 In case your organization does not have SSO or SMTP server set up you can add users manually.
 
-Follow the instructions in ["Manually managing and activating users in Airman"](../core/docs/keycloak/manual-user-managment.md) to add users manually.
+Follow the instructions in ["Manually managing and activating users in Airman"](../core/docs/keycloak/manual-user-management.md) to add users manually.
 
 
 ### Change the default admin user passwords

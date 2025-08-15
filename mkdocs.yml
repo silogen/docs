@@ -87,10 +87,6 @@ nav:
       - Supported environments: platform-infrastructure/supported-environments.md
       - On-premises installation: platform-infrastructure/on-premises-installation.md
       - DigitalOcean cloud installation: platform-infrastructure/digitalocean-installation.md
-    - User management:
-      - Enable single sign-on: core/docs/keycloak/sso.md
-      - Configure SMTP and invite users: core/docs/keycloak/smtp-configuration.md
-      - Manual user management: core/docs/keycloak/manual-user-management.md
 
   - AI practitioner:
     - Developer Center overview: core/docs/developer-center/overview.md
@@ -147,6 +143,10 @@ nav:
       - Project dashboard: core/docs/airman/projects/project-dashboard.md
     - User management:
       - Users overview: core/docs/airman/users/overview.md
+      - Set up user management:
+        - Enable single sign-on: core/docs/keycloak/sso.md
+        - Configure SMTP and invite users: core/docs/keycloak/smtp-configuration.md
+        - Add users manually: core/docs/keycloak/manual-user-management.md
       - Manage users: core/docs/airman/users/manage-users.md
     - Tutorials:
         - Resource utilization: tutorials/resource-utilization.md
