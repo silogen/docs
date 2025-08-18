@@ -83,8 +83,8 @@
 }
 
 .card {
-  background-color: #f1f5f9; /* slate-100 */
-  border: 2px solid #e2e8f0; /* slate-200 */
+  background-color: #f3f4f6; /* gray-100 */
+  border: 2px solid #e5e7eb; /* gray-200 */
   border-radius: 1em;
   flex-basis: calc(50% - .5em);
 }
@@ -116,38 +116,22 @@
 
 .icon.icon-introduction {
   background-image: url(../media/icons/home-lightbulb-outline-custom.png);
-  background-color: #34d399; /* emerald-400 */
+  background-color: #ED1C24; /* emerald-400 */
 }
 
 .icon.icon-platform {
   background-image: url(../media/icons/memory-custom.png);
-  background-color: #22d3ee; /* cyan-400 */
+  background-color: #00C2DE; /* cyan-400 */
 }
 
 .icon.icon-development {
   background-image: url(../media/icons/code-block-tags-custom.png);
-  background-color: #e879f9; /* fuchsia-400 */
+  background-color: #F26522; /* fuchsia-400 */
 }
 
 .icon.icon-resources {
   background-image: url(../media/icons/database-cog-outline-custom.png);
-  background-color: #fbbf24; /* amber-400 */
-}
-
-[data-md-color-scheme=slate] .icon.icon-introduction {
-  background-color: #6ee7b7; /* emerald-300 */
-}
-
-[data-md-color-scheme=slate] .icon.icon-platform {
-  background-color: #67e8f9; /* cyan-300 */
-}
-
-[data-md-color-scheme=slate] .icon.icon-development {
-  background-color: #f0abfc; /* fuchsia-300 */
-}
-
-[data-md-color-scheme=slate] .icon.icon-resources {
-  background-color: #fcd34d; /* amber-300 */
+  background-color: #C1A968; /* amber-400 */
 }
 
 .card-body {
