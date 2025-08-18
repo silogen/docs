@@ -4,7 +4,7 @@ This article explains how to install SiloGen in DigitalOcean cloud environment, 
 
 ## Prerequisites
 
-Suggested digital ocean minimal droplet configuration:
+Suggested minimum configuration for DigitalOcean droplet:
 
 ```
 AMD MI300X
@@ -14,12 +14,13 @@ Boot disk: 720 GB NVMe- Scratch disk: 5 TB NVMe
 Quick start:
 ```
 ROCm™ Software
-ROCm 6.4.0. Install any AI tools you need.
+ROCm 6.4.0.
+Install any AI tools you need.
 ```
 
 ## Installation steps
 
-In order to install on a Digital Ocean droplet, copy the following text into a file bloom.yaml, replacing <your-ip-address> with the ip address of the node.
+In order to install on a DigitalOcean droplet, copy the following text into a file bloom.yaml, replacing <your-ip-address> with the ip address of the node.
 ```
 DOMAIN: <your-ip-address>.nip.io
 CERT_OPTION: generate

@@ -26,6 +26,7 @@ The installation process leverages helper tools called **Cluster Bloom** and **C
 - Before installing the Kubernetes services, you'll need a domain name (such as myapp.example.com) that points to your server's IP address.
   - For production environments, this domain should point to a load balancer that distributes traffic across multiple servers.
   - For smaller setups or demonstrations, the domain can point directly to a single server's IP address, and MetalLB will be configured to handle load balancing within the Kubernetes cluster.
+  - If you don't have a DNS-enabled domain available, you may use a .nip.io domain with your IP address. Example: `<master-node-ip-address>.nip.io`.
 - Additionally, you'll need an SSL certificate to enable secure HTTPS connections to your services.
   - You can either provide your own trusted SSL certificate purchased from a certificate authority, or use the free Let's Encrypt service to automatically generate one.
   - If using Let's Encrypt, your setup must meet one of these requirements: either have port 80 accessible from the internet (allowing Let's Encrypt to verify domain ownership through your website), or have DNS management capabilities that allow automated domain validation (where Let's Encrypt can verify ownership by temporarily adding DNS records to your domain).
@@ -57,15 +58,15 @@ wget https://github.com/silogen/cluster-bloom/releases/latest/download/bloom
 ```
 chmod +x bloom
 ```
-### 4. Installation steps
+### 4. Create the installation configuration
 
-Before you can start the installation you need to create the configuration for your installation to tailor the installation based on your environment.
+Before you can start the installation you need to create the installation configuration, which adapts the installation to your environment.
 You can use a Configuration wizard that facilitates the creation of the configuration (Option A) or add the values directly in the configuration file (Option B).
 
-#### Option A - Create configuration using the Installation wizard
+#### Option A - Create installation configuration using the Installation wizard
 
 The Installation wizard is a helper tool that guides the user in creating the optimal configuration for the installation.
-For the standard installation you should select the default values, only exception is the domain name where you should provide a valid domain name.
+For the standard installation you should select the default values, only exception is the `domain` and `cert option` where you should provide a specific value.
 
 To start the wizard:
 ```
@@ -104,7 +105,7 @@ The ClusterForge release `URL` or `none` to skip the SW installation.
 
 **Domain**
 
-Domain name for the cluster, e.g., `cluster.example.com`. The domain name is used for ingress configuration.
+Domain name for the cluster, e.g., `cluster.example.com`. The domain name is used for ingress configuration. If you don't have a DNS-enabled domain available, you may use a .nip.io domain with your IP address. Example: `<master-node-ip-address>.nip.io`.
 
 **Use cert manager**
 
@@ -143,7 +144,7 @@ To start the installation:
 sudo ./bloom --config bloom.yaml
 ```
 
-### 6. Follow the installation progress
+### 5. Complete the installation progress
 
 The installation will take roughly 15 minutes. You can now follow the installation progress through the user interface:
 
@@ -153,10 +154,10 @@ For systems with unmounted physical disks, a selection prompt will appear:
 
 ![Cluster Bloom Disk Selection](../media/infra/bloom-disk-selection.png)
 
-### 7. Adding a second node to cluster (optional)
+#### 5.1 Optional step: Adding a second node to cluster
 After successful installation, Cluster Bloom generates `additional_node_command.txt`, which contains the command for installing additional nodes into the cluster.
 
-### 8. Specify HuggingFace token
+### 6. Specify HuggingFace token
 In order to download and access gated models from Hugging Face, you need to provide a Hugging Face token. Tokens contain sensitive information. To keep them secure and prevent unauthorized access, they should not be stored in plain text in your code or configuration files. Instead, they are stored as **secrets**, a secure way to manage sensitive data.
 
 #### How to get a Hugging Face token
@@ -183,12 +184,16 @@ kubectl create secret generic hf-token \
     -n my_namespace
 ```
 
-### 8. Confirm successful installation
+### 7. Login to SiloGen
 
 To confirm that the installation was successful, ensure you are able to log in to the Developer Center.
 
-1. Access the SiloGen URL (your domain name). See more details [here](../login-to-silogen.md)
+1. Access the SiloGen URL (your domain name).
+   1. For nip.io domain: `https://airmui.<master-node-ip-address>.nip.io`
+   2. If using a registered domain, the web address of the service will be: `https://airmui.<your-domain>`
 2. Login as `devuser@domain` user and use the default password.
+
+See more details about login [here](../login-to-silogen.md).
 
 ## Install only software into an existing Kubernetes cluster
 
