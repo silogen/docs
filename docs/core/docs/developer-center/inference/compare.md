@@ -17,10 +17,10 @@ Navigate to the corresponding page in the **AI Developer Center** → `Chat and 
 
 You will be able to choose from the list of models you have access to.
 
-Similar to the Chat, you can expand the settings toggle to view and modify the retrieval and generation parameters.
+Similar to the chat, you can expand the settings toggle to view and modify the generation parameters.
 
 ## Inspecting the debug output of the model
 
-Also [similar to the chat](./chat.md#inspecting-the-debug-output-of-the-model), you can click the "bug" icon to inspect the messages sent to the model, the context retrieved as part of RAG, and the consumed tokens.
+Also [similar to the chat](./chat.md#inspecting-the-debug-output-of-the-model), you can click the "bug" icon to inspect the messages sent to the model,the context retrieved as part of generation, and the consumed tokens.
 
 ![Model comparison view](../../img/inference/compare.png)

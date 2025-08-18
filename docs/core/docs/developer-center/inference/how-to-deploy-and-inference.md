@@ -4,6 +4,7 @@ tags:
   - deploy
   - models
   - inference
+  - tutorial
 ---
 
 # How to deploy a model and run inference
@@ -12,7 +13,7 @@ Training AI models and developing your own models are essential parts of AI work
 
 In short, an AI model requires data for training it properly. The model applies learned patterns to analyze new inputs. With new data, the model generates predictions, classifications, or other types of responses. In the end, the results are used to make decisions and provide services.
 
-This tutorial takes you through the following steps:
+This tutorial takes you through the following steps. Utilizing AI models in business applications is essential in any AI development workflow. This simple tutorial guides you to pick a model in SiloGen, deploy it and trial its endpoints in Jupyter. This tutorial takes you through the following steps:
 
 1. Deploy a model from the model catalog.
 2. Find information about the model endpoints.

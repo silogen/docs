@@ -7,11 +7,11 @@ tags:
 
 # Chat
 
-The Chat page allows you to experiment with models you have access to. You can modify several parameters to see how they affect the model's response.
+The chat page allows you to experiment with models you have access to. You can modify several parameters to see how they affect the model's response.
 
 ## Accessing the chat
 
-Navigate to the **AI Developer Center** → `Chat and Compare` to access the Chat.
+Navigate to the **AI Developer Center** → `Chat and Compare` to access the chat.
 
 You will be able to choose from the list of models you have access to.
 
@@ -21,7 +21,7 @@ Expand the settings toggle to view and modify the generation parameters.
 
 ## Inspecting the debug output of the model
 
-Once you have a response from the model, you can inspect the messages sent to the model, the context retrieved as part of RAG, and the consumed tokens by clicking the "bug" icon next to the response.
+Once you have a response from the model, you can inspect the messages sent to the model, the context retrieved as part of generation, and the consumed tokens by clicking the "bug" icon next to the response.
 
 ![Debug icon](../../img/inference/debug-icon.png)
 
