@@ -141,6 +141,7 @@ nav:
     - Projects:
       - Projects overview: core/docs/airman/projects/manage-projects.md
       - Project dashboard: core/docs/airman/projects/project-dashboard.md
+      - Project quotas: core/docs/airman/projects/project-quotas.md
     - User management:
       - Users overview: core/docs/airman/users/overview.md
       - Set up user management:

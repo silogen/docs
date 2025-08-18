@@ -28,16 +28,16 @@ This quick start guide outlines the steps to set up essential AI compute resourc
 This guide assumes you have access to an installed SiloGen platform. To assist you with onboarding, the following configurations have already been created during the installation process:
 
 - Platform admin users have already been created for your organization as part of the installation process. These are named devuser@domain and silogen-admin. The platform admin user can manage the SiloGen platform and onboard more users.
-- A project with a default resource quota has been created.
 - An organization entity has been created.
 - A compute cluster has been onboarded and connected to SiloGen platform.
-
+- A project with a resource quota has been created.
 
 ## Getting started
 
 This section outlines the steps to set up essential AI compute resources for project work.
 
 ### Onboard users
+
 !!! Note
     SiloGen provides multiple options for onboarding users into the platform. For small-scale trial deployments you can invite users through email or add them manually, but for large scale deployments we recommend using single sign-on (SSO).
 
@@ -46,9 +46,11 @@ This section outlines the steps to set up essential AI compute resources for pro
 Follow the instructions in ["Inviting users and configuring SMTP in Keycloak"](../core/docs/keycloak/smtp-configuration.md) to invite users through email.
 
 #### Onboard users through single sign-on (SSO)
+
 Follow the instructions in ["Adding an identity provider to enable single sign-on"](../core/docs/keycloak/sso.md) to onboard users through SSO.
 
 #### Invite users manually
+
 In case your organization does not have SSO or SMTP server set up you can add users manually.
 
 Follow the instructions in ["Manually managing and activating users in Airman"](../core/docs/keycloak/manual-user-management.md) to add users manually.
@@ -60,7 +62,7 @@ It is recommended to change the initial admin users' passwords that were created
 
 ### Optional: Create new projects (for advanced users)
 
-!!! Note
+!!! note
     A default project with quota has already been created for your organization as part of the installation process. In case you want to create new projects follow the instructions below.
 
 To learn how to create a new project with guaranteed quota follow the instructions in ["Manage projects"](../core/docs/airman/projects/manage-projects.md)
