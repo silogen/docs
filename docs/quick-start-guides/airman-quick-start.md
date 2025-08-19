@@ -55,10 +55,11 @@ In case your organization does not have SSO or SMTP server set up you can add us
 
 Follow the instructions in ["Manually managing and activating users in Airman"](../core/docs/keycloak/manual-user-management.md) to add users manually.
 
-
 ### Change the default admin user passwords
 
-It is recommended to change the initial admin users' passwords that were created as part of the installation process. To change the passwords you need to change the Kubernetes secrets.
+It is recommended to change the initial admin users' passwords that were created as part of the installation process.
+- Super admin password (Keycloak admin user) - The super admin password is needed to login to the Keycloak admin panel. The password is stored in a Kubernetes secret, so in order to change the password you need to change the Kubernetes secret.
+- Platform admin password (devuser@domain) - How to change your `devuser` password depends on your user management setup. E.g., the `super admin` user can reset the user in Keycloak admin panel, if you have `Invite users through email` you can change your password yourself through "Forget password" link.
 
 ### Optional: Create new projects (for advanced users)
 
