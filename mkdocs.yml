@@ -58,6 +58,9 @@ plugins:
         'platform-infrastructure/index.md': 'platform-infrastructure/on-premises-installation.md'
         'references/index.md': 'references/overview.md'
 
+        # Change this to link to an external feedback page.
+        # 'feedback.md': 'feedback-url.here'
+
 markdown_extensions:
   - pymdownx.highlight:
       anchor_linenums: true
