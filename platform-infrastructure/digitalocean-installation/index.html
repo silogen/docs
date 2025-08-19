@@ -2858,17 +2858,18 @@
 <h1 id="install-silogen-on-digitalocean-cloud">Install SiloGen on DigitalOcean cloud<a class="headerlink" href="#install-silogen-on-digitalocean-cloud" title="Permanent link">&para;</a></h1>
 <p>This article explains how to install SiloGen in DigitalOcean cloud environment, covering the full stack from metal to application layer in a streamlined manner.</p>
 <h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
-<p>Suggested digital ocean minimal droplet configuration:</p>
+<p>Suggested minimum configuration for DigitalOcean droplet:</p>
 <p><div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>AMD MI300X
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>1 GPU - 192 GB VRAM - 20 vCPU - 240 GB RAM
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>Boot disk: 720 GB NVMe- Scratch disk: 5 TB NVMe
 </code></pre></div>
 Quick start:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>ROCm™ Software
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>ROCm 6.4.0. Install any AI tools you need.
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>ROCm 6.4.0.
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>Install any AI tools you need.
 </code></pre></div></p>
 <h2 id="installation-steps">Installation steps<a class="headerlink" href="#installation-steps" title="Permanent link">&para;</a></h2>
-<p>In order to install on a Digital Ocean droplet, copy the following text into a file bloom.yaml, replacing <your-ip-address> with the ip address of the node.
+<p>In order to install on a DigitalOcean droplet, copy the following text into a file bloom.yaml, replacing <your-ip-address> with the ip address of the node.
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>DOMAIN: &lt;your-ip-address&gt;.nip.io
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>CERT_OPTION: generate
 <a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>CLUSTERFORGE_RELEASE: https://github.com/silogen/cluster-forge/releases/download/20250812-1-enterprise/release-enterprise-20250812-1.tar.gz
