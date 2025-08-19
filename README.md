@@ -28,4 +28,4 @@ See the [Contributing](docs/contributing.md) guide for development setup instruc
 
 ## Publishing
 
-The external SiloGen documentation is published from this repository as a web site in Github pages in address [docs.silogen.ai](https://docs.silogen.ai).
+The external SiloGen documentation is published from this repository as a web site in Github pages in address [docs.silogen.ai](https://docs.silogen.ai). The deployment can be done locally with the command `mkdocs gh-deploy`.
