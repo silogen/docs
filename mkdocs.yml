@@ -55,7 +55,7 @@ plugins:
         'core/docs/airman/clusters/index.md': 'core/docs/airman/clusters/overview.md'
         'core/docs/airman/projects/index.md': 'core/docs/airman/projects/manage-projects.md'
         'core/docs/airman/users/index.md': 'core/docs/airman/users/overview.md'
-        'platform-infrastructure/index.md': 'platform-infrastructure/on-premises-installation.md'
+        'platform-infrastructure/index.md': 'platform-infrastructure/supported-environments.md'
         'references/index.md': 'references/overview.md'
 
         # Change this to link to an external feedback page.
@@ -80,7 +80,7 @@ nav:
     - Home: index.md
     - Platform overview: platform-overview.md
     - Target audience: target-audience.md
-    - Quick start guide: quick-start.md
+    - Quick start guide to SiloGen: quick-start.md
     - General topics:
       - Login to SiloGen: login-to-silogen.md
       - Personal preferences: personal-preferences.md
@@ -93,7 +93,7 @@ nav:
 
   - AI practitioner:
     - Developer Center overview: core/docs/developer-center/overview.md
-    - Quick start guide: quick-start-guides/devcenter-quick-start.md
+    - Quick start for AI practitioners: quick-start-guides/devcenter-quick-start.md
     - Workspaces: core/docs/developer-center/workspaces.md
     - Workloads: core/docs/developer-center/workloads.md
 
@@ -109,7 +109,7 @@ nav:
 
     - Tutorials:
       - GUI access:
-        - Low-code tutorial: tutorials/low-code-fine-tuning-tutorial.md
+        - Low-code fine-tuning tutorial: tutorials/low-code-fine-tuning-tutorial.md
         - AI workspace tutorial: tutorials/ai-workspace-tutorial.md
         - Deploy a model and run inference: core/docs/developer-center/inference/how-to-deploy-and-inference.md
       - CLI access:
@@ -136,7 +136,7 @@ nav:
 
   - AI resource manager:
     - Airman overview: core/docs/airman/overview.md
-    - Quick start guide: quick-start-guides/airman-quick-start.md
+    - Quick start for AI resource managers: quick-start-guides/airman-quick-start.md
     - Dashboard: core/docs/airman/dashboard.md
     - Clusters:
       - Clusters overview: core/docs/airman/clusters/overview.md
