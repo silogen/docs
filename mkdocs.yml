@@ -42,6 +42,25 @@ theme:
     - search.highlight
     - search.suggest
 
+extra:
+  analytics:
+    provider: google
+    property: G-XXXXXXXXXX
+    feedback:
+      title: Was this page helpful?
+      ratings:
+        - icon: material/thumb-up-outline
+          name: This page was helpful
+          data: 1
+          note: >-
+            Thanks for your feedback!
+        - icon: material/thumb-down-outline
+          name: This page could be improved
+          data: 0
+          note: >-
+            Thanks for your feedback! Help us improve this page by
+            using our <a href="https://docs.silogen.ai/feedback/" target="_blank" rel="noopener">feedback form</a>.
+
 plugins:
   - search
   - tags
@@ -190,3 +209,4 @@ exclude_docs: |
   ai-workloads-manifests/llm-inference-vllm/helm/mount/README.md
   ai-workloads-manifests/llm-pretraining-megatron-lm/helm/mount/README.md
   ai-workloads-manifests/rag-embedding-infinity/helm/mount/README.md
+
