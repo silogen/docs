@@ -84,7 +84,7 @@ for file in data_in:
 
 You can upload a dataset to SiloGen using the SiloGen API. See the examples below.
 
-**Example:** API call using Curl
+**Example**: API call using Curl
 
 ```python
 curl -X 'POST' \
@@ -98,7 +98,7 @@ curl -X 'POST' \
   -F 'jsonl=@dataset.jsonl'
 ```
 
-**Example:** API call using Python
+**Example**: API call using Python
 
 ```python
 from pathlib import Path

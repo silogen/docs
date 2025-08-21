@@ -30,16 +30,16 @@ This guide assumes the user has access to an installed SiloGen platform. Besides
 
 ### Complete a tutorial
 
-Based on your background you can choose either no-code or more advanced coding tutorials.
+Based on your background you can choose either low-code or more advanced coding tutorials.
 
 #### Model deployment and inference
 
 To learn how to deploy a model and run inference, please complete the tutorial ["How to deploy a model and run inference"](../core/docs/developer-center/inference/how-to-deploy-and-inference.md).
 
 
-#### No-code tutorial: fine-tune a model with no code
+#### Low-code tutorial: fine-tune a model with low code
 
-To learn how to finetune a model without any code, please complete the tutorial ["Fine-tune a model with no code"](../tutorials/no-code-fine-tuning-tutorial.md).
+To learn how to finetune a model with only little coding experience needed, please complete the tutorial ["Fine-tune a model with low code"](../tutorials/low-code-fine-tuning-tutorial.md).
 
 #### Advanced tutorial: hands-on AI development using AI workspaces
 

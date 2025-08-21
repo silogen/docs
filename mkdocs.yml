@@ -109,7 +109,7 @@ nav:
 
     - Tutorials:
       - GUI access:
-        - No-code tutorial: tutorials/no-code-fine-tuning-tutorial.md
+        - Low-code tutorial: tutorials/low-code-fine-tuning-tutorial.md
         - AI workspace tutorial: tutorials/ai-workspace-tutorial.md
         - Deploy a model and run inference: core/docs/developer-center/inference/how-to-deploy-and-inference.md
       - CLI access:
@@ -166,7 +166,6 @@ exclude_docs: |
   ref-architecture/SilogenAMDEnterpriseAIPlatform.md
   ref-architecture/Enterprise-AI-Architecture.md
 
-  references/best-practices.md
   references/contributing.md
 
   # Imported files
