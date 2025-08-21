@@ -6,15 +6,14 @@ This article explains how to install SiloGen in DigitalOcean cloud environment. 
 
 Suggested minimum configuration for DigitalOcean droplet:
 
-```
-AMD MI300X
-1 GPU - 192 GB VRAM - 20 vCPU - 240 GB RAM
-Boot disk: 720 GB NVMe- Scratch disk: 5 TB NVMe
-```
+- AMD MI300X
+- 1 GPU - 192 GB VRAM - 20 vCPU - 240 GB RAM
+- Boot disk: 720 GB NVMe- Scratch disk: 5 TB NVMe
+
 SW requirements:
-```
-ROCm™ Software 6.4.0.
-```
+
+- ROCm™ Software 6.4.0.
+
 
 ## Installation steps
 
