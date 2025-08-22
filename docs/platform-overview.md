@@ -50,8 +50,8 @@ Kaiwo optimizes GPU resource utilization for AI workloads by minimizing GPU idle
 **Kubernetes platform**<br>
 The core orchestration platform for managing containerized applications. Kubernetes is the industry standard for orchestrating containerized applications at scale. It provides the flexibility, scalability, and reliability needed to support enterprise AI workloads—from training machine learning models to serving predictions in production.
 
-**Cloud Forge**<br>
-A tool built to help enterprises easily deploy a scalable, production-ready AI platform using open-source technologies. Cloud Forge automates the deployment of the control and compute planes onto Kubernetes clusters, integrates prepackaged SiloGen AI workloads, and enables organizations running on AMD hardware to start training and deploying models within just a few hours—essentially offering a streamlined, "one-click" setup for enterprise-grade AI infrastructure.
+**Cluster Forge**<br>
+A tool built to help enterprises easily deploy a scalable, production-ready AI platform using open-source technologies. Cluster Forge automates the deployment of the control and compute planes onto Kubernetes clusters, integrates prepackaged SiloGen AI workloads, and enables organizations running on AMD hardware to start training and deploying models within just a few hours—essentially offering a streamlined, "one-click" setup for enterprise-grade AI infrastructure.
 
 **AI workloads**<br>
 Reference AI workloads optimized for AMD compute, including model fine-tuning, pretraining, evaluation, and inference workloads. These workloads have been tested and executed on AMD GPUs and are open sourced ([https://github.com/silogen/ai-workloads](https://github.com/silogen/ai-workloads)). SiloGen AI workloads provide building blocks for broader collaboration across the AI ecosystem and accelerate the development of AI use cases. The catalog of pre-developed AI workloads is continuously updated.

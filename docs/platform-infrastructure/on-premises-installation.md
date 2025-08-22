@@ -99,9 +99,9 @@ List of disk devices to use. Example: `dev/sdb`. Leave empty for automatic selec
 
 List of disk paths for Longhorn storage. Leave empty for automatic configuration.
 
-**Cluster-Forge release**
+**Cluster Forge release**
 
-The ClusterForge release `URL` or `none` to skip the SW installation.
+The Cluster Forge release `URL` or `none` to skip the SW installation.
 
 **Domain**
 
@@ -169,7 +169,7 @@ In order to download and access gated models from Hugging Face, you need to prov
 
 3. Under **Access Tokens**, generate a new token.
 
-4. Copy the token (keep it safe; don\'t share it).
+4. Copy the token (keep it safe; don't share it).
 
 #### Where to install the token
 
@@ -181,7 +181,7 @@ On Kubernetes, save the token in an environment variable in your terminal:
 ```
 kubectl create secret generic hf-token \
     --from-literal=hf-token=my_super_secret_token \
-    -n my_namespace
+    -n kaiwo
 ```
 
 ### 7. Login to SiloGen

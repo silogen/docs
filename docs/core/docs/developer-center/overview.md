@@ -7,7 +7,7 @@ tags:
 
 # AI Development overview (Developer Center)
 
-The SiloGen Developer Center is an interface for developers to easily manage the lifecycle of their Generative AI stack. The Developer Center provides an easy-to-use no-code/low-code option for running and managing AI workloads. This article lays the foundation for how to develop, run, and manage AI workloads in the Developer Center.
+The SiloGen Developer Center is an interface for developers to easily manage the lifecycle of their Generative AI stack. The Developer Center provides an easy-to-use low-code option for running and managing AI workloads. This article lays the foundation for how to develop, run, and manage AI workloads in the Developer Center.
 
 ![The introduction page to Developer Center outlines the main chat features.](../img/ai-development/devcenter-introduction.png)
 
