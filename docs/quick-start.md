@@ -9,7 +9,7 @@ tags:
 
 This quick start guide will help you rapidly install, configure, and begin using the AMD SiloGen Enterprise AI platform for your AI workloads.
 
-SiloGen Enterprise AI Platform supports bare-metal, on-premises, and public cloud deployments of AI workloads. SiloGen Enterprise AI currently supports AMD Instinct MI250, MI300, and MI325 GPUs.
+SiloGen Enterprise AI Platform supports bare-metal, on-premises, and public cloud deployments of AI workloads. SiloGen Enterprise AI currently validated on Instinct MI300X GPUs, and supports MI250, and MI325 GPUs.
 
 !!! note
     These instructions are intended for installing SiloGen as a self-contained solution in an on-premises environment. For larger-scale, production-level deployments, refer to AMD SiloGen Enterprise AI support services.
