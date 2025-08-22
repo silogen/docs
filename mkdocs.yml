@@ -140,7 +140,6 @@ nav:
     - Dashboard: core/docs/airman/dashboard.md
     - Clusters:
       - Clusters overview: core/docs/airman/clusters/overview.md
-      - Add new cluster: core/docs/airman/clusters/add-clusters-ui.md
     - Projects:
       - Projects overview: core/docs/airman/projects/manage-projects.md
       - Project dashboard: core/docs/airman/projects/project-dashboard.md
@@ -167,6 +166,8 @@ exclude_docs: |
   ref-architecture/Enterprise-AI-Architecture.md
 
   references/contributing.md
+
+  core/docs/airman/clusters/add-clusters-ui.md
 
   # Imported files
   ai-workloads-docs/contributing.md
