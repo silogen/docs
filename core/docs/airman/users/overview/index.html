@@ -2870,7 +2870,8 @@
 
 <h1 id="users-overview">Users overview<a class="headerlink" href="#users-overview" title="Permanent link">&para;</a></h1>
 <p>The SiloGen platform has a robust user management system bundled with the authentication system <a href="https://www.keycloak.org/">Keycloak</a>. The platform can also use an <a href="../../../keycloak/sso/">identity provider</a> for user authentication.</p>
-<p>Tools for managing the organization and user access are found in the navigation under the titles Organization and Access control.</p>
+<p>More information about how to set up user management can be found <a href="../manage-users/">here</a>.</p>
+<p>To manage users on the SiloGen platform navigate to <strong>AI Resource Management</strong> → <code>Access control</code>.</p>
 <h2 id="roles">Roles<a class="headerlink" href="#roles" title="Permanent link">&para;</a></h2>
 <p>Airman and Developer Center have two different user roles: platform admin and team member.</p>
 <p>The <strong>platform admin</strong> has access to everything on the platform. When submitting workloads, they follow the regular project rules, meaning they can submit workloads only to clusters where they have a project. Administrators can change a user's role.</p>
@@ -2881,7 +2882,7 @@
 <li>view workloads in their projects</li>
 <li>delete workloads from their projects.</li>
 </ul>
-<p>The <strong>super administrator</strong> is a special role reserved for platform engineers, who perform maintenance and other background tasks, such as onboarding new organizations.</p>
+<p>The <strong>super administrator</strong> is a special role reserved for platform engineers, who perform maintenance and other background tasks, such as onboarding new organizations and users in Keycloak. The super administrator has admin rights to Keycloak.</p>
 <h3 id="adjusting-user-roles">Adjusting user roles<a class="headerlink" href="#adjusting-user-roles" title="Permanent link">&para;</a></h3>
 <p>Roles are currently fixed and cannot be adjusted in individual SiloGen platform installations.</p>
 
