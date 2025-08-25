@@ -12,7 +12,7 @@ This article explains how to install SiloGen in an on-premises environment, cove
 
 The SiloGen platform runs on top of Kubernetes orchestration platform and includes essential Kubernetes components for monitoring, secrets management, and certificate management.
 
-The installation process leverages helper tools called **Cluster Bloom** and **Cluster Forge** that deploy and configure all necessary platform components, preparing a Kubernetes cluster for executing AI workloads.
+The installation process leverages helper tools called Cluster Bloom and Cluster Forge that deploy and configure all necessary platform components, preparing a Kubernetes cluster for executing AI workloads.
 
 ## Prerequisites
 
@@ -24,17 +24,17 @@ The installation process leverages helper tools called **Cluster Bloom** and **C
 
 ### Domain and SSL certificate prerequisites
 - Before installing the Kubernetes services, you'll need a domain name (such as myapp.example.com) that points to your server's IP address.
-  - For production environments, this domain should point to a load balancer that distributes traffic across multiple servers.
-  - For smaller setups or demonstrations, the domain can point directly to a single server's IP address, and MetalLB will be configured to handle load balancing within the Kubernetes cluster.
-  - If you don't have a DNS-enabled domain available, you may use a .nip.io domain with your IP address. Example: `<master-node-ip-address>.nip.io`.
+    - For production environments, this domain should point to a load balancer that distributes traffic across multiple servers.
+    - For smaller setups or demonstrations, the domain can point directly to a single server's IP address, and MetalLB will be configured to handle load balancing within the Kubernetes cluster.
+    - If you don't have a DNS-enabled domain available, you may use a .nip.io domain with your IP address. Example: `<master-node-ip-address>.nip.io`.
 - Additionally, you'll need an SSL certificate to enable secure HTTPS connections to your services.
-  - You can either provide your own trusted SSL certificate purchased from a certificate authority, or use the free Let's Encrypt service to automatically generate one.
-  - If using Let's Encrypt, your setup must meet one of these requirements: either have port 80 accessible from the internet (allowing Let's Encrypt to verify domain ownership through your website), or have DNS management capabilities that allow automated domain validation (where Let's Encrypt can verify ownership by temporarily adding DNS records to your domain).
+    - You can either provide your own trusted SSL certificate purchased from a certificate authority, or use the free Let's Encrypt service to automatically generate one.
+    - If using Let's Encrypt, your setup must meet one of these requirements: either have port 80 accessible from the internet (allowing Let's Encrypt to verify domain ownership through your website), or have DNS management capabilities that allow automated domain validation (where Let's Encrypt can verify ownership by temporarily adding DNS records to your domain).
 - Finally, ensure that any firewalls, security groups, or network routing configurations are updated to allow incoming connections from users who will be accessing these services.
 
 ## Install Kubernetes cluster and software
 
-You will use an installation script called **Cluster Bloom** to install and configure a Kubernetes cluster and install the SiloGen software. It installs the following features to prepare an AMD GPU node to be part of a Kubernetes cluster:
+You will use an installation script called Cluster Bloom to install and configure a Kubernetes cluster and install the SiloGen software. It installs the following features to prepare an AMD GPU node to be part of a Kubernetes cluster:
 
 - Automated RKE2 Kubernetes cluster deployment
 - ROCm setup and configuration for AMD GPU nodes
@@ -132,7 +132,7 @@ Below is an example configuration for the configuration file bloom.yaml:
 ```
 DOMAIN: <your-ip-address>.nip.io
 CERT_OPTION: generate
-CLUSTERFORGE_RELEASE: https://github.com/silogen/cluster-forge/releases/download/20250812-1-enterprise/release-enterprise-20250812-1.tar.gz
+CLUSTERFORGE_RELEASE: https://github.com/silogen/cluster-forge/releases/download/v2025.08.001-enterprise/release-enterprise-v2025.08.001.tar.gz
 FIRST_NODE: true
 GPU_NODE: true
 SKIP_DISK_CHECK: false

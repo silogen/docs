@@ -190,3 +190,4 @@ exclude_docs: |
   ai-workloads-manifests/llm-inference-vllm/helm/mount/README.md
   ai-workloads-manifests/llm-pretraining-megatron-lm/helm/mount/README.md
   ai-workloads-manifests/rag-embedding-infinity/helm/mount/README.md
+
