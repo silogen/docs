@@ -10,7 +10,9 @@ tags:
 
 The SiloGen platform has a robust user management system bundled with the authentication system [Keycloak](https://www.keycloak.org/). The platform can also use an [identity provider](../../keycloak/sso.md) for user authentication.
 
-Tools for managing the organization and user access are found in the navigation under the titles Organization and Access control.
+More information about how to set up user management can be found [here](../users/manage-users.md).
+
+To manage users on the SiloGen platform navigate to **AI Resource Management** → `Access control`.
 
 ## Roles
 
@@ -25,7 +27,7 @@ The **team member** has several limitations in their workflows. A team member ca
 - view workloads in their projects
 - delete workloads from their projects.
 
-The **super administrator** is a special role reserved for platform engineers, who perform maintenance and other background tasks, such as onboarding new organizations.
+The **super administrator** is a special role reserved for platform engineers, who perform maintenance and other background tasks, such as onboarding new organizations and users in Keycloak. The super administrator has admin rights to Keycloak.
 
 ### Adjusting user roles
 
