@@ -45,6 +45,7 @@ theme:
 plugins:
   - search
   - tags
+  - macros
   # - with-pdf
 
   - redirects:
@@ -157,6 +158,12 @@ nav:
   - References:
     - References: references/overview.md
     - Tags: references/tags.md
+
+extra:
+  name: SiloGen
+  name_mid: SiloGen platform
+  name_long: SiloGen Enterprise AI platform
+  name_verylong: SiloGen - AMD Enterprise AI Platform
 
 extra_css:
   - stylesheets/extra.css
