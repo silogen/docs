@@ -41,11 +41,9 @@ If the workload type is `Workspace`, selecting this action opens the workspace i
 | ------------------ | ------------------------------------------------------------- |
 | **Model Download** | Batch job for downloading a new AI model                      |
 | **Inference**      | Inference service                                             |
-| **Training**       | Model training batch job which generates a new model          |
-| **Pre-Training**   | Model pre-training batch job which generates a new base model |
 | **Fine-Tuning**    | Model fine-tuning batch job which generates a new model       |
-| **Evaluation**     | Workload for evaluating model performance                     |
 | **Workspace**      | Workspace for model experiments                               |
+| **Custom**         | A workload not submitted via Developer Center, but for example, via API or via kubectl |
 
 ## Workload statuses
 
@@ -60,4 +58,4 @@ If the workload type is `Workspace`, selecting this action opens the workspace i
 | **Deleted**       | Workload successfully deleted                           | All components are in the `Deleted` state                |
 | **Delete Failed** | Delete failed and manual cleanup might be needed        | Any component is in the `Delete Failed` state            |
 | **Terminated**    | Execution has been terminated                           | All components are in the `Completed` or `Deleted` state |
-| **Unknown**       | Status cannot be determined                             |                                                          |
+| **Unknown**       | Status cannot be determined | |

@@ -18,13 +18,13 @@ A cluster is the physical part of the platform installation, which can be manage
 
 The clusters overview provides a list of the clusters added to the SiloGen platform, along with their status. You can see the following information about your clusters:
 
-**Clusters:** Clusters for your organization that have been onboarded to AI Resource Manager. Onboarding clusters allows you to manage resources, projects, and workloads on them.
+**Clusters**: Clusters for your organization that have been onboarded to AI Resource Manager. Onboarding clusters allows you to manage resources, projects, and workloads on them.
 
-**Available nodes:** The total number of nodes available across all clusters. AI Resource Manager routinely pulls node information from clusters, including resources and health.
+**Available nodes**: The total number of nodes available across all clusters. AI Resource Manager routinely pulls node information from clusters, including resources and health.
 
-**Allocated GPUs:** The total number of GPUs allocated to project quotas across all clusters. Users belonging to projects with GPU quotas are guaranteed allocated GPU resources for their workloads in the corresponding clusters.
+**Allocated GPUs**: The total number of GPUs allocated to project quotas across all clusters. Users belonging to projects with GPU quotas are guaranteed allocated GPU resources for their workloads in the corresponding clusters.
 
-**Running workloads:** The total number of active workloads across all clusters. Workloads submitted via AI Resource Manager are optimally scheduled, tracked, and monitored for resource usage and health.
+**Running workloads**: The total number of active workloads across all clusters. Workloads submitted via AI Resource Manager are optimally scheduled, tracked, and monitored for resource usage and health.
 
 **Clusters table**
 
@@ -43,13 +43,13 @@ The clusters overview provides a list of the clusters added to the SiloGen platf
 
 The Cluster page provides a quick and easy way to see the status of your cluster.
 
-**Available nodes:** The total number of nodes available in the cluster. AI Resource Manager routinely pulls node information from the cluster, including resources and health.
+**Available nodes**: The total number of nodes available in the cluster. AI Resource Manager routinely pulls node information from the cluster, including resources and health.
 
-**Assigned quotas:** Quotas assigned to the cluster resources. Each project has a quota to limit the amount of resources they are guaranteed on the cluster.
+**Assigned quotas**: Quotas assigned to the cluster resources. Each project has a quota to limit the amount of resources they are guaranteed on the cluster.
 
-**Allocated GPUs:** The total number of GPUs allocated to quotas in the cluster. Users belonging to projects with GPU quotas are guaranteed allocated GPU resources for their workloads.
+**Allocated GPUs**: The total number of GPUs allocated to quotas in the cluster. Users belonging to projects with GPU quotas are guaranteed allocated GPU resources for their workloads.
 
-**Running workloads:** The total number of active workloads running on the cluster. Workloads submitted via AI Resource Manager are optimally scheduled, tracked, and monitored for resource usage and health.
+**Running workloads**: The total number of active workloads running on the cluster. Workloads submitted via AI Resource Manager are optimally scheduled, tracked, and monitored for resource usage and health.
 
 **Projects table**
 

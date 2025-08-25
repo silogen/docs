@@ -55,14 +55,8 @@ Depending on the selected dataset type, each row in the JSONL file should be for
 }
 ```
 
-## Archiving datasets
-
-If you have identified a dataset that is no longer relevant to your use cases, you can choose to archive it by selecting the dataset(s) and clicking the "Archive" button in the "Actions" menu.
-
-![Archive dataset](../../img/training/datasets-archive.png)
-
 ### Unarchiving datasets
 
-To unarchive a dataset, select the "Archived" filter option, choose the dataset(s) you would like to unarchive, and click the "Unarchive" button in the "Actions" menu.
+If you have identified a dataset that is no longer relevant to your use cases, you can choose to delete. This happens by selecting the dataset(s) and clicking the "Delete" button in the actions menu.
 
-![Unarchive dataset](../../img/training/datasets-unarchive.png)
+![Deleting a dataset can take place via the multiselect feature or in the three-dot action menu.](../../img/training/datasets-delete.png)

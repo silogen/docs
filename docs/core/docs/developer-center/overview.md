@@ -5,9 +5,9 @@ tags:
   - workloads
 ---
 
-# AI Development overview (Developer Center)
+# Developer Center overview
 
-The SiloGen Developer Center is an interface for developers to easily manage the lifecycle of their Generative AI stack. The Developer Center provides an easy-to-use low-code option for running and managing AI workloads. This article lays the foundation for how to develop, run, and manage AI workloads in the Developer Center.
+The SiloGen Developer Center is an interface for developers to easily manage the lifecycle of their AI stack. The Developer Center provides an easy-to-use low-code option for running and managing AI workloads. This article lays the foundation for how to develop, run, and manage AI workloads in the Developer Center.
 
 ![The introduction page to Developer Center outlines the main chat features.](../img/ai-development/devcenter-introduction.png)
 
@@ -29,7 +29,7 @@ The [chat page](./inference/chat.md) allows developers to experiment with models
 
 ### GPU-as-a-Service
 
-The Developer Center provides developers with self-service access to workspaces with GPU resources. Platform admins can set project-based quotas for GPU usage so teams always have the right amount of resources available.
+The Developer Center provides developers with self-service access to workspaces with GPU resources. Platform admins can set project quotas for GPU usage so teams always have the right amount of resources available.
 
 ### AI models
 
