@@ -114,9 +114,11 @@ nav:
         - Deploy a model and run inference: core/docs/developer-center/inference/how-to-deploy-and-inference.md
       - CLI access:
         - CLI tutorials overview: cli-tutorials-overview.md
-        - Prerequisites for running the tutorials: ai-workloads-docs/tutorials/tutorial-prereqs.md
+        - Prerequisites for running the tutorials: ai-workloads-docs/tutorials/tutorial-00-prerequisites.md
         - Deliver resources and fine-tune: ai-workloads-docs/tutorials/tutorial-01-deliver-resources-and-finetune.md
         - Language extension - Odia fine-tuning: ai-workloads-docs/tutorials/tutorial-02-language-extension-finetune.md
+        - Continuous Pretraining of Llama-3.1-8B: ai-workloads-docs/tutorials/tutorial-03-deliver-resources-and-run-megatron-cpt.md
+        - Continuous Pretraining of Llama-3.1-70B: ai-workloads-docs/tutorials/tutorial-04-deliver-llama70b-and-run-megatron-cpt-with-tp8-ddp2.md
 
     - Reference AI workloads:
       - Workloads overview: ai-workloads-manifests/workloads-overview.md
