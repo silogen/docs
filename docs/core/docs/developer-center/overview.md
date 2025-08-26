@@ -34,8 +34,6 @@ The [chat page](./inference/chat.md) allows developers to experiment with models
 
 The Developer Center provides developers with self-service access to workspaces with GPU resources. Platform admins can set project quotas for GPU usage so teams always have the right amount of resources available.
 
-### AI models
-
 ## Running AI workloads on the command-line
 
 Developers can also deploy and run AI workloads through the command-line interface using `kubectl`. The [AI workloads](https://github.com/silogen/ai-workloads) are pre-validated, open-source and continuously updated.
