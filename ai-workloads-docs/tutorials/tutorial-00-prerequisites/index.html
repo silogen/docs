@@ -1413,6 +1413,10 @@
       
         
       
+        
+      
+        
+      
     
     
     
@@ -1598,6 +1602,52 @@
   
   <span class="md-ellipsis">
     Language extension - Odia fine-tuning
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorial-03-deliver-resources-and-run-megatron-cpt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Continuous Pretraining of Llama-3.1-8B
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorial-04-deliver-llama70b-and-run-megatron-cpt-with-tp8-ddp2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Continuous Pretraining of Llama-3.1-70B
     
   </span>
   
@@ -2852,75 +2902,61 @@
 <h2 id="required-program-installs">Required program installs<a class="headerlink" href="#required-program-installs" title="Permanent link">&para;</a></h2>
 <p>Programs that are used in this tutorial:</p>
 <ul>
-<li>
-<p><a href="https://kubernetes.io/docs/tasks/tools/#kubectl">kubectl</a></p>
-</li>
-<li>
-<p><a href="https://helm.sh/docs/intro/install/">helm</a></p>
-</li>
-<li>
-<p><a href="https://k9scli.io/topics/install/">k9s</a></p>
-</li>
-<li>
-<p><a href="https://jqlang.org/download/">jq</a></p>
-</li>
-<li>
-<p><a href="https://everything.curl.dev/install/index.html">curl</a></p>
-</li>
+<li><a href="https://kubernetes.io/docs/tasks/tools/#kubectl">kubectl</a></li>
+<li><a href="https://helm.sh/docs/intro/install/">helm</a></li>
+<li><a href="https://k9scli.io/topics/install/">k9s</a></li>
+<li><a href="https://jqlang.org/download/">jq</a></li>
+<li><a href="https://everything.curl.dev/install/index.html">curl</a></li>
 </ul>
 <p>At least curl and often jq too are commonly installed in many distributions out of the box.</p>
 <h2 id="namespace-setup">Namespace setup<a class="headerlink" href="#namespace-setup" title="Permanent link">&para;</a></h2>
-<p>In order to run the workloads you need to have a Kubernetes cluster with sufficient resources configured. This includes storage, secrets, namespace and HuggingFace token. These should be installed and configured as part of the installation process, but if this is not the case you can use the following command to set up these. The command does the following:</p>
+<p>In order to run the workloads you need to have a Kubernetes cluster with sufficient resources configured. This includes storage, secrets, namespace, and a HuggingFace token. These should be installed and configured as part of the installation process, but if this is not the case you can use the following command to set up these. The command does the following:</p>
 <ul>
 <li>
 <p>Adds a namespace, where we will conduct all our work. We will setup the <code>silo-tutorial</code> namespace, but this also works in the default namespace in your cluster.</p>
 </li>
 <li>
 <p>Adds an External Secret to get the credentials to access the MinIO storage from our namespace.</p>
-<ul>
-<li>This depends on a ClusterSecretStore called <code>k8s-secret-store</code> being already setup by a cluster admin, and the MinIO API credentials being secret there.
-The cluster should have these by default.</li>
-</ul>
 </li>
 <li>
-<p>Adds a LocalQueue so that our Jobs schedule intelligently.</p>
-<ul>
-<li>This references the ClusterQueue <code>kaiwo</code> which should already be setup by a cluster admin.</li>
-</ul>
+<p>This depends on a ClusterSecretStore called <code>k8s-secret-store</code> being already setup by a cluster admin, and the MinIO API credentials being secret there. The cluster should have these by default.</p>
+</li>
+<li>
+<p>Adds a LocalQueue so that our jobs schedule intelligently.</p>
+</li>
+<li>
+<p>This references the ClusterQueue <code>kaiwo</code> which should already be setup by a cluster admin.</p>
 </li>
 </ul>
 <p>We will use the helm chart in <code>workloads/k8s-namespace-setup/helm</code> and the overrides in <code>workloads/k8s-namespace-setup/helm/overrides/</code>.</p>
-<p>This first creates a new namespace and sets the current context to use it from now on:
+<p>This first creates a new namespace and sets the current context to use it from now on:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>kubectl<span class="w"> </span>create<span class="w"> </span>namespace<span class="w"> </span><span class="s2">&quot;silo-tutorial&quot;</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>kubectl<span class="w"> </span>config<span class="w"> </span>set-context<span class="w"> </span>--current<span class="w"> </span>--namespace<span class="w"> </span>silo-tutorial
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>helm<span class="w"> </span>template<span class="w"> </span>workloads/k8s-namespace-setup/helm<span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span>--values<span class="w"> </span>workloads/k8s-namespace-setup/helm/overrides/tutorial-prereqs-local-queue.yaml<span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">  </span>--values<span class="w"> </span>workloads/k8s-namespace-setup/helm/overrides/tutorial-prereqs-storage-access-external-secret.yaml<span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">  </span><span class="p">|</span><span class="w"> </span>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>-
-</code></pre></div></p>
-<ul>
-<li>HuggingFace token: In addition to running the command above you also need to add your HF Token as a secret called <code>hf-token</code> with the key <code>hf-token</code> in your namespace.</li>
-</ul>
+</code></pre></div>
+<p>HuggingFace token: In addition to running the command above you also need to add your HuggingFace Token as a secret called <code>hf-token</code> with the key <code>hf-token</code> in your namespace.</p>
 <h2 id="monitoring-progress-logs-and-gpu-utilization-with-k9s">Monitoring progress, logs, and GPU utilization with k9s<a class="headerlink" href="#monitoring-progress-logs-and-gpu-utilization-with-k9s" title="Permanent link">&para;</a></h2>
-<p>We're interested to see a progress bar of the finetuning training, seeing any messages that a workload logs, and we also want to verify that our GPU Jobs
-are consuming our compute relatively effectively. This information can be fetched from our Kubernetes cluster in many ways, but one convenient and recommended way us using <a href="https://k9scli.io/">k9s</a>.
-We recommend the official documentation for more thorough guidance, but this section shows some basic commands to get what we want here.</p>
-<p>To get right to the Jobs view in the namespace we're using in this walk-through, we can run:</p>
+<p>We're interested to see a progress bar of the fine-tuning training, seeing any messages that a workload logs, and we also want to verify that our GPU jobs are consuming our compute relatively effectively. This information can be fetched from our Kubernetes cluster in many ways, but one convenient and recommended way us using <a href="https://k9scli.io/">k9s</a>.</p>
+<p>We recommend the official documentation for more thorough guidance, but this section shows some basic commands to get what we want here.</p>
+<p>To get right to the jobs view in the namespace we're using in this walk-through, we can run:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>k9s<span class="w"> </span>--command<span class="w"> </span>Jobs
 </code></pre></div>
-<p>Choose a Job using <code>arrow keys</code> and <code>Enter</code> to see the Pod that it spawned, then <code>Enter</code> again to see the Container in the Pod. From here, we can do three things:</p>
+<p>Choose a job using <code>arrow keys</code> and <code>Enter</code> to see the Pod that it spawned, then <code>Enter</code> again to see the Container in the Pod. From here, we can do three things:</p>
 <ul>
 <li>
 <p>Look at the logs by pressing <code>l</code>. The logs show any output messages produced during the workload runtime.</p>
 </li>
 <li>
-<p>Attach to the output of the container by pressing <code>a</code>. This is particularly useful to see the interactive progress bar of a finetuning run.</p>
+<p>Attach to the output of the container by pressing <code>a</code>. This is particularly useful to see the interactive progress bar of a fine-tuning run.</p>
 </li>
 <li>
 <p>Spawn a shell inside the container by pressing <code>s</code>. Inside the shell we can run <code>watch -n0.5 rocm-smi</code> to get a view of the GPU utilization that updates every 0.5s.</p>
 </li>
 </ul>
-<p>Return from any regular <code>k9s</code> view with <code>Esc</code> .</p>
+<p>Return from any regular <code>k9s</code> view with <code>Esc</code>.</p>
 
 
 

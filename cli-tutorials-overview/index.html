@@ -14,7 +14,7 @@
         <link rel="prev" href="../core/docs/developer-center/inference/how-to-deploy-and-inference/">
       
       
-        <link rel="next" href="../ai-workloads-docs/tutorials/tutorial-prereqs/">
+        <link rel="next" href="../ai-workloads-docs/tutorials/tutorial-00-prerequisites/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#cli-tutorials-overview" class="md-skip">
+        <a href="#cli-tutorials" class="md-skip">
           Skip to content
         </a>
       
@@ -1413,6 +1413,10 @@
       
         
       
+        
+      
+        
+      
     
     
     
@@ -1487,7 +1491,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ai-workloads-docs/tutorials/tutorial-prereqs/" class="md-nav__link">
+      <a href="../ai-workloads-docs/tutorials/tutorial-00-prerequisites/" class="md-nav__link">
         
   
   
@@ -1539,6 +1543,52 @@
   
   <span class="md-ellipsis">
     Language extension - Odia fine-tuning
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ai-workloads-docs/tutorials/tutorial-03-deliver-resources-and-run-megatron-cpt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Continuous Pretraining of Llama-3.1-8B
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ai-workloads-docs/tutorials/tutorial-04-deliver-llama70b-and-run-megatron-cpt-with-tp8-ddp2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Continuous Pretraining of Llama-3.1-70B
     
   </span>
   
@@ -2776,12 +2826,15 @@
   
 
 
-<h1 id="cli-tutorials-overview">CLI tutorials overview<a class="headerlink" href="#cli-tutorials-overview" title="Permanent link">&para;</a></h1>
-<p>These tutorials are step-by-step guides with practical examples on how to run AI model training, fine-tuning, and inference workloads using the SiloGen platform.</p>
+<h1 id="cli-tutorials">CLI tutorials<a class="headerlink" href="#cli-tutorials" title="Permanent link">&para;</a></h1>
+<p>The CLI (command-line) tutorials include practical examples on how to run AI model training, fine-tuning, and inference workloads from the Kubernetes command line using kubectl and helm charts.</p>
+<p>The tutorials start with a shared setup: <a href="../ai-workloads-docs/tutorials/tutorial-00-prerequisites/">Tutorial 0</a>. It covers the tools, but also has a required cluster setup step that needs to be run.</p>
 <ul>
-<li><a href="../ai-workloads-docs/tutorials/tutorial-prereqs/">Tutorial 0: Prerequisites for running the tutorials</a>: Shared setup needed for the tutorials, including platform configurations such as secrets and storage.</li>
-<li><a href="../ai-workloads-docs/tutorials/tutorial-01-deliver-resources-and-finetune/">Deliver resources and fine-tune</a>: Learn how to download models and data to cluster MinIO storage, run fine-tuning jobs, and deploy inference services.</li>
-<li><a href="../ai-workloads-docs/tutorials/tutorial-02-language-extension-finetune/">Language extension: Odia fine-tuning</a>: Learn how to fine-tune a continued pretraining base model to make it an instruction-following model, then deploy models and compare results.</li>
+<li><a href="../ai-workloads-docs/tutorials/tutorial-00-prerequisites/">Tutorial 0</a>: Shared setup for tutorials.</li>
+<li><a href="../ai-workloads-docs/tutorials/tutorial-01-deliver-resources-and-finetune/">Deliver Resources and Finetune</a>: Learn how to download models and data to cluster MinIO storage, run finetuning jobs, and deploy inference services.</li>
+<li><a href="../ai-workloads-docs/tutorials/tutorial-02-language-extension-finetune/">Language extension: Odia-finetuning</a>: Learn how to finetune a continued pretraining basemodel to make it an instruction following model, then deploy models and compare.</li>
+<li><a href="../ai-workloads-docs/tutorials/tutorial-03-deliver-resources-and-run-megatron-cpt/">Deliver Resources and Run Megatron-LM Continuous Pretraining of Llama-3.1-8B</a>: Learn how to download a dataset and base model to cluster MinIO, convert them to Megatron‑LM format, run a multi‑node continuous‑pretraining job, and validate the final checkpoint with an inference workload.</li>
+<li><a href="../ai-workloads-docs/tutorials/tutorial-04-deliver-llama70b-and-run-megatron-cpt-with-tp8-ddp2/">Deliver Resources and Run Megatron-LM Continuous Pretraining of Llama-3.1-70B</a>: Learn how to download a dataset and base model to cluster MinIO, convert them to Megatron‑LM format, run a multi‑node continuous‑pretraining job, and validate the final checkpoint with an inference workload.</li>
 </ul>
 
 

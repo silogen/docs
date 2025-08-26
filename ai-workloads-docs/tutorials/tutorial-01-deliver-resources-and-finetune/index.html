@@ -11,7 +11,7 @@
       
       
       
-        <link rel="prev" href="../tutorial-prereqs/">
+        <link rel="prev" href="../tutorial-00-prerequisites/">
       
       
         <link rel="next" href="../tutorial-02-language-extension-finetune/">
@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#tutorial-01-deliver-model-and-data-to-cluster-minio-then-run-finetune" class="md-skip">
+        <a href="#tutorial-01-deliver-model-and-data-to-cluster-minio-then-run-fine-tune" class="md-skip">
           Skip to content
         </a>
       
@@ -1413,6 +1413,10 @@
       
         
       
+        
+      
+        
+      
     
     
     
@@ -1477,7 +1481,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tutorial-prereqs/" class="md-nav__link">
+      <a href="../tutorial-00-prerequisites/" class="md-nav__link">
         
   
   
@@ -1568,27 +1572,27 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-scaling-finetuning-hyperparameter-tuning-with-parallel-jobs" class="md-nav__link">
+  <a href="#3-scaling-fine-tuning-hyperparameter-tuning-with-parallel-jobs" class="md-nav__link">
     <span class="md-ellipsis">
-      3. Scaling finetuning: Hyperparameter tuning with parallel Jobs
+      3. Scaling fine-tuning: hyperparameter tuning with parallel jobs
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-scaling-finetuning-multi-gpu-training" class="md-nav__link">
+  <a href="#4-scaling-fine-tuning-multi-gpu-training" class="md-nav__link">
     <span class="md-ellipsis">
-      4. Scaling finetuning: Multi-GPU training
+      4. Scaling fine-tuning: multi-GPU training
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#5-inference-with-a-finetuned-model" class="md-nav__link">
+  <a href="#5-inference-with-a-fine-tuned-model" class="md-nav__link">
     <span class="md-ellipsis">
-      5. Inference with a finetuned model
+      5. Inference with a fine-tuned model
     </span>
   </a>
   
@@ -1638,9 +1642,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#setting-finetuning-parameters" class="md-nav__link">
+  <a href="#setting-fine-tuning-parameters" class="md-nav__link">
     <span class="md-ellipsis">
-      Setting finetuning parameters
+      Setting fine-tuning parameters
     </span>
   </a>
   
@@ -1673,6 +1677,52 @@
   
   <span class="md-ellipsis">
     Language extension - Odia fine-tuning
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorial-03-deliver-resources-and-run-megatron-cpt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Continuous Pretraining of Llama-3.1-8B
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorial-04-deliver-llama70b-and-run-megatron-cpt-with-tp8-ddp2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Continuous Pretraining of Llama-3.1-70B
     
   </span>
   
@@ -2896,27 +2946,27 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-scaling-finetuning-hyperparameter-tuning-with-parallel-jobs" class="md-nav__link">
+  <a href="#3-scaling-fine-tuning-hyperparameter-tuning-with-parallel-jobs" class="md-nav__link">
     <span class="md-ellipsis">
-      3. Scaling finetuning: Hyperparameter tuning with parallel Jobs
+      3. Scaling fine-tuning: hyperparameter tuning with parallel jobs
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-scaling-finetuning-multi-gpu-training" class="md-nav__link">
+  <a href="#4-scaling-fine-tuning-multi-gpu-training" class="md-nav__link">
     <span class="md-ellipsis">
-      4. Scaling finetuning: Multi-GPU training
+      4. Scaling fine-tuning: multi-GPU training
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#5-inference-with-a-finetuned-model" class="md-nav__link">
+  <a href="#5-inference-with-a-fine-tuned-model" class="md-nav__link">
     <span class="md-ellipsis">
-      5. Inference with a finetuned model
+      5. Inference with a fine-tuned model
     </span>
   </a>
   
@@ -2966,9 +3016,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#setting-finetuning-parameters" class="md-nav__link">
+  <a href="#setting-fine-tuning-parameters" class="md-nav__link">
     <span class="md-ellipsis">
-      Setting finetuning parameters
+      Setting fine-tuning parameters
     </span>
   </a>
   
@@ -2998,15 +3048,15 @@
   
 
 
-<h1 id="tutorial-01-deliver-model-and-data-to-cluster-minio-then-run-finetune">Tutorial 01: Deliver model and data to cluster MinIO, then run finetune<a class="headerlink" href="#tutorial-01-deliver-model-and-data-to-cluster-minio-then-run-finetune" title="Permanent link">&para;</a></h1>
-<p>This tutorial shows how to download a model and some data from HuggingFace Hub to a cluster-internal MinIO storage server, and then launch finetuning Jobs that use those resources. The checkpoints are also synced into the same cluster-internal MinIO storage. Finally, an inference workload is spawned to make it possible to discuss with the newly finetuned model. At the end of the tutorial, there are some instructions on changing the model and the data.</p>
-<p>The finetuning work in this tutorial is meant for demonstration purposes, small enough to be run live. We're starting from Tiny-Llama 1.1B Chat, a small LLM. This is already a chat-finetuned model.
-We're training it with some additional instruction data in the form of single prompt-and-answer pairs. The prompts in this data were gathered from real human prompts to LLMs, mostly ones that were shared on the now deprecated sharegpt.com site. The answers to those human prompts were generated with the <a href="https://huggingface.co/mistralai/Mistral-Large-Instruct-2407">Mistral Large model</a>. So in essence, training on this data makes our model respond more like Mistral Large. And there's another thing that this training accomplishes, which is to change the chat template, meaning the way the input to the model is formatted. More specifically, this adds special tokens that signal the start and end of message. Our experience is that such special tokens make the inference time message end signaling and message formatting a bit more robust.</p>
+<h1 id="tutorial-01-deliver-model-and-data-to-cluster-minio-then-run-fine-tune">Tutorial 01: Deliver model and data to cluster MinIO, then run fine-tune<a class="headerlink" href="#tutorial-01-deliver-model-and-data-to-cluster-minio-then-run-fine-tune" title="Permanent link">&para;</a></h1>
+<p>This tutorial shows how to download a model and some data from HuggingFace Hub to a cluster-internal MinIO storage server, and then launch fine-tuning jobs that use those resources. The checkpoints are also synced into the same cluster-internal MinIO storage. Finally, an inference workload is spawned to make it possible to discuss with the newly fine-tuned model. At the end of the tutorial, there are some instructions on changing the model and the data.</p>
+<p>The fine-tuning work in this tutorial is meant for demonstration purposes, small enough to be run live. We start from Tiny-Llama 1.1B Chat, a small LLM. This is already a chat-fine-tuned model.</p>
+<p>We train it with some additional instruction data in the form of single prompt-and-answer pairs. The prompts in this data were gathered from real human prompts to LLMs, mostly ones that were shared on the now deprecated sharegpt.com site. The answers to those human prompts were generated with the <a href="https://huggingface.co/mistralai/Mistral-Large-Instruct-2407">Mistral Large model</a>. In essence, training on this data makes our model respond more like Mistral Large. And there's another thing that this training accomplishes, which is to change the chat template, meaning the way the input to the model is formatted. More specifically, this adds special tokens that signal the start and end of message. Our experience is that such special tokens make the inference time message end signaling and message formatting a bit more robust.</p>
 <h2 id="1-setup">1. Setup<a class="headerlink" href="#1-setup" title="Permanent link">&para;</a></h2>
-<p>Follow the setup in the <a href="../tutorial-prereqs/">tutorial pre-requisites section</a>.</p>
+<p>Follow the setup in the <a href="../tutorial-00-prerequisites/">tutorial pre-requisites section</a>.</p>
 <h2 id="2-run-workloads-to-deliver-data-and-a-model">2. Run workloads to deliver data and a model<a class="headerlink" href="#2-run-workloads-to-deliver-data-and-a-model" title="Permanent link">&para;</a></h2>
-<p>We will use the helm charts in <code>workloads/download-huggingface-model-to-bucket/helm</code> and <code>workloads/download-data-to-bucket/helm</code>. We will use them to deliver a Tiny-Llama 1.1B parameter model, and an Argilla single-turn response supervised finetuning dataset, respectively.</p>
-<p>Our user input files are in <code>workloads/download-huggingface-model-to-bucket/helm/overrides/tutorial-01-tiny-llama-to-minio.yaml</code>, and <code>workloads/download-data-to-bucket/helm/overrides/tutorial-01-argilla-to-minio.yaml</code>.
+<p>We will use the helm charts in <code>workloads/download-huggingface-model-to-bucket/helm</code> and <code>workloads/download-data-to-bucket/helm</code>. We will use them to deliver a Tiny-Llama 1.1B parameter model, and an Argilla single-turn response supervised fine-tuning dataset respectively.</p>
+<p>Our user input files are in <code>workloads/download-huggingface-model-to-bucket/helm/overrides/tutorial-01-tiny-llama-to-minio.yaml</code>, and <code>workloads/download-data-to-bucket/helm/overrides/tutorial-01-argilla-to-minio.yaml</code>.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>helm<span class="w"> </span>template<span class="w"> </span>workloads/download-huggingface-model-to-bucket/helm<span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span>--values<span class="w"> </span>workloads/download-huggingface-model-to-bucket/helm/overrides/tutorial-01-tiny-llama-to-minio.yaml<span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span>--name-template<span class="w"> </span><span class="s2">&quot;deliver-tiny-llama-model&quot;</span><span class="w"> </span><span class="se">\</span>
@@ -3015,14 +3065,12 @@ We're training it with some additional instruction data in the form of single pr
 <a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">  </span>--values<span class="w"> </span>workloads/download-data-to-bucket/helm/overrides/tutorial-01-argilla-to-minio.yaml<span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">  </span>--name-template<span class="w"> </span><span class="s2">&quot;deliver-argilla-data&quot;</span><span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">  </span><span class="p">|</span><span class="w"> </span>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>-
-</code></pre></div></p>
-<p>The <a href="#monitoring-progress-logs-and-gpu-utilization-with-k9s">logs</a> will show a model staging download and upload for the model delivery workload, and data download, preprocessing, and upload for the data delivery.</p>
-<h2 id="3-scaling-finetuning-hyperparameter-tuning-with-parallel-jobs">3. Scaling finetuning: Hyperparameter tuning with parallel Jobs<a class="headerlink" href="#3-scaling-finetuning-hyperparameter-tuning-with-parallel-jobs" title="Permanent link">&para;</a></h2>
-<p>At the hyperparameter tuning stage, we run many parallel Jobs while varying a hyperparameter to find the best configuration.
-Here we are going to look for the best rank parameter <code>r</code> for <a href="https://arxiv.org/pdf/2106.09685">LoRA</a>.</p>
-<p>To define the finetuning workload, we will use the helm chart in <code>workloads/llm-finetune-silogen-engine/helm</code> .
-Our user input file is <code>workloads/llm-finetune-silogen-engine/overrides/tutorial-01-finetune-lora.yaml</code> . This also includes the finetuning hyperparameters - you can change them in the file to experiment, or use <code>--set</code> with helm templating to change an individual value.</p>
-<p>Let's create ten different finetuning jobs to try out different LoRA ranks:</p>
+</code></pre></div>
+<p>The <a href="../tutorial-00-prerequisites/#monitoring-progress-logs-and-gpu-utilization-with-k9s">logs</a> will show a model staging download and upload for the model delivery workload, and data download, preprocessing, and upload for the data delivery.</p>
+<h2 id="3-scaling-fine-tuning-hyperparameter-tuning-with-parallel-jobs">3. Scaling fine-tuning: hyperparameter tuning with parallel jobs<a class="headerlink" href="#3-scaling-fine-tuning-hyperparameter-tuning-with-parallel-jobs" title="Permanent link">&para;</a></h2>
+<p>At the hyperparameter tuning stage, we run many parallel jobs while varying a hyperparameter to find the best configuration. Here we are going to look for the best rank parameter <code>r</code> for <a href="https://arxiv.org/pdf/2106.09685">LoRA</a>.</p>
+<p>To define the fine-tuning workload, we will use the helm chart in <code>workloads/llm-finetune-silogen-engine/helm</code>. Our user input file is <code>workloads/llm-finetune-silogen-engine/overrides/tutorial-01-finetune-lora.yaml</code>. This also includes the fine-tuning hyperparameters - you can change them in the file to experiment, or use <code>--set</code> with helm templating to change an individual value.</p>
+<p>Let's create ten different fine-tuning jobs to try out different LoRA ranks:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nv">run_id</span><span class="o">=</span>alpha
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="k">for</span><span class="w"> </span>r<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="m">6</span><span class="w"> </span><span class="m">8</span><span class="w"> </span><span class="m">10</span><span class="w"> </span><span class="m">12</span><span class="w"> </span><span class="m">16</span><span class="w"> </span><span class="m">20</span><span class="w"> </span><span class="m">24</span><span class="w"> </span><span class="m">32</span><span class="w"> </span><span class="m">64</span><span class="p">;</span><span class="w"> </span><span class="k">do</span>
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span><span class="nv">name</span><span class="o">=</span><span class="s2">&quot;tiny-llama-argilla-r-sweep-</span><span class="nv">$run_id</span><span class="s2">-</span><span class="nv">$r</span><span class="s2">&quot;</span>
@@ -3034,11 +3082,10 @@ Our user input file is <code>workloads/llm-finetune-silogen-engine/overrides/tut
 <a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">    </span><span class="p">|</span><span class="w"> </span>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>-
 <a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="k">done</span>
 </code></pre></div>
-<p>For each Job we can see logs, a progress bar, and that Job's GPU utilization following the <a href="#monitoring-progress-logs-and-gpu-utilization-with-k9s">instructions above</a>.
-If these Jobs get relaunched, they are setup to continue from the existing checkpoints. If we instead want to re-run from scratch, we can just change the <code>run_id</code> variable that is defined before the for loop.</p>
-<h2 id="4-scaling-finetuning-multi-gpu-training">4. Scaling finetuning: Multi-GPU training<a class="headerlink" href="#4-scaling-finetuning-multi-gpu-training" title="Permanent link">&para;</a></h2>
-<p>Beside parallel Jobs, we can also take advantage of multiple GPUs by using them for parallel compute. This can be helpful for more compute demanding Jobs, and necessary with larger models.</p>
-<p>Let's launch an 8GPU run of full-parameter finetuning:</p>
+<p>For each job we can see logs, a progress bar, and that job's GPU utilization following the <a href="../tutorial-00-prerequisites/#monitoring-progress-logs-and-gpu-utilization-with-k9s">instructions above</a>. If these jobs get relaunched, they are setup to continue from the existing checkpoints. If we instead want to re-run from scratch, we can just change the <code>run_id</code> variable that is defined before the for loop.</p>
+<h2 id="4-scaling-fine-tuning-multi-gpu-training">4. Scaling fine-tuning: multi-GPU training<a class="headerlink" href="#4-scaling-fine-tuning-multi-gpu-training" title="Permanent link">&para;</a></h2>
+<p>Beside parallel jobs, we can also take advantage of multiple GPUs by using them for parallel compute. This can be helpful for more compute demanding jobs, and necessary with larger models.</p>
+<p>Let's launch an 8-GPU run of full-parameter fine-tuning:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nv">name</span><span class="o">=</span><span class="s2">&quot;tiny-llama-argilla-v1&quot;</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>helm<span class="w"> </span>template<span class="w"> </span>workloads/llm-finetune-silogen-engine/helm<span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">  </span>--values<span class="w"> </span>workloads/llm-finetune-silogen-engine/helm/overrides/tutorial-01-finetune-full-param.yaml<span class="w"> </span><span class="se">\</span>
@@ -3047,9 +3094,7 @@ If these Jobs get relaunched, they are setup to continue from the existing check
 <a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">  </span>--set<span class="w"> </span><span class="s2">&quot;finetuningGpus=8&quot;</span><span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">  </span><span class="p">|</span><span class="w"> </span>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>-
 </code></pre></div>
-<p>We can see logs, a progress bar, and the full 8-GPU compute utilization following the <a href="#monitoring-progress-logs-and-gpu-utilization-with-k9s">instructions above</a>.
-The training steps of this multi-gpu training run take merely 75 seconds, which reflects the nature of finetuning:
-fast, iterative, with a focus on flexible experimentation.</p>
+<p>We can see logs, a progress bar, and the full 8-GPU compute utilization following the <a href="../tutorial-00-prerequisites/#monitoring-progress-logs-and-gpu-utilization-with-k9s">instructions above</a>. The training steps of this multi-gpu training run take merely 75 seconds, which reflects the nature of fine-tuning: fast, iterative, with a focus on flexible experimentation.</p>
 <p>If we want to compare to an equivalent single-GPU run, we can run:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nv">name</span><span class="o">=</span><span class="s2">&quot;tiny-llama-argilla-v1-singlegpu&quot;</span>
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>helm<span class="w"> </span>template<span class="w"> </span>workloads/llm-finetune-silogen-engine/helm<span class="w"> </span><span class="se">\</span>
@@ -3059,12 +3104,10 @@ fast, iterative, with a focus on flexible experimentation.</p>
 <a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">  </span>--set<span class="w"> </span><span class="s2">&quot;finetuningGpus=1&quot;</span><span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">  </span><span class="p">|</span><span class="w"> </span>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>-
 </code></pre></div>
-<p>The training steps for this single-GPU run take around 340 seconds.
-Thus the full-node training yields a speedup ratio of around 0.22 (4.5x speed).
-Even higher speedups are achieved in pretraining, which benefits hugely from optimizations.</p>
-<h2 id="5-inference-with-a-finetuned-model">5. Inference with a finetuned model<a class="headerlink" href="#5-inference-with-a-finetuned-model" title="Permanent link">&para;</a></h2>
-<p>After training the model, we'll want to discuss with it. For this we will use the helm chart in <code>workloads/llm-inference-vllm/helm</code> .</p>
-<p>Let's deploy the full-parameter finetuned model:</p>
+<p>The training steps for this single-GPU run take around 340 seconds. Thus the full-node training yields a speedup ratio of around 0.22 (4.5x speed). Even higher speedups are achieved in pretraining, which benefits hugely from optimizations.</p>
+<h2 id="5-inference-with-a-fine-tuned-model">5. Inference with a fine-tuned model<a class="headerlink" href="#5-inference-with-a-fine-tuned-model" title="Permanent link">&para;</a></h2>
+<p>After training the model, we'll want to discuss with it. For this we will use the helm chart in <code>workloads/llm-inference-vllm/helm</code>.</p>
+<p>Let's deploy the full-parameter fine-tuned model:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nv">name</span><span class="o">=</span><span class="s2">&quot;tiny-llama-argilla-v1&quot;</span>
 <a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>helm<span class="w"> </span>template<span class="w"> </span>workloads/llm-inference-vllm/helm<span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">  </span>--set<span class="w"> </span><span class="s2">&quot;model=s3://default-bucket/experiments/</span><span class="nv">$name</span><span class="s2">/checkpoint-final&quot;</span><span class="w"> </span><span class="se">\</span>
@@ -3072,7 +3115,7 @@ Even higher speedups are achieved in pretraining, which benefits hugely from opt
 <a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">  </span>--name-template<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$name</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">  </span><span class="p">|</span><span class="w"> </span>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>-
 </code></pre></div>
-<p>We can change the <code>name</code> to different experiment names to deploy other models. Note that discussing with the LoRA adapter models with these workloads requires us to merge the final adapter. This can be achieved during finetuning by adding <code>--set mergeAdapter=true</code> and additionally in the deploy command, we have to refer to the merged model, changing the path to <code>--set "model=s3://default-bucket/experiments/$name/checkpoint-final-merged"</code> .</p>
+<p>We can change the <code>name</code> to different experiment names to deploy other models. Note that discussing with the LoRA adapter models with these workloads requires us to merge the final adapter. This can be achieved during fine-tuning by adding <code>--set mergeAdapter=true</code> and additionally in the deploy command, we have to refer to the merged model, changing the path to <code>--set "model=s3://default-bucket/experiments/$name/checkpoint-final-merged"</code>.</p>
 <p>To discuss with the model, we first need to setup a connection to it. Since this is not a public-internet deployment, we'll do this simply by starting a background port-forwarding process:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nv">name</span><span class="o">=</span><span class="s2">&quot;tiny-llama-argilla-v1&quot;</span>
 <a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>kubectl<span class="w"> </span>port-forward<span class="w"> </span>services/llm-inference-vllm-<span class="nv">$name</span><span class="w"> </span><span class="m">8080</span>:80<span class="w"> </span>&gt;/dev/null<span class="w"> </span><span class="p">&amp;</span>
@@ -3091,37 +3134,31 @@ Even higher speedups are achieved in pretraining, which benefits hugely from opt
 <a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="s1">    }&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>jq<span class="w"> </span><span class="s2">&quot;.choices[0].message.content&quot;</span><span class="w"> </span>--raw-output
 </code></pre></div>
 <p>We can test the limits of the model with our own questions. Since this is a model with a relatively limited capacity, its answers are often delightful nonsense.</p>
-<p>When we want to stop port-forwarding, we can just run:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nb">kill</span><span class="w"> </span><span class="nv">$portforwardPID</span>
+<p>When we want to stop port-forwarding, we can just run:</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nb">kill</span><span class="w"> </span><span class="nv">$portforwardPID</span>
 </code></pre></div>
 and to stop the deployment, we run:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nv">name</span><span class="o">=</span><span class="s2">&quot;tiny-llama-argilla-v1&quot;</span>
 <a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>kubectl<span class="w"> </span>delete<span class="w"> </span>deployments/llm-inference-vllm-<span class="nv">$name</span>
 </code></pre></div></p>
 <h2 id="next-steps-how-to-use-your-own-model-and-data">Next Steps: How to use your own model and data<a class="headerlink" href="#next-steps-how-to-use-your-own-model-and-data" title="Permanent link">&para;</a></h2>
-<p>This tutorial has shown the basic steps in running finetuning and chatting with the resulting model.
-For many, the next step may be to use our own models and data.
-This section should get us started, but ultimately, this opens the whole topic of how to do finetuning, which is too large to cover here.
-One more comprehensive view point is provided by the <a href="https://arxiv.org/pdf/2411.15124">Tülü 3 paper</a>.</p>
+<p>This tutorial has shown the basic steps in running fine-tuning and chatting with the resulting model. For many, the next step may be to use our own models and data.</p>
+<p>This section should get us started, but ultimately, this opens the whole topic of how to do fine-tuning, which is too large to cover here. One more comprehensive view point is provided by the <a href="https://arxiv.org/pdf/2411.15124">Tülü 3 paper</a>.</p>
 <h3 id="preparing-your-own-model-and-data">Preparing your own model and data<a class="headerlink" href="#preparing-your-own-model-and-data" title="Permanent link">&para;</a></h3>
 <p>The workload <code>workloads/download-huggingface-model-to-bucket/helm</code> delivers <a href="https://huggingface.co/">HuggingFace Hub</a> models. To get models from elsewhere, we may for instance do it manually by downloading them to our own computers and uploading to our bucket storage from there. The data delivery workload <code>workloads/download-data-to-bucket/helm</code> uses a free script to download and preprocess the data, so it is more flexible in this regard.</p>
 <p>The bucket storage used in this tutorial is a MinIO server hosted inside the cluster itself. To use some other S3-compatible bucket storage, we need to change the <code>bucketStorageHost</code> field, add our credentials (HMAC keys) as a Secret in our namespace (this is generally achieved via an External Secret that in turn fetches the info from some secret store that we have access to), and then refer to that bucket storage credentials Secret in the <code>bucketCredentialsSecret</code> nested fields.</p>
-<p>To prepare our own model, we create a values file that is similar to <code>workloads/download-huggingface-model-to-bucket/helm/overrides/tutorial-01-tiny-llama-to-minio.yaml</code>. .
-The key field is <code>modelID</code>, which defins which model is downloaded. The field <code>bucketModelPath</code>
-determines where the model is stored in the bucket storage.</p>
+<p>To prepare our own model, we create a values file that is similar to <code>workloads/download-huggingface-model-to-bucket/helm/overrides/tutorial-01-tiny-llama-to-minio.yaml</code>. The key field is <code>modelID</code>, which defines which model is downloaded. The field <code>bucketModelPath</code> determines where the model is stored in the bucket storage.</p>
 <p>To prepare our own data, we structure our values file like <code>workloads/download-data-to-bucket/helm/overrides/tutorial-01-argilla-to-minio.yaml</code>. It may be easiest to write a Python script separately, potentially test it locally, and then put the script as a block text value for <code>dataScript</code>. The dataset upload location is set with the <code>bucketDataDir</code> field.</p>
 <h4 id="data">Data<a class="headerlink" href="#data" title="Permanent link">&para;</a></h4>
-<p>The <code>dataScript</code> is a script instead of just a dataset identifier, because the datasets on HuggingFace hub don't have a standard format that can be always directly passed to our finetuning engine. The
-data script should format the data into the format that the silogen finetuning engine expects. For supervised finetuning, this is JSON lines, where each line has a JSON dictionary formatted as follows:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="p">{</span>
+<p>The <code>dataScript</code> is a script instead of just a dataset identifier, because the datasets on HuggingFace hub don't have a standard format that can be always directly passed to our fine-tuning engine. The data script should format the data into the format that the silogen fine-tuning engine expects. For supervised fine-tuning, this is JSON lines, where each line has a JSON dictionary formatted as follows:</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="p">{</span>
 <a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">  </span><span class="nt">&quot;messages&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
 <a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">    </span><span class="p">{</span><span class="nt">&quot;role&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;user&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;content&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;This is a user message&quot;</span><span class="p">},</span>
 <a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="w">    </span><span class="p">{</span><span class="nt">&quot;role&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;assistant&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;content&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;The is an assistant answer&quot;</span><span class="p">}</span>
 <a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="w">  </span><span class="p">]</span>
 <a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="p">}</span>
 </code></pre></div>
-There can be an arbitrary number of messages. Additionally, each dictionary can contain a <code>dataset</code> field that has the dataset identifier, and an <code>id</code> field that identifies the data point uniquely.
-For <a href="https://arxiv.org/pdf/2305.18290">Direct Preference Optimization</a>, the data format is as follows:
+There can be an arbitrary number of messages. Additionally, each dictionary can contain a <code>dataset</code> field that has the dataset identifier, and an <code>id</code> field that identifies the data point uniquely. For <a href="https://arxiv.org/pdf/2305.18290">Direct Preference Optimization</a>, the data format is as follows:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="p">{</span>
 <a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w">  </span><span class="nt">&quot;prompt_messages&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
 <a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">    </span><span class="p">{</span><span class="nt">&quot;role&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;user&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;content&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;This is a user message&quot;</span><span class="p">},</span>
@@ -3133,38 +3170,32 @@ For <a href="https://arxiv.org/pdf/2305.18290">Direct Preference Optimization</a
 <a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="w">    </span><span class="p">{</span><span class="nt">&quot;role&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;assistant&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;content&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;This is a rejected answer&quot;</span><span class="p">}</span>
 <a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a><span class="w">  </span><span class="p">]</span>
 <a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a><span class="p">}</span>
-</code></pre></div></p>
-<p>The JSON lines output of the data script should be saved to the <code>/downloads/datasets/</code>. This is easy with the approach taken in the tutorial file:
+</code></pre></div>
+<p>The JSON lines output of the data script should be saved to the <code>/downloads/datasets/</code>. This is easy with the approach taken in the tutorial file:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="n">dataset</span><span class="o">.</span><span class="n">to_json</span><span class="p">(</span><span class="s2">&quot;/downloads/datasets/&lt;name of your dataset file.jsonl&gt;&quot;</span><span class="p">)</span>
 </code></pre></div>
-The dataset is uploaded to the directory pointed to by <code>bucketDataDir</code>, with the same filename as it had under <code>/downloads/datasets</code>.</p>
+<p>The dataset is uploaded to the directory pointed to by <code>bucketDataDir</code>, with the same filename as it had under <code>/downloads/datasets</code>.</p>
 <h4 id="model">Model<a class="headerlink" href="#model" title="Permanent link">&para;</a></h4>
-<p>Preparing a model is simple than data. We simply set the <code>modelID</code> to the HuggingFace Hub ID of the model (in the <code>Organization/ModelName</code> format). The model is the uploaded to
-the path pointed to by <code>bucketModelPath</code>.</p>
-<h3 id="setting-finetuning-parameters">Setting finetuning parameters<a class="headerlink" href="#setting-finetuning-parameters" title="Permanent link">&para;</a></h3>
-<p>For finetuning, we create a values file that is similar to <code>workloads/llm-finetune-silogen-engine/helm/overrides/tutorial-01-finetune-lora.yaml</code> (for LoRA adapter training)
-or <code>workloads/llm-finetune-silogen-engine/overrides/tutorial-01-finetune-full-param.yaml</code> (for full parameter training). We'll want to inject our data in the field:
+<p>Preparing a model is simple than data. We simply set the <code>modelID</code> to the HuggingFace Hub ID of the model (in the <code>Organization/ModelName</code> format). The model is the uploaded to the path pointed to by <code>bucketModelPath</code>.</p>
+<h3 id="setting-fine-tuning-parameters">Setting fine-tuning parameters<a class="headerlink" href="#setting-fine-tuning-parameters" title="Permanent link">&para;</a></h3>
+<p>For fine-tuning, we create a values file that is similar to <code>workloads/llm-finetune-silogen-engine/helm/overrides/tutorial-01-finetune-lora.yaml</code> (for LoRA adapter training) or <code>workloads/llm-finetune-silogen-engine/overrides/tutorial-01-finetune-full-param.yaml</code> (for full parameter training). We'll want to inject our data in the field:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="nt">finetuning_config</span><span class="p">:</span>
 <a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="w">  </span><span class="nt">data_conf</span><span class="p">:</span>
 <a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="w">    </span><span class="nt">training_data</span><span class="p">:</span>
 <a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="w">      </span><span class="nt">datasets</span><span class="p">:</span>
 <a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;bucketName/path/to/file.jsonl</span>
 </code></pre></div>
-The datasets array can contain any number of datasets, and they're concatenated in training.</p>
-<p>The model is set in the top level field <code>basemodel</code>, where the value should be a name of a bucket followed by the path to the model directory in the bucket, formatted like:
+<p>The datasets array can contain any number of datasets, and they're concatenated in training.</p>
+<p>The model is set in the top level field <code>basemodel</code>, where the value should be a name of a bucket followed by the path to the model directory in the bucket, formatted like:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="nt">basemodel</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bucketName/path/to/modelDir</span>
-</code></pre></div></p>
-<p>All finetuning configurations are not sensible with all models, and some settings might even fail for unsupported models.
-Ultimately we need to understand the particular model we're using to set the parameters correctly. Suitable hyperparameters also depend on the data.</p>
-<p>One key model compatibility parameter to look at is the chat template, which is set by
+</code></pre></div>
+<p>All fine-tuning configurations are not sensible with all models, and some settings might even fail for unsupported models. Ultimately we need to understand the particular model we're using to set the parameters correctly. Suitable hyperparameters also depend on the data.</p>
+<p>One key model compatibility parameter to look at is the chat template, which is set by</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="nt">finetuning_config</span><span class="p">:</span>
 <a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="w">  </span><span class="nt">data_conf</span><span class="p">:</span>
 <a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="w">    </span><span class="nt">chat_template_name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;&lt;name</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">template&gt;&quot;</span>
 </code></pre></div>
-If the model we start from already has a chat template, we should usually set this to <code>"keep-original"</code>.
-Otherwise, <code>"chat-ml"</code> is usually a reasonable choice.
-Another set of parameters that often needs to be changed between models is the set of PEFT target layers, if doing LoRA training.
-These are set in the following field:
+<p>If the model we start from already has a chat template, we should usually set this to <code>"keep-original"</code>. Otherwise, <code>"chat-ml"</code> is usually a reasonable choice. Another set of parameters that often needs to be changed between models is the set of PEFT target layers, if doing LoRA training. These are set in the following field:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="nt">finetuning_config</span><span class="p">:</span>
 <a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="w">  </span><span class="nt">peft_conf</span><span class="p">:</span>
 <a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="w">    </span><span class="nt">peft_kwargs</span><span class="p">:</span>
@@ -3176,13 +3207,13 @@ These are set in the following field:
 <a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">up_proj</span>
 <a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">down_proj</span>
 </code></pre></div>
-One setting that can be used is
+<p>One setting that can be used is</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="nt">finetuning_config</span><span class="p">:</span>
 <a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="w">  </span><span class="nt">peft_conf</span><span class="p">:</span>
 <a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="w">    </span><span class="nt">peft_kwargs</span><span class="p">:</span>
 <a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="w">      </span><span class="nt">target_modules</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;all-linear&quot;</span>
 </code></pre></div>
-which targets all linear layers on the model and doesn't require knowing the names of the layers.</p>
+<p>which targets all linear layers on the model and doesn't require knowing the names of the layers.</p>
 
 
 

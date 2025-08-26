@@ -14,7 +14,7 @@
         <link rel="prev" href="../tutorial-01-deliver-resources-and-finetune/">
       
       
-        <link rel="next" href="../../../ai-workloads-manifests/workloads-overview/">
+        <link rel="next" href="../tutorial-03-deliver-resources-and-run-megatron-cpt/">
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#finetuning-adding-language-capabilities-to-a-model" class="md-skip">
+        <a href="#fine-tuning-adding-language-capabilities-to-a-model" class="md-skip">
           Skip to content
         </a>
       
@@ -1413,6 +1413,10 @@
       
         
       
+        
+      
+        
+      
     
     
     
@@ -1477,7 +1481,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tutorial-prereqs/" class="md-nav__link">
+      <a href="../tutorial-00-prerequisites/" class="md-nav__link">
         
   
   
@@ -1591,18 +1595,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-finetune-an-odia-model-on-8gpus" class="md-nav__link">
+  <a href="#3-fine-tune-an-odia-model-on-8-gpus" class="md-nav__link">
     <span class="md-ellipsis">
-      3. Finetune an Odia model on 8GPUs
+      3. Fine-tune an Odia model on 8 GPUs
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-compare-the-official-qwen15-7b-chat-model-the-odia-continued-pretraining-basemodel-and-the-odia-finetuned-model" class="md-nav__link">
+  <a href="#4-compare-the-official-qwen15-7b-chat-model-the-odia-continued-pretraining-basemodel-and-the-odia-fine-tuned-model" class="md-nav__link">
     <span class="md-ellipsis">
-      4. Compare the official Qwen1.5-7B-Chat model, the Odia continued pretraining basemodel, and the Odia-finetuned model:
+      4. Compare the official Qwen1.5-7B-Chat model, the Odia continued pretraining basemodel, and the Odia-fine-tuned model:
     </span>
   </a>
   
@@ -1612,6 +1616,52 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorial-03-deliver-resources-and-run-megatron-cpt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Continuous Pretraining of Llama-3.1-8B
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorial-04-deliver-llama70b-and-run-megatron-cpt-with-tp8-ddp2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Continuous Pretraining of Llama-3.1-70B
+    
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -2830,18 +2880,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-finetune-an-odia-model-on-8gpus" class="md-nav__link">
+  <a href="#3-fine-tune-an-odia-model-on-8-gpus" class="md-nav__link">
     <span class="md-ellipsis">
-      3. Finetune an Odia model on 8GPUs
+      3. Fine-tune an Odia model on 8 GPUs
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-compare-the-official-qwen15-7b-chat-model-the-odia-continued-pretraining-basemodel-and-the-odia-finetuned-model" class="md-nav__link">
+  <a href="#4-compare-the-official-qwen15-7b-chat-model-the-odia-continued-pretraining-basemodel-and-the-odia-fine-tuned-model" class="md-nav__link">
     <span class="md-ellipsis">
-      4. Compare the official Qwen1.5-7B-Chat model, the Odia continued pretraining basemodel, and the Odia-finetuned model:
+      4. Compare the official Qwen1.5-7B-Chat model, the Odia continued pretraining basemodel, and the Odia-fine-tuned model:
     </span>
   </a>
   
@@ -2866,18 +2916,26 @@
   
 
 
-<h1 id="finetuning-adding-language-capabilities-to-a-model">Finetuning: adding language-capabilities to a model<a class="headerlink" href="#finetuning-adding-language-capabilities-to-a-model" title="Permanent link">&para;</a></h1>
-<p>Adding a new language to model usually follows at least two stages: first, continued pretraining to build understanding and basic capacity to generate that language, and second, finetuning to make the model e.g. follow instructions. This tutorial handles that second stage of instruction-tuning for <a href="https://en.wikipedia.org/wiki/Odia_language">Odia language</a>.</p>
-<p>The original basemodel is <a href="https://huggingface.co/Qwen/Qwen1.5-7B">Qwen1.5-7B</a>. The first stage of continued pretraining to add general Odia understanding and generation abilities to Qwen have already been done by the <a href="https://www.odiagenai.org/">OdiaGenAI</a> organization. That continued pretrained model is available openly <a href="https://huggingface.co/OdiaGenAI-LLM/qwen_1.5_odia_7b">here</a>. A relevant comparison point for this tutorial is the <a href="https://huggingface.co/Qwen/Qwen1.5-7B-Chat">chat-finetuned version</a> of the Qwen1.5 basemodel, which should have the capability to follow instructions, but is not specifically meant for Odia.</p>
-<p>Note that access to the Odia continued pretraining version of the Qwen model requires signing the request on Huggingface. This also means that for downloading the model, we'll need to use a HuggingFace access token. See instructions <a href="https://huggingface.co/docs/hub/en/security-tokens">here</a>. ⚠️ Note: This tutorial does not add the HF Token to the cluster yet. You need to add it yourself. ⚠️</p>
-<p>The tutorial includes cluster setup, model and data downloads, finetuning, and finally inference.
-We should start with a working cluster, setup by a cluster administrator using <a href="https://github.com/silogen/cluster-forge">Cluster-forge</a>. The access to that cluster is provided with a suitable Kubeconfig file.</p>
+<h1 id="fine-tuning-adding-language-capabilities-to-a-model">Fine-tuning: adding language-capabilities to a model<a class="headerlink" href="#fine-tuning-adding-language-capabilities-to-a-model" title="Permanent link">&para;</a></h1>
+<p>Adding a new language to model usually follows at least two stages: first, continued pretraining to build understanding and basic capacity to generate that language, and second, fine-tuning to make the model, for example, follow instructions. This tutorial handles that second stage of instruction-tuning for <a href="https://en.wikipedia.org/wiki/Odia_language">Odia language</a>.</p>
+<p>The original basemodel is <a href="https://huggingface.co/Qwen/Qwen1.5-7B">Qwen1.5-7B</a>. The first stage of continued pretraining to add general Odia understanding and generation abilities to Qwen have already been done by the <a href="https://www.odiagenai.org/">OdiaGenAI</a> organization. That continued pretrained model is available openly <a href="https://huggingface.co/OdiaGenAI-LLM/qwen_1.5_odia_7b">here</a>. A relevant comparison point for this tutorial is the <a href="https://huggingface.co/Qwen/Qwen1.5-7B-Chat">chat-fine-tuned version</a> of the Qwen1.5 basemodel, which should have the capability to follow instructions, but is not specifically meant for Odia.</p>
+<p>Note that access to the Odia continued pretraining version of the Qwen model requires signing the request on Huggingface. This also means that for downloading the model, we'll need to use a HuggingFace access token. See instructions <a href="https://huggingface.co/docs/hub/en/security-tokens">here</a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This tutorial does not add the HuggingFace token to the cluster yet. You need to add it yourself.</p>
+</div>
+<p>The tutorial includes cluster setup, model and data downloads, fine-tuning, and finally inference.
+We should start with a working cluster, setup by a cluster administrator using <a href="https://github.com/silogen/cluster-forge">Cluster Forge</a>. The access to that cluster is provided with a suitable Kubeconfig file.</p>
 <h2 id="1-setup">1: Setup<a class="headerlink" href="#1-setup" title="Permanent link">&para;</a></h2>
-<p>Follow the setup in the <a href="../tutorial-prereqs/">tutorial pre-requisites section</a>.</p>
-<p>⚠️ WARNING: This tutorial does not handle adding the HF Token to the cluster yet. Coming soon. Before then, to run this tutorial, you are responsible for adding your HF Token as a secret called <code>hf-token</code> with the key <code>hf-token</code> in the <code>silo-tutorial</code> namespace. ⚠️</p>
+<p>Follow the setup in the <a href="../tutorial-00-prerequisites/">tutorial pre-requisites section</a>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This tutorial does not handle adding the HuggingFace token to the cluster yet. Coming soon. Before then, to run this tutorial, you are responsible for adding your HuggingFace token as a secret called <code>hf-token</code> with the key <code>hf-token</code> in the <code>silo-tutorial</code> namespace.</p>
+</div>
 <h2 id="2-fetch-data-and-models">2. Fetch data and models<a class="headerlink" href="#2-fetch-data-and-models" title="Permanent link">&para;</a></h2>
-<p>First we'll fetch the model and data for the finetuning.
-We will use the helm charts in <code>workloads/download-huggingface-model-to-bucket/helm</code> and <code>workloads/download-data-to-bucket/helm</code>. We will download a Qwen1.5 7B-parameter model, one English instruction dataset and five different Odia-language single-turn instruction finetuning datasets. These datasets cover slightly different areas, including open instructions, context-based question-answering, translation, and identity answers. The identity answers aim to make our model call itself Olive, and tell that it is from the OdiaGenAI project. Our user input files are in <code>workloads/download-huggingface-model-to-bucket/helm/overrides/tutorial-02-qwen-odia.yaml</code> and <code>workloads/download-data-to-bucket/helm/overrides/tutorial-02-odia-data.yaml</code></p>
+<p>First we'll fetch the model and data for the fine-tuning.</p>
+<p>We will use the helm charts in <code>workloads/download-huggingface-model-to-bucket/helm</code> and <code>workloads/download-data-to-bucket/helm</code>. We will download a Qwen1.5 7B-parameter model, one English instruction dataset and five different Odia-language single-turn instruction fine-tuning datasets. These datasets cover slightly different areas, including open instructions, context-based question-answering, translation, and identity answers</p>
+<p>The identity answers aim to make our model call itself Olive, and tell that it is from the OdiaGenAI project. Our user input files are in <code>workloads/download-huggingface-model-to-bucket/helm/overrides/tutorial-02-qwen-odia.yaml</code> and <code>workloads/download-data-to-bucket/helm/overrides/tutorial-02-odia-data.yaml</code></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>helm<span class="w"> </span>template<span class="w"> </span>workloads/download-huggingface-model-to-bucket/helm<span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span>--values<span class="w"> </span>workloads/download-huggingface-model-to-bucket/helm/overrides/tutorial-02-qwen-odia.yaml<span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span>--name-template<span class="w"> </span><span class="s2">&quot;download-odia-qwen-odia&quot;</span><span class="w"> </span><span class="se">\</span>
@@ -2887,11 +2945,11 @@ We will use the helm charts in <code>workloads/download-huggingface-model-to-buc
 <a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">  </span>--name-template<span class="w"> </span><span class="s2">&quot;download-odia-data&quot;</span><span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">  </span><span class="p">|</span><span class="w"> </span>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>-
 </code></pre></div>
-<p>The <a href="#monitoring-progress-logs-and-gpu-utilization-with-k9s">logs</a> will show a model staging download and upload, then data download, preprocessing, and upload.</p>
-<h2 id="3-finetune-an-odia-model-on-8gpus">3. Finetune an Odia model on 8GPUs<a class="headerlink" href="#3-finetune-an-odia-model-on-8gpus" title="Permanent link">&para;</a></h2>
-<p>We will run our Odia language finetuning using 8 GPUs in a data parallel setup. For finetuning, we'll use the helm chart in  <code>workloads/llm-finetune-silogen-engine/helm</code>, and the user input file in <code>workloads/llm-finetune-silogen-engine/helm/overrides/tutorial-02-qwen-odia-instruct-v1.yaml</code>.</p>
+<p>The <a href="../tutorial-00-prerequisites/#monitoring-progress-logs-and-gpu-utilization-with-k9s">logs</a> will show a model staging download and upload, then data download, preprocessing, and upload.</p>
+<h2 id="3-fine-tune-an-odia-model-on-8-gpus">3. Fine-tune an Odia model on 8 GPUs<a class="headerlink" href="#3-fine-tune-an-odia-model-on-8-gpus" title="Permanent link">&para;</a></h2>
+<p>We will run our Odia language fine-tuning using 8 GPUs in a data parallel setup. For fine-tuning, we'll use the helm chart in  <code>workloads/llm-finetune-silogen-engine/helm</code>, and the user input file in <code>workloads/llm-finetune-silogen-engine/helm/overrides/tutorial-02-qwen-odia-instruct-v1.yaml</code>.</p>
 <p>This training job takes around 13 hours, because the combination of 6 datasets is large and we go through that combination 6 times. We have found that a large number of training steps is necessary to enable the model to learn act reasonably in Odia language. We suspect this has something to do with the Odia script, which is not well covered by the Qwen tokenizer, and leads to very long sequences produced character or even diacritic at a time.</p>
-<p>Let's launch the finetuning Job:
+<p>Let's launch the fine-tuning job:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nv">name</span><span class="o">=</span><span class="s2">&quot;qwen-odia-instruct-v1&quot;</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>helm<span class="w"> </span>template<span class="w"> </span>workloads/llm-finetune-silogen-engine/helm<span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span>--values<span class="w"> </span>workloads/llm-finetune-silogen-engine/helm/overrides/tutorial-02-qwen-odia-instruct-v1.yaml<span class="w"> </span><span class="se">\</span>
@@ -2900,11 +2958,11 @@ We will use the helm charts in <code>workloads/download-huggingface-model-to-buc
 <a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">  </span>--set<span class="w"> </span><span class="s2">&quot;finetuningGpus=8&quot;</span><span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">  </span><span class="p">|</span><span class="w"> </span>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>-
 </code></pre></div>
-can see logs, a progress bar, and the full 8-GPU compute utilization following the <a href="#monitoring-progress-logs-and-gpu-utilization-with-k9s">instructions above</a>.</p>
-<h2 id="4-compare-the-official-qwen15-7b-chat-model-the-odia-continued-pretraining-basemodel-and-the-odia-finetuned-model">4. Compare the official Qwen1.5-7B-Chat model, the Odia continued pretraining basemodel, and the Odia-finetuned model:<a class="headerlink" href="#4-compare-the-official-qwen15-7b-chat-model-the-odia-continued-pretraining-basemodel-and-the-odia-finetuned-model" title="Permanent link">&para;</a></h2>
-<p>The Qwen1.5-7B-Chat is a general chat-finetuned version of the same Qwen basemodel that our Odia continued pretraining started from. Thus it is a good point of comparison. Additionally we'll deploy the Odia continued pretraining basemodel, to see how the instruct-finetuning changed it.</p>
+<p>We can see logs, a progress bar, and the full 8-GPU compute utilization following the <a href="../tutorial-00-prerequisites/#monitoring-progress-logs-and-gpu-utilization-with-k9s">instructions </a>.</p>
+<h2 id="4-compare-the-official-qwen15-7b-chat-model-the-odia-continued-pretraining-basemodel-and-the-odia-fine-tuned-model">4. Compare the official Qwen1.5-7B-Chat model, the Odia continued pretraining basemodel, and the Odia-fine-tuned model:<a class="headerlink" href="#4-compare-the-official-qwen15-7b-chat-model-the-odia-continued-pretraining-basemodel-and-the-odia-fine-tuned-model" title="Permanent link">&para;</a></h2>
+<p>The Qwen1.5-7B-Chat is a general chat-fine-tuned version of the same Qwen basemodel that our Odia continued pretraining started from. Thus it is a good point of comparison. Additionally we'll deploy the Odia continued pretraining basemodel, to see how the instruct-fine-tuning changed it.</p>
 <p>For inference deployments, we will use the helm chart in  <code>workloads/llm-inference-vllm/helm/chart</code>.</p>
-<p>Deploy the models with the following commands. Note that the Qwen1.5-7B-Chat model we're getting directly from HuggingFace, while the other two models we're fetching from the cluster internal bucket storage.
+<p>Deploy the models with the following commands. Note that the Qwen1.5-7B-Chat model we're getting directly from HuggingFace, while the other two models we're fetching from the cluster internal bucket storage.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nv">name</span><span class="o">=</span><span class="s2">&quot;qwen-base-chat&quot;</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>helm<span class="w"> </span>template<span class="w"> </span>workloads/llm-inference-vllm/helm<span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">  </span>--set<span class="w"> </span><span class="s2">&quot;model=Qwen/Qwen1.5-7B-Chat&quot;</span><span class="w"> </span><span class="se">\</span>
@@ -2923,8 +2981,8 @@ can see logs, a progress bar, and the full 8-GPU compute utilization following t
 <a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="w">  </span>--set<span class="w"> </span><span class="s2">&quot;vllm_engine_args.served_model_name=</span><span class="nv">$name</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="w">  </span>--name-template<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$name</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="w">  </span><span class="p">|</span><span class="w"> </span>kubectl<span class="w"> </span>create<span class="w"> </span>-f<span class="w"> </span>-
-</code></pre></div></p>
-<p>To discuss with the models, we need to setup connections to them. Since these are not public-internet deployments, we'll do this simply by starting background port-forwarding processes:
+</code></pre></div>
+<p>To discuss with the models, we need to setup connections to them. Since these are not public-internet deployments, we'll do this simply by starting background port-forwarding processes:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nv">name</span><span class="o">=</span><span class="s2">&quot;qwen-base-chat&quot;</span>
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>kubectl<span class="w"> </span>port-forward<span class="w"> </span>services/llm-inference-vllm-<span class="nv">$name</span><span class="w"> </span><span class="m">8080</span>:80<span class="w"> </span>&gt;/dev/null<span class="w"> </span><span class="p">&amp;</span>
 <a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="nv">qwenchatPID</span><span class="o">=</span><span class="nv">$!</span>
@@ -2934,9 +2992,9 @@ can see logs, a progress bar, and the full 8-GPU compute utilization following t
 <a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="nv">name</span><span class="o">=</span><span class="s2">&quot;qwen-odia-instruct-v1&quot;</span>
 <a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>kubectl<span class="w"> </span>port-forward<span class="w"> </span>services/llm-inference-vllm-<span class="nv">$name</span><span class="w"> </span><span class="m">8100</span>:80<span class="w"> </span>&gt;/dev/null<span class="w"> </span><span class="p">&amp;</span>
 <a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="nv">odiainstructPID</span><span class="o">=</span><span class="nv">$!</span>
-</code></pre></div></p>
-<p>Now we can talk to the models. We'll ask them about the difference between physics and chemistry, in Odia:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nv">question</span><span class="o">=</span><span class="s2">&quot;ପଦାର୍ଥ ବିଜ୍ଞାନ ଏବଂ ରସାୟନ ବିଜ୍ଞାନ ମଧ୍ୟରେ କ’ଣ ପାର୍ଥକ୍ୟ ଅଛି?&quot;</span>
+</code></pre></div>
+<p>Now we can talk to the models. We'll ask them about the difference between physics and chemistry, in Odia:</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nv">question</span><span class="o">=</span><span class="s2">&quot;ପଦାର୍ଥ ବିଜ୍ଞାନ ଏବଂ ରସାୟନ ବିଜ୍ଞାନ ମଧ୍ୟରେ କ’ଣ ପାର୍ଥକ୍ୟ ଅଛି?&quot;</span>
 <a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="nv">temperature</span><span class="o">=</span><span class="m">0</span>.0
 <a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="nv">max_tokens</span><span class="o">=</span><span class="m">2048</span>
 <a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="nv">presence_penalty</span><span class="o">=</span><span class="m">1</span>.2
@@ -2984,12 +3042,9 @@ can see logs, a progress bar, and the full 8-GPU compute utilization following t
 <a id="__codelineno-4-46" name="__codelineno-4-46" href="#__codelineno-4-46"></a><span class="s1">        &quot;min_p&quot;: &#39;</span><span class="nv">$min_p</span><span class="s1">&#39;</span>
 <a id="__codelineno-4-47" name="__codelineno-4-47" href="#__codelineno-4-47"></a><span class="s1">    }&#39;</span><span class="w"> </span><span class="m">2</span>&gt;/dev/null<span class="w"> </span><span class="p">|</span><span class="w"> </span>jq<span class="w"> </span><span class="s2">&quot;.choices[0].message.content&quot;</span><span class="w"> </span>--raw-output<span class="w"> </span><span class="p">|</span><span class="w"> </span>fold<span class="w"> </span>-s<span class="w"> </span><span class="p">|</span><span class="w"> </span>sed<span class="w"> </span><span class="s1">&#39;s/^/  /&#39;</span>
 </code></pre></div>
-We'll find that the general Qwen chat-model does not keep to Odia, it easily switches to e.g. Hindi or Chinese.
-The Odia continued pretraining basemodel does answer in Odia, but since it is just a continuation model, the text it produces is not
-really answer to the question, but rather rambling.
-The finetuned model answers the question in Odia.</p>
-<p>When we're done chatting with the models, we can kill the port-forwards with:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nb">kill</span><span class="w"> </span><span class="nv">$qwenchatPID</span><span class="w"> </span><span class="nv">$odiabasePID</span><span class="w"> </span><span class="nv">$odiainstructPID</span>
+We'll find that the general Qwen chat-model does not keep to Odia, it easily switches to e.g. Hindi or Chinese. The Odia continued pretraining basemodel does answer in Odia, but since it is just a continuation model, the text it produces is not really answer to the question, but rather rambling. The fine-tuned model answers the question in Odia.</p>
+<p>When we're done chatting with the models, we can kill the port-forwards with:</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nb">kill</span><span class="w"> </span><span class="nv">$qwenchatPID</span><span class="w"> </span><span class="nv">$odiabasePID</span><span class="w"> </span><span class="nv">$odiainstructPID</span>
 </code></pre></div>
 and we can shut down the inference deployments with:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">for</span><span class="w"> </span>name<span class="w"> </span><span class="k">in</span><span class="w"> </span>qwen-base-chat<span class="w"> </span>qwen-odia-base<span class="w"> </span>qwen-odia-instruct-v1<span class="p">;</span><span class="w"> </span><span class="k">do</span>
