@@ -2,7 +2,7 @@
 tags:
   - quick start
   - ai development
-  - developer center
+  - AMD AI Workbench
 ---
 
 # Quick start guide for AI practitioners
@@ -17,16 +17,16 @@ This guide assumes the user has access to an installed SiloGen platform. Besides
 
 ## Getting started
 
-1. Activate your SiloGen account and login to SiloGen Developer Center.
-2. Complete the model fine-tuning tutorial to get hands-on with the Developer Center.
-3. Browse through the Developer Center end user documentation in order to familiarize yourself with the SiloGen Developer Center features.
+1. Activate your SiloGen account and login to AMD AI Workbench.
+2. Complete the model fine-tuning tutorial to get hands-on with the AMD AI Workbench.
+3. Browse through the AMD AI Workbench end user documentation in order to familiarize yourself with the AMD AI Workbench features.
 
 ### Activate your SiloGen account
 
 1. You should have received a registration email with a link to activate your account. Click on the link in this email to start the registration process.
   - In case you have not received an email, please contact your SiloGen platform admin.
-2. Login to SiloGen Developer Center through your organization's SiloGen URL (ask for the URL from your SiloGen platform admin).
-3. Access the Developer Center tab on the left panel once you have logged in to SiloGen.
+2. Login to AMD AI Workbench through your organization's login URL (ask for the URL from your platform admin).
+3. Access the AMD AI Workbench tab on the left panel once you have logged in to the platform.
 
 ### Complete a tutorial
 
@@ -34,7 +34,7 @@ Based on your background you can choose either low-code or more advanced coding 
 
 #### Model deployment and inference
 
-To learn how to deploy a model and run inference, please complete the tutorial ["How to deploy a model and run inference"](../core/docs/developer-center/inference/how-to-deploy-and-inference.md).
+To learn how to deploy a model and run inference, please complete the tutorial ["How to deploy a model and run inference"](../core/docs/workbench/inference/how-to-deploy-and-inference.md).
 
 
 #### Low-code tutorial: fine-tune a model with low code
@@ -47,4 +47,4 @@ To learn how to develop AI models using workspaces, please complete the tutorial
 
 ### Further discovery
 
-Browse through the [SiloGen end-user documentation](https://docs.silogen.ai/core/docs/developer-center/overview/) to familiarize yourself with the SiloGen Developer Center features.
+Browse through the [SiloGen end-user documentation](https://docs.silogen.ai/core/docs/workbench/overview/) to familiarize yourself with the AMD AI Workbench features.

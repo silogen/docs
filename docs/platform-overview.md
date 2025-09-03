@@ -33,10 +33,10 @@ The SiloGen platform is designed to provide a solid end-to-end model development
 
 ![A diagram of the platform architecture divided into user portal and compute plane.](./media/platform-components.png)
 
-**Developer Center (Dev Center)**<br>
-Enables researchers to manage AI workloads end-to-end. The Developer Center focuses on user experience, offering low-code approaches for developing AI applications by simplifying the execution of fine-tuning, inference, and other jobs.
+**AMD AI Workbench**<br>
+Enables researchers to manage AI workloads end-to-end. The AMD AI Workbench focuses on user experience, offering low-code approaches for developing AI applications by simplifying the execution of fine-tuning, inference, and other jobs.
 
-Focusing on user experience, the Developer Center has a comprehensive model catalog, enabling AI researchers to better understand which models, data, and workloads they can use and download for their work. Finally, the Developer Center offers (and aims to expand) integrations with well-established MLOps tools such as MLflow, TensorBoard, and Kubeflow, allowing researchers to use the AI development tools that feel most natural to them.
+Focusing on user experience, the AMD AI Workbench has a comprehensive model catalog, enabling AI researchers to better understand which models, data, and workloads they can use and download for their work. Finally, the AMD AI Workbench offers (and aims to expand) integrations with well-established MLOps tools such as MLflow, TensorBoard, and Kubeflow, allowing researchers to use the AI development tools that feel most natural to them.
 
 **AI Resource Manager (Airman)**<br>
 With Airman, enterprises can manage resource utilization on the R&D compute cluster by mapping user groups to compute, data, and image resources. Airman maximizes GPU usage by allowing projects and user groups to share GPUs and by configuring compute clusters with policies that enable fair and smart scheduling. Administrators can monitor GPU utilization at the project, department, cluster, and enterprise levels using Airman dashboards.

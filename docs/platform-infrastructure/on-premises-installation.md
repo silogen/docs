@@ -186,7 +186,7 @@ kubectl create secret generic hf-token \
 
 ### 7. Login to SiloGen
 
-To confirm that the installation was successful, ensure you are able to log in to the Developer Center.
+To confirm that the installation was successful, ensure you are able to log in to the AMD AI Workbench.
 
 1. Access the SiloGen URL (your domain name).
    1. For nip.io domain: `https://airmui.<master-node-ip-address>.nip.io`

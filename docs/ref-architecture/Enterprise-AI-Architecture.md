@@ -85,7 +85,7 @@ flowchart LR
     I --> J
 ```
 
-The figure shows several steps that can be standardized for the GenAI use case developers. For example, the steps of fine-tuning, model evaluation, monitoring and deployment can be standardized and automated. Additionally, the workflows for data and model onboarding that are not visible in the figure can be standardized too. These standardized steps are packaged as software AI assets in our reference architecture and offered as a service to the AI use case developers through our AI Developer Center and through SiloGen’s public git repo.
+The figure shows several steps that can be standardized for the GenAI use case developers. For example, the steps of fine-tuning, model evaluation, monitoring and deployment can be standardized and automated. Additionally, the workflows for data and model onboarding that are not visible in the figure can be standardized too. These standardized steps are packaged as software AI assets in our reference architecture and offered as a service to the AI use case developers through our AMD AI Workbench and through SiloGen’s public git repo.
 
 ### Model developers & AI scientists
 
@@ -145,7 +145,7 @@ Implement comprehensive tracking and reporting of resource consumption per tenan
 
 ### High level architectural view
 
-To support the design principles, SiloGen introduces four key layers: the AI Production Inference Layer, AI Developer Center Layer, AI Resource Manager Layer, and the Infrastructure Management Layer. Each layer has a specific role in the overall architecture, working together to streamline operations and enable efficient, scalable AI deployment.
+To support the design principles, SiloGen introduces four key layers: the AI Production Inference Layer, AMD AI Workbench Layer, AI Resource Manager Layer, and the Infrastructure Management Layer. Each layer has a specific role in the overall architecture, working together to streamline operations and enable efficient, scalable AI deployment.
 
 ```mermaid
 flowchart BT
@@ -163,8 +163,8 @@ flowchart BT
         RM1["Smart Job Scheduling & Workload Management"]
     end
 
-    subgraph L4["AI & Data Science Developer Center"]
-        DC1["SiloGen Developer Center\n(Workload catalog, Developer Workspace, Deployment Platform)"]
+    subgraph L4["AI & Data Science Workbench"]
+        DC1["AMD AI Workbench\n(Workload catalog, Developer Workspace, Deployment Platform)"]
     end
 
     subgraph L5["Business Operation Area (AI apps)"]
@@ -197,7 +197,7 @@ The purpose of control plane is a) to provide services and access control when o
 
 For facilitating the above three main components are introduced in the control plane:  
 
-- AI Developer Center
+- AMD AI Workbench
 - AI Resource Manager
 - Access Control Component
 
@@ -263,9 +263,9 @@ It provides a centralized service for storing, managing, and distributing contai
 
 ## SiloGen control plane components
 
-### SiloGen Developer Center
+### AMD AI Workbench
 
-Purpose: Enables researchers to end-to-end manage AI workloads. The Developer Center enables the usage of the SiloGen AI workloads and focuses on the user experience, offering low code approaches for developing AI applications by simplifying the execution of fine-tuning, inference and other jobs. Focusing on the user experience the Developer Center also exposes a number of catalogs enabling AI researchers to have a better understanding on which models, data and workloads can use and download for the purposes of their work. Finally, the Develop Center offers (and aims to expand the) integrations to well established MLOps tools such as MLFlow, Tensorboards and Kubeflow allowing researchers to use the AI developing tool that feels more natural to them.
+Purpose: Enables researchers to end-to-end manage AI workloads. AMD AI Workbench enables the usage of the SiloGen AI workloads and focuses on the user experience, offering low code approaches for developing AI applications by simplifying the execution of fine-tuning, inference and other jobs. Focusing on the user experience, AMD AI Workbench also exposes a number of catalogs enabling AI researchers to have a better understanding on which models, data and workloads can use and download for the purposes of their work. Finally, AMD AI Workbench offers (and aims to expand the) integrations to well established MLOps tools such as MLFlow, Tensorboards and Kubeflow allowing researchers to use the AI developing tool that feels more natural to them.
 
 ### AI Resource Manager (Airman)
 
@@ -306,7 +306,7 @@ Critical concerns that the inference layer and the related technologies address 
 
 The above components are combined in the following detailed architecture view.  TODO NEED TO CHANGE THE DIAGRAM OF THE INFERENCE CLUSTER ALSO DESCRIBE THE USERS OF THE PLATFORM BETTER 
 
-With blue color we tag components that can be provided by the clients. For example a client can bring their own storage technology and connect it to SiloGen. In addition a client can use their own secret management system, and a client can onboard and schedule its own workloads in the compute cluster. With Green color we visualize the Developer Center and with Red the AI Resource Manager. Developer Center as mentioned includes catalogs and services for developing and managing AI workloads, while an has components for user and resource management.
+With blue color we tag components that can be provided by the clients. For example a client can bring their own storage technology and connect it to SiloGen. In addition a client can use their own secret management system, and a client can onboard and schedule its own workloads in the compute cluster. With green color we visualize AMD AI Workbench and with Red the AI Resource Manager. AMD AI Workbench as mentioned includes catalogs and services for developing and managing AI workloads, while an has components for user and resource management.
 
 ## From functional components to technology choices
 
@@ -316,17 +316,17 @@ Having introduced the functional components of our system, in this section we pr
 
 | **Feature - Functionality** | **Functional Component** | **Technology Choice** |
 |-----------------------------|---------------------------|------------------------|
-| Deploying & triggering AI workloads to Compute Clusters | Airman & Dev Center | In-built SiloGen API services, RabbitMQ, Kubectl |
+| Deploying & triggering AI workloads to Compute Clusters | Airman & Workbench | In-built SiloGen API services, RabbitMQ, Kubectl |
 | Connecting compute clusters to control plane | Airman | Home-built SiloGen Dispatching services & RabbitMQ |
 | Configuring resource policies to compute clusters | Airman | API services, RabbitMQ, Kubectl, KAIWO, KUEUE |
 | **Monitoring and Observability** <br><br> - Collecting execution logs <br> - Collecting GPU metrics at cluster, project & workload level | Airman | LGTM stack (Loki for logs, Grafana for dashboards, Tempo for traces, Mimir for metrics), AMD GPU operator |
-| Access Management <br><br> (Authorization / Authentication) | Airman & Dev Center | Keycloak |
-| Interactive Training Sessions <br><br> (GPU as a Service) | Dev Center & K-AIWO | Visual Studio, Jupyter Notebooks, (SSH connections coming soon) |
-| AI Experiment and Workload Execution Tracking | Dev Center | MLFlow, TensorBoard |
-| Model Catalog | Dev Center | Home-built |
-| Workload Catalog | Dev Center | Home-built |
-| AI Workflow Management System <br><br> (Trigger, stop and manage single/multi-step workloads) | Dev Center & K-AIWO | Home-built (possible integration with Kubeflow in future) |
-| Data Catalog | Dev Center | Home-built |
+| Access Management <br><br> (Authorization / Authentication) | Airman & Workbench | Keycloak |
+| Interactive Training Sessions <br><br> (GPU as a Service) | Workbench & K-AIWO | Visual Studio, Jupyter Notebooks, (SSH connections coming soon) |
+| AI Experiment and Workload Execution Tracking | Workbench | MLFlow, TensorBoard |
+| Model Catalog | Workbench | Home-built |
+| Workload Catalog | Workbench | Home-built |
+| AI Workflow Management System <br><br> (Trigger, stop and manage single/multi-step workloads) | Workbench & K-AIWO | Home-built (possible integration with Kubeflow in future) |
+| Data Catalog | Workbench | Home-built |
 
 ### Platform Capabilities - Part 2
 

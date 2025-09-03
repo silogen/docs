@@ -58,16 +58,16 @@ This is your comprehensive handbook designed to help infrastructure administrato
 
       <ul class="intro-links">
         <li>
-          <a href="./core/docs/developer-center/overview/">AI development overview</a>
+          <a href="./core/docs/workbench/overview/">AI development overview</a>
         </li>
         <li>
-          <a href="./core/docs/developer-center/inference/how-to-deploy-and-inference/">Deploy model and run inference</a>
+          <a href="./core/docs/workbench/inference/how-to-deploy-and-inference/">Deploy model and run inference</a>
         </li>
         <li>
-          <a href="./core/docs/developer-center/training/fine-tuning/">Model finetuning</a>
+          <a href="./core/docs/workbench/training/fine-tuning/">Model finetuning</a>
         </li>
         <li>
-          <a href="./core/docs/developer-center/training/models/">Access models</a>
+          <a href="./core/docs/workbench/training/models/">Access models</a>
         </li>
       </ul>
     </div>

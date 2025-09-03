@@ -26,8 +26,8 @@ Follow the instructions in [Install SiloGen platform](./platform-infrastructure/
 
 Follow the instructions in [Quick start for AI resource managers](./quick-start-guides/airman-quick-start.md) to onboard your organization, projects, and users.
 
-## Train and deploy models in the Developer Center
+## Train and deploy models in the AMD AI Workbench
 
 **The target audience for this section is AI practitioners.**
 
-Follow the instructions in [Quick start for AI practitioners](./quick-start-guides/devcenter-quick-start.md) to get started with fine-tuning and deploying AI models, and managing AI workloads.
+Follow the instructions in [Quick start for AI practitioners](./quick-start-guides/workbench-quick-start.md) to get started with fine-tuning and deploying AI models, and managing AI workloads.
