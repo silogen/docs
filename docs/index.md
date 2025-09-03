@@ -83,16 +83,16 @@ This is your comprehensive handbook designed to help infrastructure administrato
 
       <ul class="intro-links">
         <li>
-          <a href="./core/docs/resources/overview/">AMD Resource Manager overview</a>
+          <a href="./core/docs/resource-manager/overview/">AMD Resource Manager overview</a>
         </li>
         <li>
           <a href="./quick-start-guides/resource-manager-quick-start/">Getting started</a>
         </li>
         <li>
-          <a href="./core/docs/resources/clusters/overview/">Managing clusters</a>
+          <a href="./core/docs/resource-manager/clusters/overview/">Managing clusters</a>
         </li>
         <li>
-          <a href="./core/docs/resources/users/overview/">Managing users</a>
+          <a href="./core/docs/resource-manager/users/overview/">Managing users</a>
         </li>
       </ul>
     </div>

@@ -7,7 +7,7 @@ tags:
 
 # Working in AI workspaces hands-on
 
-This guide teaches you how to work in the AMD Enterprise AI Suite workspace using a Jupyter Lab notebook.
+This guide teaches you how to work in the AMD AI Workbench workspace using a Jupyter Lab notebook.
 
 ## Tutorial: fine-tune Llama-3.1 8B with torchtune
 

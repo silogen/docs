@@ -7,7 +7,7 @@ tags:
 
 # Quick start guide for AI resource managers
 
-The AMD Enterprise AI Suite provides a robust environment for managing AI development teams' work on AMD compute. Whether teams are working on fine-tuning, inference, or any other aspect of AI development, the platform offers easy-to-use tools to maintain fair compute resource allocation. To work efficiently in the platform, a resource manager should have some experience with AI terminology and a general understanding of AI development infrastructure.
+The AMD AI Workbench provides a robust environment for managing AI development teams' work on AMD compute. Whether teams are working on fine-tuning, inference, or any other aspect of AI development, the platform offers easy-to-use tools to maintain fair compute resource allocation. To work efficiently in the platform, a resource manager should have some experience with AI terminology and a general understanding of AI development infrastructure.
 
 This quick start guide outlines the steps to set up essential AI compute resources for project work. By the end, you will have a connected compute cluster, a project with allocated compute resources, and an invited team member who can access the platform.
 
@@ -65,4 +65,4 @@ It is recommended to change the initial admin users' passwords that were created
 !!! note
     A default project with quota has already been created for your organization as part of the installation process. In case you want to create new projects follow the instructions below.
 
-To learn how to create a new project with guaranteed quota follow the instructions in ["Manage projects"](../core/docs/resources/projects/manage-projects.md)
+To learn how to create a new project with guaranteed quota follow the instructions in ["Manage projects"](../core/docs/resource-manager/projects/manage-projects.md)
