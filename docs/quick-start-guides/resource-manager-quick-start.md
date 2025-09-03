@@ -2,7 +2,7 @@
 tags:
   - quick start
   - resource management
-  - airman
+  - AMD Resource Manager
 ---
 
 # Quick start guide for AI resource managers
@@ -22,7 +22,6 @@ This quick start guide outlines the steps to set up essential AI compute resourc
 | Quota   | Quotas define a _minimum_ set of resources that are guaranteed. Quotas ensure that computational resources are appropriately shared between projects. Without quotas, some workloads might use all the resources, leaving other workloads waiting.       |
 | SSO     | Single sign-on. A user login feature allowing easy traversal between multiple applications. |
 
-
 ## Prerequisites
 
 This guide assumes you have access to an installed SiloGen platform. To assist you with onboarding, the following configurations have already been created during the installation process:
@@ -38,7 +37,7 @@ This section outlines the steps to set up essential AI compute resources for pro
 
 ### Onboard users
 
-!!! Note
+!!! note
     SiloGen provides multiple options for onboarding users into the platform. For small-scale trial deployments you can invite users through email or add them manually, but for large scale deployments we recommend using single sign-on (SSO).
 
 #### Invite users through email
@@ -53,7 +52,7 @@ Follow the instructions in ["Adding an identity provider to enable single sign-o
 
 In case your organization does not have SSO or SMTP server set up you can add users manually.
 
-Follow the instructions in ["Manually managing and activating users in Airman"](../core/docs/keycloak/manual-user-management.md) to add users manually.
+Follow the instructions in ["Manually managing and activating users in AMD Resource Manager"](../core/docs/keycloak/manual-user-management.md) to add users manually.
 
 ### Change the default admin user passwords
 
@@ -66,4 +65,4 @@ It is recommended to change the initial admin users' passwords that were created
 !!! note
     A default project with quota has already been created for your organization as part of the installation process. In case you want to create new projects follow the instructions below.
 
-To learn how to create a new project with guaranteed quota follow the instructions in ["Manage projects"](../core/docs/airman/projects/manage-projects.md)
+To learn how to create a new project with guaranteed quota follow the instructions in ["Manage projects"](../core/docs/resources/projects/manage-projects.md)

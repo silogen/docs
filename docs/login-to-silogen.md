@@ -8,7 +8,7 @@ tags:
 
 Users log in to the SiloGen platform at their dedicated URL address, for example, `your-silogen.ai`. Entering the address in your browser's address bar takes you to the login page. The page has a button called "Sign in with Keycloak," which takes you to the authentication service.
 
-![Login screen to Airman first asks users for their email address.](./media/login-screen-01.png)
+![Login screen to AMD Resource Manager first asks users for their email address.](./media/login-screen-01.png)
 
 Enter your email address in the specified field and click the "Sign In" button to continue. Entering incorrect credentials will result in an error screen.
 

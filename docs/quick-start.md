@@ -24,7 +24,7 @@ Follow the instructions in [Install SiloGen platform](./platform-infrastructure/
 
 **The target audience for this onboarding section is AI resource managers.**
 
-Follow the instructions in [Quick start for AI resource managers](./quick-start-guides/airman-quick-start.md) to onboard your organization, projects, and users.
+Follow the instructions in [Quick start for AI resource managers](./quick-start-guides/resource-manager-quick-start.md) to onboard your organization, projects, and users.
 
 ## Train and deploy models in the AMD AI Workbench
 

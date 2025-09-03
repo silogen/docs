@@ -145,7 +145,7 @@ Implement comprehensive tracking and reporting of resource consumption per tenan
 
 ### High level architectural view
 
-To support the design principles, SiloGen introduces four key layers: the AI Production Inference Layer, AMD AI Workbench Layer, AI Resource Manager Layer, and the Infrastructure Management Layer. Each layer has a specific role in the overall architecture, working together to streamline operations and enable efficient, scalable AI deployment.
+To support the design principles, SiloGen introduces four key layers: the AI Production Inference Layer, AMD AI Workbench Layer, AMD Resource Manager Layer, and the Infrastructure Management Layer. Each layer has a specific role in the overall architecture, working together to streamline operations and enable efficient, scalable AI deployment.
 
 ```mermaid
 flowchart BT
@@ -159,7 +159,7 @@ flowchart BT
         IM1["AMD Optimized Managed K8s\n(AI Cluster Control + AMD GPU Operator + Cluster Forge)"]
     end
 
-    subgraph L3["SiloGen AI Resource Manager"]
+    subgraph L3["AMD Resource Manager"]
         RM1["Smart Job Scheduling & Workload Management"]
     end
 
@@ -198,7 +198,7 @@ The purpose of control plane is a) to provide services and access control when o
 For facilitating the above three main components are introduced in the control plane:  
 
 - AMD AI Workbench
-- AI Resource Manager
+- AMD Resource Manager
 - Access Control Component
 
 ### Silogen compute plane
@@ -267,9 +267,9 @@ It provides a centralized service for storing, managing, and distributing contai
 
 Purpose: Enables researchers to end-to-end manage AI workloads. AMD AI Workbench enables the usage of the SiloGen AI workloads and focuses on the user experience, offering low code approaches for developing AI applications by simplifying the execution of fine-tuning, inference and other jobs. Focusing on the user experience, AMD AI Workbench also exposes a number of catalogs enabling AI researchers to have a better understanding on which models, data and workloads can use and download for the purposes of their work. Finally, AMD AI Workbench offers (and aims to expand the) integrations to well established MLOps tools such as MLFlow, Tensorboards and Kubeflow allowing researchers to use the AI developing tool that feels more natural to them.
 
-### AI Resource Manager (Airman)
+### AMD Resource Manager
 
-Purpose: Manages the resource utilization enforcing isolation (multitenancy) across projects, departments and organizations. Airman creates configures and manages resources at the RnD compute cluster by mapping user groups and projects to compute, data and other resources. With the Airman, enterprise can maximize the usage of GPUs by allowing projects and user groups to share GPUs and by configuring the compute clusters with policies that enable fair and smart scheduling. Finally, through the Airman platform and project administrate can monitor the GPU utilization at a project, department, cluster and Enterprise level.
+Purpose: Manages the resource utilization enforcing isolation (multitenancy) across projects, departments and organizations. AMD Resource Manager creates configures and manages resources at the RnD compute cluster by mapping user groups and projects to compute, data and other resources. With the AMD Resource Manager, enterprise can maximize the usage of GPUs by allowing projects and user groups to share GPUs and by configuring the compute clusters with policies that enable fair and smart scheduling. Finally, through the AMD Resource Manager platform and project administrate can monitor the GPU utilization at a project, department, cluster and Enterprise level.
 
 **Functions**
 
@@ -306,7 +306,7 @@ Critical concerns that the inference layer and the related technologies address 
 
 The above components are combined in the following detailed architecture view.  TODO NEED TO CHANGE THE DIAGRAM OF THE INFERENCE CLUSTER ALSO DESCRIBE THE USERS OF THE PLATFORM BETTER 
 
-With blue color we tag components that can be provided by the clients. For example a client can bring their own storage technology and connect it to SiloGen. In addition a client can use their own secret management system, and a client can onboard and schedule its own workloads in the compute cluster. With green color we visualize AMD AI Workbench and with Red the AI Resource Manager. AMD AI Workbench as mentioned includes catalogs and services for developing and managing AI workloads, while an has components for user and resource management.
+With blue color we tag components that can be provided by the clients. For example a client can bring their own storage technology and connect it to SiloGen. In addition a client can use their own secret management system, and a client can onboard and schedule its own workloads in the compute cluster. With green color we visualize AMD AI Workbench and with Red the AMD Resource Manager. AMD AI Workbench as mentioned includes catalogs and services for developing and managing AI workloads, while an has components for user and resource management.
 
 ## From functional components to technology choices
 
@@ -316,11 +316,11 @@ Having introduced the functional components of our system, in this section we pr
 
 | **Feature - Functionality** | **Functional Component** | **Technology Choice** |
 |-----------------------------|---------------------------|------------------------|
-| Deploying & triggering AI workloads to Compute Clusters | Airman & Workbench | In-built SiloGen API services, RabbitMQ, Kubectl |
-| Connecting compute clusters to control plane | Airman | Home-built SiloGen Dispatching services & RabbitMQ |
-| Configuring resource policies to compute clusters | Airman | API services, RabbitMQ, Kubectl, KAIWO, KUEUE |
-| **Monitoring and Observability** <br><br> - Collecting execution logs <br> - Collecting GPU metrics at cluster, project & workload level | Airman | LGTM stack (Loki for logs, Grafana for dashboards, Tempo for traces, Mimir for metrics), AMD GPU operator |
-| Access Management <br><br> (Authorization / Authentication) | Airman & Workbench | Keycloak |
+| Deploying & triggering AI workloads to Compute Clusters | Resource Manager & Workbench | In-built SiloGen API services, RabbitMQ, Kubectl |
+| Connecting compute clusters to control plane | Resource Manager | Home-built SiloGen Dispatching services & RabbitMQ |
+| Configuring resource policies to compute clusters | Resource Manager | API services, RabbitMQ, Kubectl, KAIWO, KUEUE |
+| **Monitoring and Observability** <br><br> - Collecting execution logs <br> - Collecting GPU metrics at cluster, project & workload level | AiResource Managerrman | LGTM stack (Loki for logs, Grafana for dashboards, Tempo for traces, Mimir for metrics), AMD GPU operator |
+| Access Management <br><br> (Authorization / Authentication) | Resource Manager & Workbench | Keycloak |
 | Interactive Training Sessions <br><br> (GPU as a Service) | Workbench & K-AIWO | Visual Studio, Jupyter Notebooks, (SSH connections coming soon) |
 | AI Experiment and Workload Execution Tracking | Workbench | MLFlow, TensorBoard |
 | Model Catalog | Workbench | Home-built |

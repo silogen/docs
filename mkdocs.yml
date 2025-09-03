@@ -51,10 +51,10 @@ plugins:
       redirect_maps:
         'core/docs/workbench/inference/index.md': 'core/docs/workbench/inference/overview.md'
         'core/docs/workbench/training/index.md': 'core/docs/workbench/training/overview.md'
-        'core/docs/airman/index.md': 'core/docs/airman/overview.md'
-        'core/docs/airman/clusters/index.md': 'core/docs/airman/clusters/overview.md'
-        'core/docs/airman/projects/index.md': 'core/docs/airman/projects/manage-projects.md'
-        'core/docs/airman/users/index.md': 'core/docs/airman/users/overview.md'
+        'core/docs/resources/index.md': 'core/docs/resources/overview.md'
+        'core/docs/resources/clusters/index.md': 'core/docs/resources/clusters/overview.md'
+        'core/docs/resources/projects/index.md': 'core/docs/resources/projects/manage-projects.md'
+        'core/docs/resources/users/index.md': 'core/docs/resources/users/overview.md'
         'platform-infrastructure/index.md': 'platform-infrastructure/supported-environments.md'
         'references/index.md': 'references/overview.md'
 
@@ -137,22 +137,22 @@ nav:
       - llm-inference-vllm-benchmark-mad: ai-workloads-manifests/llm-inference-vllm-benchmark-mad/helm/README.md
 
   - AI resource manager:
-    - Airman overview: core/docs/airman/overview.md
-    - Quick start for AI resource managers: quick-start-guides/airman-quick-start.md
-    - Dashboard: core/docs/airman/dashboard.md
+    - AMD Resource Manager overview: core/docs/resources/overview.md
+    - Quick start for AI resource managers: quick-start-guides/resource-manager-quick-start.md
+    - Dashboard: core/docs/resources/dashboard.md
     - Clusters:
-      - Clusters overview: core/docs/airman/clusters/overview.md
+      - Clusters overview: core/docs/resources/clusters/overview.md
     - Projects:
-      - Projects overview: core/docs/airman/projects/manage-projects.md
-      - Project dashboard: core/docs/airman/projects/project-dashboard.md
-      - Project quotas: core/docs/airman/projects/project-quotas.md
+      - Projects overview: core/docs/resources/projects/manage-projects.md
+      - Project dashboard: core/docs/resources/projects/project-dashboard.md
+      - Project quotas: core/docs/resources/projects/project-quotas.md
     - User management:
-      - Users overview: core/docs/airman/users/overview.md
+      - Users overview: core/docs/resources/users/overview.md
       - Set up user management:
         - Enable single sign-on: core/docs/keycloak/sso.md
         - Configure SMTP and invite users: core/docs/keycloak/smtp-configuration.md
         - Add users manually: core/docs/keycloak/manual-user-management.md
-      - Manage users: core/docs/airman/users/manage-users.md
+      - Manage users: core/docs/resources/users/manage-users.md
     - Tutorials:
         - Resource utilization: tutorials/resource-utilization.md
 
@@ -169,7 +169,7 @@ exclude_docs: |
 
   references/contributing.md
 
-  core/docs/airman/clusters/add-clusters-ui.md
+  core/docs/resources/clusters/add-clusters-ui.md
 
   # Imported files
   ai-workloads-docs/contributing.md

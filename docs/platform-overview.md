@@ -38,8 +38,8 @@ Enables researchers to manage AI workloads end-to-end. The AMD AI Workbench focu
 
 Focusing on user experience, the AMD AI Workbench has a comprehensive model catalog, enabling AI researchers to better understand which models, data, and workloads they can use and download for their work. Finally, the AMD AI Workbench offers (and aims to expand) integrations with well-established MLOps tools such as MLflow, TensorBoard, and Kubeflow, allowing researchers to use the AI development tools that feel most natural to them.
 
-**AI Resource Manager (Airman)**<br>
-With Airman, enterprises can manage resource utilization on the R&D compute cluster by mapping user groups to compute, data, and image resources. Airman maximizes GPU usage by allowing projects and user groups to share GPUs and by configuring compute clusters with policies that enable fair and smart scheduling. Administrators can monitor GPU utilization at the project, department, cluster, and enterprise levels using Airman dashboards.
+**AMD Resource Manager**<br>
+With AMD Resource Manager, enterprises can manage resource utilization on the R&D compute cluster by mapping user groups to compute, data, and image resources. Resource Manager maximizes GPU usage by allowing projects and user groups to share GPUs and by configuring compute clusters with policies that enable fair and smart scheduling. Administrators can monitor GPU utilization at the project, department, cluster, and enterprise levels using dashboards.
 
 **Kaiwo (Kubernetes - AI Workload Orchestrator)**<br>
 Kaiwo optimizes GPU resource utilization for AI workloads by minimizing GPU idleness. The workload scheduler increases resource efficiency through intelligent job queueing, fair sharing of resources, guaranteed quotas, and opportunistic gang scheduling. It controls the deployment of AI workloads by implementing a Kubernetes operator that watches for the deployment of AI workloads. Main functions:
