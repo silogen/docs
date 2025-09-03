@@ -1,4 +1,4 @@
-# SiloGen AMD Enterprise AI Platform
+# AMD Enterprise AI Suite
 
 ## 1. Introduction
 

@@ -1,4 +1,4 @@
-# SiloGen AMD Enterprise AI platform documentation
+# AMD Enterprise AI Suite documentation
 
 The documentation for this project is built using MkDocs with the Material theme. The documentation utilizes Github actions which import Markdown files from multiple sources into this consolidated documentation repository.
 
@@ -28,4 +28,4 @@ See the [Contributing](docs/contributing.md) guide for development setup instruc
 
 ## Publishing
 
-The external SiloGen documentation is published from this repository as a web site in Github pages in address [docs.silogen.ai](https://docs.silogen.ai). The deployment can be done locally with the command `mkdocs gh-deploy`.
+The documentation is published from this repository as a web site in Github pages in address [docs.silogen.ai](https://docs.silogen.ai). The deployment can be done locally with the command `mkdocs gh-deploy`.

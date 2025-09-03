@@ -6,11 +6,11 @@ tags:
 
 # Personal preferences
 
-SiloGen platform has several settings the users can adjust to change their user experience.
+AMD Enterprise AI Suite platform has several settings the users can adjust to change their user experience.
 
 ## Color theme
 
-The SiloGen platform supports light and dark color modes for different tastes.
+The platform supports light and dark color modes for different tastes.
 
 Users can access the color theme toggler by clicking the username in the top right corner of the user interface. A single click in the area activates a dropdown menu containing the color theme switcher. User can change the color theme by clicking the toggle button indicated by a sun or moon icon.
 

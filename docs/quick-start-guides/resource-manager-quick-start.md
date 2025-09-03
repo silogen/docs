@@ -7,7 +7,7 @@ tags:
 
 # Quick start guide for AI resource managers
 
-The SiloGen platform provides a robust environment for managing AI development teams' work on AMD compute. Whether teams are working on fine-tuning, inference, or any other aspect of AI development, the platform offers easy-to-use tools to maintain fair compute resource allocation. To work efficiently in the SiloGen platform, a resource manager should have some experience with AI terminology and a general understanding of AI development infrastructure.
+The AMD Enterprise AI Suite provides a robust environment for managing AI development teams' work on AMD compute. Whether teams are working on fine-tuning, inference, or any other aspect of AI development, the platform offers easy-to-use tools to maintain fair compute resource allocation. To work efficiently in the platform, a resource manager should have some experience with AI terminology and a general understanding of AI development infrastructure.
 
 This quick start guide outlines the steps to set up essential AI compute resources for project work. By the end, you will have a connected compute cluster, a project with allocated compute resources, and an invited team member who can access the platform.
 
@@ -24,11 +24,11 @@ This quick start guide outlines the steps to set up essential AI compute resourc
 
 ## Prerequisites
 
-This guide assumes you have access to an installed SiloGen platform. To assist you with onboarding, the following configurations have already been created during the installation process:
+This guide assumes you have access to an installed AMD Enterprise AI Suite. To assist you with onboarding, the following configurations have already been created during the installation process:
 
-- Platform admin users have already been created for your organization as part of the installation process. These are named devuser@domain and silogen-admin. The platform admin user can manage the SiloGen platform and onboard more users.
+- Platform admin users have already been created for your organization as part of the installation process. These are named `devuser@domain` and `silogen-admin`. The platform admin user can manage the platform and onboard more users.
 - An organization entity has been created.
-- A compute cluster has been onboarded and connected to SiloGen platform.
+- A compute cluster has been onboarded and connected to AMD Enterprise AI Suite.
 - A project with a resource quota has been created.
 
 ## Getting started
@@ -38,7 +38,7 @@ This section outlines the steps to set up essential AI compute resources for pro
 ### Onboard users
 
 !!! note
-    SiloGen provides multiple options for onboarding users into the platform. For small-scale trial deployments you can invite users through email or add them manually, but for large scale deployments we recommend using single sign-on (SSO).
+    AMD Enterprise AI Suite provides multiple options for onboarding users into the platform. For small-scale trial deployments you can invite users through email or add them manually, but for large scale deployments we recommend using single sign-on (SSO).
 
 #### Invite users through email
 

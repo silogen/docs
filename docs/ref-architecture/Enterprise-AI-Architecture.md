@@ -2,27 +2,27 @@
 
 ## Executive summary
 
-Enterprises striving to scale AI often encounter roadblocks that increase costs, slow innovation, and limit impact. The AMD SiloGen AI stack is purpose-built to overcome these challenges and unlock the full potential of AI across the enterprise.
+Enterprises striving to scale AI often encounter roadblocks that increase costs, slow innovation, and limit impact. AMD Enterprise AI stack is purpose-built to overcome these challenges and unlock the full potential of AI across the enterprise.
 
 **Optimized GPU utilization & lower operational costs**<br>
-SiloGen ensures high GPU efficiency through intelligent workload placement and dynamic resource sharing. This eliminates waste, reduces costs, and guarantees fair access to compute power—empowering teams to innovate without delay.
+AMD Enterprise AI Suite ensures high GPU efficiency through intelligent workload placement and dynamic resource sharing. This eliminates waste, reduces costs, and guarantees fair access to compute power—empowering teams to innovate without delay.
 
 **Unified AI infrastructure**<br>
-Our platform consolidates fragmented environments into a cohesive AI ecosystem. With standardized governance, tools, and processes, SiloGen simplifies operations and enables seamless collaboration across teams and business units.
+Our platform consolidates fragmented environments into a cohesive AI ecosystem. With standardized governance, tools, and processes, AMD Enterprise AI Suite simplifies operations and enables seamless collaboration across teams and business units.
 
 **Accelerated AI delivery**<br>
-SiloGen streamlines the setup of AI resources and automates dependency management. By enabling reuse of AI assets and prebuilt templates, teams can move faster from experimentation to production—shortening time-to-value.
+AMD Enterprise AI Suite streamlines the setup of AI resources and automates dependency management. By enabling reuse of AI assets and prebuilt templates, teams can move faster from experimentation to production—shortening time-to-value.
 
 **AI-Native workload orchestration**<br>
-Unlike traditional schedulers, SiloGen is optimized for AI. It intelligently prioritizes jobs, dynamically allocates resources, and ensures consistent performance, maximizing the utilization of compute infrastructure.
+Unlike traditional schedulers, AMD Enterprise AI Suite is optimized for AI. It intelligently prioritizes jobs, dynamically allocates resources, and ensures consistent performance, maximizing the utilization of compute infrastructure.
 
-With SiloGen, enterprises reduce complexity, accelerate AI deployment, and maximize ROI—turning AI from a cost center into a strategic advantage.
+With AMD Enterprise AI Suite, enterprises reduce complexity, accelerate AI deployment, and maximize ROI—turning AI from a cost center into a strategic advantage.
 
 ---
 
 ## Introduction
 
-The SiloGen Enterprise AI platform is designed to accelerate the development and integration of AI services into business operations. SiloGen AI platform enables Enterprises to become AI ready starting from “bare-metal” till offering state of the art technologies and reference solutions for the adoption of AI to business operations. Positioned between AI practitioners and the underlying hardware, the Enterprise AI platform provides interfaces and APIs, comprehensive tutorials, and reference solutions that accelerate AI adoption and bring efficiency in infrastructure management across multiple user groups and organizations. This abstraction eliminates the complexities associated with provisioning hardware, developing and maintaining software, and sharing compute resources, enabling users to focus on delivering AI solutions rather than managing infrastructure and re-inventing best practices.
+AMD Enterprise AI Suite is designed to accelerate the development and integration of AI services into business operations. The platform enables enterprises to become AI ready starting from “bare-metal” till offering state of the art technologies and reference solutions for the adoption of AI to business operations. Positioned between AI practitioners and the underlying hardware, the Enterprise AI platform provides interfaces and APIs, comprehensive tutorials, and reference solutions that accelerate AI adoption and bring efficiency in infrastructure management across multiple user groups and organizations. This abstraction eliminates the complexities associated with provisioning hardware, developing and maintaining software, and sharing compute resources, enabling users to focus on delivering AI solutions rather than managing infrastructure and re-inventing best practices.
 
 ```mermaid
 graph TD
@@ -43,7 +43,7 @@ graph TD
     end
 
     R1[Ref AI Solutions and Standardized APIs]
-    R1 --> P1[SiloGen AI Platform]
+    R1 --> P1[AI Platform]
     P1 --> H1[Hardware Layer]
 
     Teaching --> R1
@@ -85,7 +85,7 @@ flowchart LR
     I --> J
 ```
 
-The figure shows several steps that can be standardized for the GenAI use case developers. For example, the steps of fine-tuning, model evaluation, monitoring and deployment can be standardized and automated. Additionally, the workflows for data and model onboarding that are not visible in the figure can be standardized too. These standardized steps are packaged as software AI assets in our reference architecture and offered as a service to the AI use case developers through our AMD AI Workbench and through SiloGen’s public git repo.
+The figure shows several steps that can be standardized for the GenAI use case developers. For example, the steps of fine-tuning, model evaluation, monitoring and deployment can be standardized and automated. Additionally, the workflows for data and model onboarding that are not visible in the figure can be standardized too. These standardized steps are packaged as software AI assets in our reference architecture and offered as a service to the AI use case developers through our AMD AI Workbench and the public git repo.
 
 ### Model developers & AI scientists
 
@@ -119,7 +119,7 @@ The above functional requirements and objectives of the key user personas have b
 
 ### Enterprise AI design principles & key requirements
 
-Resource Optimization: SiloGen implements intelligent scheduling and workload management to maximize the utilization of underlying hardware (i.e. GPU), minimize idle time, and allocates efficiently based on resource management policies and smart algorithms.Generated value: Directly addresses the objective of optimizing resource allocation and reducing infrastructure costs. Enables running more AI workloads at the same time and accelerates innovation and time to market.
+Resource Optimization: AMD Enterprise AI Suite implements intelligent scheduling and workload management to maximize the utilization of underlying hardware (i.e. GPU), minimize idle time, and allocates efficiently based on resource management policies and smart algorithms.Generated value: Directly addresses the objective of optimizing resource allocation and reducing infrastructure costs. Enables running more AI workloads at the same time and accelerates innovation and time to market.
 
 Resource Elasticity: The platform must dynamically allocate and deallocate compute and storage, resources based on the real-time demands of individual tenant workloads, allowing tenants to scale resources up or down as needed. Generated value: It also contributes to cost-effectiveness (pay-for-use) and flexibility, allowing tenants to adapt to fluctuating needs without manual intervention.
 
@@ -127,9 +127,9 @@ Collaboration & Asset Reuse: This requirement facilitates the sharing of knowled
 
 Frictionless AI Developer Experience: This requirement focuses on the simplified access to GPU resources for interactive AI development. It highlights the need for a comprehensive, integrated set of tools and services covering the entire AI development lifecycle (data preparation, experimentation, model training, validation, deployment, monitoring) to bootstrap development and automate common tasks. Generated value: Reduces time-to-market for AI use cases by providing ready-to-use, efficient tools and workflows.
 
-Data Accessibility & Management: The SiloGen Enterprise AI stack should provide secure and efficient mechanisms for tenants to integrate, manage, access, and process their data within their isolated environments, supporting diverse AI data needs. Generated value: Enables AI development by ensuring data, the fuel for AI, is readily and securely available within the platform workflow.
+Data Accessibility & Management: AMD Enterprise AI stack should provide secure and efficient mechanisms for tenants to integrate, manage, access, and process their data within their isolated environments, supporting diverse AI data needs. Generated value: Enables AI development by ensuring data, the fuel for AI, is readily and securely available within the platform workflow.
 
-Platform Portability: According to business and infrastructure stakeholders the SiloGen AI platform should be deployed, migrated, and operated across diverse infrastructure environments (e.g., different clouds, on-premises data centers, hybrid setups) with minimal friction. Generated value: Provides strategic flexibility for the platform operators and potentially tenants, avoiding infrastructure lock-in for the platform's deployment.
+Platform Portability: According to business and infrastructure stakeholders AMD Enterprise AI Suite should be deployed, migrated, and operated across diverse infrastructure environments (e.g., different clouds, on-premises data centers, hybrid setups) with minimal friction. Generated value: Provides strategic flexibility for the platform operators and potentially tenants, avoiding infrastructure lock-in for the platform's deployment.
 
 Modular Design (Pluggability): Architect the platform using loosely coupled, well-defined components ("pluggable") with standardized interfaces, allowing individual parts (e.g., scheduler, storage backend, ML framework support) to be updated, replaced, or extended independently and in accordance to individual customers (tenants) needs Generated value: Facilitates easier upgrades, integration of new technologies, enhances maintainability, and reduces systemic dependencies. Key to adaptability. This principle is also key for the future-proofness of the platform since outdated can be easily redeployed.
 
@@ -145,7 +145,7 @@ Implement comprehensive tracking and reporting of resource consumption per tenan
 
 ### High level architectural view
 
-To support the design principles, SiloGen introduces four key layers: the AI Production Inference Layer, AMD AI Workbench Layer, AMD Resource Manager Layer, and the Infrastructure Management Layer. Each layer has a specific role in the overall architecture, working together to streamline operations and enable efficient, scalable AI deployment.
+To support the design principles, AMD Enterprise AI Suite introduces four key layers: the AI Production Inference Layer, AMD AI Workbench Layer, AMD Resource Manager Layer, and the Infrastructure Management Layer. Each layer has a specific role in the overall architecture, working together to streamline operations and enable efficient, scalable AI deployment.
 
 ```mermaid
 flowchart BT
@@ -179,19 +179,19 @@ flowchart BT
     DC1 --> BO1
 ```
 
-## SiloGen’s main technical components
+## Main technical components
 
-From a technology perspective, four main components are introduced to implement the layers described above: the SiloGen Control Plane, the Compute Plane, the SiloGen AI Workloads, and Cloud-forge. In the following sections, we’ll take a closer look at each of these components—what they do and which functional modules they include.
+From a technology perspective, four main components are introduced to implement the layers described above: the Control Plane, the Compute Plane, the AI Workloads, and Cloud Forge. In the following sections, we’ll take a closer look at each of these components—what they do and which functional modules they include.
 
-The Control and Compute Plane components in SiloGen can either run together in the same cluster or be deployed across separate compute clusters. The diagram below shows the setup where the control plane and the different compute clusters are deployed independently, each running in its own Kubernetes environment.
+The Control and Compute Plane components can either run together in the same cluster or be deployed across separate compute clusters. The diagram below shows the setup where the control plane and the different compute clusters are deployed independently, each running in its own Kubernetes environment.
 
-In addition to the control and compute planes, the SiloGen Enterprise AI stack includes two key software components. The first is the AI Workloads—a curated set of pre-built, well-tested workloads designed for tasks like fine-tuning, model evaluation, and deployment. These workloads help AI researchers and developers move faster by providing ready-to-use building blocks, all optimized to run efficiently on AMD GPUs.
+In addition to the control and compute planes, the AMD Enterprise AI stack includes two key software components. The first is the AI Workloads—a curated set of pre-built, well-tested workloads designed for tasks like fine-tuning, model evaluation, and deployment. These workloads help AI researchers and developers move faster by providing ready-to-use building blocks, all optimized to run efficiently on AMD GPUs.
 
-The second major asset is Cluster Forge, a tool built to help enterprises easily deploy a scalable, production-ready AI platform using open-source technologies. Cluster Forge automates the deployment of the control and compute planes onto Kubernetes clusters, integrates the prepackaged SiloGen AI Workloads, and enables organizations running on AMD hardware to start training and deploying models within just a few hours—essentially offering a streamlined, "one-click" setup for enterprise-grade AI infrastructure.
+The second major asset is Cluster Forge, a tool built to help enterprises easily deploy a scalable, production-ready AI platform using open-source technologies. Cluster Forge automates the deployment of the control and compute planes onto Kubernetes clusters, integrates the prepackaged AI Workloads, and enables organizations running on AMD hardware to start training and deploying models within just a few hours—essentially offering a streamlined, "one-click" setup for enterprise-grade AI infrastructure.
 
 In the following paragraphs we describe further the four basic components.
 
-### Silogen control plane
+### Control plane
 
 The purpose of control plane is a) to provide services and access control when onboarding tenants and users to the Enterprise AI platform, b) to expose the researchers to resources and technologies that they need for developing and operating AI workloads and c) to enable resource managers to set and oversee GPU and overall compute utilization policies across the different compute clusters.
 
@@ -201,22 +201,22 @@ For facilitating the above three main components are introduced in the control p
 - AMD Resource Manager
 - Access Control Component
 
-### Silogen compute plane
+### Compute plane
 
-The SiloGen’s compute plane is where AI workloads are executed. This layer provides seamless access to hardware resources -particularly GPUs- following policies and smart scheduling algorithms for introducing GPU operational efficiency. For achieving this at the SiloGen’s compute plane enables a) deployment and monitoring of AI workloads b) onboarding of data and models c) smart scheduling of AI workloadsand finally d) secure isolation between projects, departments and organizations. The functional components introduced for the above purposes are the followings:
+The compute plane is where AI workloads are executed. This layer provides seamless access to hardware resources -particularly GPUs- following policies and smart scheduling algorithms for introducing GPU operational efficiency. For achieving this at the compute plane enables a) deployment and monitoring of AI workloads b) onboarding of data and models c) smart scheduling of AI workloadsand finally d) secure isolation between projects, departments and organizations. The functional components introduced for the above purposes are the followings:
 
 1. Kubernetes based AI Workload Orchestration (K-AIWO) Component
-2. SiloGen’s AI Workload Dispatching
-3. SiloGen’s Monitoring & Logging
+2. AI Workload Dispatching
+3. SMonitoring & Logging
 4. Inference Service Components
 5. Data and Model onboarding Components
 6. Distributed Engine Components
 7. API Gateway
 8. Secret Manager
 
-### SiloGen’s AI workloads
+### AI workloads
 
-This component standardizes and offers common AI workloads (e.g., fine-tuning, evaluation, deployment of LLMs) to AI researchers. Those AI workloads have been tested and executed on top of AMD GPUs and they have been open sourced ([https://github.com/silogen/ai-workloads](https://github.com/silogen/ai-workloads)). SiloGen AI workloads provide building blocks for broader collaboration across the AI ecosystem and accelerate the development of AI use cases. The catalog of pre developed AI workloads is continuously updated.
+This component standardizes and offers common AI workloads (e.g., fine-tuning, evaluation, deployment of LLMs) to AI researchers. Those AI workloads have been tested and executed on top of AMD GPUs and they have been open sourced ([https://github.com/silogen/ai-workloads](https://github.com/silogen/ai-workloads)). The pre-packaged AI workloads provide building blocks for broader collaboration across the AI ecosystem and accelerate the development of AI use cases. The catalog of pre developed AI workloads is continuously updated.
 
 ### Cluster Forge
 
@@ -224,13 +224,13 @@ Cluster Forge plays a key role in automating the deployment of the Enterprise AI
 
 Cluster Forge directly supports the platform’s core design principles of portability, modularity, and security. It allows the platform to be deployed across a variety of infrastructure environments, offers the flexibility to pick and mix different technology components, and enforces strong security standards and workload isolation. This makes it a central piece in building a secure, customizable, and scalable AI foundation.
 
-SiloGen Cluster Forge has been open sourced here [https://github.com/silogen/cluster-forge](https://github.com/silogen/cluster-forge).
+Cluster Forge has been open sourced here [https://github.com/silogen/cluster-forge](https://github.com/silogen/cluster-forge).
 
 ## Functional layer
 
 In this section we take a closer look at the control and compute plane and the internal functional components introduced.
 
-SiloGen Compute Plane Components
+Compute Plane Components
 
 Kaiwo (Kubernetes - AI Workload Orchestrator)
 
@@ -241,31 +241,31 @@ Open sourced at: [https://github.com/silogen/kaiwo](https://github.com/silogen/k
 
 ### Tracking & observability components
 
-Enterprises need mechanisms and services to monitor the executed AI workloads and the underlying compute resources and clusters. SiloGen monitoring components provide GPU and CPU metrics at workload, project and cluster level. In addition, SiloGen’s observability components provide further information such as the number or users and workloads etc. Finally, SiloGen’s tracking components offer insights on AI performance logs (for example loss in epochs). SiloGen utilizes a collection of standard tools and practices for monitoring, tracking and visualizing workload operations, tools such as Loki, Graphana, MLFlow depending on the customer needs.
+Enterprises need mechanisms and services to monitor the executed AI workloads and the underlying compute resources and clusters. Monitoring components provide GPU and CPU metrics at workload, project and cluster level. In addition, observability components provide further information such as the number or users and workloads etc. Finally, tracking components offer insights on AI performance logs (for example loss in epochs). The stack utilizes a collection of standard tools and practices for monitoring, tracking and visualizing workload operations, tools such as Loki, Graphana, MLFlow depending on the customer needs.
 
-Inference Components  SiloGen Enterprise AI stack provides the possibility of deploying a number of AI inference engines for different AI and LLM models. The deployed inference engines will be running following the resource utilization policies as defined at the control plane and SiloGen is in position to monitor different quality and usability metrics in regards to the deployed models and inference engines.
+Inference Components  AMD Enterprise AI stack provides the possibility of deploying a number of AI inference engines for different AI and LLM models. The deployed inference engines will be running following the resource utilization policies as defined at the control plane and the platform is in position to monitor different quality and usability metrics in regards to the deployed models and inference engines.
 
 ### AI distributed component
 
-SiloGen Compute Plane includes the deployment of distributed frameworks allowing developers to train and deploy models faster and more efficiently. Those frameworks are integrated to SiloGen’s KAIWO component. KAIWO component makes sure that distributed jobs are adhering the policies enforced by resource managers and smart scheduling algorithms implemented.
+Compute Plane includes the deployment of distributed frameworks allowing developers to train and deploy models faster and more efficiently. Those frameworks are integrated to KAIWO component. KAIWO component makes sure that distributed jobs are adhering the policies enforced by resource managers and smart scheduling algorithms implemented.
 
 ### Secret management components
 
-For enabling isolation of data and other resources, SiloGen enables the utilization of external key manager solutions for propagating specific projects and departments secrets into the compute clusters. Those secrets can for example relate with accessing data, images and models from HugginFace.
+For enabling isolation of data and other resources, the platform enables the utilization of external key manager solutions for propagating specific projects and departments secrets into the compute clusters. Those secrets can for example relate with accessing data, images and models from HugginFace.
 
 ### API gateway
 
-API Gateway acts as the front door to the backend SiloGen services, managing and routing incoming requests from clients to the appropriate services. It plays a critical role in load balancing by distributing traffic efficiently across multiple service instances to ensure high availability and performance. The gateway also handles traffic monitoring, providing insights into request patterns, performance metrics, and potential issues. On top of that, it enforces authorization and access control, ensuring that only authenticated and authorized users or services can access protected APIs—helping maintain both security and operational stability across the platform.
+API Gateway acts as the front door to the backend services, managing and routing incoming requests from clients to the appropriate services. It plays a critical role in load balancing by distributing traffic efficiently across multiple service instances to ensure high availability and performance. The gateway also handles traffic monitoring, providing insights into request patterns, performance metrics, and potential issues. On top of that, it enforces authorization and access control, ensuring that only authenticated and authorized users or services can access protected APIs—helping maintain both security and operational stability across the platform.
 
 ### Image registry
 
 It provides a centralized service for storing, managing, and distributing container images. It allows developers and platform operators to push, pull, and version container images used to run applications and workloads across environments. The registry ensures that images are accessible to the right users or systems, often integrating with authentication and access control mechanisms. It also supports image tagging, scanning for vulnerabilities, and maintaining image history, which helps with traceability and security. By serving as the single source of truth for containerized applications, the image registry plays a key role in enabling consistent, secure, and scalable software deployments.
 
-## SiloGen control plane components
+## Ccontrol plane components
 
 ### AMD AI Workbench
 
-Purpose: Enables researchers to end-to-end manage AI workloads. AMD AI Workbench enables the usage of the SiloGen AI workloads and focuses on the user experience, offering low code approaches for developing AI applications by simplifying the execution of fine-tuning, inference and other jobs. Focusing on the user experience, AMD AI Workbench also exposes a number of catalogs enabling AI researchers to have a better understanding on which models, data and workloads can use and download for the purposes of their work. Finally, AMD AI Workbench offers (and aims to expand the) integrations to well established MLOps tools such as MLFlow, Tensorboards and Kubeflow allowing researchers to use the AI developing tool that feels more natural to them.
+Purpose: Enables researchers to end-to-end manage AI workloads. AMD AI Workbench enables the usage of the AI workloads and focuses on the user experience, offering low code approaches for developing AI applications by simplifying the execution of fine-tuning, inference and other jobs. Focusing on the user experience, AMD AI Workbench also exposes a number of catalogs enabling AI researchers to have a better understanding on which models, data and workloads can use and download for the purposes of their work. Finally, AMD AI Workbench offers (and aims to expand the) integrations to well established MLOps tools such as MLFlow, Tensorboards and Kubeflow allowing researchers to use the AI developing tool that feels more natural to them.
 
 ### AMD Resource Manager
 
@@ -306,7 +306,7 @@ Critical concerns that the inference layer and the related technologies address 
 
 The above components are combined in the following detailed architecture view.  TODO NEED TO CHANGE THE DIAGRAM OF THE INFERENCE CLUSTER ALSO DESCRIBE THE USERS OF THE PLATFORM BETTER 
 
-With blue color we tag components that can be provided by the clients. For example a client can bring their own storage technology and connect it to SiloGen. In addition a client can use their own secret management system, and a client can onboard and schedule its own workloads in the compute cluster. With green color we visualize AMD AI Workbench and with Red the AMD Resource Manager. AMD AI Workbench as mentioned includes catalogs and services for developing and managing AI workloads, while an has components for user and resource management.
+With blue color we tag components that can be provided by the clients. For example a client can bring their own storage technology and connect it to the platform. In addition a client can use their own secret management system, and a client can onboard and schedule its own workloads in the compute cluster. With green color we visualize AMD AI Workbench and with Red the AMD Resource Manager. AMD AI Workbench as mentioned includes catalogs and services for developing and managing AI workloads, while an has components for user and resource management.
 
 ## From functional components to technology choices
 
@@ -316,8 +316,8 @@ Having introduced the functional components of our system, in this section we pr
 
 | **Feature - Functionality** | **Functional Component** | **Technology Choice** |
 |-----------------------------|---------------------------|------------------------|
-| Deploying & triggering AI workloads to Compute Clusters | Resource Manager & Workbench | In-built SiloGen API services, RabbitMQ, Kubectl |
-| Connecting compute clusters to control plane | Resource Manager | Home-built SiloGen Dispatching services & RabbitMQ |
+| Deploying & triggering AI workloads to Compute Clusters | Resource Manager & Workbench | In-built API services, RabbitMQ, Kubectl |
+| Connecting compute clusters to control plane | Resource Manager | Home-built Dispatching services & RabbitMQ |
 | Configuring resource policies to compute clusters | Resource Manager | API services, RabbitMQ, Kubectl, KAIWO, KUEUE |
 | **Monitoring and Observability** <br><br> - Collecting execution logs <br> - Collecting GPU metrics at cluster, project & workload level | AiResource Managerrman | LGTM stack (Loki for logs, Grafana for dashboards, Tempo for traces, Mimir for metrics), AMD GPU operator |
 | Access Management <br><br> (Authorization / Authentication) | Resource Manager & Workbench | Keycloak |
@@ -333,12 +333,11 @@ Having introduced the functional components of our system, in this section we pr
 | **Feature - Functionality** | **Functional Component** | **Technology Choice** |
 |-----------------------------|---------------------------|------------------------|
 | Workload Scheduling and Management | K-AIWO | In-built Kubernetes operator, KUEUE |
-| Inference Engine for Model Deployments | SiloGen – Inference Layer | vLLM, Ray Serve, SGLang, in-built deployment pipelines |
+| Inference Engine for Model Deployments | The Inference Layer | vLLM, Ray Serve, SGLang, in-built deployment pipelines |
 | **API Gateway Features** <br><br> - Reverse Proxy / Routing <br> - Rate Limiting & Throttling <br> - Metrics & Monitoring <br> - Load Balancing <br> - Networking Security (e.g., SSL/TLS termination) | API Gateway | — |
 | Storage for Container Images (versioning, caching, security) | Image Registry | Harbor (if customer doesn’t have one) |
-| Data Management: storing and loading user/project data <br><br> *(SiloGen only stores metadata at the control plane)* | Control and Compute Plane | SiloGen integrates with customer-defined storage via k8s StorageClasses; defaults: Longhorn & Minio |
+| Data Management: storing and loading user/project data <br><br> *(AMD Enterprise AI Suite only stores metadata at the control plane)* | Control and Compute Plane | AMD Enterprise AI Suite integrates with customer-defined storage via k8s StorageClasses; defaults: Longhorn & Minio |
 | Support for Distributed Training and Inference across GPUs | KAIWO | Ray, Megatron (?) |
-
 
 ## Security & Architecture Tables
 

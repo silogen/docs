@@ -7,7 +7,7 @@ tags:
 
 # Working in AI workspaces hands-on
 
-This guide teaches you how to work in the SiloGen AI workspace using a Jupyter Lab notebook.
+This guide teaches you how to work in the AMD Enterprise AI Suite workspace using a Jupyter Lab notebook.
 
 ## Tutorial: fine-tune Llama-3.1 8B with torchtune
 
@@ -16,7 +16,7 @@ This tutorial demonstrates how to fine-tune the Llama-3.1 8B large language mode
 Access the tutorial [here](https://rocm.docs.amd.com/projects/ai-developer-hub/en/v3.0/notebooks/fine_tune/llama_factory_llama3.html).
 
 !!! Note
-    Skip steps 1-3 in the chapter `Prepare the training environment`, as these do not apply to the SiloGen (Kubernetes) environment.
+    Skip steps 1-3 in the chapter `Prepare the training environment`, as these do not apply to the (Kubernetes) environment.
 
 ## Tutorial: Prepare and upload a dataset to AMD AI Workbench
 
@@ -82,7 +82,7 @@ for file in data_in:
 
 ### 2. Upload the dataset to the AMD AI Workbench catalog
 
-You can upload a dataset to SiloGen using the SiloGen API. See the examples below.
+You can upload a dataset to the platform using the API. See the examples below.
 
 **Example**: API call using Curl
 

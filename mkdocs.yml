@@ -1,5 +1,5 @@
-site_name: SiloGen documentation
-site_description: Documentation for SiloGen AMD Enterprise AI Platform
+site_name: AMD Enterprise AI Suite documentation
+site_description: Documentation for AMD Enterprise AI Suite
 repo_url: https://github.com/silogen/docs
 docs_dir: docs
 
@@ -80,9 +80,9 @@ nav:
     - Home: index.md
     - Platform overview: platform-overview.md
     - Target audience: target-audience.md
-    - Quick start guide to SiloGen: quick-start.md
+    - Quick start guide: quick-start.md
     - General topics:
-      - Login to SiloGen: login-to-silogen.md
+      - Login to the platform: login.md
       - Personal preferences: personal-preferences.md
 
   - Infrastructure administrator:
@@ -164,7 +164,7 @@ extra_css:
   - stylesheets/extra.css
 
 exclude_docs: |
-  ref-architecture/SilogenAMDEnterpriseAIPlatform.md
+  ref-architecture/AMDEnterpriseAISuite.md
   ref-architecture/Enterprise-AI-Architecture.md
 
   references/contributing.md

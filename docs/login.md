@@ -4,9 +4,9 @@ tags:
   - keycloak
 ---
 
-# Login to the SiloGen platform
+# Login to the AMD Enterprise AI Suite
 
-Users log in to the SiloGen platform at their dedicated URL address, for example, `your-silogen.ai`. Entering the address in your browser's address bar takes you to the login page. The page has a button called "Sign in with Keycloak," which takes you to the authentication service.
+Users log in to the AMD Enterprise AI Suite platform at their dedicated URL address, for example, `your-suite.ai`. Entering the address in your browser's address bar takes you to the login page. The page has a button called "Sign in with Keycloak," which takes you to the authentication service.
 
 ![Login screen to AMD Resource Manager first asks users for their email address.](./media/login-screen-01.png)
 
@@ -18,8 +18,8 @@ The next screen requires you to enter your password. There is also a link to req
 
 ## Keycloak user authentication
 
-The SiloGen platform uses [Keycloak](https://www.keycloak.org/) to authenticate users. Keycloak is tightly integrated with all SiloGen services, and setting it up is straightforward. It can be federated so that users' credentials can be centrally managed in an enterprise solution and integrated with LDAP or Active Directory.
+The platform uses [Keycloak](https://www.keycloak.org/) to authenticate users. Keycloak is tightly integrated with all connected services, and setting it up is straightforward. It can be federated so that users' credentials can be centrally managed in an enterprise solution and integrated with LDAP or Active Directory.
 
 ## Other login measures
 
-The SiloGen platform can be modified to utilize other login methods, such as working in an internal network through a VPN.
+The AMD Enterprise AI Suite can be modified to utilize other login methods, such as working in an internal network through a VPN.

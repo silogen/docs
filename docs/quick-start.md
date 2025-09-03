@@ -7,18 +7,18 @@ tags:
 
 # Quick start guide
 
-This quick start guide will help you rapidly install, configure, and begin using the AMD SiloGen Enterprise AI platform for your AI workloads.
+This quick start guide will help you rapidly install, configure, and begin using the AMD Enterprise AI Suite for your AI workloads.
 
-SiloGen Enterprise AI Platform supports bare-metal, on-premises, and public cloud deployments of AI workloads. SiloGen Enterprise AI has been validated on Instinct MI300X GPUs.
+AMD Enterprise AI Suite supports bare-metal, on-premises, and public cloud deployments of AI workloads. The platform has been validated on Instinct MI300X GPUs.
 
 !!! note
-    These instructions are intended for installing SiloGen as a self-contained solution in an on-premises environment. For larger-scale, production-level deployments, refer to AMD SiloGen Enterprise AI support services.
+    These instructions are intended for installing the platform as a self-contained solution in an on-premises environment. For larger-scale, production-level deployments, refer to AMD Enterprise AI Suite AI support services.
 
-## Install the SiloGen platform
+## Install the platform
 
 **The target audience for the installation section is infrastructure administrators.**
 
-Follow the instructions in [Install SiloGen platform](./platform-infrastructure/on-premises-installation.md) to install SiloGen in an on-premises environment.
+Follow the instructions in [On-premises installation](./platform-infrastructure/on-premises-installation.md) to install AMD Enterprise AI Suite in an on-premises environment.
 
 ## Onboard organization, projects and users
 
