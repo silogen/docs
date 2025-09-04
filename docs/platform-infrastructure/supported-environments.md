@@ -14,4 +14,4 @@ This includes setting up a one-node demo cluster with built-in storage and secre
 
 - **DigitalOcean cloud**: This article explains how to install AMD Enterprise AI Suite on DigitalOcean cloud. Access the installation article [here](./digitalocean-installation.md)
 
-- **Azure cloud with AKS**: See instructions on how to set up a virtual machine with Instinct MI300X and the platform on Azure cloud [here](https://instinct.docs.amd.com/projects/instinct-azure/latest/mi300x.html)
+- **Azure cloud with AKS**: See instructions on how to set up a virtual machine with Instinct MI300X [here](https://instinct.docs.amd.com/projects/instinct-azure/latest/mi300x.html).
