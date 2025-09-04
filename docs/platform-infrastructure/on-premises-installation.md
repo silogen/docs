@@ -41,6 +41,9 @@ You will use an installation script called Cluster Bloom to install and configur
 - 1Password integration for secrets management
 - Install the platform using Cluster Forge tool
 
+!!! info
+    The current platform version supports only one cluster per installation. Support for multiple clusters is on the product roadmap.
+
 ### 1. SSH to node as root user
 Access the node using SSH as root user.
 
