@@ -1,13 +1,13 @@
 ---
 tags:
-  - airman
+  - AMD Resource Manager
   - cluster
   - add cluster
 ---
 
 # Create a new cluster in the UI
 
-This article explains how to create a new cluster in the Airman user interface.
+This article explains how to create a new cluster in the AMD Resource Manager user interface.
 
 To add a new cluster:
 

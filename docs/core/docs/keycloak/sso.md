@@ -11,7 +11,7 @@ This is a general guide for setting up single sign-on (SSO) with an identity pro
 
 ## Prerequisite
 
-Keycloak is set up for Airman, so organizations, realms, etc. are already created. Correct realm is selected as all the actions are realm specific.
+Keycloak is set up for AMD Resource Manager, so organizations, realms, etc. are already created. Correct realm is selected as all the actions are realm specific.
 
 ## Add an identity provider
 

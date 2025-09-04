@@ -1,8 +1,7 @@
 ---
 tags:
-  - developer center
+  - AMD AI Workbench
   - chat
-  - rag
 ---
 
 # Chat
@@ -11,7 +10,7 @@ The chat page allows you to experiment with models you have access to. You can m
 
 ## Accessing the chat
 
-Navigate to the **AI Developer Center** → `Chat and Compare` to access the chat.
+Navigate to `Chat and Compare` page to access the chat.
 
 You will be able to choose from the list of models you have access to.
 

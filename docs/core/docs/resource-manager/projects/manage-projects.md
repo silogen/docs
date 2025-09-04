@@ -1,7 +1,7 @@
 ---
 tags:
   - projects
-  - airman
+  - AMD Resource Manager
 ---
 
 # Manage projects

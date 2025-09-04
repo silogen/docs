@@ -1,17 +1,17 @@
 ---
 tags:
-  - developer center
+  - AMD AI Workbench
   - datasets
   - fine-tuning
 ---
 
 # Datasets
 
-SiloGen allows you to create and manage datasets on the platform for fine-tuning purposes. Datasets are collections of data points, where each data point represents a conversation, with or without the model's expected response, depending on the use case.
+AMD AI Workbench allows you to create and manage datasets on the platform for fine-tuning purposes. Datasets are collections of data points, where each data point represents a conversation, with or without the model's expected response, depending on the use case.
 
 ## Uploading a dataset
 
-Navigate to the **AI Developer Center** → `Datasets` to upload a dataset. You can provide a name and description for the dataset, and upload a file in JSONL format.
+Navigate to the `Datasets` page to upload a dataset. You can provide a name and description for the dataset, and upload a file in JSONL format.
 
 The type of dataset should be selected when uploading the file, and the format of each row should correspond to the selected dataset type.
 

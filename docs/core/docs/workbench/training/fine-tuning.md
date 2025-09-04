@@ -1,6 +1,6 @@
 ---
 tags:
-  - developer center
+  - AMD AI Workbench
   - fine-tuning
 ---
 
@@ -16,7 +16,7 @@ Fine-tuned models can be deployed and subsequently used for inference once the m
 
 One of the first steps toward fine-tuning your model is to upload training data to our platform. The training data should represent a wide range of conversations that you would like your model to respond to as part of inference.
 
-Once you have procured training data for your model, navigate to the "Datasets" page of the Developer Center to upload the dataset. We currently support uploading datasets in a JSONL format, where each row represents a separate chat conversation. The format of each row should correspond to what is defined in the [specification](./datasets.md#fine-tuning) for each datapoint.
+Once you have procured training data for your model, navigate to the "Datasets" page of the AMD AI Workbench to upload the dataset. We currently support uploading datasets in a JSONL format, where each row represents a separate chat conversation. The format of each row should correspond to what is defined in the [specification](./datasets.md#fine-tuning) for each datapoint.
 
 Click the "Upload" button and drop your JSONL file in, providing a name and description.
 
@@ -26,7 +26,7 @@ Click the "Upload" button and drop your JSONL file in, providing a name and desc
 
 We continuously work to certify base models for fine-tuning. It is recommended that you first identify a base model appropriate for your use case and use that for fine-tuning. If you are missing a specific base model, reach out to our customer success team so they can either provision access or fast-track certification.
 
-You can browse the list of accessible base models by navigating back to the **AI Developer Center** → `Models` and clicking the "Create New" button.
+You can browse the list of accessible base models by navigating back to the `Models` page and clicking the "Create New" button.
 
 ## Creating a fine-tuned model
 
@@ -36,7 +36,7 @@ You must provide your model a name and can optionally specify a description and 
 
 ![Create fine-tuned model](../../img/training/fine-tuning-trigger.png)
 
-Once the fine-tuning process has been successfully triggered, you will be able to see your model in the "Not-deployed" tab of the page and the fine-tuning run itself in the "Run status" section. The fine-tuning run may take several hours to complete, so we recommend visiting the Developer Center occasionally while the run is in progress. If the run fails mid-way, please reach out to our customer success team, and we will help triage your issue.
+Once the fine-tuning process has been successfully triggered, you will be able to see your model in the "Not-deployed" tab of the page and the fine-tuning run itself in the "Run status" section. The fine-tuning run may take several hours to complete, so we recommend visiting the AMD AI Workbench occasionally while the run is in progress. If the run fails mid-way, please reach out to our customer success team, and we will help triage your issue.
 
 ## Deploying a fine-tuned model
 
@@ -52,7 +52,7 @@ After you have verified that your model performs as expected, you can click the 
 
 ## Undeploying a fine-tuned model
 
-Once you have deployed a version of a fine-tuned model, you might want to "Undeploy" it if it has been superseded by another model. You can do this by navigating to the **AI Developer Center** → `Models`, identifying the model in the list of "Deployed" models, and clicking the "Undeploy" button.
+Once you have deployed a version of a fine-tuned model, you might want to "Undeploy" it if it has been superseded by another model. You can do this by navigating to the `Models` page, identifying the model in the list of "Deployed" models, and clicking the "Undeploy" button.
 
 This will make the model no longer accessible for inferencing.
 

@@ -8,7 +8,7 @@ tags:
 
 # Inviting users and configuring SMTP in Keycloak
 
-This is a guide for configuring an SMTP server in Keycloak, which is a prerequisite for inviting users to Silogen via the application.
+This is a guide for configuring an SMTP server in Keycloak, which is a prerequisite for inviting users to AMD Enterprise AI Suite via the application.
 
 ## Prerequisites
 
@@ -18,7 +18,7 @@ This is a guide for configuring an SMTP server in Keycloak, which is a prerequis
   - The keycloak credentials should be provided to you by AMD's customer success team during installation.
 
 - Once you have logged into Keycloak, the correct realm must be selected (typically `airm`) as all actions are realm-specific.
-- The organization must have an SMTP server accessible that they can use to integrate with Keycloak and Airman.
+- The organization must have an SMTP server accessible that they can use to integrate with Keycloak and AMD Resource Manager.
 
 ## Updating the email domain(s) for organization
 
@@ -45,4 +45,4 @@ Note: Depending on the strictness of the spam/junk filters, you may need to whit
 
 ## Inviting users
 
-Once the SMTP server is configured, you can invite users via Airman. This is done by logging into Airman and navigating to the Access Control tab and clicking on the **Invite user** button. You can read more about inviting users in the [Airman user guide](https://docs.silogen.ai/core/docs/airman/users/manage-users/#invite-users).
+Once the SMTP server is configured, you can invite users via AMD Resource Manager. This is done by logging into AMD Resource Manager and navigating to the Access Control tab and clicking on the **Invite user** button. You can read more about inviting users in the [AMD Resource Manager user guide](../../resource-manager/users/manage-users/#invite-users).

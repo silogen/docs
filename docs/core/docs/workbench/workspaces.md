@@ -1,6 +1,6 @@
 ---
 tags:
-  - developer center
+  - AMD AI Workbench
   - workspaces
   - workloads
 ---

@@ -1,6 +1,6 @@
 ---
 tags:
-  - developer center
+  - AMD AI Workbench
   - chat
   - comparison
 ---
@@ -13,7 +13,7 @@ A common use case is to compare the response of your model before and after fine
 
 ## Accessing the model comparison
 
-Navigate to the corresponding page in the **AI Developer Center** → `Chat and Compare` → `Compare` to access the Comparison.
+Navigate to the `Chat and Compare` → `Compare` to access the model comparison.
 
 You will be able to choose from the list of models you have access to.
 

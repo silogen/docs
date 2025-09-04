@@ -1,6 +1,6 @@
 ---
 tags:
-  - developer center
+  - AMD AI Workbench
   - workloads
   - workspaces
 ---
@@ -43,7 +43,7 @@ If the workload type is `Workspace`, selecting this action opens the workspace i
 | **Inference**      | Inference service                                             |
 | **Fine-Tuning**    | Model fine-tuning batch job which generates a new model       |
 | **Workspace**      | Workspace for model experiments                               |
-| **Custom**         | A workload not submitted via Developer Center, but for example, via API or via kubectl |
+| **Custom**         | A workload not submitted via AMD AI Workbench, but for example, via API or via kubectl |
 
 ## Workload statuses
 

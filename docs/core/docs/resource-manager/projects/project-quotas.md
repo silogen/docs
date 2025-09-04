@@ -1,6 +1,6 @@
 ---
 tags:
-  - airman
+  - AMD Resource Manager
   - quota
   - project
 ---
@@ -11,16 +11,16 @@ A quota is a usage limit set on a project. Teams use project quotas to accomplis
 
 Quotas define a _minimum_ set of resources that are guaranteed. There is no maximum, so quotas can be exceeded if unused resources are available.
 
-In Airman, you can manage GPU, CPU, memory, and disk quotas for your projects. When a new project is created, the quota for all resources is zero. Only after the project is created can the quotas be updated.
+In AMD Resource Manager, you can manage GPU, CPU, memory, and disk quotas for your projects. When a new project is created, the quota for all resources is zero. Only after the project is created can the quotas be updated.
 
 !!! note
     In systems with only one project, the quota settings aren't really needed. Only after having a second project does quota management become important.
 
 ## Quota status
 
-In Airman, a project is a way to separate whatever tasks a team is working on. The status of the project is the status of those tasks.
+In AMD Resource Manager, a project is a way to separate whatever tasks a team is working on. The status of the project is the status of those tasks.
 
-For the most part, Airman works with AI-focused tasks, which are primarily resource-heavy workloads. In order for the workload to run, the cluster needs to be made aware of the quota requested by the project.
+For the most part, AMD Resource Manager works with AI-focused tasks, which are primarily resource-heavy workloads. In order for the workload to run, the cluster needs to be made aware of the quota requested by the project.
 
 Currently, the project status reflects the state of this application of the quota to the cluster.
 
@@ -28,7 +28,7 @@ Currently, the project status reflects the state of this application of the quot
 
 ## Manage quotas
 
-This article explains how to define quotas for your projects. In Airman, you can set quotas for GPUs and CPUs for your projects. Users belonging to a project are guaranteed the allocated quota for their AI workloads.
+This article explains how to define quotas for your projects. In AMD Resource Manager, you can set quotas for GPUs and CPUs for your projects. Users belonging to a project are guaranteed the allocated quota for their AI workloads.
 
 ## Guaranteed quota panel
 
