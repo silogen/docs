@@ -6,11 +6,9 @@ tags:
   - kubernetes
 ---
 
-# Install SiloGen on-premises
+# Install AMD Enterprise AI Suite on-premises
 
-This article explains how to install SiloGen in an on-premises environment, covering the full stack from metal to application layer in a streamlined manner.
-
-The SiloGen platform runs on top of Kubernetes orchestration platform and includes essential Kubernetes components for monitoring, secrets management, and certificate management.
+This article explains how to install AMD Enterprise AI Suite in an on-premises environment, covering the full stack from metal to application layer in a streamlined manner. The platform runs on top of Kubernetes orchestration platform and includes essential Kubernetes components for monitoring, secrets management, and certificate management.
 
 The installation process leverages helper tools called Cluster Bloom and Cluster Forge that deploy and configure all necessary platform components, preparing a Kubernetes cluster for executing AI workloads.
 
@@ -34,14 +32,14 @@ The installation process leverages helper tools called Cluster Bloom and Cluster
 
 ## Install Kubernetes cluster and software
 
-You will use an installation script called Cluster Bloom to install and configure a Kubernetes cluster and install the SiloGen software. It installs the following features to prepare an AMD GPU node to be part of a Kubernetes cluster:
+You will use an installation script called Cluster Bloom to install and configure a Kubernetes cluster and install the AMD Enterprise AI Suite. It installs the following features to prepare an AMD GPU node to be part of a Kubernetes cluster:
 
 - Automated RKE2 Kubernetes cluster deployment
 - ROCm setup and configuration for AMD GPU nodes
 - Disk management and Longhorn storage integration
 - Multi-node cluster support with easy node joining
 - 1Password integration for secrets management
-- Install the SiloGen software using Cluster Forge tool
+- Install the platform using Cluster Forge tool
 
 ### 1. SSH to node as root user
 Access the node using SSH as root user.
@@ -184,20 +182,20 @@ kubectl create secret generic hf-token \
     -n kaiwo
 ```
 
-### 7. Login to SiloGen
+### 7. Login to AMD Enterprise AI Suite
 
-To confirm that the installation was successful, ensure you are able to log in to the Developer Center.
+To confirm that the installation was successful, ensure you are able to log in to the AMD AI Workbench.
 
-1. Access the SiloGen URL (your domain name).
+1. Access the login URL (your domain name).
    1. For nip.io domain: `https://airmui.<master-node-ip-address>.nip.io`
    2. If using a registered domain, the web address of the service will be: `https://airmui.<your-domain>`
 2. Login as `devuser@domain` user and use the default password.
 
-See more details about login [here](../login-to-silogen.md).
+See more details about login [here](../login.md).
 
 ## Install only software into an existing Kubernetes cluster
 
-To install SiloGen platform in an existing Kubernetes cluster, download a Cluster Forge release package and run `deploy.sh`. This assumes there is a working Kubernetes cluster to deploy into, and the current Kubeconfig context refers to that cluster.
+To install AMD Enterprise AI Suite in an existing Kubernetes cluster, download a Cluster Forge release package and run `deploy.sh`. This assumes there is a working Kubernetes cluster to deploy into, and the current Kubeconfig context refers to that cluster.
 
 For the Cluster Forge `deploy` release:
 

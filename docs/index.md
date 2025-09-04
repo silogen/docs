@@ -1,6 +1,6 @@
-# SiloGen - AMD Enterprise AI Platform documentation
+# AMD Enterprise AI Suite documentation
 
-Welcome to the documentation for SiloGen - AMD Enterprise AI Platform. Enterprises striving to scale AI often encounter roadblocks that increase costs, slow innovation, and limit impact. The AMD Enterprise AI stack is built to overcome these challenges and unlock the full potential of AI across the enterprise.
+Welcome to the documentation for AMD Enterprise AI Suite. Enterprises striving to scale AI often encounter roadblocks that increase costs, slow innovation, and limit impact. The AMD Enterprise AI stack is built to overcome these challenges and unlock the full potential of AI across the enterprise.
 
 This is your comprehensive handbook designed to help infrastructure administrators, AI practitioners, and AI resource managers successfully deploy, manage, and run AI workloads on AMD compute. The guide provides step-by-step instructions for installing and configuring the necessary software, as well as practical tutorials and use cases to help you run AI workloads efficiently on a scalable Kubernetes platform.
 
@@ -16,7 +16,7 @@ This is your comprehensive handbook designed to help infrastructure administrato
 
       <ul class="intro-links">
         <li>
-          <a href="./platform-overview/">SiloGen platform overview</a>
+          <a href="./platform-overview/">AMD Enterprise AI Suite overview</a>
         </li>
         <li>
           <a href="./quick-start/">Quick start guide</a>
@@ -58,16 +58,16 @@ This is your comprehensive handbook designed to help infrastructure administrato
 
       <ul class="intro-links">
         <li>
-          <a href="./core/docs/developer-center/overview/">AI development overview</a>
+          <a href="./core/docs/workbench/overview/">AI development overview</a>
         </li>
         <li>
-          <a href="./core/docs/developer-center/inference/how-to-deploy-and-inference/">Deploy model and run inference</a>
+          <a href="./core/docs/workbench/inference/how-to-deploy-and-inference/">Deploy model and run inference</a>
         </li>
         <li>
-          <a href="./core/docs/developer-center/training/fine-tuning/">Model finetuning</a>
+          <a href="./core/docs/workbench/training/fine-tuning/">Model finetuning</a>
         </li>
         <li>
-          <a href="./core/docs/developer-center/training/models/">Access models</a>
+          <a href="./core/docs/workbench/training/models/">Access models</a>
         </li>
       </ul>
     </div>
@@ -83,16 +83,16 @@ This is your comprehensive handbook designed to help infrastructure administrato
 
       <ul class="intro-links">
         <li>
-          <a href="./core/docs/airman/overview/">AI resource overview</a>
+          <a href="./core/docs/resource-manager/overview/">AMD Resource Manager overview</a>
         </li>
         <li>
-          <a href="./quick-start-guides/airman-quick-start/">Getting started</a>
+          <a href="./quick-start-guides/resource-manager-quick-start/">Getting started</a>
         </li>
         <li>
-          <a href="./core/docs/airman/clusters/overview/">Managing clusters</a>
+          <a href="./core/docs/resource-manager/clusters/overview/">Managing clusters</a>
         </li>
         <li>
-          <a href="./core/docs/airman/users/overview/">Managing users</a>
+          <a href="./core/docs/resource-manager/users/overview/">Managing users</a>
         </li>
       </ul>
     </div>

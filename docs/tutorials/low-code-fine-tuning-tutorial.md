@@ -1,13 +1,13 @@
 ---
 tags:
-  - developer center
+  - AMD AI Workbench
   - fine-tuning
   - tutorial
 ---
 
 # Fine-tune a model with low code
 
-This guide teaches you how to fine-tune a model through the Developer Center user interface without writing any code. Follow these steps to complete a fine-tuning job:
+This guide teaches you how to fine-tune a model through AMD AI Workbench user interface without writing any code. Follow these steps to complete a fine-tuning job:
 
 1. Select a base model and a dataset for fine-tuning.
 2. Start the model fine-tuning workload and monitor its status.
@@ -35,7 +35,7 @@ Go to the `Workloads` page to view details of your running AI workloads. In the 
 
 ![Workload filters](../core/docs/img/workloads/workloads-filters.png)
 
-Find more details about workloads [here](../core/docs/developer-center/workloads.md).
+Find more details about workloads [here](../core/docs/workbench/workloads.md).
 
 ## 3. Deploy the model for inference
 

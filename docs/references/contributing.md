@@ -7,7 +7,7 @@ tags:
 
 # Contributing
 
-Thank you for considering contributing to the SiloGen AMD Enterprise AI Platform documentation!
+Thank you for considering contributing to the AMD Enterprise AI Suite documentation!
 
 !!! note "Project governance notice"
     Insert content about project governance.

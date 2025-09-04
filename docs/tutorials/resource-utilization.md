@@ -1,6 +1,6 @@
 ---
 tags:
-  - airman
+  - AMD Resource Manager
   - resource management
   - tutorial
 ---
@@ -10,12 +10,12 @@ tags:
 This guide teaches you how you can observe and manage the amount of resources that your AI workloads are using. Follow these steps to complete find about resource utilization:
 
 1. Start a new AI workload to consume resources.
-2. Observe the amount of resources your AI workload is using by viewing the dashboards in SiloGen AI Resource Manager.
+2. Observe the amount of resources your AI workload is using by viewing the dashboards in AMD Resource Manager.
 3. Adjust resource quotas as needed.
 
 ## 1. Consume resources by running AI workloads
 
-To consume resources, start a new AI workload that uses GPUs. For example, you can run a model fine-tuning workload by following the instructions in ["Model fine-tuning"](../../core/docs/developer-center/training/fine-tuning/). Once the workload has started, navigate to the `Projects` page, select your project, and observe the number of GPUs and the amount of VRAM the workload is using.
+To consume resources, start a new AI workload that uses GPUs. For example, you can run a model fine-tuning workload by following the instructions in ["Model fine-tuning"](../../core/docs/workbench/training/fine-tuning/). Once the workload has started, navigate to the `Projects` page, select your project, and observe the number of GPUs and the amount of VRAM the workload is using.
 
 See the example below:
 

@@ -1,6 +1,6 @@
 ---
 tags:
-  - developer center
+  - AMD AI Workbench
   - tutorial
   - model training
 ---
