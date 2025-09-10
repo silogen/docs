@@ -182,7 +182,7 @@ On Kubernetes, save the token in an environment variable in your terminal:
 ```
 kubectl create secret generic hf-token \
     --from-literal=hf-token=my_super_secret_token \
-    -n kaiwo
+    -n demo
 ```
 
 ### 7. Login to AMD Enterprise AI Suite
