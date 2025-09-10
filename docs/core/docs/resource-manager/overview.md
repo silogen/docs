@@ -17,4 +17,5 @@ AMD Resource Manager is built around the basic usage pattern of maintaining comp
 - **Organization**: An organization is built from teams. Each team can have multiple users and multiple projects.
 - **Projects**: A project contains users and a quota for their workloads. Multiple users can belong to multiple projects.
 - **Quota**: A quota is a usage limit reserved for a project. Quotas are useful for ensuring everyone gets their fair share of compute resources.
+- **Secrets**: Secure information such as API keys or credentials that can be created at the organizational level and assigned to projects. Secrets ensure workloads can access what they need without exposing sensitive data.
 - **User**: Users are individuals who require compute access for work purposes.
