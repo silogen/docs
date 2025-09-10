@@ -5,7 +5,7 @@ tags:
   - tutorial
 ---
 
-# Fine-tune a model with low code
+# Fine-tune a Model with Low Code
 
 This guide teaches you how to fine-tune a model through AMD AI Workbench user interface without writing any code. Follow these steps to complete a fine-tuning job:
 

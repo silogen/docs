@@ -1,4 +1,4 @@
-# Installation on DigitalOcean cloud
+# Installation on DigitalOcean Cloud
 
 This article explains how to install AMD Enterprise AI Suite in DigitalOcean cloud environment. The article complements the [full installation article](./on-premises-installation.md) by describing the DigitalOcean specific installation configuration. For more details about the installation steps, refer to the full installation article.
 
@@ -10,14 +10,14 @@ Suggested minimum configuration for DigitalOcean droplet:
 - 1 GPU - 192 GB VRAM - 20 vCPU - 240 GB RAM
 - Boot disk: 720 GB NVMe- Scratch disk: 5 TB NVMe
 
-SW requirements:
+Software requirements:
 
 - ROCm™ Software 6.4.0.
-
 
 ## Installation steps
 
 In order to install on a DigitalOcean droplet, copy the following text into a file bloom.yaml, replacing <your-ip-address> with the ip address of the node.
+
 ```
 DOMAIN: <your-ip-address>.nip.io
 CERT_OPTION: generate
@@ -34,7 +34,9 @@ Download the installation tool ("bloom")
 ```
 wget https://github.com/silogen/cluster-bloom/releases/latest/download/bloom
 ```
+
 Run bloom with the following command
+
 ```
 chmod +x bloom
 

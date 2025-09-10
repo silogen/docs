@@ -4,7 +4,7 @@ tags:
   - preferences
 ---
 
-# Personal preferences
+# Personal Preferences
 
 AMD Enterprise AI Suite platform has several settings the users can adjust to change their user experience.
 

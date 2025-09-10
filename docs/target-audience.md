@@ -4,7 +4,7 @@ tags:
   - target audience
 ---
 
-# Target audience of the AMD Enterprise AI Suite
+# Target Audience of the AMD Enterprise AI Suite
 
 AMD Enterprise AI Suite and this documentation are designed for three user personas, each focusing on different layers and aspects of the AI technology stack and lifecycle.
 

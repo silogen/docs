@@ -5,7 +5,7 @@ tags:
   - demo environment
 ---
 
-# Supported environments
+# Supported Environments
 
 AMD Enterprise AI Suite can be installed on the following environments:
 

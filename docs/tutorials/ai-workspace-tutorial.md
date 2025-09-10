@@ -5,7 +5,7 @@ tags:
   - tutorial
 ---
 
-# Working in AI workspaces hands-on
+# Working in AI Workspaces Hands On
 
 This guide teaches you how to work in the AMD AI Workbench workspace using a Jupyter Lab notebook.
 
