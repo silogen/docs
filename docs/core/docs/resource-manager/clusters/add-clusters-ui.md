@@ -5,7 +5,7 @@ tags:
   - add cluster
 ---
 
-# Create a new cluster in the UI
+# Create a New Cluster in the UI
 
 This article explains how to create a new cluster in the AMD Resource Manager user interface.
 

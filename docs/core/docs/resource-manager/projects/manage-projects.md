@@ -4,7 +4,7 @@ tags:
   - AMD Resource Manager
 ---
 
-# Manage projects
+# Manage Projects
 
 Projects help you organize and manage your work in the platform. Each project is isolated from others, meaning resources, workloads, and secrets in one project are not accessible from another. This ensures security and clear boundaries for your work.
 

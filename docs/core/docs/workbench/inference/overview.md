@@ -5,7 +5,7 @@ tags:
   - chat
 ---
 
-# Model inference
+# Model Inference
 
 Training AI models and developing your own models are essential parts of AI workflows. Solving problems, making predictions, and processing data is called inference. You can use the platform for all of these use cases.
 

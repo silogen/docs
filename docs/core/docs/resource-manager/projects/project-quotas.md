@@ -5,7 +5,7 @@ tags:
   - project
 ---
 
-# Project quotas overview
+# Project Quotas Overview
 
 A quota is a usage limit set on a project. Teams use project quotas to accomplish their tasks by ensuring everyone gets their fair share of compute resources. Without quotas, some workloads might use all the resources, leaving other workloads waiting.
 
@@ -36,10 +36,10 @@ Project quota can be adjusted using the sliders or by inputting the required all
 
 ![A diagram of the quotas page.](../../img/projects/proj-quota-panel.png)
 
-**GPU allocation** – Number of GPUs allocated for this project. Users belonging to this project are guaranteed the allocated GPU quota for their workloads.
+**GPU allocation**: Number of GPUs allocated for this project. Users belonging to this project are guaranteed the allocated GPU quota for their workloads.
 
-**CPU allocation** – Number of CPUs allocated for this project. Users belonging to this project are guaranteed the allocated CPU quota for their workloads.
+**CPU allocation**: Number of CPUs allocated for this project. Users belonging to this project are guaranteed the allocated CPU quota for their workloads.
 
-**System memory** – Memory allocation for this project. Users belonging to this project are guaranteed the allocated memory for their workloads.
+**System memory**: Memory allocation for this project. Users belonging to this project are guaranteed the allocated memory for their workloads.
 
-**Ephemeral disk allocation** – Disk storage allocation for this project. Users belonging to this project are guaranteed the allocated storage for their workloads.
+**Ephemeral disk allocation**: Disk storage allocation for this project. Users belonging to this project are guaranteed the allocated storage for their workloads.

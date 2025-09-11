@@ -4,7 +4,7 @@ tags:
   - cluster
 ---
 
-# Clusters overview
+# Clusters Overview
 
 The Clusters page provides a quick and easy way to see the status of all your clusters.
 

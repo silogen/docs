@@ -5,11 +5,11 @@ tags:
   - single sign-on
 ---
 
-# Adding an identity provider to enable single sign-on
+# Adding an Identity Provider to Enable Single Sign-on
 
 This is a general guide for setting up single sign-on (SSO) with an identity provider. This has been tested with OpenID Connect (Okta), but the guide aims to be provider-agnostic.
 
-## Prerequisite
+## Prerequisites
 
 Keycloak is set up for AMD Resource Manager, so organizations, realms, etc. are already created. Correct realm is selected as all the actions are realm specific.
 

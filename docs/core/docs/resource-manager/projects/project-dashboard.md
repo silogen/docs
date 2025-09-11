@@ -4,7 +4,7 @@ tags:
   - AMD Resource Manager
 ---
 
-# Project dashboard
+# Project Dashboard
 
 The project dashboard breaks down all the attributes of a project into an easy to read user interface. This is also the page from which to edit the project details.
 

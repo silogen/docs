@@ -7,7 +7,7 @@ tags:
   - tutorial
 ---
 
-# How to deploy a model and run inference
+# How to Deploy a Model and Run Inference
 
 Training AI models and developing your own models are essential parts of AI workflows, but eventually they lead to using the models in your business applications. Solving problems, making predictions, and processing data is called inference. This is the culmination of AI workflows, providing you with business value.
 

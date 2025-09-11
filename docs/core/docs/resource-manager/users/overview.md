@@ -6,7 +6,7 @@ tags:
   - AMD Resource Manager
 ---
 
-# Users overview
+# Users Overview
 
 AMD Enterprise AI Suite has a robust user management system bundled with the authentication system [Keycloak](https://www.keycloak.org/). The platform can also use an [identity provider](../../keycloak/sso.md) for user authentication.
 

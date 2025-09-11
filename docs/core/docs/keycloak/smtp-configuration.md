@@ -6,14 +6,13 @@ tags:
   - smtp
 ---
 
-# Inviting users and configuring SMTP in Keycloak
+# Inviting Users and Configuring SMTP in Keycloak
 
 This is a guide for configuring an SMTP server in Keycloak, which is a prerequisite for inviting users to AMD Enterprise AI Suite via the application.
 
 ## Prerequisites
 
 - The URL of the keycloak instance for your application, and corresponding admin credentials are known.
-
   - The keycloak URL is typically https://kc.&lt;domain provided during installation&gt;/admin/master/console/
   - The keycloak credentials should be provided to you by AMD's customer success team during installation.
 
@@ -22,8 +21,8 @@ This is a guide for configuring an SMTP server in Keycloak, which is a prerequis
 
 ## Updating the email domain(s) for organization
 
-If you are managing users for your installation, it is likely that the default email domain(s) configured for the organization will need to be updated.
-This can be done by navigating to the **Organizations** tab in Keycloak and selecting the pre-configured organization.
+If you are managing users for your installation, it is likely that the default email domain(s) configured for the organization will need to be updated. This can be done by navigating to the **Organizations** tab in Keycloak and selecting the pre-configured organization.
+
 Subsequently, adjust the **Domain** of the organization to reflect the email domain(s) associated with your organization (e.g. `myorg.com` and `myorg.org`). If you are intending to support users from multiple domains in the platform, add a row for each of the email domains.
 
 ## Configuring the SMTP server
@@ -38,8 +37,7 @@ Navigate to **Realm settings** and then to the **Email** tab. Here you can confi
   - **Username**: The username for the SMTP server.
   - **Password**: The password for the SMTP server.
 
-Once this is done, you can test the configuration by sending a test email to ensure that Keycloak can connect to the SMTP server and send emails successfully.
-Prior to doing this, ensure that the user you have currently logged in as, in the **master** realm has an associated email that Keycloak can use to send the test email.
+Once this is done, you can test the configuration by sending a test email to ensure that Keycloak can connect to the SMTP server and send emails successfully. Prior to doing this, ensure that the user you have currently logged in as, in the **master** realm has an associated email that Keycloak can use to send the test email.
 
 Note: Depending on the strictness of the spam/junk filters, you may need to whitelist the Keycloak server's IP address or domain in your email server settings to ensure that emails are not marked as spam.
 
