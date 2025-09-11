@@ -2944,16 +2944,12 @@
   
 
 
-<h1 id="inviting-users-and-configuring-smtp-in-keycloak">Inviting users and configuring SMTP in Keycloak<a class="headerlink" href="#inviting-users-and-configuring-smtp-in-keycloak" title="Permanent link">&para;</a></h1>
+<h1 id="inviting-users-and-configuring-smtp-in-keycloak">Inviting Users and Configuring SMTP in Keycloak<a class="headerlink" href="#inviting-users-and-configuring-smtp-in-keycloak" title="Permanent link">&para;</a></h1>
 <p>This is a guide for configuring an SMTP server in Keycloak, which is a prerequisite for inviting users to AMD Enterprise AI Suite via the application.</p>
 <h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
 <ul>
-<li>
-<p>The URL of the keycloak instance for your application, and corresponding admin credentials are known.</p>
-</li>
-<li>
-<p>The keycloak URL is typically https://kc.&lt;domain provided during installation&gt;/admin/master/console/</p>
-</li>
+<li>The URL of the keycloak instance for your application, and corresponding admin credentials are known.</li>
+<li>The keycloak URL is typically https://kc.&lt;domain provided during installation&gt;/admin/master/console/</li>
 <li>
 <p>The keycloak credentials should be provided to you by AMD's customer success team during installation.</p>
 </li>
@@ -2963,9 +2959,8 @@
 <li>The organization must have an SMTP server accessible that they can use to integrate with Keycloak and AMD Resource Manager.</li>
 </ul>
 <h2 id="updating-the-email-domains-for-organization">Updating the email domain(s) for organization<a class="headerlink" href="#updating-the-email-domains-for-organization" title="Permanent link">&para;</a></h2>
-<p>If you are managing users for your installation, it is likely that the default email domain(s) configured for the organization will need to be updated.
-This can be done by navigating to the <strong>Organizations</strong> tab in Keycloak and selecting the pre-configured organization.
-Subsequently, adjust the <strong>Domain</strong> of the organization to reflect the email domain(s) associated with your organization (e.g. <code>myorg.com</code> and <code>myorg.org</code>). If you are intending to support users from multiple domains in the platform, add a row for each of the email domains.</p>
+<p>If you are managing users for your installation, it is likely that the default email domain(s) configured for the organization will need to be updated. This can be done by navigating to the <strong>Organizations</strong> tab in Keycloak and selecting the pre-configured organization.</p>
+<p>Subsequently, adjust the <strong>Domain</strong> of the organization to reflect the email domain(s) associated with your organization (e.g. <code>myorg.com</code> and <code>myorg.org</code>). If you are intending to support users from multiple domains in the platform, add a row for each of the email domains.</p>
 <h2 id="configuring-the-smtp-server">Configuring the SMTP server<a class="headerlink" href="#configuring-the-smtp-server" title="Permanent link">&para;</a></h2>
 <p>Navigate to <strong>Realm settings</strong> and then to the <strong>Email</strong> tab. Here you can configure the SMTP server that Keycloak will use to send emails. The settings you need to fill in are:</p>
 <ul>
@@ -2977,8 +2972,7 @@ Subsequently, adjust the <strong>Domain</strong> of the organization to reflect 
 <li><strong>Username</strong>: The username for the SMTP server.</li>
 <li><strong>Password</strong>: The password for the SMTP server.</li>
 </ul>
-<p>Once this is done, you can test the configuration by sending a test email to ensure that Keycloak can connect to the SMTP server and send emails successfully.
-Prior to doing this, ensure that the user you have currently logged in as, in the <strong>master</strong> realm has an associated email that Keycloak can use to send the test email.</p>
+<p>Once this is done, you can test the configuration by sending a test email to ensure that Keycloak can connect to the SMTP server and send emails successfully. Prior to doing this, ensure that the user you have currently logged in as, in the <strong>master</strong> realm has an associated email that Keycloak can use to send the test email.</p>
 <p>Note: Depending on the strictness of the spam/junk filters, you may need to whitelist the Keycloak server's IP address or domain in your email server settings to ensure that emails are not marked as spam.</p>
 <h2 id="inviting-users">Inviting users<a class="headerlink" href="#inviting-users" title="Permanent link">&para;</a></h2>
 <p>Once the SMTP server is configured, you can invite users via AMD Resource Manager. This is done by logging into AMD Resource Manager and navigating to the Access Control tab and clicking on the <strong>Invite user</strong> button. You can read more about inviting users in the <a href="../../resource-manager/users/manage-users/#invite-users">AMD Resource Manager user guide</a>.</p>

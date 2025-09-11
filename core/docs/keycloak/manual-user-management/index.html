@@ -2968,22 +2968,14 @@
   
 
 
-<h1 id="manually-managing-and-activating-users">Manually managing and activating users<a class="headerlink" href="#manually-managing-and-activating-users" title="Permanent link">&para;</a></h1>
-<p>AMD Resource Manager is optimized to support user management where either users are federated via an identity provider (IdP) through SSO or the user management workflow is orchestrated by the AMD Resource Manager user interface, relying on access to an SMTP server. If neither option is suitable, you can manage users using the Keycloak admin console and the AMD Resource Manager UI.</p>
+<h1 id="manually-managing-and-activating-users">Manually Managing and Activating Users<a class="headerlink" href="#manually-managing-and-activating-users" title="Permanent link">&para;</a></h1>
+<p>AMD Resource Manager is optimized to support user management where either users are federated via an identity provider (IdP) through SSO (single sign-on) or the user management workflow is orchestrated by the AMD Resource Manager user interface, relying on access to an SMTP server. If neither option is suitable, you can manage users using the Keycloak admin console and the AMD Resource Manager UI.</p>
 <h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
 <ul>
-<li>
-<p>The URL of the keycloak instance for your application, and corresponding admin credentials are known.</p>
-</li>
-<li>
-<p>The keycloak URL is typically https://kc.&lt;domain provided during installation&gt;/admin/master/console/</p>
-</li>
-<li>
-<p>The keycloak credentials should be provided to you by AMD's customer success team during installation.</p>
-</li>
-<li>
-<p>Once you have logged into Keycloak, the correct realm must be selected (typically <code>airm</code>) as all actions are realm-specific.</p>
-</li>
+<li>The URL of the keycloak instance for your application, and corresponding admin credentials are known.</li>
+<li>The keycloak URL is typically https://kc.&lt;domain provided during installation&gt;/admin/master/console/</li>
+<li>The keycloak credentials should be provided to you by AMD's customer success team during installation.</li>
+<li>Once you have logged into Keycloak, the correct realm must be selected (typically <code>airm</code>) as all actions are realm-specific.</li>
 </ul>
 <h2 id="updating-the-email-domains-for-organization">Updating the email domain(s) for organization<a class="headerlink" href="#updating-the-email-domains-for-organization" title="Permanent link">&para;</a></h2>
 <p>If you are managing users for your installation, it is likely that the default email domain(s) configured for the organization will need to be updated. This can be done by navigating to the <strong>Organizations</strong> tab in Keycloak and selecting the pre-configured organization.</p>
@@ -3001,12 +2993,14 @@
 <ul>
 <li>Navigate to the <strong>Credentials</strong> tab and set a password for the user. Make sure to check the <strong>Temporary</strong> checkbox to ensure that the user is required to change their password on first login.</li>
 <li>Navigate to the <strong>Organizations</strong> tab subsequently click the <strong>Join organization</strong> button and add them to the pre-existing organization (e.g. <code>demo</code>).</li>
-<li>Send the credentials to the user and ask to them login to the application via the user interface.
-  <strong>Note</strong>: At this point, while the user can login, they will not have access to any Projects or elevated permissions.</li>
+<li>Send the credentials to the user and ask to them login to the application via the user interface.</li>
 </ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>At this point, while the user can login, they will not have access to any projects or elevated permissions.</p>
+</div>
 <h3 id="amd-resource-manager-ui">AMD Resource Manager UI<a class="headerlink" href="#amd-resource-manager-ui" title="Permanent link">&para;</a></h3>
-<p><strong>Once the user has logged in</strong>, you can manage their access to projects and permissions via the user interface.
-As a platform administrator, you can find the new in user in the <strong>Access Control</strong> tab. Select the user and adjust their roles (if needed) and/or add them to the desired projects as described in the <a href="../../resource-manager/users/manage-users/#user-view">AMD Resource Manager user guide</a>.</p>
+<p><strong>Once the user has logged in</strong>, you can manage their access to projects and permissions via the user interface. As a platform administrator, you can find the new in user in the <strong>Access Control</strong> tab. Select the user and adjust their roles (if needed) and/or add them to the desired projects as described in the <a href="../../resource-manager/users/manage-users/#user-view">AMD Resource Manager user guide</a>.</p>
 <p>If only the projects that the user has access to has changed, the user can reload the page and the new projects will be visible to them. If their roles have changed, they will need to log out and log back in to see the changes.</p>
 
 
