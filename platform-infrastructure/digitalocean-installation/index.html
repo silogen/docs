@@ -2880,7 +2880,7 @@
   
 
 
-<h1 id="installation-on-digitalocean-cloud">Installation on DigitalOcean cloud<a class="headerlink" href="#installation-on-digitalocean-cloud" title="Permanent link">&para;</a></h1>
+<h1 id="installation-on-digitalocean-cloud">Installation on DigitalOcean Cloud<a class="headerlink" href="#installation-on-digitalocean-cloud" title="Permanent link">&para;</a></h1>
 <p>This article explains how to install AMD Enterprise AI Suite in DigitalOcean cloud environment. The article complements the <a href="../on-premises-installation/">full installation article</a> by describing the DigitalOcean specific installation configuration. For more details about the installation steps, refer to the full installation article.</p>
 <h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
 <p>Suggested minimum configuration for DigitalOcean droplet:</p>
@@ -2889,12 +2889,12 @@
 <li>1 GPU - 192 GB VRAM - 20 vCPU - 240 GB RAM</li>
 <li>Boot disk: 720 GB NVMe- Scratch disk: 5 TB NVMe</li>
 </ul>
-<p>SW requirements:</p>
+<p>Software requirements:</p>
 <ul>
 <li>ROCm™ Software 6.4.0.</li>
 </ul>
 <h2 id="installation-steps">Installation steps<a class="headerlink" href="#installation-steps" title="Permanent link">&para;</a></h2>
-<p>In order to install on a DigitalOcean droplet, copy the following text into a file bloom.yaml, replacing <your-ip-address> with the ip address of the node.
+<p>In order to install on a DigitalOcean droplet, copy the following text into a file bloom.yaml, replacing <your-ip-address> with the ip address of the node.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>DOMAIN: &lt;your-ip-address&gt;.nip.io
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>CERT_OPTION: generate
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>CLUSTERFORGE_RELEASE: https://github.com/silogen/cluster-forge/releases/tag/v2025.09.001-rc-enterprise
@@ -2903,15 +2903,15 @@
 <a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>SKIP_DISK_CHECK: false
 <a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>USE_CERT_MANAGER: false
 <a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>SELECTED_DISKS: /dev/vdc1
-</code></pre></div></p>
-<p>Download the installation tool ("bloom")</p>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>wget https://github.com/silogen/cluster-bloom/releases/latest/download/bloom
 </code></pre></div>
-Run bloom with the following command
+<p>Download the installation tool ("bloom")</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>wget https://github.com/silogen/cluster-bloom/releases/latest/download/bloom
+</code></pre></div>
+<p>Run bloom with the following command</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>chmod +x bloom
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
 <a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>sudo ./bloom --config bloom.yaml
-</code></pre></div></p>
+</code></pre></div>
 
 
 

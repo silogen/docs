@@ -3238,7 +3238,7 @@
   
 
 
-<h1 id="install-amd-enterprise-ai-suite-on-premises">Install AMD Enterprise AI Suite on-premises<a class="headerlink" href="#install-amd-enterprise-ai-suite-on-premises" title="Permanent link">&para;</a></h1>
+<h1 id="install-amd-enterprise-ai-suite-on-premises">Install AMD Enterprise AI Suite on Premises<a class="headerlink" href="#install-amd-enterprise-ai-suite-on-premises" title="Permanent link">&para;</a></h1>
 <p>This article explains how to install AMD Enterprise AI Suite in an on-premises environment, covering the full stack from metal to application layer in a streamlined manner. The platform runs on top of Kubernetes orchestration platform and includes essential Kubernetes components for monitoring, secrets management, and certificate management.</p>
 <p>The installation process leverages helper tools called Cluster Bloom and Cluster Forge that deploy and configure all necessary platform components, preparing a Kubernetes cluster for executing AI workloads.</p>
 <h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
@@ -3282,9 +3282,9 @@
 <p>Access the node using SSH as root user.</p>
 <h3 id="2-download-the-latest-installation-script">2. Download the latest installation script<a class="headerlink" href="#2-download-the-latest-installation-script" title="Permanent link">&para;</a></h3>
 <p>Go to the working folder where you want to install the release.</p>
-<p>Download the latest installation script (adjust the URL to the release of your preference):
+<p>Download the latest installation script (adjust the URL to the release of your preference):</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>wget https://github.com/silogen/cluster-bloom/releases/latest/download/bloom
-</code></pre></div></p>
+</code></pre></div>
 <h3 id="3-make-file-executable">3. Make file executable<a class="headerlink" href="#3-make-file-executable" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>chmod +x bloom
 </code></pre></div>
@@ -3294,38 +3294,38 @@ You can use a Configuration wizard that facilitates the creation of the configur
 <h4 id="option-a-create-installation-configuration-using-the-installation-wizard">Option A - Create installation configuration using the Installation wizard<a class="headerlink" href="#option-a-create-installation-configuration-using-the-installation-wizard" title="Permanent link">&para;</a></h4>
 <p>The Installation wizard is a helper tool that guides the user in creating the optimal configuration for the installation.
 For the standard installation you should select the default values, only exception is the <code>domain</code> and <code>cert option</code> where you should provide a specific value.</p>
-<p>To start the wizard:
+<p>To start the wizard:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>sudo ./bloom
-</code></pre></div></p>
+</code></pre></div>
 <p>The wizard includes the following steps:</p>
-<p><strong>First node</strong></p>
-<p>Specifies if this is the first node in the cluster. Set to <code>false</code> for additional nodes joining an existing cluster.</p>
-<p><strong>GPU node</strong></p>
-<p>Specifies whether the node has GPUs. Set to <code>false</code> for CPU-only nodes. When <code>true</code>, ROCm will be installed and configured.</p>
-<p><strong>OIDC URL</strong></p>
-<p>URL of the OIDC provider for authentication. Leave empty to skip OIDC configuration.</p>
-<p><strong>Skip disk check</strong></p>
-<p>Specifies if disk check should be performed. Set to <code>true</code> if you don't want automatic disk setup.</p>
-<p><strong>Selected disks</strong></p>
-<p>List of disk devices to use. Example: <code>dev/sdb</code>. Leave empty for automatic selection.</p>
-<p><strong>Longhorn disks</strong></p>
-<p>List of disk paths for Longhorn storage. Leave empty for automatic configuration.</p>
-<p><strong>Cluster Forge release</strong></p>
-<p>The Cluster Forge release <code>URL</code> or <code>none</code> to skip the SW installation.</p>
-<p><strong>Domain</strong></p>
-<p>Domain name for the cluster, e.g., <code>cluster.example.com</code>. The domain name is used for ingress configuration. If you don't have a DNS-enabled domain available, you may use a .nip.io domain with your IP address. Example: <code>&lt;master-node-ip-address&gt;.nip.io</code>.</p>
-<p><strong>Use cert manager</strong></p>
-<p>Set to <code>Yes</code> to use cert-manager with Let's encrypt for automatic TLS certificates. Set to <code>false</code> to provide your own certificates.</p>
-<p><strong>Cert option</strong></p>
-<p>Certificate option when <code>Use cert manager</code> is false. Choose <code>existing</code> to use existing certificate files, or <code>generate</code> to create a self-signed certificate.</p>
-<p><strong>Configuration complete!</strong></p>
-<p>Once the wizard has completed you can find the configuration file in <code>bloom.yaml</code>.</p>
-<p><strong>Start the installation</strong></p>
-<p>To run the actual installation select <code>y</code> in the following step
+<p><strong>First node</strong><br>
+Specifies if this is the first node in the cluster. Set to <code>false</code> for additional nodes joining an existing cluster.</p>
+<p><strong>GPU node</strong><br>
+Specifies whether the node has GPUs. Set to <code>false</code> for CPU-only nodes. When <code>true</code>, ROCm will be installed and configured.</p>
+<p><strong>OIDC URL</strong><br>
+URL of the OIDC provider for authentication. Leave empty to skip OIDC configuration.</p>
+<p><strong>Skip disk check</strong><br>
+Specifies if disk check should be performed. Set to <code>true</code> if you don't want automatic disk setup.</p>
+<p><strong>Selected disks</strong><br>
+List of disk devices to use. Example: <code>dev/sdb</code>. Leave empty for automatic selection.</p>
+<p><strong>Longhorn disks</strong><br>
+List of disk paths for Longhorn storage. Leave empty for automatic configuration.</p>
+<p><strong>Cluster Forge release</strong><br>
+The Cluster Forge release <code>URL</code> or <code>none</code> to skip the SW installation.</p>
+<p><strong>Domain</strong><br>
+Domain name for the cluster, e.g., <code>cluster.example.com</code>. The domain name is used for ingress configuration. If you don't have a DNS-enabled domain available, you may use a .nip.io domain with your IP address. Example: <code>&lt;master-node-ip-address&gt;.nip.io</code>.</p>
+<p><strong>Use cert manager</strong><br>
+Set to <code>Yes</code> to use cert-manager with Let's encrypt for automatic TLS certificates. Set to <code>false</code> to provide your own certificates.</p>
+<p><strong>Cert option</strong><br>
+Certificate option when <code>Use cert manager</code> is false. Choose <code>existing</code> to use existing certificate files, or <code>generate</code> to create a self-signed certificate.</p>
+<p><strong>Configuration complete!</strong><br>
+Once the wizard has completed you can find the configuration file in <code>bloom.yaml</code>.</p>
+<p><strong>Start the installation</strong><br>
+To run the actual installation select <code>y</code> in the following step
 <code>Would you like to run bloom with this configuration no? (y/n)</code></p>
 <h4 id="option-b-specify-the-values-in-configuration-file">Option B - Specify the values in configuration file<a class="headerlink" href="#option-b-specify-the-values-in-configuration-file" title="Permanent link">&para;</a></h4>
 <p>You can also specify the values in the configuration file directly and skip the installation wizard process.</p>
-<p>Below is an example configuration for the configuration file bloom.yaml:
+<p>Below is an example configuration for the configuration file bloom.yaml:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>DOMAIN: &lt;your-ip-address&gt;.nip.io
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>CERT_OPTION: generate
 <a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>CLUSTERFORGE_RELEASE: https://github.com/silogen/cluster-forge/releases/download/v2025.08.001-enterprise/release-enterprise-v2025.08.001.tar.gz
@@ -3335,33 +3335,24 @@ For the standard installation you should select the default values, only excepti
 <a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>USE_CERT_MANAGER: false
 <a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>SELECTED_DISKS: /dev/vdc1
 </code></pre></div>
-To start the installation:
+<p>To start the installation:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>sudo ./bloom --config bloom.yaml
-</code></pre></div></p>
+</code></pre></div>
 <h3 id="5-complete-the-installation-progress">5. Complete the installation progress<a class="headerlink" href="#5-complete-the-installation-progress" title="Permanent link">&para;</a></h3>
 <p>The installation will take roughly 15 minutes. You can now follow the installation progress through the user interface:</p>
 <p><img alt="Cluster Bloom Interface" src="../../media/infra/bloom.png" /></p>
 <p>For systems with unmounted physical disks, a selection prompt will appear:</p>
-<p><img alt="Cluster Bloom Disk Selection" src="../../media/infra/bloom-disk-selection.png" /></p>
+<p><img alt="Cluster Bloom disk selection" src="../../media/infra/bloom-disk-selection.png" /></p>
 <h4 id="51-optional-step-adding-a-second-node-to-cluster">5.1 Optional step: Adding a second node to cluster<a class="headerlink" href="#51-optional-step-adding-a-second-node-to-cluster" title="Permanent link">&para;</a></h4>
 <p>After successful installation, Cluster Bloom generates <code>additional_node_command.txt</code>, which contains the command for installing additional nodes into the cluster.</p>
 <h3 id="6-specify-huggingface-token">6. Specify HuggingFace token<a class="headerlink" href="#6-specify-huggingface-token" title="Permanent link">&para;</a></h3>
 <p>In order to download and access gated models from Hugging Face, you need to provide a Hugging Face token. Tokens contain sensitive information. To keep them secure and prevent unauthorized access, they should not be stored in plain text in your code or configuration files. Instead, they are stored as <strong>secrets</strong>, a secure way to manage sensitive data.</p>
 <h4 id="how-to-get-a-hugging-face-token">How to get a Hugging Face token<a class="headerlink" href="#how-to-get-a-hugging-face-token" title="Permanent link">&para;</a></h4>
 <ol>
-<li>
-<p>Create or log in to your Hugging Face account:
-    <a href="https://huggingface.co/">https://huggingface.co</a>.</p>
-</li>
-<li>
-<p>Navigate to your account settings.</p>
-</li>
-<li>
-<p>Under <strong>Access Tokens</strong>, generate a new token.</p>
-</li>
-<li>
-<p>Copy the token (keep it safe; don't share it).</p>
-</li>
+<li>Create or log in to your Hugging Face account: <a href="https://huggingface.co/">https://huggingface.co</a>.</li>
+<li>Navigate to your account settings.</li>
+<li>Under <strong>Access Tokens</strong>, generate a new token.</li>
+<li>Copy the token (keep it safe; don't share it).</li>
 </ol>
 <h4 id="where-to-install-the-token">Where to install the token<a class="headerlink" href="#where-to-install-the-token" title="Permanent link">&para;</a></h4>
 <p>The token needs to be installed as a secret in your environment. Here
