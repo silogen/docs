@@ -6,7 +6,7 @@ tags:
   - kubernetes
 ---
 
-# Install AMD Enterprise AI Suite on-premises
+# Install AMD Enterprise AI Suite on Premises
 
 This article explains how to install AMD Enterprise AI Suite in an on-premises environment, covering the full stack from metal to application layer in a streamlined manner. The platform runs on top of Kubernetes orchestration platform and includes essential Kubernetes components for monitoring, secrets management, and certificate management.
 
@@ -52,13 +52,17 @@ Access the node using SSH as root user.
 Go to the working folder where you want to install the release.
 
 Download the latest installation script (adjust the URL to the release of your preference):
+
 ```
 wget https://github.com/silogen/cluster-bloom/releases/latest/download/bloom
 ```
+
 ### 3. Make file executable
+
 ```
 chmod +x bloom
 ```
+
 ### 4. Create the installation configuration
 
 Before you can start the installation you need to create the installation configuration, which adapts the installation to your environment.
@@ -70,58 +74,47 @@ The Installation wizard is a helper tool that guides the user in creating the op
 For the standard installation you should select the default values, only exception is the `domain` and `cert option` where you should provide a specific value.
 
 To start the wizard:
+
 ```
 sudo ./bloom
 ```
 
 The wizard includes the following steps:
 
-**First node**
-
+**First node**<br>
 Specifies if this is the first node in the cluster. Set to `false` for additional nodes joining an existing cluster.
 
-**GPU node**
-
+**GPU node**<br>
 Specifies whether the node has GPUs. Set to `false` for CPU-only nodes. When `true`, ROCm will be installed and configured.
 
-**OIDC URL**
-
+**OIDC URL**<br>
 URL of the OIDC provider for authentication. Leave empty to skip OIDC configuration.
 
-**Skip disk check**
-
+**Skip disk check**<br>
 Specifies if disk check should be performed. Set to `true` if you don't want automatic disk setup.
 
-**Selected disks**
-
+**Selected disks**<br>
 List of disk devices to use. Example: `dev/sdb`. Leave empty for automatic selection.
 
-**Longhorn disks**
-
+**Longhorn disks**<br>
 List of disk paths for Longhorn storage. Leave empty for automatic configuration.
 
-**Cluster Forge release**
-
+**Cluster Forge release**<br>
 The Cluster Forge release `URL` or `none` to skip the SW installation.
 
-**Domain**
-
+**Domain**<br>
 Domain name for the cluster, e.g., `cluster.example.com`. The domain name is used for ingress configuration. If you don't have a DNS-enabled domain available, you may use a .nip.io domain with your IP address. Example: `<master-node-ip-address>.nip.io`.
 
-**Use cert manager**
-
+**Use cert manager**<br>
 Set to `Yes` to use cert-manager with Let's encrypt for automatic TLS certificates. Set to `false` to provide your own certificates.
 
-**Cert option**
-
+**Cert option**<br>
 Certificate option when `Use cert manager` is false. Choose `existing` to use existing certificate files, or `generate` to create a self-signed certificate.
 
-**Configuration complete!**
-
+**Configuration complete!**<br>
 Once the wizard has completed you can find the configuration file in `bloom.yaml`.
 
-**Start the installation**
-
+**Start the installation**<br>
 To run the actual installation select `y` in the following step
 `Would you like to run bloom with this configuration no? (y/n)`
 
@@ -130,6 +123,7 @@ To run the actual installation select `y` in the following step
 You can also specify the values in the configuration file directly and skip the installation wizard process.
 
 Below is an example configuration for the configuration file bloom.yaml:
+
 ```
 DOMAIN: <your-ip-address>.nip.io
 CERT_OPTION: generate
@@ -140,7 +134,9 @@ SKIP_DISK_CHECK: false
 USE_CERT_MANAGER: false
 SELECTED_DISKS: /dev/vdc1
 ```
+
 To start the installation:
+
 ```
 sudo ./bloom --config bloom.yaml
 ```
@@ -153,23 +149,21 @@ The installation will take roughly 15 minutes. You can now follow the installati
 
 For systems with unmounted physical disks, a selection prompt will appear:
 
-![Cluster Bloom Disk Selection](../media/infra/bloom-disk-selection.png)
+![Cluster Bloom disk selection](../media/infra/bloom-disk-selection.png)
 
 #### 5.1 Optional step: Adding a second node to cluster
+
 After successful installation, Cluster Bloom generates `additional_node_command.txt`, which contains the command for installing additional nodes into the cluster.
 
 ### 6. Specify HuggingFace token
+
 In order to download and access gated models from Hugging Face, you need to provide a Hugging Face token. Tokens contain sensitive information. To keep them secure and prevent unauthorized access, they should not be stored in plain text in your code or configuration files. Instead, they are stored as **secrets**, a secure way to manage sensitive data.
 
 #### How to get a Hugging Face token
 
-1. Create or log in to your Hugging Face account:
-    [https://huggingface.co](https://huggingface.co/).
-
+1. Create or log in to your Hugging Face account: [https://huggingface.co](https://huggingface.co/).
 2. Navigate to your account settings.
-
 3. Under **Access Tokens**, generate a new token.
-
 4. Copy the token (keep it safe; don't share it).
 
 #### Where to install the token

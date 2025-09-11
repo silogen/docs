@@ -1,4 +1,4 @@
-# AMD Enterprise AI Suite documentation
+# AMD Enterprise AI Suite Documentation
 
 Welcome to the documentation for AMD Enterprise AI Suite. Enterprises striving to scale AI often encounter roadblocks that increase costs, slow innovation, and limit impact. The AMD Enterprise AI stack is built to overcome these challenges and unlock the full potential of AI across the enterprise.
 

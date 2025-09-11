@@ -5,7 +5,7 @@ tags:
   - introduction
 ---
 
-# Quick start guide
+# Quick Start Guide
 
 This quick start guide will help you rapidly install, configure, and begin using the AMD Enterprise AI Suite for your AI workloads.
 

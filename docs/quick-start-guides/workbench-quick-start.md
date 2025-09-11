@@ -5,7 +5,7 @@ tags:
   - AMD AI Workbench
 ---
 
-# Quick start guide for AI practitioners
+# Quick Start Guide for AI Practitioners
 
 AMD Enterprise AI Suite provides a stable starting point for AI model development, fine-tuning, and inference with the help of an easy-to-use model catalog and AI developer workspaces. To work efficiently in the platform, an AI developer should have some experience with AI terminology and a general understanding of typical AI development workflows.
 
@@ -35,7 +35,6 @@ Based on your background you can choose either low-code or more advanced coding 
 #### Model deployment and inference
 
 To learn how to deploy a model and run inference, please complete the tutorial ["How to deploy a model and run inference"](../core/docs/workbench/inference/how-to-deploy-and-inference.md).
-
 
 #### Low-code tutorial: fine-tune a model with low code
 

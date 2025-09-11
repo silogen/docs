@@ -5,7 +5,7 @@ tags:
   - AMD Resource Manager
 ---
 
-# Quick start guide for AI resource managers
+# Quick Start Guide for AI Resource Managers
 
 The AMD AI Workbench provides a robust environment for managing AI development teams' work on AMD compute. Whether teams are working on fine-tuning, inference, or any other aspect of AI development, the platform offers easy-to-use tools to maintain fair compute resource allocation. To work efficiently in the platform, a resource manager should have some experience with AI terminology and a general understanding of AI development infrastructure.
 

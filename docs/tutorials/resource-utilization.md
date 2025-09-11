@@ -5,7 +5,7 @@ tags:
   - tutorial
 ---
 
-# Resource utilization of AI workloads
+# Resource Utilization of AI Workloads
 
 This guide teaches you how you can observe and manage the amount of resources that your AI workloads are using. Follow these steps to complete find about resource utilization:
 
