@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Documentation for AMD Enterprise AI Suite">
+        <meta name="description" content="Documentation for AMD Resource Manager & AMD AI Workbench">
       
       
       
@@ -22,7 +22,7 @@
     
     
       
-        <title>On-premises installation - AMD Enterprise AI Suite documentation</title>
+        <title>On-premises installation - AMD Resource Manager & AMD AI Workbench documentation</title>
       
     
     
@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#install-amd-enterprise-ai-suite-on-premises" class="md-skip">
+        <a href="#install-amd-enterprise-ai-platform-on-premises" class="md-skip">
           Skip to content
         </a>
       
@@ -90,7 +90,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="AMD Enterprise AI Suite documentation" class="md-header__button md-logo" aria-label="AMD Enterprise AI Suite documentation" data-md-component="logo">
+    <a href="../.." title="AMD Resource Manager &amp; AMD AI Workbench documentation" class="md-header__button md-logo" aria-label="AMD Resource Manager & AMD AI Workbench documentation" data-md-component="logo">
       
   <img src="../../media/logo.svg" alt="logo">
 
@@ -103,7 +103,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            AMD Enterprise AI Suite documentation
+            AMD Resource Manager & AMD AI Workbench documentation
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -372,12 +372,12 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="AMD Enterprise AI Suite documentation" class="md-nav__button md-logo" aria-label="AMD Enterprise AI Suite documentation" data-md-component="logo">
+    <a href="../.." title="AMD Resource Manager &amp; AMD AI Workbench documentation" class="md-nav__button md-logo" aria-label="AMD Resource Manager & AMD AI Workbench documentation" data-md-component="logo">
       
   <img src="../../media/logo.svg" alt="logo">
 
     </a>
-    AMD Enterprise AI Suite documentation
+    AMD Resource Manager & AMD AI Workbench documentation
   </label>
   
     <div class="md-nav__source">
@@ -967,9 +967,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#7-login-to-amd-enterprise-ai-suite" class="md-nav__link">
+  <a href="#7-login" class="md-nav__link">
     <span class="md-ellipsis">
-      7. Login to AMD Enterprise AI Suite
+      7. Login
     </span>
   </a>
   
@@ -3160,9 +3160,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#7-login-to-amd-enterprise-ai-suite" class="md-nav__link">
+  <a href="#7-login" class="md-nav__link">
     <span class="md-ellipsis">
-      7. Login to AMD Enterprise AI Suite
+      7. Login
     </span>
   </a>
   
@@ -3238,8 +3238,8 @@
   
 
 
-<h1 id="install-amd-enterprise-ai-suite-on-premises">Install AMD Enterprise AI Suite on Premises<a class="headerlink" href="#install-amd-enterprise-ai-suite-on-premises" title="Permanent link">&para;</a></h1>
-<p>This article explains how to install AMD Enterprise AI Suite in an on-premises environment, covering the full stack from metal to application layer in a streamlined manner. The platform runs on top of Kubernetes orchestration platform and includes essential Kubernetes components for monitoring, secrets management, and certificate management.</p>
+<h1 id="install-amd-enterprise-ai-platform-on-premises">Install AMD Enterprise AI platform on Premises<a class="headerlink" href="#install-amd-enterprise-ai-platform-on-premises" title="Permanent link">&para;</a></h1>
+<p>This article explains how to install AMD Resource Manager &amp; AMD AI Workbench in an on-premises environment, covering the full stack from metal to application layer in a streamlined manner. The platform runs on top of Kubernetes orchestration platform and includes essential Kubernetes components for monitoring, secrets management, and certificate management.</p>
 <p>The installation process leverages helper tools called Cluster Bloom and Cluster Forge that deploy and configure all necessary platform components, preparing a Kubernetes cluster for executing AI workloads.</p>
 <h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
 <ul>
@@ -3265,7 +3265,7 @@
 <li>Finally, ensure that any firewalls, security groups, or network routing configurations are updated to allow incoming connections from users who will be accessing these services.</li>
 </ul>
 <h2 id="install-kubernetes-cluster-and-software">Install Kubernetes cluster and software<a class="headerlink" href="#install-kubernetes-cluster-and-software" title="Permanent link">&para;</a></h2>
-<p>You will use an installation script called Cluster Bloom to install and configure a Kubernetes cluster and install the AMD Enterprise AI Suite. It installs the following features to prepare an AMD GPU node to be part of a Kubernetes cluster:</p>
+<p>You will use an installation script called Cluster Bloom to install and configure a Kubernetes cluster and install the platform. It installs the following features to prepare an AMD GPU node to be part of a Kubernetes cluster:</p>
 <ul>
 <li>Automated RKE2 Kubernetes cluster deployment</li>
 <li>ROCm setup and configuration for AMD GPU nodes</li>
@@ -3362,7 +3362,7 @@ are examples of how to do this in common platforms:</p>
 <a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>    --from-literal=hf-token=my_super_secret_token \
 <a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>    -n demo
 </code></pre></div>
-<h3 id="7-login-to-amd-enterprise-ai-suite">7. Login to AMD Enterprise AI Suite<a class="headerlink" href="#7-login-to-amd-enterprise-ai-suite" title="Permanent link">&para;</a></h3>
+<h3 id="7-login">7. Login<a class="headerlink" href="#7-login" title="Permanent link">&para;</a></h3>
 <p>To confirm that the installation was successful, ensure you are able to log in to the AMD AI Workbench.</p>
 <ol>
 <li>Access the login URL (your domain name).</li>
@@ -3372,7 +3372,7 @@ are examples of how to do this in common platforms:</p>
 </ol>
 <p>See more details about login <a href="../../login/">here</a>.</p>
 <h2 id="install-only-software-into-an-existing-kubernetes-cluster">Install only software into an existing Kubernetes cluster<a class="headerlink" href="#install-only-software-into-an-existing-kubernetes-cluster" title="Permanent link">&para;</a></h2>
-<p>To install AMD Enterprise AI Suite in an existing Kubernetes cluster, download a Cluster Forge release package and run <code>deploy.sh</code>. This assumes there is a working Kubernetes cluster to deploy into, and the current Kubeconfig context refers to that cluster.</p>
+<p>To install AMD Enterprise AI platform in an existing Kubernetes cluster, download a Cluster Forge release package and run <code>deploy.sh</code>. This assumes there is a working Kubernetes cluster to deploy into, and the current Kubeconfig context refers to that cluster.</p>
 <p>For the Cluster Forge <code>deploy</code> release:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>wget https://github.com/silogen/cluster-forge/releases/download/deploy/deploy-release.tar.gz
 <a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>tar -xzvf deploy-release.tar.gz
