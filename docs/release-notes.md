@@ -17,8 +17,6 @@ For details, see documentation: https://docs.silogen.ai/
 - **Inference API:** Deploy models for inference behind API Gateway, for both community models and custom models fine-tuned on the platform
 - **Workspaces:** Deploy VSCode, JupyterLab or ComfyUI workspaces with pre-allocated compute resources
 
----
-
 ### Known Issues
 - **Delays in JupyterLab Workspace** It takes about 30 seconds after the launch button gets activated before the JupyterLab can actually be launched.
 - **Community Models document link is not pointing to right document after download**
