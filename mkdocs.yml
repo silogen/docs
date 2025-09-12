@@ -45,6 +45,7 @@ theme:
 plugins:
   - search
   - tags
+  - macros
   # - with-pdf
 
   - redirects:
