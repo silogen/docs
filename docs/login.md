@@ -4,9 +4,9 @@ tags:
   - keycloak
 ---
 
-# Login to the AMD Enterprise AI Suite
+# Login to the platform
 
-Users log in to the AMD Enterprise AI Suite platform at their dedicated URL address, for example, `your-suite.ai`. Entering the address in your browser's address bar takes you to the login page. The page has a button called "Sign in with Keycloak," which takes you to the authentication service.
+Users log in to the platform at their dedicated URL address, for example, `your-domaine.ai`. Entering the address in your browser's address bar takes you to the login page. The page has a button called "Sign in with Keycloak," which takes you to the authentication service.
 
 ![Login screen to AMD Resource Manager first asks users for their email address.](./media/login-screen-01.png)
 
@@ -22,4 +22,4 @@ The platform uses [Keycloak](https://www.keycloak.org/) to authenticate users. K
 
 ## Other login measures
 
-The AMD Enterprise AI Suite can be modified to utilize other login methods, such as working in an internal network through a VPN.
+{{ name }} can be modified to utilize other login methods, such as working in an internal network through a VPN.

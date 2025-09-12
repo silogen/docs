@@ -6,7 +6,7 @@ tags:
 
 # Personal Preferences
 
-AMD Enterprise AI Suite platform has several settings the users can adjust to change their user experience.
+{{ name }} platform has several settings the users can adjust to change their user experience.
 
 ## Color theme
 

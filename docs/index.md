@@ -1,6 +1,6 @@
-# AMD Enterprise AI Suite Documentation
+# {{ name }} Documentation
 
-Welcome to the documentation for AMD Enterprise AI Suite. Enterprises striving to scale AI often encounter roadblocks that increase costs, slow innovation, and limit impact. The AMD Enterprise AI stack is built to overcome these challenges and unlock the full potential of AI across the enterprise.
+Welcome to the documentation for {{ name }}. Enterprises striving to scale AI often encounter roadblocks that increase costs, slow innovation, and limit impact. The AMD Enterprise AI stack is built to overcome these challenges and unlock the full potential of AI across the enterprise.
 
 This is your comprehensive handbook designed to help infrastructure administrators, AI practitioners, and AI resource managers successfully deploy, manage, and run AI workloads on AMD compute. The guide provides step-by-step instructions for installing and configuring the necessary software, as well as practical tutorials and use cases to help you run AI workloads efficiently on a scalable Kubernetes platform.
 
@@ -16,7 +16,7 @@ This is your comprehensive handbook designed to help infrastructure administrato
 
       <ul class="intro-links">
         <li>
-          <a href="./platform-overview/">AMD Enterprise AI Suite overview</a>
+          <a href="./platform-overview/">Platform overview</a>
         </li>
         <li>
           <a href="./quick-start/">Quick start guide</a>

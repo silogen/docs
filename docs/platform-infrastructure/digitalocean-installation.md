@@ -1,6 +1,6 @@
 # Installation on DigitalOcean Cloud
 
-This article explains how to install AMD Enterprise AI Suite in DigitalOcean cloud environment. The article complements the [full installation article](./on-premises-installation.md) by describing the DigitalOcean specific installation configuration. For more details about the installation steps, refer to the full installation article.
+This article explains how to install {{ name }} in DigitalOcean cloud environment. The article complements the [full installation article](./on-premises-installation.md) by describing the DigitalOcean specific installation configuration. For more details about the installation steps, refer to the full installation article.
 
 ## Prerequisites
 
