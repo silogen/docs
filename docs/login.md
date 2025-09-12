@@ -6,7 +6,7 @@ tags:
 
 # Login to the platform
 
-Users log in to the platform at their dedicated URL address, for example, `your-domaine.ai`. Entering the address in your browser's address bar takes you to the login page. The page has a button called "Sign in with Keycloak," which takes you to the authentication service.
+Users log in to the platform at their dedicated URL address, for example, `your-domain.ai`. Entering the address in your browser's address bar takes you to the login page. The page has a button called "Sign in with Keycloak," which takes you to the authentication service.
 
 ![Login screen to AMD Resource Manager first asks users for their email address.](./media/login-screen-01.png)
 
