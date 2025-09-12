@@ -2,6 +2,5 @@ mkdocs>=1.6.0
 mkdocs-material>=9.6.0
 pymdown-extensions>=9.0
 mkdocs-include-markdown-plugin>=7.1.4
-mkdocs-with-pdf>=0.9.3
 mkdocs-redirects>=1.2.2
 mkdocs-macros-plugin>=1.3.9

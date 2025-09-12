@@ -46,7 +46,6 @@ plugins:
   - search
   - tags
   - macros
-  # - with-pdf
 
   - redirects:
       redirect_maps:
