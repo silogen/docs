@@ -8,7 +8,7 @@ tags:
 
 # Inviting Users and Configuring SMTP in Keycloak
 
-This is a guide for configuring an SMTP server in Keycloak, which is a prerequisite for inviting users to AMD Enterprise AI Suite via the application.
+This is a guide for configuring an SMTP server in Keycloak, which is a prerequisite for inviting users to platform via the application.
 
 ## Prerequisites
 

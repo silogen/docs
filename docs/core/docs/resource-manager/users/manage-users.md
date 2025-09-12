@@ -7,7 +7,7 @@ tags:
 
 # Manage Users
 
-Users enter the AMD Enterprise AI Suite with their email address after being granted access. User management takes place in the Access control section found in the navigation.
+Users enter the {{ name_secondary }} with their email address after being granted access. User management takes place in the Access control section found in the navigation.
 
 ## Main view
 

@@ -11,7 +11,7 @@ Training AI models and developing your own models are essential parts of AI work
 
 In short, an AI model requires data for training it properly. The model applies learned patterns to analyze new inputs. With new data, the model generates predictions, classifications, or other types of responses. In the end, the results are used to make decisions and provide services.
 
-AMD Enterprise AI Suite has user-friendly features for experimentation and deploying AI models.
+The features of {{ name }} are designed to be user-friendly, with a focus on experimentation and deploying AI models.
 
 ## Chat
 

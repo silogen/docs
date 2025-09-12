@@ -25,7 +25,7 @@ The AMD AI Workbench provides developers with [tools and frameworks](./workspace
 
 ### Training & fine-tuning
 
-[Fine-tuning](./training/fine-tuning.md) a model allows developers to customize it for their specific use case and data. AMD AI Workbench Suite provides a certified list of base models that developers can fine-tune, and allows customization of certain hyperparameters to achieve the best results.
+[Fine-tuning](./training/fine-tuning.md) a model allows developers to customize it for their specific use case and data. AMD AI Workbench provides a certified list of base models that developers can fine-tune, and allows customization of certain hyperparameters to achieve the best results.
 
 ### Chat and compare
 
