@@ -1011,6 +1011,39 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#workspace-scoping" class="md-nav__link">
+    <span class="md-ellipsis">
+      Workspace Scoping
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Workspace Scoping">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#project-scoped-workspaces" class="md-nav__link">
+    <span class="md-ellipsis">
+      Project-Scoped Workspaces
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#user-scoped-workspaces" class="md-nav__link">
+    <span class="md-ellipsis">
+      User-Scoped Workspaces
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2864,6 +2897,39 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#workspace-scoping" class="md-nav__link">
+    <span class="md-ellipsis">
+      Workspace Scoping
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Workspace Scoping">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#project-scoped-workspaces" class="md-nav__link">
+    <span class="md-ellipsis">
+      Project-Scoped Workspaces
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#user-scoped-workspaces" class="md-nav__link">
+    <span class="md-ellipsis">
+      User-Scoped Workspaces
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2913,6 +2979,21 @@
 <p>From the deployment view, you can change the workspace name if you wish. The default resource allocation should be sufficient for most workspaces, but it is possible to customize these settings if needed.</p>
 <p>Once the values have been set, press "Quick deploy" to deploy the workspace. It may take a while for the workspace to start, but once it has started, the deployment overlay will show a "Launch" button, which can be used to access the workspace. The workspace can also be accessed later from the <a href="../workloads/#open-workspace">workloads</a> page.</p>
 <p><img alt="Workspace deployed successfully" src="../../img/ai-development/workspaces-deployed-success.png" /></p>
+<h2 id="workspace-scoping">Workspace Scoping<a class="headerlink" href="#workspace-scoping" title="Permanent link">&para;</a></h2>
+<p>Workspaces are categorized by their scope, which determines how they're shared and limited within projects:</p>
+<h3 id="project-scoped-workspaces">Project-Scoped Workspaces<a class="headerlink" href="#project-scoped-workspaces" title="Permanent link">&para;</a></h3>
+<p>Some workspace types are project-scoped, meaning:</p>
+<ul>
+<li><strong>One per project</strong>: Only one workspace of this type can be active (running or pending) per project at any time</li>
+<li><strong>Shared access</strong>: All project members can access the same workspace instance</li>
+<li><strong>Creation limits</strong>: Attempting to create a second workspace of the same type will result in an error until the existing one completes or fails</li>
+</ul>
+<h3 id="user-scoped-workspaces">User-Scoped Workspaces<a class="headerlink" href="#user-scoped-workspaces" title="Permanent link">&para;</a></h3>
+<p>Other workspace types are user-scoped, meaning:</p>
+<ul>
+<li><strong>Individual ownership</strong>: Each user creates and owns their workspace instances</li>
+<li><strong>Multiple instances</strong>: Users can create multiple workspaces of these types simultaneously</li>
+</ul>
 
 
 
