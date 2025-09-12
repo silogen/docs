@@ -6,9 +6,9 @@ tags:
   - kubernetes
 ---
 
-# Install AMD Enterprise AI Suite on Premises
+# Install {{ name_secondary }} on Premises
 
-This article explains how to install AMD Enterprise AI Suite in an on-premises environment, covering the full stack from metal to application layer in a streamlined manner. The platform runs on top of Kubernetes orchestration platform and includes essential Kubernetes components for monitoring, secrets management, and certificate management.
+This article explains how to install {{ name }} in an on-premises environment, covering the full stack from metal to application layer in a streamlined manner. The platform runs on top of Kubernetes orchestration platform and includes essential Kubernetes components for monitoring, secrets management, and certificate management.
 
 The installation process leverages helper tools called Cluster Bloom and Cluster Forge that deploy and configure all necessary platform components, preparing a Kubernetes cluster for executing AI workloads.
 
@@ -32,7 +32,7 @@ The installation process leverages helper tools called Cluster Bloom and Cluster
 
 ## Install Kubernetes cluster and software
 
-You will use an installation script called Cluster Bloom to install and configure a Kubernetes cluster and install the AMD Enterprise AI Suite. It installs the following features to prepare an AMD GPU node to be part of a Kubernetes cluster:
+You will use an installation script called Cluster Bloom to install and configure a Kubernetes cluster and install the platform. It installs the following features to prepare an AMD GPU node to be part of a Kubernetes cluster:
 
 - Automated RKE2 Kubernetes cluster deployment
 - ROCm setup and configuration for AMD GPU nodes
@@ -179,7 +179,7 @@ kubectl create secret generic hf-token \
     -n demo
 ```
 
-### 7. Login to AMD Enterprise AI Suite
+### 7. Login
 
 To confirm that the installation was successful, ensure you are able to log in to the AMD AI Workbench.
 
@@ -192,7 +192,7 @@ See more details about login [here](../login.md).
 
 ## Install only software into an existing Kubernetes cluster
 
-To install AMD Enterprise AI Suite in an existing Kubernetes cluster, download a Cluster Forge release package and run `deploy.sh`. This assumes there is a working Kubernetes cluster to deploy into, and the current Kubeconfig context refers to that cluster.
+To install {{ name_secondary }} in an existing Kubernetes cluster, download a Cluster Forge release package and run `deploy.sh`. This assumes there is a working Kubernetes cluster to deploy into, and the current Kubeconfig context refers to that cluster.
 
 For the Cluster Forge `deploy` release:
 

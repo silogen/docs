@@ -1,4 +1,4 @@
-# AMD Enterprise AI Suite documentation
+# AMD Resource Manager & AMD AI Workbench documentation
 
 The documentation for this project is built using MkDocs with the Material theme. The documentation utilizes Github actions which import Markdown files from multiple sources into this consolidated documentation repository.
 

@@ -1,5 +1,5 @@
-site_name: AMD Enterprise AI Suite documentation
-site_description: Documentation for AMD Enterprise AI Suite
+site_name: AMD Resource Manager & AMD AI Workbench documentation
+site_description: Documentation for AMD Resource Manager & AMD AI Workbench
 repo_url: https://github.com/silogen/docs
 docs_dir: docs
 
@@ -45,7 +45,7 @@ theme:
 plugins:
   - search
   - tags
-  # - with-pdf
+  - macros
 
   - redirects:
       redirect_maps:
@@ -159,6 +159,10 @@ nav:
   - References:
     - References: references/overview.md
     - Tags: references/tags.md
+
+extra:
+  name: AMD Resource Manager & AMD AI Workbench
+  name_secondary: AMD Enterprise AI platform
 
 extra_css:
   - stylesheets/extra.css
