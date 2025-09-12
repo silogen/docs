@@ -78,50 +78,50 @@ markdown_extensions:
 nav:
   - Introduction:
     - Home: index.md
-    - Platform overview: platform-overview.md
-    - Target audience: target-audience.md
-    - Quick start guide: quick-start.md
-    - General topics:
-      - Login to the platform: login.md
-      - Personal preferences: personal-preferences.md
+    - Platform Overview: platform-overview.md
+    - Target Audience: target-audience.md
+    - Quick Start Guide: quick-start.md
+    - General Topics:
+      - Login to the Platform: login.md
+      - Personal Preferences: personal-preferences.md
 
-  - Infrastructure administrator:
+  - Infrastructure Administrator:
     - Installation:
-      - Supported environments: platform-infrastructure/supported-environments.md
-      - On-premises installation: platform-infrastructure/on-premises-installation.md
-      - DigitalOcean cloud installation: platform-infrastructure/digitalocean-installation.md
+      - Supported Environments: platform-infrastructure/supported-environments.md
+      - On-premises Installation: platform-infrastructure/on-premises-installation.md
+      - DigitalOcean Cloud Installation: platform-infrastructure/digitalocean-installation.md
 
-  - AI practitioner:
-    - AMD AI Workbench overview: core/docs/workbench/overview.md
-    - Quick start for AI practitioners: quick-start-guides/workbench-quick-start.md
+  - AI Practitioner:
+    - AMD AI Workbench Overview: core/docs/workbench/overview.md
+    - Quick Start for AI Practitioners: quick-start-guides/workbench-quick-start.md
     - Workspaces: core/docs/workbench/workspaces.md
     - Workloads: core/docs/workbench/workloads.md
 
-    - Training and fine-tuning:
+    - Training and Fine-tuning:
       - Fine-tuning: core/docs/workbench/training/fine-tuning.md
       - Models: core/docs/workbench/training/models.md
       - Datasets: core/docs/workbench/training/datasets.md
 
     - Inference:
-      - Inference overview: core/docs/workbench/inference/overview.md
-      - Chat with models: core/docs/workbench/inference/chat.md
-      - Compare models: core/docs/workbench/inference/compare.md
+      - Inference Overview: core/docs/workbench/inference/overview.md
+      - Chat with Models: core/docs/workbench/inference/chat.md
+      - Compare Models: core/docs/workbench/inference/compare.md
 
     - Tutorials:
-      - GUI access:
-        - Low-code fine-tuning tutorial: tutorials/low-code-fine-tuning-tutorial.md
-        - AI workspace tutorial: tutorials/ai-workspace-tutorial.md
-        - Deploy a model and run inference: core/docs/workbench/inference/how-to-deploy-and-inference.md
-      - CLI access:
-        - CLI tutorials overview: cli-tutorials-overview.md
-        - Prerequisites for running the tutorials: ai-workloads-docs/tutorials/tutorial-00-prerequisites.md
-        - Deliver resources and fine-tune: ai-workloads-docs/tutorials/tutorial-01-deliver-resources-and-finetune.md
-        - Language extension - Odia fine-tuning: ai-workloads-docs/tutorials/tutorial-02-language-extension-finetune.md
+      - GUI Access:
+        - Low-code Fine-tuning Tutorial: tutorials/low-code-fine-tuning-tutorial.md
+        - AI Workspace Tutorial: tutorials/ai-workspace-tutorial.md
+        - Deploy a Model and Run Inference: core/docs/workbench/inference/how-to-deploy-and-inference.md
+      - CLI Access:
+        - CLI Tutorials Overview: cli-tutorials-overview.md
+        - Prerequisites for Running the Tutorials: ai-workloads-docs/tutorials/tutorial-00-prerequisites.md
+        - Deliver Resources and Fine-tune: ai-workloads-docs/tutorials/tutorial-01-deliver-resources-and-finetune.md
+        - Language Extension - Odia Fine-tuning: ai-workloads-docs/tutorials/tutorial-02-language-extension-finetune.md
         - Continuous Pretraining of Llama-3.1-8B: ai-workloads-docs/tutorials/tutorial-03-deliver-resources-and-run-megatron-cpt.md
         - Continuous Pretraining of Llama-3.1-70B: ai-workloads-docs/tutorials/tutorial-04-deliver-llama70b-and-run-megatron-cpt-with-tp8-ddp2.md
 
-    - Reference AI workloads:
-      - Workloads overview: ai-workloads-manifests/workloads-overview.md
+    - Reference AI Workloads:
+      - Workloads Overview: ai-workloads-manifests/workloads-overview.md
       - dev-chatui-openwebui: ai-workloads-manifests/dev-chatui-openwebui/helm/README.md
       - dev-openvscode-server: ai-workloads-manifests/dev-workspace-vscode/helm/README.md
       - dev-text2image-comfyui: ai-workloads-manifests/dev-text2image-comfyui/helm/README.md
@@ -136,25 +136,25 @@ nav:
       - llm-inference-vllm: ai-workloads-manifests/llm-inference-vllm/helm/README.md
       - llm-inference-vllm-benchmark-mad: ai-workloads-manifests/llm-inference-vllm-benchmark-mad/helm/README.md
 
-  - AI resource manager:
-    - AMD Resource Manager overview: core/docs/resource-manager/overview.md
-    - Quick start for AI resource managers: quick-start-guides/resource-manager-quick-start.md
+  - AI Resource Manager:
+    - AMD Resource Manager Overview: core/docs/resource-manager/overview.md
+    - Quick Start for AI Resource Managers: quick-start-guides/resource-manager-quick-start.md
     - Dashboard: core/docs/resource-manager/dashboard.md
     - Clusters:
-      - Clusters overview: core/docs/resource-manager/clusters/overview.md
+      - Clusters Overview: core/docs/resource-manager/clusters/overview.md
     - Projects:
-      - Projects overview: core/docs/resource-manager/projects/manage-projects.md
-      - Project dashboard: core/docs/resource-manager/projects/project-dashboard.md
-      - Project quotas: core/docs/resource-manager/projects/project-quotas.md
-    - User management:
-      - Users overview: core/docs/resource-manager/users/overview.md
-      - Set up user management:
-        - Enable single sign-on: core/docs/keycloak/sso.md
-        - Configure SMTP and invite users: core/docs/keycloak/smtp-configuration.md
-        - Add users manually: core/docs/keycloak/manual-user-management.md
-      - Manage users: core/docs/resource-manager/users/manage-users.md
+      - Projects Overview: core/docs/resource-manager/projects/manage-projects.md
+      - Project Dashboard: core/docs/resource-manager/projects/project-dashboard.md
+      - Project Quotas: core/docs/resource-manager/projects/project-quotas.md
+    - User Management:
+      - Users Overview: core/docs/resource-manager/users/overview.md
+      - Set up User Management:
+        - Enable Single Sign-on: core/docs/keycloak/sso.md
+        - Configure SMTP and Invite Users: core/docs/keycloak/smtp-configuration.md
+        - Add Users Manually: core/docs/keycloak/manual-user-management.md
+      - Manage Users: core/docs/resource-manager/users/manage-users.md
     - Tutorials:
-        - Resource utilization: tutorials/resource-utilization.md
+        - Resource Utilization: tutorials/resource-utilization.md
 
   - References:
     - References: references/overview.md
@@ -196,4 +196,3 @@ exclude_docs: |
   ai-workloads-manifests/llm-inference-vllm/helm/mount/README.md
   ai-workloads-manifests/llm-pretraining-megatron-lm/helm/mount/README.md
   ai-workloads-manifests/rag-embedding-infinity/helm/mount/README.md
-
