@@ -2996,6 +2996,9 @@
 <li><strong>When downloading models from the Community Models page, the state of the UI card might not update to "Deploy"</strong> A page refresh is then needed.</li>
 <li><strong>Only one cluster is supported</strong> the GUI suggests that another cluster can be onboarded, but this is not yet fully supported.</li>
 <li><strong>Kubectl usage for workload deployment needs workaround</strong> the AI Resource manager currently does not manage those workloads. This is coming in next release. If you need this now, we can share a workaround that may be sufficient for some teams of cooperative users</li>
+<li><strong>The usage of SMTP based functionality</strong> to invite users requires the following additional configuration, in addition to the configuration highlighted here:</li>
+<li><strong>In the API deployment</strong>, the POST_REGISTRATION_REDIRECT_URL needs to be changed to https://airmui. instead of https://airm.</li>
+<li><strong>In the keycloak AIRM Admin API Client</strong>, the redirectUris needs to include the new POST_REGISTRATION_REDIRECT_URL with a * at the end.</li>
 </ul>
 
 
