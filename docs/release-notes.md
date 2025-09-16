@@ -28,5 +28,5 @@ For details, see documentation: https://docs.silogen.ai/
 - **Only one cluster is supported** the GUI suggests that another cluster can be onboarded, but this is not yet fully supported.
 - **Kubectl usage for workload deployment needs workaround** the AI Resource manager currently does not manage those workloads. This is coming in next release. If you need this now, we can share a workaround that may be sufficient for some teams of cooperative users
 - **The usage of SMTP based functionality** to invite users requires the following additional configuration, in addition to the configuration highlighted here:
-  - **In the API deployment**, the POST_REGISTRATION_REDIRECT_URL needs to be changed to https://airmui. instead of https://airm.
-  - **In the keycloak AIRM Admin API Client**, the redirectUris needs to include the new POST_REGISTRATION_REDIRECT_URL with a * at the end.
+    - **In the API deployment**, the POST_REGISTRATION_REDIRECT_URL needs to be changed to https://airmui. instead of https://airm.
+    - **In the keycloak AIRM Admin API Client**, the redirectUris needs to include the new POST_REGISTRATION_REDIRECT_URL with a * at the end.
