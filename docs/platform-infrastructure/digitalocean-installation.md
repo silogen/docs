@@ -21,7 +21,7 @@ In order to install on a DigitalOcean droplet, copy the following text into a fi
 ```
 DOMAIN: <your-ip-address>.nip.io
 CERT_OPTION: generate
-CLUSTERFORGE_RELEASE: https://github.com/silogen/cluster-forge/releases/download/v2025.09.001-rc-enterprise/release-enterprise-v2025.09.001-rc.tar.gz
+CLUSTERFORGE_RELEASE: https://github.com/silogen/cluster-forge/releases/download/v2025.09.001-enterprise/release-enterprise-v2025.09.001.tar.gz
 FIRST_NODE: true
 GPU_NODE: true
 SKIP_DISK_CHECK: false
