@@ -54,6 +54,7 @@ plugins:
         'core/docs/resource-manager/index.md': 'core/docs/resource-manager/overview.md'
         'core/docs/resource-manager/clusters/index.md': 'core/docs/resource-manager/clusters/overview.md'
         'core/docs/resource-manager/projects/index.md': 'core/docs/resource-manager/projects/manage-projects.md'
+        'core/docs/resource-manager/secrets/index.md': 'core/docs/resource-manager/secrets/overview.md'
         'core/docs/resource-manager/users/index.md': 'core/docs/resource-manager/users/overview.md'
         'platform-infrastructure/index.md': 'platform-infrastructure/supported-environments.md'
         'references/index.md': 'references/overview.md'
@@ -147,6 +148,9 @@ nav:
       - Projects Overview: core/docs/resource-manager/projects/manage-projects.md
       - Project Dashboard: core/docs/resource-manager/projects/project-dashboard.md
       - Project Quotas: core/docs/resource-manager/projects/project-quotas.md
+    - Secrets:
+      - Secrets Overview: core/docs/resource-manager/secrets/overview.md
+      - Manage Secrets: core/docs/resource-manager/secrets/manage-secrets.md
     - User Management:
       - Users Overview: core/docs/resource-manager/users/overview.md
       - Set up User Management:
