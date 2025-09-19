@@ -7,17 +7,17 @@ tags:
 
 # Quick Start Guide for AI Practitioners
 
-{{ name }} provides a stable starting point for AI model development, fine-tuning, and inference with the help of an easy-to-use model catalog and AI developer workspaces. To work efficiently in the platform, an AI developer should have some experience with AI terminology and a general understanding of typical AI development workflows.
+AMD Resource Manager & AMD AI Workbench provides a stable starting point for AI model development, fine-tuning, and inference with the help of an easy-to-use model catalog and AI developer workspaces. To work efficiently in the platform, an AI developer should have some experience with AI terminology and a general understanding of typical AI development workflows.
 
 ## Prerequisites
 
-This guide assumes the user has access to an installed {{ name_secondary }}. Besides that, you should have access to compute cluster and a project with allocated compute resources.
+This guide assumes the user has access to an installed AMD Enterprise AI platform. Besides that, you should have access to compute cluster and a project with allocated compute resources.
 
 **Your system needs a Hugging Face token to download models.**
 
 ## Getting started
 
-1. Activate your account and login to the {{ name_secondary }}.
+1. Activate your account and login to the AMD Enterprise AI platform.
 2. Complete the model fine-tuning tutorial to get hands-on with the AMD AI Workbench.
 3. Browse through the AMD AI Workbench end user documentation in order to familiarize yourself with the AMD AI Workbench features.
 

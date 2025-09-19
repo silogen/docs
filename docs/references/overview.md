@@ -1,6 +1,5 @@
 # References
 
-
 - AI workloads: [https://github.com/silogen/ai-workloads](https://github.com/silogen/ai-workloads)
 - Cluster Bloom: [https://github.com/silogen/cluster-bloom](https://github.com/silogen/cluster-bloom)
 - Cluster Forge: [https://github.com/silogen/cluster-forge](https://github.com/silogen/cluster-forge)
