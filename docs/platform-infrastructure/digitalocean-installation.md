@@ -1,3 +1,9 @@
+<!--
+Copyright © Advanced Micro Devices, Inc., or its affiliates.
+
+SPDX-License-Identifier: MIT
+-->
+
 # Installation on DigitalOcean Cloud
 
 This article explains how to install {{ name }} in DigitalOcean cloud environment. The article complements the [full installation article](./on-premises-installation.md) by describing the DigitalOcean specific installation configuration. For more details about the installation steps, refer to the full installation article.

@@ -4,6 +4,11 @@ tags:
   - resource management
   - tutorial
 ---
+<!--
+Copyright © Advanced Micro Devices, Inc., or its affiliates.
+
+SPDX-License-Identifier: MIT
+-->
 
 # Resource Utilization of AI Workloads
 

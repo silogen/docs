@@ -5,6 +5,11 @@ tags:
   - demo environment
   - kubernetes
 ---
+<!--
+Copyright © Advanced Micro Devices, Inc., or its affiliates.
+
+SPDX-License-Identifier: MIT
+-->
 
 # Install {{ name_secondary }} on Premises
 
