@@ -1,15 +1,13 @@
-<!--
-Copyright © Advanced Micro Devices, Inc., or its affiliates.
-
-SPDX-License-Identifier: MIT
--->
-
 ---
 tags:
   - projects
   - AMD Resource Manager
 ---
+<!--
+Copyright © Advanced Micro Devices, Inc., or its affiliates.
 
+SPDX-License-Identifier: MIT
+-->
 # Project Dashboard
 
 The project dashboard breaks down all the attributes of a project into an easy to read user interface. This is also the page from which to edit the project details.

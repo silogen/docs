@@ -1,16 +1,14 @@
-<!--
-Copyright © Advanced Micro Devices, Inc., or its affiliates.
-
-SPDX-License-Identifier: MIT
--->
-
 ---
 tags:
   - AMD AI Workbench
   - datasets
   - fine-tuning
 ---
+<!--
+Copyright © Advanced Micro Devices, Inc., or its affiliates.
 
+SPDX-License-Identifier: MIT
+-->
 # Datasets
 
 AMD AI Workbench allows you to create and manage datasets on the platform for fine-tuning purposes. Datasets are collections of data points, where each data point represents a conversation, with or without the model's expected response, depending on the use case.

@@ -1,15 +1,13 @@
-<!--
-Copyright © Advanced Micro Devices, Inc., or its affiliates.
-
-SPDX-License-Identifier: MIT
--->
-
 ---
 tags:
   - secrets
   - AMD Resource Manager
 ---
+<!--
+Copyright © Advanced Micro Devices, Inc., or its affiliates.
 
+SPDX-License-Identifier: MIT
+-->
 # Manage Secrets
 
 Secrets in the platform provide a secure way to store sensitive information such as API keys, database credentials, or tokens. They are created at the organizational level and can then be assigned to one or more projects. This ensures workloads always have the credentials they need without exposing them directly in code or manifests.

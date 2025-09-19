@@ -1,15 +1,14 @@
-<!--
-Copyright © Advanced Micro Devices, Inc., or its affiliates.
-
-SPDX-License-Identifier: MIT
--->
-
 ---
 tags:
   - AMD Resource Manager
   - quota
   - project
 ---
+<!--
+Copyright © Advanced Micro Devices, Inc., or its affiliates.
+
+SPDX-License-Identifier: MIT
+-->
 
 # Project Quotas Overview
 

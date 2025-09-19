@@ -1,15 +1,13 @@
-<!--
-Copyright © Advanced Micro Devices, Inc., or its affiliates.
-
-SPDX-License-Identifier: MIT
--->
-
 ---
 tags:
   - projects
   - AMD Resource Manager
 ---
+<!--
+Copyright © Advanced Micro Devices, Inc., or its affiliates.
 
+SPDX-License-Identifier: MIT
+-->
 # Manage Projects
 
 Projects help you organize and manage your work in the platform. Each project is isolated from others, meaning resources, workloads, and secrets in one project are not accessible from another. This ensures security and clear boundaries for your work.

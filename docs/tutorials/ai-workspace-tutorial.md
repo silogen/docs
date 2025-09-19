@@ -4,6 +4,11 @@ tags:
   - workspaces
   - tutorial
 ---
+<!--
+Copyright © Advanced Micro Devices, Inc., or its affiliates.
+
+SPDX-License-Identifier: MIT
+-->
 
 # Working in AI Workspaces Hands On
 

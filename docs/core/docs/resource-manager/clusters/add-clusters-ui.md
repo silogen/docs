@@ -1,16 +1,14 @@
-<!--
-Copyright © Advanced Micro Devices, Inc., or its affiliates.
-
-SPDX-License-Identifier: MIT
--->
-
 ---
 tags:
   - AMD Resource Manager
   - cluster
   - add cluster
 ---
+<!--
+Copyright © Advanced Micro Devices, Inc., or its affiliates.
 
+SPDX-License-Identifier: MIT
+-->
 # Create a New Cluster in the UI
 
 This article explains how to create a new cluster in the AMD Resource Manager user interface.

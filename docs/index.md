@@ -1,3 +1,9 @@
+<!--
+Copyright © Advanced Micro Devices, Inc., or its affiliates.
+
+SPDX-License-Identifier: MIT
+-->
+
 # {{ name }} Documentation
 
 Welcome to the documentation for {{ name }}. Enterprises striving to scale AI often encounter roadblocks that increase costs, slow innovation, and limit impact. {{ name_secondary }} is built to overcome these challenges and unlock the full potential of AI across the enterprise. In the documentation we will refer to the {{ name }} as either *{{ name_secondary }}* or simply *platform*.

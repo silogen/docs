@@ -1,15 +1,13 @@
-<!--
-Copyright © Advanced Micro Devices, Inc., or its affiliates.
-
-SPDX-License-Identifier: MIT
--->
-
 ---
 tags:
   - AMD AI Workbench
   - fine-tuning
 ---
+<!--
+Copyright © Advanced Micro Devices, Inc., or its affiliates.
 
+SPDX-License-Identifier: MIT
+-->
 # Fine-tuning
 
 Fine-tuning a model allows you to customize it for your specific use case with your data. We provide a certified list of base models that you can fine-tune, and allow you to customize certain hyperparameters to achieve the best results.

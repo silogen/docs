@@ -1,9 +1,3 @@
-<!--
-Copyright © Advanced Micro Devices, Inc., or its affiliates.
-
-SPDX-License-Identifier: MIT
--->
-
 ---
 tags:
   - secrets
@@ -14,7 +8,11 @@ tags:
   - azure
   - AMD Resource Manager
 ---
+<!--
+Copyright © Advanced Micro Devices, Inc., or its affiliates.
 
+SPDX-License-Identifier: MIT
+-->
 # Secrets Overview
 
 Secrets provide a centralized and secure mechanism for storing, retrieving, and distributing sensitive data—such as API keys, database credentials, and access tokens—across projects, ensuring workloads can access them safely when needed.

@@ -4,6 +4,11 @@ tags:
   - fine-tuning
   - tutorial
 ---
+<!--
+Copyright © Advanced Micro Devices, Inc., or its affiliates.
+
+SPDX-License-Identifier: MIT
+-->
 
 # Fine-tune a Model with Low Code
 

@@ -4,6 +4,11 @@ tags:
   - resource management
   - AMD Resource Manager
 ---
+<!--
+Copyright © Advanced Micro Devices, Inc., or its affiliates.
+
+SPDX-License-Identifier: MIT
+-->
 
 # Quick Start Guide for AI Resource Managers
 
