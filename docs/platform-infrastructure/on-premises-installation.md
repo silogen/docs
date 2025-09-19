@@ -187,7 +187,7 @@ See more details about login [here](../login.md).
 
 ## Install software into an existing Kubernetes cluster
 
-To install {{ name_secondary }} in an existing Kubernetes cluster, download a Cluster Forge release package and run `deploy.sh`. This assumes there is a working Kubernetes cluster to deploy into, and the current Kubeconfig context refers to that cluster.
+To install AMD Enterprise AI platform in an existing Kubernetes cluster, download a Cluster Forge release package and run `deploy.sh`. This assumes there is a working Kubernetes cluster to deploy into, and the current Kubeconfig context refers to that cluster.
 
 Run following commands to install the software:
 
