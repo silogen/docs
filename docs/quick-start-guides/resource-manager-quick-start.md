@@ -33,7 +33,7 @@ This guide assumes you have access to an installed platform. To assist you with 
 
 - Platform admin users have already been created for your organization as part of the installation process. These are named `devuser@domain` and `silogen-admin`. The platform admin user can manage the platform and onboard more users.
 - An organization entity has been created.
-- A compute cluster has been onboarded and connected to {{ name_secondary }}.
+- A compute cluster has been onboarded and connected to AMD Enterprise AI platform.
 - A project with a resource quota has been created.
 
 ## Getting started
@@ -43,7 +43,7 @@ This section outlines the steps to set up essential AI compute resources for pro
 ### Onboard users
 
 !!! note
-    {{ name }} provides multiple options for onboarding users into the platform. For small-scale trial deployments you can invite users through email or add them manually, but for large scale deployments we recommend using single sign-on (SSO).
+    AMD Resource Manager & AMD AI Workbench provides multiple options for onboarding users into the platform. For small-scale trial deployments you can invite users through email or add them manually, but for large scale deployments we recommend using single sign-on (SSO).
 
 #### Invite users through email
 
