@@ -1,0 +1,32 @@
+name: Copy docs folder contents to the new docs repo
+# We rsync the docs directory to a new documentation repository following AMD documentation practices
+# and commit and push the changes to the main branch of the new repo. Purpose is this repo as the main source of documentation information during the migration.
+
+on:
+  push:
+    branches:
+      - feature/sphinx_migration
+    paths:
+      - "docs/**"
+      - ".github/workflows/migration-copy-files.yml"
+
+jobs:
+  copy-docs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout docs repo
+        uses: actions/checkout@v5
+
+      - name: Push to the new docs repo
+        run: |
+          git config --global user.name 'GitHub Actions'
+          git config --global user.email 'actions@github.com'
+          git clone https://x-access-token:${{ secrets.DOCS_REPO_TOKEN }}@github.com/silogen/docs.git source_original_docs
+          git clone https://x-access-token:${{ secrets.DOCS_REPO_TOKEN }}@github.com/silogen/AMDEnterpriseAISuiteDocs.git target_amd_docs
+          cd target_amd_docs
+          rsync -av --delete --exclude='.git' ../source_original_docs/docs AMDEnterpriseAISuiteDocs/docs
+          git add .
+          git diff --staged --quiet || git commit -m "Update docs from the original source repo"
+          git push origin main
+        env:
+          DOCS_REPO_TOKEN: ${{ secrets.DOCS_REPO_TOKEN }}
