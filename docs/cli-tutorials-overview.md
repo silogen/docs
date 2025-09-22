@@ -4,11 +4,6 @@ tags:
   - tutorial
   - model training
 ---
-<!--
-Copyright © Advanced Micro Devices, Inc., or its affiliates.
-
-SPDX-License-Identifier: MIT
--->
 
 # Command-line Tutorials
 
