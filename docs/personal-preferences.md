@@ -1,8 +1,5 @@
----
-tags:
-  - color theme
-  - preferences
----
+```{tags} color theme, preferences
+```
 
 # Personal Preferences
 

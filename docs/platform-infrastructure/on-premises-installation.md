@@ -1,10 +1,5 @@
----
-tags:
-  - platform
-  - installation
-  - demo environment
-  - kubernetes
----
+```{tags} platform, installation, demo environment, kubernetes
+```
 
 # Install AMD Enterprise AI platform on Premises
 

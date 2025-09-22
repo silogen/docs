@@ -1,9 +1,5 @@
----
-tags:
-  - contributing
-  - git
-  - python
----
+```{tags} contributing, git, python
+```
 
 # Contributing
 

@@ -1,9 +1,5 @@
----
-tags:
-  - AMD Resource Manager
-  - resource management
-  - tutorial
----
+```{tags} AMD Resource Manager, resource management, tutorial
+```
 
 # Resource Utilization of AI Workloads
 

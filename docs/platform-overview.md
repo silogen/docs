@@ -1,9 +1,5 @@
----
-tags:
-  - platform
-  - introduction
-  - features
----
+```{tags} platform, introduction, features
+```
 
 # Overview of AMD Resource Manager & AMD AI Workbench
 

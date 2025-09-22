@@ -1,9 +1,5 @@
----
-tags:
-  - quick start
-  - resource management
-  - AMD Resource Manager
----
+```{tags} quick start, resource management, AMD Resource Manager
+```
 
 # Quick Start Guide for AI Resource Managers
 

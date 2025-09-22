@@ -1,9 +1,5 @@
----
-tags:
-  - platform
-  - installation
-  - demo environment
----
+```{tags} platform, installation, demo environment
+```
 
 # Supported Environments
 

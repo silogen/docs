@@ -1,9 +1,5 @@
----
-tags:
-  - quick start
-  - installation
-  - introduction
----
+```{tags} quick start, installation, introduction
+```
 
 # Quick Start Guide
 

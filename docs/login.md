@@ -1,8 +1,5 @@
----
-tags:
-  - login
-  - keycloak
----
+```{tags} login, keycloak
+```
 
 # Login to the platform
 

@@ -1,8 +1,5 @@
----
-tags:
-  - introduction
-  - target audience
----
+```{tags} introduction, target audience
+```
 
 # Target Audience of the platform
 

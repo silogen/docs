@@ -1,9 +1,5 @@
----
-tags:
-  - quick start
-  - ai development
-  - AMD AI Workbench
----
+```{tags} quick start, ai development, AMD AI Workbench
+```
 
 # Quick Start Guide for AI Practitioners
 

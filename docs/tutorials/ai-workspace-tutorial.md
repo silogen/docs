@@ -1,9 +1,5 @@
----
-tags:
-  - AMD AI Workbench
-  - workspaces
-  - tutorial
----
+```{tags} AMD AI Workbench, workspaces, tutorial
+```
 
 # Working in AI Workspaces Hands On
 
