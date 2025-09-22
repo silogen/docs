@@ -1,14 +1,11 @@
----
-tags:
-  - AMD AI Workbench
-  - workspaces
-  - tutorial
----
 <!--
 Copyright © Advanced Micro Devices, Inc., or its affiliates.
 
 SPDX-License-Identifier: MIT
 -->
+
+```{tags} AMD AI Workbench, workspaces, tutorial
+```
 
 # Working in AI Workspaces Hands On
 

@@ -1,14 +1,11 @@
----
-tags:
-  - contributing
-  - git
-  - python
----
 <!--
 Copyright © Advanced Micro Devices, Inc., or its affiliates.
 
 SPDX-License-Identifier: MIT
 -->
+
+```{tags} contributing, git, python
+```
 
 # Contributing
 
