@@ -1,11 +1,11 @@
-```{tags} AMD Resource Manager, resource management, tutorial
-```
-
 <!--
 Copyright © Advanced Micro Devices, Inc., or its affiliates.
 
 SPDX-License-Identifier: MIT
 -->
+
+```{tags} AMD Resource Manager, resource management, tutorial
+```
 
 # Resource Utilization of AI Workloads
 
