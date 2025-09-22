@@ -1,9 +1,5 @@
----
-tags:
-  - AMD AI Workbench
-  - tutorial
-  - model training
----
+```{tags} AMD AI Workbench, tutorial, model training
+```
 
 # Command-line Tutorials
 
