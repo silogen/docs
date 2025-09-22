@@ -1,14 +1,11 @@
----
-tags:
-  - quick start
-  - resource management
-  - AMD Resource Manager
----
 <!--
 Copyright © Advanced Micro Devices, Inc., or its affiliates.
 
 SPDX-License-Identifier: MIT
 -->
+
+```{tags} quick start, resource management, AMD Resource Manager
+```
 
 # Quick Start Guide for AI Resource Managers
 
