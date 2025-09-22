@@ -1,11 +1,11 @@
-```{tags} AMD AI Workbench, tutorial, model training
-```
-
 <!--
 Copyright © Advanced Micro Devices, Inc., or its affiliates.
 
 SPDX-License-Identifier: MIT
 -->
+
+```{tags} AMD AI Workbench, tutorial, model training
+```
 
 # Command-line Tutorials
 

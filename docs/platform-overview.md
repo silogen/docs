@@ -1,11 +1,11 @@
-```{tags} platform, introduction, features
-```
-
 <!--
 Copyright © Advanced Micro Devices, Inc., or its affiliates.
 
 SPDX-License-Identifier: MIT
 -->
+
+```{tags} platform, introduction, features
+```
 
 # Overview of AMD Resource Manager & AMD AI Workbench
 
