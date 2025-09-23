@@ -39,8 +39,9 @@ This section outlines the steps to set up essential AI compute resources for pro
 
 ### Onboard users
 
-!!! note
-    AMD Resource Manager & AMD AI Workbench provides multiple options for onboarding users into the platform. For small-scale trial deployments you can invite users through email or add them manually, but for large scale deployments we recommend using single sign-on (SSO).
+```{note}
+AMD Resource Manager & AMD AI Workbench provides multiple options for onboarding users into the platform. For small-scale trial deployments you can invite users through email or add them manually, but for large scale deployments we recommend using single sign-on (SSO).
+```
 
 #### Invite users through email
 
@@ -60,11 +61,12 @@ Follow the instructions in ["Manually managing and activating users in AMD Resou
 
 It is recommended to change the initial admin users' passwords that were created as part of the installation process.
 - Super admin password (Keycloak admin user) - The super admin password is needed to login to the Keycloak admin panel. The password is stored in a Kubernetes secret, so in order to change the password you need to change the Kubernetes secret.
-- Platform admin password (devuser@domain) - How to change your `devuser` password depends on your user management setup. E.g., the `super admin` user can reset the user in Keycloak admin panel, if you have `Invite users through email` you can change your password yourself through "Forget password" link.
+- Platform admin password (devuser@domain) - How to change your `devuser` password depends on your user management setup. for example, the `super admin` user can reset the user in Keycloak admin panel, if you have `Invite users through email` you can change your password yourself through "Forget password" link.
 
 ### Optional: Create new projects (for advanced users)
 
-!!! note
-    A default project with quota has already been created for your organization as part of the installation process. In case you want to create new projects follow the instructions below.
+```{note}
+A default project with quota has already been created for your organization as part of the installation process. In case you want to create new projects follow the instructions below.
+```
 
 To learn how to create a new project with guaranteed quota follow the instructions in ["Manage projects"](../core/docs/resource-manager/projects/manage-projects.md)
