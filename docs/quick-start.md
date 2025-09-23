@@ -5,8 +5,9 @@
 
 This quick start guide will help you rapidly install, configure, and begin using the AMD Resource Manager & AMD AI Workbench for your AI workloads. The platform supports bare-metal, on-premises, and public cloud deployments of AI workloads. The platform has been validated on Instinct MI300X GPUs.
 
-!!! note
-    These instructions are intended for installing the platform as a self-contained solution in an on-premises environment. For larger-scale, production-level deployments, refer to AMD Resource Manager & AMD AI Workbench support services.
+```{note}
+These instructions are intended for installing the platform as a self-contained solution in an on-premises environment. For larger-scale, production-level deployments, refer to AMD Resource Manager & AMD AI Workbench support services.
+```
 
 ## Install the platform
 
