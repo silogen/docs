@@ -10,97 +10,40 @@ Welcome to the documentation for AMD Resource Manager & AMD AI Workbench. Enterp
 
 This is your comprehensive handbook designed to help infrastructure administrators, AI practitioners, and AI resource managers successfully deploy, manage, and run AI workloads on AMD compute. The guide provides step-by-step instructions for installing and configuring the necessary software, as well as practical tutorials and use cases to help you run AI workloads efficiently on a scalable Kubernetes platform.
 
+::::{grid} 1 1 2 2
+:gutter: 2
 
-<div class="card-container">
-  <div class="card card-intro">
-    <div class="card-header">
-      <span class="icon icon-introduction"></span>
-    </div>
+:::{card}
+Introduction
+^^^
+- [Platform overview](./platform-overview/)
+- [Quick start guide](./quick-start/)
+- [Target audience](./target-audience/)
+:::
 
-    <div class="card-body">
-      <h3>Introduction</h3>
+:::{card}
+Infrastructure administrator
+^^^
+- [Install on-premises environment](./platform-infrastructure/on-premises-installation/)
+- [Single sign-on](./core/docs/keycloak/sso/)
+:::
 
-      <ul class="intro-links">
-        <li>
-          <a href="./platform-overview/">Platform overview</a>
-        </li>
-        <li>
-          <a href="./quick-start/">Quick start guide</a>
-        </li>
-        <li>
-          <a href="./target-audience/">Target audience</a>
-        </li>
-      </ul>
-    </div>
-  </div>
+:::{card}
+AI practitioner
+^^^
+- [AI development overview](./core/docs/workbench/overview/)
+- [Deploy model and run inference](./core/docs/workbench/inference/how-to-deploy-and-inference/)
+- [Model finetuning](./core/docs/workbench/training/fine-tuning/)
+- [Access models](./core/docs/workbench/training/models/)
+:::
 
-  <div class="card card-intro">
-    <div class="card-header">
-      <span class="icon icon-platform"></span>
-    </div>
+:::{card}
+AI resource manager
+^^^
+- [AMD Resource Manager overview](./core/docs/resource-manager/overview/)
+- [Getting started](./quick-start-guides/resource-manager-quick-start/)
+- [Managing clusters](./core/docs/resource-manager/clusters/overview/)
+- [Managing users](./core/docs/resource-manager/users/overview/)
+:::
 
-    <div class="card-body">
-      <h3>Infrastructure administrator</h3>
-
-      <ul class="intro-links">
-        </li>
-        <li>
-          <a href="./platform-infrastructure/on-premises-installation/">Install on-premises environment</a>
-        </li>
-        <li>
-          <a href="./core/docs/keycloak/sso/">Single sign-on</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="card card-intro">
-    <div class="card-header">
-      <span class="icon icon-development"></span>
-    </div>
-
-    <div class="card-body">
-      <h3>AI practitioner</h3>
-
-      <ul class="intro-links">
-        <li>
-          <a href="./core/docs/workbench/overview/">AI development overview</a>
-        </li>
-        <li>
-          <a href="./core/docs/workbench/inference/how-to-deploy-and-inference/">Deploy model and run inference</a>
-        </li>
-        <li>
-          <a href="./core/docs/workbench/training/fine-tuning/">Model finetuning</a>
-        </li>
-        <li>
-          <a href="./core/docs/workbench/training/models/">Access models</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="card card-intro">
-    <div class="card-header">
-      <span class="icon icon-resources"></span>
-    </div>
-
-    <div class="card-body">
-      <h3>AI resource manager</h3>
-
-      <ul class="intro-links">
-        <li>
-          <a href="./core/docs/resource-manager/overview/">AMD Resource Manager overview</a>
-        </li>
-        <li>
-          <a href="./quick-start-guides/resource-manager-quick-start/">Getting started</a>
-        </li>
-        <li>
-          <a href="./core/docs/resource-manager/clusters/overview/">Managing clusters</a>
-        </li>
-        <li>
-          <a href="./core/docs/resource-manager/users/overview/">Managing users</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</div>
+:::: % Close the grid
