@@ -19,7 +19,7 @@ For details, see documentation: https://docs.silogen.ai/
 
 ### New Features: AI Workbench
 - **Models and Data Catalogues:** Catalogue with popular open source models and ability to upload fine-tuning data
-- **Low Code UI for Inference and Fine-tuning:** Fine-tuning recipes for selected models (e.g. Llama 3.1) and Chat UI for model interaction
+- **Low Code UI for Inference and Fine-tuning:** Fine-tuning recipes for selected models (for example Llama 3.1) and Chat UI for model interaction
 - **Inference API:** Deploy models for inference behind API Gateway, for both community models and custom models fine-tuned on the platform
 - **Workspaces:** Deploy VSCode, JupyterLab or ComfyUI workspaces with pre-allocated compute resources
 
