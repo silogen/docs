@@ -42,10 +42,12 @@ You will use an installation script called Cluster Bloom to install and configur
 - 1Password integration for secrets management
 - Install the platform using Cluster Forge tool
 
-!!! info
-    The current platform version supports only one cluster per installation. Support for multiple clusters is on the product roadmap.
+```{note}
+The current platform version supports only one cluster per installation. Support for multiple clusters is on the product roadmap.
+```
 
 ### 1. SSH to node as root user
+
 Access the node using SSH as root user.
 
 ### 2. Download the latest installation script
@@ -104,7 +106,7 @@ List of disk paths for Longhorn storage. Leave empty for automatic configuration
 The Cluster Forge release `URL` or `none` to skip the SW installation.
 
 **Domain**<br>
-Domain name for the cluster, e.g., `cluster.example.com`. The domain name is used for ingress configuration. If you don't have a DNS-enabled domain available, you may use a .nip.io domain with your IP address. Example: `<master-node-ip-address>.nip.io`.
+Domain name for the cluster, for example, `cluster.example.com`. The domain name is used for ingress configuration. If you don't have a DNS-enabled domain available, you may use a .nip.io domain with your IP address. Example: `<master-node-ip-address>.nip.io`.
 
 **Use cert manager**<br>
 Set to `Yes` to use cert-manager with Let's encrypt for automatic TLS certificates. Set to `false` to provide your own certificates.
