@@ -1,11 +1,10 @@
+```{tags} introduction, target audience
+```
 <!--
 Copyright © Advanced Micro Devices, Inc., or its affiliates.
 
 SPDX-License-Identifier: MIT
 -->
-
-```{tags} introduction, target audience
-```
 
 # Target Audience of the platform
 

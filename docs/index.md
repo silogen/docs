@@ -13,7 +13,7 @@ This is your comprehensive handbook designed to help infrastructure administrato
 ::::{grid} 1 1 2 2
 :gutter: 2
 
-:::{card}
+:::{grid-item-card}
 Introduction
 ^^^
 - [Platform overview](./platform-overview/)
@@ -21,29 +21,29 @@ Introduction
 - [Target audience](./target-audience/)
 :::
 
-:::{card}
+:::{grid-item-card}
 Infrastructure administrator
 ^^^
 - [Install on-premises environment](./platform-infrastructure/on-premises-installation/)
-- [Single sign-on](./core/docs/keycloak/sso/)
+- [Single sign-on](./keycloak/sso/)
 :::
 
-:::{card}
+:::{grid-item-card}
 AI practitioner
 ^^^
-- [AI development overview](./core/docs/workbench/overview/)
-- [Deploy model and run inference](./core/docs/workbench/inference/how-to-deploy-and-inference/)
-- [Model finetuning](./core/docs/workbench/training/fine-tuning/)
-- [Access models](./core/docs/workbench/training/models/)
+- [AI development overview](./workbench/overview/)
+- [Deploy model and run inference](./workbench/inference/how-to-deploy-and-inference/)
+- [Model finetuning](./workbench/training/fine-tuning/)
+- [Access models](./workbench/training/models/)
 :::
 
-:::{card}
+:::{grid-item-card}
 AI resource manager
 ^^^
-- [AMD Resource Manager overview](./core/docs/resource-manager/overview/)
+- [AMD Resource Manager overview](./resource-manager/overview/)
 - [Getting started](./quick-start-guides/resource-manager-quick-start/)
-- [Managing clusters](./core/docs/resource-manager/clusters/overview/)
-- [Managing users](./core/docs/resource-manager/users/overview/)
+- [Managing clusters](./resource-manager/clusters/overview/)
+- [Managing users](./resource-manager/users/overview/)
 :::
 
 :::: % Close the grid

@@ -1,11 +1,11 @@
+```{tags} platform, installation, demo environment, kubernetes
+```
+
 <!--
 Copyright © Advanced Micro Devices, Inc., or its affiliates.
 
 SPDX-License-Identifier: MIT
 -->
-
-```{tags} platform, installation, demo environment, kubernetes
-```
 
 # Install AMD Enterprise AI platform on Premises
 
