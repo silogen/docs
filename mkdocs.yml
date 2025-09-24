@@ -47,21 +47,6 @@ plugins:
   - tags
   - macros
 
-  - redirects:
-      redirect_maps:
-        'core/docs/workbench/inference/index.md': 'core/docs/workbench/inference/overview.md'
-        'core/docs/workbench/training/index.md': 'core/docs/workbench/training/overview.md'
-        'core/docs/resource-manager/index.md': 'core/docs/resource-manager/overview.md'
-        'core/docs/resource-manager/clusters/index.md': 'core/docs/resource-manager/clusters/overview.md'
-        'core/docs/resource-manager/projects/index.md': 'core/docs/resource-manager/projects/manage-projects.md'
-        'core/docs/resource-manager/secrets/index.md': 'core/docs/resource-manager/secrets/overview.md'
-        'core/docs/resource-manager/users/index.md': 'core/docs/resource-manager/users/overview.md'
-        'platform-infrastructure/index.md': 'platform-infrastructure/supported-environments.md'
-        'references/index.md': 'references/overview.md'
-
-        # Change this to link to an external feedback page.
-        # 'feedback.md': 'feedback-url.here'
-
 markdown_extensions:
   - pymdownx.highlight:
       anchor_linenums: true
@@ -163,7 +148,6 @@ nav:
 
   - References:
     - References: references/overview.md
-    - Tags: references/tags.md
 
 extra:
   name: AMD Resource Manager & AMD AI Workbench
@@ -173,11 +157,6 @@ extra_css:
   - stylesheets/extra.css
 
 exclude_docs: |
-  ref-architecture/AMDEnterpriseAISuite.md
-  ref-architecture/Enterprise-AI-Architecture.md
-
-  references/contributing.md
-
   core/docs/resource-manager/clusters/add-clusters-ui.md
 
   # Imported files

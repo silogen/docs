@@ -4,103 +4,46 @@ Copyright © Advanced Micro Devices, Inc., or its affiliates.
 SPDX-License-Identifier: MIT
 -->
 
-# {{ name }} Documentation
+# AMD Resource Manager & AMD AI Workbench Documentation
 
-Welcome to the documentation for {{ name }}. Enterprises striving to scale AI often encounter roadblocks that increase costs, slow innovation, and limit impact. {{ name_secondary }} is built to overcome these challenges and unlock the full potential of AI across the enterprise. In the documentation we will refer to the {{ name }} as either *{{ name_secondary }}* or simply *platform*.
+Welcome to the documentation for AMD Resource Manager & AMD AI Workbench. Enterprises striving to scale AI often encounter roadblocks that increase costs, slow innovation, and limit impact. AMD Enterprise AI platform is built to overcome these challenges and unlock the full potential of AI across the enterprise. In the documentation we will refer to the AMD Resource Manager & AMD AI Workbench as either *AMD Enterprise AI platform* or simply *platform*.
 
 This is your comprehensive handbook designed to help infrastructure administrators, AI practitioners, and AI resource managers successfully deploy, manage, and run AI workloads on AMD compute. The guide provides step-by-step instructions for installing and configuring the necessary software, as well as practical tutorials and use cases to help you run AI workloads efficiently on a scalable Kubernetes platform.
 
+::::{grid} 1 1 2 2
+:gutter: 2
 
-<div class="card-container">
-  <div class="card card-intro">
-    <div class="card-header">
-      <span class="icon icon-introduction"></span>
-    </div>
+:::{grid-item-card}
+Introduction
+^^^
+- [Platform overview](./platform-overview/)
+- [Quick start guide](./quick-start/)
+- [Target audience](./target-audience/)
+:::
 
-    <div class="card-body">
-      <h3>Introduction</h3>
+:::{grid-item-card}
+Infrastructure administrator
+^^^
+- [Install on-premises environment](./platform-infrastructure/on-premises-installation/)
+- [Single sign-on](./keycloak/sso/)
+:::
 
-      <ul class="intro-links">
-        <li>
-          <a href="./platform-overview/">Platform overview</a>
-        </li>
-        <li>
-          <a href="./quick-start/">Quick start guide</a>
-        </li>
-        <li>
-          <a href="./target-audience/">Target audience</a>
-        </li>
-      </ul>
-    </div>
-  </div>
+:::{grid-item-card}
+AI practitioner
+^^^
+- [AI development overview](./workbench/overview/)
+- [Deploy model and run inference](./workbench/inference/how-to-deploy-and-inference/)
+- [Model finetuning](./workbench/training/fine-tuning/)
+- [Access models](./workbench/training/models/)
+:::
 
-  <div class="card card-intro">
-    <div class="card-header">
-      <span class="icon icon-platform"></span>
-    </div>
+:::{grid-item-card}
+AI resource manager
+^^^
+- [AMD Resource Manager overview](./resource-manager/overview/)
+- [Getting started](./quick-start-guides/resource-manager-quick-start/)
+- [Managing clusters](./resource-manager/clusters/overview/)
+- [Managing users](./resource-manager/users/overview/)
+:::
 
-    <div class="card-body">
-      <h3>Infrastructure administrator</h3>
-
-      <ul class="intro-links">
-        </li>
-        <li>
-          <a href="./platform-infrastructure/on-premises-installation/">Install on-premises environment</a>
-        </li>
-        <li>
-          <a href="./core/docs/keycloak/sso/">Single sign-on</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="card card-intro">
-    <div class="card-header">
-      <span class="icon icon-development"></span>
-    </div>
-
-    <div class="card-body">
-      <h3>AI practitioner</h3>
-
-      <ul class="intro-links">
-        <li>
-          <a href="./core/docs/workbench/overview/">AI development overview</a>
-        </li>
-        <li>
-          <a href="./core/docs/workbench/inference/how-to-deploy-and-inference/">Deploy model and run inference</a>
-        </li>
-        <li>
-          <a href="./core/docs/workbench/training/fine-tuning/">Model finetuning</a>
-        </li>
-        <li>
-          <a href="./core/docs/workbench/training/models/">Access models</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="card card-intro">
-    <div class="card-header">
-      <span class="icon icon-resources"></span>
-    </div>
-
-    <div class="card-body">
-      <h3>AI resource manager</h3>
-
-      <ul class="intro-links">
-        <li>
-          <a href="./core/docs/resource-manager/overview/">AMD Resource Manager overview</a>
-        </li>
-        <li>
-          <a href="./quick-start-guides/resource-manager-quick-start/">Getting started</a>
-        </li>
-        <li>
-          <a href="./core/docs/resource-manager/clusters/overview/">Managing clusters</a>
-        </li>
-        <li>
-          <a href="./core/docs/resource-manager/users/overview/">Managing users</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</div>
+:::: % Close the grid

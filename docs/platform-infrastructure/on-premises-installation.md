@@ -1,19 +1,15 @@
----
-tags:
-  - platform
-  - installation
-  - demo environment
-  - kubernetes
----
+```{tags} platform, installation, demo environment, kubernetes
+```
+
 <!--
 Copyright © Advanced Micro Devices, Inc., or its affiliates.
 
 SPDX-License-Identifier: MIT
 -->
 
-# Install {{ name_secondary }} on Premises
+# Install AMD Enterprise AI platform on Premises
 
-This article explains how to install {{ name }} in an on-premises environment, covering the full stack from metal to application layer in a streamlined manner. The platform runs on top of Kubernetes orchestration platform and includes essential Kubernetes components for monitoring, secrets management, and certificate management.
+This article explains how to install AMD Resource Manager & AMD AI Workbench in an on-premises environment, covering the full stack from metal to application layer in a streamlined manner. The platform runs on top of Kubernetes orchestration platform and includes essential Kubernetes components for monitoring, secrets management, and certificate management.
 
 The installation process leverages helper tools called Cluster Bloom and Cluster Forge that deploy and configure all necessary platform components, preparing a Kubernetes cluster for executing AI workloads.
 
@@ -46,10 +42,12 @@ You will use an installation script called Cluster Bloom to install and configur
 - 1Password integration for secrets management
 - Install the platform using Cluster Forge tool
 
-!!! info
-    The current platform version supports only one cluster per installation. Support for multiple clusters is on the product roadmap.
+```{note}
+The current platform version supports only one cluster per installation. Support for multiple clusters is on the product roadmap.
+```
 
 ### 1. SSH to node as root user
+
 Access the node using SSH as root user.
 
 ### 2. Download the latest installation script
@@ -108,7 +106,7 @@ List of disk paths for Longhorn storage. Leave empty for automatic configuration
 The Cluster Forge release `URL` or `none` to skip the SW installation.
 
 **Domain**<br>
-Domain name for the cluster, e.g., `cluster.example.com`. The domain name is used for ingress configuration. If you don't have a DNS-enabled domain available, you may use a .nip.io domain with your IP address. Example: `<master-node-ip-address>.nip.io`.
+Domain name for the cluster, for example, `cluster.example.com`. The domain name is used for ingress configuration. If you don't have a DNS-enabled domain available, you may use a .nip.io domain with your IP address. Example: `<master-node-ip-address>.nip.io`.
 
 **Use cert manager**<br>
 Set to `Yes` to use cert-manager with Let's encrypt for automatic TLS certificates. Set to `false` to provide your own certificates.
@@ -197,7 +195,7 @@ See more details about login [here](../login.md).
 
 ## Install only software into an existing Kubernetes cluster
 
-To install {{ name_secondary }} in an existing Kubernetes cluster, download a Cluster Forge release package and run `deploy.sh`. This assumes there is a working Kubernetes cluster to deploy into, and the current Kubeconfig context refers to that cluster.
+To install AMD Enterprise AI platform in an existing Kubernetes cluster, download a Cluster Forge release package and run `deploy.sh`. This assumes there is a working Kubernetes cluster to deploy into, and the current Kubeconfig context refers to that cluster.
 
 For the Cluster Forge `deploy` release:
 

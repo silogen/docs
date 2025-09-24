@@ -1,8 +1,6 @@
----
-tags:
-  - color theme
-  - preferences
----
+```{tags} color theme, preferences
+```
+
 <!--
 Copyright © Advanced Micro Devices, Inc., or its affiliates.
 
@@ -11,7 +9,7 @@ SPDX-License-Identifier: MIT
 
 # Personal Preferences
 
-{{ name }} platform has several settings the users can adjust to change their user experience.
+AMD Resource Manager & AMD AI Workbench platform has several settings the users can adjust to change their user experience.
 
 ## Color theme
 
