@@ -1,11 +1,11 @@
+```{tags} quick start, ai development, AMD AI Workbench
+```
+
 <!--
 Copyright © Advanced Micro Devices, Inc., or its affiliates.
 
 SPDX-License-Identifier: MIT
 -->
-
-```{tags} quick start, ai development, AMD AI Workbench
-```
 
 # Quick Start Guide for AI Practitioners
 
@@ -36,7 +36,7 @@ Based on your background you can choose either low-code or more advanced coding 
 
 #### Model deployment and inference
 
-To learn how to deploy a model and run inference, please complete the tutorial ["How to deploy a model and run inference"](../core/docs/workbench/inference/how-to-deploy-and-inference.md).
+To learn how to deploy a model and run inference, please complete the tutorial ["How to deploy a model and run inference"](../workbench/inference/how-to-deploy-and-inference.md).
 
 #### Low-code tutorial: fine-tune a model with low code
 
@@ -48,4 +48,4 @@ To learn how to develop AI models using workspaces, please complete the tutorial
 
 ### Further discovery
 
-Browse through the [end-user documentation](https://docs.silogen.ai/core/docs/workbench/overview/) to familiarize yourself with the AMD AI Workbench features.
+Browse through the [end-user documentation](https://docs.silogen.ai/workbench/overview/) to familiarize yourself with the AMD AI Workbench features.
