@@ -32,13 +32,13 @@ Create a fine-tuned model by clicking the "Fine-Tune Model" button and choosing 
 - You can skip the `Advanced parameter` fields and use the default values.
 - Finally, click `Start training` to start fine-tuning the model.
 
-![Create fine-tuned model](../core/docs/img/training/fine-tuning-trigger.png)
+![Create fine-tuned model](../core/docs/core-img/training/fine-tuning-trigger.png)
 
 ## 2. Observe the model fine-tuning workload
 
 Go to the `Workloads` page to view details of your running AI workloads. In the table, you can see the workload name, the assigned cluster, and the resources required. The `Status` column displays the last known status of each workload and is not updated automatically. You can use filters to find workloads by name, type, or status.
 
-![Workload filters](../core/docs/img/workloads/workloads-filters.png)
+![Workload filters](../core/docs/core-img/workloads/workloads-filters.png)
 
 Find more details about workloads [here](../core/docs/workbench/workloads.md).
 
@@ -46,7 +46,7 @@ Find more details about workloads [here](../core/docs/workbench/workloads.md).
 
 Click the `Deploy` button next to the model you want to make available for inference. Please note that once deployed, a model may take up to 5 minutes before it can begin serving requests.
 
-![Deploy fine-tuned model](../core/docs/img/training/fine-tuning-deploy-model.png)
+![Deploy fine-tuned model](../core/docs/core-img/training/fine-tuning-deploy-model.png)
 
 Once deployed, navigate to the `Chat and Compare` page to interact with the model.
 
@@ -58,12 +58,12 @@ On the `Chat` page, select your fine-tuned model from the drop-down list in the 
 
 Type a question in the chat to interact with the model.
 
-![Chat](../core/docs/img/inference/chat.png)
+![Chat](../core/docs/core-img/inference/chat.png)
 
 ### Inspecting the debug output
 
 After receiving a response from the model, you can inspect the messages sent to the model, the context retrieved as part of RAG, and the tokens used by clicking the "bug" icon next to the response.
 
-![Debug icon](../core/docs/img/inference/debug-icon.png)
+![Debug icon](../core/docs/core-img/inference/debug-icon.png)
 
-![Debug output](../core/docs/img/inference/debug-output.png)
+![Debug output](../core/docs/core-img/inference/debug-output.png)
