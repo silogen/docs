@@ -1,11 +1,11 @@
+```{tags} login, keycloak
+```
+
 <!--
 Copyright © Advanced Micro Devices, Inc., or its affiliates.
 
 SPDX-License-Identifier: MIT
 -->
-
-```{tags} login, keycloak
-```
 
 # Login to the platform
 
@@ -25,5 +25,4 @@ The platform uses [Keycloak](https://www.keycloak.org/) to authenticate users. K
 
 ## Other login measures
 
-AMD Resource Manager & AMD AI Workbench can be modified to utilize other login methods, such as working in an internal network through a VPN.
 AMD Resource Manager & AMD AI Workbench can be modified to utilize other login methods, such as working in an internal network through a VPN.

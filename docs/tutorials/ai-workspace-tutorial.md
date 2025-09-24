@@ -1,11 +1,11 @@
+```{tags} AMD AI Workbench, workspaces, tutorial
+```
+
 <!--
 Copyright © Advanced Micro Devices, Inc., or its affiliates.
 
 SPDX-License-Identifier: MIT
 -->
-
-```{tags} AMD AI Workbench, workspaces, tutorial
-```
 
 # Working in AI Workspaces Hands On
 
@@ -17,9 +17,6 @@ This tutorial demonstrates how to fine-tune the Llama-3.1 8B large language mode
 
 Access the tutorial [here](https://rocm.docs.amd.com/projects/ai-developer-hub/en/v3.0/notebooks/fine_tune/llama_factory_llama3.html).
 
-```{tip}
-Skip steps 1-3 in the chapter `Prepare the training environment`, as these do not apply to the (Kubernetes) environment.
-```
 ```{tip}
 Skip steps 1-3 in the chapter `Prepare the training environment`, as these do not apply to the (Kubernetes) environment.
 ```

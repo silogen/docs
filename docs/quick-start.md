@@ -1,20 +1,16 @@
+```{tags} quick start, installation, introduction
+```
+
 <!--
 Copyright © Advanced Micro Devices, Inc., or its affiliates.
 
 SPDX-License-Identifier: MIT
 -->
 
-```{tags} quick start, installation, introduction
-```
-
 # Quick Start Guide
 
 This quick start guide will help you rapidly install, configure, and begin using the AMD Resource Manager & AMD AI Workbench for your AI workloads. The platform supports bare-metal, on-premises, and public cloud deployments of AI workloads. The platform has been validated on Instinct MI300X GPUs.
-This quick start guide will help you rapidly install, configure, and begin using the AMD Resource Manager & AMD AI Workbench for your AI workloads. The platform supports bare-metal, on-premises, and public cloud deployments of AI workloads. The platform has been validated on Instinct MI300X GPUs.
 
-```{note}
-These instructions are intended for installing the platform as a self-contained solution in an on-premises environment. For larger-scale, production-level deployments, refer to AMD Resource Manager & AMD AI Workbench support services.
-```
 ```{note}
 These instructions are intended for installing the platform as a self-contained solution in an on-premises environment. For larger-scale, production-level deployments, refer to AMD Resource Manager & AMD AI Workbench support services.
 ```
@@ -23,7 +19,6 @@ These instructions are intended for installing the platform as a self-contained 
 
 **The target audience for the installation section is infrastructure administrators.**
 
-Follow the instructions in [On-premises installation](./platform-infrastructure/on-premises-installation.md) to install AMD Resource Manager & AMD AI Workbench in an on-premises environment.
 Follow the instructions in [On-premises installation](./platform-infrastructure/on-premises-installation.md) to install AMD Resource Manager & AMD AI Workbench in an on-premises environment.
 
 ## Onboard organization, projects and users
