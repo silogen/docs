@@ -7,6 +7,12 @@ SPDX-License-Identifier: MIT
 ```{tags} AMD AI Workbench, tutorial, model training
 ```
 
+<!--
+Copyright © Advanced Micro Devices, Inc., or its affiliates.
+
+SPDX-License-Identifier: MIT
+-->
+
 # Command-line Tutorials
 
 The CLI (command-line) tutorials include practical examples on how to run AI model training, fine-tuning, and inference workloads from the Kubernetes command line using kubectl and helm charts.
