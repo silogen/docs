@@ -20,6 +20,9 @@ Access the tutorial [here](https://rocm.docs.amd.com/projects/ai-developer-hub/e
 ```{tip}
 Skip steps 1-3 in the chapter `Prepare the training environment`, as these do not apply to the (Kubernetes) environment.
 ```
+```{tip}
+Skip steps 1-3 in the chapter `Prepare the training environment`, as these do not apply to the (Kubernetes) environment.
+```
 
 ## Tutorial: Prepare and upload a dataset to AMD AI Workbench
 

@@ -10,6 +10,7 @@ SPDX-License-Identifier: MIT
 # Personal Preferences
 
 AMD Resource Manager & AMD AI Workbench platform has several settings the users can adjust to change their user experience.
+AMD Resource Manager & AMD AI Workbench platform has several settings the users can adjust to change their user experience.
 
 ## Color theme
 
