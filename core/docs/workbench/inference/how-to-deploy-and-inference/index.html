@@ -3021,40 +3021,6 @@
                 
                   
 
-  <nav class="md-tags" >
-    
-      
-      
-      
-        <a href="../../../../../references/tags/#tag:amd-ai-workbench" class="md-tag">AMD AI Workbench</a>
-      
-    
-      
-      
-      
-        <a href="../../../../../references/tags/#tag:deploy" class="md-tag">deploy</a>
-      
-    
-      
-      
-      
-        <a href="../../../../../references/tags/#tag:inference" class="md-tag">inference</a>
-      
-    
-      
-      
-      
-        <a href="../../../../../references/tags/#tag:models" class="md-tag">models</a>
-      
-    
-      
-      
-      
-        <a href="../../../../../references/tags/#tag:tutorial" class="md-tag">tutorial</a>
-      
-    
-  </nav>
-
 
   
   
@@ -3065,6 +3031,15 @@ Copyright © Advanced Micro Devices, Inc., or its affiliates.
 
 SPDX-License-Identifier: MIT
 -->
+
+<hr />
+<p>tags:
+  - AMD AI Workbench
+  - deploy
+  - models
+  - inference
+  - tutorial</p>
+<hr />
 <h1 id="how-to-deploy-a-model-and-run-inference">How to Deploy a Model and Run Inference<a class="headerlink" href="#how-to-deploy-a-model-and-run-inference" title="Permanent link">&para;</a></h1>
 <p>Training AI models and developing your own models are essential parts of AI workflows, but eventually they lead to using the models in your business applications. Solving problems, making predictions, and processing data is called inference. This is the culmination of AI workflows, providing you with business value.</p>
 <p>In short, an AI model requires data for training it properly. The model applies learned patterns to analyze new inputs. With new data, the model generates predictions, classifications, or other types of responses. In the end, the results are used to make decisions and provide services.</p>
@@ -3078,22 +3053,22 @@ SPDX-License-Identifier: MIT
 <p>Navigate to the <code>Models</code> page and find a model with the tag <strong>Instruction</strong>. Chat models are fun, but their responses can be too conversational and not very helpful for specific tasks. Instruction models are fine-tuned to be helpful and try to answer questions or act based on the given instructions.</p>
 <p>One of these models is Qwen 2.5 1.5B Instruct (note that it has the word "Instruct" in the name), but you can pick any of the available ones. If it isn't already downloaded, click the <strong>Download</strong> button. The download might take a while.</p>
 <p>Otherwise, proceed with deploying the model by clicking <strong>Deploy</strong>. No need to update any deployment parameters. This might take a while, so it's better to stretch your legs or do something else in the meantime. You can follow the deployment progress on the <code>Workloads</code> page or the <code>Active deployments</code> page.</p>
-<p><img alt="The community models page catalogs a variety of AI models." src="../../../img/inference/community-models.png" /></p>
+<p><img alt="The community models page catalogs a variety of AI models." src="../../../core-img/inference/community-models.png" /></p>
 <p>The community models page provides you with a variety of AI models with different capabilities. You can use the filters to find interesting models for your inference needs.</p>
 <h2 id="2-find-model-endpoints">2. Find model endpoints<a class="headerlink" href="#2-find-model-endpoints" title="Permanent link">&para;</a></h2>
 <p>You can find model information on the <code>Community</code> page. Find the deployed model and it should have a "Connect" button. Clicking it reveals a dialog window giving you the required information for connecting to the model for inference.</p>
-<p><img alt="Model connection window gives you the required information to use the model in applications." src="../../../img/inference/connect-to-model.png" /></p>
+<p><img alt="Model connection window gives you the required information to use the model in applications." src="../../../core-img/inference/connect-to-model.png" /></p>
 <p><strong>External URL</strong> is the address you need for connections outside of your current platform.</p>
 <p><strong>Internal URL</strong> is the address that is used for connections inside your current platform.</p>
 <p>The content box holds sample code for testing out the model. Click the copy button in the top right corner. The copy button looks like two overlaid squares.</p>
 <p>If you want to end the tutorial here, you can just click the "Open in chat" button and continue with testing your new AI model.</p>
 <h2 id="3-connect-to-the-endpoint">3. Connect to the endpoint<a class="headerlink" href="#3-connect-to-the-endpoint" title="Permanent link">&para;</a></h2>
 <p>To test the model endpoints, the easiest way is to go to the <code>Workspaces</code> page. On the page, look for <strong>JupyterLab</strong> and click "View and deploy". To keep things simple, click "Quick deploy" at the bottom of the newly opened drawer. You can change the name or allocated resources, but those aren't necessary for testing the workspace.</p>
-<p><img alt="Deploying JupyterLab is easy. Just click &quot;Quick deploy&quot; from the navigation drawer." src="../../../img/inference/deploy-jupyterlab.png" /></p>
+<p><img alt="Deploying JupyterLab is easy. Just click &quot;Quick deploy&quot; from the navigation drawer." src="../../../core-img/inference/deploy-jupyterlab.png" /></p>
 <p>After the short deployment process, you can click the "Launch" button either in the drawer or, if you closed it, on the Workspaces page. This will open a JupyterLab browser tab, where you can run Python code or do other types of development inside the platform.</p>
-<p><img alt="JupyterLab's browser tab looks like any other desktop application." src="../../../img/inference/deployed-jupyterlab.png" /></p>
+<p><img alt="JupyterLab's browser tab looks like any other desktop application." src="../../../core-img/inference/deployed-jupyterlab.png" /></p>
 <p>Be sure to open the directory named with a UUID. This directory's contents shouldn't be wiped if something unexpected happens to the JupyterLab deployment. Click the "Python 3" square in the right side pane. This will create an empty Python file; in JupyterLab these are called Python notebooks. You can name the file by right-clicking the filename in the left file list or in the tab above the code window.</p>
-<p><img alt="JupyterLab's browser tab looks like any other desktop application." src="../../../img/inference/jupyterlab-new-file.png" /></p>
+<p><img alt="JupyterLab's browser tab looks like any other desktop application." src="../../../core-img/inference/jupyterlab-new-file.png" /></p>
 <p>Paste the previously copied Python code into the code window. A few notes about the code:
 - BASE_URL is the internal URL mentioned previously in the connection parameter dialog window.
 - The JSON area has a few lines of note:
@@ -3108,9 +3083,6 @@ SPDX-License-Identifier: MIT
 
 
 
-
-  
-  
 
 
 
