@@ -1,13 +1,15 @@
----
-tags:
-  - AMD AI Workbench
-  - fine-tuning
----
 <!--
 Copyright © Advanced Micro Devices, Inc., or its affiliates.
 
 SPDX-License-Identifier: MIT
 -->
+
+---
+tags:
+  - AMD AI Workbench
+  - fine-tuning
+---
+
 # Fine-tuning
 
 Fine-tuning a model allows you to customize it for your specific use case with your data. We provide a certified list of base models that you can fine-tune, and allow you to customize certain hyperparameters to achieve the best results.
@@ -24,7 +26,7 @@ Once you have procured training data for your model, navigate to the "Datasets" 
 
 Click the "Upload" button and drop your JSONL file in, providing a name and description.
 
-![Upload dataset](../../img/training/fine-tuning-upload-dataset.png)
+![Upload dataset](../../core-img/training/fine-tuning-upload-dataset.png)
 
 ### Base models for fine-tuning
 
@@ -38,7 +40,7 @@ Navigate to the Models page. You can trigger the creation of your fine-tuned mod
 
 You must provide your model a name and can optionally specify a description and any of the three hyperparameters: batch size, learning rate multiplier, and number of epochs. If you are unsure of the values to use, leave the fields empty to auto-select the default certified values.
 
-![Create fine-tuned model](../../img/training/fine-tuning-trigger.png)
+![Create fine-tuned model](../../core-img/training/fine-tuning-trigger.png)
 
 Once the fine-tuning process has been successfully triggered, you will be able to see your model in the "Not-deployed" tab of the page and the fine-tuning run itself in the "Run status" section. The fine-tuning run may take several hours to complete, so we recommend visiting the AMD AI Workbench occasionally while the run is in progress. If the run fails mid-way, please reach out to our customer success team, and we will help triage your issue.
 
@@ -48,7 +50,7 @@ Once your model has been successfully trained, the model status will reflect as 
 
 Click the "Deploy" button corresponding to the model you would like to deploy to make it available for inferencing. Please note that a model, once deployed, can take up to 5 minutes before it can serve requests.
 
-![Deploy fine-tuned model](../../img/training/fine-tuning-deploy-model.png)
+![Deploy fine-tuned model](../../core-img/training/fine-tuning-deploy-model.png)
 
 Once deployed, you can navigate to the "Chat and Compare" page to converse with the model.
 
@@ -60,7 +62,7 @@ Once you have deployed a version of a fine-tuned model, you might want to "Undep
 
 This will make the model no longer accessible for inferencing.
 
-![Undeploy fine-tuned model](../../img/training/fine-tuning-undeploy-model.png)
+![Undeploy fine-tuned model](../../core-img/training/fine-tuning-undeploy-model.png)
 
 ## Adapter merging
 
@@ -72,9 +74,9 @@ To merge an adapter back into the base model, click the context menu of the adap
 
 Once the merge process is complete, the new model will be visible in the list of models.
 
-![Merge adapter](../../img/training/fine-tuning-merge-adapter.png)
+![Merge adapter](../../core-img/training/fine-tuning-merge-adapter.png)
 
-![Merged adapter details](../../img/training/fine-tuning-merge-adapter-modal.png)
+![Merged adapter details](../../core-img/training/fine-tuning-merge-adapter-modal.png)
 
 You can view the details of the merge process in the "Run status" section of the page.
 

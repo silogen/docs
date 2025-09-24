@@ -1,3 +1,9 @@
+<!--
+Copyright © Advanced Micro Devices, Inc., or its affiliates.
+
+SPDX-License-Identifier: MIT
+-->
+
 ---
 tags:
   - AMD AI Workbench
@@ -6,11 +12,7 @@ tags:
   - inference
   - tutorial
 ---
-<!--
-Copyright © Advanced Micro Devices, Inc., or its affiliates.
 
-SPDX-License-Identifier: MIT
--->
 # How to Deploy a Model and Run Inference
 
 Training AI models and developing your own models are essential parts of AI workflows, but eventually they lead to using the models in your business applications. Solving problems, making predictions, and processing data is called inference. This is the culmination of AI workflows, providing you with business value.
@@ -31,7 +33,7 @@ One of these models is Qwen 2.5 1.5B Instruct (note that it has the word "Instru
 
 Otherwise, proceed with deploying the model by clicking **Deploy**. No need to update any deployment parameters. This might take a while, so it's better to stretch your legs or do something else in the meantime. You can follow the deployment progress on the `Workloads` page or the `Active deployments` page.
 
-![The community models page catalogs a variety of AI models.](../../img/inference/community-models.png)
+![The community models page catalogs a variety of AI models.](../../core-img/inference/community-models.png)
 
 The community models page provides you with a variety of AI models with different capabilities. You can use the filters to find interesting models for your inference needs.
 
@@ -39,7 +41,7 @@ The community models page provides you with a variety of AI models with differen
 
 You can find model information on the `Community` page. Find the deployed model and it should have a "Connect" button. Clicking it reveals a dialog window giving you the required information for connecting to the model for inference.
 
-![Model connection window gives you the required information to use the model in applications.](../../img/inference/connect-to-model.png)
+![Model connection window gives you the required information to use the model in applications.](../../core-img/inference/connect-to-model.png)
 
 **External URL** is the address you need for connections outside of your current platform.
 
@@ -53,15 +55,15 @@ If you want to end the tutorial here, you can just click the "Open in chat" butt
 
 To test the model endpoints, the easiest way is to go to the `Workspaces` page. On the page, look for **JupyterLab** and click "View and deploy". To keep things simple, click "Quick deploy" at the bottom of the newly opened drawer. You can change the name or allocated resources, but those aren't necessary for testing the workspace.
 
-![Deploying JupyterLab is easy. Just click "Quick deploy" from the navigation drawer.](../../img/inference/deploy-jupyterlab.png)
+![Deploying JupyterLab is easy. Just click "Quick deploy" from the navigation drawer.](../../core-img/inference/deploy-jupyterlab.png)
 
 After the short deployment process, you can click the "Launch" button either in the drawer or, if you closed it, on the Workspaces page. This will open a JupyterLab browser tab, where you can run Python code or do other types of development inside the platform.
 
-![JupyterLab's browser tab looks like any other desktop application.](../../img/inference/deployed-jupyterlab.png)
+![JupyterLab's browser tab looks like any other desktop application.](../../core-img/inference/deployed-jupyterlab.png)
 
 Be sure to open the directory named with a UUID. This directory's contents shouldn't be wiped if something unexpected happens to the JupyterLab deployment. Click the "Python 3" square in the right side pane. This will create an empty Python file; in JupyterLab these are called Python notebooks. You can name the file by right-clicking the filename in the left file list or in the tab above the code window.
 
-![JupyterLab's browser tab looks like any other desktop application.](../../img/inference/jupyterlab-new-file.png)
+![JupyterLab's browser tab looks like any other desktop application.](../../core-img/inference/jupyterlab-new-file.png)
 
 Paste the previously copied Python code into the code window. A few notes about the code:
 - BASE_URL is the internal URL mentioned previously in the connection parameter dialog window.

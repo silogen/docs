@@ -1,14 +1,15 @@
+<!--
+Copyright © Advanced Micro Devices, Inc., or its affiliates.
+
+SPDX-License-Identifier: MIT
+-->
+
 ---
 tags:
   - keycloak
   - login
   - single sign-on
 ---
-<!--
-Copyright © Advanced Micro Devices, Inc., or its affiliates.
-
-SPDX-License-Identifier: MIT
--->
 
 # Adding an Identity Provider to Enable Single Sign-on
 

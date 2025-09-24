@@ -1,13 +1,15 @@
----
-tags:
-  - secrets
-  - AMD Resource Manager
----
 <!--
 Copyright © Advanced Micro Devices, Inc., or its affiliates.
 
 SPDX-License-Identifier: MIT
 -->
+
+---
+tags:
+  - secrets
+  - AMD Resource Manager
+---
+
 # Manage Secrets
 
 Secrets in the platform provide a secure way to store sensitive information such as API keys, database credentials, or tokens. They are created at the organizational level and can then be assigned to one or more projects. This ensures workloads always have the credentials they need without exposing them directly in code or manifests.
@@ -16,7 +18,7 @@ Secrets in the platform provide a secure way to store sensitive information such
 
 The main secrets page displays all secrets in your organization. Each entry includes key details such as the secret’s name, type, current status, scope, assigned projects, and last updated time. You can filter or search secrets by name or type, and use pagination to browse through the list.
 
-![The main secrets list displays all available secrets.](../../img/secrets/secrets-list.png)
+![The main secrets list displays all available secrets.](../../core-img/secrets/secrets-list.png)
 
 ### Secrets table
 
@@ -34,7 +36,7 @@ The main secrets page displays all secrets in your organization. Each entry incl
 
 To create a new secret, click the **Add secret** button on the main view. This opens the **Add secret** modal, where you can enter the details for the new secret.
 
-![The add secret modal.](../../img/secrets/secret-management-01.png)
+![The add secret modal.](../../core-img/secrets/secret-management-01.png)
 
 In the modal, provide the following information:
 
@@ -74,9 +76,9 @@ Secrets can be securely shared across projects. Assigning a secret ensures it is
 
 To edit project assignments, click the **actions menu** (⋮) at the end of the secret’s row and select **Edit assignment**. This opens the **Assign secret** modal, which displays a list of available projects:
 
-![Assign a secret to projects.](../../img/secrets/secret-management-02.png)
+![Assign a secret to projects.](../../core-img/secrets/secret-management-02.png)
 
-![The edit assignment modal.](../../img/secrets/secret-management-03.png)
+![The edit assignment modal.](../../core-img/secrets/secret-management-03.png)
 
 - To **assign** the secret, select the projects you want from the list.
 - To **remove** an assignment, deselect any projects that are already checked.
@@ -90,7 +92,7 @@ When finished, click **Save changes** to apply your updates.
 
 To permanently delete a secret from the organization (and remove it from all assigned projects and synchronized clusters), open the **actions menu** (⋮) on the secret’s row and select **Delete**. This opens a confirmation modal where you must confirm the deletion. Click **Delete** to proceed.
 
-![The delete secret modal.](../../img/secrets/secret-management-04.png)
+![The delete secret modal.](../../core-img/secrets/secret-management-04.png)
 
 - **Deleting a secret permanently removes it from all projects and clusters.**
 - This action cannot be undone.
@@ -100,7 +102,7 @@ To permanently delete a secret from the organization (and remove it from all ass
 
 In addition to the main **Secrets page**, you can also view secrets from within an individual project. Each project has its own **Secrets tab**, which lists only the secrets assigned to that project.
 
-![The secrets tab on a project page.](../../img/secrets/project-secrets-tab.png)
+![The secrets tab on a project page.](../../core-img/secrets/project-secrets-tab.png)
 
 The project-level secrets view includes the following information:
 

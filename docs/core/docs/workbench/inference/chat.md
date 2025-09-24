@@ -1,13 +1,14 @@
----
-tags:
-  - AMD AI Workbench
-  - chat
----
 <!--
 Copyright © Advanced Micro Devices, Inc., or its affiliates.
 
 SPDX-License-Identifier: MIT
 -->
+
+---
+tags:
+  - AMD AI Workbench
+  - chat
+---
 
 # Chat
 
@@ -21,12 +22,12 @@ You will be able to choose from the list of models you have access to.
 
 Expand the settings toggle to view and modify the generation parameters.
 
-![Chat](../../img/inference/chat.png)
+![Chat](../../core-img/inference/chat.png)
 
 ## Inspecting the debug output of the model
 
 Once you have a response from the model, you can inspect the messages sent to the model, the context retrieved as part of generation, and the consumed tokens by clicking the "bug" icon next to the response.
 
-![Debug icon](../../img/inference/debug-icon.png)
+![Debug icon](../../core-img/inference/debug-icon.png)
 
-![Debug output](../../img/inference/debug-output.png)
+![Debug output](../../core-img/inference/debug-output.png)

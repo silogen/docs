@@ -1,14 +1,15 @@
+<!--
+Copyright © Advanced Micro Devices, Inc., or its affiliates.
+
+SPDX-License-Identifier: MIT
+-->
+
 ---
 tags:
   - AMD Resource Manager
   - quota
   - project
 ---
-<!--
-Copyright © Advanced Micro Devices, Inc., or its affiliates.
-
-SPDX-License-Identifier: MIT
--->
 
 # Project Quotas Overview
 
@@ -29,7 +30,7 @@ For the most part, AMD Resource Manager works with AI-focused tasks, which are p
 
 Currently, the project status reflects the state of this application of the quota to the cluster.
 
-![The projects list page displays current status.](../../img/projects/proj-list.png)
+![The projects list page displays current status.](../../core-img/projects/proj-list.png)
 
 ## Manage quotas
 
@@ -39,7 +40,7 @@ This article explains how to define quotas for your projects. In AMD Resource Ma
 
 Project quota can be adjusted using the sliders or by inputting the required allocations into the fields.
 
-![A diagram of the quotas page.](../../img/projects/proj-quota-panel.png)
+![A diagram of the quotas page.](../../core-img/projects/proj-quota-panel.png)
 
 **GPU allocation**: Number of GPUs allocated for this project. Users belonging to this project are guaranteed the allocated GPU quota for their workloads.
 

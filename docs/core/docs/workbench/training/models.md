@@ -1,14 +1,16 @@
+<!--
+Copyright © Advanced Micro Devices, Inc., or its affiliates.
+
+SPDX-License-Identifier: MIT
+-->
+
 ---
 tags:
   - AMD AI Workbench
   - model catalog
   - deployments
 ---
-<!--
-Copyright © Advanced Micro Devices, Inc., or its affiliates.
 
-SPDX-License-Identifier: MIT
--->
 # Models
 
 The Models view lists all available models that can be deployed or [fine-tuned](./fine-tuning.md).
@@ -33,7 +35,7 @@ Model can be in one of the following states:
 
 All available ready-to-deploy open-source models are listed in this view. Users can filter the list using the search field and tags dropdown.
 
-![The community models page lists all available open-source models.](../../img/training/models-community.png)
+![The community models page lists all available open-source models.](../../core-img/training/models-community.png)
 
 The models are hand-picked from Hugging Face and the download procedure fetches the model from the HF repository. The community models aren't modified in any way, but they are ensured to work well on AMD hardware. Some of the models might have modifications to how they use the provided compute resources.
 
@@ -55,7 +57,7 @@ The custom models page lists all available custom models activated from the comm
 !!! warning
     The custom models page does not currently allow the implementation of users' own models, such as custom business intelligence solutions.
 
-![The custom models page lists all available base and fine-tuned models.](../../img/training/models-custom-models.png)
+![The custom models page lists all available base and fine-tuned models.](../../core-img/training/models-custom-models.png)
 
 The page has a prominent **Fine-tune model** button, which opens the [fine-tuning](./fine-tuning.md) dialog. Clicking each model's action menu shows a list of available functions: show details, fine-tune, deploy, or delete.
 
@@ -70,4 +72,4 @@ This view lists active models that are deployed into the cluster. Each model has
 
 From the actions menu, users can view model details or delete models. The filter bar offers various ways to select a subset of models.
 
-![The active deployments page lists all deployments.](../../img/training/models-active-deployments.png)
+![The active deployments page lists all deployments.](../../core-img/training/models-active-deployments.png)

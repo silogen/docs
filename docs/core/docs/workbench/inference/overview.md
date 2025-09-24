@@ -1,14 +1,16 @@
+<!--
+Copyright © Advanced Micro Devices, Inc., or its affiliates.
+
+SPDX-License-Identifier: MIT
+-->
+
 ---
 tags:
   - AMD AI Workbench
   - inference
   - chat
 ---
-<!--
-Copyright © Advanced Micro Devices, Inc., or its affiliates.
 
-SPDX-License-Identifier: MIT
--->
 # Model Inference
 
 Training AI models and developing your own models are essential parts of AI workflows. Solving problems, making predictions, and processing data is called inference. You can use the platform for all of these use cases.

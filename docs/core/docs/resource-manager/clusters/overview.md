@@ -1,13 +1,14 @@
----
-tags:
-  - AMD Resource Manager
-  - cluster
----
 <!--
 Copyright © Advanced Micro Devices, Inc., or its affiliates.
 
 SPDX-License-Identifier: MIT
 -->
+
+---
+tags:
+  - AMD Resource Manager
+  - cluster
+---
 
 # Clusters Overview
 
@@ -42,7 +43,7 @@ The clusters overview provides a list of the clusters added to the platform, alo
 | CPU allocation    | The share of the total number of CPUs allocated to quotas in the cluster. Users belonging to projects with CPU quotas are guaranteed allocated CPU resources for their workloads.         |
 | Memory allocation | The share of the total amount of memory allocated to quotas in the cluster. Users belonging to projects with memory quotas are guaranteed allocated memory resources for their workloads. |
 
-![A diagram of the clusters page.](../../img/clusters/view-clusters.png)
+![A diagram of the clusters page.](../../core-img/clusters/view-clusters.png)
 
 ## Single cluster status
 
@@ -77,4 +78,4 @@ The Cluster page provides a quick and easy way to see the status of your cluster
 | GPU devices | Number of GPUs on the node                    |
 | GPU memory  | Amount of GPU memory available on the node    |
 
-![A diagram of the single cluster page.](../../img/clusters/view-single-cluster.png)
+![A diagram of the single cluster page.](../../core-img/clusters/view-single-cluster.png)

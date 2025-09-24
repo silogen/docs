@@ -1,19 +1,21 @@
+<!--
+Copyright © Advanced Micro Devices, Inc., or its affiliates.
+
+SPDX-License-Identifier: MIT
+-->
+
 ---
 tags:
   - AMD AI Workbench
   - model catalog
   - workloads
 ---
-<!--
-Copyright © Advanced Micro Devices, Inc., or its affiliates.
 
-SPDX-License-Identifier: MIT
--->
 # AMD AI Workbench Overview
 
 The AMD AI Workbench is an interface for developers to easily manage the lifecycle of their AI stack. The Workbench provides an easy-to-use low-code option for running and managing AI workloads. This article lays the foundation for how to develop, run, and manage AI workloads in the AMD AI Workbench.
 
-![The introduction page to AMD AI Workbench outlines the main chat features.](../img/ai-development/workbench-introduction.png)
+![The introduction page to AMD AI Workbench outlines the main chat features.](../core-img/ai-development/workbench-introduction.png)
 
 ## AMD AI Workbench functionality
 

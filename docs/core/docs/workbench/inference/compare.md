@@ -1,14 +1,16 @@
+<!--
+Copyright © Advanced Micro Devices, Inc., or its affiliates.
+
+SPDX-License-Identifier: MIT
+-->
+
 ---
 tags:
   - AMD AI Workbench
   - chat
   - comparison
 ---
-<!--
-Copyright © Advanced Micro Devices, Inc., or its affiliates.
 
-SPDX-License-Identifier: MIT
--->
 # Comparison
 
 The model comparison view allows you to compare the output of different models using the same set of settings.
@@ -27,4 +29,4 @@ Similar to the chat, you can expand the settings toggle to view and modify the g
 
 Also [similar to the chat](./chat.md#inspecting-the-debug-output-of-the-model), you can click the "bug" icon to inspect the messages sent to the model,the context retrieved as part of generation, and the consumed tokens.
 
-![Model comparison view](../../img/inference/compare.png)
+![Model comparison view](../../core-img/inference/compare.png)

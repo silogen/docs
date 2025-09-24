@@ -1,14 +1,16 @@
+<!--
+Copyright © Advanced Micro Devices, Inc., or its affiliates.
+
+SPDX-License-Identifier: MIT
+-->
+
 ---
 tags:
   - AMD Resource Manager
   - cluster
   - add cluster
 ---
-<!--
-Copyright © Advanced Micro Devices, Inc., or its affiliates.
 
-SPDX-License-Identifier: MIT
--->
 # Create a New Cluster in the UI
 
 This article explains how to create a new cluster in the AMD Resource Manager user interface.
@@ -21,7 +23,7 @@ To add a new cluster:
 4. Verify connection - Wait for the connection verification to complete.
 5. Complete the next steps in the process.
 
-![A diagram of the create cluster page.](../../img/clusters/create-cluster.png)
+![A diagram of the create cluster page.](../../core-img/clusters/create-cluster.png)
 
 ## Delete a cluster
 

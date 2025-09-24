@@ -1,3 +1,9 @@
+<!--
+Copyright © Advanced Micro Devices, Inc., or its affiliates.
+
+SPDX-License-Identifier: MIT
+-->
+
 ---
 tags:
   - keycloak
@@ -5,11 +11,6 @@ tags:
   - invitation
   - smtp
 ---
-<!--
-Copyright © Advanced Micro Devices, Inc., or its affiliates.
-
-SPDX-License-Identifier: MIT
--->
 
 # Inviting Users and Configuring SMTP in Keycloak
 

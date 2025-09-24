@@ -1,14 +1,16 @@
+<!--
+Copyright © Advanced Micro Devices, Inc., or its affiliates.
+
+SPDX-License-Identifier: MIT
+-->
+
 ---
 tags:
   - AMD AI Workbench
   - datasets
   - fine-tuning
 ---
-<!--
-Copyright © Advanced Micro Devices, Inc., or its affiliates.
 
-SPDX-License-Identifier: MIT
--->
 # Datasets
 
 AMD AI Workbench allows you to create and manage datasets on the platform for fine-tuning purposes. Datasets are collections of data points, where each data point represents a conversation, with or without the model's expected response, depending on the use case.
@@ -19,7 +21,7 @@ Navigate to the `Datasets` page to upload a dataset. You can provide a name and 
 
 The type of dataset should be selected when uploading the file, and the format of each row should correspond to the selected dataset type.
 
-![Upload dataset](../../img/training/datasets-upload-dataset.png)
+![Upload dataset](../../core-img/training/datasets-upload-dataset.png)
 
 ## Data formats
 
@@ -63,4 +65,4 @@ Depending on the selected dataset type, each row in the JSONL file should be for
 
 If you have identified a dataset that is no longer relevant to your use cases, you can choose to delete. This happens by selecting the dataset(s) and clicking the "Delete" button in the actions menu.
 
-![Deleting a dataset can take place via the multiselect feature or in the three-dot action menu.](../../img/training/datasets-delete.png)
+![Deleting a dataset can take place via the multiselect feature or in the three-dot action menu.](../../core-img/training/datasets-delete.png)

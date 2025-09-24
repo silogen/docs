@@ -1,13 +1,15 @@
----
-tags:
-  - projects
-  - AMD Resource Manager
----
 <!--
 Copyright © Advanced Micro Devices, Inc., or its affiliates.
 
 SPDX-License-Identifier: MIT
 -->
+
+---
+tags:
+  - projects
+  - AMD Resource Manager
+---
+
 # Manage Projects
 
 Projects help you organize and manage your work in the platform. Each project is isolated from others, meaning resources, workloads, and secrets in one project are not accessible from another. This ensures security and clear boundaries for your work.
@@ -30,7 +32,7 @@ Project names must be unique and follow naming rules: use only lowercase letters
 
 The main projects view lists available projects, the number of assigned users, and a short description of each project. To add a new project, click the "Create project" button.
 
-![The projects list displays the number of users and a short description of the project.](../../img/projects/projects-list.png)
+![The projects list displays the number of users and a short description of the project.](../../core-img/projects/projects-list.png)
 
 Clicking a project's name opens the edit view. Here, you can edit project details. Note that the project's name is permanent and cannot be changed. Click the "Save changes" button to apply updates.
 

@@ -1,14 +1,16 @@
+<!--
+Copyright © Advanced Micro Devices, Inc., or its affiliates.
+
+SPDX-License-Identifier: MIT
+-->
+
 ---
 tags:
   - AMD Resource Manager
   - overview
   - features
 ---
-<!--
-Copyright © Advanced Micro Devices, Inc., or its affiliates.
 
-SPDX-License-Identifier: MIT
--->
 # AMD Resource Manager Overview
 
 The platform provides administrators with tools to oversee and control the platform’s computational resources and user access. These features are managed through a module called AMD Resource Manager. Its key capabilities include cluster management, monitoring, and maintaining teams' access to computational resources.
