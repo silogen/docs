@@ -32,6 +32,13 @@ Project names must be unique and follow naming rules: use only lowercase letters
 
 The main projects view lists available projects, the number of assigned users, and a short description of each project. To add a new project, click the "Create project" button.
 
+### Projects and namespaces
+
+To facilitate security and isolation of workloads, each project triggers the creation of a corresponding namespace in the underlying Kubernetes cluster. This namespace is used to contain all resources related to that project, ensuring that workloads and data are properly segregated.
+Users assigned to a project are granted access to its namespace, allowing them to manage and run workloads within that specific context.
+
+## Viewing and editing projects
+
 ![The projects list displays the number of users and a short description of the project.](../../core-img/projects/projects-list.png)
 
 Clicking a project's name opens the edit view. Here, you can edit project details. Note that the project's name is permanent and cannot be changed. Click the "Save changes" button to apply updates.
