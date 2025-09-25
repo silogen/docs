@@ -15,10 +15,10 @@ tags:
 ## Constructing the kubeconfig file
 Once a cluster has been installed with Cluster Forge, the kubeconfig file required to access the cluster can be constructed using the template below.
 First you need to obtain the following information from the Platform Administrator:
-- The API server URL of the cluster (typically `https://k8s.&lt;domain provided during installation&gt;:9443`)
-- The keycloak server URL for the application (typically `https://kc.&lt;domain provided during installation&gt;/realms/airm`)
+- The API server URL of the cluster (typically `https://k8s.<domain provided during installation>:9443`)
+- The keycloak server URL for the application (typically `https://kc.<domain provided during installation>/realms/airm`)
 - The client secret for the OIDC client
-  - This can be obtained by logging into keycloak (`https://keycloak.&lt;domain provided during installation&gt;/admin/airm/console/`) and navigating to the `Clients` section, selecting the `k8s` client, and then going to the `Credentials` tab and copying the `Client Secret`.
+  - This can be obtained by logging into keycloak (`https://keycloak.<domain provided during installation>/admin/airm/console/`) and navigating to the `Clients` section, selecting the `k8s` client, and then going to the `Credentials` tab and copying the `Client Secret`.
 
 Once you have this information, you can create a kubeconfig file using the following template. Replace the placeholders with the actual values obtained from the Platform Administrator.
 
@@ -61,5 +61,5 @@ Once you have created the kubeconfig file, install the oidc plugin (https://gith
 Once you've done this, you can use `kubectl`, `k9s`, or any other command line client to access the cluster.
 If you are restricted to one or more namespaces, please make sure to include the namespace you have access to in your commands, for example:
 ```bash
-kubectl get pods -n &lt;namespace&gt;
+kubectl get pods -n <namespace>
 ```
