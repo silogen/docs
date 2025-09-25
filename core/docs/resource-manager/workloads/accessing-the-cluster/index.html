@@ -3125,10 +3125,10 @@ SPDX-License-Identifier: MIT
 <h2 id="constructing-the-kubeconfig-file">Constructing the kubeconfig file<a class="headerlink" href="#constructing-the-kubeconfig-file" title="Permanent link">&para;</a></h2>
 <p>Once a cluster has been installed with Cluster Forge, the kubeconfig file required to access the cluster can be constructed using the template below.
 First you need to obtain the following information from the Platform Administrator:
-- The API server URL of the cluster (typically <code>https://k8s.&amp;lt;domain provided during installation&amp;gt;:9443</code>)
-- The keycloak server URL for the application (typically <code>https://kc.&amp;lt;domain provided during installation&amp;gt;/realms/airm</code>)
+- The API server URL of the cluster (typically <code>https://k8s.&lt;domain provided during installation&gt;:9443</code>)
+- The keycloak server URL for the application (typically <code>https://kc.&lt;domain provided during installation&gt;/realms/airm</code>)
 - The client secret for the OIDC client
-  - This can be obtained by logging into keycloak (<code>https://keycloak.&amp;lt;domain provided during installation&amp;gt;/admin/airm/console/</code>) and navigating to the <code>Clients</code> section, selecting the <code>k8s</code> client, and then going to the <code>Credentials</code> tab and copying the <code>Client Secret</code>.</p>
+  - This can be obtained by logging into keycloak (<code>https://keycloak.&lt;domain provided during installation&gt;/admin/airm/console/</code>) and navigating to the <code>Clients</code> section, selecting the <code>k8s</code> client, and then going to the <code>Credentials</code> tab and copying the <code>Client Secret</code>.</p>
 <p>Once you have this information, you can create a kubeconfig file using the following template. Replace the placeholders with the actual values obtained from the Platform Administrator.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v1</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nt">clusters</span><span class="p">:</span>
@@ -3165,7 +3165,7 @@ First you need to obtain the following information from the Platform Administrat
 <p>Once you have created the kubeconfig file, install the oidc plugin (https://github.com/int128/kubelogin) to ensure that kubectl can use the OIDC authentication method.
 Once you've done this, you can use <code>kubectl</code>, <code>k9s</code>, or any other command line client to access the cluster.
 If you are restricted to one or more namespaces, please make sure to include the namespace you have access to in your commands, for example:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="w"> </span>-n<span class="w"> </span><span class="p">&amp;</span>lt<span class="p">;</span>namespace<span class="p">&amp;</span>gt<span class="p">;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="w"> </span>-n<span class="w"> </span>&lt;namespace&gt;
 </code></pre></div></p>
 
 
