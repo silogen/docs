@@ -144,6 +144,9 @@ nav:
     - Dashboard: core/docs/resource-manager/dashboard.md
     - Clusters:
       - Clusters Overview: core/docs/resource-manager/clusters/overview.md
+    - Workloads:
+      - Workloads Overview: core/docs/resource-manager/workloads/overview.md
+      - Accessing the Cluster: core/docs/resource-manager/workloads/accessing-the-cluster.md
     - Projects:
       - Projects Overview: core/docs/resource-manager/projects/manage-projects.md
       - Project Dashboard: core/docs/resource-manager/projects/project-dashboard.md
