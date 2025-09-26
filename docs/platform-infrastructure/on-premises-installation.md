@@ -18,7 +18,8 @@ This article explains how to install {{ name }} in an on-premises environment, c
 The installation process leverages helper tools called Cluster Bloom and Cluster Forge that deploy and configure all necessary platform components, preparing a Kubernetes cluster for executing AI workloads.
 
 ## Prerequisites
-In order to install {{ name_secondary }} your system should meet the following requirements:
+In order to install {{ name }} your system should meet the following requirements:
+
 - Ubuntu (supported versions checked at runtime)
 - Sufficient disk space (500GB+ recommended for root partition, 2TB+ for workloads)
 - NVMe drives for optimal storage configuration
@@ -29,7 +30,7 @@ In order to install {{ name_secondary }} your system should meet the following r
 Before beginning the software installation, please ensure your network environment meets the following requirements. Proper configuration of these elements is crucial for the security, accessibility, and functionality of the application.
 
 ### Domain name
-Before installing {{ name_secondary }}, you'll need a domain name (such as myapp.example.com) that points to your server's IP address.
+Before installing {{ name }}, you'll need a domain name (such as myapp.example.com) that points to your server's IP address.
 
 #### Using .nip.io domain for testing and demos
 If you don't have a DNS-enabled domain available, you may use a .nip.io domain, which automatically resolves to your service's IP address your IP address. Example: https://203.0.113.10.nip.io (format is `https://<master-node-ip-address>.nip.io`).
@@ -46,27 +47,29 @@ Alternatively, the domain can point directly to a single server's IP address, an
 
 ### TLS certificates
 A valid TLS certificate must be configured for the chosen domain to enable secure HTTPS connections to your services. To setup TLS certificate you need to select one of the following options:
+
 - You can provide your own trusted SSL certificate purchased from a certificate authority.
-- You can create a self-signed certificate during the installation process (**the default option for demo installations**).
+- You can create a self-signed certificate during the installation process.
 - You can use the free Let's Encrypt service to automatically generate one. When using Let's Encrypt, your setup must meet one of these requirements: either have port 80 accessible from the internet (allowing Let's Encrypt to verify domain ownership through your website), or have DNS management capabilities that allow automated domain validation (where Let's Encrypt can verify ownership by temporarily adding DNS records to your domain).
 
 ### Accessing the application
 
-{{ name_secondary }} application requires HTTPS for all external access.
+{{ name }} application requires HTTPS for all external access.
 When you specify a domain for the service (whether it's a custom domain or a convenience domain like *.nip.io), the application will also use this domain name internally when making callbacks to itself. Specifically, you should ensure that:
+
 - The application is reachable at https://<your-domain>
 - Port 443 must be open on your firewall and routed to the application service
 
-## Install Kubernetes cluster and software
+## Install {{ name }}
 
-You will use an installation script called Cluster Bloom to install and configure a Kubernetes cluster and install the platform. It installs the following features to prepare an AMD GPU node to be part of a Kubernetes cluster:
+You will use an installation tool called Cluster Bloom to first install and configure a Kubernetes cluster, and then install the {{ name }} application. The installation tool performs the following steps to prepare an AMD GPU node to be part of a Kubernetes cluster:
 
 - Automated RKE2 Kubernetes cluster deployment
 - ROCm setup and configuration for AMD GPU nodes
 - Disk management and Longhorn storage integration
 - Multi-node cluster support with easy node joining
 - 1Password integration for secrets management
-- Install the platform using Cluster Forge tool
+- Installs the {{ name }} application using Cluster Forge tool
 
 !!! info
     The current platform version supports only one cluster per installation. Support for multiple clusters is on the product roadmap.
