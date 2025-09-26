@@ -18,22 +18,44 @@ This article explains how to install {{ name }} in an on-premises environment, c
 The installation process leverages helper tools called Cluster Bloom and Cluster Forge that deploy and configure all necessary platform components, preparing a Kubernetes cluster for executing AI workloads.
 
 ## Prerequisites
-
+In order to install {{ name_secondary }} your system should meet the following requirements:
 - Ubuntu (supported versions checked at runtime)
 - Sufficient disk space (500GB+ recommended for root partition, 2TB+ for workloads)
 - NVMe drives for optimal storage configuration
 - ROCm-compatible AMD GPUs (for GPU nodes)
 - Root/sudo access
 
-### Domain and SSL certificate prerequisites
-- Before installing the Kubernetes services, you'll need a domain name (such as myapp.example.com) that points to your server's IP address.
-    - For production environments, this domain should point to a load balancer that distributes traffic across multiple servers.
-    - For smaller setups or demonstrations, the domain can point directly to a single server's IP address, and MetalLB will be configured to handle load balancing within the Kubernetes cluster.
-    - If you don't have a DNS-enabled domain available, you may use a .nip.io domain with your IP address. Example: `<master-node-ip-address>.nip.io`.
-- Additionally, you'll need an SSL certificate to enable secure HTTPS connections to your services.
-    - You can either provide your own trusted SSL certificate purchased from a certificate authority, or use the free Let's Encrypt service to automatically generate one.
-    - If using Let's Encrypt, your setup must meet one of these requirements: either have port 80 accessible from the internet (allowing Let's Encrypt to verify domain ownership through your website), or have DNS management capabilities that allow automated domain validation (where Let's Encrypt can verify ownership by temporarily adding DNS records to your domain).
-- Finally, ensure that any firewalls, security groups, or network routing configurations are updated to allow incoming connections from users who will be accessing these services.
+## Network and security configuration
+Before beginning the software installation, please ensure your network environment meets the following requirements. Proper configuration of these elements is crucial for the security, accessibility, and functionality of the application.
+
+### Domain name
+Before installing {{ name_secondary }}, you'll need a domain name (such as myapp.example.com) that points to your server's IP address.
+
+#### Using .nip.io domain for testing and demos
+If you don't have a DNS-enabled domain available, you may use a .nip.io domain, which automatically resolves to your service's IP address your IP address. Example: https://203.0.113.10.nip.io (format is `https://<master-node-ip-address>.nip.io`).
+This will resolve directly to 203.0.113.10 and allow HTTPS access without DNS setup.
+
+!!! note
+    .nip.io only provides DNS resolution. You still need to ensure port 443 is open and that your TLS certificate is valid for the chosen domain. If your application is configured to call itself at a .nip.io address, you must use the same domain consistently for external and internal access.
+
+#### Production deployment
+For production environments, this domain should point to a load balancer that distributes traffic across multiple servers.
+
+#### Other alternatives
+Alternatively, the domain can point directly to a single server's IP address, and MetalLB will be configured to handle load balancing within the Kubernetes cluster.
+
+### TLS certificates
+A valid TLS certificate must be configured for the chosen domain to enable secure HTTPS connections to your services. To setup TLS certificate you need to select one of the following options:
+- You can provide your own trusted SSL certificate purchased from a certificate authority.
+- You can create a self-signed certificate during the installation process (**the default option for demo installations**).
+- You can use the free Let's Encrypt service to automatically generate one. When using Let's Encrypt, your setup must meet one of these requirements: either have port 80 accessible from the internet (allowing Let's Encrypt to verify domain ownership through your website), or have DNS management capabilities that allow automated domain validation (where Let's Encrypt can verify ownership by temporarily adding DNS records to your domain).
+
+### Accessing the application
+
+{{ name_secondary }} application requires HTTPS for all external access.
+When you specify a domain for the service (whether it's a custom domain or a convenience domain like *.nip.io), the application will also use this domain name internally when making callbacks to itself. Specifically, you should ensure that:
+- The application is reachable at https://<your-domain>
+- Port 443 must be open on your firewall and routed to the application service
 
 ## Install Kubernetes cluster and software
 
