@@ -21,6 +21,10 @@ Ensure you have access to the cluster by obtaining the kubeconfig file as detail
 You can submit workloads using command-line tools like `kubectl` or through a workload management system integrated with the cluster. You will be prompted to login using your Resource Manager credentials when you attempt to access the cluster.
 When submitting your workload, please make sure to specify the project namespace and request resources within the allocated quota.
 
+```bash
+kubectl create -f sample_workload.yaml -n <namespace>
+```
+
 ## Workloads and project quotas
 
 Similar to submission of workloads via the API, workloads submitted to a particular project must adhere to the quotas allocated to the project. The workloads can exceed the quota allocated to the project, if there are idle resources in the cluster.
