@@ -3163,6 +3163,8 @@ SPDX-License-Identifier: MIT
 <p>Ensure you have access to the cluster by obtaining the kubeconfig file as detailed in <a href="../accessing-the-cluster/">Accessing the Cluster</a>. This file is necessary for submitting workloads.
 You can submit workloads using command-line tools like <code>kubectl</code> or through a workload management system integrated with the cluster. You will be prompted to login using your Resource Manager credentials when you attempt to access the cluster.
 When submitting your workload, please make sure to specify the project namespace and request resources within the allocated quota.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>kubectl<span class="w"> </span>create<span class="w"> </span>-f<span class="w"> </span>sample_workload.yaml<span class="w"> </span>-n<span class="w"> </span>&lt;namespace&gt;
+</code></pre></div>
 <h2 id="workloads-and-project-quotas">Workloads and project quotas<a class="headerlink" href="#workloads-and-project-quotas" title="Permanent link">&para;</a></h2>
 <p>Similar to submission of workloads via the API, workloads submitted to a particular project must adhere to the quotas allocated to the project. The workloads can exceed the quota allocated to the project, if there are idle resources in the cluster.
 However, if another project with a higher quota allocation requests those resources, the workload may be preempted to free up resources for the higher-priority project.</p>
