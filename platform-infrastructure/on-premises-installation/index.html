@@ -847,13 +847,64 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Prerequisites">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#network-and-security-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Network and security configuration
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Network and security configuration">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#domain-and-ssl-certificate-prerequisites" class="md-nav__link">
+  <a href="#domain-names" class="md-nav__link">
     <span class="md-ellipsis">
-      Domain and SSL certificate prerequisites
+      Domain names
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Domain names">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-nipio-domain-for-testing-and-demos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using .nip.io domain for testing and demos
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tls-certificates" class="md-nav__link">
+    <span class="md-ellipsis">
+      TLS certificates
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#accessing-the-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      Accessing the application
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#load-balancing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Load balancing
     </span>
   </a>
   
@@ -865,13 +916,13 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#install-kubernetes-cluster-and-software" class="md-nav__link">
+  <a href="#install-amd-resource-manager-amd-ai-workbench" class="md-nav__link">
     <span class="md-ellipsis">
-      Install Kubernetes cluster and software
+      Install AMD Resource Manager &amp; AMD AI Workbench
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Install Kubernetes cluster and software">
+    <nav class="md-nav" aria-label="Install AMD Resource Manager &amp; AMD AI Workbench">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -3246,13 +3297,64 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Prerequisites">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#network-and-security-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Network and security configuration
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Network and security configuration">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#domain-and-ssl-certificate-prerequisites" class="md-nav__link">
+  <a href="#domain-names" class="md-nav__link">
     <span class="md-ellipsis">
-      Domain and SSL certificate prerequisites
+      Domain names
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Domain names">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-nipio-domain-for-testing-and-demos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using .nip.io domain for testing and demos
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tls-certificates" class="md-nav__link">
+    <span class="md-ellipsis">
+      TLS certificates
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#accessing-the-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      Accessing the application
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#load-balancing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Load balancing
     </span>
   </a>
   
@@ -3264,13 +3366,13 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#install-kubernetes-cluster-and-software" class="md-nav__link">
+  <a href="#install-amd-resource-manager-amd-ai-workbench" class="md-nav__link">
     <span class="md-ellipsis">
-      Install Kubernetes cluster and software
+      Install AMD Resource Manager &amp; AMD AI Workbench
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Install Kubernetes cluster and software">
+    <nav class="md-nav" aria-label="Install AMD Resource Manager &amp; AMD AI Workbench">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -3477,8 +3579,9 @@ SPDX-License-Identifier: MIT
 
 <h1 id="install-amd-enterprise-ai-platform-on-premises">Install AMD Enterprise AI platform on Premises<a class="headerlink" href="#install-amd-enterprise-ai-platform-on-premises" title="Permanent link">&para;</a></h1>
 <p>This article explains how to install AMD Resource Manager &amp; AMD AI Workbench in an on-premises environment, covering the full stack from metal to application layer in a streamlined manner. The platform runs on top of Kubernetes orchestration platform and includes essential Kubernetes components for monitoring, secrets management, and certificate management.</p>
-<p>The installation process leverages helper tools called Cluster Bloom and Cluster Forge that deploy and configure all necessary platform components, preparing a Kubernetes cluster for executing AI workloads.</p>
+<p>You will use an installation tool called Cluster Bloom to first install and configure a Kubernetes cluster, and then install the AMD Resource Manager &amp; AMD AI Workbench application.</p>
 <h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
+<p>In order to install AMD Resource Manager &amp; AMD AI Workbench your system should meet the following requirements:</p>
 <ul>
 <li>Ubuntu (supported versions checked at runtime)</li>
 <li>Sufficient disk space (500GB+ recommended for root partition, 2TB+ for workloads)</li>
@@ -3486,30 +3589,47 @@ SPDX-License-Identifier: MIT
 <li>ROCm-compatible AMD GPUs (for GPU nodes)</li>
 <li>Root/sudo access</li>
 </ul>
-<h3 id="domain-and-ssl-certificate-prerequisites">Domain and SSL certificate prerequisites<a class="headerlink" href="#domain-and-ssl-certificate-prerequisites" title="Permanent link">&para;</a></h3>
+<h2 id="network-and-security-configuration">Network and security configuration<a class="headerlink" href="#network-and-security-configuration" title="Permanent link">&para;</a></h2>
+<p>Before beginning the software installation, please ensure your network environment meets the following requirements. Proper configuration of these elements is crucial for the security, accessibility, and functionality of the application.</p>
+<h3 id="domain-names">Domain names<a class="headerlink" href="#domain-names" title="Permanent link">&para;</a></h3>
+<p>Before installing AMD Resource Manager &amp; AMD AI Workbench, you'll need a domain name (such as myapp.example.com) that points to your server's IP address.</p>
+<h4 id="using-nipio-domain-for-testing-and-demos">Using .nip.io domain for testing and demos<a class="headerlink" href="#using-nipio-domain-for-testing-and-demos" title="Permanent link">&para;</a></h4>
+<p>If you don't have a DNS-enabled domain available, you may use a .nip.io domain, which automatically resolves to your service's IP address. Example: https://203.0.113.10.nip.io (format is <code>https://&lt;master-node-ip-address&gt;.nip.io</code>).
+This will resolve directly to 203.0.113.10 and allow HTTPS access without DNS setup.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>A .nip.io domain is automatically created for you as part of the installation process.</p>
+</div>
+<h3 id="tls-certificates">TLS certificates<a class="headerlink" href="#tls-certificates" title="Permanent link">&para;</a></h3>
+<p>A valid TLS certificate must be configured for the chosen domain to enable secure HTTPS connections to your services. To setup TLS certificate you need to select one of the following options:</p>
 <ul>
-<li>Before installing the Kubernetes services, you'll need a domain name (such as myapp.example.com) that points to your server's IP address.<ul>
-<li>For production environments, this domain should point to a load balancer that distributes traffic across multiple servers.</li>
-<li>For smaller setups or demonstrations, the domain can point directly to a single server's IP address, and MetalLB will be configured to handle load balancing within the Kubernetes cluster.</li>
-<li>If you don't have a DNS-enabled domain available, you may use a .nip.io domain with your IP address. Example: <code>&lt;master-node-ip-address&gt;.nip.io</code>.</li>
+<li>You can provide your own trusted TLS certificate purchased from a certificate authority.</li>
+<li>You can create a self-signed certificate during the installation process.</li>
+<li>You can use the free Let's Encrypt service to automatically generate one. When using Let's Encrypt, your setup must meet one of these requirements: either have port 80 accessible from the internet (allowing Let's Encrypt to verify domain ownership through your website), or have DNS management capabilities that allow automated domain validation (where Let's Encrypt can verify ownership by temporarily adding DNS records to your domain).</li>
 </ul>
-</li>
-<li>Additionally, you'll need an SSL certificate to enable secure HTTPS connections to your services.<ul>
-<li>You can either provide your own trusted SSL certificate purchased from a certificate authority, or use the free Let's Encrypt service to automatically generate one.</li>
-<li>If using Let's Encrypt, your setup must meet one of these requirements: either have port 80 accessible from the internet (allowing Let's Encrypt to verify domain ownership through your website), or have DNS management capabilities that allow automated domain validation (where Let's Encrypt can verify ownership by temporarily adding DNS records to your domain).</li>
+<h3 id="accessing-the-application">Accessing the application<a class="headerlink" href="#accessing-the-application" title="Permanent link">&para;</a></h3>
+<p>AMD Resource Manager &amp; AMD AI Workbench application requires HTTPS for all external access.
+When you specify a domain for the service (whether it's a custom domain or a convenience domain like *.nip.io), the application will also use this domain name internally when making callbacks to itself. Specifically, you should ensure that:</p>
+<ul>
+<li>The application is reachable at https://<your-domain></li>
+<li>Port 443 must be open on your firewall and routed to the application service</li>
 </ul>
-</li>
-<li>Finally, ensure that any firewalls, security groups, or network routing configurations are updated to allow incoming connections from users who will be accessing these services.</li>
-</ul>
-<h2 id="install-kubernetes-cluster-and-software">Install Kubernetes cluster and software<a class="headerlink" href="#install-kubernetes-cluster-and-software" title="Permanent link">&para;</a></h2>
-<p>You will use an installation script called Cluster Bloom to install and configure a Kubernetes cluster and install the platform. It installs the following features to prepare an AMD GPU node to be part of a Kubernetes cluster:</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>.nip.io only provides DNS resolution. You still need to ensure port 443 is open and that your TLS certificate is valid for the chosen domain. If your application is configured to call itself at a .nip.io address, you must use the same domain consistently for external and internal access.</p>
+</div>
+<h3 id="load-balancing">Load balancing<a class="headerlink" href="#load-balancing" title="Permanent link">&para;</a></h3>
+<p>For production environments, the domain should point to a load balancer that distributes traffic across multiple servers.
+For smaller setups or demonstrations, the domain can point directly to a single server's IP address, and MetalLB will be configured to handle load balancing within the Kubernetes cluster.</p>
+<h2 id="install-amd-resource-manager-amd-ai-workbench">Install AMD Resource Manager &amp; AMD AI Workbench<a class="headerlink" href="#install-amd-resource-manager-amd-ai-workbench" title="Permanent link">&para;</a></h2>
+<p>You will use an installation tool called Cluster Bloom to first install and configure a Kubernetes cluster, and then install the AMD Resource Manager &amp; AMD AI Workbench application. The installation tool performs the following steps to prepare an AMD GPU node to be part of a Kubernetes cluster:</p>
 <ul>
 <li>Automated RKE2 Kubernetes cluster deployment</li>
 <li>ROCm setup and configuration for AMD GPU nodes</li>
 <li>Disk management and Longhorn storage integration</li>
 <li>Multi-node cluster support with easy node joining</li>
 <li>1Password integration for secrets management</li>
-<li>Install the platform using Cluster Forge tool</li>
+<li>Installs the AMD Resource Manager &amp; AMD AI Workbench application using Cluster Forge tool</li>
 </ul>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
