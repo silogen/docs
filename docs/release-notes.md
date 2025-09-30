@@ -4,7 +4,7 @@ Copyright © Advanced Micro Devices, Inc., or its affiliates.
 SPDX-License-Identifier: MIT
 -->
 
-# Release notes
+# Release Notes
 
 ## Release Date: October 2, 2025
 
