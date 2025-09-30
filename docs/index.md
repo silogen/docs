@@ -16,34 +16,96 @@ This is your comprehensive handbook designed to help infrastructure administrato
 :::{grid-item-card}
 Introduction
 ^^^
-- [Platform overview](./platform-overview/)
-- [Quick start guide](./quick-start/)
-- [Target audience](./target-audience/)
+- [Platform Overview](./platform-overview/)
+- [Quick Start Guide](./quick-start/)
+- [Target Audience](./target-audience/)
 :::
 
 :::{grid-item-card}
-Infrastructure administrator
+Infrastructure and Platform Installation
 ^^^
-- [Install on-premises environment](./platform-infrastructure/on-premises-installation/)
-- [Single sign-on](./keycloak/sso/)
+- [Install On-premises Environment](./platform-infrastructure/on-premises-installation/)
+- [Single Sign-on](./keycloak/sso/)
 :::
 
 :::{grid-item-card}
-AI practitioner
+AMD AI Workbench
 ^^^
-- [AI development overview](./workbench/overview/)
-- [Deploy model and run inference](./workbench/inference/how-to-deploy-and-inference/)
-- [Model finetuning](./workbench/training/fine-tuning/)
-- [Access models](./workbench/training/models/)
+- [AI Development Overview](./workbench/overview/)
+- [Deploy Model and Run Inference](./workbench/inference/how-to-deploy-and-inference/)
+- [Model Fine-tuning](./workbench/training/fine-tuning/)
+- [Access Models](./workbench/training/models/)
 :::
 
 :::{grid-item-card}
-AI resource manager
+AMD Resource Manager
 ^^^
-- [AMD Resource Manager overview](./resource-manager/overview/)
-- [Getting started](./quick-start-guides/resource-manager-quick-start/)
-- [Managing clusters](./resource-manager/clusters/overview/)
-- [Managing users](./resource-manager/users/overview/)
+- [AMD Resource Manager Overview](./resource-manager/overview/)
+- [Getting Started](./quick-start-guides/resource-manager-quick-start/)
+- [Managing Clusters](./resource-manager/clusters/overview/)
+- [Managing Users](./resource-manager/users/overview/)
 :::
 
 :::: % Close the grid
+
+```{toctree}
+---
+caption: Introduction
+maxdepth: 1
+hidden: True
+---
+Platform Overview <platform-overview>
+Target Audience <target-audience>
+quick-start
+release-notes
+general-topics
+```
+
+```{toctree}
+---
+caption: Infrastructure and Installation
+maxdepth: 1
+hidden: True
+---
+Installation <platform-infrastructure/installation.md>
+```
+
+```{toctree}
+---
+caption: AMD AI Workbench
+maxdepth: 1
+hidden: True
+---
+workbench/overview.md
+Quick Start for AI Practitioners <quick-start-guides/workbench-quick-start.md>
+workbench/workloads.md
+workbench/workspaces.md
+Training and Fine-tuning <workbench/training/overview.md>
+Inference <workbench/inference/overview.md>
+Tutorials <tutorials/workbench-tutorials.md>
+```
+
+```{toctree}
+---
+caption: AMD Resource Manager
+maxdepth: 1
+hidden: True
+---
+resource-manager/overview.md
+Quick Start for AI Resource Managers <quick-start-guides/resource-manager-quick-start.md>
+resource-manager/dashboard.md
+resource-manager/clusters/overview.md
+Projects Overview <resource-manager/projects/manage-projects.md>
+Secrets Overview <resource-manager/secrets/overview.md>
+User Management <resource-manager/users/overview.md>
+Tutorials <tutorials/resource-tutorials.md>
+```
+
+```{toctree}
+---
+caption: References
+maxdepth: 1
+hidden: True
+---
+references/overview.md
+```
