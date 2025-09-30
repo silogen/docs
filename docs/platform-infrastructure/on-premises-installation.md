@@ -10,7 +10,7 @@ SPDX-License-Identifier: MIT
 
 This article explains how to install {{ name }} in an on-premises environment, covering the full stack from metal to application layer in a streamlined manner.
 
-You will use an installation tool called Cluster Bloom to first install and configure a Kubernetes cluster, and then install the {{ name }} application.
+You will use an installation tool called Cluster Bloom to first install and configure a Kubernetes cluster, and then install AMD Resource Manager & AMD AI Workbench.
 
 ## System requirements
 
@@ -32,8 +32,9 @@ Before installing {{ name }}, you'll need a domain name (such as myapp.example.c
 
 If you don't have a DNS-enabled domain available, you may use a .nip.io domain, which automatically resolves to your service's IP address. Example: https://203.0.113.10.nip.io (format is `https://<master-node-ip-address>.nip.io`). This will resolve directly to 203.0.113.10 and allow HTTPS access without DNS setup.
 
-!!! note
-    A .nip.io domain is automatically created for you as part of the installation process.
+```{note}
+A .nip.io domain is automatically created for you as part of the installation process.
+```
 
 ### TLS certificates
 
@@ -50,23 +51,24 @@ A valid TLS certificate must be configured for the chosen domain to enable secur
 - The application is reachable at `https://<your-domain>`
 - Port 443 must be open on your firewall and routed to the application service
 
-!!! note
-    .nip.io only provides DNS resolution. You still need to ensure port 443 is open and that your TLS certificate is valid for the chosen domain. If your application is configured to call itself at a .nip.io address, you must use the same domain consistently for external and internal access.
+```{note}
+.nip.io only provides DNS resolution. You still need to ensure port 443 is open and that your TLS certificate is valid for the chosen domain. If your application is configured to call itself at a .nip.io address, you must use the same domain consistently for external and internal access.
+```
 
 ### Load balancing
 
 For production environments, the domain should point to a load balancer that distributes traffic across multiple servers. For smaller setups or demonstrations, the domain can point directly to a single server's IP address, and MetalLB will be configured to handle load balancing within the Kubernetes cluster.
 
-## Install {{ name }}
+## Install AMD Enterprise AI platform
 
-You will use an installation tool called Cluster Bloom to first install and configure a Kubernetes cluster, and then install the {{ name }} application. The installation tool performs the following steps to prepare an AMD GPU node to be part of a Kubernetes cluster:
+You will use an installation tool called Cluster Bloom to first install and configure a Kubernetes cluster, and then install the applications. The installation tool performs the following steps to prepare an AMD GPU node to be part of a Kubernetes cluster:
 
 - Automated RKE2 Kubernetes cluster deployment
 - ROCm setup and configuration for AMD GPU nodes
 - Disk management and Longhorn storage integration
 - Multi-node cluster support with easy node joining
 - 1Password integration for secrets management
-- Installs the {{ name }} application using Cluster Forge tool
+- Installs AMD Resource Manager & AMD AI Workbench using Cluster Forge tool
 
 ```{note}
 The current platform version supports only one cluster per installation. Support for multiple clusters is on the product roadmap.
