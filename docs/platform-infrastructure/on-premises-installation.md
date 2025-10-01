@@ -119,7 +119,7 @@ Specifies if this is the first node in the cluster. Set to `false` for additiona
 Specifies whether the node has GPUs. Set to `false` for CPU-only nodes. When `true`, ROCm will be installed and configured.
 
 **OIDC URL**<br>
-URL of the OIDC provider for authentication. Leave empty to skip OIDC configuration.
+URL of the OIDC provider for authentication. To use the bundled cluster-internal Keycloak, use `kc.<your-ip-address>.nip.io/realms/airm`. Leave empty to skip OIDC configuration.
 
 **Skip disk check**<br>
 Specifies if disk check should be performed. Set to `true` if you don't want automatic disk setup.
