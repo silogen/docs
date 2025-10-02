@@ -1,11 +1,11 @@
-```{tags} quick start, installation, introduction
-```
-
 <!--
 Copyright © Advanced Micro Devices, Inc., or its affiliates.
 
 SPDX-License-Identifier: MIT
 -->
+
+```{tags} quick start, installation, introduction
+```
 
 # Quick Start Guide
 
