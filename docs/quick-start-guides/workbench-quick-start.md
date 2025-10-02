@@ -1,11 +1,11 @@
-```{tags} quick start, ai development, AMD AI Workbench
-```
-
 <!--
 Copyright © Advanced Micro Devices, Inc., or its affiliates.
 
 SPDX-License-Identifier: MIT
 -->
+
+```{tags} quick start, ai development, AMD AI Workbench
+```
 
 # Quick Start Guide for AI Practitioners
 
