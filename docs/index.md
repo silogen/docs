@@ -83,6 +83,7 @@ workbench/workspaces.md
 Training and Fine-tuning <workbench/training/overview.md>
 Inference <workbench/inference/overview.md>
 Tutorials <tutorials/workbench-tutorials.md>
+Reference Workloads <ai-workloads-manifests/workloads-overview.md>
 ```
 
 ```{toctree}
