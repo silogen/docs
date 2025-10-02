@@ -1,14 +1,11 @@
----
-tags:
-  - AMD Resource Manager
-  - resource management
-  - tutorial
----
 <!--
 Copyright © Advanced Micro Devices, Inc., or its affiliates.
 
 SPDX-License-Identifier: MIT
 -->
+
+```{tags} AMD Resource Manager, resource management, tutorial
+```
 
 # Resource Utilization of AI Workloads
 
@@ -20,7 +17,7 @@ This guide teaches you how you can observe and manage the amount of resources th
 
 ## 1. Consume resources by running AI workloads
 
-To consume resources, start a new AI workload that uses GPUs. For example, you can run a model fine-tuning workload by following the instructions in ["Model fine-tuning"](../../core/docs/workbench/training/fine-tuning/). Once the workload has started, navigate to the `Projects` page, select your project, and observe the number of GPUs and the amount of VRAM the workload is using.
+To consume resources, start a new AI workload that uses GPUs. For example, you can run a model fine-tuning workload by following the instructions in ["Model fine-tuning"](../../workbench/training/fine-tuning/). Once the workload has started, navigate to the `Projects` page, select your project, and observe the number of GPUs and the amount of VRAM the workload is using.
 
 See the example below:
 

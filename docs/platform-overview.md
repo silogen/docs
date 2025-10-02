@@ -1,40 +1,37 @@
----
-tags:
-  - platform
-  - introduction
-  - features
----
 <!--
 Copyright © Advanced Micro Devices, Inc., or its affiliates.
 
 SPDX-License-Identifier: MIT
 -->
 
-# Overview of {{ name }}
+```{tags} platform, introduction, features
+```
 
-{{ name }} is a full-stack solution for developing, deploying, and running AI workloads on a Kubernetes platform optimized for AMD compute. The platform can be utilized by system administrators, resource managers, AI researchers, and AI solution developers.
+# Overview of AMD Resource Manager & AMD AI Workbench
+
+AMD Resource Manager & AMD AI Workbench is a full-stack solution for developing, deploying, and running AI workloads on a Kubernetes platform optimized for AMD compute. The platform can be utilized by system administrators, resource managers, AI researchers, and AI solution developers.
 
 ## Key features of the platform
 
-{{ name_secondary }} offers a variety of features for AI compute use.
+AMD Enterprise AI platform offers a variety of features for AI compute use.
 
 **Optimized GPU utilization & lower operational costs**<br>
-{{ name_secondary }} ensures high GPU efficiency through intelligent workload placement and dynamic resource sharing. This eliminates waste, reduces costs, and guarantees fair access to compute power—empowering teams to innovate without delay.
+AMD Enterprise AI platform ensures high GPU efficiency through intelligent workload placement and dynamic resource sharing. This eliminates waste, reduces costs, and guarantees fair access to compute power—empowering teams to innovate without delay.
 
 **Unified AI infrastructure**<br>
 The platform consolidates fragmented environments into a cohesive AI ecosystem. With standardized governance, tools, and processes, the platform simplifies operations and enables seamless collaboration across teams and business units.
 
 **Accelerated AI delivery**<br>
-{{ name_secondary }} streamlines the setup of AI resources and automates dependency management. By enabling reuse of AI assets and prebuilt templates, teams can move faster from experimentation to production—shortening time-to-value.
+AMD Enterprise AI platform streamlines the setup of AI resources and automates dependency management. By enabling reuse of AI assets and prebuilt templates, teams can move faster from experimentation to production—shortening time-to-value.
 
 **AI-native workload orchestration**<br>
 Unlike traditional schedulers, the platform is optimized for AI. It intelligently prioritizes jobs, dynamically allocates resources, and ensures consistent performance, maximizing the utilization of compute infrastructure.
 
-With {{ name_secondary }} enterprises reduce complexity, accelerate AI deployment, and maximize ROI—turning AI from a cost center into a strategic advantage.
+With AMD Enterprise AI platform enterprises reduce complexity, accelerate AI deployment, and maximize ROI—turning AI from a cost center into a strategic advantage.
 
 ## Key components of the platform
 
-The {{ name_secondary }} is designed to provide a solid end-to-end model development, evaluation, and inference experience optimized for AMD DC GPUs.
+The AMD Enterprise AI platform is designed to provide a solid end-to-end model development, evaluation, and inference experience optimized for AMD DC GPUs.
 
 ![A diagram of the platform architecture divided into user portal and compute plane.](./media/platform-components.png)
 

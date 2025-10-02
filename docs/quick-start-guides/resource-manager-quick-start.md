@@ -1,14 +1,11 @@
----
-tags:
-  - quick start
-  - resource management
-  - AMD Resource Manager
----
 <!--
 Copyright © Advanced Micro Devices, Inc., or its affiliates.
 
 SPDX-License-Identifier: MIT
 -->
+
+```{tags} quick start, resource management, AMD Resource Manager
+```
 
 # Quick Start Guide for AI Resource Managers
 
@@ -33,7 +30,7 @@ This guide assumes you have access to an installed platform. To assist you with 
 
 - Platform admin users have already been created for your organization as part of the installation process. These are named `devuser@domain` and `silogen-admin`. The platform admin user can manage the platform and onboard more users.
 - An organization entity has been created.
-- A compute cluster has been onboarded and connected to {{ name_secondary }}.
+- A compute cluster has been onboarded and connected to AMD Enterprise AI platform.
 - A project with a resource quota has been created.
 
 ## Getting started
@@ -42,32 +39,34 @@ This section outlines the steps to set up essential AI compute resources for pro
 
 ### Onboard users
 
-!!! note
-    {{ name }} provides multiple options for onboarding users into the platform. For small-scale trial deployments you can invite users through email or add them manually, but for large scale deployments we recommend using single sign-on (SSO).
+```{note}
+AMD Resource Manager & AMD AI Workbench provides multiple options for onboarding users into the platform. For small-scale trial deployments you can invite users through email or add them manually, but for large scale deployments we recommend using single sign-on (SSO).
+```
 
 #### Invite users through email
 
-Follow the instructions in ["Inviting users and configuring SMTP in Keycloak"](../core/docs/keycloak/smtp-configuration.md) to invite users through email.
+Follow the instructions in ["Inviting users and configuring SMTP in Keycloak"](../keycloak/smtp-configuration.md) to invite users through email.
 
 #### Onboard users through single sign-on (SSO)
 
-Follow the instructions in ["Adding an identity provider to enable single sign-on"](../core/docs/keycloak/sso.md) to onboard users through SSO.
+Follow the instructions in ["Adding an identity provider to enable single sign-on"](../keycloak/sso.md) to onboard users through SSO.
 
 #### Invite users manually
 
 In case your organization does not have SSO or SMTP server set up you can add users manually.
 
-Follow the instructions in ["Manually managing and activating users in AMD Resource Manager"](../core/docs/keycloak/manual-user-management.md) to add users manually.
+Follow the instructions in ["Manually managing and activating users in AMD Resource Manager"](../keycloak/manual-user-management.md) to add users manually.
 
 ### Change the default admin user passwords
 
 It is recommended to change the initial admin users' passwords that were created as part of the installation process.
 - Super admin password (Keycloak admin user) - The super admin password is needed to login to the Keycloak admin panel. The password is stored in a Kubernetes secret, so in order to change the password you need to change the Kubernetes secret.
-- Platform admin password (devuser@domain) - How to change your `devuser` password depends on your user management setup. E.g., the `super admin` user can reset the user in Keycloak admin panel, if you have `Invite users through email` you can change your password yourself through "Forget password" link.
+- Platform admin password (devuser@domain) - How to change your `devuser` password depends on your user management setup. for example, the `super admin` user can reset the user in Keycloak admin panel, if you have `Invite users through email` you can change your password yourself through "Forget password" link.
 
 ### Optional: Create new projects (for advanced users)
 
-!!! note
-    A default project with quota has already been created for your organization as part of the installation process. In case you want to create new projects follow the instructions below.
+```{note}
+A default project with quota has already been created for your organization as part of the installation process. In case you want to create new projects follow the instructions below.
+```
 
-To learn how to create a new project with guaranteed quota follow the instructions in ["Manage projects"](../core/docs/resource-manager/projects/manage-projects.md)
+To learn how to create a new project with guaranteed quota follow the instructions in ["Manage projects"](../resource-manager/projects/manage-projects.md)

@@ -1,24 +1,21 @@
----
-tags:
-  - platform
-  - installation
-  - demo environment
-  - kubernetes
----
 <!--
 Copyright © Advanced Micro Devices, Inc., or its affiliates.
 
 SPDX-License-Identifier: MIT
 -->
 
-# Install {{ name_secondary }} on Premises
+```{tags} platform, installation, demo environment, kubernetes
+```
 
-This article explains how to install {{ name }} in an on-premises environment, covering the full stack from metal to application layer in a streamlined manner. The platform runs on top of Kubernetes orchestration platform and includes essential Kubernetes components for monitoring, secrets management, and certificate management.
+# Install AMD Enterprise AI platform on Premises
 
-You will use an installation tool called Cluster Bloom to first install and configure a Kubernetes cluster, and then install the {{ name }} application.
+This article explains how to install AMD Resource Manager & AMD AI Workbench in an on-premises environment, covering the full stack from metal to application layer in a streamlined manner. The platform runs on top of Kubernetes orchestration platform and includes essential Kubernetes components for monitoring, secrets management, and certificate management.
+
+You will use an installation tool called Cluster Bloom to first install and configure a Kubernetes cluster, and then install AMD Resource Manager & AMD AI Workbench.
 
 ## Prerequisites
-In order to install {{ name }} your system should meet the following requirements:
+
+In order to install AMD Resource Manager & AMD AI Workbench your system should meet the following requirements:
 
 - Ubuntu (supported versions checked at runtime)
 - Sufficient disk space (500GB+ recommended for root partition, 2TB+ for workloads)
@@ -27,19 +24,24 @@ In order to install {{ name }} your system should meet the following requirement
 - Root/sudo access
 
 ## Network and security configuration
+
 Before beginning the software installation, please ensure your network environment meets the following requirements. Proper configuration of these elements is crucial for the security, accessibility, and functionality of the application.
 
 ### Domain names
-Before installing {{ name }}, you'll need a domain name (such as myapp.example.com) that points to your server's IP address.
+
+Before installing AMD Resource Manager & AMD AI Workbench, you'll need a domain name (such as myapp.example.com) that points to your server's IP address.
 
 #### Using .nip.io domain for testing and demos
+
 If you don't have a DNS-enabled domain available, you may use a .nip.io domain, which automatically resolves to your service's IP address. Example: https://203.0.113.10.nip.io (format is `https://<master-node-ip-address>.nip.io`).
 This will resolve directly to 203.0.113.10 and allow HTTPS access without DNS setup.
 
-!!! note
-    A .nip.io domain is automatically created for you as part of the installation process.
+```{note}
+A .nip.io domain is automatically created for you as part of the installation process.
+```
 
 ### TLS certificates
+
 A valid TLS certificate must be configured for the chosen domain to enable secure HTTPS connections to your services. To setup TLS certificate you need to select one of the following options:
 
 - You can provide your own trusted TLS certificate purchased from a certificate authority.
@@ -48,34 +50,38 @@ A valid TLS certificate must be configured for the chosen domain to enable secur
 
 ### Accessing the application
 
-{{ name }} application requires HTTPS for all external access.
+AMD Resource Manager & AMD AI Workbench applications require HTTPS for all external access.
 When you specify a domain for the service (whether it's a custom domain or a convenience domain like *.nip.io), the application will also use this domain name internally when making callbacks to itself. Specifically, you should ensure that:
 
 - The application is reachable at https://<your-domain>
 - Port 443 must be open on your firewall and routed to the application service
 
-!!! note
-    .nip.io only provides DNS resolution. You still need to ensure port 443 is open and that your TLS certificate is valid for the chosen domain. If your application is configured to call itself at a .nip.io address, you must use the same domain consistently for external and internal access.
+```{note}
+.nip.io only provides DNS resolution. You still need to ensure port 443 is open and that your TLS certificate is valid for the chosen domain. If your application is configured to call itself at a .nip.io address, you must use the same domain consistently for external and internal access.
+```
 
 ### Load balancing
+
 For production environments, the domain should point to a load balancer that distributes traffic across multiple servers.
 For smaller setups or demonstrations, the domain can point directly to a single server's IP address, and MetalLB will be configured to handle load balancing within the Kubernetes cluster.
 
-## Install {{ name }}
+## Install AMD Enterprise AI platform
 
-You will use an installation tool called Cluster Bloom to first install and configure a Kubernetes cluster, and then install the {{ name }} application. The installation tool performs the following steps to prepare an AMD GPU node to be part of a Kubernetes cluster:
+You will use an installation tool called Cluster Bloom to first install and configure a Kubernetes cluster, and then install the applications. The installation tool performs the following steps to prepare an AMD GPU node to be part of a Kubernetes cluster:
 
 - Automated RKE2 Kubernetes cluster deployment
 - ROCm setup and configuration for AMD GPU nodes
 - Disk management and Longhorn storage integration
 - Multi-node cluster support with easy node joining
 - 1Password integration for secrets management
-- Installs the {{ name }} application using Cluster Forge tool
+- Installs AMD Resource Manager & AMD AI Workbench using Cluster Forge tool
 
-!!! info
-    The current platform version supports only one cluster per installation. Support for multiple clusters is on the product roadmap.
+```{note}
+The current platform version supports only one cluster per installation. Support for multiple clusters is on the product roadmap.
+```
 
 ### 1. SSH to node as root user
+
 Access the node using SSH as root user.
 
 ### 2. Download the latest installation script
@@ -134,7 +140,7 @@ List of disk paths for Longhorn storage. Leave empty for automatic configuration
 The Cluster Forge release `URL` or `none` to skip the SW installation.
 
 **Domain**<br>
-Domain name for the cluster, e.g., `cluster.example.com`. The domain name is used for ingress configuration. If you don't have a DNS-enabled domain available, you may use a .nip.io domain with your IP address. Example: `<master-node-ip-address>.nip.io`.
+Domain name for the cluster, for example, `cluster.example.com`. The domain name is used for ingress configuration. If you don't have a DNS-enabled domain available, you may use a .nip.io domain with your IP address. Example: `<master-node-ip-address>.nip.io`.
 
 **Use cert manager**<br>
 Set to `Yes` to use cert-manager with Let's encrypt for automatic TLS certificates. Set to `false` to provide your own certificates.
@@ -224,7 +230,7 @@ See more details about login [here](../login.md).
 
 ## Install only software into an existing Kubernetes cluster
 
-To install {{ name_secondary }} in an existing Kubernetes cluster, download a Cluster Forge release package and run `deploy.sh`. This assumes there is a working Kubernetes cluster to deploy into, and the current Kubeconfig context refers to that cluster.
+To install AMD Enterprise AI platform in an existing Kubernetes cluster, download a Cluster Forge release package and run `deploy.sh`. This assumes there is a working Kubernetes cluster to deploy into, and the current Kubeconfig context refers to that cluster.
 
 For the Cluster Forge `deploy` release:
 

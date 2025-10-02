@@ -1,28 +1,25 @@
----
-tags:
-  - quick start
-  - ai development
-  - AMD AI Workbench
----
 <!--
 Copyright © Advanced Micro Devices, Inc., or its affiliates.
 
 SPDX-License-Identifier: MIT
 -->
 
+```{tags} quick start, ai development, AMD AI Workbench
+```
+
 # Quick Start Guide for AI Practitioners
 
-{{ name }} provides a stable starting point for AI model development, fine-tuning, and inference with the help of an easy-to-use model catalog and AI developer workspaces. To work efficiently in the platform, an AI developer should have some experience with AI terminology and a general understanding of typical AI development workflows.
+AMD Resource Manager & AMD AI Workbench provides a stable starting point for AI model development, fine-tuning, and inference with the help of an easy-to-use model catalog and AI developer workspaces. To work efficiently in the platform, an AI developer should have some experience with AI terminology and a general understanding of typical AI development workflows.
 
 ## Prerequisites
 
-This guide assumes the user has access to an installed {{ name_secondary }}. Besides that, you should have access to compute cluster and a project with allocated compute resources.
+This guide assumes the user has access to an installed AMD Enterprise AI platform. Besides that, you should have access to compute cluster and a project with allocated compute resources.
 
 **Your system needs a Hugging Face token to download models.**
 
 ## Getting started
 
-1. Activate your account and login to the {{ name_secondary }}.
+1. Activate your account and login to the AMD Enterprise AI platform.
 2. Complete the model fine-tuning tutorial to get hands-on with the AMD AI Workbench.
 3. Browse through the AMD AI Workbench end user documentation in order to familiarize yourself with the AMD AI Workbench features.
 
@@ -39,7 +36,7 @@ Based on your background you can choose either low-code or more advanced coding 
 
 #### Model deployment and inference
 
-To learn how to deploy a model and run inference, please complete the tutorial ["How to deploy a model and run inference"](../core/docs/workbench/inference/how-to-deploy-and-inference.md).
+To learn how to deploy a model and run inference, please complete the tutorial ["How to deploy a model and run inference"](../workbench/inference/how-to-deploy-and-inference.md).
 
 #### Low-code tutorial: fine-tune a model with low code
 
@@ -51,4 +48,4 @@ To learn how to develop AI models using workspaces, please complete the tutorial
 
 ### Further discovery
 
-Browse through the [end-user documentation](https://docs.silogen.ai/core/docs/workbench/overview/) to familiarize yourself with the AMD AI Workbench features.
+Browse through the [end-user documentation](https://docs.silogen.ai/workbench/overview/) to familiarize yourself with the AMD AI Workbench features.
