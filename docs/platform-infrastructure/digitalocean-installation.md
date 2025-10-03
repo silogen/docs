@@ -33,6 +33,7 @@ GPU_NODE: true
 SKIP_DISK_CHECK: false
 USE_CERT_MANAGER: false
 SELECTED_DISKS: /dev/vdc1
+OIDC_URL: https://kc.<your-ip-address>.nip.io/realms/airm
 ```
 
 Download the installation tool ("bloom") and SW release package ("Cluster Forge"):
