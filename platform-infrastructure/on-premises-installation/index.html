@@ -1057,9 +1057,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#install-only-software-into-an-existing-kubernetes-cluster" class="md-nav__link">
+  <a href="#install-software-into-an-existing-kubernetes-cluster" class="md-nav__link">
     <span class="md-ellipsis">
-      Install only software into an existing Kubernetes cluster
+      Install software into an existing Kubernetes cluster
     </span>
   </a>
   
@@ -3507,9 +3507,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#install-only-software-into-an-existing-kubernetes-cluster" class="md-nav__link">
+  <a href="#install-software-into-an-existing-kubernetes-cluster" class="md-nav__link">
     <span class="md-ellipsis">
-      Install only software into an existing Kubernetes cluster
+      Install software into an existing Kubernetes cluster
     </span>
   </a>
   
@@ -3594,8 +3594,7 @@ SPDX-License-Identifier: MIT
 <h3 id="domain-names">Domain names<a class="headerlink" href="#domain-names" title="Permanent link">&para;</a></h3>
 <p>Before installing AMD Resource Manager &amp; AMD AI Workbench, you'll need a domain name (such as myapp.example.com) that points to your server's IP address.</p>
 <h4 id="using-nipio-domain-for-testing-and-demos">Using .nip.io domain for testing and demos<a class="headerlink" href="#using-nipio-domain-for-testing-and-demos" title="Permanent link">&para;</a></h4>
-<p>If you don't have a DNS-enabled domain available, you may use a .nip.io domain, which automatically resolves to your service's IP address. Example: https://203.0.113.10.nip.io (format is <code>https://&lt;master-node-ip-address&gt;.nip.io</code>).
-This will resolve directly to 203.0.113.10 and allow HTTPS access without DNS setup.</p>
+<p>If you don't have a DNS-enabled domain available, you may use a .nip.io domain, which automatically resolves to your service's IP address. Example: https://203.0.113.10.nip.io (format is <code>https://&lt;master-node-ip-address&gt;.nip.io</code>). This will resolve directly to 203.0.113.10 and allow HTTPS access without DNS setup.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>A .nip.io domain is automatically created for you as part of the installation process.</p>
@@ -3608,10 +3607,9 @@ This will resolve directly to 203.0.113.10 and allow HTTPS access without DNS se
 <li>You can use the free Let's Encrypt service to automatically generate one. When using Let's Encrypt, your setup must meet one of these requirements: either have port 80 accessible from the internet (allowing Let's Encrypt to verify domain ownership through your website), or have DNS management capabilities that allow automated domain validation (where Let's Encrypt can verify ownership by temporarily adding DNS records to your domain).</li>
 </ul>
 <h3 id="accessing-the-application">Accessing the application<a class="headerlink" href="#accessing-the-application" title="Permanent link">&para;</a></h3>
-<p>AMD Resource Manager &amp; AMD AI Workbench application requires HTTPS for all external access.
-When you specify a domain for the service (whether it's a custom domain or a convenience domain like *.nip.io), the application will also use this domain name internally when making callbacks to itself. Specifically, you should ensure that:</p>
+<p>AMD Resource Manager &amp; AMD AI Workbench application requires HTTPS for all external access. When you specify a domain for the service (whether it's a custom domain or a convenience domain like *.nip.io), the application will also use this domain name internally when making callbacks to itself. Specifically, you should ensure that:</p>
 <ul>
-<li>The application is reachable at https://<your-domain></li>
+<li>The application is reachable at <code>https://&lt;your-domain&gt;</code></li>
 <li>Port 443 must be open on your firewall and routed to the application service</li>
 </ul>
 <div class="admonition note">
@@ -3619,8 +3617,7 @@ When you specify a domain for the service (whether it's a custom domain or a con
 <p>.nip.io only provides DNS resolution. You still need to ensure port 443 is open and that your TLS certificate is valid for the chosen domain. If your application is configured to call itself at a .nip.io address, you must use the same domain consistently for external and internal access.</p>
 </div>
 <h3 id="load-balancing">Load balancing<a class="headerlink" href="#load-balancing" title="Permanent link">&para;</a></h3>
-<p>For production environments, the domain should point to a load balancer that distributes traffic across multiple servers.
-For smaller setups or demonstrations, the domain can point directly to a single server's IP address, and MetalLB will be configured to handle load balancing within the Kubernetes cluster.</p>
+<p>For production environments, the domain should point to a load balancer that distributes traffic across multiple servers. For smaller setups or demonstrations, the domain can point directly to a single server's IP address, and MetalLB will be configured to handle load balancing within the Kubernetes cluster.</p>
 <h2 id="install-amd-resource-manager-amd-ai-workbench">Install AMD Resource Manager &amp; AMD AI Workbench<a class="headerlink" href="#install-amd-resource-manager-amd-ai-workbench" title="Permanent link">&para;</a></h2>
 <p>You will use an installation tool called Cluster Bloom to first install and configure a Kubernetes cluster, and then install the AMD Resource Manager &amp; AMD AI Workbench application. The installation tool performs the following steps to prepare an AMD GPU node to be part of a Kubernetes cluster:</p>
 <ul>
@@ -3641,16 +3638,15 @@ For smaller setups or demonstrations, the domain can point directly to a single 
 <p>Go to the working folder where you want to install the release.</p>
 <p>Download the latest installation script (adjust the URL to the release of your preference):</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>wget https://github.com/silogen/cluster-bloom/releases/latest/download/bloom
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>wget https://github.com/silogen/cluster-forge/releases/download/v0.5.1/release-enterprise-ai-v0.5.1.tar.gz
 </code></pre></div>
 <h3 id="3-make-file-executable">3. Make file executable<a class="headerlink" href="#3-make-file-executable" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>chmod +x bloom
 </code></pre></div>
 <h3 id="4-create-the-installation-configuration">4. Create the installation configuration<a class="headerlink" href="#4-create-the-installation-configuration" title="Permanent link">&para;</a></h3>
-<p>Before you can start the installation you need to create the installation configuration, which adapts the installation to your environment.
-You can use a Configuration wizard that facilitates the creation of the configuration (Option A) or add the values directly in the configuration file (Option B).</p>
+<p>Before you can start the installation you need to create the installation configuration, which adapts the installation to your environment. You can use a Configuration wizard that facilitates the creation of the configuration (Option A) or add the values directly in the configuration file (Option B).</p>
 <h4 id="option-a-create-installation-configuration-using-the-installation-wizard">Option A - Create installation configuration using the Installation wizard<a class="headerlink" href="#option-a-create-installation-configuration-using-the-installation-wizard" title="Permanent link">&para;</a></h4>
-<p>The Installation wizard is a helper tool that guides the user in creating the optimal configuration for the installation.
-For the standard installation you should select the default values, only exception is the <code>domain</code> and <code>cert option</code> where you should provide a specific value.</p>
+<p>The Installation wizard is a helper tool that guides the user in creating the optimal configuration for the installation. For the standard installation you should select the default values, only exception is the <code>domain</code> and <code>cert option</code> where you should provide a specific value.</p>
 <p>To start the wizard:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>sudo ./bloom
 </code></pre></div>
@@ -3685,7 +3681,7 @@ To run the actual installation select <code>y</code> in the following step
 <p>Below is an example configuration for the configuration file bloom.yaml:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>DOMAIN: &lt;your-ip-address&gt;.nip.io
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>CERT_OPTION: generate
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>CLUSTERFORGE_RELEASE: https://github.com/silogen/cluster-forge/releases/download/v2025.09.001-enterprise/release-enterprise-v2025.09.001.tar.gz
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>CLUSTERFORGE_RELEASE: none
 <a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>FIRST_NODE: true
 <a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>GPU_NODE: true
 <a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>SKIP_DISK_CHECK: false
@@ -3695,6 +3691,14 @@ To run the actual installation select <code>y</code> in the following step
 </code></pre></div>
 <p>To start the installation:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>sudo ./bloom --config bloom.yaml
+</code></pre></div>
+<p>Exit and re-login to source the .bashrc, or run</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>source ~/.bashrc
+</code></pre></div>
+<p>Then run Cluster Forge by:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>tar -xzvf release-enterprise-ai-v0.5.1.tar.gz
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>cd enterprise-ai-v0.5.1
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>bash ./deploy.sh
 </code></pre></div>
 <h3 id="5-complete-the-installation-progress">5. Complete the installation progress<a class="headerlink" href="#5-complete-the-installation-progress" title="Permanent link">&para;</a></h3>
 <p>The installation will take roughly 15 minutes. You can now follow the installation progress through the user interface:</p>
@@ -3716,9 +3720,9 @@ To run the actual installation select <code>y</code> in the following step
 <p>The token needs to be installed as a secret in your environment. Here
 are examples of how to do this in common platforms:</p>
 <p>On Kubernetes, save the token in an environment variable in your terminal:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>kubectl create secret generic hf-token \
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>    --from-literal=hf-token=my_super_secret_token \
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>    -n demo
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>kubectl create secret generic hf-token \
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>    --from-literal=hf-token=my_super_secret_token \
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>    -n demo
 </code></pre></div>
 <h3 id="7-login">7. Login<a class="headerlink" href="#7-login" title="Permanent link">&para;</a></h3>
 <p>To confirm that the installation was successful, ensure you are able to log in to the AMD AI Workbench.</p>
@@ -3729,12 +3733,13 @@ are examples of how to do this in common platforms:</p>
 <li>Login as <code>devuser@domain</code> user and use the default password.</li>
 </ol>
 <p>See more details about login <a href="../../login/">here</a>.</p>
-<h2 id="install-only-software-into-an-existing-kubernetes-cluster">Install only software into an existing Kubernetes cluster<a class="headerlink" href="#install-only-software-into-an-existing-kubernetes-cluster" title="Permanent link">&para;</a></h2>
+<h2 id="install-software-into-an-existing-kubernetes-cluster">Install software into an existing Kubernetes cluster<a class="headerlink" href="#install-software-into-an-existing-kubernetes-cluster" title="Permanent link">&para;</a></h2>
 <p>To install AMD Enterprise AI platform in an existing Kubernetes cluster, download a Cluster Forge release package and run <code>deploy.sh</code>. This assumes there is a working Kubernetes cluster to deploy into, and the current Kubeconfig context refers to that cluster.</p>
-<p>For the Cluster Forge <code>deploy</code> release:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>wget https://github.com/silogen/cluster-forge/releases/download/deploy/deploy-release.tar.gz
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>tar -xzvf deploy-release.tar.gz
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>sudo bash clusterforge/deploy.sh
+<p>Run following commands to install the software:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>wget https://github.com/silogen/cluster-forge/releases/download/v0.5.1/release-enterprise-ai-v0.5.1.tar.gz
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>tar -xzvf release-enterprise-ai-v0.5.1.tar.gz
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>cd enterprise-ai-v0.5.1
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>bash ./deploy.sh
 </code></pre></div>
 <h2 id="appendix">Appendix<a class="headerlink" href="#appendix" title="Permanent link">&para;</a></h2>
 <ul>
