@@ -33,8 +33,7 @@ Before beginning the software installation, please ensure your network environme
 Before installing {{ name }}, you'll need a domain name (such as myapp.example.com) that points to your server's IP address.
 
 #### Using .nip.io domain for testing and demos
-If you don't have a DNS-enabled domain available, you may use a .nip.io domain, which automatically resolves to your service's IP address. Example: https://203.0.113.10.nip.io (format is `https://<master-node-ip-address>.nip.io`).
-This will resolve directly to 203.0.113.10 and allow HTTPS access without DNS setup.
+If you don't have a DNS-enabled domain available, you may use a .nip.io domain, which automatically resolves to your service's IP address. Example: https://203.0.113.10.nip.io (format is `https://<master-node-ip-address>.nip.io`). This will resolve directly to 203.0.113.10 and allow HTTPS access without DNS setup.
 
 !!! note
     A .nip.io domain is automatically created for you as part of the installation process.
@@ -48,18 +47,16 @@ A valid TLS certificate must be configured for the chosen domain to enable secur
 
 ### Accessing the application
 
-{{ name }} application requires HTTPS for all external access.
-When you specify a domain for the service (whether it's a custom domain or a convenience domain like *.nip.io), the application will also use this domain name internally when making callbacks to itself. Specifically, you should ensure that:
+{{ name }} application requires HTTPS for all external access. When you specify a domain for the service (whether it's a custom domain or a convenience domain like *.nip.io), the application will also use this domain name internally when making callbacks to itself. Specifically, you should ensure that:
 
-- The application is reachable at https://<your-domain>
+- The application is reachable at `https://<your-domain>`
 - Port 443 must be open on your firewall and routed to the application service
 
 !!! note
     .nip.io only provides DNS resolution. You still need to ensure port 443 is open and that your TLS certificate is valid for the chosen domain. If your application is configured to call itself at a .nip.io address, you must use the same domain consistently for external and internal access.
 
 ### Load balancing
-For production environments, the domain should point to a load balancer that distributes traffic across multiple servers.
-For smaller setups or demonstrations, the domain can point directly to a single server's IP address, and MetalLB will be configured to handle load balancing within the Kubernetes cluster.
+For production environments, the domain should point to a load balancer that distributes traffic across multiple servers. For smaller setups or demonstrations, the domain can point directly to a single server's IP address, and MetalLB will be configured to handle load balancing within the Kubernetes cluster.
 
 ## Install {{ name }}
 
@@ -86,6 +83,7 @@ Download the latest installation script (adjust the URL to the release of your p
 
 ```
 wget https://github.com/silogen/cluster-bloom/releases/latest/download/bloom
+wget https://github.com/silogen/cluster-forge/releases/download/v2025.09.001-enterprise/release-enterprise-v2025.09.001.tar.gz
 ```
 
 ### 3. Make file executable
@@ -96,13 +94,11 @@ chmod +x bloom
 
 ### 4. Create the installation configuration
 
-Before you can start the installation you need to create the installation configuration, which adapts the installation to your environment.
-You can use a Configuration wizard that facilitates the creation of the configuration (Option A) or add the values directly in the configuration file (Option B).
+Before you can start the installation you need to create the installation configuration, which adapts the installation to your environment. You can use a Configuration wizard that facilitates the creation of the configuration (Option A) or add the values directly in the configuration file (Option B).
 
 #### Option A - Create installation configuration using the Installation wizard
 
-The Installation wizard is a helper tool that guides the user in creating the optimal configuration for the installation.
-For the standard installation you should select the default values, only exception is the `domain` and `cert option` where you should provide a specific value.
+The Installation wizard is a helper tool that guides the user in creating the optimal configuration for the installation. For the standard installation you should select the default values, only exception is the `domain` and `cert option` where you should provide a specific value.
 
 To start the wizard:
 
@@ -158,7 +154,7 @@ Below is an example configuration for the configuration file bloom.yaml:
 ```
 DOMAIN: <your-ip-address>.nip.io
 CERT_OPTION: generate
-CLUSTERFORGE_RELEASE: https://github.com/silogen/cluster-forge/releases/download/v2025.09.001-enterprise/release-enterprise-v2025.09.001.tar.gz
+CLUSTERFORGE_RELEASE: none
 FIRST_NODE: true
 GPU_NODE: true
 SKIP_DISK_CHECK: false
@@ -171,6 +167,20 @@ To start the installation:
 
 ```
 sudo ./bloom --config bloom.yaml
+```
+
+Exit and re-login to source the .bashrc, or run
+
+```
+source ~/.bashrc
+```
+
+Then run Cluster Forge by:
+
+```
+tar -xzvf release-enterprise-ai-v0.5.1.tar.gz
+cd enterprise-ai-v0.5.1
+bash ./deploy.sh
 ```
 
 ### 5. Complete the installation progress

@@ -35,16 +35,28 @@ USE_CERT_MANAGER: false
 SELECTED_DISKS: /dev/vdc1
 ```
 
-Download the installation tool ("bloom")
+Download the installation tool ("bloom"):
 
 ```
 wget https://github.com/silogen/cluster-bloom/releases/latest/download/bloom
 ```
 
-Run bloom with the following command
+Run bloom with the following command:
 
 ```
 chmod +x bloom
+```
 
+Then you can run bloom:
+
+```
 sudo ./bloom --config bloom.yaml
+```
+
+Then run Cluster Forge by:
+
+```
+tar -xzvf release-enterprise-ai-v0.5.1.tar.gz
+cd enterprise-ai-v0.5.1
+bash ./deploy.sh
 ```
