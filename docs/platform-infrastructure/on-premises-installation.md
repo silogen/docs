@@ -92,65 +92,18 @@ wget https://github.com/silogen/cluster-forge/releases/download/v0.5.1/release-e
 chmod +x bloom
 ```
 
-### 4. Create the installation configuration
+### 4. Update installation configuration
 
-Before you can start the installation you need to create the installation configuration, which adapts the installation to your environment. You can use a Configuration wizard that facilitates the creation of the configuration (Option A) or add the values directly in the configuration file (Option B).
+Before you can start the installation you need to edit the installation configuration, which adapts the installation to your environment. You can edit the values directly in the configuration file (Option A) or use a Configuration wizard that facilitates the creation of the configuration (Option B).
 
-#### Option A - Create installation configuration using the Installation wizard
+#### Option A - Edit the values in configuration file
 
-The Installation wizard is a helper tool that guides the user in creating the optimal configuration for the installation. For the standard installation you should select the default values, only exception is the `domain` and `cert option` where you should provide a specific value.
+!!! note
+    For the standard installation you should use the default values, only exception is the `DOMAIN` and `OIDC_URL` values which should match your specific domain name. You can find more details about the configuration values in this [section](./#appendix).
 
-To start the wizard:
+Open the configuration file `bloom.yaml`.
 
-```
-sudo ./bloom
-```
-
-The wizard includes the following steps:
-
-**First node**<br>
-Specifies if this is the first node in the cluster. Set to `false` for additional nodes joining an existing cluster.
-
-**GPU node**<br>
-Specifies whether the node has GPUs. Set to `false` for CPU-only nodes. When `true`, ROCm will be installed and configured.
-
-**OIDC URL**<br>
-URL of the OIDC provider for authentication. To use the bundled cluster-internal Keycloak, use `kc.<your-ip-address>.nip.io/realms/airm`. Leave empty to skip OIDC configuration.
-
-**Skip disk check**<br>
-Specifies if disk check should be performed. Set to `true` if you don't want automatic disk setup.
-
-**Selected disks**<br>
-List of disk devices to use. Example: `dev/sdb`. Leave empty for automatic selection.
-
-**Longhorn disks**<br>
-List of disk paths for Longhorn storage. Leave empty for automatic configuration.
-
-**Cluster Forge release**<br>
-The Cluster Forge release `URL` or `none` to skip the SW installation.
-
-**Domain**<br>
-Domain name for the cluster, e.g., `cluster.example.com`. The domain name is used for ingress configuration. If you don't have a DNS-enabled domain available, you may use a .nip.io domain with your IP address. Example: `<master-node-ip-address>.nip.io`.
-
-**Use cert manager**<br>
-Set to `Yes` to use cert-manager with Let's encrypt for automatic TLS certificates. Set to `false` to provide your own certificates.
-
-**Cert option**<br>
-Certificate option when `Use cert manager` is false. Choose `existing` to use existing certificate files, or `generate` to create a self-signed certificate.
-
-**Configuration complete!**<br>
-Once the wizard has completed you can find the configuration file in `bloom.yaml`.
-
-**Start the installation**<br>
-To run the actual installation select `y` in the following step
-`Would you like to run bloom with this configuration no? (y/n)`
-
-#### Option B - Specify the values in configuration file
-
-You can also specify the values in the configuration file directly and skip the installation wizard process.
-
-Below is an example configuration for the configuration file bloom.yaml:
-
+Edit the `DOMAIN` and `OIDC_URL` values to match your specific domain name.
 ```
 DOMAIN: <your-ip-address>.nip.io
 CERT_OPTION: generate
@@ -182,6 +135,31 @@ tar -xzvf release-enterprise-ai-v0.5.1.tar.gz
 cd enterprise-ai-v0.5.1
 bash ./deploy.sh
 ```
+
+#### Option B - Create installation configuration using the Installation wizard
+
+The Installation wizard is a helper tool that guides the user in creating the optimal configuration for the installation.
+
+To start the wizard:
+
+```
+sudo ./bloom
+```
+
+Next, you need to complete each of the steps in the wizard.
+
+!!! note
+    For the standard installation you should select the default values, only exception is the `domain`, `OIDC_URL` and `cert option` where you should provide a specific value.
+    You can find more details about the configuration values in this [section](./#appendix):
+
+**Configuration complete!**<br>
+Once the wizard has completed you can find the configuration file in `bloom.yaml`.
+
+**Start the installation**<br>
+To run the actual installation select `y` in the following step
+`Would you like to run bloom with this configuration no? (y/n)`
+
+
 
 ### 5. Complete the installation progress
 
@@ -247,5 +225,39 @@ bash ./deploy.sh
 
 ## Appendix
 
+### Installation configuration
+This section defines the installation configuration values.
+
+**First node**<br>
+Specifies if this is the first node in the cluster. Set to `false` for additional nodes joining an existing cluster.
+
+**GPU node**<br>
+Specifies whether the node has GPUs. Set to `false` for CPU-only nodes. When `true`, ROCm will be installed and configured.
+
+**OIDC URL**<br>
+URL of the OIDC provider for authentication. To use the bundled cluster-internal Keycloak, use `kc.<your-ip-address>.nip.io/realms/airm`. Leave empty to skip OIDC configuration.
+
+**Skip disk check**<br>
+Specifies if disk check should be performed. Set to `true` if you don't want automatic disk setup.
+
+**Selected disks**<br>
+List of disk devices to use. Example: `dev/sdb`. Leave empty for automatic selection.
+
+**Longhorn disks**<br>
+List of disk paths for Longhorn storage. Leave empty for automatic configuration.
+
+**Cluster Forge release**<br>
+The Cluster Forge release `URL` or `none` to skip the SW installation.
+
+**Domain**<br>
+Domain name for the cluster, e.g., `cluster.example.com`. The domain name is used for ingress configuration. If you don't have a DNS-enabled domain available, you may use a .nip.io domain with your IP address. Example: `<master-node-ip-address>.nip.io`.
+
+**Use cert manager**<br>
+Set to `Yes` to use cert-manager with Let's encrypt for automatic TLS certificates. Set to `false` to provide your own certificates.
+
+**Cert option**<br>
+Certificate option when `Use cert manager` is false. Choose `existing` to use existing certificate files, or `generate` to create a self-signed certificate.
+
+### Links
 - Cluster Forge: [https://github.com/silogen/cluster-forge](https://github.com/silogen/cluster-forge)
 - Cluster Bloom: [https://github.com/silogen/cluster-bloom](https://github.com/silogen/cluster-bloom)
