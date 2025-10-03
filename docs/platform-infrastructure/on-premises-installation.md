@@ -7,17 +7,16 @@ tags:
 ---
 <!--
 Copyright © Advanced Micro Devices, Inc., or its affiliates.
-
 SPDX-License-Identifier: MIT
 -->
 
 # Install {{ name_secondary }} on Premises
 
 This article explains how to install {{ name }} in an on-premises environment, covering the full stack from metal to application layer in a streamlined manner. The platform runs on top of Kubernetes orchestration platform and includes essential Kubernetes components for monitoring, secrets management, and certificate management.
-
 You will use an installation tool called Cluster Bloom to first install and configure a Kubernetes cluster, and then install the {{ name }} application.
 
 ## Prerequisites
+
 In order to install {{ name }} your system should meet the following requirements:
 
 - Ubuntu (supported versions checked at runtime)
@@ -27,18 +26,22 @@ In order to install {{ name }} your system should meet the following requirement
 - Root/sudo access
 
 ## Network and security configuration
+
 Before beginning the software installation, please ensure your network environment meets the following requirements. Proper configuration of these elements is crucial for the security, accessibility, and functionality of the application.
 
 ### Domain names
+
 Before installing {{ name }}, you'll need a domain name (such as myapp.example.com) that points to your server's IP address.
 
 #### Using .nip.io domain for testing and demos
+
 If you don't have a DNS-enabled domain available, you may use a .nip.io domain, which automatically resolves to your service's IP address. Example: https://203.0.113.10.nip.io (format is `https://<master-node-ip-address>.nip.io`). This will resolve directly to 203.0.113.10 and allow HTTPS access without DNS setup.
 
 !!! note
     A .nip.io domain is automatically created for you as part of the installation process.
 
 ### TLS certificates
+
 A valid TLS certificate must be configured for the chosen domain to enable secure HTTPS connections to your services. To setup TLS certificate you need to select one of the following options:
 
 - You can provide your own trusted TLS certificate purchased from a certificate authority.
@@ -56,6 +59,7 @@ A valid TLS certificate must be configured for the chosen domain to enable secur
     .nip.io only provides DNS resolution. You still need to ensure port 443 is open and that your TLS certificate is valid for the chosen domain. If your application is configured to call itself at a .nip.io address, you must use the same domain consistently for external and internal access.
 
 ### Load balancing
+
 For production environments, the domain should point to a load balancer that distributes traffic across multiple servers. For smaller setups or demonstrations, the domain can point directly to a single server's IP address, and MetalLB will be configured to handle load balancing within the Kubernetes cluster.
 
 ## Install {{ name }}
@@ -73,6 +77,7 @@ You will use an installation tool called Cluster Bloom to first install and conf
     The current platform version supports only one cluster per installation. Support for multiple clusters is on the product roadmap.
 
 ### 1. SSH to node as root user
+
 Access the node using SSH as root user.
 
 ### 2. Download the latest installation script
@@ -92,64 +97,17 @@ wget https://github.com/silogen/cluster-forge/releases/download/v0.5.1/release-e
 chmod +x bloom
 ```
 
-### 4. Create the installation configuration
+### 4. Update installation configuration
 
-Before you can start the installation you need to create the installation configuration, which adapts the installation to your environment. You can use a Configuration wizard that facilitates the creation of the configuration (Option A) or add the values directly in the configuration file (Option B).
+Before you can start the installation you need to edit the installation configuration, which adapts the installation to your environment. You can edit the values directly in the configuration file (Option A) or use a Configuration wizard that facilitates the creation of the configuration (Option B).
 
-#### Option A - Create installation configuration using the Installation wizard
+#### Option A - Edit the values in configuration file
 
-The Installation wizard is a helper tool that guides the user in creating the optimal configuration for the installation. For the standard installation you should select the default values, only exception is the `domain` and `cert option` where you should provide a specific value.
+!!! note
+    For the standard installation you should use the default values, only exception is the `DOMAIN` and `OIDC_URL` values which should match your specific domain name. You can find more details about the configuration values in this [section](./#appendix).
 
-To start the wizard:
-
-```
-sudo ./bloom
-```
-
-The wizard includes the following steps:
-
-**First node**<br>
-Specifies if this is the first node in the cluster. Set to `false` for additional nodes joining an existing cluster.
-
-**GPU node**<br>
-Specifies whether the node has GPUs. Set to `false` for CPU-only nodes. When `true`, ROCm will be installed and configured.
-
-**OIDC URL**<br>
-URL of the OIDC provider for authentication. To use the bundled cluster-internal Keycloak, use `kc.<your-ip-address>.nip.io/realms/airm`. Leave empty to skip OIDC configuration.
-
-**Skip disk check**<br>
-Specifies if disk check should be performed. Set to `true` if you don't want automatic disk setup.
-
-**Selected disks**<br>
-List of disk devices to use. Example: `dev/sdb`. Leave empty for automatic selection.
-
-**Longhorn disks**<br>
-List of disk paths for Longhorn storage. Leave empty for automatic configuration.
-
-**Cluster Forge release**<br>
-The Cluster Forge release `URL` or `none` to skip the SW installation.
-
-**Domain**<br>
-Domain name for the cluster, e.g., `cluster.example.com`. The domain name is used for ingress configuration. If you don't have a DNS-enabled domain available, you may use a .nip.io domain with your IP address. Example: `<master-node-ip-address>.nip.io`.
-
-**Use cert manager**<br>
-Set to `Yes` to use cert-manager with Let's encrypt for automatic TLS certificates. Set to `false` to provide your own certificates.
-
-**Cert option**<br>
-Certificate option when `Use cert manager` is false. Choose `existing` to use existing certificate files, or `generate` to create a self-signed certificate.
-
-**Configuration complete!**<br>
-Once the wizard has completed you can find the configuration file in `bloom.yaml`.
-
-**Start the installation**<br>
-To run the actual installation select `y` in the following step
-`Would you like to run bloom with this configuration no? (y/n)`
-
-#### Option B - Specify the values in configuration file
-
-You can also specify the values in the configuration file directly and skip the installation wizard process.
-
-Below is an example configuration for the configuration file bloom.yaml:
+Open the configuration file `bloom.yaml`.
+Edit the `DOMAIN` and `OIDC_URL` values to match your specific domain name.
 
 ```
 DOMAIN: <your-ip-address>.nip.io
@@ -183,6 +141,31 @@ cd enterprise-ai-v0.5.1
 bash ./deploy.sh
 ```
 
+#### Option B - Create installation configuration using the Installation wizard
+
+The Installation wizard is a helper tool that guides the user in creating the optimal configuration for the installation.
+To start the wizard:
+
+```
+sudo ./bloom
+```
+
+Next, you need to complete each of the steps in the wizard.
+
+!!! note
+    For the standard installation you should select the default values, only exception is the `domain`, `OIDC_URL` and `cert option` where you should provide a specific value.
+    You can find more details about the configuration values in this [section](./#appendix):
+
+**Configuration complete!**<br>
+
+Once the wizard has completed you can find the configuration file in `bloom.yaml`.
+
+**Start the installation**<br>
+
+To run the actual installation select `y` in the following step
+`Would you like to run bloom with this configuration no? (y/n)`
+
+
 ### 5. Complete the installation progress
 
 The installation will take roughly 15 minutes. You can now follow the installation progress through the user interface:
@@ -212,7 +195,6 @@ In order to download and access gated models from Hugging Face, you need to prov
 
 The token needs to be installed as a secret in your environment. Here
 are examples of how to do this in common platforms:
-
 On Kubernetes, save the token in an environment variable in your terminal:
 
 ```
@@ -224,7 +206,6 @@ kubectl create secret generic hf-token \
 ### 7. Login
 
 To confirm that the installation was successful, ensure you are able to log in to the AMD AI Workbench.
-
 1. Access the login URL (your domain name).
    1. For nip.io domain: `https://airmui.<master-node-ip-address>.nip.io`
    2. If using a registered domain, the web address of the service will be: `https://airmui.<your-domain>`
@@ -235,7 +216,6 @@ See more details about login [here](../login.md).
 ## Install software into an existing Kubernetes cluster
 
 To install {{ name_secondary }} in an existing Kubernetes cluster, download a Cluster Forge release package and run `deploy.sh`. This assumes there is a working Kubernetes cluster to deploy into, and the current Kubeconfig context refers to that cluster.
-
 Run following commands to install the software:
 
 ```
@@ -246,6 +226,42 @@ bash ./deploy.sh
 ```
 
 ## Appendix
+
+### Installation configuration
+
+This section defines the installation configuration values.
+
+**First node**<br>
+Specifies if this is the first node in the cluster. Set to `false` for additional nodes joining an existing cluster.
+
+**GPU node**<br>
+Specifies whether the node has GPUs. Set to `false` for CPU-only nodes. When `true`, ROCm will be installed and configured.
+
+**OIDC URL**<br>
+URL of the OIDC provider for authentication. To use the bundled cluster-internal Keycloak, use `kc.<your-ip-address>.nip.io/realms/airm`. Leave empty to skip OIDC configuration.
+
+**Skip disk check**<br>
+Specifies if disk check should be performed. Set to `true` if you don't want automatic disk setup.
+
+**Selected disks**<br>
+List of disk devices to use. Example: `dev/sdb`. Leave empty for automatic selection.
+
+**Longhorn disks**<br>
+List of disk paths for Longhorn storage. Leave empty for automatic configuration.
+
+**Cluster Forge release**<br>
+The Cluster Forge release `URL` or `none` to skip the SW installation.
+
+**Domain**<br>
+Domain name for the cluster, e.g., `cluster.example.com`. The domain name is used for ingress configuration. If you don't have a DNS-enabled domain available, you may use a .nip.io domain with your IP address. Example: `<master-node-ip-address>.nip.io`.
+
+**Use cert manager**<br>
+Set to `Yes` to use cert-manager with Let's encrypt for automatic TLS certificates. Set to `false` to provide your own certificates.
+
+**Cert option**<br>
+Certificate option when `Use cert manager` is false. Choose `existing` to use existing certificate files, or `generate` to create a self-signed certificate.
+
+### Links
 
 - Cluster Forge: [https://github.com/silogen/cluster-forge](https://github.com/silogen/cluster-forge)
 - Cluster Bloom: [https://github.com/silogen/cluster-bloom](https://github.com/silogen/cluster-bloom)
