@@ -76,11 +76,11 @@ You will use an installation tool called Cluster Bloom to first install and conf
 !!! info
     The current platform version supports only one cluster per installation. Support for multiple clusters is on the product roadmap.
 
-### 1. SSH to node as root user
+### SSH to node as root user
 
 Access the node using SSH as root user.
 
-### 2. Download the latest installation script
+### Download the latest installation script
 
 Go to the working folder where you want to install the release.
 
@@ -91,17 +91,15 @@ wget https://github.com/silogen/cluster-bloom/releases/latest/download/bloom
 wget https://github.com/silogen/cluster-forge/releases/download/v0.5.1/release-enterprise-ai-v0.5.1.tar.gz
 ```
 
-### 3. Make file executable
+### Make file executable
 
 ```
 chmod +x bloom
 ```
 
-### 4. Update installation configuration
+### Edit the values in configuration file
 
-Before you can start the installation you need to edit the installation configuration, which adapts the installation to your environment. You can edit the values directly in the configuration file (Option A) or use a Configuration wizard that facilitates the creation of the configuration (Option B).
-
-#### Option A - Edit the values in configuration file
+Before you can start the installation you need to edit the installation configuration, which adapts the installation to your environment. You can edit the values directly in the configuration file.
 
 !!! note
     For the standard installation you should use the default values, only exception is the `DOMAIN` and `OIDC_URL` values which should match your specific domain name. You can find more details about the configuration values in this [section](./#appendix).
@@ -121,53 +119,13 @@ SELECTED_DISKS: /dev/vdc1
 OIDC_URL: https://kc.<your-ip-address>.nip.io/realms/airm
 ```
 
-To start the installation:
+### Start the installation
+
+Run the following command to start the installation (this sets up a Kubernetes cluster for you):
 
 ```
 sudo ./bloom --config bloom.yaml
 ```
-
-Exit and re-login to source the .bashrc, or run
-
-```
-source ~/.bashrc
-```
-
-Then run Cluster Forge by:
-
-```
-tar -xzvf release-enterprise-ai-v0.5.1.tar.gz
-cd enterprise-ai-v0.5.1
-bash ./deploy.sh
-```
-
-#### Option B - Create installation configuration using the Installation wizard
-
-The Installation wizard is a helper tool that guides the user in creating the optimal configuration for the installation.
-To start the wizard:
-
-```
-sudo ./bloom
-```
-
-Next, you need to complete each of the steps in the wizard.
-
-!!! note
-    For the standard installation you should select the default values, only exception is the `domain`, `OIDC_URL` and `cert option` where you should provide a specific value.
-    You can find more details about the configuration values in this [section](./#appendix):
-
-**Configuration complete!**<br>
-
-Once the wizard has completed you can find the configuration file in `bloom.yaml`.
-
-**Start the installation**<br>
-
-To run the actual installation select `y` in the following step
-`Would you like to run bloom with this configuration no? (y/n)`
-
-
-### 5. Complete the installation progress
-
 The installation will take roughly 15 minutes. You can now follow the installation progress through the user interface:
 
 ![Cluster Bloom Interface](../media/infra/bloom.png)
@@ -176,7 +134,21 @@ For systems with unmounted physical disks, a selection prompt will appear:
 
 ![Cluster Bloom disk selection](../media/infra/bloom-disk-selection.png)
 
-#### 5.1 Optional step: Adding a second node to cluster
+Exit and re-login to source the .bashrc, or run
+
+```
+source ~/.bashrc
+```
+
+Then run following commands to install the software:
+
+```
+tar -xzvf release-enterprise-ai-v0.5.1.tar.gz
+cd enterprise-ai-v0.5.1
+bash ./deploy.sh
+```
+
+#### Optional step: Adding a second node to cluster
 
 After successful installation, Cluster Bloom generates `additional_node_command.txt`, which contains the command for installing additional nodes into the cluster.
 
@@ -227,9 +199,9 @@ bash ./deploy.sh
 
 ## Appendix
 
-### Installation configuration
+### Installation configuration values
 
-This section defines the installation configuration values.
+This section describes the installation configuration values.
 
 **First node**<br>
 Specifies if this is the first node in the cluster. Set to `false` for additional nodes joining an existing cluster.
@@ -260,6 +232,31 @@ Set to `Yes` to use cert-manager with Let's encrypt for automatic TLS certificat
 
 **Cert option**<br>
 Certificate option when `Use cert manager` is false. Choose `existing` to use existing certificate files, or `generate` to create a self-signed certificate.
+
+### Create installation configuration using the Installation wizard
+
+Instead of editing the configuration file directly you can also use an installation wizard, which guides you in creating the configuration for the installation.
+
+To start the wizard:
+
+```
+sudo ./bloom
+```
+
+Next, you need to complete each of the steps in the wizard.
+
+!!! note
+    For the standard installation you should select the default values, only exception is the `domain`, `OIDC_URL` and `cert option` where you should provide a specific value.
+    You can find more details about the configuration values in this [section](./#appendix):
+
+**Configuration complete!**<br>
+
+Once the wizard has completed you can find the configuration file in `bloom.yaml`.
+
+**Start the installation**<br>
+
+To run the actual installation select `y` in the following step
+`Would you like to run bloom with this configuration no? (y/n)`
 
 ### Links
 
