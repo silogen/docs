@@ -83,7 +83,7 @@ Download the latest installation script (adjust the URL to the release of your p
 
 ```
 wget https://github.com/silogen/cluster-bloom/releases/latest/download/bloom
-wget https://github.com/silogen/cluster-forge/releases/download/v2025.09.001-enterprise/release-enterprise-v2025.09.001.tar.gz
+wget https://github.com/silogen/cluster-forge/releases/download/v0.5.1/release-enterprise-ai-v0.5.1.tar.gz
 ```
 
 ### 3. Make file executable
@@ -232,16 +232,17 @@ To confirm that the installation was successful, ensure you are able to log in t
 
 See more details about login [here](../login.md).
 
-## Install only software into an existing Kubernetes cluster
+## Install software into an existing Kubernetes cluster
 
 To install {{ name_secondary }} in an existing Kubernetes cluster, download a Cluster Forge release package and run `deploy.sh`. This assumes there is a working Kubernetes cluster to deploy into, and the current Kubeconfig context refers to that cluster.
 
-For the Cluster Forge `deploy` release:
+Run following commands to install the software:
 
 ```
-wget https://github.com/silogen/cluster-forge/releases/download/deploy/deploy-release.tar.gz
-tar -xzvf deploy-release.tar.gz
-sudo bash clusterforge/deploy.sh
+wget https://github.com/silogen/cluster-forge/releases/download/v0.5.1/release-enterprise-ai-v0.5.1.tar.gz
+tar -xzvf release-enterprise-ai-v0.5.1.tar.gz
+cd enterprise-ai-v0.5.1
+bash ./deploy.sh
 ```
 
 ## Appendix
