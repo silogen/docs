@@ -27,24 +27,43 @@ In order to install on a DigitalOcean droplet, copy the following text into a fi
 ```
 DOMAIN: <your-ip-address>.nip.io
 CERT_OPTION: generate
-CLUSTERFORGE_RELEASE: https://github.com/silogen/cluster-forge/releases/download/v2025.09.001-enterprise/release-enterprise-v2025.09.001.tar.gz
+CLUSTERFORGE_RELEASE: none
 FIRST_NODE: true
 GPU_NODE: true
 SKIP_DISK_CHECK: false
 USE_CERT_MANAGER: false
 SELECTED_DISKS: /dev/vdc1
+OIDC_URL: https://kc.<your-ip-address>.nip.io/realms/airm
 ```
 
-Download the installation tool ("bloom")
+Download the installation tool ("bloom") and SW release package ("Cluster Forge"):
 
 ```
 wget https://github.com/silogen/cluster-bloom/releases/latest/download/bloom
+wget https://github.com/silogen/cluster-forge/releases/download/v0.5.1/release-enterprise-ai-v0.5.1.tar.gz
 ```
 
-Run bloom with the following command
+Make file executable:
 
 ```
 chmod +x bloom
+```
 
+Then start the installation:
+
+```
 sudo ./bloom --config bloom.yaml
+```
+Exit and re-login to source the .bashrc, or run
+
+```
+source ~/.bashrc
+```
+
+Then run Cluster Forge by:
+
+```
+tar -xzvf release-enterprise-ai-v0.5.1.tar.gz
+cd enterprise-ai-v0.5.1
+bash ./deploy.sh
 ```
