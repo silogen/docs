@@ -3624,7 +3624,7 @@ SPDX-License-Identifier: MIT
 <p>Go to the working folder where you want to install AMD Resource Manager &amp; AMD AI Workbench.</p>
 <p>Run the following commands to download the latest software release. This includes both the installation script ("bloom") and software application:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>wget https://github.com/silogen/cluster-bloom/releases/latest/download/bloom
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>wget https://github.com/silogen/cluster-forge/releases/download/v0.5.1/release-enterprise-ai-v0.5.1.tar.gz
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>wget https://github.com/silogen/cluster-forge/releases/download/v0.5.2/release-enterprise-ai-v0.5.2.tar.gz
 </code></pre></div>
 <p>Make the installation script executable:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>chmod +x bloom
@@ -3662,8 +3662,8 @@ The installation will take roughly 15 minutes. You can now follow the installati
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>source ~/.bashrc
 </code></pre></div>
 <p>Then run following commands to install the software:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>tar -xzvf release-enterprise-ai-v0.5.1.tar.gz
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>cd enterprise-ai-v0.5.1
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>tar -xzvf release-enterprise-ai-v0.5.2.tar.gz
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>cd enterprise-ai-v0.5.2
 <a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>bash ./deploy.sh
 </code></pre></div>
 <h3 id="specify-huggingface-token">Specify HuggingFace token<a class="headerlink" href="#specify-huggingface-token" title="Permanent link">&para;</a></h3>
@@ -3695,9 +3695,9 @@ On Kubernetes, save the token in an environment variable in your terminal:</p>
 <h2 id="install-software-into-an-existing-kubernetes-cluster">Install software into an existing Kubernetes cluster<a class="headerlink" href="#install-software-into-an-existing-kubernetes-cluster" title="Permanent link">&para;</a></h2>
 <p>To install AMD Enterprise AI platform in an existing Kubernetes cluster, download a Cluster Forge release package and run <code>deploy.sh</code>. This assumes there is a working Kubernetes cluster to deploy into, and the current Kubeconfig context refers to that cluster.
 Run following commands to install the software:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>wget https://github.com/silogen/cluster-forge/releases/download/v0.5.1/release-enterprise-ai-v0.5.1.tar.gz
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>tar -xzvf release-enterprise-ai-v0.5.1.tar.gz
-<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>cd enterprise-ai-v0.5.1
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>wget https://github.com/silogen/cluster-forge/releases/download/v0.5.2/release-enterprise-ai-v0.5.2.tar.gz
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>tar -xzvf release-enterprise-ai-v0.5.2.tar.gz
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>cd enterprise-ai-v0.5.2
 <a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>bash ./deploy.sh
 </code></pre></div>
 <h2 id="appendix">Appendix<a class="headerlink" href="#appendix" title="Permanent link">&para;</a></h2>
