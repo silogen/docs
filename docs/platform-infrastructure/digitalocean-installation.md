@@ -40,7 +40,7 @@ Download the installation tool ("bloom") and SW release package ("Cluster Forge"
 
 ```
 wget https://github.com/silogen/cluster-bloom/releases/latest/download/bloom
-wget https://github.com/silogen/cluster-forge/releases/download/v0.5.1/release-enterprise-ai-v0.5.1.tar.gz
+wget https://github.com/silogen/cluster-forge/releases/download/v0.5.2/release-enterprise-ai-v0.5.2.tar.gz
 ```
 
 Make file executable:
@@ -63,7 +63,7 @@ source ~/.bashrc
 Then run Cluster Forge by:
 
 ```
-tar -xzvf release-enterprise-ai-v0.5.1.tar.gz
-cd enterprise-ai-v0.5.1
+tar -xzvf release-enterprise-ai-v0.5.2.tar.gz
+cd enterprise-ai-v0.5.2
 bash ./deploy.sh
 ```
