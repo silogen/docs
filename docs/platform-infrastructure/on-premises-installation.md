@@ -87,7 +87,7 @@ Run the following commands to download the latest software release. This include
 
 ```
 wget https://github.com/silogen/cluster-bloom/releases/latest/download/bloom
-wget https://github.com/silogen/cluster-forge/releases/download/v0.5.1/release-enterprise-ai-v0.5.1.tar.gz
+wget https://github.com/silogen/cluster-forge/releases/download/v0.5.2/release-enterprise-ai-v0.5.2.tar.gz
 ```
 
 Make the installation script executable:
@@ -147,8 +147,8 @@ source ~/.bashrc
 Then run following commands to install the software:
 
 ```
-tar -xzvf release-enterprise-ai-v0.5.1.tar.gz
-cd enterprise-ai-v0.5.1
+tar -xzvf release-enterprise-ai-v0.5.2.tar.gz
+cd enterprise-ai-v0.5.2
 bash ./deploy.sh
 ```
 
@@ -192,9 +192,9 @@ To install {{ name_secondary }} in an existing Kubernetes cluster, download a Cl
 Run following commands to install the software:
 
 ```
-wget https://github.com/silogen/cluster-forge/releases/download/v0.5.1/release-enterprise-ai-v0.5.1.tar.gz
-tar -xzvf release-enterprise-ai-v0.5.1.tar.gz
-cd enterprise-ai-v0.5.1
+wget https://github.com/silogen/cluster-forge/releases/download/v0.5.1/release-enterprise-ai-v0.5.2.tar.gz
+tar -xzvf release-enterprise-ai-v0.5.2.tar.gz
+cd enterprise-ai-v0.5.2
 bash ./deploy.sh
 ```
 
