@@ -12,10 +12,11 @@ SPDX-License-Identifier: MIT
 
 # Install {{ name_secondary }} on Premises
 
-This article explains how to install {{ name }} in an on-premises environment, covering the full stack from metal to application layer in a streamlined manner. The platform runs on top of Kubernetes orchestration platform and includes essential Kubernetes components for monitoring, secrets management, and certificate management.
+This article explains how to install {{ name }} in an on-premises environment, covering the full stack from metal to application layer in a streamlined manner.
+
 You will use an installation tool called Cluster Bloom to first install and configure a Kubernetes cluster, and then install the {{ name }} application.
 
-## Prerequisites
+## System requirements
 
 In order to install {{ name }} your system should meet the following requirements:
 
@@ -25,15 +26,13 @@ In order to install {{ name }} your system should meet the following requirement
 - ROCm-compatible AMD GPUs (for GPU nodes)
 - Root/sudo access
 
-## Network and security configuration
+## Network and security requirements
 
 Before beginning the software installation, please ensure your network environment meets the following requirements. Proper configuration of these elements is crucial for the security, accessibility, and functionality of the application.
 
 ### Domain names
 
 Before installing {{ name }}, you'll need a domain name (such as myapp.example.com) that points to your server's IP address.
-
-#### Using .nip.io domain for testing and demos
 
 If you don't have a DNS-enabled domain available, you may use a .nip.io domain, which automatically resolves to your service's IP address. Example: https://203.0.113.10.nip.io (format is `https://<master-node-ip-address>.nip.io`). This will resolve directly to 203.0.113.10 and allow HTTPS access without DNS setup.
 
@@ -48,7 +47,7 @@ A valid TLS certificate must be configured for the chosen domain to enable secur
 - You can create a self-signed certificate during the installation process.
 - You can use the free Let's Encrypt service to automatically generate one. When using Let's Encrypt, your setup must meet one of these requirements: either have port 80 accessible from the internet (allowing Let's Encrypt to verify domain ownership through your website), or have DNS management capabilities that allow automated domain validation (where Let's Encrypt can verify ownership by temporarily adding DNS records to your domain).
 
-### Accessing the application
+### Network access
 
 {{ name }} application requires HTTPS for all external access. When you specify a domain for the service (whether it's a custom domain or a convenience domain like *.nip.io), the application will also use this domain name internally when making callbacks to itself. Specifically, you should ensure that:
 
@@ -80,18 +79,18 @@ You will use an installation tool called Cluster Bloom to first install and conf
 
 Access the node using SSH as root user.
 
-### Download the latest installation script
+### Download the software
 
-Go to the working folder where you want to install the release.
+Go to the working folder where you want to install {{ name }}.
 
-Download the latest installation script (adjust the URL to the release of your preference):
+Run the following commands to download the latest software release. This includes both the installation script ("bloom") and software application:
 
 ```
 wget https://github.com/silogen/cluster-bloom/releases/latest/download/bloom
 wget https://github.com/silogen/cluster-forge/releases/download/v0.5.1/release-enterprise-ai-v0.5.1.tar.gz
 ```
 
-### Make file executable
+Make the installation script executable:
 
 ```
 chmod +x bloom
@@ -119,7 +118,7 @@ SELECTED_DISKS: /dev/vdc1
 OIDC_URL: https://kc.<your-ip-address>.nip.io/realms/airm
 ```
 
-### Start the installation
+### Install Kubernetes cluster
 
 Run the following command to start the installation (this sets up a Kubernetes cluster for you):
 
@@ -134,6 +133,11 @@ For systems with unmounted physical disks, a selection prompt will appear:
 
 ![Cluster Bloom disk selection](../media/infra/bloom-disk-selection.png)
 
+#### Optional step: Adding a second node to cluster
+
+After successful installation, Cluster Bloom generates `additional_node_command.txt`, which contains the command for installing additional nodes into the cluster.
+
+### Install the software
 Exit and re-login to source the .bashrc, or run
 
 ```
@@ -148,11 +152,7 @@ cd enterprise-ai-v0.5.1
 bash ./deploy.sh
 ```
 
-#### Optional step: Adding a second node to cluster
-
-After successful installation, Cluster Bloom generates `additional_node_command.txt`, which contains the command for installing additional nodes into the cluster.
-
-### 6. Specify HuggingFace token
+### Specify HuggingFace token
 
 In order to download and access gated models from Hugging Face, you need to provide a Hugging Face token. Tokens contain sensitive information. To keep them secure and prevent unauthorized access, they should not be stored in plain text in your code or configuration files. Instead, they are stored as **secrets**, a secure way to manage sensitive data.
 
@@ -175,13 +175,14 @@ kubectl create secret generic hf-token \
     -n demo
 ```
 
-### 7. Login
+### Login
 
-To confirm that the installation was successful, ensure you are able to log in to the AMD AI Workbench.
-1. Access the login URL (your domain name).
-   1. For nip.io domain: `https://airmui.<master-node-ip-address>.nip.io`
-   2. If using a registered domain, the web address of the service will be: `https://airmui.<your-domain>`
-2. Login as `devuser@domain` user and use the default password.
+To confirm that the installation was successful, ensure you are able to log in to the AMD AI Workbench:
+
+- Access the login URL (your domain name).
+  - For nip.io domain: `https://airmui.<master-node-ip-address>.nip.io`
+  - If using a registered domain, the web address of the service will be: `https://airmui.<your-domain>`
+- Login as `devuser@domain` user and use the default password.
 
 See more details about login [here](../login.md).
 
