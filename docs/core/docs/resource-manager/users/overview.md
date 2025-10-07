@@ -14,7 +14,7 @@ tags:
 
 # Users Overview
 
-{{ name }} has a robust user management system bundled with the authentication system [Keycloak](https://www.keycloak.org/). The platform can also use an [identity provider](../../keycloak/sso.md) for user authentication.
+The platform has a robust user management system bundled with the authentication system [Keycloak](https://www.keycloak.org/). The platform can also use an [identity provider](../../keycloak/sso.md) for user authentication.
 
 More information about how to set up user management can be found [here](../users/manage-users.md).
 

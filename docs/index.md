@@ -4,103 +4,109 @@ Copyright © Advanced Micro Devices, Inc., or its affiliates.
 SPDX-License-Identifier: MIT
 -->
 
-# {{ name }} Documentation
+# AMD Resource Manager & AMD AI Workbench Documentation
 
-Welcome to the documentation for {{ name }}. Enterprises striving to scale AI often encounter roadblocks that increase costs, slow innovation, and limit impact. {{ name_secondary }} is built to overcome these challenges and unlock the full potential of AI across the enterprise. In the documentation we will refer to the {{ name }} as either *{{ name_secondary }}* or simply *platform*.
+Welcome to the documentation for AMD Resource Manager & AMD AI Workbench. Enterprises striving to scale AI often encounter roadblocks that increase costs, slow innovation, and limit impact. AMD Enterprise AI platform is built to overcome these challenges and unlock the full potential of AI across the enterprise. In the documentation we will refer to the AMD Resource Manager & AMD AI Workbench as either *AMD Enterprise AI platform* or simply *platform*.
 
 This is your comprehensive handbook designed to help infrastructure administrators, AI practitioners, and AI resource managers successfully deploy, manage, and run AI workloads on AMD compute. The guide provides step-by-step instructions for installing and configuring the necessary software, as well as practical tutorials and use cases to help you run AI workloads efficiently on a scalable Kubernetes platform.
 
+::::{grid} 1 1 2 2
+:gutter: 2
 
-<div class="card-container">
-  <div class="card card-intro">
-    <div class="card-header">
-      <span class="icon icon-introduction"></span>
-    </div>
+:::{grid-item-card}
+Introduction
+^^^
+- [Platform Overview](./platform-overview/)
+- [Quick Start Guide](./quick-start/)
+- [Target Audience](./target-audience/)
+:::
 
-    <div class="card-body">
-      <h3>Introduction</h3>
+:::{grid-item-card}
+Infrastructure and Platform Installation
+^^^
+- [Install On-premises Environment](./platform-infrastructure/on-premises-installation/)
+- [Single Sign-on](./keycloak/sso/)
+:::
 
-      <ul class="intro-links">
-        <li>
-          <a href="./platform-overview/">Platform overview</a>
-        </li>
-        <li>
-          <a href="./quick-start/">Quick start guide</a>
-        </li>
-        <li>
-          <a href="./target-audience/">Target audience</a>
-        </li>
-      </ul>
-    </div>
-  </div>
+:::{grid-item-card}
+AMD AI Workbench
+^^^
+- [AI Development Overview](./workbench/overview/)
+- [Deploy Model and Run Inference](./workbench/inference/how-to-deploy-and-inference/)
+- [Model Fine-tuning](./workbench/training/fine-tuning/)
+- [Access Models](./workbench/training/models/)
+:::
 
-  <div class="card card-intro">
-    <div class="card-header">
-      <span class="icon icon-platform"></span>
-    </div>
+:::{grid-item-card}
+AMD Resource Manager
+^^^
+- [AMD Resource Manager Overview](./resource-manager/overview/)
+- [Getting Started](./quick-start-guides/resource-manager-quick-start/)
+- [Managing Clusters](./resource-manager/clusters/overview/)
+- [Managing Users](./resource-manager/users/overview/)
+:::
 
-    <div class="card-body">
-      <h3>Infrastructure administrator</h3>
+:::: % Close the grid
 
-      <ul class="intro-links">
-        </li>
-        <li>
-          <a href="./platform-infrastructure/on-premises-installation/">Install on-premises environment</a>
-        </li>
-        <li>
-          <a href="./core/docs/keycloak/sso/">Single sign-on</a>
-        </li>
-      </ul>
-    </div>
-  </div>
+```{toctree}
+---
+caption: Introduction
+maxdepth: 1
+hidden: True
+---
+Platform Overview <platform-overview>
+Target Audience <target-audience>
+quick-start
+release-notes
+general-topics
+```
 
-  <div class="card card-intro">
-    <div class="card-header">
-      <span class="icon icon-development"></span>
-    </div>
+```{toctree}
+---
+caption: Infrastructure and Installation
+maxdepth: 1
+hidden: True
+---
+Installation <platform-infrastructure/installation.md>
+```
 
-    <div class="card-body">
-      <h3>AI practitioner</h3>
+```{toctree}
+---
+caption: AMD AI Workbench
+maxdepth: 1
+hidden: True
+---
+workbench/overview.md
+Quick Start for AI Practitioners <quick-start-guides/workbench-quick-start.md>
+workbench/workloads.md
+workbench/workspaces.md
+Training and Fine-tuning <workbench/training/overview.md>
+Inference <workbench/inference/overview.md>
+Tutorials <tutorials/workbench-tutorials.md>
+Reference Workloads <ai-workloads-manifests/workloads-overview.md>
+```
 
-      <ul class="intro-links">
-        <li>
-          <a href="./core/docs/workbench/overview/">AI development overview</a>
-        </li>
-        <li>
-          <a href="./core/docs/workbench/inference/how-to-deploy-and-inference/">Deploy model and run inference</a>
-        </li>
-        <li>
-          <a href="./core/docs/workbench/training/fine-tuning/">Model finetuning</a>
-        </li>
-        <li>
-          <a href="./core/docs/workbench/training/models/">Access models</a>
-        </li>
-      </ul>
-    </div>
-  </div>
+```{toctree}
+---
+caption: AMD Resource Manager
+maxdepth: 1
+hidden: True
+---
+resource-manager/overview.md
+Quick Start for AI Resource Managers <quick-start-guides/resource-manager-quick-start.md>
+resource-manager/dashboard.md
+resource-manager/clusters/overview.md
+Projects Overview <resource-manager/projects/manage-projects.md>
+Secrets Overview <resource-manager/secrets/overview.md>
+User Management <resource-manager/users/overview.md>
+Tutorials <tutorials/resource-tutorials.md>
+```
 
-  <div class="card card-intro">
-    <div class="card-header">
-      <span class="icon icon-resources"></span>
-    </div>
-
-    <div class="card-body">
-      <h3>AI resource manager</h3>
-
-      <ul class="intro-links">
-        <li>
-          <a href="./core/docs/resource-manager/overview/">AMD Resource Manager overview</a>
-        </li>
-        <li>
-          <a href="./quick-start-guides/resource-manager-quick-start/">Getting started</a>
-        </li>
-        <li>
-          <a href="./core/docs/resource-manager/clusters/overview/">Managing clusters</a>
-        </li>
-        <li>
-          <a href="./core/docs/resource-manager/users/overview/">Managing users</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</div>
+```{toctree}
+---
+caption: References
+maxdepth: 1
+hidden: True
+---
+references/overview.md
+```
