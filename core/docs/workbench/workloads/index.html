@@ -1085,6 +1085,57 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#workload-logs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Workload logs
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Workload logs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#accessing-logs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Accessing logs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#log-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      Log features
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#log-retention" class="md-nav__link">
+    <span class="md-ellipsis">
+      Log retention
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#log-types-by-workload" class="md-nav__link">
+    <span class="md-ellipsis">
+      Log types by workload
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3172,6 +3223,57 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#workload-logs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Workload logs
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Workload logs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#accessing-logs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Accessing logs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#log-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      Log features
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#log-retention" class="md-nav__link">
+    <span class="md-ellipsis">
+      Log retention
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#log-types-by-workload" class="md-nav__link">
+    <span class="md-ellipsis">
+      Log types by workload
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3198,10 +3300,12 @@ SPDX-License-Identifier: MIT
 -->
 
 <hr />
-<p>tags:
-  - AMD AI Workbench
-  - workloads
-  - workspaces</p>
+<p>tags:</p>
+<ul>
+<li>AMD AI Workbench</li>
+<li>workloads</li>
+<li>workspaces</li>
+</ul>
 <hr />
 <h1 id="workloads">Workloads<a class="headerlink" href="#workloads" title="Permanent link">&para;</a></h1>
 <p>A workload is a batch job or a service running in the cluster with resources defined by the workload and limited by the quota that the workload owner has. This page shows all started workloads. The view shows all workload statuses by default except <code>Deleted</code>.</p>
@@ -3308,6 +3412,64 @@ SPDX-License-Identifier: MIT
 <td><strong>Unknown</strong></td>
 <td>Status cannot be determined</td>
 <td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="workload-logs">Workload logs<a class="headerlink" href="#workload-logs" title="Permanent link">&para;</a></h2>
+<p>Workload logs provide near real-time visibility into the execution and status of running workloads. The logging functionality allows users to monitor workload progress, troubleshoot issues, and analyze performance.</p>
+<h3 id="accessing-logs">Accessing logs<a class="headerlink" href="#accessing-logs" title="Permanent link">&para;</a></h3>
+<p>Logs can be accessed through the workload details view:</p>
+<ol>
+<li>Navigate to the <strong>Workloads</strong> page</li>
+<li>Open the action menu (<code>⁝</code> icon) on a workload row and use the <strong>Open details</strong> action</li>
+<li>Click the <strong>Logs</strong> button in the workload details page</li>
+<li>Alternatively you can also access the logs directly from the workload action menu by selecting <strong>View logs</strong></li>
+</ol>
+<h3 id="log-features">Log features<a class="headerlink" href="#log-features" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Log sources: Currently we support <strong>stdout/stderr</strong> collection from the running workloads</li>
+<li><strong>Real-time streaming</strong>: Logs are streamed in near real-time for active workloads and stored for later analysis for completed workloads</li>
+<li><strong>Log levels</strong>: View logs by severity level (Info, Warning, Error, Debug)</li>
+<li><strong>Timestamps</strong>: All log entries include precise timestamps for chronological tracking</li>
+</ul>
+<p><strong>Note:</strong> Kubernetes Events collection is not yet supported</p>
+<h3 id="log-retention">Log retention<a class="headerlink" href="#log-retention" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Logs are retained until disk space is needed; there is <strong>no fixed retention period</strong></li>
+<li>When disk usage is high, older logs are rotated and deleted to free up space</li>
+<li>Typical retention is currently <strong>1–2 weeks</strong>, but this may vary depending on workload volume and disk usage</li>
+<li><strong>Active workloads</strong>: Logs are available immediately upon workload start</li>
+<li><strong>Completed workloads</strong>: Historical logs remain accessible until rotated out</li>
+<li><strong>Failed workloads</strong>: Runtime error logs are preserved like other logs, subject to rotation policy</li>
+</ul>
+<h3 id="log-types-by-workload">Log types by workload<a class="headerlink" href="#log-types-by-workload" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Workload Type</th>
+<th>Available Logs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Model Download</strong></td>
+<td>Download progress, validation, storage operations</td>
+</tr>
+<tr>
+<td><strong>Inference</strong></td>
+<td>Request/response logs, model loading, performance metrics</td>
+</tr>
+<tr>
+<td><strong>Fine-Tuning</strong></td>
+<td>Training progress, loss metrics, checkpoint saves</td>
+</tr>
+<tr>
+<td><strong>Workspace</strong></td>
+<td>Jupyter/VS Code server logs, user session activity</td>
+</tr>
+<tr>
+<td><strong>Custom</strong></td>
+<td>Application-specific logs based on workload definition</td>
 </tr>
 </tbody>
 </table>
