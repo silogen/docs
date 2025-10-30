@@ -3,7 +3,7 @@ name: Action on hotfix branch
 on:
   push:
     branches:
-      - hotfix/* # Trigger if any hotfix branch is pushed
+      - hotfix/*
     paths:
       - 'docs/stylesheets/**'
 
