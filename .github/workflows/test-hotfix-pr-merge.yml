@@ -28,21 +28,20 @@ jobs:
         changedFiles=$(git diff --name-only HEAD^)
         echo "Changed files: $changedFiles"
 
-        # Make a diff variable
+        # Make a diff patch file
         diffContent=$(git diff HEAD^)
-        echo "Diff Content:"
-        echo "$diffContent"
         git diff HEAD^ > pr.patch
 
-        cat pr.patch
-
         # Clone the target repository
-        #git config --global user.name 'GitHub Actions'
-        #git config --global user.email 'actions@github.com'
-        #git clone https://x-access-token:${{ secrets.DOCS_REPO_TOKEN }}@github.com/silogen/AMDEnterpriseAISuiteDocs.git target_docs
-        #cd target_docs
+        git config --global user.name 'GitHub Actions'
+        git config --global user.email 'actions@github.com'
+        git clone https://x-access-token:${{ secrets.DOCS_REPO_TOKEN }}@github.com/silogen/AMDEnterpriseAISuiteDocs.git target_docs
 
-        #git checkout -b hotfix-merge-temp
+        mv pr.patch target_docs/
+        cd target_docs
+
+        git checkout -b hotfix-merge-temp
+        git apply --check pr.patch
 
       env:
         DOCS_REPO_TOKEN: ${{ secrets.DOCS_REPO_TOKEN }}
