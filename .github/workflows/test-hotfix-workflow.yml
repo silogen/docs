@@ -1,0 +1,19 @@
+name: Action on hotfix branch
+
+on:
+  push:
+    branches:
+      - hotfix/* # Trigger if any hotfix branch is pushed
+
+jobs:
+  echo:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v5
+      
+    - name: Print a message
+      run: |
+        echo "Something was pushed into a hotfix branch"
+
