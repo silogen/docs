@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - hotfix/* # Trigger if any hotfix branch is pushed
+    paths:
+      - 'docs/stylesheets/**'
 
 jobs:
   echo:
@@ -15,5 +17,5 @@ jobs:
       
     - name: Print a message
       run: |
-        echo "Something was pushed into a hotfix branch"
+        echo "Something was pushed into a hotfix branch and a specific path"
 
