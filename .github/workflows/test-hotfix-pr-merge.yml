@@ -16,8 +16,22 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v5
-      
+      with:
+        ref: ${{ github.event.pull_request.head.sha }}
+        fetch-depth: 0 # Fetch all history for accurate diffing
+
     - name: Print a message
       run: |
         echo "A hotfix was merged into main with changes in stylesheets directory"
 
+    - name: List Changed Files
+      run: |
+        changedFiles=$(git diff --name-only HEAD^)
+        echo "Changed files: $changedFiles"
+        # You can then iterate through $changedFiles and perform actions on each file
+
+    - name: Get Diff Content
+      run: |
+        diffContent=$(git diff HEAD^)
+        echo "Diff Content:"
+        echo "$diffContent"
