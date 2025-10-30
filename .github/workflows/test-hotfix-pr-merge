@@ -8,7 +8,6 @@ on:
     paths:
       - 'docs/stylesheets/**'
 
-
 jobs:
   echo:
     runs-on: ubuntu-latest
