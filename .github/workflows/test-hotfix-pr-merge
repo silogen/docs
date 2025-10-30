@@ -1,0 +1,24 @@
+name: Merge a hotfix branch to main
+
+on:
+  pull_request:
+    types: [closed]
+    branches:
+      - main
+    paths:
+      - 'docs/stylesheets/**'
+
+
+jobs:
+  echo:
+    runs-on: ubuntu-latest
+    if: github.event.pull_request.merged == true && startsWith(github.head_ref, 'hotfix/') # Check if merged a hotfix branch
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v5
+      
+    - name: Print a message
+      run: |
+        echo "A hotfix was merged into main with changes in stylesheets directory"
+
