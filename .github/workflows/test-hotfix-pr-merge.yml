@@ -24,14 +24,25 @@ jobs:
       run: |
         echo "A hotfix was merged into main with changes in stylesheets directory"
 
-    - name: List Changed Files
-      run: |
+        # You can then iterate through $changedFiles and perform actions on each file
         changedFiles=$(git diff --name-only HEAD^)
         echo "Changed files: $changedFiles"
-        # You can then iterate through $changedFiles and perform actions on each file
 
-    - name: Get Diff Content
-      run: |
+        # Make a diff variable
         diffContent=$(git diff HEAD^)
         echo "Diff Content:"
         echo "$diffContent"
+        git diff HEAD^ > pr.patch
+
+        cat pr.patch
+
+        # Clone the target repository
+        #git config --global user.name 'GitHub Actions'
+        #git config --global user.email 'actions@github.com'
+        #git clone https://x-access-token:${{ secrets.DOCS_REPO_TOKEN }}@github.com/silogen/AMDEnterpriseAISuiteDocs.git target_docs
+        #cd target_docs
+
+        #git checkout -b hotfix-merge-temp
+
+      env:
+        DOCS_REPO_TOKEN: ${{ secrets.DOCS_REPO_TOKEN }}
